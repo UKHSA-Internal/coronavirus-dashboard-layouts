@@ -1,0 +1,322 @@
+headlineNumbers:
+  - caption: Tests processed
+    valueItems:
+      - label: Daily
+        value: newTestsByPublishDate
+        tooltip: Daily number of tests processed, reported on {date}
+
+      - label: Total
+        value: cumTestsByPublishDate
+        tooltip: Total number of tests processed, reported up to {date}
+
+# not live - Not currently publishing people tested
+
+  - caption: All people tested
+    valueItems:
+      - label: Daily
+        value: newPeopleTestedByPublishDate
+        tooltip: Daily number of new people tested reported on {date}
+
+      - label: Total
+        value: cumPeopleTestedByPublishDate
+        tooltip: Total number of people tested reported up to {date}
+
+# live
+
+  - caption: Testing capacity
+    valueItems:
+      - value: plannedCapacityByPublishDate
+        tooltip: Estimated total capacity reported by laboratories on {date}
+
+cards:
+  - heading: Testing and capacity
+    cardType: chart
+    fullWidth: true
+# not live - needs writing: this is just an example
+    abstract: >
+      We can put an explanatory paragraph in here with {links to modals:newTestsByPublishDate}
+
+# live
+
+    download:
+      - plannedCapacityByPublishDate
+      - newPillarOneTestsByPublishDate
+      - newPillarTwoTestsByPublishDate
+      - newPillarThreeTestsByPublishDate
+      - newPillarFourTestsByPublishDate
+      - newTestsByPublishDate
+      - cumPillarOneTestsByPublishDate
+      - cumPillarTwoTestsByPublishDate
+      - cumPillarThreeTestsByPublishDate
+      - cumPillarFourTestsByPublishDate
+      - cumTestsByPublishDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        fields:
+          - label: Pillar 1 (NHS and, in England, PHE)
+            value: newPillarOneTestsByPublishDate
+            tooltip: Daily number of COVID-19 tests processed by NHS (and, in England, PHE) labs by date reported
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Pillar 2 (Commercial partners)
+            value: newPillarTwoTestsByPublishDate
+            tooltip: Daily number of COVID-19 tests processed by commercial partners by date reported
+            type: bar
+            colour: 3
+            rollingAverage: false
+
+          - label: Pillar 3 (Antibody)
+            value: newPillarThreeTestsByPublishDate
+            tooltip: Daily number of COVID-19 antibody tests by date reported
+            type: bar
+            colour: 4
+            rollingAverage: false
+
+          - label: Pillar 4 (Surveillance)
+            value: newPillarFourTestsByPublishDate
+            tooltip: Daily number of COVID-19 surveillance tests by date reported
+            type: bar
+            colour: 1
+            rollingAverage: false
+
+          - label: Tests (7-day average)
+            value: newTestsByPublishDate
+            tooltip: 7 day rolling average of the daily number of tests processed (all pillars)
+            type: line
+            colour: 10
+            fill: false
+            rollingAverage: true
+
+          - label: Testing capacity
+            value: plannedCapacityByPublishDate
+            tooltip: Estimated daily total capacity reported by laboratories
+            type: line
+            colour: 6
+            fill: true
+            rollingAverage: false
+
+      - heading: Cumulative
+        tabType: chart
+        barType: stack
+        fields:
+          - label: Pillar 1 (NHS and, in England, PHE)
+            value: cumPillarOneTestsByPublishDate
+            tooltip: Cumulative total number of COVID-19 tests processed by NHS (and, in England, PHE) labs by date reported
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Pillar 2 (Commercial partners)
+            value: cumPillarTwoTestsByPublishDate
+            tooltip: Cumulative total number of COVID-19 tests processed by commercial partners by date reported
+            type: bar
+            colour: 3
+            rollingAverage: false
+
+          - label: Pillar 3 (Antibody)
+            value: cumPillarThreeTestsByPublishDate
+            tooltip: Cumulative total number of COVID-19 antibody tests by date reported
+            type: bar
+            colour: 4
+            rollingAverage: false
+
+          - label: Pillar 4 (Surveillance)
+            value: cumPillarFourTestsByPublishDate
+            tooltip: Cumulative total number of COVID-19 surveillance tests by date reported
+            type: bar
+            colour: 1
+            rollingAverage: false
+
+      - heading: Daily data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by the Department of Health and Social Care
+
+          - label: Pillar 1
+            value: newPillarOneTestsByPublishDate
+            type: numeric
+            tooltip: Daily number of COVID-19 tests processed by NHS (and, in England, PHE) labs by date reported
+
+          - label: Pillar 2
+            value: newPillarTwoTestsByPublishDate
+            type: numeric
+            tooltip: Daily number of COVID-19 tests processed by commercial partners by date reported
+
+          - label: Pillar 3
+            value: newPillarThreeTestsByPublishDate
+            type: numeric
+            tooltip: Daily number of COVID-19 antibody tests by date reported
+
+          - label: Pillar 4
+            value: newPillarFourTestsByPublishDate
+            type: numeric
+            tooltip: Daily number of COVID-19 surveillance tests by date reported
+
+          - label: All pillars
+            value: newTestsByPublishDate
+            type: numeric
+            tooltip: Daily number of tests processed by date reported
+
+          - label: Lab capacity
+            value: plannedCapacityByPublishDate
+            type: numeric
+            tooltip: Estimated daily total capacity reported by laboratories (all pillars)
+
+      - heading: Cumulative data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by the Department of Health and Social Care
+
+          - label: Pillar 1
+            value: cumPillarOneTestsByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of COVID-19 tests processed by NHS (and, in England, PHE) labs by date reported
+
+          - label: Pillar 2
+            value: cumPillarTwoTestsByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of COVID-19 tests processed by commercial partners by date reported
+
+          - label: Pillar 3
+            value: cumPillarThreeTestsByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of COVID-19 antibody tests by date reported
+
+          - label: Pillar 4
+            value: cumPillarFourTestsByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of COVID-19 surveillance tests by date reported
+
+          - label: All pillars
+            value: cumTestsByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of tests processed by date reported
+
+# not live - Not currently publishing people tested
+
+  - heading: People tested
+    cardType: chart
+    fullWidth: true
+    download:
+      - newPeopleTestedByPublishDate
+      - cumPeopleTestedByPublishDate
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: People tested
+            value: newPeopleTestedByPublishDate
+            tooltip: Daily number of new people tested by date reported
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: People tested (7-day average)
+            value: newPeopleTestedByPublishDate
+            tooltip: 7 day rolling average of the daily number of people tested reported
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
+
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: People tested
+            value: cumPeopleTestedByPublishDate
+            tooltip: Cumulative total number of people tested by date reported
+            type: line
+            colour: 0
+            fill: true
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by the Department of Health and Social Care
+
+          - label: Daily people tested
+            value: newPeopleTestedByPublishDate
+            type: numeric
+            tooltip: Daily number of new people tested by date reported
+
+          - label: Cumulative people tested
+            value: cumPeopleTestedByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people tested by date reported
+
+#live
+
+  - heading: Pillar 1 (NHS and, in England, PHE) tests by nation
+    cardType: multiAreaStatic
+    fullWidth: true
+    download:
+      - newPillarOneTestsByPublishDate
+      - cumPillarOneTestsByPublishDate
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10]
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: newPillarOneTestsByPublishDate
+            tooltip: Daily number of COVID-19 tests on the residents of each nation, processed by NHS (and, in England, PHE) labs, by date reported
+            type: bar
+            rollingAverage: false
+
+      - heading: Cumulative
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10]
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: cumPillarOneTestsByPublishDate
+            tooltip: Cumulative number of COVID-19 tests on the residents of each nation, processed by NHS (and, in England, PHE) labs, by date reported
+            type: bar
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by the Department of Health and Social Care
+
+          - label: daily
+            value: newPillarOneTestsByPublishDate
+            type: numeric
+            tooltip: Daily number of COVID-19 tests on the residents of each nation, processed by NHS (and, in England, PHE) labs, by date reported
+
+          - label: total
+            value: cumPillarOneTestsByPublishDate
+            type: numeric
+            tooltip: Cumulative number of COVID-19 tests on the residents of each nation, processed by NHS (and, in England, PHE) labs, by date reported

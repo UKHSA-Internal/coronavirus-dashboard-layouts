@@ -1,0 +1,660 @@
+headlineNumbers:
+  - caption: Patients admitted
+    valueItems:
+      - label: Daily
+        value: newAdmissions
+        tooltip: Daily number of COVID-19 patients admitted to hospital, reported on {date}
+    
+      - label: Total
+        value: cumAdmissions
+        tooltip: Cumulative total number of COVID-19 patients admitted to hospital, reported on {date}
+
+# not live - Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
+#            We don't currently use the data from the DAs on this - they did agree to provide it when
+#            asked by the No 10 Press data team, but we have never finalised it
+
+  - caption: Patients discharged
+    valueItems:
+      - label: Daily
+        value: newDischarges
+        tooltip: Daily number of COVID-19 patients discharged home from hospital, reported on {date}
+
+      - label: Total
+        value: cumDischarges
+        tooltip: Cumulative total number of COVID-19 discharged home from to hospital, reported on {date}
+
+# live
+
+  - caption: Patients in hospital
+    valueItems:
+      - value: hospitalCases
+        tooltip: Number of COVID-19 patients currently in hospital, reported on {date}
+
+  - caption: Patients on ventilation
+    valueItems:
+      - value: covidOccupiedMVBeds
+        tooltip: Number of COVID-19 patients currently in mechanical ventilation beds, reported on {date}
+    
+cards:
+  - heading: Patients admitted to hospital
+    cardType: chart
+    fullWidth: true
+    download:
+      - newAdmissions
+      - cumAdmissions
+
+    tabs: 
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Admissions
+            value: newAdmissions
+            tooltip: Daily number of COVID-19 patients admitted to hospital
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Admissions (7-day average)
+            value: newAdmissions
+            tooltip: 7 day rolling average of the daily number of admissions
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage:
+              window: 7
+              clipEnd: 0 #no of days to exclude for incomplete data
+
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Admissions
+            value: cumAdmissions
+            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+            type: line
+            colour: 0
+            fill: true
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by healthcare providers
+
+          - label: Daily admissions
+            value: newAdmissions
+            type: numeric
+            tooltip: Daily number of COVID-19 patients admitted to hospital
+
+          - label: Total admissions
+            value: cumAdmissions
+            type: numeric
+            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+
+  - heading: Patients admitted to hospital, by age
+    caption: Counts
+    cardType: ageSexBreakdown
+    download:
+      - cumAdmissionsByAge
+      - cumAdmissionsByAgeRate
+    fullWidth: false
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - cumAdmissionsByAge
+        fields:
+          - label: Admissions
+            value: cumAdmissionsByAgeValue
+            tooltip: Total number of COVID-19 patients admitted to hospital
+            type: bar
+            colour: 0
+      
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - cumAdmissionsByAge
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
+
+          - label: Admissions
+            value: cumAdmissionsByAgeValue
+            type: numeric
+            tooltip: Total number of COVID-19 patients admitted to hospital
+
+          - label: Admission rate
+            value: cumAdmissionsByAgeRate
+            type: numeric
+            tooltip: COVID-19 admissions per 100,000 resident population
+
+  - heading: Admission rates by age
+    caption: Rates per 100,000 resident population
+    cardType: ageSexBreakdown
+    fullWidth: false
+    download:
+      - cumAdmissionsByAge
+      - cumAdmissionsByAgeRate
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - cumAdmissionsByAge
+        fields:
+          - label: Admission rate
+            value: cumAdmissionsByAgeRate
+            tooltip: COVID-19 admissions per 100,000 resident population
+            type: bar
+            colour: 0
+      
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - cumAdmissionsByAge
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
+
+          - label: Admissions
+            value: cumAdmissionsByAgeValue
+            type: numeric
+            tooltip: Total number of COVID-19 patients admitted to hospital
+
+          - label: Admission rate
+            value: cumAdmissionsByAgeRate
+            type: numeric
+            tooltip: COVID-19 admissions per 100,000 resident population
+
+# not live - Only really required before we had the localisation feature working, to present nation 
+#            figures as in the No 10 slides - try rates
+
+  - heading: Patients admitted to hospital, by nation
+    cardType: multiAreaStatic
+    fullWidth: true
+    download:
+      - newAdmissions
+      - cumAdmissions
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10]
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: newAdmissions
+            tooltip: Daily number of COVID-19 patients admitted to hospital
+            type: bar
+            rollingAverage: false
+
+      - heading: Cumulative
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10]
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: cumAdmissions
+            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+            type: bar
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by healthcare providers
+
+          - label: daily
+            value: newAdmissions
+            type: numeric
+            tooltip: Daily number of COVID-19 patients admitted to hospital
+
+          - label: total
+            value: cumAdmissions
+            type: numeric
+            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+
+# live 
+
+  - heading: Patients in hospital
+    cardType: chart
+    fullWidth: true
+    download:
+      - hospitalCases
+
+    tabs: 
+      - heading: Daily
+        tabType: chart
+        fields:
+          - label: COVID-19 patients
+            value: hospitalCases
+            tooltip: Number of COVID-19 patients currently in hospital
+            type: line
+            colour: 0
+            fill: true
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by healthcare providers
+
+          - label: COVID-19 patients
+            value: hospitalCases
+            type: numeric
+            tooltip: Number of COVID-19 patients currently in hospital
+            
+# not live - Only really required before we had the localisation feature working, to present nation 
+#            figures as in the No 10 slides - try rates
+
+  - heading: Patients in hospital
+    cardType: multiAreaStatic
+    fullWidth: true
+    download:
+      - hospitalCases
+    options:
+      type: radio
+      heading: null
+      choices:
+        - Nation
+        - NHS Region
+
+    Nation:
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10]
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+          fields:
+            - label: ""
+              value: hospitalCases
+              tooltip: Number of COVID-19 patients currently in hospital
+              type: bar
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+          fields:
+            - label: Date reported
+              value: date
+              type: date
+              tooltip: Date reported by healthcare providers
+
+            - label: daily
+              value: hospitalCases
+              type: numeric
+              tooltip: Number of COVID-19 patients currently in hospital
+
+    NHS Region:
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10, 6, 1, 4]
+          params:
+            - key: areaType
+              sign: "="
+              value: nhsRegion
+          fields:
+            - label: ""
+              value: hospitalCases
+              tooltip: Number of COVID-19 patients currently in hospital
+              type: bar
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: nhsRegion
+          fields:
+            - label: Date reported
+              value: date
+              type: date
+              tooltip: Date reported by healthcare providers
+
+            - label: daily
+              value: hospitalCases
+              type: numeric
+              tooltip: Number of COVID-19 patients currently in hospital
+
+# live
+
+  - heading: Patients in mechanical ventilation beds
+    cardType: chart
+    fullWidth: true
+    download:
+      - covidOccupiedMVBeds
+# not live - currently just presenting no of covid occupied beds as capacity not an issue
+      - suspectedCovidOccupiedMVBeds
+      - nonCovidOccupiedMVBeds
+      - unoccupiedMVBeds
+
+# live
+
+    tabs: 
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        fields:
+          - label: COVID-19 patients
+            value: covidOccupiedMVBeds
+            tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
+            type: line
+            colour: 0
+            rollingAverage: false
+# not live
+          - label: Suspected COVID-19 patients
+            value: suspectedCovidOccupiedMVBeds
+            tooltip: Daily number of patients suspected to be COVID-19 (but not tested positive) currently in mechanical ventilation beds (England only)
+            type: bar
+            colour: 3
+            rollingAverage: false
+
+          - label: Other patients
+            value: nonCovidOccupiedMVBeds
+            tooltip: Daily number of non-COVID-19 patients currently in mechanical ventilation beds
+            type: bar
+            colour: 6
+            rollingAverage: false
+
+          - label: Unoccupied beds
+            value: unoccupiedMVBeds
+            tooltip: Daily number of currently unoccupied mechanical ventilation beds
+            type: bar
+            colour: 7
+            rollingAverage: false
+
+# live
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by healthcare providers
+
+          - label: COVID-19 patients
+            value: covidOccupiedMVBeds
+            type: numeric
+            tooltip: Daily number of COVID-19 patients in mechanical ventilation beds
+
+# not live
+
+          - label: Suspected COVID-19 patients
+            value: suspectedCovidOccupiedMVBeds
+            type: numeric
+            tooltip: Daily number of patients suspected to be COVID-19 (but not tested positive) in mechanical ventilation beds (England only)
+            
+          - label: Other patients
+            value: nonCovidOccupiedMVBeds
+            type: numeric
+            tooltip: Daily number of non-COVID-19 patients in mechanical ventilation beds
+            
+          - label: Unoccupied beds
+            value: unoccupiedMVBeds
+            type: numeric
+            tooltip: Daily number of unoccupied mechanical ventilation beds
+
+          - label: Total beds
+            value: totalMVBeds
+            type: numeric
+            tooltip: Total number of mechanical ventilation beds
+
+# not live - Only really required before we had the localisation feature working, to present nation 
+#            figures as in the No 10 slides - try rates
+
+  - heading: Patients in mechanical ventilation beds, by nation
+    cardType: multiAreaStatic
+    fullWidth: true
+    download:
+      - covidOccupiedMVBeds
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10]
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: covidOccupiedMVBeds
+            tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
+            type: bar
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by healthcare providers
+
+          - label: daily
+            value: covidOccupiedMVBeds
+            type: numeric
+            tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
+
+# not live - Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
+#            We don't currently use the data from the DAs on this - they did agree to provide it when
+#            asked by the No 10 Press data team, but we have never finalised it
+
+  - heading: Patients discharged from hospital
+    cardType: chart
+    fullWidth: true
+    download:
+      - newDischarges
+      - cumDischarges
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Discharges
+            value: newDischarges
+            tooltip: Daily number of COVID-19 patients discharged from hospital
+            type: bar
+            colour: 0
+            fill: false
+            rollingAverage: false
+
+          - label: Discharges (7-day average)
+            value: newDischarges
+            tooltip: 7 day rolling average of the daily number of discharges
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
+
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Discharges
+            value: cumDischarges
+            tooltip: Cumulative total number of COVID-19 patients discharged from hospital
+            type: line
+            colour: 0
+            fill: true
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by healthcare providers
+
+          - label: Daily discharges
+            value: newDischarges
+            type: numeric
+            tooltip: Daily number of COVID-19 patients discharged from hospital
+
+          - label: Total discharges
+            value: cumDischarges
+            type: numeric
+            tooltip: Cumulative total number of COVID-19 patients discharged from hospital
+
+  - heading: Discharges by age
+    caption: Counts
+    cardType: ageSexBreakdown
+    fullWidth: false
+    download:
+      - cumAdmissionsByAge
+
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - cumDischargesByAge
+        fields:
+          - label: Discharges
+            value: cumDischargesByAgeValue
+            tooltip: Total number of COVID-19 patients discharged from hospital
+            type: bar
+            colour: 0
+      
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - cumDischargesByAge
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
+
+          - label: Discharges
+            value: cumDischargesByAgeValue
+            type: numeric
+            tooltip: Total number of COVID-19 patients discharged from hospital
+
+          - label: Discharge rate
+            value: cumDischargesByAgeRate
+            type: numeric
+            tooltip: COVID-19 discharges per 100,000 resident population
+
+  - heading: Discharge rates by age
+    caption: Rates per 100,000 resident population
+    cardType: ageSexBreakdown
+    fullWidth: false
+    download:
+      - cumDischargesByAge
+
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - cumDischargesByAge
+        fields:
+          - label: Discharge rate
+            value: cumDischargesByAgeRate
+            tooltip: COVID-19 discharges per 100,000 resident population
+            type: bar
+            colour: 0
+      
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - cumDischargesByAge
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
+
+          - label: Discharges
+            value: cumDischargesByAgeValue
+            type: numeric
+            tooltip: Total number of COVID-19 patients discharged from hospital
+
+          - label: Discharge rate
+            value: cumDischargesByAgeRate
+            type: numeric
+            tooltip: COVID-19 discharges per 100,000 resident population
+
+# not live - probably worth adding
+
+  # - heading: Healthcare data by area
+  #   cardType: table
+  #   fullWidth: true
+  #   download:
+  #     - TBC
+  

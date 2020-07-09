@@ -1,0 +1,953 @@
+headlineNumbers:
+  - caption: People tested positive
+    valueItems:
+      - label: Daily
+        value: newCasesByPublishDate
+        tooltip: Daily number of new people with a lab-confirmed positive test result reported on {date}
+
+      - label: Total
+        value: cumCasesByPublishDate
+        tooltip: Cumulative total number of people with a lab-confirmed positive test result reported up to {date}
+        
+# not live
+# People tested not currently being published
+
+  - caption: All people tested
+    valueItems:
+      - label: Daily
+        value: newPeopleTestedByPublishDate
+        tooltip: Daily number of new people tested (positive or negative) reported on {date}
+
+      - label: Total
+        value: cumPeopleTestedByPublishDate
+        tooltip: Cumulative total number of people tested (positive or negative) reported up to {date}
+
+# live - These two cards are separate versions of daily cases by specimen date and by publish date because
+#        functionality to make the radio button options sensitive to whether there are data or not has not
+#        yet been implemented
+
+cards:
+  - heading: Daily cases by specimen date
+    cardType: chart
+    fullWidth: true
+    download:
+      - newCasesBySpecimenDate
+      - cumCasesBySpecimenDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: overlay
+        fields:
+          - label: Number of cases
+            value: newCasesBySpecimenDate
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Cases (7-day average)
+            value: newCasesBySpecimenDate
+            tooltip: 7 day rolling average of the daily number of cases by specimen date
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage:
+              window: 7
+              clipEnd: 3 #no of days to exclude for incomplete data
+
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of cases
+            value: cumCasesBySpecimenDate
+            tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+            type: line
+            colour: 0
+            fill: true
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Specimen date
+            value: date
+            type: date
+            tooltip: Date the sample was taken from the person
+
+          - label: Daily cases
+            value: newCasesBySpecimenDate
+            type: numeric
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+
+          - label: Cumulative cases
+            value: cumCasesBySpecimenDate
+            type: numeric
+            tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+
+  - heading: Daily cases by date reported
+    cardType: chart
+    fullWidth: true
+    download:
+      - newCasesByPublishDate
+      - cumCasesByPublishDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: overlay
+        fields:
+          - label: Number of cases
+            value: newCasesByPublishDate
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
+            type: bar
+            colour: 0
+
+          - label: Cases (7-day average)
+            value: newCasesByPublishDate
+            tooltip: 7 day rolling average of the daily number of new positive cases reported
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
+
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of cases
+            value: cumCasesByPublishDate
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
+            type: line
+            colour: 0
+            fill: true
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by the Department of Health and Social Care
+
+          - label: Daily cases
+            value: newCasesByPublishDate
+            type: numeric
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
+
+          - label: Cumulative cases
+            value: cumCasesByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
+
+# not live - This card will replace the two separate versions above when the functionality to make the radio
+#            button options sensitive to whether there are data or not has been implemented
+
+  - heading: Daily cases
+    cardType: chart
+    fullWidth: true
+    options:
+      type: radio
+      heading: null
+      choices:
+        - Specimen date
+        - Date reported
+
+    Specimen date:
+      download:
+        - newCasesBySpecimenDate
+        - cumCasesBySpecimenDate
+
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: overlay
+          fields:
+            - label: Number of cases
+              value: newCasesBySpecimenDate
+              tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: Cases (7-day average)
+              value: newCasesBySpecimenDate
+              tooltip: 7 day rolling average of the daily number of cases by specimen date
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 3 #no of days to exclude for incomplete data
+
+        - heading: Cumulative
+          tabType: chart
+          fields:
+            - label: Number of cases
+              value: cumCasesBySpecimenDate
+              tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+              type: line
+              colour: 0
+              fill: true
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          fields:
+            - label: Specimen date
+              value: date
+              type: date
+              tooltip: Date the sample was taken from the person
+
+            - label: Daily cases
+              value: newCasesBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+
+            - label: Cumulative cases
+              value: cumCasesBySpecimenDate
+              type: numeric
+              tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+
+            - label: Daily people tested
+              value: newPeopleTestedBySpecimenDate
+              type: numeric
+              tooltip: Daily number of people tested (positive or negative) by date the sample was taken from the person
+
+            - label: Cumulative people tested
+              value: cumPeopleTestedBySpecimenDate
+              type: numeric
+              tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
+
+    Date reported:
+      download:
+        - newCasesByPublishDate
+        - cumCasesByPublishDate
+
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: overlay
+          fields:
+            - label: Number of cases
+              value: newCasesByPublishDate
+              tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
+              type: bar
+              colour: 0
+
+            - label: Cases (7-day average)
+              value: newCasesByPublishDate
+              tooltip: 7 day rolling average of the daily number of new positive cases reported
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage: true
+
+        - heading: Cumulative
+          tabType: chart
+          fields:
+            - label: Number of cases
+              value: cumCasesByPublishDate
+              tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
+              type: line
+              colour: 0
+              fill: true
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          fields:
+            - label: Date reported
+              value: date
+              type: date
+              tooltip: Date reported by the Department of Health and Social Care
+
+            - label: Daily cases
+              value: newCasesByPublishDate
+              type: numeric
+              tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
+
+            - label: Cumulative cases
+              value: cumCasesByPublishDate
+              type: numeric
+              tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
+
+            - label: Daily people tested
+              value: newPeopleTestedByPublishDate
+              type: numeric
+              tooltip: Daily number of new people tested (positive or negative) by date reported
+
+            - label: Cumulative people tested
+              value: cumPeopleTestedByPublishDate
+              type: numeric
+              tooltip: Cumulative total number of people tested (positive or negative) by date reported
+
+# not live - People tested not currently being published
+
+  - heading: Daily people tested
+    cardType: chart
+    fullWidth: true
+    options:
+      type: radio
+      heading: null
+      choices:
+        - Specimen date
+        - Reporting date
+
+    Specimen date:
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: overlay
+          fields:
+            - label: Number of people tested
+              value: newPeopleTestedBySpecimenDate
+              tooltip: Daily number of people tested (positive or negative) by date the sample was taken from the person
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: People tested (7-day average)
+              value: newPeopleTestedBySpecimenDate
+              tooltip: 7 day rolling average of the daily number of people tested by specimen date
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage: true
+
+        - heading: Cumulative
+          tabType: chart
+          fields:
+             
+            - label: Number of people tested
+              value: cumPeopleTestedBySpecimenDate
+              tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
+              type: line
+              colour: 0
+              fill: true
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          fields:
+            - label: Specimen date
+              value: date
+              type: date
+              tooltip: Date the sample was taken from the person
+
+            - label: Daily cases
+              value: newCasesBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+
+            - label: Cumulative cases
+              value: cumCasesBySpecimenDate
+              type: numeric
+              tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+
+            - label: Daily people tested
+              value: newPeopleTestedBySpecimenDate
+              type: numeric
+              tooltip: Daily number of people tested (positive or negative) by date the sample was taken from the person
+
+            - label: Cumulative people tested
+              value: cumPeopleTestedBySpecimenDate
+              type: numeric
+              tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
+
+    Reporting date:
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: overlay
+          fields:
+            - label: Number of people tested
+              value: newPeopleTestedByPublishDate
+              tooltip: Daily number of new people tested (positive or negative) by date reported
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: People tested (7-day average)
+              value: newPeopleTestedByPublishDate
+              tooltip: 7 day rolling average of the number of new people tested by date reported
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage: true
+
+        - heading: Cumulative
+          tabType: chart
+          fields:                
+            - label: Number of people tested
+              value: cumPeopleTestedByPublishDate
+              tooltip: Cumulative total number of people tested (positive or negative) by date reported
+              type: line
+              colour: 6
+              fill: true
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          fields:
+            - label: Date reported
+              value: date
+              type: date
+              tooltip: Date reported by the Department of Health and Social Care
+
+            - label: Daily cases
+              value: newCasesByPublishDate
+              type: numeric
+              tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
+
+            - label: Cumulative cases
+              value: cumCasesByPublishDate
+              type: numeric
+              tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
+
+            - label: Daily people tested
+              value: newPeopleTestedByPublishDate
+              type: numeric
+              tooltip: Daily number of new people tested (positive or negative) by date reported
+
+            - label: Cumulative people tested
+              value: cumPeopleTestedByPublishDate
+              type: numeric
+              tooltip: Cumulative total number of people tested (positive or negative) by date reported
+
+# not live - Not using this chart which shows which specimen dates the newly added cases refer to.  It's not useful now that
+#            case numbers are so low
+# {{ StartDevOnlyBlock }}
+  - heading: Newly reported and total daily cases by specimen date
+    cardType: chart
+    fullWidth: true
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: overlay
+        fields:
+          - label: Total cases
+            value: newCasesBySpecimenDate
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Change from previous day
+            value: changeInNewCasesBySpecimenDate
+            tooltip: Change in numbers of cases reported on {date} from previously reported
+            type: bar
+            colour: 9
+            rollingAverage: false
+
+          - label: Cases (7-day average)
+            value: newCasesBySpecimenDate
+            tooltip: 7 day rolling average of the daily number of cases by specimen date
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
+ 
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Specimen date
+            value: date
+            type: date
+            tooltip: Date the sample was taken from the person
+
+          - label: Daily cases
+            value: previouslyReportedNewCasesBySpecimenDate
+            type: numeric
+            tooltip: Number of new people with a lab-confirmed positive test result as reported on {date-1}
+
+          - label: Cumulative cases
+            value: changeInNewCasesBySpecimenDate
+            type: numeric
+            tooltip: Change in number of new people with a lab-confirmed positive test result reported on {date}
+# {{ EndDevOnlyBlock }}
+# live
+
+  - heading: Cases by age and sex
+    caption: Counts
+    cardType: ageSexBreakdown
+    fullWidth: false
+    download:
+      - femaleCasesValue # {{ DevOnly }}
+# not live - currently hiding rates pending correction of female populations
+      - femaleCasesRate # {{ DevOnly }}
+# live
+      - maleCasesValue # {{ DevOnly }}
+# not live
+      - maleCasesRate # {{ DevOnly }}
+# live
+
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value
+# not live
+          - rate
+# live
+        requiredMetrics:
+          - femaleCases
+          - maleCases
+        fields:
+          - label: Females
+            value: femaleCasesValue
+            tooltip: Total number of females with a lab-confirmed positive test result
+            type: bar
+            colour: 3
+            
+          - label: Males
+            value: maleCasesValue
+            tooltip: Total number of males with a lab-confirmed positive test result
+            type: bar
+            colour: 0
+      
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+# not live
+          - rate
+# live
+        requiredMetrics:
+          - femaleCases
+          - maleCases
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
+
+          - label: Females
+            value: femaleCasesValue
+            type: numeric
+            tooltip: Total number of females with a lab-confirmed positive test result
+# not live
+          - label: Female rate
+            value: femaleCasesRate
+            type: numeric
+            tooltip: Total number of female cases per 100,000 resident population
+# live
+          - label: Males
+            value: maleCasesValue
+            type: numeric
+            tooltip: Total number of males with a lab-confirmed positive test result
+# not live          
+          - label: Male rate 
+            value: maleCasesRate
+            type: numeric
+            tooltip: Total number of male cases per 100,000 resident population
+
+  - heading: Case rates by age and sex 
+    caption: Rates per 100,000 resident population
+    cardType: ageSexBreakdown
+    fullWidth: false
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - femaleCases
+          - maleCases
+        fields:
+          - label: Females
+            value: femaleCasesRate
+            tooltip: Total number of female cases per 100,000 resident population
+            type: bar
+            colour: 3
+            
+          - label: Males
+            value: maleCasesRate
+            tooltip: Total number of male cases per 100,000 resident population
+            type: bar
+            colour: 0
+      
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - femaleCases
+          - maleCases
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
+
+          - label: Female cases
+            value: femaleCasesValue
+            type: numeric
+            tooltip: Total number of females with a lab-confirmed positive test result
+
+          - label: Female rate
+            value: femaleCasesRate
+            type: numeric
+            tooltip: Total number of female cases per 100,000 resident population
+
+          - label: Male cases
+            value: maleCasesValue
+            type: numeric
+            tooltip: Total number of males with a lab-confirmed positive test result
+          
+          - label: Male rate
+            value: maleCasesRate
+            type: numeric
+            tooltip: Total number of female cases per 100,000 resident population
+
+# not live - Not currently publishing people tested
+
+  - heading: People tested, by age and sex
+    caption: Counts
+    cardType: ageSexBreakdown
+    fullWidth: false
+    download:
+      - femalePeopleTestedValue
+      - femalePeopleTestedRate
+      - malePeopleTestedValue
+      - malePeopleTestedRate
+
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - femalePeopleTested
+          - malePeopleTested
+        fields:
+          - label: Females
+            value: femalePeopleTestedValue
+            tooltip: Total number of females tested (positive or negative)
+            type: bar
+            colour: 3
+            
+          - label: Males
+            value: malePeopleTestedValue
+            tooltip: Total number of males tested (positive or negative)
+            type: bar
+            colour: 0
+      
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - femalePeopleTested
+          - malePeopleTested
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
+
+          - label: Females
+            value: femalePeopleTestedValue
+            type: numeric
+            tooltip: Total number of females tested (positive or negative)
+
+          - label: Female rate
+            value: femalePeopleTestedRate
+            type: numeric
+            tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+
+          - label: Males
+            value: malePeopleTestedValue
+            type: numeric
+            tooltip: Total number of males tested (positive or negative)
+          
+          - label: Male rate
+            value: malePeopleTestedRate
+            type: numeric
+            tooltip: Total number of males tested (positive or negative) per 100,000 resident population
+
+  - heading: People tested rates by age and sex
+    caption: Rates per 100,000 resident population
+    cardType: ageSexBreakdown
+    fullWidth: false
+    download:
+      - femalePeopleTestedValue
+      - femalePeopleTestedRate
+      - malePeopleTestedValue
+      - malePeopleTestedRate
+
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - femalePeopleTested
+          - malePeopleTested
+        fields:
+          - label: Females
+            value: femalePeopleTestedRate
+            tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+            type: bar
+            colour: 3
+            
+          - label: Males
+            value: malePeopleTestedRate
+            tooltip: Total number of males tested (positive or negative) per 100,000 resident population
+            type: bar
+            colour: 0
+      
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - femalePeopleTested
+          - malePeopleTested
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
+
+          - label: Female cases
+            value: femalePeopleTestedValue
+            type: numeric
+            tooltip: Total number of females tested (positive or negative)
+
+          - label: Female rate
+            value: femalePeopleTestedRate
+            type: numeric
+            tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+
+          - label: Male cases
+            value: malePeopleTestedValue
+            type: numeric
+            tooltip: Total number of males tested (positive or negative)
+          
+          - label: Male rate
+            value: malePeopleTestedRate
+            type: numeric
+            tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+
+# not live - scatterpolt not a valid cardType yet - not built
+
+  # - heading: Cases and testing rates
+  #   cardType: scatterStatic
+  #   fullWidth: false
+  #   userOptions: areaType # linked to map and table below?
+  #   x-label: People tested per 100,000 population
+  #   x-value: CumPeopleTestedByPublishDateRate
+  #   x-tooltip: Cumulative total number of people tested (positive or negative) per 100,000 resident population
+
+  #   y-label: Cases per 100,000 population
+  #   y-value: CumCasesByPublishDateRate
+  #   y-tooltip: Cumulative total number of new people with a lab-confirmed positive test result per 100,000 resident population
+
+  # - heading: Cases rates by area
+  #   cardType: mapStatic
+  #   fullWidth: false
+  #   userOptions: areaType # linked to scatter chart above and table below?
+  #   value: cumCasesByPublishDateRate
+  #   tooltip: areaName
+
+# live
+
+  - heading: Cumulative total cases by area # Cases by area when abstract enabled
+    cardType: simpleTableStatic
+    fullWidth: true
+#    abstract: >
+#      Total numbers of cases over the whole pandemic, and rates per 100,000 resident population 
+    download:
+      - cumCasesByPublishDate
+# not live
+      - cumCasesByPublishDateRate
+#live 
+    tabs:
+      - heading: Nation
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        latestBy: cumCasesByPublishDate
+        sortBy: areaName
+
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Cases
+            value: cumCasesByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
+# not live
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
+# live      
+      - heading: Region
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: region
+        latestBy: cumCasesByPublishDate
+        sortBy: areaName
+
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Cases
+            value: cumCasesByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
+# not live
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
+# live
+      - heading: Upper tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: utla
+        latestBy: cumCasesByPublishDate
+        sortBy: areaName
+        searchBy: areaName
+
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Cases
+            value: cumCasesByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
+# not live
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
+# live
+      - heading: Lower tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: ltla
+        latestBy: cumCasesByPublishDate
+        sortBy: areaName
+        searchBy: areaName
+
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Cases
+            value: cumCasesByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
+# not live
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
+
+# not live - needs writing and also applying to every other tab.  This is just an example
+
+      - heading: About
+        tabType: metadata
+        filename: metadataTabs/cases/cases-and-case-rates-by-area.md
+
+# live
+
+  - heading: Cases by date reported, by nation
+    cardType: multiAreaStatic
+    fullWidth: true
+    download:
+      - newCasesByPublishDate
+      - cumCasesByPublishDate
+      
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10]
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: newCasesByPublishDate
+            tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
+            type: bar
+            rollingAverage: false
+
+      - heading: Cumulative
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10]
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: cumCasesByPublishDateRate # count not rate on live
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
+            type: line # bar not line on live
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by the Department of Health and Social Care
+
+          - label: daily
+            value: newCasesByPublishDate
+            type: numeric
+            tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
+
+          - label: total
+            value: cumCasesByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported

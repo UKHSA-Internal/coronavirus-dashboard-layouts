@@ -1,0 +1,142 @@
+summary:
+  - heading: Testing
+    fields:
+      - caption: Tests processed
+        chart:
+          value: newTestsByPublishDate
+          type: line
+          colour: 0
+          fill: true
+          rollingAverage: true
+          display: true
+        
+        valueItems: 
+          - label: Daily
+            value: newTestsByPublishDate
+            tooltip: Daily number of tests processed, reported on {date} - chart shows 7-day rolling average
+          
+          - label: Total
+            value: cumTestsByPublishDate
+            tooltip: Cumulative total number of tests processed, reported on {date}
+
+      - caption: Testing capacity
+        chart:
+          value: plannedCapacityByPublishDate
+          type: line
+          colour: 6
+          fill: true
+          rollingAverage: false
+          display: true
+        
+        valueItems: 
+          - label: Daily
+            value: plannedCapacityByPublishDate
+            tooltip: Estimated total lab capacity on {date}
+
+  - heading: Cases
+    fields:
+      - caption: People tested positive
+        chart:
+          value: newCasesByPublishDate
+          type: line
+          colour: 0
+          fill: true
+          rollingAverage: true
+          display: true
+        
+        valueItems: 
+          - label: Daily
+            value: newCasesByPublishDate
+            tooltip: Daily number of new people with a lab-confirmed positive test result reported on {date} - chart shows 7-day rolling average
+
+          - label: Total
+            value: cumCasesByPublishDate
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result reported on {date}
+
+# not live - Not currently publishing people tested
+
+      - caption: All people tested
+        chart:
+          value: newPeopleTestedByPublishDate
+          type: line
+          colour: 6
+          fill: true
+          rollingAverage: true
+          display: true
+        
+        valueItems: 
+          - label: Daily
+            value: newPeopleTestedByPublishDate
+            tooltip: Daily number of new people tested (positive or negative) reported on {date} - chart shows 7-day rolling average
+
+          - label: Total
+            value: cumPeopleTestedByPublishDate
+            tooltip: Cumulative total number of people tested (positive or negative) reported on {date}
+
+# live
+
+  - heading: Healthcare
+    fields:
+      - caption: Patients in hospital
+        chart:
+          value: hospitalCases
+          type: line
+          colour: 6
+          fill: true
+          rollingAverage: false
+          display: true
+        
+        valueItems: 
+          - value: hospitalCases
+            tooltip: Number of COVID-19 patients currently in hospital reported on {date}
+
+      - caption: Patients in ventilator beds
+        chart:
+          value: covidOccupiedMVBeds
+          type: line
+          colour: 0
+          fill: true
+          rollingAverage: false
+          display: true
+        
+        valueItems: 
+          - value: covidOccupiedMVBeds
+            tooltip: Number of COVID-19 patients currently in mechanical ventilation beds reported on {date}
+
+      - caption: Patients admitted
+        chart:
+          value: newAdmissions
+          type: line
+          colour: 3
+          fill: true
+          rollingAverage: true
+          display: true
+        
+        valueItems: 
+          - label: Daily
+            tooltip: Daily number of COVID-19 patients admitted to hospital reported on {date} - chart shows 7-day rolling average
+            value: newAdmissions
+
+          - label: Total
+            tooltip: Cumulative total number of COVID-19 patients admitted to hospital reported on {date}
+            value: cumAdmissions
+
+  - heading: Deaths
+    fields:
+      - caption: Number of deaths
+        chart:
+          value: newDeathsByPublishDate
+          type: line
+          colour: 0
+          fill: true
+          rollingAverage: true
+          display: true
+        
+        valueItems: 
+          - label: Daily
+            tooltip: Daily number of deaths of people who have had a positive test result, reported on {date} - chart shows 7-day rolling average
+            value: newDeathsByPublishDate
+
+          - label: Total
+            tooltip: Total number of deaths of people who have had a positive test result, reported up to {date}
+            value: cumDeathsByPublishDate

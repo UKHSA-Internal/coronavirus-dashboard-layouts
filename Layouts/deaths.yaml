@@ -1,0 +1,448 @@
+headlineNumbers:
+  - caption: Number of deaths
+    valueItems:
+      - label: Daily
+        value: newDeathsByPublishDate
+        tooltip: Daily number of deaths of people who have had a positive test result for COVID-19, reported on {date}
+        
+      - label: Total
+        value: cumDeathsByPublishDate
+        tooltip: Total number of deaths of people who have had a positive test result for COVID-19, reported up to {date}
+
+cards:
+  - heading: Daily deaths by date of death
+    cardType: chart
+    fullWidth: true
+    download:
+      - newDeathsByDeathDate
+      - cumDeathsByDeathDate
+    tabs: 
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Number of deaths
+            value: newDeathsByDeathDate
+            tooltip: Daily number of deaths by date of death
+            type: bar
+            colour: 0
+
+          - label: Deaths (7-day average)
+            value: newDeathsByDeathDate
+            tooltip: 7 day rolling average of the daily number of deaths
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
+                  
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of deaths
+            value: cumDeathsByDeathDate
+            tooltip: Cumulative total number of deaths by date of death
+            type: line
+            colour: 0
+            fill: true
+            rollingAverage: false
+                  
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date of death
+            value: date
+            type: date
+            tooltip: Date on which the death occurred
+
+          - label: Daily deaths
+            value: newDeathsByDeathDate
+            type: numeric
+            tooltip: Daily number of deaths
+
+          - label: Cumulative deaths
+            value: cumDeathsByDeathDate
+            type: numeric
+            tooltip: Cumulative total number of deaths
+
+  - heading: Daily deaths by date reported
+    cardType: chart
+    fullWidth: true
+    download:
+      - newDeathsByPublishDate
+      - cumDeathsByPublishDate
+    tabs: 
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Number of deaths
+            value: newDeathsByPublishDate
+            tooltip: Daily number of deaths by date reported
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Deaths (7-day average)
+            value: newDeathsByPublishDate
+            tooltip: 7 day rolling average of the daily number of deaths reported
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
+            
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of deaths
+            value: cumDeathsByPublishDate
+            tooltip: Cumulative total number of deaths by date reported
+            type: line
+            colour: 0
+            fill: true
+            rollingAverage: false
+            
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by the Department of Health and Social Care
+
+          - label: Daily deaths
+            value: newDeathsByPublishDate
+            type: numeric
+            tooltip: Daily number of deaths by date reported
+
+          - label: Cumulative deaths
+            value: cumDeathsByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of deaths by date reported
+
+  - heading: Deaths by age and sex
+    caption: Counts
+    cardType: ageSexBreakdown
+    fullWidth: false
+    download:
+      - femaleDeaths
+      - maleDeaths
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value
+# not live - pending correcting female populations
+          - rate
+#live
+        requiredMetrics:
+          - femaleDeaths
+          - maleDeaths
+        fields:
+          - label: Females
+            value: femaleDeathsValue
+            tooltip: Total number of deaths in females with a confirmed positive test
+            type: bar
+            colour: 3
+            
+          - label: Males
+            value: maleDeathsValue
+            tooltip: Total number of deaths in males with a confirmed positive test
+            type: bar
+            colour: 0
+      
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+# not live
+          - rate
+# live
+        requiredMetrics:
+          - femaleDeaths
+          - maleDeaths
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
+
+          - label: Females
+            value: femaleDeathsValue
+            type: numeric
+            tooltip: Total number of deaths in females with a confirmed positive test
+# not live
+          - label: Female rate
+            value: femaleDeathsRate
+            type: numeric
+            tooltip: Total number of female deaths per 100,000 resident population
+# live
+          - label: Males
+            value: maleDeathsValue
+            type: numeric
+            tooltip: Total number of deaths in males with a confirmed positive test
+# not live          
+          - label: Male rate
+            value: maleDeathsRate
+            type: numeric
+            tooltip: Total number of male deaths per 100,000 resident population
+# not live - 
+  - heading: Death rates by age and sex
+    caption: Rates per 100,000 resident population
+    cardType: ageSexBreakdown
+    fullWidth: false
+    download:
+      - femaleDeaths
+      - maleDeaths
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - femaleDeaths
+          - maleDeaths
+        fields:
+          - label: Females
+            value: femaleDeathsRate
+            tooltip: Total number of female deaths per 100,000 resident population
+            type: bar
+            colour: 3
+            
+          - label: Males
+            value: maleDeathsRate
+            tooltip: Total number of male deaths per 100,000 resident population
+            type: bar
+            colour: 0
+      
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+        requiredMetrics:
+          - femaleDeaths
+          - maleDeaths
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
+
+          - label: Female Deaths
+            value: femaleDeathsValue
+            type: numeric
+            tooltip: Total number of deaths in females with a confirmed positive test
+
+          - label: Female rate
+            value: femaleDeathsRate
+            type: numeric
+            tooltip: Total number of female deaths per 100,000 resident population
+
+          - label: Male Deaths
+            value: maleDeathsValue
+            type: numeric
+            tooltip: Total number of deaths in females with a confirmed positive test
+          
+          - label: Male rate
+            value: maleDeathsRate
+            type: numeric
+            tooltip: Total number of female deaths per 100,000 resident population
+# live
+  - heading: Deaths by area # Total cumulative deaths by area on live pending implementation of abstract
+    cardType: simpleTableStatic
+    fullWidth: true
+#    abstract: >
+#      Total numbers of deaths over the whole pandemic, and rates per 100,000 resident population 
+    download:
+      - cumDeathsByPublishDate
+# not live
+      - cumDeathsByPublishDateRate
+# live 
+    tabs:
+      - heading: Nation
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        latestBy: cumDeathsByPublishDate
+        sortBy: areaName
+
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumDeathsByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
+# not live
+          - label: Rate
+            value: cumDeathsByPublishDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+# live      
+      - heading: Region
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: region
+        latestBy: cumDeathsByPublishDate
+        sortBy: areaName
+
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumDeathsByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
+# not live
+          - label: Rate
+            value: cumDeathsByPublishDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+# live      
+      - heading: Upper tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: utla
+        latestBy: cumDeathsByPublishDate
+        sortBy: areaName
+
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumDeathsByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
+# not live
+          - label: Rate
+            value: cumDeathsByPublishDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+# live      
+      - heading: Lower tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: ltla
+        latestBy: cumDeathsByPublishDate
+        sortBy: areaName
+
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumDeathsByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
+# not live
+          - label: Rate
+            value: cumDeathsByPublishDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
+# not live - Markdown needs writing and then implementing similar across site
+
+      - heading: About
+        tabType: metadata
+        filename: metadataTabs/deaths/deaths-and-death-rates-by-area.md
+
+# live
+
+  - heading: Deaths by date reported, by nation
+    cardType: multiAreaStatic
+    fullWidth: true
+    download:
+      - newDeathsByPublishDate
+      - cumDeathsByPublishDate
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10]
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: newDeathsByPublishDate
+            tooltip: Daily number of new deaths of people resident in each nation, by date reported
+            type: bar
+            rollingAverage: false
+
+      - heading: Cumulative
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10]
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: cumDeathsByPublishDate
+            tooltip: Cumulative total number of new deaths of people resident in each nation, by date reported
+            type: bar
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by the Department of Health and Social Care
+
+          - label: daily
+            value: newDeathsByPublishDate
+            type: numeric
+            tooltip: Daily number of new deaths of people resident in each nation, by date reported
+
+          - label: total
+            value: cumDeathsByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of new deaths of people resident in each nation, by date reported
+
+# not live - scatter chart is not a valid card type yet.  Intention is to join this up with a map and the table of area data, as in old dashboard
+
+  # - heading: Deaths and cases rates
+  #   cardType: scatterChart
+  #   fullWidth: false
+  #   userOptions: areaType # linked to map and table below?
+  #   x-label: Cases per 100,000 population
+  #   x-value: CumCasesByPublishDateRate
+  #   x-tooltip: Cumulative total number of new people with a lab-confirmed positive test result per 100,000 resident population
+
+  #   y-label: Deaths per 100,000 population
+  #   y-value: CumDeathsByPublishDateRate
+  #   y-tooltip: Cumulative total number of deaths per 100,000 resident population
