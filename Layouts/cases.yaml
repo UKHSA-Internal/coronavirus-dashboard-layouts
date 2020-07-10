@@ -9,7 +9,7 @@ headlineNumbers:
         value: cumCasesByPublishDate
         tooltip: Cumulative total number of people with a lab-confirmed positive test result reported up to {date}
         
-# not live
+# {{ StartDevOnlyBlock }}
 # People tested not currently being published
 
   - caption: All people tested
@@ -22,9 +22,10 @@ headlineNumbers:
         value: cumPeopleTestedByPublishDate
         tooltip: Cumulative total number of people tested (positive or negative) reported up to {date}
 
-# live - These two cards are separate versions of daily cases by specimen date and by publish date because
-#        functionality to make the radio button options sensitive to whether there are data or not has not
-#        yet been implemented
+# {{ EndDevOnlyBlock }}
+# These two cards are separate versions of daily cases by specimen date and by publish date because
+# functionality to make the radio button options sensitive to whether there are data or not has not
+# yet been implemented
 
 cards:
   - heading: Daily cases by specimen date
@@ -140,8 +141,9 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
 
-# not live - This card will replace the two separate versions above when the functionality to make the radio
-#            button options sensitive to whether there are data or not has been implemented
+# {{ StartDevOnlyBlock }}
+# This card will replace the two separate versions above when the functionality to make the radio
+# button options sensitive to whether there are data or not has been implemented
 
   - heading: Daily cases
     cardType: chart
@@ -178,7 +180,7 @@ cards:
               fill: false
               rollingAverage:
                 window: 7
-                clipEnd: 3 #no of days to exclude for incomplete data
+                clipEnd: 3 # no of days to exclude for incomplete data NOT WORKING
 
         - heading: Cumulative
           tabType: chart
@@ -282,7 +284,8 @@ cards:
               type: numeric
               tooltip: Cumulative total number of people tested (positive or negative) by date reported
 
-# not live - People tested not currently being published
+# not live
+# People tested not currently being published
 
   - heading: Daily people tested
     cardType: chart
@@ -415,9 +418,10 @@ cards:
               type: numeric
               tooltip: Cumulative total number of people tested (positive or negative) by date reported
 
-# not live - Not using this chart which shows which specimen dates the newly added cases refer to.  It's not useful now that
-#            case numbers are so low
-# {{ StartDevOnlyBlock }}
+# not live
+# Not using this chart which shows which specimen dates the newly added cases refer to.  It's not useful now that
+# case numbers are so low
+
   - heading: Newly reported and total daily cases by specimen date
     cardType: chart
     fullWidth: true
@@ -465,22 +469,18 @@ cards:
             value: changeInNewCasesBySpecimenDate
             type: numeric
             tooltip: Change in number of new people with a lab-confirmed positive test result reported on {date}
+
 # {{ EndDevOnlyBlock }}
-# live
 
   - heading: Cases by age and sex
     caption: Counts
     cardType: ageSexBreakdown
     fullWidth: false
     download:
-      - femaleCasesValue # {{ DevOnly }}
-# not live - currently hiding rates pending correction of female populations
-      - femaleCasesRate # {{ DevOnly }}
-# live
-      - maleCasesValue # {{ DevOnly }}
-# not live
+      - femaleCasesValue 
+      - femaleCasesRate # {{ DevOnly }} currently hiding rates pending correction of female populations
+      - maleCasesValue
       - maleCasesRate # {{ DevOnly }}
-# live
 
     tabs: 
       - heading: Chart
@@ -489,9 +489,8 @@ cards:
         groupKey: age
         groupValues: 
           - value
-# not live
-          - rate
-# live
+          - rate # {{ DevOnly }}
+
         requiredMetrics:
           - femaleCases
           - maleCases
@@ -513,9 +512,8 @@ cards:
         groupKey: age
         groupValues: 
           - value
-# not live
-          - rate
-# live
+          - rate # {{ DevOnly }}
+
         requiredMetrics:
           - femaleCases
           - maleCases
@@ -529,21 +527,24 @@ cards:
             value: femaleCasesValue
             type: numeric
             tooltip: Total number of females with a lab-confirmed positive test result
-# not live
-          - label: Female rate
-            value: femaleCasesRate
-            type: numeric
-            tooltip: Total number of female cases per 100,000 resident population
-# live
+
+          - label: Female rate # {{ DevOnly }}
+            value: femaleCasesRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Total number of female cases per 100,000 resident population # {{ DevOnly }}
+
           - label: Males
             value: maleCasesValue
             type: numeric
             tooltip: Total number of males with a lab-confirmed positive test result
-# not live          
-          - label: Male rate 
-            value: maleCasesRate
-            type: numeric
-            tooltip: Total number of male cases per 100,000 resident population
+          
+          - label: Male rate  # {{ DevOnly }}
+            value: maleCasesRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Total number of male cases per 100,000 resident population # {{ DevOnly }}
+
+# {{ StartDevOnlyBlock }}
+# Rates currently hidden pending check on female age-specific populations
 
   - heading: Case rates by age and sex 
     caption: Rates per 100,000 resident population
@@ -608,7 +609,8 @@ cards:
             type: numeric
             tooltip: Total number of female cases per 100,000 resident population
 
-# not live - Not currently publishing people tested
+# not live
+# Not currently publishing people tested
 
   - heading: People tested, by age and sex
     caption: Counts
@@ -748,7 +750,8 @@ cards:
             type: numeric
             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
 
-# not live - scatterpolt not a valid cardType yet - not built
+# not live
+# Scatterpolt not a valid cardType yet - not built
 
   # - heading: Cases and testing rates
   #   cardType: scatterStatic
@@ -769,7 +772,7 @@ cards:
   #   value: cumCasesByPublishDateRate
   #   tooltip: areaName
 
-# live
+# {{ EndDevOnlyBlock }}
 
   - heading: Cumulative total cases by area # Cases by area when abstract enabled
     cardType: simpleTableStatic
@@ -778,9 +781,8 @@ cards:
 #      Total numbers of cases over the whole pandemic, and rates per 100,000 resident population 
     download:
       - cumCasesByPublishDate
-# not live
-      - cumCasesByPublishDateRate
-#live 
+      - cumCasesByPublishDateRate # {{ DevOnly }}
+
     tabs:
       - heading: Nation
         tabType: table
@@ -801,12 +803,12 @@ cards:
             value: cumCasesByPublishDate
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
-# not live
-          - label: Rate
-            value: cumCasesByPublishDateRate
-            type: numeric
-            tooltip: Rate of total confirmed cases per 100,000 resident population
-# live      
+
+          - label: Rate # {{ DevOnly }}
+            value: cumCasesByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+
       - heading: Region
         tabType: table
         params:
@@ -826,12 +828,12 @@ cards:
             value: cumCasesByPublishDate
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
-# not live
-          - label: Rate
-            value: cumCasesByPublishDateRate
-            type: numeric
-            tooltip: Rate of total confirmed cases per 100,000 resident population
-# live
+
+          - label: Rate # {{ DevOnly }}
+            value: cumCasesByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+
       - heading: Upper tier LA
         tabType: table
         params:
@@ -852,12 +854,12 @@ cards:
             value: cumCasesByPublishDate
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
-# not live
-          - label: Rate
-            value: cumCasesByPublishDateRate
-            type: numeric
-            tooltip: Rate of total confirmed cases per 100,000 resident population
-# live
+
+          - label: Rate # {{ DevOnly }}
+            value: cumCasesByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+
       - heading: Lower tier LA
         tabType: table
         params:
@@ -878,19 +880,15 @@ cards:
             value: cumCasesByPublishDate
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
-# not live
-          - label: Rate
-            value: cumCasesByPublishDateRate
-            type: numeric
-            tooltip: Rate of total confirmed cases per 100,000 resident population
 
-# not live - needs writing and also applying to every other tab.  This is just an example
+          - label: Rate # {{ DevOnly }}
+            value: cumCasesByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
 
-      - heading: About
-        tabType: metadata
-        filename: metadataTabs/cases/cases-and-case-rates-by-area.md
-
-# live
+      - heading: About # {{ DevOnly }} md needs writing and also applying to every other tab.  This is just an example
+        tabType: metadata # {{ DevOnly }}
+        filename: metadataTabs/cases/cases-and-case-rates-by-area.md # {{ DevOnly }}
 
   - heading: Cases by date reported, by nation
     cardType: multiAreaStatic

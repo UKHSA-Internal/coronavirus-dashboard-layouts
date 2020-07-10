@@ -9,7 +9,8 @@ headlineNumbers:
         value: cumTestsByPublishDate
         tooltip: Total number of tests processed, reported up to {date}
 
-# not live - Not currently publishing people tested
+# {{ StartDevOnlyBlock }}
+# Not currently publishing people tested
 
   - caption: All people tested
     valueItems:
@@ -21,7 +22,7 @@ headlineNumbers:
         value: cumPeopleTestedByPublishDate
         tooltip: Total number of people tested reported up to {date}
 
-# live
+# {{ EndDevOnlyBlock }}
 
   - caption: Testing capacity
     valueItems:
@@ -32,11 +33,8 @@ cards:
   - heading: Testing and capacity
     cardType: chart
     fullWidth: true
-# not live - needs writing: this is just an example
-    abstract: >
+    abstract: > # {{ DevOnly }} needs writing: this is just an example
       We can put an explanatory paragraph in here with {links to modals:newTestsByPublishDate}
-
-# live
 
     download:
       - plannedCapacityByPublishDate
@@ -203,7 +201,8 @@ cards:
             type: numeric
             tooltip: Cumulative total number of tests processed by date reported
 
-# not live - Not currently publishing people tested
+# {{ StartDevOnlyBlock }}
+# Not currently publishing people tested
 
   - heading: People tested
     cardType: chart
@@ -260,7 +259,7 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people tested by date reported
 
-#live
+# {{ EndDevOnlyBlock }}
 
   - heading: Pillar 1 (NHS and, in England, PHE) tests by nation
     cardType: multiAreaStatic

@@ -53,7 +53,8 @@ summary:
             value: cumCasesByPublishDate
             tooltip: Cumulative total number of people with a lab-confirmed positive test result reported on {date}
 
-# not live - Not currently publishing people tested
+# {{ StartDevOnlyBlock }}
+# Not currently publishing people tested
 
       - caption: All people tested
         chart:
@@ -73,7 +74,7 @@ summary:
             value: cumPeopleTestedByPublishDate
             tooltip: Cumulative total number of people tested (positive or negative) reported on {date}
 
-# live
+# {{ EndDevOnlyBlock }}
 
   - heading: Healthcare
     fields:

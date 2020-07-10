@@ -9,9 +9,10 @@ headlineNumbers:
         value: cumAdmissions
         tooltip: Cumulative total number of COVID-19 patients admitted to hospital, reported on {date}
 
-# not live - Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
-#            We don't currently use the data from the DAs on this - they did agree to provide it when
-#            asked by the No 10 Press data team, but we have never finalised it
+# {{ StartDevOnlyBlock }}
+# Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
+# We don't currently pull in the data from the DAs on this - they did agree to provide it when
+# asked by the No 10 Press data team, but we have never finalised it
 
   - caption: Patients discharged
     valueItems:
@@ -23,7 +24,7 @@ headlineNumbers:
         value: cumDischarges
         tooltip: Cumulative total number of COVID-19 discharged home from to hospital, reported on {date}
 
-# live
+# {{ EndDevOnlyBlock }}
 
   - caption: Patients in hospital
     valueItems:
@@ -190,8 +191,9 @@ cards:
             type: numeric
             tooltip: COVID-19 admissions per 100,000 resident population
 
-# not live - Only really required before we had the localisation feature working, to present nation 
-#            figures as in the No 10 slides - try rates
+# {{ StartDevOnlyBlock }}
+# Only really required before we had the localisation feature working, to present nation 
+# figures as in the No 10 slides - try rates
 
   - heading: Patients admitted to hospital, by nation
     cardType: multiAreaStatic
@@ -252,7 +254,7 @@ cards:
             type: numeric
             tooltip: Cumulative total number of COVID-19 patients admitted to hospital
 
-# live 
+# {{ EndDevOnlyBlock }}
 
   - heading: Patients in hospital
     cardType: chart
@@ -284,9 +286,10 @@ cards:
             value: hospitalCases
             type: numeric
             tooltip: Number of COVID-19 patients currently in hospital
-            
-# not live - Only really required before we had the localisation feature working, to present nation 
-#            figures as in the No 10 slides - try rates
+
+# {{ StartDevOnlyBlock }}            
+# Only really required before we had the localisation feature working, to present nation 
+# figures as in the No 10 slides - try rates
 
   - heading: Patients in hospital
     cardType: multiAreaStatic
@@ -368,19 +371,16 @@ cards:
               type: numeric
               tooltip: Number of COVID-19 patients currently in hospital
 
-# live
+# {{ EndDevOnlyBlock }}
 
   - heading: Patients in mechanical ventilation beds
     cardType: chart
     fullWidth: true
     download:
       - covidOccupiedMVBeds
-# not live - currently just presenting no of covid occupied beds as capacity not an issue
-      - suspectedCovidOccupiedMVBeds
-      - nonCovidOccupiedMVBeds
-      - unoccupiedMVBeds
-
-# live
+      - suspectedCovidOccupiedMVBeds # {{ DevOnly }}
+      - nonCovidOccupiedMVBeds # {{ DevOnly }}
+      - unoccupiedMVBeds # {{ DevOnly }}
 
     tabs: 
       - heading: Daily
@@ -393,7 +393,9 @@ cards:
             type: line
             colour: 0
             rollingAverage: false
-# not live
+
+# {{ StartDevOnlyBlock }}
+
           - label: Suspected COVID-19 patients
             value: suspectedCovidOccupiedMVBeds
             tooltip: Daily number of patients suspected to be COVID-19 (but not tested positive) currently in mechanical ventilation beds (England only)
@@ -415,7 +417,7 @@ cards:
             colour: 7
             rollingAverage: false
 
-# live
+# {{ EndDevOnlyBlock }}
 
       - heading: Data
         tabType: table
@@ -430,7 +432,7 @@ cards:
             type: numeric
             tooltip: Daily number of COVID-19 patients in mechanical ventilation beds
 
-# not live
+# {{ StartDevOnlyBlock }}
 
           - label: Suspected COVID-19 patients
             value: suspectedCovidOccupiedMVBeds
@@ -452,8 +454,9 @@ cards:
             type: numeric
             tooltip: Total number of mechanical ventilation beds
 
-# not live - Only really required before we had the localisation feature working, to present nation 
-#            figures as in the No 10 slides - try rates
+# not live
+# Only really required before we had the localisation feature working, to present nation 
+# figures as in the No 10 slides - try rates
 
   - heading: Patients in mechanical ventilation beds, by nation
     cardType: multiAreaStatic
@@ -493,9 +496,10 @@ cards:
             type: numeric
             tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
 
-# not live - Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
-#            We don't currently use the data from the DAs on this - they did agree to provide it when
-#            asked by the No 10 Press data team, but we have never finalised it
+# not live
+# Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
+# We don't currently pull in the data from the DAs on this - they did agree to provide it when
+# asked by the No 10 Press data team, but we have never finalised it
 
   - heading: Patients discharged from hospital
     cardType: chart

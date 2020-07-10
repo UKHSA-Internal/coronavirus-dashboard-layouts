@@ -132,10 +132,9 @@ cards:
         barType: group
         groupKey: age
         groupValues: 
-          - value
-# not live - pending correcting female populations
-          - rate
-#live
+          - value 
+          - rate # {{ DevOnly }} pending correcting female populations
+
         requiredMetrics:
           - femaleDeaths
           - maleDeaths
@@ -157,9 +156,7 @@ cards:
         groupKey: age
         groupValues: 
           - value
-# not live
-          - rate
-# live
+          - rate # {{ DevOnly }}
         requiredMetrics:
           - femaleDeaths
           - maleDeaths
@@ -173,22 +170,25 @@ cards:
             value: femaleDeathsValue
             type: numeric
             tooltip: Total number of deaths in females with a confirmed positive test
-# not live
-          - label: Female rate
-            value: femaleDeathsRate
-            type: numeric
-            tooltip: Total number of female deaths per 100,000 resident population
-# live
+
+          - label: Female rate # {{ DevOnly }}
+            value: femaleDeathsRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Total number of female deaths per 100,000 resident population # {{ DevOnly }}
+
           - label: Males
             value: maleDeathsValue
             type: numeric
             tooltip: Total number of deaths in males with a confirmed positive test
-# not live          
-          - label: Male rate
-            value: maleDeathsRate
-            type: numeric
-            tooltip: Total number of male deaths per 100,000 resident population
-# not live - 
+         
+          - label: Male rate # {{ DevOnly }}
+            value: maleDeathsRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Total number of male deaths per 100,000 resident population # {{ DevOnly }}
+
+# {{ StartDevOnlyBlock}}
+# Hiding rates while female populations are sorted
+
   - heading: Death rates by age and sex
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
@@ -254,7 +254,9 @@ cards:
             value: maleDeathsRate
             type: numeric
             tooltip: Total number of female deaths per 100,000 resident population
-# live
+
+# {{ EndDevOnlyBlock}}
+
   - heading: Deaths by area # Total cumulative deaths by area on live pending implementation of abstract
     cardType: simpleTableStatic
     fullWidth: true
@@ -262,9 +264,8 @@ cards:
 #      Total numbers of deaths over the whole pandemic, and rates per 100,000 resident population 
     download:
       - cumDeathsByPublishDate
-# not live
-      - cumDeathsByPublishDateRate
-# live 
+      - cumDeathsByPublishDateRate # {{ DevOnly }}
+
     tabs:
       - heading: Nation
         tabType: table
@@ -285,12 +286,12 @@ cards:
             value: cumDeathsByPublishDate
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
-# not live
-          - label: Rate
-            value: cumDeathsByPublishDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-# live      
+
+          - label: Rate # {{ DevOnly }}
+            value: cumDeathsByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Death rate per 100,000 resident population # {{ DevOnly }}
+      
       - heading: Region
         tabType: table
         params:
@@ -310,12 +311,12 @@ cards:
             value: cumDeathsByPublishDate
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
-# not live
-          - label: Rate
-            value: cumDeathsByPublishDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-# live      
+
+          - label: Rate # {{ DevOnly }}
+            value: cumDeathsByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Death rate per 100,000 resident population # {{ DevOnly }}
+     
       - heading: Upper tier LA
         tabType: table
         params:
@@ -335,12 +336,12 @@ cards:
             value: cumDeathsByPublishDate
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
-# not live
-          - label: Rate
-            value: cumDeathsByPublishDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-# live      
+
+          - label: Rate # {{ DevOnly }}
+            value: cumDeathsByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Death rate per 100,000 resident population # {{ DevOnly }}
+  
       - heading: Lower tier LA
         tabType: table
         params:
@@ -360,19 +361,15 @@ cards:
             value: cumDeathsByPublishDate
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
-# not live
-          - label: Rate
-            value: cumDeathsByPublishDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
 
-# not live - Markdown needs writing and then implementing similar across site
+          - label: Rate # {{ DevOnly }}
+            value: cumDeathsByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Death rate per 100,000 resident population # {{ DevOnly }}
 
-      - heading: About
-        tabType: metadata
-        filename: metadataTabs/deaths/deaths-and-death-rates-by-area.md
-
-# live
+      - heading: About # {{ DevOnly }} Markdown needs writing and then implementing similar across site
+        tabType: metadata # {{ DevOnly }}
+        filename: metadataTabs/deaths/deaths-and-death-rates-by-area.md # {{ DevOnly }}
 
   - heading: Deaths by date reported, by nation
     cardType: multiAreaStatic
@@ -433,7 +430,8 @@ cards:
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each nation, by date reported
 
-# not live - scatter chart is not a valid card type yet.  Intention is to join this up with a map and the table of area data, as in old dashboard
+# {{ StartDevOnlyBlock }}
+# Scatter chart is not a valid card type yet.  Intention is to join this up with a map and the table of area data, as in old dashboard
 
   # - heading: Deaths and cases rates
   #   cardType: scatterChart
@@ -446,3 +444,5 @@ cards:
   #   y-label: Deaths per 100,000 population
   #   y-value: CumDeathsByPublishDateRate
   #   y-tooltip: Cumulative total number of deaths per 100,000 resident population
+
+# {{ EndDevOnlyBlock}}
