@@ -785,7 +785,7 @@ cards:
 #      Total numbers of cases over the whole pandemic, and rates per 100,000 resident population 
     download:
       - cumCasesByPublishDate
-      - cumCasesByPublishDateRate
+      - cumCasesByPublishDateRate # {{ DevOnly }}
 
     tabs:
       - heading: Nation
@@ -808,10 +808,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate
-            value: cumCasesByPublishDateRate
-            type: numeric
-            tooltip: Rate of total confirmed cases per 100,000 resident population
+          - label: Rate # {{ DevOnly }}
+            value: cumCasesByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
 
       - heading: Region
         tabType: table
@@ -833,10 +833,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate
-            value: cumCasesByPublishDateRate
-            type: numeric
-            tooltip: Rate of total confirmed cases per 100,000 resident population
+          - label: Rate # {{ DevOnly }}
+            value: cumCasesByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
 
       - heading: Upper tier LA
         tabType: table
@@ -859,10 +859,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate
-            value: cumCasesByPublishDateRate
-            type: numeric
-            tooltip: Rate of total confirmed cases per 100,000 resident population
+          - label: Rate # {{ DevOnly }}
+            value: cumCasesByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
 
       - heading: Lower tier LA
         tabType: table
@@ -885,10 +885,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate
-            value: cumCasesByPublishDateRate
-            type: numeric
-            tooltip: Rate of total confirmed cases per 100,000 resident population
+          - label: Rate # {{ DevOnly }}
+            value: cumCasesByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
 
       - heading: About # {{ DevOnly }} md needs writing and also applying to every other tab.  This is just an example
         tabType: metadata # {{ DevOnly }}
@@ -927,9 +927,9 @@ cards:
             value: nation
         fields:
           - label: ""
-            value: cumCasesByPublishDateRate # count not rate on live
+            value: cumCasesByPublishDate
             tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
-            type: line # bar not line on live
+            type: bar
             rollingAverage: false
 
       - heading: Data
