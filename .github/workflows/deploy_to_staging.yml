@@ -1,0 +1,17 @@
+name: Deploy to staging
+
+on:
+  push:
+    branches: 
+      - staging
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: muinmomin/webhook-action@v1.0.0
+        with:
+          url: ${{ secrets.STAGINGPUBLISHPROFILE }}
+          data: >
+            {"command": "publish"}
