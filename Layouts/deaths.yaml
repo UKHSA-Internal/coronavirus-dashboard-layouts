@@ -133,7 +133,7 @@ cards:
         groupKey: age
         groupValues: 
           - value 
-          - rate # {{ DevOnly }} pending correcting female populations
+          - rate
 
         requiredMetrics:
           - femaleDeaths
@@ -156,7 +156,7 @@ cards:
         groupKey: age
         groupValues: 
           - value
-          - rate # {{ DevOnly }}
+          - rate
         requiredMetrics:
           - femaleDeaths
           - maleDeaths
@@ -171,23 +171,20 @@ cards:
             type: numeric
             tooltip: Total number of deaths in females with a confirmed positive test
 
-          - label: Female rate # {{ DevOnly }}
-            value: femaleDeathsRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Total number of female deaths per 100,000 resident population # {{ DevOnly }}
+          - label: Female rate
+            value: femaleDeathsRate
+            type: numeric
+            tooltip: Total number of female deaths per 100,000 resident population
 
           - label: Males
             value: maleDeathsValue
             type: numeric
             tooltip: Total number of deaths in males with a confirmed positive test
          
-          - label: Male rate # {{ DevOnly }}
-            value: maleDeathsRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Total number of male deaths per 100,000 resident population # {{ DevOnly }}
-
-# {{ StartDevOnlyBlock}}
-# Hiding rates while female populations are sorted
+          - label: Male rate
+            value: maleDeathsRate
+            type: numeric
+            tooltip: Total number of male deaths per 100,000 resident population
 
   - heading: Death rates by age and sex
     caption: Rates per 100,000 resident population
@@ -255,8 +252,6 @@ cards:
             type: numeric
             tooltip: Total number of female deaths per 100,000 resident population
 
-# {{ EndDevOnlyBlock}}
-
   - heading: Deaths by area # Total cumulative deaths by area on live pending implementation of abstract
     cardType: simpleTableStatic
     fullWidth: true
@@ -264,7 +259,7 @@ cards:
 #      Total numbers of deaths over the whole pandemic, and rates per 100,000 resident population 
     download:
       - cumDeathsByPublishDate
-      - cumDeathsByPublishDateRate # {{ DevOnly }}
+      - cumDeathsByPublishDateRate
 
     tabs:
       - heading: Nation
@@ -287,10 +282,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumDeathsByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Death rate per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumDeathsByPublishDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
       
       - heading: Region
         tabType: table
@@ -312,10 +307,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumDeathsByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Death rate per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumDeathsByPublishDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
      
       - heading: Upper tier LA
         tabType: table
@@ -337,10 +332,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumDeathsByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Death rate per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumDeathsByPublishDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
   
       - heading: Lower tier LA
         tabType: table
@@ -362,10 +357,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumDeathsByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Death rate per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumDeathsByPublishDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
 
       - heading: About # {{ DevOnly }} Markdown needs writing and then implementing similar across site
         tabType: metadata # {{ DevOnly }}
