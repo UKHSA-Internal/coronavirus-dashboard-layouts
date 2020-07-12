@@ -211,15 +211,15 @@ cards:
               type: numeric
               tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
 
-            - label: Daily people tested
-              value: newPeopleTestedBySpecimenDate
-              type: numeric
-              tooltip: Daily number of people tested (positive or negative) by date the sample was taken from the person
+            - label: Daily people tested # {{ DevOnly }}
+              value: newPeopleTestedBySpecimenDate # {{ DevOnly }}
+              type: numeric # {{ DevOnly }}
+              tooltip: Daily number of people tested (positive or negative) by date the sample was taken from the person # {{ DevOnly }}
 
-            - label: Cumulative people tested
-              value: cumPeopleTestedBySpecimenDate
-              type: numeric
-              tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
+            - label: Cumulative people tested # {{ DevOnly }}
+              value: cumPeopleTestedBySpecimenDate # {{ DevOnly }}
+              type: numeric # {{ DevOnly }}
+              tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person # {{ DevOnly }}
 
     Date reported:
       download:
@@ -274,16 +274,19 @@ cards:
               type: numeric
               tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
 
-            - label: Daily people tested
-              value: newPeopleTestedByPublishDate
-              type: numeric
-              tooltip: Daily number of new people tested (positive or negative) by date reported
+            - label: Daily people tested # {{ DevOnly }}
+              value: newPeopleTestedByPublishDate # {{ DevOnly }}
+              type: numeric # {{ DevOnly }}
+              tooltip: Daily number of new people tested (positive or negative) by date reported # {{ DevOnly }}
 
-            - label: Cumulative people tested
-              value: cumPeopleTestedByPublishDate
-              type: numeric
-              tooltip: Cumulative total number of people tested (positive or negative) by date reported
+            - label: Cumulative people tested # {{ DevOnly }}
+              value: cumPeopleTestedByPublishDate # {{ DevOnly }}
+              type: numeric # {{ DevOnly }}
+              tooltip: Cumulative total number of people tested (positive or negative) by date reported # {{ DevOnly }}
 
+# {{ EndDevOnlyBlock }}
+
+# {{ StartDevOnlyBlock }}
 # not live
 # People tested not currently being published
 
@@ -418,7 +421,9 @@ cards:
               type: numeric
               tooltip: Cumulative total number of people tested (positive or negative) by date reported
 
-# not live
+# {{ EndDevOnlyBlock }}
+
+# {{ StartDevOnlyBlock }}
 # Not using this chart which shows which specimen dates the newly added cases refer to.  It's not useful now that
 # case numbers are so low
 
@@ -478,9 +483,9 @@ cards:
     fullWidth: false
     download:
       - femaleCasesValue 
-      - femaleCasesRate # {{ DevOnly }} currently hiding rates pending correction of female populations
+      - femaleCasesRate
       - maleCasesValue
-      - maleCasesRate # {{ DevOnly }}
+      - maleCasesRate
 
     tabs: 
       - heading: Chart
@@ -489,7 +494,7 @@ cards:
         groupKey: age
         groupValues: 
           - value
-          - rate # {{ DevOnly }}
+          - rate
 
         requiredMetrics:
           - femaleCases
@@ -512,7 +517,7 @@ cards:
         groupKey: age
         groupValues: 
           - value
-          - rate # {{ DevOnly }}
+          - rate
 
         requiredMetrics:
           - femaleCases
@@ -528,23 +533,20 @@ cards:
             type: numeric
             tooltip: Total number of females with a lab-confirmed positive test result
 
-          - label: Female rate # {{ DevOnly }}
-            value: femaleCasesRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Total number of female cases per 100,000 resident population # {{ DevOnly }}
+          - label: Female rate
+            value: femaleCasesRate
+            type: numeric
+            tooltip: Total number of female cases per 100,000 resident population
 
           - label: Males
             value: maleCasesValue
             type: numeric
             tooltip: Total number of males with a lab-confirmed positive test result
           
-          - label: Male rate  # {{ DevOnly }}
-            value: maleCasesRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Total number of male cases per 100,000 resident population # {{ DevOnly }}
-
-# {{ StartDevOnlyBlock }}
-# Rates currently hidden pending check on female age-specific populations
+          - label: Male rate 
+            value: maleCasesRate
+            type: numeric
+            tooltip: Total number of male cases per 100,000 resident population
 
   - heading: Case rates by age and sex 
     caption: Rates per 100,000 resident population
@@ -609,7 +611,7 @@ cards:
             type: numeric
             tooltip: Total number of female cases per 100,000 resident population
 
-# not live
+# {{ StartDevOnlyBlock }}
 # Not currently publishing people tested
 
   - heading: People tested, by age and sex
@@ -750,8 +752,10 @@ cards:
             type: numeric
             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
 
-# not live
-# Scatterpolt not a valid cardType yet - not built
+# {{ EndDevOnlyBlock }}
+
+# {{ StartDevOnlyBlock }}
+# Scatterplot not a valid cardType yet - not built
 
   # - heading: Cases and testing rates
   #   cardType: scatterStatic
@@ -781,7 +785,7 @@ cards:
 #      Total numbers of cases over the whole pandemic, and rates per 100,000 resident population 
     download:
       - cumCasesByPublishDate
-      - cumCasesByPublishDateRate # {{ DevOnly }}
+      - cumCasesByPublishDateRate
 
     tabs:
       - heading: Nation
@@ -804,10 +808,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumCasesByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
 
       - heading: Region
         tabType: table
@@ -829,10 +833,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumCasesByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
 
       - heading: Upper tier LA
         tabType: table
@@ -855,10 +859,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumCasesByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
 
       - heading: Lower tier LA
         tabType: table
@@ -881,10 +885,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumCasesByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
 
       - heading: About # {{ DevOnly }} md needs writing and also applying to every other tab.  This is just an example
         tabType: metadata # {{ DevOnly }}
