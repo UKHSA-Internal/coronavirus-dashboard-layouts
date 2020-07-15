@@ -40,6 +40,11 @@ cards:
   - heading: Patients admitted to hospital
     cardType: chart
     fullWidth: true
+    # TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200715
+      COVID-19 patients admitted to hospital.  National data are not directly comparable due to differences in definitions and latest reported time periods.  
+      Full details are available in the {Patients admitted to hospital indicator definition:admissions}.
+
     download:
       - newAdmissions
       - cumAdmissions
@@ -98,10 +103,17 @@ cards:
   - heading: Patients admitted to hospital, by age
     caption: Counts
     cardType: ageSexBreakdown
+    fullWidth: false
+    # TODO: PF to check - total for all ages doesn't match latest headline figures so uanble to define further.
+    abstract: > # {{ DevOnly }} GA added 20200715 
+      COVID-19 patients admitted to hospital since the start of the pandemic, by age.  
+      National data are not directly comparable due to differences in definitions and latest reported time periods.  
+      Full details are available in the {Patients admitted to hospital indicator definition:admissions}.
+
     download:
       - cumAdmissionsByAge
       - cumAdmissionsByAgeRate
-    fullWidth: false
+
     tabs: 
       - heading: Chart
         tabType: chart
@@ -147,6 +159,12 @@ cards:
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
     fullWidth: false
+    # TODO: PF to check - total counts for all ages don't match latest headline figures so rates also affedted and uanble to define further.
+    abstract: > # {{ DevOnly }} GA added 20200715 
+      COVID-19 patients admitted to hospital per 100,000 resident population since the start of the pandemic, by age. 
+      National data are not directly comparable due to differences in definitions and latest reported time periods.  
+      Full details are available in the {Patients admitted to hospital indicator definition:admissions}.
+
     download:
       - cumAdmissionsByAge
       - cumAdmissionsByAgeRate
@@ -198,6 +216,12 @@ cards:
   - heading: Patients admitted to hospital, by nation
     cardType: multiAreaStatic
     fullWidth: true
+    # TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200715 
+      COVID-19 patients admitted to hospital, by nation. 
+      National data are not directly comparable due to differences in definitions and latest reported time periods.  
+      Full details are available in the {Patients admitted to hospital indicator definition:admissions}.
+
     download:
       - newAdmissions
       - cumAdmissions
@@ -259,6 +283,12 @@ cards:
   - heading: Patients in hospital
     cardType: chart
     fullWidth: true
+    # TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200715 
+      COVID-19 patients in hospital.  
+      National data are not directly comparable due to differences in definitions and latest reported time periods.  
+      Full details are available in the {Patients admitted to hospital indicator definition:patientsInHospital}.
+
     download:
       - hospitalCases
 
@@ -291,9 +321,16 @@ cards:
 # Only really required before we had the localisation feature working, to present nation 
 # figures as in the No 10 slides - try rates
 
+# TODO: PF to check - this is a duplicate card title - maybe change to 'Patients in hospital, by area' ?
   - heading: Patients in hospital
     cardType: multiAreaStatic
     fullWidth: true
+    # TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200715 
+      COVID-19 patients in hospital, by area.  
+      National data are not directly comparable due to differences in definitions and latest reported time periods.  
+      Full details are available in the {Patients admitted to hospital indicator definition:patientsInHospital}.
+
     download:
       - hospitalCases
     options:
@@ -376,6 +413,12 @@ cards:
   - heading: Patients in mechanical ventilation beds
     cardType: chart
     fullWidth: true
+    # TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200715 
+      Mechanical ventilation bed capacity, and occupancy by COVID-19 and non-COVID-19 patients.  
+      National data are not directly comparable due to differences in definitions and latest reported time periods.  
+      Full details are available in the {Patients admitted to hospital indicator definition:covidPatientsInMVBeds}.
+
     download:
       - covidOccupiedMVBeds
       - suspectedCovidOccupiedMVBeds # {{ DevOnly }}
@@ -463,6 +506,12 @@ cards:
   - heading: Patients in mechanical ventilation beds, by nation
     cardType: multiAreaStatic
     fullWidth: true
+    # TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200715 
+      COVID-19 patients in mechanical ventilation beds, by nation.  
+      National data are not directly comparable due to differences in definitions and latest reported time periods.  
+      Full details are available in the {Patients admitted to hospital indicator definition:covidPatientsInMVBeds}.
+
     download:
       - covidOccupiedMVBeds
     tabs:
@@ -508,6 +557,10 @@ cards:
   - heading: Patients discharged from hospital
     cardType: chart
     fullWidth: true
+    # TODO: PF to check - need to add line re national data not comparable if appropriate here and link to metadata when available.
+    abstract: > # {{ DevOnly }} GA added 20200715 
+      COVID-19 patients discharged home from hospital.  
+
     download:
       - newDischarges
       - cumDischarges
@@ -566,6 +619,10 @@ cards:
     caption: Counts
     cardType: ageSexBreakdown
     fullWidth: false
+# TODO: PF to check - need to add line re national data not comparable if appropriate here and link to metadata when available.
+    abstract: > # {{ DevOnly }} GA added 20200715 
+      COVID-19 patients discharged home from hospital since the start of the pandemic, by age.  
+
     download:
       - cumAdmissionsByAge
 
@@ -614,6 +671,10 @@ cards:
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
     fullWidth: false
+# TODO: PF to check - need to add line re national data not comparable if appropriate here and link to metadata when available.
+    abstract: > # {{ DevOnly }} GA added 20200715 
+      COVID-19 patients discharged home from hospital per 100,000 resident population since the start of the pandemic, by age.  
+
     download:
       - cumDischargesByAge
 
