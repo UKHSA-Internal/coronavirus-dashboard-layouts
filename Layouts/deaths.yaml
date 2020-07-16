@@ -138,7 +138,7 @@ cards:
 # TODO: PF to check - just uses latest total - by publish date total should match by death date total but they don't currently match (40461 v 40462 on 16th July)
 # I have linked to the by date of death markdown as the sum of age/sex counts currently presented = 40461.
     abstract: > # {{ DevOnly }} GA added 20200716 - only available for England so removed national comparator comment
-      Number of deaths of people who had had a positive test result for COVID-19, by age and sex.  
+      Number of deaths of people who had had a positive test result for COVID-19 since the start of the pandemic, by age and sex.  
       See the {indicator definition:cumDeathsByDeathDate} for more information and latest reported time periods.    
 
     download:
@@ -211,7 +211,7 @@ cards:
 # TODO: PF to check - just uses latest total - by publish date total should match by death date total but they don't currently match (40461 v 40462 on 16th July)
 # I have linked to the by date of death markdown as the sum of age/sex counts currently presented = 40461.
     abstract: > # {{ DevOnly }} GA added 20200716 - only available for England so removed national comparator comment
-      Number of deaths of people who had had a positive test result for COVID-19 per 100,000 resident population, by age and sex.  
+      Number of deaths of people who had had a positive test result for COVID-19 since the start of the pandemic per 100,000 resident population, by age and sex.  
       See the {indicator definition:cumDeathsByDeathDate} for more information and latest reported time periods.    
 
     download:
