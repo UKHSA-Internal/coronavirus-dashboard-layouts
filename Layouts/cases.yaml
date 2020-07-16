@@ -898,7 +898,7 @@ cards:
     cardType: simpleExternalStatic
     fullWidth: false
     abstract: >
-      View Coronavirus cases by Middle Super Area Output (MSOA)
+      View Coronavirus cases by Middle Super Output Area (MSOA)
     
     image: 
       url: https://c19pubdev.azureedge.net/assets/images/msoa-outline.png
