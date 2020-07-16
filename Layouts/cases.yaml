@@ -31,6 +31,12 @@ cards:
   - heading: Daily cases by specimen date
     cardType: chart
     fullWidth: true
+    # TODO: PF to check - is 'at least one' appropriate here?  If not should all associated metadata modals say Number of tests not Number of people?
+    abstract: > # {{ DevOnly }} GA added 20200716
+      Number of people with at least one lab-confirmed positive test result, by specimen date. 
+      National data are not directly comparable - see the {indicator definition:genCasesBySpecimenDate} 
+      for more information and latest reported time periods.
+      
     download:
       - newCasesBySpecimenDate
       - cumCasesBySpecimenDate
@@ -89,6 +95,12 @@ cards:
   - heading: Daily cases by date reported
     cardType: chart
     fullWidth: true
+    # TODO: PF to check - is 'at least one ' appropriate here?   If not should all associated metadata modals say Number of tests not Number of people?
+    abstract: > # {{ DevOnly }} GA added 20200716
+      Number of people with t least one lab-confirmed positive test result, by date reported. 
+      National data are not directly comparable - see the {indicator definition:genCasesByPublishDate} 
+      for more information and latest reported time periods.
+
     download:
       - newCasesByPublishDate
       - cumCasesByPublishDate
@@ -148,6 +160,13 @@ cards:
   - heading: Daily cases
     cardType: chart
     fullWidth: true
+    # TODO: PF to check - had to create additional genCases generic markdown as others all had daily/cumulative/byreporting/byspecimen titles and subheadings. 
+    # is 'at least one' appropriate here?   If not should all associated metadata modals say Number of tests not Number of people?
+    abstract: > # {{ DevOnly }} GA added 20200716
+      Number of people with at least one lab-confirmed positive test result. 
+      National data are not directly comparable - see the {indicator definition:genCases} 
+      for more information and latest reported time periods.
+
     options:
       type: radio
       heading: null
@@ -293,6 +312,13 @@ cards:
   - heading: Daily people tested
     cardType: chart
     fullWidth: true
+    # TODO: PF to check - had to create additional genPeopleTested not specific to daily/cumulative/by test data/by specimen date. 
+    # PF to check - these are processed tests with results not just tests sent to homes or carried out.
+    abstract: > # {{ DevOnly }} GA added 20200716
+      Number of people with at least one lab-confirmed COVID-19 test result (positive or negative). 
+      National data are not directly comparable - see the {indicator definition:genPeopleTested} 
+      for more information and latest reported time periods.
+
     options:
       type: radio
       heading: null
@@ -430,6 +456,7 @@ cards:
   - heading: Newly reported and total daily cases by specimen date
     cardType: chart
     fullWidth: true
+# TODO: PF to check - not added abstract here as won't be using this card again?
     tabs: 
       - heading: Chart
         tabType: chart
@@ -481,6 +508,12 @@ cards:
     caption: Counts
     cardType: ageSexBreakdown
     fullWidth: false
+    # TODO: PF to check - is 'at least one' appropriate here?  If not shouldn't we refer to Number of tests not Number of people?
+    abstract: > # {{ DevOnly }} GA added 20200716
+      Number of people with at least one lab-confirmed positive test result since the start of the pandemic, by age and sex. 
+      National data are not directly comparable - see the {indicator definition:cumCasesByPublishDate} 
+      for more information and latest reported time periods.
+
     download:
       - femaleCasesValue 
       - femaleCasesRate
@@ -552,6 +585,12 @@ cards:
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
     fullWidth: false
+    # TODO: PF to check - is 'at least one' appropriate here?  If not shouldn't we refer to Number of tests not Number of people?
+    abstract: > # {{ DevOnly }} GA added 20200716
+      Number of people with at least one lab-confirmed positive test result since the start of the pandemic per 100,000 population, by age and sex. 
+      National data are not directly comparable - see the {indicator definition:cumCasesByPublishDate} 
+      for more information and latest reported time periods.
+
     tabs: 
       - heading: Chart
         tabType: chart
