@@ -13,6 +13,12 @@ cards:
   - heading: Daily deaths by date of death
     cardType: chart
     fullWidth: true
+# TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200716 
+      Number of deaths of people who have had a positive test result for COVID-19, by date of death.  
+      National data are not directly comparable - see the {indicator definition:genDeathsByDeathDate} 
+      for more information and latest reported time periods.    
+
     download:
       - newDeathsByDeathDate
       - cumDeathsByDeathDate
@@ -67,6 +73,12 @@ cards:
   - heading: Daily deaths by date reported
     cardType: chart
     fullWidth: true
+# TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200716 
+      Number of deaths of people who had had a positive test result for COVID-19, by date reported.  
+      National data are not directly comparable - see the {indicator definition:genDeathsByPublishDate} 
+      for more information and latest reported time periods.    
+
     download:
       - newDeathsByPublishDate
       - cumDeathsByPublishDate
@@ -123,6 +135,12 @@ cards:
     caption: Counts
     cardType: ageSexBreakdown
     fullWidth: false
+# TODO: PF to check - just uses latest total - by publish date total should match by death date total but they don't currently match (40461 v 40462 on 16th July)
+# I have linked to the by date of death markdown as the sum of age/sex counts currently presented = 40461.
+    abstract: > # {{ DevOnly }} GA added 20200716 - only available for England so removed national comparator comment
+      Number of deaths of people who had had a positive test result for COVID-19, by age and sex.  
+      See the {indicator definition:cumDeathsByDeathDate} for more information and latest reported time periods.    
+
     download:
       - femaleDeaths
       - maleDeaths
@@ -190,6 +208,12 @@ cards:
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
     fullWidth: false
+# TODO: PF to check - just uses latest total - by publish date total should match by death date total but they don't currently match (40461 v 40462 on 16th July)
+# I have linked to the by date of death markdown as the sum of age/sex counts currently presented = 40461.
+    abstract: > # {{ DevOnly }} GA added 20200716 - only available for England so removed national comparator comment
+      Number of deaths of people who had had a positive test result for COVID-19 per 100,000 resident population, by age and sex.  
+      See the {indicator definition:cumDeathsByDeathDate} for more information and latest reported time periods.    
+
     download:
       - femaleDeaths
       - maleDeaths
@@ -255,8 +279,13 @@ cards:
   - heading: Deaths by area # Total cumulative deaths by area on live pending implementation of abstract
     cardType: simpleTableStatic
     fullWidth: true
-#    abstract: >
-#      Total numbers of deaths over the whole pandemic, and rates per 100,000 resident population 
+# TODO: PF to check - just uses latest total - by publish date total should match by death date total but they don't currently match (40461 v 40462 on 16th July)
+# I have linked to the by reporting date markdown as the sum of age/sex counts currently presented = 40462.
+    abstract: > # {{ DevOnly }} GA added 20200716
+      Number of deaths since the start of the pandemic of people who had had a positive test result for COVID-19, 
+      and equivalent rates per 100,000 resident population, by area.  National data are not directly comparable - 
+      see the {indicator definition:cumDeathsBypublishDate} for more information and latest reported time periods.    
+
     download:
       - cumDeathsByPublishDate
       - cumDeathsByPublishDateRate # {{ DevOnly }}
@@ -361,14 +390,20 @@ cards:
             value: cumDeathsByPublishDateRate # {{ DevOnly }}
             type: numeric # {{ DevOnly }}
             tooltip: Death rate per 100,000 resident population # {{ DevOnly }}
-
-      - heading: About # {{ DevOnly }} Markdown needs writing and then implementing similar across site
+# TODO: GA to write and reference md file
+      - heading: More information # {{ DevOnly }} Markdown needs writing and then implementing similar across site
         tabType: metadata # {{ DevOnly }}
         filename: metadataTabs/deaths/deaths-and-death-rates-by-area.md # {{ DevOnly }}
 
   - heading: Deaths by date reported, by nation
     cardType: multiAreaStatic
     fullWidth: true
+# TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200716
+      Number of deaths of people who had had a positive test result for COVID-19, by date reported, by nation.  
+      National data are not directly comparable - see the {indicator definition:genDeathsByPublishDate} 
+      for more information and latest reported time periods.    
+
     download:
       - newDeathsByPublishDate
       - cumDeathsByPublishDate

@@ -106,10 +106,10 @@ cards:
     cardType: ageSexBreakdown
     fullWidth: false
     # TODO: PF to check - total for all ages doesn't match latest headline figures so uanble to define further.
+    # removed reference to nations not comparable as only England available
     abstract: > # {{ DevOnly }} GA added 20200715 
-      COVID-19 patients admitted to hospital since the start of the pandemic, by age.  National data are not directly comparable - 
-      see the {indicator definition:genAdmissions} 
-      for more information and latest reported time periods.
+      COVID-19 patients admitted to hospital since the start of the pandemic, by age.   
+      See the {indicator definition:cumAdmissions} for more information and latest reported time periods.
       
     download:
       - cumAdmissionsByAge
@@ -160,11 +160,11 @@ cards:
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
     fullWidth: false
-    # TODO: PF to check - total counts for all ages don't match latest headline figures so rates also affedted and uanble to define further.
+    # TODO: PF to check - total counts for all ages don't match latest headline figures so rates also affected and uanble to define further.
+    # removed reference to nations not comparable as only England available.
     abstract: > # {{ DevOnly }} GA added 20200715 
       COVID-19 patients admitted to hospital per 100,000 resident population since the start of the pandemic, by age.  
-      National data are not directly comparable - see the {indicator definition:genAdmissions} 
-      for more information and latest reported time periods.
+      See the {indicator definition:cumAdmissions} for more information and latest reported time periods.
       
     download:
       - cumAdmissionsByAge
