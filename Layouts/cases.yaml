@@ -895,18 +895,18 @@ cards:
         filename: metadataTabs/cases/cases-and-case-rates-by-area.md # {{ DevOnly }}
 
   - heading: Weekly cases by local area in England # Cases by area when abstract enabled
-        cardType: simpleExternalStatic
-        fullWidth: false
-        abstract: >
-          View Coronavirus cases by Middle Super Area Output (MSOA)
-        
-        resource: 
-          label: View map
-          url: https://phe.maps.arcgis.com/apps/webappviewer/index.html?id=47574f7a6e454dc6a42c5f6912ed7076
+    cardType: simpleExternalStatic
+    fullWidth: false
+    abstract: >
+      View Coronavirus cases by Middle Super Area Output (MSOA)
+    
+    resource: 
+      label: View map
+      url: https://phe.maps.arcgis.com/apps/webappviewer/index.html?id=47574f7a6e454dc6a42c5f6912ed7076
 
-        download:
-          - format: spreadsheet
-            url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.xlsx
+    download:
+      - format: spreadsheet
+        url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.xlsx
 
   - heading: Cases by date reported, by nation
     cardType: multiAreaStatic
