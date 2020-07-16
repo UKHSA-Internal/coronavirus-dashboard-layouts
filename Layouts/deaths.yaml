@@ -284,7 +284,7 @@ cards:
     abstract: > # {{ DevOnly }} GA added 20200716
       Number of deaths since the start of the pandemic of people who had had a positive test result for COVID-19, 
       and equivalent rates per 100,000 resident population, by area.  National data are not directly comparable - 
-      see the {indicator definition:cumDeathsBypublishDate} for more information and latest reported time periods.    
+      see the {indicator definition:cumDeathsByPublishDate} for more information and latest reported time periods.    
 
     download:
       - cumDeathsByPublishDate
