@@ -911,7 +911,16 @@ cards:
       url: https://phe.maps.arcgis.com/apps/webappviewer/index.html?id=47574f7a6e454dc6a42c5f6912ed7076
 
     download:
-      - format: spreadsheet
+      - format: CSV
+        url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.csv
+      
+      - format: JSON
+        url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.json
+      
+      - format: XML
+        url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.xml
+
+      - format: Spreadsheet
         url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.xlsx
 
   - heading: Cases by date reported, by nation
