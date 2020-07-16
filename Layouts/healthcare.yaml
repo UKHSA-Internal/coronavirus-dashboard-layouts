@@ -43,8 +43,8 @@ cards:
     # TODO: PF to check
     abstract: > # {{ DevOnly }} GA added 20200715
       COVID-19 patients admitted to hospital.  National data are not directly comparable - 
-      see {Patients admitted to hospital indicator definition:base/admissions} 
-      for definitions and latest reported time periods.
+      see the {indicator definition:genAdmissions} 
+      for more information and latest reported time periods.
       
     download:
       - newAdmissions
@@ -108,8 +108,8 @@ cards:
     # TODO: PF to check - total for all ages doesn't match latest headline figures so uanble to define further.
     abstract: > # {{ DevOnly }} GA added 20200715 
       COVID-19 patients admitted to hospital since the start of the pandemic, by age.  National data are not directly comparable - 
-      see {Patients admitted to hospital indicator definition:base/admissions} 
-      for definitions and latest reported time periods.
+      see the {indicator definition:genAdmissions} 
+      for more information and latest reported time periods.
       
     download:
       - cumAdmissionsByAge
@@ -163,8 +163,8 @@ cards:
     # TODO: PF to check - total counts for all ages don't match latest headline figures so rates also affedted and uanble to define further.
     abstract: > # {{ DevOnly }} GA added 20200715 
       COVID-19 patients admitted to hospital per 100,000 resident population since the start of the pandemic, by age.  
-      National data are not directly comparable - see {Patients admitted to hospital indicator definition:base/admissions} 
-      for definitions and latest reported time periods.
+      National data are not directly comparable - see the {indicator definition:genAdmissions} 
+      for more information and latest reported time periods.
       
     download:
       - cumAdmissionsByAge
@@ -220,8 +220,8 @@ cards:
     # TODO: PF to check
     abstract: > # {{ DevOnly }} GA added 20200715 
       COVID-19 patients admitted to hospital, by nation.  
-      National data are not directly comparable - see {Patients admitted to hospital indicator definition:base/admissions} 
-      for definitions and latest reported time periods.
+      National data are not directly comparable - see the {indicator definition:genAdmissions} 
+      for more information and latest reported time periods.
       
     download:
       - newAdmissions
@@ -286,8 +286,9 @@ cards:
     fullWidth: true
     # TODO: PF to check
     abstract: > # {{ DevOnly }} GA added 20200715 
-      COVID-19 patients in hospital.  National data are not directly comparable - see {Patients admitted to hospital indicator definition:base/patientsInHospital} 
-      for definitions and latest reported time periods.
+      COVID-19 patients in hospital.  National data are not directly comparable - 
+      see the {indicator definition:hospitalCases} 
+      for more information and latest reported time periods.
 
     download:
       - hospitalCases
@@ -321,15 +322,15 @@ cards:
 # Only really required before we had the localisation feature working, to present nation 
 # figures as in the No 10 slides - try rates
 
-# TODO: PF to check - this is a duplicate card title - maybe change to 'Patients in hospital, by area' ?
-  - heading: Patients in hospital
+# TODO: PF to check - GA 20200715 - this was a duplicate card title - so added 'by area'
+  - heading: Patients in hospital, by area
     cardType: multiAreaStatic
     fullWidth: true
     # TODO: PF to check
     abstract: > # {{ DevOnly }} GA added 20200715 
       COVID-19 patients in hospital, by area.  National data are not directly comparable - 
-      see {Patients admitted to hospital indicator definition:base/patientsInHospital} 
-      for definitions and latest reported time periods.
+      see the {indicator definition:hospitalCases} 
+      for more information and latest reported time periods.
       
     download:
       - hospitalCases
@@ -416,8 +417,8 @@ cards:
     # TODO: PF to check
     abstract: > # {{ DevOnly }} GA added 20200715 
       Mechanical ventilation bed capacity, and occupancy by COVID-19 and non-COVID-19 patients.  
-      National data are not directly comparable - see {Patients admitted to hospital indicator definition:base/covidPatientsInMVBeds} 
-      for definitions and latest reported time periods.
+      National data are not directly comparable - see the {indicator definition:covidOccupiedMVBeds} 
+      for more information and latest reported time periods.
 
     download:
       - covidOccupiedMVBeds
@@ -509,8 +510,8 @@ cards:
     # TODO: PF to check
     abstract: > # {{ DevOnly }} GA added 20200715 
       COVID-19 patients in mechanical ventilation beds, by nation.  National data are not directly comparable - 
-      see {Patients admitted to hospital indicator definition:base/covidPatientsInMVBeds} 
-      for definitions and latest reported time periods.
+      see the {indicator definition:covidOccupiedMVBeds} 
+      for more information and latest reported time periods.
       
     download:
       - covidOccupiedMVBeds
