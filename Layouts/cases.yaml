@@ -32,12 +32,15 @@ cards:
     cardType: chart
     fullWidth: true
     # TODO: PF to check
-    abstract: > # {{ DevOnly }} GA added 20200717
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200717
+    abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date. 
       Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
       times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:genCasesBySpecimenDate} for more information.
-      
+    # {{ EndDevOnlyBlock }}
+    
     download:
       - newCasesBySpecimenDate
       - cumCasesBySpecimenDate
@@ -97,11 +100,14 @@ cards:
     cardType: chart
     fullWidth: true
     # TODO: PF to check
-    abstract: > # {{ DevOnly }} GA added 20200717
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200717
+    abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported. 
       Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
       times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:genCasesByPublishDate} for more information.
+    # {{ EndDevOnlyBlock }}
 
     download:
       - newCasesByPublishDate
@@ -163,11 +169,14 @@ cards:
     cardType: chart
     fullWidth: true
     # TODO: PF to check - had to create additional genCases generic markdown as others all had daily/cumulative/byreporting/byspecimen titles and subheadings. 
-    abstract: > # {{ DevOnly }} GA added 20200717
+    # {{ StartDevOnlyBlock }}
+    # {{ GA added 20200717
+    abstract: > 
       Number of people with at least one lab-confirmed positive COVID-19 test result. 
       Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
       times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:genCases} for more information.
+    # {{ EndDevOnlyBlock }}
 
     options:
       type: radio
@@ -315,11 +324,14 @@ cards:
     cardType: chart
     fullWidth: true
     # TODO: PF to check - had to create additional genPeopleTested not specific to daily/cumulative/by test data/by specimen date.
-    abstract: > # {{ DevOnly }} GA added 20200717
+    # {{ StartDevOnlyBlock }} 
+    #  GA added 20200717
+    abstract: >
       Number of people with at least one lab-confirmed positive or negative COVID-19 test result. 
       Initially only NHS and, in England, PHE tests were included but commerical tests have been included since 2nd July 2020 for all four nations.  
       National data are not directly comparable - see the {indicator definition:genPeopleTested} 
       for more information.
+    # {{ EndDevOnlyBlock }}
 
     options:
       type: radio
@@ -458,7 +470,7 @@ cards:
   - heading: Newly reported and total daily cases by specimen date
     cardType: chart
     fullWidth: true
-# TODO: PF to check - not added abstract here as won't be using this card again?
+    # TODO: PF to check - not added abstract here as won't be using this card again?
     tabs: 
       - heading: Chart
         tabType: chart
@@ -511,11 +523,14 @@ cards:
     cardType: ageSexBreakdown
     fullWidth: false
     # TODO: PF to check
-    abstract: > # {{ DevOnly }} GA added 20200717
+    # {{ StartDevOnlyBlock }}
+    # {{ DevOnly }} GA added 20200717
+    abstract: > 
       Number of people with at least one lab-confirmed COVID-19 positive test result since the start of the pandemic, by age and sex. 
       Initially only NHS and, in England, PHE tests were included but commercial tests were included at different times by each 
       nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:cumCasesByPublishDate} for more information.
+    # {{ EndDevOnlyBlock }}
 
     download:
       - femaleCasesValue 
@@ -589,12 +604,15 @@ cards:
     cardType: ageSexBreakdown
     fullWidth: false
     # TODO: PF to check
-    abstract: > # {{ DevOnly }} GA added 20200717
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200717
+    abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result since the start 
       of the pandemic per 100,000 population, by age and sex.  Initially only NHS and, in England, 
       PHE tests were included but commercial tests were included at different times by each 
       nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:cumCasesByPublishDate} for more information.
+    # {{ EndDevOnlyBlock }}
  
     tabs: 
       - heading: Chart
@@ -827,11 +845,14 @@ cards:
     cardType: simpleTableStatic
     fullWidth: false
     # TODO: PF to check 
-    abstract: > # {{ DevOnly }} GA added 20200717
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200717
+    abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result since the start of the pandemic. 
       Initially only NHS and, in England, PHE tests were included but commerical tests were included at different times by each 
       nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:cumCasesByPublishDate} for more information.
+    # {{ EndDevOnlyBlock }}
 
     download:
       - cumCasesByPublishDate
@@ -979,11 +1000,14 @@ cards:
     cardType: multiAreaStatic
     fullWidth: true
     # TODO: PF to check
-    abstract: > # {{ DevOnly }} GA added 20200717
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200717
+    abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported, by nation. 
       Initially only NHS and, in England, PHE tests were included but commerical tests were added at different times 
       by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:genCasesByPublishDate} for more information.
+    # {{ EndDevOnlyBlock }}
 
     download:
       - newCasesByPublishDate
