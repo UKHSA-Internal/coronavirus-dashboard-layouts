@@ -33,7 +33,7 @@ cards:
     fullWidth: true
     # TODO: PF to check
     abstract: > # {{ DevOnly }} GA added 20200717
-      Number of people with at least one lab-confirmed positive test result, by specimen date. 
+      Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date. 
       Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
       times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:genCasesBySpecimenDate} for more information.
@@ -98,7 +98,7 @@ cards:
     fullWidth: true
     # TODO: PF to check
     abstract: > # {{ DevOnly }} GA added 20200717
-      Number of people with at least one lab-confirmed positive test result, by date reported. 
+      Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported. 
       Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
       times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:genCasesByPublishDate} for more information.
@@ -164,7 +164,7 @@ cards:
     fullWidth: true
     # TODO: PF to check - had to create additional genCases generic markdown as others all had daily/cumulative/byreporting/byspecimen titles and subheadings. 
     abstract: > # {{ DevOnly }} GA added 20200717
-      Number of people with at least one lab-confirmed positive test result. 
+      Number of people with at least one lab-confirmed positive COVID-19 test result. 
       Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
       times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:genCases} for more information.
@@ -316,7 +316,7 @@ cards:
     fullWidth: true
     # TODO: PF to check - had to create additional genPeopleTested not specific to daily/cumulative/by test data/by specimen date.
     abstract: > # {{ DevOnly }} GA added 20200717
-      Number of people with at least one positive or negative lab-confirmed COVID-19 test result. 
+      Number of people with at least one lab-confirmed positive or negative COVID-19 test result. 
       Initially only NHS and, in England, PHE tests were included but commerical tests have been included since 2nd July 2020 for all four nations.  
       National data are not directly comparable - see the {indicator definition:genPeopleTested} 
       for more information.
@@ -512,7 +512,7 @@ cards:
     fullWidth: false
     # TODO: PF to check
     abstract: > # {{ DevOnly }} GA added 20200717
-      Number of people with at least one lab-confirmed positive test result since the start of the pandemic, by age and sex. 
+      Number of people with at least one lab-confirmed COVID-19 positive test result since the start of the pandemic, by age and sex. 
       Initially only NHS and, in England, PHE tests were included but commercial tests were included at different times by each 
       nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:cumCasesByPublishDate} for more information.
@@ -590,8 +590,9 @@ cards:
     fullWidth: false
     # TODO: PF to check
     abstract: > # {{ DevOnly }} GA added 20200717
-      Number of people with at least one lab-confirmed positive test result since the start of the pandemic per 100,000 population, by age and sex. 
-      Initially only NHS and, in England, PHE tests were included but commercial tests were included at different times by each 
+      Number of people with at least one lab-confirmed positive COVID-19 test result since the start 
+      of the pandemic per 100,000 population, by age and sex.  Initially only NHS and, in England, 
+      PHE tests were included but commercial tests were included at different times by each 
       nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:cumCasesByPublishDate} for more information.
  
@@ -827,7 +828,7 @@ cards:
     fullWidth: false
     # TODO: PF to check 
     abstract: > # {{ DevOnly }} GA added 20200717
-      Number of people with at least one lab-confirmed positive test result since the start of the pandemic. 
+      Number of people with at least one lab-confirmed positive COVID-19 test result since the start of the pandemic. 
       Initially only NHS and, in England, PHE tests were included but commerical tests were included at different times by each 
       nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:cumCasesByPublishDate} for more information.
@@ -979,7 +980,7 @@ cards:
     fullWidth: true
     # TODO: PF to check
     abstract: > # {{ DevOnly }} GA added 20200717
-      Number of people with at least one lab-confirmed positive test result, by date reported, by nation. 
+      Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported, by nation. 
       Initially only NHS and, in England, PHE tests were included but commerical tests were added at different times 
       by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
       see the {indicator definition:genCasesByPublishDate} for more information.
