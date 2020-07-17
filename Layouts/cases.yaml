@@ -31,11 +31,12 @@ cards:
   - heading: Daily cases by specimen date
     cardType: chart
     fullWidth: true
-    # TODO: PF to check - is 'at least one' appropriate here?  If not should all associated metadata modals say Number of tests not Number of people?
-    abstract: > # {{ DevOnly }} GA added 20200716
+    # TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200717
       Number of people with at least one lab-confirmed positive test result, by specimen date. 
-      National data are not directly comparable - see the {indicator definition:genCasesBySpecimenDate} 
-      for more information and latest reported time periods.
+      Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
+      times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:genCasesBySpecimenDate} for more information.
       
     download:
       - newCasesBySpecimenDate
@@ -95,11 +96,12 @@ cards:
   - heading: Daily cases by date reported
     cardType: chart
     fullWidth: true
-    # TODO: PF to check - is 'at least one ' appropriate here?   If not should all associated metadata modals say Number of tests not Number of people?
-    abstract: > # {{ DevOnly }} GA added 20200716
-      Number of people with t least one lab-confirmed positive test result, by date reported. 
-      National data are not directly comparable - see the {indicator definition:genCasesByPublishDate} 
-      for more information and latest reported time periods.
+    # TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200717
+      Number of people with at least one lab-confirmed positive test result, by date reported. 
+      Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
+      times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:genCasesByPublishDate} for more information.
 
     download:
       - newCasesByPublishDate
@@ -161,11 +163,11 @@ cards:
     cardType: chart
     fullWidth: true
     # TODO: PF to check - had to create additional genCases generic markdown as others all had daily/cumulative/byreporting/byspecimen titles and subheadings. 
-    # is 'at least one' appropriate here?   If not should all associated metadata modals say Number of tests not Number of people?
-    abstract: > # {{ DevOnly }} GA added 20200716
+    abstract: > # {{ DevOnly }} GA added 20200717
       Number of people with at least one lab-confirmed positive test result. 
-      National data are not directly comparable - see the {indicator definition:genCases} 
-      for more information and latest reported time periods.
+      Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
+      times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:genCases} for more information.
 
     options:
       type: radio
@@ -312,12 +314,12 @@ cards:
   - heading: Daily people tested
     cardType: chart
     fullWidth: true
-    # TODO: PF to check - had to create additional genPeopleTested not specific to daily/cumulative/by test data/by specimen date. 
-    # PF to check - these are processed tests with results not just tests sent to homes or carried out.
-    abstract: > # {{ DevOnly }} GA added 20200716
-      Number of people with at least one lab-confirmed COVID-19 test result (positive or negative). 
+    # TODO: PF to check - had to create additional genPeopleTested not specific to daily/cumulative/by test data/by specimen date.
+    abstract: > # {{ DevOnly }} GA added 20200717
+      Number of people with at least one positive or negative lab-confirmed COVID-19 test result. 
+      Initially only NHS and, in England, PHE tests were included but commerical tests have been included since 2nd July 2020 for all four nations.  
       National data are not directly comparable - see the {indicator definition:genPeopleTested} 
-      for more information and latest reported time periods.
+      for more information.
 
     options:
       type: radio
@@ -508,11 +510,12 @@ cards:
     caption: Counts
     cardType: ageSexBreakdown
     fullWidth: false
-    # TODO: PF to check - is 'at least one' appropriate here?  If not shouldn't we refer to Number of tests not Number of people?
-    abstract: > # {{ DevOnly }} GA added 20200716
+    # TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200717
       Number of people with at least one lab-confirmed positive test result since the start of the pandemic, by age and sex. 
-      National data are not directly comparable - see the {indicator definition:cumCasesByPublishDate} 
-      for more information and latest reported time periods.
+      Initially only NHS and, in England, PHE tests were included but commercial tests were included at different times by each 
+      nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:cumCasesByPublishDate} for more information.
 
     download:
       - femaleCasesValue 
@@ -585,12 +588,13 @@ cards:
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
     fullWidth: false
-    # TODO: PF to check - is 'at least one' appropriate here?  If not shouldn't we refer to Number of tests not Number of people?
-    abstract: > # {{ DevOnly }} GA added 20200716
+    # TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200717
       Number of people with at least one lab-confirmed positive test result since the start of the pandemic per 100,000 population, by age and sex. 
-      National data are not directly comparable - see the {indicator definition:cumCasesByPublishDate} 
-      for more information and latest reported time periods.
-
+      Initially only NHS and, in England, PHE tests were included but commercial tests were included at different times by each 
+      nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:cumCasesByPublishDate} for more information.
+ 
     tabs: 
       - heading: Chart
         tabType: chart
@@ -652,6 +656,7 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 # Not currently publishing people tested
+# GA 20200717 - not added abstracts as not yet publishing
 
   - heading: People tested, by age and sex
     caption: Counts
@@ -820,8 +825,13 @@ cards:
   - heading: Cumulative total cases by area # Cases by area when abstract enabled
     cardType: simpleTableStatic
     fullWidth: false
-#    abstract: >
-#      Total numbers of cases over the whole pandemic, and rates per 100,000 resident population 
+    # TODO: PF to check 
+    abstract: > # {{ DevOnly }} GA added 20200717
+      Number of people with at least one lab-confirmed positive test result since the start of the pandemic. 
+      Initially only NHS and, in England, PHE tests were included but commerical tests were included at different times by each 
+      nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:cumCasesByPublishDate} for more information.
+
     download:
       - cumCasesByPublishDate
       - cumCasesByPublishDateRate # {{ DevOnly }}
@@ -936,8 +946,10 @@ cards:
   - heading: Weekly cases by local area in England # Cases by area when abstract enabled
     cardType: simpleExternalStatic
     fullWidth: false
+    # TODO: PF to check - GA comment 20200717 - presume the PHE maps use same definitions as dashboard?
+    # not added any definition detail to abstract as this now live on staging site. 
     abstract: >
-      View Coronavirus cases by Middle Super Output Area (MSOA)
+      View Coronavirus cases in England by Middle Super Output Area (MSOA)
     
     image: 
       url: https://c19pubdev.azureedge.net/assets/images/msoa-outline.png
@@ -965,6 +977,13 @@ cards:
   - heading: Cases by date reported, by nation
     cardType: multiAreaStatic
     fullWidth: true
+    # TODO: PF to check
+    abstract: > # {{ DevOnly }} GA added 20200717
+      Number of people with at least one lab-confirmed positive test result, by date reported, by nation. 
+      Initially only NHS and, in England, PHE tests were included but commerical tests were added at different times 
+      by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:genCasesByPublishDate} for more information.
+
     download:
       - newCasesByPublishDate
       - cumCasesByPublishDate
