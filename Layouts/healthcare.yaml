@@ -41,10 +41,13 @@ cards:
     cardType: chart
     fullWidth: true
     # TODO: PF to check
-    abstract: > # {{ DevOnly }} GA added 20200715
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200715
+    abstract: >
       COVID-19 patients admitted to hospital.  Data are not updated at weekends.  The UK figure is the sum of the four nations' figures and can 
       only be presented up to the date when all nations' data are available.  National data are not directly comparable - 
       see the {indicator definition:genAdmissions} for more information.
+    # {{ EndDevOnlyBlock }}
       
     download:
       - newAdmissions
@@ -107,9 +110,12 @@ cards:
     fullWidth: false
     # TODO: PF to check - total for all ages doesn't match latest headline figures so uanble to define further.
     # removed reference to nations not comparable as only England available
-    abstract: > # {{ DevOnly }} GA added 20200715 
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200715 
+    abstract: >
       COVID-19 patients admitted to hospital since the start of the pandemic, by age.   
       See the {indicator definition:cumAdmissions} for more information.
+    # {{ EndDevOnlyBlock }}
       
     download:
       - cumAdmissionsByAge
@@ -162,9 +168,12 @@ cards:
     fullWidth: false
     # TODO: PF to check - total counts for all ages don't match latest headline figures so rates also affected and uanble to define further.
     # removed reference to nations not comparable as only England available.
-    abstract: > # {{ DevOnly }} GA added 20200715 
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200715 
+    abstract: >
       COVID-19 patients admitted to hospital per 100,000 resident population since the start of the pandemic, by age.  
       See the {indicator definition:cumAdmissions} for more information.
+    # {{ EndDevOnlyBlock }}
       
     download:
       - cumAdmissionsByAge
@@ -218,9 +227,12 @@ cards:
     cardType: multiAreaStatic
     fullWidth: true
     # TODO: PF to check
-    abstract: > # {{ DevOnly }} GA added 20200715 
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200715 
+    abstract: >
       COVID-19 patients admitted to hospital, by nation.  Data are not updated at weekends.  National data are not directly comparable - 
       see the {indicator definition:genAdmissions} for more information.
+    # {{ EndDevOnlyBlock }}
       
     download:
       - newAdmissions
@@ -284,11 +296,14 @@ cards:
     cardType: chart
     fullWidth: true
     # TODO: PF to check
-    abstract: > # {{ DevOnly }} GA added 20200715 
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200715 
+    abstract: >
       COVID-19 patients in hospital.  National data may not be directly comparable as data about COVID-19 patients in hospitals 
       are collected differently across nations.  Data are not updated at weekends and data are not all provided from each nation 
       every day, so the UK figure presented may lag as it is calculated by summing the four nations' counts - 
       see the {indicator definition:hospitalCases} for more information.
+    # {{ EndDevOnlyBlock }}
      
     download:
       - hospitalCases
@@ -327,10 +342,13 @@ cards:
     cardType: multiAreaStatic
     fullWidth: true
     # TODO: PF to check
-    abstract: > # {{ DevOnly }} GA added 20200715 
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200715 
+    abstract: >
       COVID-19 patients in hospital, by area.  National data may not be directly comparable as data about COVID-19 patients in hospitals 
       are collected differently across nations.  Data are not updated at weekends and data are not all provided from each nation 
       every day - see the {indicator definition:hospitalCases} for more information.
+    # {{ EndDevOnlyBlock }}
      
     download:
       - hospitalCases
@@ -415,12 +433,15 @@ cards:
     cardType: chart
     fullWidth: true
     # TODO: PF to check
-    abstract: > # {{ DevOnly }} GA added 20200715 
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200715 
+    abstract: >
       Mechanical ventilation bed capacity, and occupancy by COVID-19 and non-COVID-19 patients.  
       Data are not updated at weekends and data are not all provided from each nation every day, 
       so the UK figure presented may lag as it is calculated by summing the four nations' counts.
       National data are not directly comparable - see the {indicator definition:covidOccupiedMVBeds} 
       for more information.
+    # {{ EndDevOnlyBlock }}
 
     download:
       - covidOccupiedMVBeds
@@ -510,12 +531,15 @@ cards:
     cardType: multiAreaStatic
     fullWidth: true
     # TODO: PF to check
-    abstract: > # {{ DevOnly }} GA added 20200715 
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200715 
+    abstract: >
       COVID-19 patients in mechanical ventilation beds, by nation.  
       Data are not updated at weekends and data are not all provided from each nation every day. 
       National data are not directly comparable - see the {indicator definition:covidOccupiedMVBeds} 
       for more information.
-      
+    # {{ EndDevOnlyBlock }}
+    
     download:
       - covidOccupiedMVBeds
     tabs:
@@ -623,9 +647,12 @@ cards:
     caption: Counts
     cardType: ageSexBreakdown
     fullWidth: false
-# TODO: PF to check - need to add line re national data not comparable if appropriate here and link to metadata when available.
-    abstract: > # {{ DevOnly }} GA added 20200715 
+    # TODO: PF to check - need to add line re national data not comparable if appropriate here and link to metadata when available.
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200715 
+    abstract: >
       COVID-19 patients discharged home from hospital since the start of the pandemic, by age.  
+    # {{ EndDevOnlyBlock }}
 
     download:
       - cumAdmissionsByAge
@@ -675,9 +702,12 @@ cards:
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
     fullWidth: false
-# TODO: PF to check - need to add line re national data not comparable if appropriate here and link to metadata when available.
-    abstract: > # {{ DevOnly }} GA added 20200715 
+    # TODO: PF to check - need to add line re national data not comparable if appropriate here and link to metadata when available.
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200715 
+    abstract: >
       COVID-19 patients discharged home from hospital per 100,000 resident population since the start of the pandemic, by age.  
+    # {{ EndDevOnlyBlock }}
 
     download:
       - cumDischargesByAge
