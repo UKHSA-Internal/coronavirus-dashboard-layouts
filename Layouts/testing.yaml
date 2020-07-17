@@ -33,8 +33,11 @@ cards:
   - heading: Testing and capacity
     cardType: chart
     fullWidth: true
-    abstract: > # {{ DevOnly }} needs writing: this is just an example
+    # {{ StartDevOnlyBlock }}
+    # needs writing: this is just an example
+    abstract: >
       We can put an explanatory paragraph in here with {links to modals:newTestsByPublishDate}
+    # {{ EndDevOnlyBlock }}
 
     download:
       - plannedCapacityByPublishDate
