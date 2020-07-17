@@ -960,7 +960,7 @@ cards:
 
     resource: 
       label: View map
-      url: https://phe.maps.arcgis.com/apps/webappviewer/index.html?id=47574f7a6e454dc6a42c5f6912ed7076
+      url: https://arcgis.com/apps/webappviewer/index.html?id=47574f7a6e454dc6a42c5f6912ed7076
 
     download:
       - format: CSV
