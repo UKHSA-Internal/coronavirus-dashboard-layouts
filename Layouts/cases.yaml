@@ -931,7 +931,7 @@ cards:
 
       - heading: About # {{ DevOnly }} md needs writing and also applying to every other tab.  This is just an example
         tabType: metadata # {{ DevOnly }}
-        filename: metadataTabs/cases/cases-and-case-rates-by-area.md # {{ DevOnly }}
+        filename: metadataTabs/cases/cases-and-case-rates-by-area # {{ DevOnly }}
 
   - heading: Weekly cases by local area in England # Cases by area when abstract enabled
     cardType: simpleExternalStatic
