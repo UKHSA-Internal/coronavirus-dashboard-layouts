@@ -1,6 +1,21 @@
 summary:
   - heading: Testing
     fields:
+
+      - caption: Testing capacity
+        chart:
+          value: plannedCapacityByPublishDate
+          type: line
+          colour: 6
+          fill: true
+          rollingAverage: false
+          display: true
+        
+        valueItems: 
+          - label: Daily
+            value: plannedCapacityByPublishDate
+            tooltip: Estimated total lab capacity on {date}
+
       - caption: Tests processed
         chart:
           value: newTestsByPublishDate
@@ -18,20 +33,6 @@ summary:
           - label: Total
             value: cumTestsByPublishDate
             tooltip: Cumulative total number of tests processed, reported on {date}
-
-      - caption: Testing capacity
-        chart:
-          value: plannedCapacityByPublishDate
-          type: line
-          colour: 6
-          fill: true
-          rollingAverage: false
-          display: true
-        
-        valueItems: 
-          - label: Daily
-            value: plannedCapacityByPublishDate
-            tooltip: Estimated total lab capacity on {date}
 
   - heading: Cases
     fields:
