@@ -40,7 +40,7 @@ cards:
       Number of lab-confirmed positive or negative COVID-19 test results by test type, by date reported.  This is a count of 
       test results and may include multiple tests for an individual person.  Test types include NHS and PHE tests, commercial tests, 
       antibody tests and surveillance tests.  Testing capacity is shown for the UK only and is an estimate of the number
-      of tests that can be performed based on availability of staff and resources. 
+      of tests that can be performed based on availability of staff and resources.  See the About tab for more information.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -228,7 +228,7 @@ cards:
       Number of people with at least one lab-confirmed positive or negative COVID-19 test result, by date reported. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
       different dates between 15th June and 14th July for each nation. National data are not directly comparable - 
-      see the indicator definition for more information. 
+      see the About tab for more information. 
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -302,7 +302,7 @@ cards:
       Number of people with at least one lab-confirmed positive or negative COVID-19 test result, by date reported. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
       different dates between 15th June and 14th July for each nation. National data are not directly comparable - 
-      see the indicator definition for more information. 
+      see the About tab for more information. 
     # {{ EndDevOnlyBlock }}
     download:
       - newPillarOneTestsByPublishDate
@@ -361,7 +361,7 @@ cards:
             tooltip: Cumulative number of COVID-19 tests on the residents of each nation, processed by NHS (and, in England, PHE) labs, by date reported
 
       # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
+      # TODO: GA to write and reference md file.  PF to check - currently base md file says 'all types of test' so need new base for or amend existing one for here?
       - heading: About 
         tabType: metadata
         filename: metadataTabs/testing/tabPillar1TestsByNation.md
