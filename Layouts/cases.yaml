@@ -436,7 +436,7 @@ cards:
       # TODO: GA to write and reference md file.  PF to check - do we link to different mds for each toggle within the card?
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyPeopleTested.md
+        filename: metadataTabs/testing/tabPeopleTested.md
       # {{ EndDevOnlyBlock }}
 
     Reporting date:
@@ -503,7 +503,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyPeopleTested.md
+        filename: metadataTabs/testing/tabPeopleTested.md
       # {{ EndDevOnlyBlock }}
 
 
@@ -812,7 +812,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabPeopleTestedByAgeAndSex.md
+        filename: metadataTabs/testing/tabPeopleTestedByAgeAndSex.md
       # {{ EndDevOnlyBlock }}
 
 # TODO: PF to check - GA 20200717 - not added abstracts or About tabs as not yet publishing - shouldn't this sit on the testing page?
@@ -889,7 +889,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabPeopleTestedByAgeAndSex.md
+        filename: metadataTabs/testing/tabPeopleTestedByAgeAndSex.md
       # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
