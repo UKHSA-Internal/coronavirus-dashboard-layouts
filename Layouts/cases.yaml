@@ -38,7 +38,7 @@ cards:
       Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
       different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the {indicator definition:genCasesBySpecimenDate} for more information.
+      see the About tab for more information.
     # {{ EndDevOnlyBlock }}
     
     download:
@@ -100,7 +100,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCasesBySpecimenDate.md
+        filename: metadataTabs/cases/tabDailyCases.md
       # {{ EndDevOnlyBlock }}
 
   - heading: Daily cases by date reported
@@ -113,7 +113,7 @@ cards:
       Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
       different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the {indicator definition:genCasesByPublishDate} for more information.
+      see the About tab for more information.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -172,7 +172,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCasesByPublishDate.md
+        filename: metadataTabs/cases/tabDailyCases.md
       # {{ EndDevOnlyBlock }}
 
 
@@ -190,7 +190,7 @@ cards:
       Number of people with at least one lab-confirmed positive COVID-19 test result. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
       different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the {indicator definition:genCases} for more information.
+      see the About tab for more information.
     # {{ EndDevOnlyBlock }}
 
     options:
@@ -270,7 +270,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCasesBySpecimenDate.md
+        filename: metadataTabs/cases/tabDailyCases.md
       # {{ EndDevOnlyBlock }}
 
 
@@ -341,7 +341,7 @@ cards:
       # TODO: GA to write and reference md file  PF to check - do we link to different About files for each toggle within the card?
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCasesByPublishDate.md
+        filename: metadataTabs/cases/tabDailyCases.md
       # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
@@ -360,9 +360,8 @@ cards:
     abstract: >
       Number of people with at least one lab-confirmed positive or negative COVID-19 test result. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  
-      National data are not directly comparable - see the {indicator definition:genPeopleTested} 
-      for more information.
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
+      see the About tab for more information.
     # {{ EndDevOnlyBlock }}
 
     options:
@@ -437,7 +436,7 @@ cards:
       # TODO: GA to write and reference md file.  PF to check - do we link to different mds for each toggle within the card?
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyPeopleTestedBySpecimenDate.md
+        filename: metadataTabs/cases/tabDailyPeopleTested.md
       # {{ EndDevOnlyBlock }}
 
     Reporting date:
@@ -504,7 +503,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCasesByPublishDate.md
+        filename: metadataTabs/cases/tabDailyPeopleTested.md
       # {{ EndDevOnlyBlock }}
 
 
@@ -576,7 +575,7 @@ cards:
       Number of people with at least one lab-confirmed COVID-19 positive test result since the start of the pandemic, by age and sex. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
       different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the {indicator definition:cumCasesByPublishDate} for more information.
+      see the About tab for more information.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -650,7 +649,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabCasesByAgeAndSex.md
+        filename: metadataTabs/cases/tabCasesAndRatesByAgeAndSex.md
       # {{ EndDevOnlyBlock }}
 
 
@@ -666,7 +665,7 @@ cards:
       of the pandemic per 100,000 population, by age and sex.  Initially only NHS and, in England, 
       PHE tests were included but commercial tests have been included from   
       different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the {indicator definition:cumCasesByPublishDate} for more information.
+      see the About tab for more information.
     # {{ EndDevOnlyBlock }}
  
     tabs: 
@@ -732,13 +731,13 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabCaseRatesByAgeAndSex.md
+        filename: metadataTabs/cases/tabCasesAndRatesByAgeAndSex.md
       # {{ EndDevOnlyBlock }}
 
 
 # {{ StartDevOnlyBlock }}
 # Not currently publishing people tested
-# TODO: PF to check - GA 20200717 - not added abstracts or About tabs as not yet publishing - shouldn't this sit on the testing page?
+# TODO: PF to check - GA 20200717 - not added abstracts as not yet publishing - shouldn't this sit on the testing page?
 
   - heading: People tested, by age and sex
     caption: Counts
@@ -808,6 +807,13 @@ cards:
             value: malePeopleTestedRate
             type: numeric
             tooltip: Total number of males tested (positive or negative) per 100,000 resident population
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/cases/tabPeopleTestedByAgeAndSex.md
+      # {{ EndDevOnlyBlock }}
 
 # TODO: PF to check - GA 20200717 - not added abstracts or About tabs as not yet publishing - shouldn't this sit on the testing page?
   - heading: People tested rates by age and sex
@@ -879,6 +885,13 @@ cards:
             type: numeric
             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/cases/tabPeopleTestedByAgeAndSex.md
+      # {{ EndDevOnlyBlock }}
+
 # {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}
@@ -915,7 +928,7 @@ cards:
       Number of people with at least one lab-confirmed positive COVID-19 test result since the start of the pandemic. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
       different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the {indicator definition:cumCasesByPublishDate} for more information.
+      see the About tab for more information.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -1070,7 +1083,7 @@ cards:
       Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported, by nation. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
       different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the {indicator definition:genCasesByPublishDate} for more information.
+      see the About tab for more information.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -1134,5 +1147,5 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabCasesByNationByPublishDate.md
+        filename: metadataTabs/cases/tabCases.md
       # {{ EndDevOnlyBlock }}
