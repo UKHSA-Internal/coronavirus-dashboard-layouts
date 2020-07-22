@@ -73,6 +73,13 @@ cards:
             type: numeric
             tooltip: Cumulative total number of deaths
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/deaths/tabDailyDeathsByDeathDate.md
+      # {{ EndDevOnlyBlock }}
+
   - heading: Daily deaths by date reported
     cardType: chart
     fullWidth: true
@@ -136,6 +143,13 @@ cards:
             value: cumDeathsByPublishDate
             type: numeric
             tooltip: Cumulative total number of deaths by date reported
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/deaths/tabDailyDeathsbyPublishDate.md
+      # {{ EndDevOnlyBlock }}
 
   - heading: Deaths by age and sex
     caption: Counts
@@ -217,6 +231,13 @@ cards:
             type: numeric
             tooltip: Total number of male deaths per 100,000 resident population
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/deaths/tabDeathsByAgeAndSex.md
+      # {{ EndDevOnlyBlock }}
+
   - heading: Death rates by age and sex
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
@@ -296,6 +317,13 @@ cards:
             value: maleDeathsRate
             type: numeric
             tooltip: Total number of female deaths per 100,000 resident population
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/deaths/tabDeathRatesByAgeAndSex.md
+      # {{ EndDevOnlyBlock }}
 
   - heading: Deaths by area # Total cumulative deaths by area on live pending implementation of abstract
     cardType: simpleTableStatic
@@ -418,10 +446,13 @@ cards:
             type: numeric # {{ DevOnly }}
             tooltip: Death rate per 100,000 resident population # {{ DevOnly }}
 
+
+      # {{ StartDevOnlyBlock }}
       # TODO: GA to write and reference md file
-      - heading: More information # {{ DevOnly }} Markdown needs writing and then implementing similar across site
-        tabType: metadata # {{ DevOnly }}
-        filename: metadataTabs/deaths/deaths-and-death-rates-by-area.md # {{ DevOnly }}
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/deaths/tabDeathsAndDeathRatesByArea.md
+      # {{ EndDevOnlyBlock }}
 
   - heading: Deaths by date reported, by nation
     cardType: multiAreaStatic
@@ -491,6 +522,13 @@ cards:
             value: cumDeathsByPublishDate
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each nation, by date reported
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/deaths/tabDeathsByNationByPublishDate.md
+      # {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}
 # Scatter chart is not a valid card type yet.  Intention is to join this up with a map and the table of area data, as in old dashboard
