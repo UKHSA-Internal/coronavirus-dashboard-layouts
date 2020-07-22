@@ -100,7 +100,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCasesBySpecimenDate.md
+        filename: metadataTabs/cases/tabDailyCases.md
       # {{ EndDevOnlyBlock }}
 
   - heading: Daily cases by date reported
@@ -172,7 +172,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCasesByPublishDate.md
+        filename: metadataTabs/cases/tabDailyCases.md
       # {{ EndDevOnlyBlock }}
 
 
@@ -270,7 +270,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCasesBySpecimenDate.md
+        filename: metadataTabs/cases/tabDailyCases.md
       # {{ EndDevOnlyBlock }}
 
 
@@ -341,7 +341,7 @@ cards:
       # TODO: GA to write and reference md file  PF to check - do we link to different About files for each toggle within the card?
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCasesByPublishDate.md
+        filename: metadataTabs/cases/tabDailyCases.md
       # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
@@ -437,7 +437,7 @@ cards:
       # TODO: GA to write and reference md file.  PF to check - do we link to different mds for each toggle within the card?
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyPeopleTestedBySpecimenDate.md
+        filename: metadataTabs/cases/tabDailyPeopleTested.md
       # {{ EndDevOnlyBlock }}
 
     Reporting date:
@@ -504,7 +504,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCasesByPublishDate.md
+        filename: metadataTabs/cases/tabDailyPeopleTested.md
       # {{ EndDevOnlyBlock }}
 
 
@@ -650,7 +650,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabCasesByAgeAndSex.md
+        filename: metadataTabs/cases/tabCasesAndRatesByAgeAndSex.md
       # {{ EndDevOnlyBlock }}
 
 
@@ -732,13 +732,13 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabCaseRatesByAgeAndSex.md
+        filename: metadataTabs/cases/tabCasesAndRatesByAgeAndSex.md
       # {{ EndDevOnlyBlock }}
 
 
 # {{ StartDevOnlyBlock }}
 # Not currently publishing people tested
-# TODO: PF to check - GA 20200717 - not added abstracts or About tabs as not yet publishing - shouldn't this sit on the testing page?
+# TODO: PF to check - GA 20200717 - not added abstracts as not yet publishing - shouldn't this sit on the testing page?
 
   - heading: People tested, by age and sex
     caption: Counts
@@ -809,6 +809,13 @@ cards:
             type: numeric
             tooltip: Total number of males tested (positive or negative) per 100,000 resident population
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/cases/tabPeopleTestedByAgeAndSex.md
+      # {{ EndDevOnlyBlock }}
+
 # TODO: PF to check - GA 20200717 - not added abstracts or About tabs as not yet publishing - shouldn't this sit on the testing page?
   - heading: People tested rates by age and sex
     caption: Rates per 100,000 resident population
@@ -878,6 +885,13 @@ cards:
             value: malePeopleTestedRate
             type: numeric
             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/cases/tabPeopleTestedByAgeAndSex.md
+      # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
 
@@ -1134,5 +1148,5 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabCasesByNationByPublishDate.md
+        filename: metadataTabs/cases/tabCases.md
       # {{ EndDevOnlyBlock }}
