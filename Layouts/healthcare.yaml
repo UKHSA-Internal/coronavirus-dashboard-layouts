@@ -246,6 +246,19 @@ cards:
 
   - heading: Patients admitted to hospital, by nation
     cardType: multiAreaStatic
+
+    # example of locationAware for including or excluding specific area types or area names
+    # syntax set out in full below, but don't need to include empty lists
+
+    locationAware:
+      included: 
+        areaType:
+          - overview
+        areaName: []
+      excluded:
+        areaType: []
+        areaName: []
+      
     fullWidth: true
     # TODO: PF to check
     # {{ StartDevOnlyBlock }}
