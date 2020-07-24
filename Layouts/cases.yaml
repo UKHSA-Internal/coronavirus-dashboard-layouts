@@ -37,8 +37,7 @@ cards:
     abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the About tab for more information.
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
     
     download:
@@ -112,8 +111,7 @@ cards:
     abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the About tab for more information.
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -189,8 +187,7 @@ cards:
     abstract: > 
       Number of people with at least one lab-confirmed positive COVID-19 test result. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the About tab for more information.
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     options:
@@ -360,8 +357,7 @@ cards:
     abstract: >
       Number of people with at least one lab-confirmed positive or negative COVID-19 test result. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the About tab for more information.
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     options:
@@ -574,8 +570,7 @@ cards:
     abstract: > 
       Number of people with at least one lab-confirmed COVID-19 positive test result since the start of the pandemic, by age and sex. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the About tab for more information.
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -664,8 +659,7 @@ cards:
       Number of people with at least one lab-confirmed positive COVID-19 test result since the start 
       of the pandemic per 100,000 population, by age and sex.  Initially only NHS and, in England, 
       PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the About tab for more information.
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
  
     tabs: 
@@ -927,8 +921,7 @@ cards:
     abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result since the start of the pandemic. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the About tab for more information.
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -1082,8 +1075,7 @@ cards:
     abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported, by nation. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable - 
-      see the About tab for more information.
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     download:
