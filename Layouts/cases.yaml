@@ -566,7 +566,6 @@ cards:
     fullWidth: false
     # TODO: PF to check
     # {{ StartDevOnlyBlock }}
-    # {{ DevOnly }} GA added 20200717
     abstract: > 
       Number of people with at least one lab-confirmed COVID-19 positive test result since the start of the pandemic, by age and sex. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
