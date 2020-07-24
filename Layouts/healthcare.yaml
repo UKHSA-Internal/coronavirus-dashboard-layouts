@@ -36,7 +36,7 @@ headlineNumbers:
       - value: covidOccupiedMVBeds
         tooltip: Number of COVID-19 patients currently in mechanical ventilation beds, reported on {date}
     
-cards:
+cards
   - heading: Patients admitted to hospital
     cardType: chart
     fullWidth: true
@@ -45,8 +45,7 @@ cards:
     # GA added 20200715
     abstract: >
       COVID-19 patients admitted to hospital.  Data are not updated at weekends.  The UK figure is the sum of the four nations' figures and can 
-      only be presented up to the date when all nations' data are available.  National data are not directly comparable - 
-      see the {indicator definition:genAdmissions} for more information.
+      only be presented up to the date when all nations' data are available.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
       
     download:
@@ -120,8 +119,7 @@ cards:
     # {{ StartDevOnlyBlock }}
     # GA added 20200715 
     abstract: >
-      COVID-19 patients admitted to hospital since the start of the pandemic, by age.   
-      See the {indicator definition:cumAdmissions} for more information.
+      COVID-19 patients admitted to hospital since the start of the pandemic, by age.
     # {{ EndDevOnlyBlock }}
       
     download:
@@ -185,8 +183,7 @@ cards:
     # {{ StartDevOnlyBlock }}
     # GA added 20200715 
     abstract: >
-      COVID-19 patients admitted to hospital per 100,000 resident population since the start of the pandemic, by age.  
-      See the {indicator definition:cumAdmissions} for more information.
+      COVID-19 patients admitted to hospital per 100,000 resident population since the start of the pandemic, by age.
     # {{ EndDevOnlyBlock }}
       
     download:
@@ -264,8 +261,7 @@ cards:
     # {{ StartDevOnlyBlock }}
     # GA added 20200715 
     abstract: >
-      COVID-19 patients admitted to hospital, by nation.  Data are not updated at weekends.  National data are not directly comparable - 
-      see the {indicator definition:genAdmissions} for more information.
+      COVID-19 patients admitted to hospital, by nation.  Data are not updated at weekends.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
       
     download:
@@ -342,8 +338,7 @@ cards:
     abstract: >
       COVID-19 patients in hospital.  National data may not be directly comparable as data about COVID-19 patients in hospitals 
       are collected differently across nations.  Data are not updated at weekends and data are not all provided from each nation 
-      every day, so the UK figure presented may lag as it is calculated by summing the four nations' counts - 
-      see the {indicator definition:hospitalCases} for more information.
+      every day, so the UK figure presented may lag as it is calculated by summing the four nations' counts.
     # {{ EndDevOnlyBlock }}
      
     download:
@@ -395,7 +390,7 @@ cards:
     abstract: >
       COVID-19 patients in hospital, by area.  National data may not be directly comparable as data about COVID-19 patients in hospitals 
       are collected differently across nations.  Data are not updated at weekends and data are not all provided from each nation 
-      every day - see the {indicator definition:hospitalCases} for more information.
+      every day.
     # {{ EndDevOnlyBlock }}
      
     download:
@@ -501,8 +496,7 @@ cards:
       Mechanical ventilation bed capacity, and occupancy by COVID-19 and non-COVID-19 patients.  
       Data are not updated at weekends and data are not all provided from each nation every day, 
       so the UK figure presented may lag as it is calculated by summing the four nations' counts.
-      National data are not directly comparable - see the {indicator definition:covidOccupiedMVBeds} 
-      for more information.
+      National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -605,8 +599,7 @@ cards:
     abstract: >
       COVID-19 patients in mechanical ventilation beds, by nation.  
       Data are not updated at weekends and data are not all provided from each nation every day. 
-      National data are not directly comparable - see the {indicator definition:covidOccupiedMVBeds} 
-      for more information.
+      National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
     
     download:

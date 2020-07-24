@@ -18,8 +18,7 @@ cards:
     # GA added 20200716 
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19, by date of death. 
-      By definition, the actual cause of death may not be COVID-19 in all cases.  National data are not directly comparable - 
-      see the About tab for more information.    
+      By definition, the actual cause of death may not be COVID-19 in all cases.  National data are not directly comparable.    
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -88,8 +87,7 @@ cards:
     # GA added 20200716 
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19, by date reported. 
-      By definition, the actual cause of death may not be COVID-19 in all cases.  National data are not directly comparable - 
-      see the About tab for more information.    
+      By definition, the actual cause of death may not be COVID-19 in all cases.  National data are not directly comparable.    
     # {{ EndDevOnlyBlock }} 
     
     download:
@@ -164,8 +162,7 @@ cards:
     abstract: >
       Number of deaths of people who had had a positive test result for COVID-19 
       since the start of the pandemic, by age and sex.  
-      By definition, the actual cause of death may not be COVID-19 in all cases.   
-      See the About tab for more information.    
+      By definition, the actual cause of death may not be COVID-19 in all cases.
     # {{ EndDevOnlyBlock }} 
 
     download:
@@ -252,8 +249,7 @@ cards:
     abstract: >
       Number of deaths of people who had had a positive test result for COVID-19 since the 
       start of the pandemic per 100,000 resident population, by age and sex.  
-      By definition, the actual cause of death may not be COVID-19 in all cases.   
-      See the About tab for more information.    
+      By definition, the actual cause of death may not be COVID-19 in all cases.
     # {{ EndDevOnlyBlock }} 
 
     download:
@@ -337,8 +333,7 @@ cards:
     abstract: >
       Number of deaths since the start of the pandemic of people who had had a positive test result for COVID-19, 
       and equivalent rates per 100,000 resident population, by area.  By definition, the actual cause of death may 
-      not be COVID-19 in all cases.  National data are not directly comparable - 
-      see the About tab for more information.    
+      not be COVID-19 in all cases.  National data are not directly comparable.    
     # {{ EndDevOnlyBlock }} 
 
     download:
@@ -463,7 +458,7 @@ cards:
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19, by date reported, by nation.  
       By definition, the actual cause of death may not be COVID-19 in all cases.  
-      National data are not directly comparable - see the About tab for more information. 
+      National data are not directly comparable. 
     # {{ EndDevOnlyBlock }}   
 
     download:
