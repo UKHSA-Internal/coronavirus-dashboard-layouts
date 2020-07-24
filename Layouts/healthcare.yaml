@@ -237,7 +237,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/healthcare/tabAdmissionRatesByAge.md
+        filename: metadataTabs/healthcare/tabPatientsAdmittedToHospitalByAge.md
       # {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}
@@ -328,7 +328,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/healthcare/tabPatientsAdmittedToHospitalByNation.md
+        filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
       # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
@@ -378,7 +378,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/healthcare/tabPatientsInHospital.md
+        filename: hospitalCases.md
       # {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}            
@@ -445,7 +445,7 @@ cards:
       # TODO: GA to write and reference md file.  PF to check - do we define separate About tab for each toggle on card?
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/healthcare/tabPatientsInHospitalByArea.md
+        filename: hospitalCases.md
       # {{ EndDevOnlyBlock }}
 
     NHS Region:
@@ -486,7 +486,7 @@ cards:
       # TODO: GA to write and reference md file.  PF to check - do we define separate About tabs for each toggle on card?
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/healthcare/tabPatientsInHospitalByArea.md
+        filename: hospitalCases.md
       # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
@@ -589,7 +589,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/healthcare/tabPatientsInMVBeds.md
+        filename: covidOccupiedMVBeds.md
       # {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}
@@ -648,7 +648,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/healthcare/tabPatientsInMVBedsByNation.md
+        filename: covidOccupiedMVBeds.md
       # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
