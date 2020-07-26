@@ -263,12 +263,12 @@ cards:
               type: numeric # {{ DevOnly }}
               tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person # {{ DevOnly }}
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
-      - heading: About 
-        tabType: metadata
-        filename: metadataTabs/cases/tabDailyCases.md
-      # {{ EndDevOnlyBlock }}
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file
+        - heading: About 
+          tabType: metadata
+          filename: metadataTabs/cases/tabDailyCases.md
+        # {{ EndDevOnlyBlock }}
 
 
     Date reported:
@@ -334,12 +334,12 @@ cards:
               type: numeric # {{ DevOnly }}
               tooltip: Cumulative total number of people tested (positive or negative) by date reported # {{ DevOnly }}
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file  PF to check - do we link to different About files for each toggle within the card?
-      - heading: About 
-        tabType: metadata
-        filename: metadataTabs/cases/tabDailyCases.md
-      # {{ EndDevOnlyBlock }}
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file  PF to check - do we link to different About files for each toggle within the card?
+        - heading: About 
+          tabType: metadata
+          filename: metadataTabs/cases/tabDailyCases.md
+        # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
 
@@ -428,12 +428,12 @@ cards:
               type: numeric
               tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file.  PF to check - do we link to different mds for each toggle within the card?
-      - heading: About 
-        tabType: metadata
-        filename: metadataTabs/testing/tabPeopleTested.md
-      # {{ EndDevOnlyBlock }}
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file.  PF to check - do we link to different mds for each toggle within the card?
+        - heading: About 
+          tabType: metadata
+          filename: metadataTabs/testing/tabPeopleTested.md
+        # {{ EndDevOnlyBlock }}
 
     Reporting date:
       tabs:
@@ -495,12 +495,12 @@ cards:
               type: numeric
               tooltip: Cumulative total number of people tested (positive or negative) by date reported
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
-      - heading: About 
-        tabType: metadata
-        filename: metadataTabs/testing/tabPeopleTested.md
-      # {{ EndDevOnlyBlock }}
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file
+        - heading: About 
+          tabType: metadata
+          filename: metadataTabs/testing/tabPeopleTested.md
+        # {{ EndDevOnlyBlock }}
 
 
 # {{ EndDevOnlyBlock }}

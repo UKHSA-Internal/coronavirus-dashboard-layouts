@@ -36,7 +36,7 @@ headlineNumbers:
       - value: covidOccupiedMVBeds
         tooltip: Number of COVID-19 patients currently in mechanical ventilation beds, reported on {date}
     
-cards
+cards:
   - heading: Patients admitted to hospital
     cardType: chart
     fullWidth: true
@@ -436,12 +436,12 @@ cards
               type: numeric
               tooltip: Number of COVID-19 patients currently in hospital
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file.  PF to check - do we define separate About tab for each toggle on card?
-      - heading: About 
-        tabType: metadata
-        filename: hospitalCases.md
-      # {{ EndDevOnlyBlock }}
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file.  PF to check - do we define separate About tab for each toggle on card?
+        - heading: About 
+          tabType: metadata
+          filename: hospitalCases.md
+        # {{ EndDevOnlyBlock }}
 
     NHS Region:
       tabs:
@@ -477,12 +477,12 @@ cards
               type: numeric
               tooltip: Number of COVID-19 patients currently in hospital
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file.  PF to check - do we define separate About tabs for each toggle on card?
-      - heading: About 
-        tabType: metadata
-        filename: hospitalCases.md
-      # {{ EndDevOnlyBlock }}
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file.  PF to check - do we define separate About tabs for each toggle on card?
+        - heading: About 
+          tabType: metadata
+          filename: hospitalCases.md
+        # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
 
