@@ -10,8 +10,100 @@ headlineNumbers:
         tooltip: Total number of deaths of people who have had a positive test result for COVID-19, reported up to {date}
 
 cards:
+
+# Only shown for UK
+
+  - heading: Deaths by date reported, by nation
+    cardType: multiAreaStatic
+
+    locationAware:
+      included: 
+        areaType:
+          - overview
+
+    fullWidth: true
+    # TODO: PF to check
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200716
+    abstract: > 
+      Number of deaths of people who had had a positive test result for COVID-19, by date reported, by nation.  
+      By definition, the actual cause of death may not be COVID-19 in all cases.  
+      National data are not directly comparable. 
+    # {{ EndDevOnlyBlock }}   
+
+    download:
+      - newDeathsByPublishDate
+      - cumDeathsByPublishDate
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10] # areaNames in alphabetical order
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: newDeathsByPublishDate
+            tooltip: Daily number of new deaths of people resident in each nation, by date reported
+            type: bar
+            rollingAverage: false
+
+      - heading: Cumulative
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10] # areaNames in alphabetical order
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: cumDeathsByPublishDate
+            tooltip: Cumulative total number of new deaths of people resident in each nation, by date reported
+            type: bar
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by the Department of Health and Social Care
+
+          - label: daily
+            value: newDeathsByPublishDate
+            type: numeric
+            tooltip: Daily number of new deaths of people resident in each nation, by date reported
+
+          - label: total
+            value: cumDeathsByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of new deaths of people resident in each nation, by date reported
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/deaths/tabDailyDeaths.md
+      # {{ EndDevOnlyBlock }}
+
+# Not shown for UK
+
   - heading: Daily deaths by date of death
     cardType: chart
+
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
     fullWidth: true
     # TODO: PF to check
     # {{ StartDevOnlyBlock }} 
@@ -79,8 +171,16 @@ cards:
         filename: metadataTabs/deaths/tabDailyDeaths.md
       # {{ EndDevOnlyBlock }}
 
+# Not shown for UK
+
   - heading: Daily deaths by date reported
     cardType: chart
+
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
     fullWidth: true
     # TODO: PF to check
     # {{ StartDevOnlyBlock }} 
@@ -447,81 +547,6 @@ cards:
       - heading: About 
         tabType: metadata
         filename: metadataTabs/deaths/tabDeathsAndDeathRates.md
-      # {{ EndDevOnlyBlock }}
-
-  - heading: Deaths by date reported, by nation
-    cardType: multiAreaStatic
-    fullWidth: true
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200716
-    abstract: > 
-      Number of deaths of people who had had a positive test result for COVID-19, by date reported, by nation.  
-      By definition, the actual cause of death may not be COVID-19 in all cases.  
-      National data are not directly comparable. 
-    # {{ EndDevOnlyBlock }}   
-
-    download:
-      - newDeathsByPublishDate
-      - cumDeathsByPublishDate
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10]
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-        fields:
-          - label: ""
-            value: newDeathsByPublishDate
-            tooltip: Daily number of new deaths of people resident in each nation, by date reported
-            type: bar
-            rollingAverage: false
-
-      - heading: Cumulative
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10]
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-        fields:
-          - label: ""
-            value: cumDeathsByPublishDate
-            tooltip: Cumulative total number of new deaths of people resident in each nation, by date reported
-            type: bar
-            rollingAverage: false
-
-      - heading: Data
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported by the Department of Health and Social Care
-
-          - label: daily
-            value: newDeathsByPublishDate
-            type: numeric
-            tooltip: Daily number of new deaths of people resident in each nation, by date reported
-
-          - label: total
-            value: cumDeathsByPublishDate
-            type: numeric
-            tooltip: Cumulative total number of new deaths of people resident in each nation, by date reported
-
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
-      - heading: About 
-        tabType: metadata
-        filename: metadataTabs/deaths/tabDailyDeaths.md
       # {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}
