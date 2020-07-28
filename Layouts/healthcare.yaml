@@ -39,6 +39,21 @@ headlineNumbers:
 cards:
   - heading: Patients admitted to hospital
     cardType: chart
+
+    # example of locationAware for including or excluding specific area types or area names
+    # syntax set out in full below, but don't need to include empty lists
+
+    # Not shown for UK
+
+    locationAware:
+      included: 
+        areaType: []
+        areaName: []
+      excluded:
+        areaType:
+          - overview
+        areaName: []
+      
     fullWidth: true
     # TODO: PF to check
     # {{ StartDevOnlyBlock }}
@@ -109,6 +124,88 @@ cards:
         tabType: metadata
         filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
       # {{ EndDevOnlyBlock }}
+
+# Only shown for UK
+
+  - heading: Patients admitted to hospital, by nation
+    cardType: multiAreaStatic
+
+    locationAware:
+      included: 
+        areaType:
+          - overview
+
+    fullWidth: true
+    # TODO: PF to check
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200715 
+    abstract: >
+      COVID-19 patients admitted to hospital, by nation.  Data are not updated at weekends.  National data are not directly comparable.
+    # {{ EndDevOnlyBlock }}
+      
+    download:
+      - newAdmissions
+      - cumAdmissions
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10] # areaNames in alphabetical order
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: newAdmissions
+            tooltip: Daily number of COVID-19 patients admitted to hospital
+            type: bar
+            rollingAverage: false
+
+      - heading: Cumulative
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10] # areaNames in alphabetical order
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: cumAdmissions
+            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+            type: bar
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by healthcare providers
+
+          - label: daily
+            value: newAdmissions
+            type: numeric
+            tooltip: Daily number of COVID-19 patients admitted to hospital
+
+          - label: total
+            value: cumAdmissions
+            type: numeric
+            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
+      # {{ EndDevOnlyBlock }
 
   - heading: Patients admitted to hospital, by age
     caption: Counts
@@ -189,6 +286,7 @@ cards:
     download:
       - cumAdmissionsByAge
       - cumAdmissionsByAgeRate
+
     tabs: 
       - heading: Chart
         tabType: chart
@@ -237,100 +335,16 @@ cards:
         filename: metadataTabs/healthcare/tabPatientsAdmittedToHospitalByAge.md
       # {{ EndDevOnlyBlock }}
 
-# {{ StartDevOnlyBlock }}
-# Only really required before we had the localisation feature working, to present nation 
-# figures as in the No 10 slides - try rates
-
-  - heading: Patients admitted to hospital, by nation
-    cardType: multiAreaStatic
-
-    # example of locationAware for including or excluding specific area types or area names
-    # syntax set out in full below, but don't need to include empty lists
-
-    locationAware:
-      included: 
-        areaType:
-          - overview
-        areaName: []
-      excluded:
-        areaType: []
-        areaName: []
-      
-    fullWidth: true
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200715 
-    abstract: >
-      COVID-19 patients admitted to hospital, by nation.  Data are not updated at weekends.  National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
-      
-    download:
-      - newAdmissions
-      - cumAdmissions
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10]
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-        fields:
-          - label: ""
-            value: newAdmissions
-            tooltip: Daily number of COVID-19 patients admitted to hospital
-            type: bar
-            rollingAverage: false
-
-      - heading: Cumulative
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10]
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-        fields:
-          - label: ""
-            value: cumAdmissions
-            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
-            type: bar
-            rollingAverage: false
-
-      - heading: Data
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported by healthcare providers
-
-          - label: daily
-            value: newAdmissions
-            type: numeric
-            tooltip: Daily number of COVID-19 patients admitted to hospital
-
-          - label: total
-            value: cumAdmissions
-            type: numeric
-            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
-
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
-      - heading: About 
-        tabType: metadata
-        filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
-      # {{ EndDevOnlyBlock }}
-
-# {{ EndDevOnlyBlock }}
+# Not shown for UK
 
   - heading: Patients in hospital
     cardType: chart
+
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+      
     fullWidth: true
     # TODO: PF to check
     # {{ StartDevOnlyBlock }}
@@ -375,14 +389,17 @@ cards:
         tabType: metadata
         filename: hospitalCases.md
       # {{ EndDevOnlyBlock }}
+          
+# Only shown for UK
 
-# {{ StartDevOnlyBlock }}            
-# Only really required before we had the localisation feature working, to present nation 
-# figures as in the No 10 slides - try rates
-
-# TODO: PF to check - GA 20200715 - this was a duplicate card title - so added 'by area'
-  - heading: Patients in hospital, by area
+  - heading: Patients in hospital, by nation
     cardType: multiAreaStatic
+
+    locationAware:
+      included: 
+        areaType:
+          - overview
+
     fullWidth: true
     # TODO: PF to check
     # {{ StartDevOnlyBlock }}
@@ -395,100 +412,126 @@ cards:
      
     download:
       - hospitalCases
-    options:
-      type: radio
-      heading: null
-      choices:
-        - Nation
-        - NHS Region
 
-    Nation:
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10]
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: ""
-              value: hospitalCases
-              tooltip: Number of COVID-19 patients currently in hospital
-              type: bar
-              rollingAverage: false
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10] # areaNames in alphabetical order
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
 
-        - heading: Data
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported by healthcare providers
+        fields:
+          - label: ""
+            value: hospitalCases
+            tooltip: Number of COVID-19 patients currently in hospital
+            type: bar
+            rollingAverage: false
 
-            - label: daily
-              value: hospitalCases
-              type: numeric
-              tooltip: Number of COVID-19 patients currently in hospital
+      - heading: Data
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
 
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file.  PF to check - do we define separate About tab for each toggle on card?
-        - heading: About 
-          tabType: metadata
-          filename: hospitalCases.md
-        # {{ EndDevOnlyBlock }}
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by healthcare providers
 
-    NHS Region:
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10, 6, 1, 4]
-          params:
-            - key: areaType
-              sign: "="
-              value: nhsRegion
-          fields:
-            - label: ""
-              value: hospitalCases
-              tooltip: Number of COVID-19 patients currently in hospital
-              type: bar
-              rollingAverage: false
+          - label: daily
+            value: hospitalCases
+            type: numeric
+            tooltip: Number of COVID-19 patients currently in hospital
 
-        - heading: Data
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: nhsRegion
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported by healthcare providers
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file.  PF to check - do we define separate About tab for each toggle on card?
+      - heading: About 
+        tabType: metadata
+        filename: hospitalCases.md
+      # {{ EndDevOnlyBlock }}
 
-            - label: daily
-              value: hospitalCases
-              type: numeric
-              tooltip: Number of COVID-19 patients currently in hospital
+# Only shown for England
 
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file.  PF to check - do we define separate About tabs for each toggle on card?
-        - heading: About 
-          tabType: metadata
-          filename: hospitalCases.md
-        # {{ EndDevOnlyBlock }}
+  - heading: Patients in hospital, by NHS Region
+    cardType: multiAreaStatic
 
-# {{ EndDevOnlyBlock }}
+    locationAware:
+      included: 
+        areaName:
+          - England
+
+    fullWidth: true
+    # TODO: PF to check
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200715 
+    abstract: >
+      COVID-19 patients in hospital, by area.  National data may not be directly comparable as data about COVID-19 patients in hospitals 
+      are collected differently across nations.  Data are not updated at weekends and data are not all provided from each nation 
+      every day.
+    # {{ EndDevOnlyBlock }}
+     
+    download:
+      - hospitalCases
+    
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10, 6, 1, 4] # areaNames in alphabetical order
+        params:
+          - key: areaType
+            sign: "="
+            value: nhsRegion
+
+        fields:
+          - label: ""
+            value: hospitalCases
+            tooltip: Number of COVID-19 patients currently in hospital
+            type: bar
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nhsRegion
+
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by healthcare providers
+
+          - label: daily
+            value: hospitalCases
+            type: numeric
+            tooltip: Number of COVID-19 patients currently in hospital
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file.  PF to check - do we define separate About tabs for each toggle on card?
+      - heading: About 
+        tabType: metadata
+        filename: hospitalCases.md
+      # {{ EndDevOnlyBlock }}
+
+# Not shown for UK
 
   - heading: Patients in mechanical ventilation beds
     cardType: chart
     fullWidth: true
+    
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+      
+
     # TODO: PF to check
     # {{ StartDevOnlyBlock }}
     # GA added 20200715 
@@ -501,9 +544,9 @@ cards:
 
     download:
       - covidOccupiedMVBeds
-      - suspectedCovidOccupiedMVBeds # {{ DevOnly }}
-      - nonCovidOccupiedMVBeds # {{ DevOnly }}
-      - unoccupiedMVBeds # {{ DevOnly }}
+      # - suspectedCovidOccupiedMVBeds # {{ DevOnly }}
+      # - nonCovidOccupiedMVBeds # {{ DevOnly }}
+      # - unoccupiedMVBeds # {{ DevOnly }}
 
     tabs: 
       - heading: Daily
@@ -517,30 +560,30 @@ cards:
             colour: 0
             rollingAverage: false
 
-# {{ StartDevOnlyBlock }}
+          # {{ StartDevOnlyBlock }}
 
-          - label: Suspected COVID-19 patients
-            value: suspectedCovidOccupiedMVBeds
-            tooltip: Daily number of patients suspected to be COVID-19 (but not tested positive) currently in mechanical ventilation beds (England only)
-            type: bar
-            colour: 3
-            rollingAverage: false
+          # - label: Suspected COVID-19 patients
+          #   value: suspectedCovidOccupiedMVBeds
+          #   tooltip: Daily number of patients suspected to be COVID-19 (but not tested positive) currently in mechanical ventilation beds (England only)
+          #   type: bar
+          #   colour: 3
+          #   rollingAverage: false
 
-          - label: Other patients
-            value: nonCovidOccupiedMVBeds
-            tooltip: Daily number of non-COVID-19 patients currently in mechanical ventilation beds
-            type: bar
-            colour: 6
-            rollingAverage: false
+          # - label: Other patients
+          #   value: nonCovidOccupiedMVBeds
+          #   tooltip: Daily number of non-COVID-19 patients currently in mechanical ventilation beds
+          #   type: bar
+          #   colour: 6
+          #   rollingAverage: false
 
-          - label: Unoccupied beds
-            value: unoccupiedMVBeds
-            tooltip: Daily number of currently unoccupied mechanical ventilation beds
-            type: bar
-            colour: 7
-            rollingAverage: false
+          # - label: Unoccupied beds
+          #   value: unoccupiedMVBeds
+          #   tooltip: Daily number of currently unoccupied mechanical ventilation beds
+          #   type: bar
+          #   colour: 7
+          #   rollingAverage: false
 
-# {{ EndDevOnlyBlock }}
+          # {{ EndDevOnlyBlock }}
 
       - heading: Data
         tabType: table
@@ -555,29 +598,29 @@ cards:
             type: numeric
             tooltip: Daily number of COVID-19 patients in mechanical ventilation beds
 
-# {{ StartDevOnlyBlock }}
+          # {{ StartDevOnlyBlock }}
 
-          - label: Suspected COVID-19 patients
-            value: suspectedCovidOccupiedMVBeds
-            type: numeric
-            tooltip: Daily number of patients suspected to be COVID-19 (but not tested positive) in mechanical ventilation beds (England only)
+          # - label: Suspected COVID-19 patients
+          #   value: suspectedCovidOccupiedMVBeds
+          #   type: numeric
+          #   tooltip: Daily number of patients suspected to be COVID-19 (but not tested positive) in mechanical ventilation beds (England only)
             
-          - label: Other patients
-            value: nonCovidOccupiedMVBeds
-            type: numeric
-            tooltip: Daily number of non-COVID-19 patients in mechanical ventilation beds
+          # - label: Other patients
+          #   value: nonCovidOccupiedMVBeds
+          #   type: numeric
+          #   tooltip: Daily number of non-COVID-19 patients in mechanical ventilation beds
             
-          - label: Unoccupied beds
-            value: unoccupiedMVBeds
-            type: numeric
-            tooltip: Daily number of unoccupied mechanical ventilation beds
+          # - label: Unoccupied beds
+          #   value: unoccupiedMVBeds
+          #   type: numeric
+          #   tooltip: Daily number of unoccupied mechanical ventilation beds
 
-          - label: Total beds
-            value: totalMVBeds
-            type: numeric
-            tooltip: Total number of mechanical ventilation beds
+          # - label: Total beds
+          #   value: totalMVBeds
+          #   type: numeric
+          #   tooltip: Total number of mechanical ventilation beds
 
-# {{ EndDevOnlyBlock }}
+          # {{ EndDevOnlyBlock }}
 
       # {{ StartDevOnlyBlock }}
       # TODO: GA to write and reference md file
@@ -586,13 +629,17 @@ cards:
         filename: covidOccupiedMVBeds.md
       # {{ EndDevOnlyBlock }}
 
-# {{ StartDevOnlyBlock }}
-# Only really required before we had the localisation feature working, to present nation 
-# figures as in the No 10 slides - try rates
+# Only shown for UK
 
   - heading: Patients in mechanical ventilation beds, by nation
     cardType: multiAreaStatic
     fullWidth: true
+
+    locationAware:
+      included: 
+        areaType:
+          - overview
+
     # TODO: PF to check
     # {{ StartDevOnlyBlock }}
     # GA added 20200715 
@@ -608,7 +655,7 @@ cards:
       - heading: Daily
         tabType: chart
         barType: stack
-        colours: [0, 9, 3, 10]
+        colours: [0, 9, 3, 10] # areaNames in alphabetical order
         params:
           - key: areaType
             sign: "="
@@ -643,8 +690,6 @@ cards:
         tabType: metadata
         filename: covidOccupiedMVBeds.md
       # {{ EndDevOnlyBlock }}
-
-# {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}
 # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.

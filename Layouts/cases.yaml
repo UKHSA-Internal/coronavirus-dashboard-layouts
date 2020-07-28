@@ -28,8 +28,101 @@ headlineNumbers:
 # yet been implemented
 
 cards:
+
+# Only shown for UK
+
+  - heading: Cases by date reported, by nation
+    cardType: multiAreaStatic
+
+    locationAware:
+      included: 
+        areaType:
+          - overview
+
+    fullWidth: true
+    # TODO: PF to check
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200717
+    abstract: >
+      Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported, by nation. 
+      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
+    # {{ EndDevOnlyBlock }}
+
+    download:
+      - newCasesByPublishDate
+      - cumCasesByPublishDate
+      
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10] # areaNames in alphabetical order
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: newCasesByPublishDate
+            tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
+            type: bar
+            rollingAverage: false
+
+      - heading: Cumulative
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10] # areaNames in alphabetical order
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: ""
+            value: cumCasesByPublishDate
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
+            type: bar
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by the Department of Health and Social Care
+
+          - label: daily
+            value: newCasesByPublishDate
+            type: numeric
+            tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
+
+          - label: total
+            value: cumCasesByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/cases/tabCases.md
+      # {{ EndDevOnlyBlock }}
+
+# Not shown for UK
+
   - heading: Daily cases by specimen date
     cardType: chart
+
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
     fullWidth: true
     # TODO: PF to check
     # {{ StartDevOnlyBlock }}
@@ -102,8 +195,16 @@ cards:
         filename: metadataTabs/cases/tabDailyCases.md
       # {{ EndDevOnlyBlock }}
 
+# Not shown for UK
+
   - heading: Daily cases by date reported
     cardType: chart
+
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+      
     fullWidth: true
     # TODO: PF to check
     # {{ StartDevOnlyBlock }}
@@ -178,8 +279,16 @@ cards:
 # This card will replace the two separate versions above when the functionality to make the radio
 # button options sensitive to whether there are data or not has been implemented
 
+# Not shown for UK
+
   - heading: Daily cases
     cardType: chart
+
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
     fullWidth: true
     # TODO: PF to check - had to create additional genCases generic markdown as others all had daily/cumulative/byreporting/byspecimen titles and subheadings. 
     # {{ StartDevOnlyBlock }}
@@ -1064,79 +1173,3 @@ cards:
 
       - format: Spreadsheet
         url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.xlsx
-
-  - heading: Cases by date reported, by nation
-    cardType: multiAreaStatic
-    fullWidth: true
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200717
-    abstract: >
-      Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported, by nation. 
-      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
-
-    download:
-      - newCasesByPublishDate
-      - cumCasesByPublishDate
-      
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10]
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-        fields:
-          - label: ""
-            value: newCasesByPublishDate
-            tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
-            type: bar
-            rollingAverage: false
-
-      - heading: Cumulative
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10]
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-        fields:
-          - label: ""
-            value: cumCasesByPublishDate
-            tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
-            type: bar
-            rollingAverage: false
-
-      - heading: Data
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported by the Department of Health and Social Care
-
-          - label: daily
-            value: newCasesByPublishDate
-            type: numeric
-            tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
-
-          - label: total
-            value: cumCasesByPublishDate
-            type: numeric
-            tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
-
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
-      - heading: About 
-        tabType: metadata
-        filename: metadataTabs/cases/tabCases.md
-      # {{ EndDevOnlyBlock }}
