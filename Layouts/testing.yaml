@@ -9,38 +9,122 @@ headlineNumbers:
         value: cumTestsByPublishDate
         tooltip: Total number of tests processed, reported up to {date}
 
-# {{ StartDevOnlyBlock }}
-# Not currently publishing people tested
-
-  - caption: All people tested
-    valueItems:
-      - label: Daily
-        value: newPeopleTestedByPublishDate
-        tooltip: Daily number of new people tested reported on {date}
-
-      - label: Total
-        value: cumPeopleTestedByPublishDate
-        tooltip: Total number of people tested reported up to {date}
-
-# {{ EndDevOnlyBlock }}
-
   - caption: Testing capacity
     valueItems:
       - value: plannedCapacityByPublishDate
         tooltip: Estimated total capacity reported by laboratories on {date}
 
 cards:
+
+# Only shown for UK
+
   - heading: Testing and capacity
     cardType: chart
+
+    locationAware:
+      included: 
+        areaType:
+          - overview
+
     fullWidth: true
+    # TODO: PF to check - need to explain why UK has pillar 3 and 4 (and capacity) but not any nations.
     # {{ StartDevOnlyBlock }}
-    # needs writing: this is just an example
+    # GA added 20200722
     abstract: >
-      We can put an explanatory paragraph in here with {links to modals:newTestsByPublishDate}
+      Number of lab-confirmed positive or negative COVID-19 test results by test type, by date reported.  This is a count of 
+      test results and may include multiple tests for an individual person.  Test types include NHS and PHE tests, commercial tests, 
+      antibody tests and surveillance tests.  Testing capacity is only available for the UK only and is an estimate of the number
+      of tests that can be performed based on availability of staff and resources.
     # {{ EndDevOnlyBlock }}
 
     download:
       - plannedCapacityByPublishDate
+      - newTestsByPublishDate
+      - cumTestsByPublishDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Tests processed
+            value: newTestsByPublishDate
+            tooltip: Daily number of tests processed (all pillars) by date reported
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Tests processed (7-day average)
+            value: newTestsByPublishDate
+            tooltip: 7 day rolling average of the daily number of tests processed (all pillars)
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
+
+          - label: Testing capacity
+            value: plannedCapacityByPublishDate
+            tooltip: Estimated daily total capacity reported by laboratories
+            type: line
+            colour: 6
+            fill: true
+            rollingAverage: false
+
+      - heading: Cumulative
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Tests processed
+            value: cumTestsByPublishDate
+            tooltip: Cumulative total number of tests processed (all pillars) by date reported
+            type: bar
+            colour: 3
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by the Department of Health and Social Care
+
+          - label: Daily tests processed
+            value: newTestsByPublishDate
+            type: numeric
+            tooltip: Daily number of tests processed by date reported
+
+          - label: Cumulative tests processed
+            value: cumTestsByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of tests processed by date reported
+     
+          - label: Lab capacity
+            value: plannedCapacityByPublishDate
+            type: numeric
+            tooltip: Estimated daily total capacity reported by laboratories (all pillars)
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/testing/tabTestingAndCapacity.md
+      # {{ EndDevOnlyBlock }}
+
+  - heading: Testing by Pillar
+    cardType: chart
+    fullWidth: true
+    # TODO: PF to check - need to explain why UK has pillar 3 and 4 (and capacity) but not any nations.
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200722
+    abstract: >
+      Number of lab-confirmed positive or negative COVID-19 test results by test type, by date reported.  This is a count of 
+      test results and may include multiple tests for an individual person.  Test types include NHS and PHE tests, commercial tests, 
+      antibody tests and surveillance tests.  Testing capacity is shown for the UK only and is an estimate of the number
+      of tests that can be performed based on availability of staff and resources.
+    # {{ EndDevOnlyBlock }}
+
+    download:
       - newPillarOneTestsByPublishDate
       - newPillarTwoTestsByPublishDate
       - newPillarThreeTestsByPublishDate
@@ -85,21 +169,16 @@ cards:
             colour: 1
             rollingAverage: false
 
-          - label: Tests (7-day average)
-            value: newTestsByPublishDate
-            tooltip: 7 day rolling average of the daily number of tests processed (all pillars)
-            type: line
-            colour: 10
-            fill: false
-            rollingAverage: true
+          # Hiding the rolling averages here at the moment because the series are all either broken,
+          # inconsistent or very short  
 
-          - label: Testing capacity
-            value: plannedCapacityByPublishDate
-            tooltip: Estimated daily total capacity reported by laboratories
-            type: line
-            colour: 6
-            fill: true
-            rollingAverage: false
+          # - label: Tests (7-day average)
+          #   value: newTestsByPublishDate
+          #   tooltip: 7 day rolling average of the daily number of tests processed (all pillars)
+          #   type: line
+          #   colour: 10
+          #   fill: false
+          #   rollingAverage: true
 
       - heading: Cumulative
         tabType: chart
@@ -166,11 +245,6 @@ cards:
             type: numeric
             tooltip: Daily number of tests processed by date reported
 
-          - label: Lab capacity
-            value: plannedCapacityByPublishDate
-            type: numeric
-            tooltip: Estimated daily total capacity reported by laboratories (all pillars)
-
       - heading: Cumulative data
         tabType: table
         fields:
@@ -204,69 +278,32 @@ cards:
             type: numeric
             tooltip: Cumulative total number of tests processed by date reported
 
-# {{ StartDevOnlyBlock }}
-# Not currently publishing people tested
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/testing/tabTestingAndCapacity.md
+      # {{ EndDevOnlyBlock }}
 
-  - heading: People tested
-    cardType: chart
-    fullWidth: true
-    download:
-      - newPeopleTestedByPublishDate
-      - cumPeopleTestedByPublishDate
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: normal
-        fields:
-          - label: People tested
-            value: newPeopleTestedByPublishDate
-            tooltip: Daily number of new people tested by date reported
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-          - label: People tested (7-day average)
-            value: newPeopleTestedByPublishDate
-            tooltip: 7 day rolling average of the daily number of people tested reported
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage: true
-
-      - heading: Cumulative
-        tabType: chart
-        fields:
-          - label: People tested
-            value: cumPeopleTestedByPublishDate
-            tooltip: Cumulative total number of people tested by date reported
-            type: line
-            colour: 0
-            fill: true
-            rollingAverage: false
-
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported by the Department of Health and Social Care
-
-          - label: Daily people tested
-            value: newPeopleTestedByPublishDate
-            type: numeric
-            tooltip: Daily number of new people tested by date reported
-
-          - label: Cumulative people tested
-            value: cumPeopleTestedByPublishDate
-            type: numeric
-            tooltip: Cumulative total number of people tested by date reported
-
-# {{ EndDevOnlyBlock }}
+# Only shown for UK
 
   - heading: Pillar 1 (NHS and, in England, PHE) tests by nation
     cardType: multiAreaStatic
+
+    locationAware:
+      included: 
+        areaType:
+          - overview
+
     fullWidth: true
+    # TODO: PF to check
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200722
+    abstract: >
+      Number of people with at least one lab-confirmed positive or negative COVID-19 test result, by date reported. 
+      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
+      different dates between 15th June and 14th July for each nation. National data are not directly comparable. 
+    # {{ EndDevOnlyBlock }}
     download:
       - newPillarOneTestsByPublishDate
       - cumPillarOneTestsByPublishDate
@@ -274,7 +311,7 @@ cards:
       - heading: Daily
         tabType: chart
         barType: stack
-        colours: [0, 9, 3, 10]
+        colours: [0, 9, 3, 10] # areaNames in alphabetical order
         params:
           - key: areaType
             sign: "="
@@ -289,7 +326,7 @@ cards:
       - heading: Cumulative
         tabType: chart
         barType: stack
-        colours: [0, 9, 3, 10]
+        colours: [0, 9, 3, 10] # areaNames in alphabetical order
         params:
           - key: areaType
             sign: "="
@@ -322,3 +359,10 @@ cards:
             value: cumPillarOneTestsByPublishDate
             type: numeric
             tooltip: Cumulative number of COVID-19 tests on the residents of each nation, processed by NHS (and, in England, PHE) labs, by date reported
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file.  PF to check - currently base md file says 'all types of test' so need new base for or amend existing one for here?
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/testing/tabPillar1TestsByNation.md
+      # {{ EndDevOnlyBlock }}
