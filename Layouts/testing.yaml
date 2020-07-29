@@ -169,13 +169,16 @@ cards:
             colour: 1
             rollingAverage: false
 
-          - label: Tests (7-day average)
-            value: newTestsByPublishDate
-            tooltip: 7 day rolling average of the daily number of tests processed (all pillars)
-            type: line
-            colour: 10
-            fill: false
-            rollingAverage: true
+          # Hiding the rolling averages here at the moment because the series are all either broken,
+          # inconsistent or very short  
+
+          # - label: Tests (7-day average)
+          #   value: newTestsByPublishDate
+          #   tooltip: 7 day rolling average of the daily number of tests processed (all pillars)
+          #   type: line
+          #   colour: 10
+          #   fill: false
+          #   rollingAverage: true
 
       - heading: Cumulative
         tabType: chart
