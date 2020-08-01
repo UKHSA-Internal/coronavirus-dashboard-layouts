@@ -30,7 +30,7 @@ cards:
     abstract: >
       Number of lab-confirmed positive or negative COVID-19 test results, by date reported.  This is a count of 
       test results and may include multiple tests for an individual person.  It includes all types of testing (swab
-      testing for antigens, antibody testing and surveillance testing).  Testing capacity is based on reports from 
+      testing for antigens, antibody testing and surveillance testing). Testing capacity is based on reports from 
       labs on how many tests they have capacity to carry out each day based on availability of staff and resources.
 
     download:
