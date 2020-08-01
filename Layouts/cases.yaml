@@ -564,8 +564,8 @@ cards:
 
     fullWidth: false
     abstract: > 
-      Number of people with at least one lab-confirmed COVID-19 positive test result since the start of the pandemic,
-      by age and sex.
+      Number of people with at least one lab-confirmed COVID-19 positive test result since the
+      start of the pandemic, by age and sex.
 
     download:
       - femaleCasesValue 
@@ -653,9 +653,8 @@ cards:
 
     fullWidth: false
     abstract: >
-      Number of people with at least one lab-confirmed COVID-19 positive test result since the start of the pandemic,
-      by age and sex, shown as rates per 100,000 resident population.  There are fewer people in the oldest age groups
-      so the rates give a fair comparison between age groups.
+      Total case rates by age and sex.  There are fewer people in the oldest age groups so the
+      rates give a clearer comparison between age groups.
 
     tabs: 
       - heading: Chart
