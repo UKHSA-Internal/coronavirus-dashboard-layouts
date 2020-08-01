@@ -124,7 +124,7 @@ cards:
 
 # Only shown for UK
 
-  - heading: Patients admitted to hospital, by nation
+  - heading: Patients admitted to hospital
     cardType: multiAreaStatic
 
     locationAware:
@@ -154,7 +154,7 @@ cards:
         - heading: Daily
           tabType: chart
           barType: stack
-          colours: [3] # areaNames in alphabetical order
+          colours: [3, 10] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
@@ -165,6 +165,11 @@ cards:
               tooltip: Daily number of COVID-19 patients admitted to hospital
               type: bar
               rollingAverage: false
+            - label: ""
+              value: newAdmissions
+              tooltip: Daily number of COVID-19 patients admitted to hospital
+              type: line
+              rollingAverage: true  
 
         - heading: Cumulative
           tabType: chart
