@@ -154,7 +154,7 @@ cards:
         - heading: Daily
           tabType: chart
           barType: stack
-          colours: [3, 10] # areaNames in alphabetical order
+          colours: [0] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
@@ -164,17 +164,12 @@ cards:
               value: newAdmissions
               tooltip: Daily number of COVID-19 patients admitted to hospital
               type: bar
-              rollingAverage: false
-            - label: ""
-              value: newAdmissions
-              tooltip: Daily number of COVID-19 patients admitted to hospital
-              type: line
-              rollingAverage: true  
+              rollingAverage: false 
 
         - heading: Cumulative
           tabType: chart
           barType: stack
-          colours: [3] # areaNames in alphabetical order
+          colours: [0] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
@@ -465,7 +460,7 @@ cards:
           
 # Only shown for UK
 
-  - heading: Patients in hospital, by nation
+  - heading: Patients in hospital
     cardType: multiAreaStatic
 
     locationAware:
@@ -498,7 +493,7 @@ cards:
         - heading: Daily
           tabType: chart
           barType: stack
-          colours: [3] # areaNames in alphabetical order
+          colours: [0] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
@@ -758,7 +753,7 @@ cards:
 
 # Only shown for UK
 
-  - heading: Patients in mechanical ventilation beds, by nation
+  - heading: Patients in mechanical ventilation beds
     cardType: multiAreaStatic
     fullWidth: true
 
@@ -791,7 +786,7 @@ cards:
         - heading: Daily
           tabType: chart
           barType: stack
-          colours: [3] # areaNames in alphabetical order
+          colours: [0] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
