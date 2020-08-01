@@ -55,9 +55,6 @@ cards:
         areaName: []
       
     fullWidth: true
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200715
     abstract: >
       COVID-19 patients admitted to hospital.  Data are not updated at weekends.  The UK figure is the sum of the four nations' figures and can 
       only be presented up to the date when all nations' data are available.  National data are not directly comparable.
@@ -136,76 +133,146 @@ cards:
           - overview
 
     fullWidth: true
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200715 
     abstract: >
-      COVID-19 patients admitted to hospital, by nation.  Data are not updated at weekends.  National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
-      
-    download:
-      - newAdmissions
-      - cumAdmissions
+      COVID-19 patients admitted to hospital.  Data are not updated at weekends.  The UK figure
+      is the sum of the four nations' figures and can only be calculated when all nations' data
+      are available.
 
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10] # areaNames in alphabetical order
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-        fields:
-          - label: ""
-            value: newAdmissions
-            tooltip: Daily number of COVID-19 patients admitted to hospital
-            type: bar
-            rollingAverage: false
 
-      - heading: Cumulative
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10] # areaNames in alphabetical order
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-        fields:
-          - label: ""
-            value: cumAdmissions
-            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
-            type: bar
-            rollingAverage: false
+    options:
+      type: radio
+      heading: null
+      choices:
+        - UK total
+        - By nation
+    
+    UK total:
+      download:
+        - newAdmissions
+        - cumAdmissions
 
-      - heading: Data
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported by healthcare providers
+      tabs: 
+        - heading: Daily
+          tabType: chart
+          barType: normal
+          fields:
+            - label: Admissions
+              value: newAdmissions
+              tooltip: Daily number of COVID-19 patients admitted to hospital
+              type: bar
+              colour: 0
+              rollingAverage: false
 
-          - label: daily
-            value: newAdmissions
-            type: numeric
-            tooltip: Daily number of COVID-19 patients admitted to hospital
+            - label: Admissions (7-day average)
+              value: newAdmissions
+              tooltip: 7 day rolling average of the daily number of admissions
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 0 #no of days to exclude for incomplete data
 
-          - label: total
-            value: cumAdmissions
-            type: numeric
-            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+        - heading: Cumulative
+          tabType: chart
+          fields:
+            - label: Admissions
+              value: cumAdmissions
+              tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+              type: line
+              colour: 0
+              fill: true
+              rollingAverage: false
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
-      - heading: About 
-        tabType: metadata
-        filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
-      # {{ EndDevOnlyBlock }
+        - heading: Data
+          tabType: table
+          fields:
+            - label: Date reported
+              value: date
+              type: date
+              tooltip: Date reported by healthcare providers
+
+            - label: Daily admissions
+              value: newAdmissions
+              type: numeric
+              tooltip: Daily number of COVID-19 patients admitted to hospital
+
+            - label: Total admissions
+              value: cumAdmissions
+              type: numeric
+              tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file
+        - heading: About 
+          tabType: metadata
+          filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
+        # {{ EndDevOnlyBlock }}
+
+    By nation:
+      download:
+        - newAdmissions
+        - cumAdmissions
+
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+          fields:
+            - label: ""
+              value: newAdmissions
+              tooltip: Daily number of COVID-19 patients admitted to hospital
+              type: bar
+              rollingAverage: false
+
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+          fields:
+            - label: ""
+              value: cumAdmissions
+              tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+              type: bar
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+          fields:
+            - label: Date reported
+              value: date
+              type: date
+              tooltip: Date reported by healthcare providers
+
+            - label: daily
+              value: newAdmissions
+              type: numeric
+              tooltip: Daily number of COVID-19 patients admitted to hospital
+
+            - label: total
+              value: cumAdmissions
+              type: numeric
+              tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file
+        - heading: About 
+          tabType: metadata
+          filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
+        # {{ EndDevOnlyBlock }
 
   - heading: Patients admitted to hospital, by age
     caption: Counts
