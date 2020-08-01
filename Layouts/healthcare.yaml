@@ -151,53 +151,55 @@ cards:
         - newAdmissions
         - cumAdmissions
 
-      tabs: 
+      tabs:
         - heading: Daily
           tabType: chart
-          barType: normal
+          barType: stack
+          colours: [3] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
           fields:
-            - label: Admissions
+            - label: ""
               value: newAdmissions
               tooltip: Daily number of COVID-19 patients admitted to hospital
               type: bar
-              colour: 0
               rollingAverage: false
-
-            - label: Admissions (7-day average)
-              value: newAdmissions
-              tooltip: 7 day rolling average of the daily number of admissions
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 0 #no of days to exclude for incomplete data
 
         - heading: Cumulative
           tabType: chart
+          barType: stack
+          colours: [3] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
           fields:
-            - label: Admissions
+            - label: ""
               value: cumAdmissions
               tooltip: Cumulative total number of COVID-19 patients admitted to hospital
-              type: line
-              colour: 0
-              fill: true
+              type: bar
               rollingAverage: false
 
         - heading: Data
           tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
           fields:
             - label: Date reported
               value: date
               type: date
               tooltip: Date reported by healthcare providers
 
-            - label: Daily admissions
+            - label: daily
               value: newAdmissions
               type: numeric
               tooltip: Daily number of COVID-19 patients admitted to hospital
 
-            - label: Total admissions
+            - label: total
               value: cumAdmissions
               type: numeric
               tooltip: Cumulative total number of COVID-19 patients admitted to hospital
@@ -207,7 +209,7 @@ cards:
         - heading: About 
           tabType: metadata
           filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
-        # {{ EndDevOnlyBlock }}
+        # {{ EndDevOnlyBlock }
 
     By nation:
       download:
