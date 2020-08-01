@@ -56,9 +56,8 @@ cards:
       
     fullWidth: true
     abstract: >
-      COVID-19 patients admitted to hospital.  Data are not updated at weekends.  The UK figure is the sum of the four nations' figures and can 
-      only be presented up to the date when all nations' data are available.  National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
+      Daily and cumulative numbers of COVID-19 patients admitted to hospital. Data are not updated
+      at weekends.
       
     download:
       - newAdmissions
@@ -126,7 +125,6 @@ cards:
 
   - heading: Patients admitted to hospital
     cardType: multiAreaStatic
-
     locationAware:
       included: 
         areaType:
@@ -134,18 +132,20 @@ cards:
 
     fullWidth: true
     abstract: >
-      COVID-19 patients admitted to hospital.  Data are not updated at weekends.  The UK figure
-      is the sum of the four nations' figures and can only be calculated when all nations' data
-      are available.
+      Daily and cumulative numbers of COVID-19 patients admitted to hospital. Data from the
+      four nations may not be directly comparable as data about COVID-19 patients in
+      hospitals are collected differently. Data are not all provided by each nation every
+      day. The UK figure is the sum of the four nations' figures and can only be calculated
+      when all nations' data are available.
 
     options:
       type: radio
       heading: null
       choices:
-        - UK total
         - By nation
+        - UK total
     
-    UK total:
+    By nation:
       download:
         - newAdmissions
         - cumAdmissions
@@ -154,26 +154,28 @@ cards:
         - heading: Daily
           tabType: chart
           barType: stack
-          colours: [0] # areaNames in alphabetical order
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
-              value: overview
+              value: nation
+
           fields:
             - label: ""
               value: newAdmissions
               tooltip: Daily number of COVID-19 patients admitted to hospital
               type: bar
-              rollingAverage: false 
+              rollingAverage: false
 
         - heading: Cumulative
           tabType: chart
           barType: stack
-          colours: [0] # areaNames in alphabetical order
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
-              value: overview
+              value: nation
+
           fields:
             - label: ""
               value: cumAdmissions
@@ -186,7 +188,8 @@ cards:
           params:
             - key: areaType
               sign: "="
-              value: overview
+              value: nation
+
           fields:
             - label: Date reported
               value: date
@@ -210,7 +213,7 @@ cards:
           filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
         # {{ EndDevOnlyBlock }
 
-    By nation:
+    UK total:
       download:
         - newAdmissions
         - cumAdmissions
@@ -219,26 +222,28 @@ cards:
         - heading: Daily
           tabType: chart
           barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          colours: [0] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
-              value: nation
+              value: overview
+
           fields:
             - label: ""
               value: newAdmissions
               tooltip: Daily number of COVID-19 patients admitted to hospital
               type: bar
-              rollingAverage: false
+              rollingAverage: false 
 
         - heading: Cumulative
           tabType: chart
           barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          colours: [0] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
-              value: nation
+              value: overview
+
           fields:
             - label: ""
               value: cumAdmissions
@@ -251,7 +256,8 @@ cards:
           params:
             - key: areaType
               sign: "="
-              value: nation
+              value: overview
+
           fields:
             - label: Date reported
               value: date
@@ -279,13 +285,9 @@ cards:
     caption: Counts
     cardType: ageSexBreakdown
     fullWidth: false
-    # TODO: PF to check - total for all ages doesn't match latest headline figures so uanble to define further.
-    # removed reference to nations not comparable as only England available
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200715 
     abstract: >
-      COVID-19 patients admitted to hospital since the start of the pandemic, by age.
-    # {{ EndDevOnlyBlock }}
+      Total numbers of COVID-19 patients admitted to hospital since the start of the pandemic, by
+      age.
       
     download:
       - cumAdmissionsByAge
@@ -299,8 +301,10 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - cumAdmissionsByAge
+
         fields:
           - label: Admissions
             value: cumAdmissionsByAgeValue
@@ -314,8 +318,10 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - cumAdmissionsByAge
+
         fields:
           - label: Age
             value: age
@@ -333,7 +339,7 @@ cards:
             tooltip: COVID-19 admissions per 100,000 resident population
 
       # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
+      # TODO: GA to write and reference md file - include reference to missing age or sex, ie numbers don't sum to totals.
       - heading: About 
         tabType: metadata
         filename: metadataTabs/healthcare/tabPatientsAdmittedToHospitalByAge.md
@@ -343,13 +349,9 @@ cards:
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
     fullWidth: false
-    # TODO: PF to check - total counts for all ages don't match latest headline figures so rates also affected and uanble to define further.
-    # removed reference to nations not comparable as only England available.
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200715 
     abstract: >
-      COVID-19 patients admitted to hospital per 100,000 resident population since the start of the pandemic, by age.
-    # {{ EndDevOnlyBlock }}
+      Total admission rates since the start of the pandemic, by age.  There are fewer people in the oldest age group so the
+      rates show the relative impact on different age groups.
       
     download:
       - cumAdmissionsByAge
@@ -363,8 +365,10 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - cumAdmissionsByAge
+
         fields:
           - label: Admission rate
             value: cumAdmissionsByAgeRate
@@ -378,8 +382,10 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - cumAdmissionsByAge
+
         fields:
           - label: Age
             value: age
@@ -407,21 +413,14 @@ cards:
 
   - heading: Patients in hospital
     cardType: chart
-
     locationAware:
       excluded:
         areaType:
           - overview
       
     fullWidth: true
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200715 
     abstract: >
-      COVID-19 patients in hospital.  National data may not be directly comparable as data about COVID-19 patients in hospitals 
-      are collected differently across nations.  Data are not updated at weekends and data are not all provided from each nation 
-      every day, so the UK figure presented may lag as it is calculated by summing the four nations' counts.
-    # {{ EndDevOnlyBlock }}
+      Daily count of COVID-19 patients in hospital.
      
     download:
       - hospitalCases
@@ -462,75 +461,26 @@ cards:
 
   - heading: Patients in hospital
     cardType: multiAreaStatic
-
     locationAware:
       included: 
         areaType:
           - overview
 
     fullWidth: true
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200715 
     abstract: >
-      COVID-19 patients in hospital, by area.  National data may not be directly comparable as data about COVID-19 patients in hospitals 
-      are collected differently across nations.  Data are not updated at weekends and data are not all provided from each nation 
-      every day.
-    # {{ EndDevOnlyBlock }}
+      Daily count of COVID-19 patients in hospital. Data from the four nations may not be
+      directly comparable as data about COVID-19 patients in hospitals are collected
+      differently. Data are not all provided by each nation every day. The UK figure is the
+      sum of the four nations' figures and can only be calculated when all nations' data are
+      available.
 
     options:
       type: radio
       heading: null
       choices:
-        - UK total
         - By nation
+        - UK total
     
-    UK total:
-      download:
-        - hospitalCases
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: ""
-              value: hospitalCases
-              tooltip: Number of COVID-19 patients currently in hospital
-              type: bar
-              rollingAverage: false
-
-        - heading: Data
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported by healthcare providers
-
-            - label: daily
-              value: hospitalCases
-              type: numeric
-              tooltip: Number of COVID-19 patients currently in hospital
-
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file.  PF to check - do we define separate About tab for each toggle on card?
-        - heading: About 
-          tabType: metadata
-          filename: hospitalCases.md
-        # {{ EndDevOnlyBlock }}
-
     By nation:
       download:
         - hospitalCases
@@ -577,26 +527,65 @@ cards:
           filename: hospitalCases.md
         # {{ EndDevOnlyBlock }}
 
+    UK total:
+      download:
+        - hospitalCases
+
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+
+          fields:
+            - label: ""
+              value: hospitalCases
+              tooltip: Number of COVID-19 patients currently in hospital
+              type: bar
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+
+          fields:
+            - label: Date reported
+              value: date
+              type: date
+              tooltip: Date reported by healthcare providers
+
+            - label: daily
+              value: hospitalCases
+              type: numeric
+              tooltip: Number of COVID-19 patients currently in hospital
+
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file.  PF to check - do we define separate About tab for each toggle on card?
+        - heading: About 
+          tabType: metadata
+          filename: hospitalCases.md
+        # {{ EndDevOnlyBlock }}
+
 # Only shown for England
 
-  - heading: Patients in hospital, by NHS Region
+  - heading: Patients in hospital, by NHS region
     cardType: multiAreaStatic
-
     locationAware:
       included: 
         areaName:
           - England
 
     fullWidth: true
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200715 
     abstract: >
-      COVID-19 patients in hospital, by area.  National data may not be directly comparable as data about COVID-19 patients in hospitals 
-      are collected differently across nations.  Data are not updated at weekends and data are not all provided from each nation 
-      every day.
-    # {{ EndDevOnlyBlock }}
-     
+      Daily count of COVID-19 patients in hospital in each NHS region.
+
     download:
       - hospitalCases
     
@@ -647,22 +636,14 @@ cards:
   - heading: Patients in mechanical ventilation beds
     cardType: chart
     fullWidth: true
-    
     locationAware:
       excluded:
         areaType:
           - overview
       
-
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200715 
     abstract: >
-      Mechanical ventilation bed capacity, and occupancy by COVID-19 and non-COVID-19 patients.  
-      Data are not updated at weekends and data are not all provided from each nation every day, 
-      so the UK figure presented may lag as it is calculated by summing the four nations' counts.
-      National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
+      Daily count of COVID-19 patients in mechanical ventilation beds. Data are not all provided
+      by each nation every day.
 
     download:
       - covidOccupiedMVBeds
@@ -756,41 +737,39 @@ cards:
   - heading: Patients in mechanical ventilation beds
     cardType: multiAreaStatic
     fullWidth: true
-
     locationAware:
       included: 
         areaType:
           - overview
 
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200715 
     abstract: >
-      COVID-19 patients in mechanical ventilation beds, by nation.  
-      Data are not updated at weekends and data are not all provided from each nation every day. 
-      National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
-
-    
+      COVID-19 patients in mechanical ventilation beds. Data from the four nations may not be
+      directly comparable as data about COVID-19 patients in hospitals are collected
+      differently. Data are not all provided by each nation every day. The UK figure is the
+      sum of the four nations' figures and can only be calculated when all nations' data are
+      available.
+   
     options:
       type: radio
       heading: null
       choices:
-        - UK total
         - By nation
+        - UK total
     
-    UK total:    
+    By nation:    
       download:
         - covidOccupiedMVBeds
+
       tabs:
         - heading: Daily
           tabType: chart
           barType: stack
-          colours: [0] # areaNames in alphabetical order
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
-              value: overview
+              value: nation
+
           fields:
             - label: ""
               value: covidOccupiedMVBeds
@@ -803,7 +782,8 @@ cards:
           params:
             - key: areaType
               sign: "="
-              value: overview
+              value: nation
+
           fields:
             - label: Date reported
               value: date
@@ -822,18 +802,20 @@ cards:
           filename: covidOccupiedMVBeds.md
         # {{ EndDevOnlyBlock }}
 
-    By nation:    
+    UK total:    
       download:
         - covidOccupiedMVBeds
+
       tabs:
         - heading: Daily
           tabType: chart
           barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          colours: [0] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
-              value: nation
+              value: overview
+
           fields:
             - label: ""
               value: covidOccupiedMVBeds
@@ -846,7 +828,8 @@ cards:
           params:
             - key: areaType
               sign: "="
-              value: nation
+              value: overview
+
           fields:
             - label: Date reported
               value: date
@@ -873,11 +856,10 @@ cards:
   - heading: Patients discharged from hospital
     cardType: chart
     fullWidth: true
-    # TODO: PF to check - need to add line re national data not comparable if appropriate here and link to metadata when available.
-    # About tabs not added until confirm plan to publish
+
     # {{ StartDevOnlyBlock }}
     abstract: > 
-      COVID-19 patients discharged home from hospital.  
+      COVID-19 patients discharged home from hospital.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -938,9 +920,7 @@ cards:
     caption: Counts
     cardType: ageSexBreakdown
     fullWidth: false
-    # TODO: PF to check - need to add line re national data not comparable if appropriate here and link to metadata when available.
-    # About tabs not added until confirm plan to publish
-    
+
     # {{ StartDevOnlyBlock }}
     # GA added 20200715 
     abstract: >
@@ -958,8 +938,10 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - cumDischargesByAge
+
         fields:
           - label: Discharges
             value: cumDischargesByAgeValue
@@ -973,8 +955,10 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - cumDischargesByAge
+
         fields:
           - label: Age
             value: age
@@ -995,11 +979,8 @@ cards:
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
     fullWidth: false
-    # TODO: PF to check - need to add line re national data not comparable if appropriate here and link to metadata when available.
-    # Not added About tab until confirm plan to publish
 
     # {{ StartDevOnlyBlock }}
-    # GA added 20200715 
     abstract: >
       COVID-19 patients discharged home from hospital per 100,000 resident population since the start of the pandemic, by age.  
     # {{ EndDevOnlyBlock }}
@@ -1015,8 +996,10 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - cumDischargesByAge
+
         fields:
           - label: Discharge rate
             value: cumDischargesByAgeRate
@@ -1030,8 +1013,10 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - cumDischargesByAge
+
         fields:
           - label: Age
             value: age

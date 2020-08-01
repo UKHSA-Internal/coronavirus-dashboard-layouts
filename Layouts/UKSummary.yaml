@@ -1,7 +1,6 @@
 summary:
   - heading: Testing
     fields:
-
       - caption: Testing capacity
         chart:
           value: plannedCapacityByPublishDate

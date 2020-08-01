@@ -20,7 +20,6 @@ cards:
 
   - heading: Testing and capacity
     cardType: chart
-
     locationAware:
       included: 
         areaType:
@@ -281,7 +280,6 @@ cards:
 
   - heading: Pillar 1 tests by nation
     cardType: multiAreaStatic
-
     locationAware:
       included: 
         areaType:
@@ -307,6 +305,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+
         fields:
           - label: ""
             value: newPillarOneTestsByPublishDate
@@ -322,6 +321,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+
         fields:
           - label: ""
             value: cumPillarOneTestsByPublishDate
@@ -335,6 +335,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+
         fields:
           - label: Date reported
             value: date
@@ -362,7 +363,6 @@ cards:
 
   - heading: Pillar 2 tests by nation
     cardType: multiAreaStatic
-
     locationAware:
       included: 
         areaType:
@@ -388,6 +388,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+
         fields:
           - label: ""
             value: newPillarTwoTestsByPublishDate
@@ -403,6 +404,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+
         fields:
           - label: ""
             value: cumPillarTwoTestsByPublishDate
@@ -416,6 +418,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+
         fields:
           - label: Date reported
             value: date

@@ -30,7 +30,6 @@ cards:
 
   - heading: Daily cases by specimen date
     cardType: chart
-
     locationAware:
       excluded:
         areaType:
@@ -42,7 +41,6 @@ cards:
       Individuals tested positive more than once are only counted once, on the date of their first
       positive test.
 
-    
     download:
       - newCasesBySpecimenDate
       - cumCasesBySpecimenDate
@@ -192,9 +190,8 @@ cards:
     fullWidth: true
     abstract: >
       Number of individuals who have had at least one lab-confirmed positive COVID-19 test result,
-      by date reported. On 2 July case data from pillars 1 and 2 of the testing programme were
-      merged and de-duplicated, resulting in a step decrease in the number of cases reported. Data
-      up to 1 July include some people counted twice. 
+      by date reported. On 2 July, case data from pillars 1 and 2 of the testing programme were
+      combined and de-duplicated, resulting in a step decrease in the number of cases reported.
 
     download:
       - newCasesByPublishDate
@@ -259,7 +256,6 @@ cards:
 
   - heading: Cases by date reported, by nation
     cardType: multiAreaStatic
-
     locationAware:
       included: 
         areaType:
@@ -285,6 +281,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+
         fields:
           - label: ""
             value: newCasesByPublishDate
@@ -300,6 +297,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+
         fields:
           - label: ""
             value: cumCasesByPublishDate
@@ -313,6 +311,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+        
         fields:
           - label: Date reported
             value: date
@@ -384,7 +383,6 @@ cards:
         - heading: Cumulative
           tabType: chart
           fields:
-             
             - label: Number of people tested
               value: cumPeopleTestedBySpecimenDate
               tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
@@ -505,7 +503,6 @@ cards:
   - heading: Newly reported and total daily cases by specimen date
     cardType: chart
     fullWidth: true
-    # TODO: PF to check - not added abstract or About Tab here as won't be using this card again?
     tabs: 
       - heading: Chart
         tabType: chart
@@ -585,6 +582,7 @@ cards:
         requiredMetrics:
           - femaleCases
           - maleCases
+
         fields:
           - label: Females
             value: femaleCasesValue
@@ -608,6 +606,7 @@ cards:
         requiredMetrics:
           - femaleCases
           - maleCases
+
         fields:
           - label: Age
             value: age
@@ -654,7 +653,7 @@ cards:
     fullWidth: false
     abstract: >
       Total case rates by age and sex.  There are fewer people in the oldest age groups so the
-      rates give a clearer comparison.
+      rates show the relative impact on different age groups.
 
     tabs: 
       - heading: Chart
@@ -664,9 +663,11 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - femaleCases
           - maleCases
+
         fields:
           - label: Females
             value: femaleCasesRate
@@ -686,9 +687,11 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - femaleCases
           - maleCases
+
         fields:
           - label: Age
             value: age
@@ -751,9 +754,11 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - femalePeopleTested
           - malePeopleTested
+
         fields:
           - label: Females
             value: femalePeopleTestedValue
@@ -773,9 +778,11 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - femalePeopleTested
           - malePeopleTested
+
         fields:
           - label: Age
             value: age
@@ -809,7 +816,6 @@ cards:
         filename: metadataTabs/testing/tabPeopleTestedByAgeAndSex.md
       # {{ EndDevOnlyBlock }}
 
-# TODO: PF to check - GA 20200717 - not added abstracts or About tabs as not yet publishing - shouldn't this sit on the testing page?
   - heading: People tested rates by age and sex
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
@@ -834,9 +840,11 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - femalePeopleTested
           - malePeopleTested
+
         fields:
           - label: Females
             value: femalePeopleTestedRate
@@ -856,9 +864,11 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - femalePeopleTested
           - malePeopleTested
+
         fields:
           - label: Age
             value: age
@@ -923,15 +933,13 @@ cards:
     fullWidth: false
     abstract: >
       Total number of people with at least one lab-confirmed positive COVID-19 test result since the start
-      of the pandemic in each area.
-#     The rates per 100,000 resident population give a fairer comparison of the number of cases in each area
-#     but they do not take account of the different rates of testing or differences in the age and sex of
-#     the local populations.
-
+      of the pandemic in each area. The rates per 100,000 resident population give a fairer comparison of
+      the number of cases in each area but they do not take account of the different rates of testing or
+      differences in the age and sex of the local populations.
 
     download:
       - cumCasesByPublishDate
-      - cumCasesByPublishDateRate # {{ DevOnly }}
+      - cumCasesByPublishDateRate
 
     tabs:
       - heading: Nation
@@ -940,6 +948,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+
         latestBy: cumCasesByPublishDate
         sortBy: areaName
 
@@ -954,10 +963,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumCasesByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
 
       - heading: Region
         tabType: table
@@ -965,6 +974,7 @@ cards:
           - key: areaType
             sign: "="
             value: region
+
         latestBy: cumCasesByPublishDate
         sortBy: areaName
 
@@ -979,10 +989,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumCasesByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
 
       - heading: Upper tier LA
         tabType: table
@@ -990,6 +1000,7 @@ cards:
           - key: areaType
             sign: "="
             value: utla
+
         latestBy: cumCasesByPublishDate
         sortBy: areaName
         searchBy: areaName
@@ -1005,10 +1016,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumCasesByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
 
       - heading: Lower tier LA
         tabType: table
@@ -1016,6 +1027,7 @@ cards:
           - key: areaType
             sign: "="
             value: ltla
+
         latestBy: cumCasesByPublishDate
         sortBy: areaName
         searchBy: areaName
@@ -1031,16 +1043,16 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumCasesByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
 
-      - heading: About # {{ DevOnly }}
-        tabType: metadata # {{ DevOnly }}
-        filename: metadataTabs/cases/tabCasesAndRatesByArea.md # {{ DevOnly }}
+      - heading: About
+        tabType: metadata
+        filename: metadataTabs/cases/tabCasesAndRatesByArea.md
 
-  - heading: Weekly cases by local area in England # Cases by area when abstract enabled
+  - heading: Weekly cases by local area in England
     cardType: simpleExternalStatic
     fullWidth: false
     abstract: >
