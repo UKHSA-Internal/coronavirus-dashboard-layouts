@@ -654,7 +654,7 @@ cards:
     fullWidth: false
     abstract: >
       Total case rates by age and sex.  There are fewer people in the oldest age groups so the
-      rates give a clearer comparison between age groups.
+      rates give a clearer comparison.
 
     tabs: 
       - heading: Chart
@@ -1043,11 +1043,10 @@ cards:
   - heading: Weekly cases by local area in England # Cases by area when abstract enabled
     cardType: simpleExternalStatic
     fullWidth: false
-    # TODO: PF to check - GA comment 20200717 - presume the PHE maps use same definitions as dashboard?
-    # not added any definition detail to abstract or About tab as this now live on staging site. 
     abstract: >
-      View Coronavirus cases in England by Middle Super Output Area (MSOA)
-    
+      COVID-19 cases in England by Middle Super Output Area (MSOA).  MSOAs are small areas
+      with around 7,200 average population.
+
     image: 
       url: https://c19pubdev.azureedge.net/assets/images/msoa-outline.png
       alt: >
