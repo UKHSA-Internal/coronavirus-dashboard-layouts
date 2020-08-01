@@ -30,7 +30,7 @@ cards:
     abstract: >
       Number of lab-confirmed positive or negative COVID-19 test results, by date reported.  This is a count of 
       test results and may include multiple tests for an individual person.  It includes all types of testing (swab
-      testing for antigens, antibody testing and surveillance testing.  Testing capacity is based on reports from 
+      testing for antigens, antibody testing and surveillance testing).  Testing capacity is based on reports from 
       labs on how many tests they have capacity to carry out each day based on availability of staff and resources.
 
     download:
@@ -113,7 +113,8 @@ cards:
     abstract: >
       Number of lab-confirmed positive or negative COVID-19 test results, by pillar (type of testing).
       This is a count of test results and may include multiple tests for an individual person.  Data
-      for antibody and surveillance testing (pillars 3 and 4) are only available for the UK as a whole.
+      for antibody and surveillance testing (pillars 3 and 4) are only available for the UK as a whole. 
+      Northern Ireland no longer report at weekends.
 
     download:
       - newPillarOneTestsByPublishDate
@@ -290,7 +291,9 @@ cards:
     abstract: >
       Number of lab-confirmed positive or negative COVID-19 pillar 1 test results.  Pillar 1 testing
       includes swab testing for COVID-19 processed by NHS and (in England) PHE labs.  This is a count
-      of test results and may include multiple tests for an individual person. 
+      of test results and may include multiple tests for an individual person.  Northern Ireland no 
+      longer report at weekends.
+
 
     download:
       - newPillarOneTestsByPublishDate
@@ -369,9 +372,9 @@ cards:
     abstract: >
       Number of lab-confirmed positive or negative COVID-19 pillar 2 test results.  Pillar 2 testing
       includes swab testing for COVID-19 processed by commercial partners.  Commercial partner testing
-      was introduced in all parts of the UK in April but data for each nation are not available for all
-      nations on a consistent basis.  Step changes in the series occur when new data sources became
-      available. 
+      was introduced in all parts of the UK in April but data are not available for all nations on a
+      consistent basis.  Step changes in the series occur when new data sources became available.
+      Northern Ireland no longer report at weekends.
 
     download:
       - newPillarTwoTestsByPublishDate
