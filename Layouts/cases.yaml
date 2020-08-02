@@ -96,12 +96,9 @@ cards:
             type: numeric
             tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCases.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/cases/cardCasesTimeSeries.md
 
 # Not shown for UK (identical to UK version but needs different abstract) or sub-national (no data)
 
@@ -171,12 +168,9 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCases.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/cases/cardCasesTimeSeries.md
 
 # Only shown for UK (identical to non-UK version but needs different abstract)
 
@@ -245,12 +239,9 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCases.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/cases/cardCasesTimeSeries.md
 
 # Only shown for UK
 
@@ -328,12 +319,9 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabCases.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/cases/cardCasesTimeSeries.md
 
 # {{ StartDevOnlyBlock }}
 # not live
@@ -423,7 +411,7 @@ cards:
         # TODO: GA to write and reference md file.  PF to check - do we link to different mds for each toggle within the card?
         - heading: About 
           tabType: metadata
-          filename: metadataTabs/testing/tabPeopleTested.md
+          filename: cardMetadata/testing/tabPeopleTested.md
         # {{ EndDevOnlyBlock }}
 
     Reporting date:
@@ -490,7 +478,7 @@ cards:
         # TODO: GA to write and reference md file
         - heading: About 
           tabType: metadata
-          filename: metadataTabs/testing/tabPeopleTested.md
+          filename: cardMetadata/testing/tabPeopleTested.md
         # {{ EndDevOnlyBlock }}
 
 
@@ -633,13 +621,9 @@ cards:
             type: numeric
             tooltip: Total number of male cases per 100,000 resident population
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabCasesAndRatesByAgeAndSex.md
-      # {{ EndDevOnlyBlock }}
-
+        filename: cardMetadata/cases/cardCasesAndRatesByAgeAndSex.md
 
   - heading: Case rates by age and sex 
     caption: Rates per 100,000 resident population
@@ -718,13 +702,9 @@ cards:
             type: numeric
             tooltip: Total number of female cases per 100,000 resident population
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabCasesAndRatesByAgeAndSex.md
-      # {{ EndDevOnlyBlock }}
-
+        filename: cardMetadata/cases/cardCasesAndRatesByAgeAndSex.md
 
 # {{ StartDevOnlyBlock }}
 # Not currently publishing people tested
@@ -813,7 +793,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/testing/tabPeopleTestedByAgeAndSex.md
+        filename: cardMetadata/testing/tabPeopleTestedByAgeAndSex.md
       # {{ EndDevOnlyBlock }}
 
   - heading: People tested rates by age and sex
@@ -899,7 +879,7 @@ cards:
       # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/testing/tabPeopleTestedByAgeAndSex.md
+        filename: cardMetadata/testing/tabPeopleTestedByAgeAndSex.md
       # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
@@ -1050,7 +1030,7 @@ cards:
 
       - heading: About
         tabType: metadata
-        filename: metadataTabs/cases/tabCasesAndRatesByArea.md
+        filename: cardMetadata/cases/cardCasesAndRatesByArea.md
 
   - heading: Weekly cases by local area in England
     cardType: simpleExternalStatic
