@@ -411,7 +411,7 @@ cards:
         # TODO: GA to write and reference md file.  PF to check - do we link to different mds for each toggle within the card?
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/testing/tabPeopleTested.md
+          filename: cardMetadata/testing/cardPeopleTested.md
         # {{ EndDevOnlyBlock }}
 
     Reporting date:
@@ -478,7 +478,7 @@ cards:
         # TODO: GA to write and reference md file
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/testing/tabPeopleTested.md
+          filename: cardMetadata/testing/cardPeopleTested.md
         # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
