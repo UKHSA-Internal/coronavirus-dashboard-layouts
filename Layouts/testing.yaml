@@ -99,12 +99,9 @@ cards:
             type: numeric
             tooltip: Estimated daily total capacity reported by laboratories (all pillars)
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/testing/tabTestingAndCapacity.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/testing/cardTestingAndCapacity.md
 
   - heading: Testing by Pillar
     cardType: chart
@@ -269,12 +266,9 @@ cards:
             type: numeric
             tooltip: Cumulative total number of tests processed by date reported
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/testing/tabTestingAndCapacity.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/testing/cardTestingByPillar.md
 
 # Only shown for UK
 
@@ -352,12 +346,9 @@ cards:
             type: numeric
             tooltip: Cumulative number of COVID-19 tests on the residents of each nation, processed by NHS (and, in England, PHE) labs, by date reported
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file.  PF to check - currently base md file says 'all types of test' so need new base for or amend existing one for here?
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/testing/tabPillar1TestsByNation.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/testing/cardPillar1TestsByNation.md
 
 # Only shown for UK
 
@@ -435,9 +426,6 @@ cards:
             type: numeric
             tooltip: Cumulative number of COVID-19 tests on the residents of each nation, processed by commercial partners, by date reported
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file.  PF to check - currently base md file says 'all types of test' so need new base for or amend existing one for here?
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/testing/tabPillar2TestsByNation.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/testing/cardPillar1TestsByNation.md
