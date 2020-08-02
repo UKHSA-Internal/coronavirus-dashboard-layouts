@@ -481,60 +481,59 @@ cards:
           filename: cardMetadata/testing/tabPeopleTested.md
         # {{ EndDevOnlyBlock }}
 
-
 # {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}
 # Not using this chart which shows which specimen dates the newly added cases refer to.  It's not useful now that
 # case numbers are so low
 
-  - heading: Newly reported and total daily cases by specimen date
-    cardType: chart
-    fullWidth: true
-    tabs: 
-      - heading: Chart
-        tabType: chart
-        barType: overlay
-        fields:
-          - label: Total cases
-            value: newCasesBySpecimenDate
-            tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
-            type: bar
-            colour: 0
-            rollingAverage: false
+  # - heading: Newly reported and total daily cases by specimen date
+  #   cardType: chart
+  #   fullWidth: true
+  #   tabs: 
+  #     - heading: Chart
+  #       tabType: chart
+  #       barType: overlay
+  #       fields:
+  #         - label: Total cases
+  #           value: newCasesBySpecimenDate
+  #           tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+  #           type: bar
+  #           colour: 0
+  #           rollingAverage: false
 
-          - label: Change from previous day
-            value: changeInNewCasesBySpecimenDate
-            tooltip: Change in numbers of cases reported on {date} from previously reported
-            type: bar
-            colour: 9
-            rollingAverage: false
+  #         - label: Change from previous day
+  #           value: changeInNewCasesBySpecimenDate
+  #           tooltip: Change in numbers of cases reported on {date} from previously reported
+  #           type: bar
+  #           colour: 9
+  #           rollingAverage: false
 
-          - label: Cases (7-day average)
-            value: newCasesBySpecimenDate
-            tooltip: 7 day rolling average of the daily number of cases by specimen date
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage: true
+  #         - label: Cases (7-day average)
+  #           value: newCasesBySpecimenDate
+  #           tooltip: 7 day rolling average of the daily number of cases by specimen date
+  #           type: line
+  #           colour: 3
+  #           fill: false
+  #           rollingAverage: true
  
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Specimen date
-            value: date
-            type: date
-            tooltip: Date the sample was taken from the person
+  #     - heading: Data
+  #       tabType: table
+  #       fields:
+  #         - label: Specimen date
+  #           value: date
+  #           type: date
+  #           tooltip: Date the sample was taken from the person
 
-          - label: Daily cases
-            value: previouslyReportedNewCasesBySpecimenDate
-            type: numeric
-            tooltip: Number of new people with a lab-confirmed positive test result as reported on {date-1}
+  #         - label: Daily cases
+  #           value: previouslyReportedNewCasesBySpecimenDate
+  #           type: numeric
+  #           tooltip: Number of new people with a lab-confirmed positive test result as reported on {date-1}
 
-          - label: Cumulative cases
-            value: changeInNewCasesBySpecimenDate
-            type: numeric
-            tooltip: Change in number of new people with a lab-confirmed positive test result reported on {date}
+  #         - label: Cumulative cases
+  #           value: changeInNewCasesBySpecimenDate
+  #           type: numeric
+  #           tooltip: Change in number of new people with a lab-confirmed positive test result reported on {date}
 
 # {{ EndDevOnlyBlock }}
 

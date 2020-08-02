@@ -91,12 +91,9 @@ cards:
               type: numeric
               tooltip: Cumulative total number of new deaths of people resident in each nation, by date reported
 
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file
         - heading: About 
           tabType: metadata
-          filename: metadataTabs/deaths/tabDailyDeaths.md
-        # {{ EndDevOnlyBlock }}
+          filename: cardMetadata/deaths/cardDeathsTimeSeries.md
 
     UK total:
       download:
@@ -155,12 +152,9 @@ cards:
               type: numeric
               tooltip: Cumulative total number of new deaths, by date reported
 
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file
         - heading: About 
           tabType: metadata
-          filename: metadataTabs/deaths/tabDailyDeaths.md
-        # {{ EndDevOnlyBlock }}
+          filename: cardMetadata/deaths/cardDeathsTimeSeries.md
 
 # Not shown for UK
 
@@ -230,12 +224,9 @@ cards:
             type: numeric
             tooltip: Cumulative total number of deaths
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/deaths/tabDailyDeaths.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/deaths/cardDeathsTimeSeries.md
 
 # Not shown for UK
 
@@ -306,12 +297,9 @@ cards:
             type: numeric
             tooltip: Cumulative total number of deaths by date reported
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/deaths/tabDailyDeaths.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/deaths/cardDeathsTimeSeries.md
 
 # Only available for England and regions
 
@@ -397,12 +385,9 @@ cards:
             type: numeric
             tooltip: Total number of male deaths per 100,000 resident population
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/deaths/tabDeathsAndDeathRates.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeAndSex.md
 
 # Only available for England and regions
 
@@ -481,12 +466,9 @@ cards:
             type: numeric
             tooltip: Total number of female deaths per 100,000 resident population
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/deaths/tabDeathsAndDeathRates.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeAndSex.md
 
   - heading: Deaths by area
     cardType: simpleTableStatic
@@ -602,12 +584,9 @@ cards:
             type: numeric
             tooltip: Death rate per 100,000 resident population
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/deaths/tabDeathsAndDeathRates.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
 
 # {{ StartDevOnlyBlock }}
 # Scatter chart is not a valid card type yet.  Intention is to join this up with a map and the table of area data, as in old dashboard
