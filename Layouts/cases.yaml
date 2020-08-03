@@ -9,18 +9,18 @@ headlineNumbers:
         value: cumCasesByPublishDate
         tooltip: Cumulative total number of people with a lab-confirmed positive test result reported up to {date}
         
-# {{ StartDevOnlyBlock }}
-# People tested not currently being published
+# # {{ StartDevOnlyBlock }}
+# # People tested not currently being published
 
-  - caption: All people tested
-    valueItems:
-      - label: Daily
-        value: newPeopleTestedByPublishDate
-        tooltip: Daily number of new people tested (positive or negative) reported on {date}
+#   - caption: All people tested
+#     valueItems:
+#       - label: Daily
+#         value: newPeopleTestedByPublishDate
+#         tooltip: Daily number of new people tested (positive or negative) reported on {date}
 
-      - label: Total
-        value: cumPeopleTestedByPublishDate
-        tooltip: Cumulative total number of people tested (positive or negative) reported up to {date}
+#       - label: Total
+#         value: cumPeopleTestedByPublishDate
+#         tooltip: Cumulative total number of people tested (positive or negative) reported up to {date}
 
 # {{ EndDevOnlyBlock }}
 
