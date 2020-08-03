@@ -9,22 +9,22 @@ headlineNumbers:
         value: cumAdmissions
         tooltip: Cumulative total number of COVID-19 patients admitted to hospital, reported on {date}
 
-# {{ StartDevOnlyBlock }}
-# Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
-# We don't currently pull in the data from the DAs on this - they did agree to provide it when
-# asked by the No 10 Press data team, but we have never finalised it
+# # {{ StartDevOnlyBlock }}
+# # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
+# # We don't currently pull in the data from the DAs on this - they did agree to provide it when
+# # asked by the No 10 Press data team, but we have never finalised it
 
-  - caption: Patients discharged
-    valueItems:
-      - label: Daily
-        value: newDischarges
-        tooltip: Daily number of COVID-19 patients discharged home from hospital, reported on {date}
+#   - caption: Patients discharged
+#     valueItems:
+#       - label: Daily
+#         value: newDischarges
+#         tooltip: Daily number of COVID-19 patients discharged home from hospital, reported on {date}
 
-      - label: Total
-        value: cumDischarges
-        tooltip: Cumulative total number of COVID-19 discharged home from to hospital, reported on {date}
+#       - label: Total
+#         value: cumDischarges
+#         tooltip: Cumulative total number of COVID-19 discharged home from to hospital, reported on {date}
 
-# {{ EndDevOnlyBlock }}
+# # {{ EndDevOnlyBlock }}
 
   - caption: Patients in hospital
     valueItems:
@@ -848,190 +848,190 @@ cards:
           filename: covidOccupiedMVBeds.md
         # {{ EndDevOnlyBlock }}
 
-# {{ StartDevOnlyBlock }}
-# Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
-# We don't currently pull in the data from the DAs on this - they did agree to provide it when
-# asked by the No 10 Press data team, but we have never finalised it
+# # {{ StartDevOnlyBlock }}
+# # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
+# # We don't currently pull in the data from the DAs on this - they did agree to provide it when
+# # asked by the No 10 Press data team, but we have never finalised it
 
-  - heading: Patients discharged from hospital
-    cardType: chart
-    fullWidth: true
+#   - heading: Patients discharged from hospital
+#     cardType: chart
+#     fullWidth: true
 
-    # {{ StartDevOnlyBlock }}
-    abstract: > 
-      COVID-19 patients discharged home from hospital.
-    # {{ EndDevOnlyBlock }}
+#     # {{ StartDevOnlyBlock }}
+#     abstract: > 
+#       COVID-19 patients discharged home from hospital.
+#     # {{ EndDevOnlyBlock }}
 
-    download:
-      - newDischarges
-      - cumDischarges
+#     download:
+#       - newDischarges
+#       - cumDischarges
 
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Discharges
-            value: newDischarges
-            tooltip: Daily number of COVID-19 patients discharged from hospital
-            type: bar
-            colour: 0
-            fill: false
-            rollingAverage: false
+#     tabs:
+#       - heading: Daily
+#         tabType: chart
+#         barType: normal
+#         fields:
+#           - label: Discharges
+#             value: newDischarges
+#             tooltip: Daily number of COVID-19 patients discharged from hospital
+#             type: bar
+#             colour: 0
+#             fill: false
+#             rollingAverage: false
 
-          - label: Discharges (7-day average)
-            value: newDischarges
-            tooltip: 7 day rolling average of the daily number of discharges
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage: true
+#           - label: Discharges (7-day average)
+#             value: newDischarges
+#             tooltip: 7 day rolling average of the daily number of discharges
+#             type: line
+#             colour: 3
+#             fill: false
+#             rollingAverage: true
 
-      - heading: Cumulative
-        tabType: chart
-        fields:
-          - label: Discharges
-            value: cumDischarges
-            tooltip: Cumulative total number of COVID-19 patients discharged from hospital
-            type: line
-            colour: 0
-            fill: true
-            rollingAverage: false
+#       - heading: Cumulative
+#         tabType: chart
+#         fields:
+#           - label: Discharges
+#             value: cumDischarges
+#             tooltip: Cumulative total number of COVID-19 patients discharged from hospital
+#             type: line
+#             colour: 0
+#             fill: true
+#             rollingAverage: false
 
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported by healthcare providers
+#       - heading: Data
+#         tabType: table
+#         fields:
+#           - label: Date reported
+#             value: date
+#             type: date
+#             tooltip: Date reported by healthcare providers
 
-          - label: Daily discharges
-            value: newDischarges
-            type: numeric
-            tooltip: Daily number of COVID-19 patients discharged from hospital
+#           - label: Daily discharges
+#             value: newDischarges
+#             type: numeric
+#             tooltip: Daily number of COVID-19 patients discharged from hospital
 
-          - label: Total discharges
-            value: cumDischarges
-            type: numeric
-            tooltip: Cumulative total number of COVID-19 patients discharged from hospital
+#           - label: Total discharges
+#             value: cumDischarges
+#             type: numeric
+#             tooltip: Cumulative total number of COVID-19 patients discharged from hospital
 
-  - heading: Discharges by age
-    caption: Counts
-    cardType: ageSexBreakdown
-    fullWidth: false
+#   - heading: Discharges by age
+#     caption: Counts
+#     cardType: ageSexBreakdown
+#     fullWidth: false
 
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200715 
-    abstract: >
-      COVID-19 patients discharged home from hospital since the start of the pandemic, by age.  
-    # {{ EndDevOnlyBlock }}
+#     # {{ StartDevOnlyBlock }}
+#     # GA added 20200715 
+#     abstract: >
+#       COVID-19 patients discharged home from hospital since the start of the pandemic, by age.  
+#     # {{ EndDevOnlyBlock }}
 
-    download:
-      - cumAdmissionsByAge
+#     download:
+#       - cumAdmissionsByAge
 
-    tabs: 
-      - heading: Chart
-        tabType: chart
-        barType: group
-        groupKey: age
-        groupValues: 
-          - value
-          - rate
+#     tabs: 
+#       - heading: Chart
+#         tabType: chart
+#         barType: group
+#         groupKey: age
+#         groupValues: 
+#           - value
+#           - rate
 
-        requiredMetrics:
-          - cumDischargesByAge
+#         requiredMetrics:
+#           - cumDischargesByAge
 
-        fields:
-          - label: Discharges
-            value: cumDischargesByAgeValue
-            tooltip: Total number of COVID-19 patients discharged from hospital
-            type: bar
-            colour: 0
+#         fields:
+#           - label: Discharges
+#             value: cumDischargesByAgeValue
+#             tooltip: Total number of COVID-19 patients discharged from hospital
+#             type: bar
+#             colour: 0
       
-      - heading: Data
-        tabType: table
-        groupKey: age
-        groupValues: 
-          - value
-          - rate
+#       - heading: Data
+#         tabType: table
+#         groupKey: age
+#         groupValues: 
+#           - value
+#           - rate
 
-        requiredMetrics:
-          - cumDischargesByAge
+#         requiredMetrics:
+#           - cumDischargesByAge
 
-        fields:
-          - label: Age
-            value: age
-            type: string
-            tooltip: Age group
+#         fields:
+#           - label: Age
+#             value: age
+#             type: string
+#             tooltip: Age group
 
-          - label: Discharges
-            value: cumDischargesByAgeValue
-            type: numeric
-            tooltip: Total number of COVID-19 patients discharged from hospital
+#           - label: Discharges
+#             value: cumDischargesByAgeValue
+#             type: numeric
+#             tooltip: Total number of COVID-19 patients discharged from hospital
 
-          - label: Discharge rate
-            value: cumDischargesByAgeRate
-            type: numeric
-            tooltip: COVID-19 discharges per 100,000 resident population
+#           - label: Discharge rate
+#             value: cumDischargesByAgeRate
+#             type: numeric
+#             tooltip: COVID-19 discharges per 100,000 resident population
 
-  - heading: Discharge rates by age
-    caption: Rates per 100,000 resident population
-    cardType: ageSexBreakdown
-    fullWidth: false
+#   - heading: Discharge rates by age
+#     caption: Rates per 100,000 resident population
+#     cardType: ageSexBreakdown
+#     fullWidth: false
 
-    # {{ StartDevOnlyBlock }}
-    abstract: >
-      COVID-19 patients discharged home from hospital per 100,000 resident population since the start of the pandemic, by age.  
-    # {{ EndDevOnlyBlock }}
+#     # {{ StartDevOnlyBlock }}
+#     abstract: >
+#       COVID-19 patients discharged home from hospital per 100,000 resident population since the start of the pandemic, by age.  
+#     # {{ EndDevOnlyBlock }}
 
-    download:
-      - cumDischargesByAge
+#     download:
+#       - cumDischargesByAge
 
-    tabs: 
-      - heading: Chart
-        tabType: chart
-        barType: group
-        groupKey: age
-        groupValues: 
-          - value
-          - rate
+#     tabs: 
+#       - heading: Chart
+#         tabType: chart
+#         barType: group
+#         groupKey: age
+#         groupValues: 
+#           - value
+#           - rate
 
-        requiredMetrics:
-          - cumDischargesByAge
+#         requiredMetrics:
+#           - cumDischargesByAge
 
-        fields:
-          - label: Discharge rate
-            value: cumDischargesByAgeRate
-            tooltip: COVID-19 discharges per 100,000 resident population
-            type: bar
-            colour: 0
+#         fields:
+#           - label: Discharge rate
+#             value: cumDischargesByAgeRate
+#             tooltip: COVID-19 discharges per 100,000 resident population
+#             type: bar
+#             colour: 0
       
-      - heading: Data
-        tabType: table
-        groupKey: age
-        groupValues: 
-          - value
-          - rate
+#       - heading: Data
+#         tabType: table
+#         groupKey: age
+#         groupValues: 
+#           - value
+#           - rate
 
-        requiredMetrics:
-          - cumDischargesByAge
+#         requiredMetrics:
+#           - cumDischargesByAge
 
-        fields:
-          - label: Age
-            value: age
-            type: string
-            tooltip: Age group
+#         fields:
+#           - label: Age
+#             value: age
+#             type: string
+#             tooltip: Age group
 
-          - label: Discharges
-            value: cumDischargesByAgeValue
-            type: numeric
-            tooltip: Total number of COVID-19 patients discharged from hospital
+#           - label: Discharges
+#             value: cumDischargesByAgeValue
+#             type: numeric
+#             tooltip: Total number of COVID-19 patients discharged from hospital
 
-          - label: Discharge rate
-            value: cumDischargesByAgeRate
-            type: numeric
-            tooltip: COVID-19 discharges per 100,000 resident population
+#           - label: Discharge rate
+#             value: cumDischargesByAgeRate
+#             type: numeric
+#             tooltip: COVID-19 discharges per 100,000 resident population
 
 # {{ EndDevOnlyBlock }}
 
