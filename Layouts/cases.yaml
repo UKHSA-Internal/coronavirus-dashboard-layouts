@@ -1042,7 +1042,6 @@ cards:
     #       - Scotland
     #       - Wales
 
-
     fullWidth: false
     abstract: >
       COVID-19 cases in England by Middle Super Output Area (MSOA).  MSOAs are small areas
