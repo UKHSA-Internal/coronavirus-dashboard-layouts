@@ -129,9 +129,10 @@ cards:
 
     fullWidth: true
     abstract: >
-      Daily and cumulative numbers of COVID-19 patients admitted to hospital. Data are not
-      updated every day and data from the four nations are not comparable as Wales include
-      suspected COVID-19 patients while the other nations include only confirmed cases.
+      Daily and cumulative numbers of COVID-19 patients admitted to hospital. Data from the
+      four nations are not comparable as Wales include suspected COVID-19 patients while the
+      other nations include only confirmed cases. Data are not updated every day by all four
+      nations.
 
     # options:
     #   type: radio
