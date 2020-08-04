@@ -104,23 +104,23 @@ summary:
           - value: covidOccupiedMVBeds
             tooltip: Number of COVID-19 patients currently in mechanical ventilation beds reported on {date}
 
-      - caption: Patients admitted
-        chart:
-          value: newAdmissions
-          type: line
-          colour: 3
-          fill: true
-          rollingAverage: true
-          display: true
+      # - caption: Patients admitted
+      #   chart:
+      #     value: newAdmissions
+      #     type: line
+      #     colour: 3
+      #     fill: true
+      #     rollingAverage: true
+      #     display: true
         
-        valueItems: 
-          - label: Daily
-            tooltip: Daily number of COVID-19 patients admitted to hospital reported on {date} - chart shows 7-day rolling average
-            value: newAdmissions
+      #   valueItems: 
+      #     - label: Daily
+      #       tooltip: Daily number of COVID-19 patients admitted to hospital reported on {date} - chart shows 7-day rolling average
+      #       value: newAdmissions
 
-          - label: Total
-            tooltip: Cumulative total number of COVID-19 patients admitted to hospital reported on {date}
-            value: cumAdmissions
+      #     - label: Total
+      #       tooltip: Cumulative total number of COVID-19 patients admitted to hospital reported on {date}
+      #       value: cumAdmissions
 
   - heading: Deaths
     fields:
