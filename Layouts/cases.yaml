@@ -185,7 +185,8 @@ cards:
     abstract: >
       Number of individuals who have had at least one lab-confirmed positive COVID-19 test result,
       by date reported. On 2 July, case data from pillars 1 and 2 of the testing programme were
-      combined and de-duplicated, resulting in a step decrease in the number of cases reported.
+      combined and de-duplicated, resulting in a step decrease in the cumulative number of cases
+      reported.
 
     download:
       - newCasesByPublishDate
@@ -914,7 +915,8 @@ cards:
       Total number of people with at least one lab-confirmed positive COVID-19 test result since the start
       of the pandemic in each area. The rates per 100,000 resident population give a fairer comparison of
       the number of cases in each area but they do not take account of the different rates of testing or
-      differences in the age and sex of the local populations.
+      differences in the age and sex of the local populations. Only data available for the latest reported
+      date are shown.
 
     download:
       - cumCasesByPublishDate
@@ -1033,6 +1035,14 @@ cards:
 
   - heading: Weekly cases by local area in England
     cardType: simpleExternalStatic
+    locationAware:
+      excluded:
+        areaName:
+          - Northern Ireland
+          - Scotland
+          - Wales
+
+
     fullWidth: false
     abstract: >
       COVID-19 cases in England by Middle Super Output Area (MSOA).  MSOAs are small areas

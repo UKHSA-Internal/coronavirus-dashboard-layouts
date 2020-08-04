@@ -477,7 +477,8 @@ cards:
       Total number of deaths since the start of the pandemic of people who had had a positive test result
       for COVID-19. The actual cause of death may not be COVID-19 in all cases. People who died from
       COVID-19 but had not tested positive are not included. Data from the four nations are not directly
-      comparable as methodologies and inclusion criteria vary. 
+      comparable as methodologies and inclusion criteria vary. Only data available for the latest reported
+      date area shown.
 
     download:
       - cumDeathsByPublishDate
