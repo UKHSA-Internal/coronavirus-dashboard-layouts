@@ -31,6 +31,16 @@ cards:
   - heading: Daily cases by specimen date
     cardType: chart
     fullWidth: true
+    # TODO: PF to check
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200717
+    abstract: >
+      Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date. 
+      Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
+      times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:genCasesBySpecimenDate} for more information.
+    # {{ EndDevOnlyBlock }}
+    
     download:
       - newCasesBySpecimenDate
       - cumCasesBySpecimenDate
@@ -89,6 +99,16 @@ cards:
   - heading: Daily cases by date reported
     cardType: chart
     fullWidth: true
+    # TODO: PF to check
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200717
+    abstract: >
+      Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported. 
+      Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
+      times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:genCasesByPublishDate} for more information.
+    # {{ EndDevOnlyBlock }}
+
     download:
       - newCasesByPublishDate
       - cumCasesByPublishDate
@@ -148,6 +168,16 @@ cards:
   - heading: Daily cases
     cardType: chart
     fullWidth: true
+    # TODO: PF to check - had to create additional genCases generic markdown as others all had daily/cumulative/byreporting/byspecimen titles and subheadings. 
+    # {{ StartDevOnlyBlock }}
+    # {{ GA added 20200717
+    abstract: > 
+      Number of people with at least one lab-confirmed positive COVID-19 test result. 
+      Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
+      times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:genCases} for more information.
+    # {{ EndDevOnlyBlock }}
+
     options:
       type: radio
       heading: null
@@ -293,6 +323,16 @@ cards:
   - heading: Daily people tested
     cardType: chart
     fullWidth: true
+    # TODO: PF to check - had to create additional genPeopleTested not specific to daily/cumulative/by test data/by specimen date.
+    # {{ StartDevOnlyBlock }} 
+    #  GA added 20200717
+    abstract: >
+      Number of people with at least one lab-confirmed positive or negative COVID-19 test result. 
+      Initially only NHS and, in England, PHE tests were included but commerical tests have been included since 2nd July 2020 for all four nations.  
+      National data are not directly comparable - see the {indicator definition:genPeopleTested} 
+      for more information.
+    # {{ EndDevOnlyBlock }}
+
     options:
       type: radio
       heading: null
@@ -430,6 +470,7 @@ cards:
   - heading: Newly reported and total daily cases by specimen date
     cardType: chart
     fullWidth: true
+    # TODO: PF to check - not added abstract here as won't be using this card again?
     tabs: 
       - heading: Chart
         tabType: chart
@@ -481,6 +522,16 @@ cards:
     caption: Counts
     cardType: ageSexBreakdown
     fullWidth: false
+    # TODO: PF to check
+    # {{ StartDevOnlyBlock }}
+    # {{ DevOnly }} GA added 20200717
+    abstract: > 
+      Number of people with at least one lab-confirmed COVID-19 positive test result since the start of the pandemic, by age and sex. 
+      Initially only NHS and, in England, PHE tests were included but commercial tests were included at different times by each 
+      nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:cumCasesByPublishDate} for more information.
+    # {{ EndDevOnlyBlock }}
+
     download:
       - femaleCasesValue 
       - femaleCasesRate
@@ -552,6 +603,17 @@ cards:
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
     fullWidth: false
+    # TODO: PF to check
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200717
+    abstract: >
+      Number of people with at least one lab-confirmed positive COVID-19 test result since the start 
+      of the pandemic per 100,000 population, by age and sex.  Initially only NHS and, in England, 
+      PHE tests were included but commercial tests were included at different times by each 
+      nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:cumCasesByPublishDate} for more information.
+    # {{ EndDevOnlyBlock }}
+ 
     tabs: 
       - heading: Chart
         tabType: chart
@@ -613,6 +675,7 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 # Not currently publishing people tested
+# GA 20200717 - not added abstracts as not yet publishing
 
   - heading: People tested, by age and sex
     caption: Counts
@@ -780,12 +843,20 @@ cards:
 
   - heading: Cumulative total cases by area # Cases by area when abstract enabled
     cardType: simpleTableStatic
-    fullWidth: true
-#    abstract: >
-#      Total numbers of cases over the whole pandemic, and rates per 100,000 resident population 
+    fullWidth: false
+    # TODO: PF to check 
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200717
+    abstract: >
+      Number of people with at least one lab-confirmed positive COVID-19 test result since the start of the pandemic. 
+      Initially only NHS and, in England, PHE tests were included but commerical tests were included at different times by each 
+      nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:cumCasesByPublishDate} for more information.
+    # {{ EndDevOnlyBlock }}
+
     download:
       - cumCasesByPublishDate
-      - cumCasesByPublishDateRate
+      - cumCasesByPublishDateRate # {{ DevOnly }}
 
     tabs:
       - heading: Nation
@@ -808,10 +879,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate
-            value: cumCasesByPublishDateRate
-            type: numeric
-            tooltip: Rate of total confirmed cases per 100,000 resident population
+          - label: Rate # {{ DevOnly }}
+            value: cumCasesByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
 
       - heading: Region
         tabType: table
@@ -833,10 +904,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate
-            value: cumCasesByPublishDateRate
-            type: numeric
-            tooltip: Rate of total confirmed cases per 100,000 resident population
+          - label: Rate # {{ DevOnly }}
+            value: cumCasesByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
 
       - heading: Upper tier LA
         tabType: table
@@ -859,10 +930,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate
-            value: cumCasesByPublishDateRate
-            type: numeric
-            tooltip: Rate of total confirmed cases per 100,000 resident population
+          - label: Rate # {{ DevOnly }}
+            value: cumCasesByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
 
       - heading: Lower tier LA
         tabType: table
@@ -885,18 +956,59 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate
-            value: cumCasesByPublishDateRate
-            type: numeric
-            tooltip: Rate of total confirmed cases per 100,000 resident population
+          - label: Rate # {{ DevOnly }}
+            value: cumCasesByPublishDateRate # {{ DevOnly }}
+            type: numeric # {{ DevOnly }}
+            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
 
       - heading: About # {{ DevOnly }} md needs writing and also applying to every other tab.  This is just an example
         tabType: metadata # {{ DevOnly }}
-        filename: metadataTabs/cases/cases-and-case-rates-by-area.md # {{ DevOnly }}
+        filename: metadataTabs/cases/tabCasesAndRatesByArea.md # {{ DevOnly }}
+
+  - heading: Weekly cases by local area in England # Cases by area when abstract enabled
+    cardType: simpleExternalStatic
+    fullWidth: false
+    # TODO: PF to check - GA comment 20200717 - presume the PHE maps use same definitions as dashboard?
+    # not added any definition detail to abstract as this now live on staging site. 
+    abstract: >
+      View Coronavirus cases in England by Middle Super Output Area (MSOA)
+    
+    image: 
+      url: https://c19pubdev.azureedge.net/assets/images/msoa-outline.png
+      alt: >
+        Outline of the Middle Super Output Area (MSOA) map
+        boundaries (not data included)
+
+    resource: 
+      label: View map
+      url: https://arcgis.com/apps/webappviewer/index.html?id=47574f7a6e454dc6a42c5f6912ed7076
+
+    download:
+      - format: CSV
+        url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.csv
+      
+      - format: JSON
+        url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.json
+      
+      - format: XML
+        url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.xml
+
+      - format: Spreadsheet
+        url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.xlsx
 
   - heading: Cases by date reported, by nation
     cardType: multiAreaStatic
     fullWidth: true
+    # TODO: PF to check
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200717
+    abstract: >
+      Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported, by nation. 
+      Initially only NHS and, in England, PHE tests were included but commerical tests were added at different times 
+      by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
+      see the {indicator definition:genCasesByPublishDate} for more information.
+    # {{ EndDevOnlyBlock }}
+
     download:
       - newCasesByPublishDate
       - cumCasesByPublishDate
@@ -927,9 +1039,9 @@ cards:
             value: nation
         fields:
           - label: ""
-            value: cumCasesByPublishDateRate # count not rate on live
+            value: cumCasesByPublishDate
             tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
-            type: line # bar not line on live
+            type: bar
             rollingAverage: false
 
       - heading: Data
