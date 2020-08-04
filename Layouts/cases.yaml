@@ -10,22 +10,19 @@ headlineNumbers:
         tooltip: Cumulative total number of people with a lab-confirmed positive test result reported up to {date}
         
 # {{ StartDevOnlyBlock }}
-# People tested not currently being published
+# # People tested not currently being published
 
-  - caption: All people tested
-    valueItems:
-      - label: Daily
-        value: newPeopleTestedByPublishDate
-        tooltip: Daily number of new people tested (positive or negative) reported on {date}
+#   - caption: All people tested
+#     valueItems:
+#       - label: Daily
+#         value: newPeopleTestedByPublishDate
+#         tooltip: Daily number of new people tested (positive or negative) reported on {date}
 
-      - label: Total
-        value: cumPeopleTestedByPublishDate
-        tooltip: Cumulative total number of people tested (positive or negative) reported up to {date}
+#       - label: Total
+#         value: cumPeopleTestedByPublishDate
+#         tooltip: Cumulative total number of people tested (positive or negative) reported up to {date}
 
 # {{ EndDevOnlyBlock }}
-# These two cards are separate versions of daily cases by specimen date and by publish date because
-# functionality to make the radio button options sensitive to whether there are data or not has not
-# yet been implemented
 
 cards:
 
@@ -33,22 +30,17 @@ cards:
 
   - heading: Daily cases by specimen date
     cardType: chart
-
     locationAware:
       excluded:
         areaType:
           - overview
 
     fullWidth: true
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200717
     abstract: >
-      Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date. 
-      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
-    
+      Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date.
+      Individuals tested positive more than once are only counted once, on the date of their first
+      positive test.
+
     download:
       - newCasesBySpecimenDate
       - cumCasesBySpecimenDate
@@ -104,24 +96,25 @@ cards:
             type: numeric
             tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCases.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+# Not shown for UK (identical to UK version but needs different abstract) or sub-national (no data)
 
   - heading: Daily cases by date reported
     cardType: chart
+    locationAware:
+      included:
+        areaType:
+          - nation
+
     fullWidth: true
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200717
     abstract: >
-      Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported. 
-      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
+      Number of individuals who have had at least one lab-confirmed positive COVID-19 test result,
+      by date reported. Initially only pillar 1 tests (NHS and, in England, PHE labs) were included
+      but commercial tests have been included from varying dates between 15th June and 14th July for
+      each nation, leading to step increases in the numbers of cases reported at different times.
 
     download:
       - newCasesByPublishDate
@@ -175,32 +168,97 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabDailyCases.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+# Only shown for UK (identical to non-UK version but needs different abstract)
+
+  - heading: Daily cases by date reported
+    cardType: chart
+    locationAware:
+      included:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      Number of individuals who have had at least one lab-confirmed positive COVID-19 test result,
+      by date reported. On 2 July, case data from pillars 1 and 2 of the testing programme were
+      combined and de-duplicated, resulting in a step decrease in the cumulative number of cases
+      reported.
+
+    download:
+      - newCasesByPublishDate
+      - cumCasesByPublishDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: overlay
+        fields:
+          - label: Number of cases
+            value: newCasesByPublishDate
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
+            type: bar
+            colour: 0
+
+          - label: Cases (7-day average)
+            value: newCasesByPublishDate
+            tooltip: 7 day rolling average of the daily number of new positive cases reported
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
+
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of cases
+            value: cumCasesByPublishDate
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
+            type: line
+            colour: 0
+            fill: true
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by the Department of Health and Social Care
+
+          - label: Daily cases
+            value: newCasesByPublishDate
+            type: numeric
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
+
+          - label: Cumulative cases
+            value: cumCasesByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/cases/cardCasesTimeSeries.md
 
 # Only shown for UK
 
   - heading: Cases by date reported, by nation
     cardType: multiAreaStatic
-
     locationAware:
       included: 
         areaType:
           - overview
 
     fullWidth: true
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200717
     abstract: >
-      Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported, by nation. 
-      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
+      Number of individuals who have had at least one lab-confirmed positive COVID-19 test result, by date
+      reported, by nation.  Initially only pillar 1 tests (NHS and, in England, PHE labs) were included but
+      pillar 2 (commercial tests) have been included from varying dates between 15th June and 14th July for
+      each nation, leading to step increases in the numbers of cases reported at different times.  
 
     download:
       - newCasesByPublishDate
@@ -215,6 +273,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+
         fields:
           - label: ""
             value: newCasesByPublishDate
@@ -230,6 +289,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+
         fields:
           - label: ""
             value: cumCasesByPublishDate
@@ -243,6 +303,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+        
         fields:
           - label: Date reported
             value: date
@@ -259,418 +320,237 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabCases.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/cases/cardCasesTimeSeries.md
 
 # {{ StartDevOnlyBlock }}
-# This card will replace the two separate versions above when the functionality to make the radio
-# button options sensitive to whether there are data or not has been implemented
+# # not live
+# # People tested not currently being published
 
-# Not shown for UK
-
-  - heading: Daily cases
-    cardType: chart
-
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: true
-    # TODO: PF to check - had to create additional genCases generic markdown as others all had daily/cumulative/byreporting/byspecimen titles and subheadings. 
-    # {{ StartDevOnlyBlock }}
-    # {{ GA added 20200717
-    abstract: > 
-      Number of people with at least one lab-confirmed positive COVID-19 test result. 
-      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - Specimen date
-        - Date reported
-
-    Specimen date:
-      download:
-        - newCasesBySpecimenDate
-        - cumCasesBySpecimenDate
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of cases
-              value: newCasesBySpecimenDate
-              tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: Cases (7-day average)
-              value: newCasesBySpecimenDate
-              tooltip: 7 day rolling average of the daily number of cases by specimen date
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 3 # no of days to exclude for incomplete data NOT WORKING
-
-        - heading: Cumulative
-          tabType: chart
-          fields:
-            - label: Number of cases
-              value: cumCasesBySpecimenDate
-              tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
-              type: line
-              colour: 0
-              fill: true
-              rollingAverage: false
-
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Specimen date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
-
-            - label: Daily cases
-              value: newCasesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
-
-            - label: Cumulative cases
-              value: cumCasesBySpecimenDate
-              type: numeric
-              tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
-
-            - label: Daily people tested # {{ DevOnly }}
-              value: newPeopleTestedBySpecimenDate # {{ DevOnly }}
-              type: numeric # {{ DevOnly }}
-              tooltip: Daily number of people tested (positive or negative) by date the sample was taken from the person # {{ DevOnly }}
-
-            - label: Cumulative people tested # {{ DevOnly }}
-              value: cumPeopleTestedBySpecimenDate # {{ DevOnly }}
-              type: numeric # {{ DevOnly }}
-              tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person # {{ DevOnly }}
-
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file
-        - heading: About 
-          tabType: metadata
-          filename: metadataTabs/cases/tabDailyCases.md
-        # {{ EndDevOnlyBlock }}
-
-
-    Date reported:
-      download:
-        - newCasesByPublishDate
-        - cumCasesByPublishDate
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of cases
-              value: newCasesByPublishDate
-              tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
-              type: bar
-              colour: 0
-
-            - label: Cases (7-day average)
-              value: newCasesByPublishDate
-              tooltip: 7 day rolling average of the daily number of new positive cases reported
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage: true
-
-        - heading: Cumulative
-          tabType: chart
-          fields:
-            - label: Number of cases
-              value: cumCasesByPublishDate
-              tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
-              type: line
-              colour: 0
-              fill: true
-              rollingAverage: false
-
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported by the Department of Health and Social Care
-
-            - label: Daily cases
-              value: newCasesByPublishDate
-              type: numeric
-              tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
-
-            - label: Cumulative cases
-              value: cumCasesByPublishDate
-              type: numeric
-              tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
-
-            - label: Daily people tested # {{ DevOnly }}
-              value: newPeopleTestedByPublishDate # {{ DevOnly }}
-              type: numeric # {{ DevOnly }}
-              tooltip: Daily number of new people tested (positive or negative) by date reported # {{ DevOnly }}
-
-            - label: Cumulative people tested # {{ DevOnly }}
-              value: cumPeopleTestedByPublishDate # {{ DevOnly }}
-              type: numeric # {{ DevOnly }}
-              tooltip: Cumulative total number of people tested (positive or negative) by date reported # {{ DevOnly }}
-
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file  PF to check - do we link to different About files for each toggle within the card?
-        - heading: About 
-          tabType: metadata
-          filename: metadataTabs/cases/tabDailyCases.md
-        # {{ EndDevOnlyBlock }}
-
-# {{ EndDevOnlyBlock }}
-
-# {{ StartDevOnlyBlock }}
-# not live
-# People tested not currently being published
-
-  - heading: Daily people tested
-    cardType: chart
-    fullWidth: true
-    # TODO: PF to check - had to create additional genPeopleTested not specific to daily/cumulative/by test data/by specimen date.
-    # Why is this on the Cases page and repeated on the Tested page - just to show cases and tests side by side?  If so maybe card needs different title?
+#   - heading: Daily people tested
+#     cardType: chart
+#     fullWidth: true
+#     # TODO: PF to check - had to create additional genPeopleTested not specific to daily/cumulative/by test data/by specimen date.
+#     # Why is this on the Cases page and repeated on the Tested page - just to show cases and tests side by side?  If so maybe card needs different title?
     # {{ StartDevOnlyBlock }} 
-    #  GA added 20200717
-    abstract: >
-      Number of people with at least one lab-confirmed positive or negative COVID-19 test result. 
-      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
+#     #  GA added 20200717
+#     abstract: >
+#       Number of people with at least one lab-confirmed positive or negative COVID-19 test result. 
+#       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
+#       different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
-    options:
-      type: radio
-      heading: null
-      choices:
-        - Specimen date
-        - Reporting date
+#     options:
+#       type: radio
+#       heading: null
+#       choices:
+#         - Specimen date
+#         - Reporting date
 
-    Specimen date:
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of people tested
-              value: newPeopleTestedBySpecimenDate
-              tooltip: Daily number of people tested (positive or negative) by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
+#     Specimen date:
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: overlay
+#           fields:
+#             - label: Number of people tested
+#               value: newPeopleTestedBySpecimenDate
+#               tooltip: Daily number of people tested (positive or negative) by date the sample was taken from the person
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
 
-            - label: People tested (7-day average)
-              value: newPeopleTestedBySpecimenDate
-              tooltip: 7 day rolling average of the daily number of people tested by specimen date
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage: true
+#             - label: People tested (7-day average)
+#               value: newPeopleTestedBySpecimenDate
+#               tooltip: 7 day rolling average of the daily number of people tested by specimen date
+#               type: line
+#               colour: 3
+#               fill: false
+#               rollingAverage: true
 
-        - heading: Cumulative
-          tabType: chart
-          fields:
-             
-            - label: Number of people tested
-              value: cumPeopleTestedBySpecimenDate
-              tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
-              type: line
-              colour: 0
-              fill: true
-              rollingAverage: false
+#         - heading: Cumulative
+#           tabType: chart
+#           fields:
+#             - label: Number of people tested
+#               value: cumPeopleTestedBySpecimenDate
+#               tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
+#               type: line
+#               colour: 0
+#               fill: true
+#               rollingAverage: false
 
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Specimen date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
+#         - heading: Data
+#           tabType: table
+#           fields:
+#             - label: Specimen date
+#               value: date
+#               type: date
+#               tooltip: Date the sample was taken from the person
 
-            - label: Daily cases
-              value: newCasesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+#             - label: Daily cases
+#               value: newCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
 
-            - label: Cumulative cases
-              value: cumCasesBySpecimenDate
-              type: numeric
-              tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+#             - label: Cumulative cases
+#               value: cumCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
 
-            - label: Daily people tested
-              value: newPeopleTestedBySpecimenDate
-              type: numeric
-              tooltip: Daily number of people tested (positive or negative) by date the sample was taken from the person
+#             - label: Daily people tested
+#               value: newPeopleTestedBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of people tested (positive or negative) by date the sample was taken from the person
 
-            - label: Cumulative people tested
-              value: cumPeopleTestedBySpecimenDate
-              type: numeric
-              tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
-
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file.  PF to check - do we link to different mds for each toggle within the card?
-        - heading: About 
-          tabType: metadata
-          filename: metadataTabs/testing/tabPeopleTested.md
-        # {{ EndDevOnlyBlock }}
-
-    Reporting date:
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of people tested
-              value: newPeopleTestedByPublishDate
-              tooltip: Daily number of new people tested (positive or negative) by date reported
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: People tested (7-day average)
-              value: newPeopleTestedByPublishDate
-              tooltip: 7 day rolling average of the number of new people tested by date reported
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage: true
-
-        - heading: Cumulative
-          tabType: chart
-          fields:                
-            - label: Number of people tested
-              value: cumPeopleTestedByPublishDate
-              tooltip: Cumulative total number of people tested (positive or negative) by date reported
-              type: line
-              colour: 6
-              fill: true
-              rollingAverage: false
-
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported by the Department of Health and Social Care
-
-            - label: Daily cases
-              value: newCasesByPublishDate
-              type: numeric
-              tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
-
-            - label: Cumulative cases
-              value: cumCasesByPublishDate
-              type: numeric
-              tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
-
-            - label: Daily people tested
-              value: newPeopleTestedByPublishDate
-              type: numeric
-              tooltip: Daily number of new people tested (positive or negative) by date reported
-
-            - label: Cumulative people tested
-              value: cumPeopleTestedByPublishDate
-              type: numeric
-              tooltip: Cumulative total number of people tested (positive or negative) by date reported
+#             - label: Cumulative people tested
+#               value: cumPeopleTestedBySpecimenDate
+#               type: numeric
+#               tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
 
         # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file
-        - heading: About 
-          tabType: metadata
-          filename: metadataTabs/testing/tabPeopleTested.md
+#         # TODO: GA to write and reference md file.  PF to check - do we link to different mds for each toggle within the card?
+#         - heading: About 
+#           tabType: metadata
+#           filename: cardMetadata/testing/cardPeopleTested.md
         # {{ EndDevOnlyBlock }}
 
+#     Reporting date:
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: overlay
+#           fields:
+#             - label: Number of people tested
+#               value: newPeopleTestedByPublishDate
+#               tooltip: Daily number of new people tested (positive or negative) by date reported
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+
+#             - label: People tested (7-day average)
+#               value: newPeopleTestedByPublishDate
+#               tooltip: 7 day rolling average of the number of new people tested by date reported
+#               type: line
+#               colour: 3
+#               fill: false
+#               rollingAverage: true
+
+#         - heading: Cumulative
+#           tabType: chart
+#           fields:                
+#             - label: Number of people tested
+#               value: cumPeopleTestedByPublishDate
+#               tooltip: Cumulative total number of people tested (positive or negative) by date reported
+#               type: line
+#               colour: 6
+#               fill: true
+#               rollingAverage: false
+
+#         - heading: Data
+#           tabType: table
+#           fields:
+#             - label: Date reported
+#               value: date
+#               type: date
+#               tooltip: Date reported by the Department of Health and Social Care
+
+#             - label: Daily cases
+#               value: newCasesByPublishDate
+#               type: numeric
+#               tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
+
+#             - label: Cumulative cases
+#               value: cumCasesByPublishDate
+#               type: numeric
+#               tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
+
+#             - label: Daily people tested
+#               value: newPeopleTestedByPublishDate
+#               type: numeric
+#               tooltip: Daily number of new people tested (positive or negative) by date reported
+
+#             - label: Cumulative people tested
+#               value: cumPeopleTestedByPublishDate
+#               type: numeric
+#               tooltip: Cumulative total number of people tested (positive or negative) by date reported
+
+        # {{ StartDevOnlyBlock }}
+#         # TODO: GA to write and reference md file
+#         - heading: About 
+#           tabType: metadata
+#           filename: cardMetadata/testing/cardPeopleTested.md
+        # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}
-# Not using this chart which shows which specimen dates the newly added cases refer to.  It's not useful now that
-# case numbers are so low
+# # Not using this chart which shows which specimen dates the newly added cases refer to.  It's not useful now that
+# # case numbers are so low
 
-  - heading: Newly reported and total daily cases by specimen date
-    cardType: chart
-    fullWidth: true
-    # TODO: PF to check - not added abstract or About Tab here as won't be using this card again?
-    tabs: 
-      - heading: Chart
-        tabType: chart
-        barType: overlay
-        fields:
-          - label: Total cases
-            value: newCasesBySpecimenDate
-            tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
-            type: bar
-            colour: 0
-            rollingAverage: false
+#   # - heading: Newly reported and total daily cases by specimen date
+#   #   cardType: chart
+#   #   fullWidth: true
+#   #   tabs: 
+#   #     - heading: Chart
+#   #       tabType: chart
+#   #       barType: overlay
+#   #       fields:
+#   #         - label: Total cases
+#   #           value: newCasesBySpecimenDate
+#   #           tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+#   #           type: bar
+#   #           colour: 0
+#   #           rollingAverage: false
 
-          - label: Change from previous day
-            value: changeInNewCasesBySpecimenDate
-            tooltip: Change in numbers of cases reported on {date} from previously reported
-            type: bar
-            colour: 9
-            rollingAverage: false
+#   #         - label: Change from previous day
+#   #           value: changeInNewCasesBySpecimenDate
+#   #           tooltip: Change in numbers of cases reported on {date} from previously reported
+#   #           type: bar
+#   #           colour: 9
+#   #           rollingAverage: false
 
-          - label: Cases (7-day average)
-            value: newCasesBySpecimenDate
-            tooltip: 7 day rolling average of the daily number of cases by specimen date
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage: true
+#   #         - label: Cases (7-day average)
+#   #           value: newCasesBySpecimenDate
+#   #           tooltip: 7 day rolling average of the daily number of cases by specimen date
+#   #           type: line
+#   #           colour: 3
+#   #           fill: false
+#   #           rollingAverage: true
  
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Specimen date
-            value: date
-            type: date
-            tooltip: Date the sample was taken from the person
+#   #     - heading: Data
+#   #       tabType: table
+#   #       fields:
+#   #         - label: Specimen date
+#   #           value: date
+#   #           type: date
+#   #           tooltip: Date the sample was taken from the person
 
-          - label: Daily cases
-            value: previouslyReportedNewCasesBySpecimenDate
-            type: numeric
-            tooltip: Number of new people with a lab-confirmed positive test result as reported on {date-1}
+#   #         - label: Daily cases
+#   #           value: previouslyReportedNewCasesBySpecimenDate
+#   #           type: numeric
+#   #           tooltip: Number of new people with a lab-confirmed positive test result as reported on {date-1}
 
-          - label: Cumulative cases
-            value: changeInNewCasesBySpecimenDate
-            type: numeric
-            tooltip: Change in number of new people with a lab-confirmed positive test result reported on {date}
+#   #         - label: Cumulative cases
+#   #           value: changeInNewCasesBySpecimenDate
+#   #           type: numeric
+#   #           tooltip: Change in number of new people with a lab-confirmed positive test result reported on {date}
 
 # {{ EndDevOnlyBlock }}
 
   - heading: Cases by age and sex
     caption: Counts
     cardType: ageSexBreakdown
+    locationAware:
+      included:
+        areaType:
+          - nation
+          - region
+
     fullWidth: false
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
     abstract: > 
-      Number of people with at least one lab-confirmed COVID-19 positive test result since the start of the pandemic, by age and sex. 
-      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
+      Number of people with at least one lab-confirmed COVID-19 positive test result since the
+      start of the pandemic, by age and sex.
 
     download:
       - femaleCasesValue 
@@ -690,6 +570,7 @@ cards:
         requiredMetrics:
           - femaleCases
           - maleCases
+
         fields:
           - label: Females
             value: femaleCasesValue
@@ -713,6 +594,7 @@ cards:
         requiredMetrics:
           - femaleCases
           - maleCases
+
         fields:
           - label: Age
             value: age
@@ -739,28 +621,24 @@ cards:
             type: numeric
             tooltip: Total number of male cases per 100,000 resident population
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabCasesAndRatesByAgeAndSex.md
-      # {{ EndDevOnlyBlock }}
-
+        filename: cardMetadata/cases/cardCasesAndRatesByAgeAndSex.md
 
   - heading: Case rates by age and sex 
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
+    locationAware:
+      included:
+        areaType:
+          - nation
+          - region
+
     fullWidth: false
-    # TODO: PF to check
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200717
     abstract: >
-      Number of people with at least one lab-confirmed positive COVID-19 test result since the start 
-      of the pandemic per 100,000 population, by age and sex.  Initially only NHS and, in England, 
-      PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
- 
+      Total case rates by age and sex.  There are fewer people in the oldest age groups so the
+      rates show the relative impact on different age groups.
+
     tabs: 
       - heading: Chart
         tabType: chart
@@ -769,9 +647,11 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - femaleCases
           - maleCases
+
         fields:
           - label: Females
             value: femaleCasesRate
@@ -791,9 +671,11 @@ cards:
         groupValues: 
           - value
           - rate
+
         requiredMetrics:
           - femaleCases
           - maleCases
+
         fields:
           - label: Age
             value: age
@@ -820,169 +702,184 @@ cards:
             type: numeric
             tooltip: Total number of female cases per 100,000 resident population
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/cases/tabCasesAndRatesByAgeAndSex.md
-      # {{ EndDevOnlyBlock }}
-
+        filename: cardMetadata/cases/cardCasesAndRatesByAgeAndSex.md
 
 # {{ StartDevOnlyBlock }}
-# Not currently publishing people tested
-# TODO: PF to check - GA 20200717 - not added abstracts as not yet publishing - shouldn't this sit on the testing page?
+# # Not currently publishing people tested
+# # TODO: PF to check - GA 20200717 - not added abstracts as not yet publishing - shouldn't this sit on the testing page?
 
-  - heading: People tested, by age and sex
-    caption: Counts
-    cardType: ageSexBreakdown
-    fullWidth: false
-    download:
-      - femalePeopleTestedValue
-      - femalePeopleTestedRate
-      - malePeopleTestedValue
-      - malePeopleTestedRate
+#   - heading: People tested, by age and sex
+#     caption: Counts
+#     cardType: ageSexBreakdown
+#     locationAware:
+#       included:
+#         areaType:
+#           - nation
+#           - region
+  
+#     fullWidth: false
+#     download:
+#       - femalePeopleTestedValue
+#       - femalePeopleTestedRate
+#       - malePeopleTestedValue
+#       - malePeopleTestedRate
 
-    tabs: 
-      - heading: Chart
-        tabType: chart
-        barType: group
-        groupKey: age
-        groupValues: 
-          - value
-          - rate
-        requiredMetrics:
-          - femalePeopleTested
-          - malePeopleTested
-        fields:
-          - label: Females
-            value: femalePeopleTestedValue
-            tooltip: Total number of females tested (positive or negative)
-            type: bar
-            colour: 3
+#     tabs: 
+#       - heading: Chart
+#         tabType: chart
+#         barType: group
+#         groupKey: age
+#         groupValues: 
+#           - value
+#           - rate
+
+#         requiredMetrics:
+#           - femalePeopleTested
+#           - malePeopleTested
+
+#         fields:
+#           - label: Females
+#             value: femalePeopleTestedValue
+#             tooltip: Total number of females tested (positive or negative)
+#             type: bar
+#             colour: 3
             
-          - label: Males
-            value: malePeopleTestedValue
-            tooltip: Total number of males tested (positive or negative)
-            type: bar
-            colour: 0
+#           - label: Males
+#             value: malePeopleTestedValue
+#             tooltip: Total number of males tested (positive or negative)
+#             type: bar
+#             colour: 0
       
-      - heading: Data
-        tabType: table
-        groupKey: age
-        groupValues: 
-          - value
-          - rate
-        requiredMetrics:
-          - femalePeopleTested
-          - malePeopleTested
-        fields:
-          - label: Age
-            value: age
-            type: string
-            tooltip: Age group
+#       - heading: Data
+#         tabType: table
+#         groupKey: age
+#         groupValues: 
+#           - value
+#           - rate
 
-          - label: Females
-            value: femalePeopleTestedValue
-            type: numeric
-            tooltip: Total number of females tested (positive or negative)
+#         requiredMetrics:
+#           - femalePeopleTested
+#           - malePeopleTested
 
-          - label: Female rate
-            value: femalePeopleTestedRate
-            type: numeric
-            tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+#         fields:
+#           - label: Age
+#             value: age
+#             type: string
+#             tooltip: Age group
 
-          - label: Males
-            value: malePeopleTestedValue
-            type: numeric
-            tooltip: Total number of males tested (positive or negative)
+#           - label: Females
+#             value: femalePeopleTestedValue
+#             type: numeric
+#             tooltip: Total number of females tested (positive or negative)
+
+#           - label: Female rate
+#             value: femalePeopleTestedRate
+#             type: numeric
+#             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+
+#           - label: Males
+#             value: malePeopleTestedValue
+#             type: numeric
+#             tooltip: Total number of males tested (positive or negative)
           
-          - label: Male rate
-            value: malePeopleTestedRate
-            type: numeric
-            tooltip: Total number of males tested (positive or negative) per 100,000 resident population
+#           - label: Male rate
+#             value: malePeopleTestedRate
+#             type: numeric
+#             tooltip: Total number of males tested (positive or negative) per 100,000 resident population
 
       # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
-      - heading: About 
-        tabType: metadata
-        filename: metadataTabs/testing/tabPeopleTestedByAgeAndSex.md
+#       # TODO: GA to write and reference md file
+#       - heading: About 
+#         tabType: metadata
+#         filename: cardMetadata/testing/tabPeopleTestedByAgeAndSex.md
       # {{ EndDevOnlyBlock }}
 
-# TODO: PF to check - GA 20200717 - not added abstracts or About tabs as not yet publishing - shouldn't this sit on the testing page?
-  - heading: People tested rates by age and sex
-    caption: Rates per 100,000 resident population
-    cardType: ageSexBreakdown
-    fullWidth: false
-    download:
-      - femalePeopleTestedValue
-      - femalePeopleTestedRate
-      - malePeopleTestedValue
-      - malePeopleTestedRate
+#   - heading: People tested rates by age and sex
+#     caption: Rates per 100,000 resident population
+#     cardType: ageSexBreakdown
+#     locationAware:
+#       included:
+#         areaType:
+#           - nation
+#           - region
 
-    tabs: 
-      - heading: Chart
-        tabType: chart
-        barType: group
-        groupKey: age
-        groupValues: 
-          - value
-          - rate
-        requiredMetrics:
-          - femalePeopleTested
-          - malePeopleTested
-        fields:
-          - label: Females
-            value: femalePeopleTestedRate
-            tooltip: Total number of females tested (positive or negative) per 100,000 resident population
-            type: bar
-            colour: 3
+#     fullWidth: false
+#     download:
+#       - femalePeopleTestedValue
+#       - femalePeopleTestedRate
+#       - malePeopleTestedValue
+#       - malePeopleTestedRate
+
+#     tabs: 
+#       - heading: Chart
+#         tabType: chart
+#         barType: group
+#         groupKey: age
+#         groupValues: 
+#           - value
+#           - rate
+
+#         requiredMetrics:
+#           - femalePeopleTested
+#           - malePeopleTested
+
+#         fields:
+#           - label: Females
+#             value: femalePeopleTestedRate
+#             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+#             type: bar
+#             colour: 3
             
-          - label: Males
-            value: malePeopleTestedRate
-            tooltip: Total number of males tested (positive or negative) per 100,000 resident population
-            type: bar
-            colour: 0
+#           - label: Males
+#             value: malePeopleTestedRate
+#             tooltip: Total number of males tested (positive or negative) per 100,000 resident population
+#             type: bar
+#             colour: 0
       
-      - heading: Data
-        tabType: table
-        groupKey: age
-        groupValues: 
-          - value
-          - rate
-        requiredMetrics:
-          - femalePeopleTested
-          - malePeopleTested
-        fields:
-          - label: Age
-            value: age
-            type: string
-            tooltip: Age group
+#       - heading: Data
+#         tabType: table
+#         groupKey: age
+#         groupValues: 
+#           - value
+#           - rate
 
-          - label: Female cases
-            value: femalePeopleTestedValue
-            type: numeric
-            tooltip: Total number of females tested (positive or negative)
+#         requiredMetrics:
+#           - femalePeopleTested
+#           - malePeopleTested
 
-          - label: Female rate
-            value: femalePeopleTestedRate
-            type: numeric
-            tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+#         fields:
+#           - label: Age
+#             value: age
+#             type: string
+#             tooltip: Age group
 
-          - label: Male cases
-            value: malePeopleTestedValue
-            type: numeric
-            tooltip: Total number of males tested (positive or negative)
+#           - label: Female cases
+#             value: femalePeopleTestedValue
+#             type: numeric
+#             tooltip: Total number of females tested (positive or negative)
+
+#           - label: Female rate
+#             value: femalePeopleTestedRate
+#             type: numeric
+#             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+
+#           - label: Male cases
+#             value: malePeopleTestedValue
+#             type: numeric
+#             tooltip: Total number of males tested (positive or negative)
           
-          - label: Male rate
-            value: malePeopleTestedRate
-            type: numeric
-            tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+#           - label: Male rate
+#             value: malePeopleTestedRate
+#             type: numeric
+#             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
 
       # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
-      - heading: About 
-        tabType: metadata
-        filename: metadataTabs/testing/tabPeopleTestedByAgeAndSex.md
+#       # TODO: GA to write and reference md file
+#       - heading: About 
+#         tabType: metadata
+#         filename: cardMetadata/testing/tabPeopleTestedByAgeAndSex.md
       # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
@@ -1011,21 +908,19 @@ cards:
 
 # {{ EndDevOnlyBlock }}
 
-  - heading: Cumulative total cases by area # Cases by area when abstract enabled
+  - heading: Cases by area
     cardType: simpleTableStatic
     fullWidth: false
-    # TODO: PF to check 
-    # {{ StartDevOnlyBlock }}
-    # GA added 20200717
     abstract: >
-      Number of people with at least one lab-confirmed positive COVID-19 test result since the start of the pandemic. 
-      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
+      Total number of people with at least one lab-confirmed positive COVID-19 test result since the start
+      of the pandemic in each area. The rates per 100,000 resident population give a fairer comparison of
+      the number of cases in each area but they do not take account of the different rates of testing or
+      differences in the age and sex of the local populations. Only data available for the latest reported
+      date are shown.
 
     download:
       - cumCasesByPublishDate
-      - cumCasesByPublishDateRate # {{ DevOnly }}
+      - cumCasesByPublishDateRate
 
     tabs:
       - heading: Nation
@@ -1034,6 +929,7 @@ cards:
           - key: areaType
             sign: "="
             value: nation
+
         latestBy: cumCasesByPublishDate
         sortBy: areaName
 
@@ -1048,10 +944,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumCasesByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
 
       - heading: Region
         tabType: table
@@ -1059,6 +955,7 @@ cards:
           - key: areaType
             sign: "="
             value: region
+
         latestBy: cumCasesByPublishDate
         sortBy: areaName
 
@@ -1073,10 +970,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumCasesByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
 
       - heading: Upper tier LA
         tabType: table
@@ -1084,6 +981,7 @@ cards:
           - key: areaType
             sign: "="
             value: utla
+
         latestBy: cumCasesByPublishDate
         sortBy: areaName
         searchBy: areaName
@@ -1099,10 +997,10 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumCasesByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
 
       - heading: Lower tier LA
         tabType: table
@@ -1110,6 +1008,7 @@ cards:
           - key: areaType
             sign: "="
             value: ltla
+
         latestBy: cumCasesByPublishDate
         sortBy: areaName
         searchBy: areaName
@@ -1125,23 +1024,29 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate # {{ DevOnly }}
-            value: cumCasesByPublishDateRate # {{ DevOnly }}
-            type: numeric # {{ DevOnly }}
-            tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
+          - label: Rate
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed cases per 100,000 resident population
 
-      - heading: About # {{ DevOnly }}
-        tabType: metadata # {{ DevOnly }}
-        filename: metadataTabs/cases/tabCasesAndRatesByArea.md # {{ DevOnly }}
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/cases/cardCasesAndRatesByArea.md
 
-  - heading: Weekly cases by local area in England # Cases by area when abstract enabled
+  - heading: Weekly cases by local area in England
     cardType: simpleExternalStatic
+    # locationAware:
+    #   excluded:
+    #     areaName:
+    #       - Northern Ireland
+    #       - Scotland
+    #       - Wales
+
     fullWidth: false
-    # TODO: PF to check - GA comment 20200717 - presume the PHE maps use same definitions as dashboard?
-    # not added any definition detail to abstract or About tab as this now live on staging site. 
     abstract: >
-      View Coronavirus cases in England by Middle Super Output Area (MSOA)
-    
+      COVID-19 cases in England by Middle Super Output Area (MSOA).  MSOAs are small areas
+      with around 7,200 average population.
+
     image: 
       url: https://c19pubdev.azureedge.net/assets/images/msoa-outline.png
       alt: >
