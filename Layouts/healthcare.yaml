@@ -133,7 +133,7 @@ cards:
       four nations may not be directly comparable as data about COVID-19 patients in
       hospitals are collected differently. Data are not reported by each nation every
       day. The UK figure is the sum of the four nations' figures and can only be calculated
-      when all nations' data are available.
+      when all nations' data are available.  Scotland stopped reporting admissions on 22 July.
 
     options:
       type: radio
