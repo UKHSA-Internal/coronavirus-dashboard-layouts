@@ -33,10 +33,14 @@ cards:
   - heading: Testing and capacity
     cardType: chart
     fullWidth: true
+    # TODO: PF to check - need to explain why UK has pillar 3 and 4 (and capacity) but not any nations.
     # {{ StartDevOnlyBlock }}
-    # needs writing: this is just an example
+    # GA added 20200722
     abstract: >
-      We can put an explanatory paragraph in here with {links to modals:newTestsByPublishDate}
+      Number of lab-confirmed positive or negative COVID-19 test results by test type, by date reported.  This is a count of 
+      test results and may include multiple tests for an individual person.  Test types include NHS and PHE tests, commercial tests, 
+      antibody tests and surveillance tests.  Testing capacity is shown for the UK only and is an estimate of the number
+      of tests that can be performed based on availability of staff and resources.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -204,12 +208,28 @@ cards:
             type: numeric
             tooltip: Cumulative total number of tests processed by date reported
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/testing/tabTestingAndCapacity.md
+      # {{ EndDevOnlyBlock }}
+
 # {{ StartDevOnlyBlock }}
 # Not currently publishing people tested
 
   - heading: People tested
     cardType: chart
     fullWidth: true
+    # TODO: PF to check - Double Check - think PeopleTested.md out of date as says pillar 2 incl since 2nd July but that only applies to England now.
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200722
+    abstract: >
+      Number of people with at least one lab-confirmed positive or negative COVID-19 test result, by date reported. 
+      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
+      different dates between 15th June and 14th July for each nation. National data are not directly comparable. 
+    # {{ EndDevOnlyBlock }}
+
     download:
       - newPeopleTestedByPublishDate
       - cumPeopleTestedByPublishDate
@@ -262,11 +282,26 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people tested by date reported
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/testing/tabPeopleTested.md
+      # {{ EndDevOnlyBlock }}
+
 # {{ EndDevOnlyBlock }}
 
   - heading: Pillar 1 (NHS and, in England, PHE) tests by nation
     cardType: multiAreaStatic
     fullWidth: true
+    # TODO: PF to check
+    # {{ StartDevOnlyBlock }}
+    # GA added 20200722
+    abstract: >
+      Number of people with at least one lab-confirmed positive or negative COVID-19 test result, by date reported. 
+      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
+      different dates between 15th June and 14th July for each nation. National data are not directly comparable. 
+    # {{ EndDevOnlyBlock }}
     download:
       - newPillarOneTestsByPublishDate
       - cumPillarOneTestsByPublishDate
@@ -322,3 +357,10 @@ cards:
             value: cumPillarOneTestsByPublishDate
             type: numeric
             tooltip: Cumulative number of COVID-19 tests on the residents of each nation, processed by NHS (and, in England, PHE) labs, by date reported
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file.  PF to check - currently base md file says 'all types of test' so need new base for or amend existing one for here?
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/testing/tabPillar1TestsByNation.md
+      # {{ EndDevOnlyBlock }}

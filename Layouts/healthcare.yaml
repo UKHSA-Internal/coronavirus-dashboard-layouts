@@ -45,8 +45,7 @@ cards:
     # GA added 20200715
     abstract: >
       COVID-19 patients admitted to hospital.  Data are not updated at weekends.  The UK figure is the sum of the four nations' figures and can 
-      only be presented up to the date when all nations' data are available.  National data are not directly comparable - 
-      see the {indicator definition:genAdmissions} for more information.
+      only be presented up to the date when all nations' data are available.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
       
     download:
@@ -104,6 +103,13 @@ cards:
             type: numeric
             tooltip: Cumulative total number of COVID-19 patients admitted to hospital
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
+      # {{ EndDevOnlyBlock }}
+
   - heading: Patients admitted to hospital, by age
     caption: Counts
     cardType: ageSexBreakdown
@@ -113,8 +119,7 @@ cards:
     # {{ StartDevOnlyBlock }}
     # GA added 20200715 
     abstract: >
-      COVID-19 patients admitted to hospital since the start of the pandemic, by age.   
-      See the {indicator definition:cumAdmissions} for more information.
+      COVID-19 patients admitted to hospital since the start of the pandemic, by age.
     # {{ EndDevOnlyBlock }}
       
     download:
@@ -161,6 +166,13 @@ cards:
             value: cumAdmissionsByAgeRate
             type: numeric
             tooltip: COVID-19 admissions per 100,000 resident population
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/healthcare/tabPatientsAdmittedToHospitalByAge.md
+      # {{ EndDevOnlyBlock }}
 
   - heading: Admission rates by age
     caption: Rates per 100,000 resident population
@@ -171,8 +183,7 @@ cards:
     # {{ StartDevOnlyBlock }}
     # GA added 20200715 
     abstract: >
-      COVID-19 patients admitted to hospital per 100,000 resident population since the start of the pandemic, by age.  
-      See the {indicator definition:cumAdmissions} for more information.
+      COVID-19 patients admitted to hospital per 100,000 resident population since the start of the pandemic, by age.
     # {{ EndDevOnlyBlock }}
       
     download:
@@ -219,19 +230,38 @@ cards:
             type: numeric
             tooltip: COVID-19 admissions per 100,000 resident population
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/healthcare/tabPatientsAdmittedToHospitalByAge.md
+      # {{ EndDevOnlyBlock }}
+
 # {{ StartDevOnlyBlock }}
 # Only really required before we had the localisation feature working, to present nation 
 # figures as in the No 10 slides - try rates
 
   - heading: Patients admitted to hospital, by nation
     cardType: multiAreaStatic
+
+    # example of locationAware for including or excluding specific area types or area names
+    # syntax set out in full below, but don't need to include empty lists
+
+    locationAware:
+      included: 
+        areaType:
+          - overview
+        areaName: []
+      excluded:
+        areaType: []
+        areaName: []
+      
     fullWidth: true
     # TODO: PF to check
     # {{ StartDevOnlyBlock }}
     # GA added 20200715 
     abstract: >
-      COVID-19 patients admitted to hospital, by nation.  Data are not updated at weekends.  National data are not directly comparable - 
-      see the {indicator definition:genAdmissions} for more information.
+      COVID-19 patients admitted to hospital, by nation.  Data are not updated at weekends.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
       
     download:
@@ -290,6 +320,13 @@ cards:
             type: numeric
             tooltip: Cumulative total number of COVID-19 patients admitted to hospital
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
+      # {{ EndDevOnlyBlock }}
+
 # {{ EndDevOnlyBlock }}
 
   - heading: Patients in hospital
@@ -301,8 +338,7 @@ cards:
     abstract: >
       COVID-19 patients in hospital.  National data may not be directly comparable as data about COVID-19 patients in hospitals 
       are collected differently across nations.  Data are not updated at weekends and data are not all provided from each nation 
-      every day, so the UK figure presented may lag as it is calculated by summing the four nations' counts - 
-      see the {indicator definition:hospitalCases} for more information.
+      every day, so the UK figure presented may lag as it is calculated by summing the four nations' counts.
     # {{ EndDevOnlyBlock }}
      
     download:
@@ -333,6 +369,13 @@ cards:
             type: numeric
             tooltip: Number of COVID-19 patients currently in hospital
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: hospitalCases.md
+      # {{ EndDevOnlyBlock }}
+
 # {{ StartDevOnlyBlock }}            
 # Only really required before we had the localisation feature working, to present nation 
 # figures as in the No 10 slides - try rates
@@ -347,7 +390,7 @@ cards:
     abstract: >
       COVID-19 patients in hospital, by area.  National data may not be directly comparable as data about COVID-19 patients in hospitals 
       are collected differently across nations.  Data are not updated at weekends and data are not all provided from each nation 
-      every day - see the {indicator definition:hospitalCases} for more information.
+      every day.
     # {{ EndDevOnlyBlock }}
      
     download:
@@ -393,6 +436,13 @@ cards:
               type: numeric
               tooltip: Number of COVID-19 patients currently in hospital
 
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file.  PF to check - do we define separate About tab for each toggle on card?
+        - heading: About 
+          tabType: metadata
+          filename: hospitalCases.md
+        # {{ EndDevOnlyBlock }}
+
     NHS Region:
       tabs:
         - heading: Daily
@@ -427,6 +477,13 @@ cards:
               type: numeric
               tooltip: Number of COVID-19 patients currently in hospital
 
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file.  PF to check - do we define separate About tabs for each toggle on card?
+        - heading: About 
+          tabType: metadata
+          filename: hospitalCases.md
+        # {{ EndDevOnlyBlock }}
+
 # {{ EndDevOnlyBlock }}
 
   - heading: Patients in mechanical ventilation beds
@@ -439,8 +496,7 @@ cards:
       Mechanical ventilation bed capacity, and occupancy by COVID-19 and non-COVID-19 patients.  
       Data are not updated at weekends and data are not all provided from each nation every day, 
       so the UK figure presented may lag as it is calculated by summing the four nations' counts.
-      National data are not directly comparable - see the {indicator definition:covidOccupiedMVBeds} 
-      for more information.
+      National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -523,6 +579,13 @@ cards:
 
 # {{ EndDevOnlyBlock }}
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: covidOccupiedMVBeds.md
+      # {{ EndDevOnlyBlock }}
+
 # {{ StartDevOnlyBlock }}
 # Only really required before we had the localisation feature working, to present nation 
 # figures as in the No 10 slides - try rates
@@ -536,8 +599,7 @@ cards:
     abstract: >
       COVID-19 patients in mechanical ventilation beds, by nation.  
       Data are not updated at weekends and data are not all provided from each nation every day. 
-      National data are not directly comparable - see the {indicator definition:covidOccupiedMVBeds} 
-      for more information.
+      National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
     
     download:
@@ -575,6 +637,13 @@ cards:
             type: numeric
             tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: covidOccupiedMVBeds.md
+      # {{ EndDevOnlyBlock }}
+
 # {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}
@@ -586,8 +655,11 @@ cards:
     cardType: chart
     fullWidth: true
     # TODO: PF to check - need to add line re national data not comparable if appropriate here and link to metadata when available.
-    abstract: > # {{ DevOnly }} GA added 20200715 
+    # About tabs not added until confirm plan to publish
+    # {{ StartDevOnlyBlock }}
+    abstract: > 
       COVID-19 patients discharged home from hospital.  
+    # {{ EndDevOnlyBlock }}
 
     download:
       - newDischarges
@@ -648,6 +720,8 @@ cards:
     cardType: ageSexBreakdown
     fullWidth: false
     # TODO: PF to check - need to add line re national data not comparable if appropriate here and link to metadata when available.
+    # About tabs not added until confirm plan to publish
+    
     # {{ StartDevOnlyBlock }}
     # GA added 20200715 
     abstract: >
@@ -703,6 +777,8 @@ cards:
     cardType: ageSexBreakdown
     fullWidth: false
     # TODO: PF to check - need to add line re national data not comparable if appropriate here and link to metadata when available.
+    # Not added About tab until confirm plan to publish
+
     # {{ StartDevOnlyBlock }}
     # GA added 20200715 
     abstract: >

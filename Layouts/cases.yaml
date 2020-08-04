@@ -36,9 +36,8 @@ cards:
     # GA added 20200717
     abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date. 
-      Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
-      times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
-      see the {indicator definition:genCasesBySpecimenDate} for more information.
+      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
     
     download:
@@ -96,6 +95,13 @@ cards:
             type: numeric
             tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/cases/tabDailyCases.md
+      # {{ EndDevOnlyBlock }}
+
   - heading: Daily cases by date reported
     cardType: chart
     fullWidth: true
@@ -104,9 +110,8 @@ cards:
     # GA added 20200717
     abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported. 
-      Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
-      times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
-      see the {indicator definition:genCasesByPublishDate} for more information.
+      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -161,6 +166,14 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/cases/tabDailyCases.md
+      # {{ EndDevOnlyBlock }}
+
+
 # {{ StartDevOnlyBlock }}
 # This card will replace the two separate versions above when the functionality to make the radio
 # button options sensitive to whether there are data or not has been implemented
@@ -173,9 +186,8 @@ cards:
     # {{ GA added 20200717
     abstract: > 
       Number of people with at least one lab-confirmed positive COVID-19 test result. 
-      Initially only NHS and, in England, PHE tests were included but commerical tests were included at different 
-      times by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
-      see the {indicator definition:genCases} for more information.
+      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     options:
@@ -251,6 +263,14 @@ cards:
               type: numeric # {{ DevOnly }}
               tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person # {{ DevOnly }}
 
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file
+        - heading: About 
+          tabType: metadata
+          filename: metadataTabs/cases/tabDailyCases.md
+        # {{ EndDevOnlyBlock }}
+
+
     Date reported:
       download:
         - newCasesByPublishDate
@@ -314,6 +334,13 @@ cards:
               type: numeric # {{ DevOnly }}
               tooltip: Cumulative total number of people tested (positive or negative) by date reported # {{ DevOnly }}
 
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file  PF to check - do we link to different About files for each toggle within the card?
+        - heading: About 
+          tabType: metadata
+          filename: metadataTabs/cases/tabDailyCases.md
+        # {{ EndDevOnlyBlock }}
+
 # {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}
@@ -324,13 +351,13 @@ cards:
     cardType: chart
     fullWidth: true
     # TODO: PF to check - had to create additional genPeopleTested not specific to daily/cumulative/by test data/by specimen date.
+    # Why is this on the Cases page and repeated on the Tested page - just to show cases and tests side by side?  If so maybe card needs different title?
     # {{ StartDevOnlyBlock }} 
     #  GA added 20200717
     abstract: >
       Number of people with at least one lab-confirmed positive or negative COVID-19 test result. 
-      Initially only NHS and, in England, PHE tests were included but commerical tests have been included since 2nd July 2020 for all four nations.  
-      National data are not directly comparable - see the {indicator definition:genPeopleTested} 
-      for more information.
+      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     options:
@@ -401,6 +428,13 @@ cards:
               type: numeric
               tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
 
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file.  PF to check - do we link to different mds for each toggle within the card?
+        - heading: About 
+          tabType: metadata
+          filename: metadataTabs/testing/tabPeopleTested.md
+        # {{ EndDevOnlyBlock }}
+
     Reporting date:
       tabs:
         - heading: Daily
@@ -461,6 +495,14 @@ cards:
               type: numeric
               tooltip: Cumulative total number of people tested (positive or negative) by date reported
 
+        # {{ StartDevOnlyBlock }}
+        # TODO: GA to write and reference md file
+        - heading: About 
+          tabType: metadata
+          filename: metadataTabs/testing/tabPeopleTested.md
+        # {{ EndDevOnlyBlock }}
+
+
 # {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}
@@ -470,7 +512,7 @@ cards:
   - heading: Newly reported and total daily cases by specimen date
     cardType: chart
     fullWidth: true
-    # TODO: PF to check - not added abstract here as won't be using this card again?
+    # TODO: PF to check - not added abstract or About Tab here as won't be using this card again?
     tabs: 
       - heading: Chart
         tabType: chart
@@ -524,12 +566,10 @@ cards:
     fullWidth: false
     # TODO: PF to check
     # {{ StartDevOnlyBlock }}
-    # {{ DevOnly }} GA added 20200717
     abstract: > 
       Number of people with at least one lab-confirmed COVID-19 positive test result since the start of the pandemic, by age and sex. 
-      Initially only NHS and, in England, PHE tests were included but commercial tests were included at different times by each 
-      nation between 15th June and 14th July 2020.  National data are not directly comparable - 
-      see the {indicator definition:cumCasesByPublishDate} for more information.
+      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -599,6 +639,14 @@ cards:
             type: numeric
             tooltip: Total number of male cases per 100,000 resident population
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/cases/tabCasesAndRatesByAgeAndSex.md
+      # {{ EndDevOnlyBlock }}
+
+
   - heading: Case rates by age and sex 
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
@@ -609,9 +657,8 @@ cards:
     abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result since the start 
       of the pandemic per 100,000 population, by age and sex.  Initially only NHS and, in England, 
-      PHE tests were included but commercial tests were included at different times by each 
-      nation between 15th June and 14th July 2020.  National data are not directly comparable - 
-      see the {indicator definition:cumCasesByPublishDate} for more information.
+      PHE tests were included but commercial tests have been included from   
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
  
     tabs: 
@@ -673,9 +720,17 @@ cards:
             type: numeric
             tooltip: Total number of female cases per 100,000 resident population
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/cases/tabCasesAndRatesByAgeAndSex.md
+      # {{ EndDevOnlyBlock }}
+
+
 # {{ StartDevOnlyBlock }}
 # Not currently publishing people tested
-# GA 20200717 - not added abstracts as not yet publishing
+# TODO: PF to check - GA 20200717 - not added abstracts as not yet publishing - shouldn't this sit on the testing page?
 
   - heading: People tested, by age and sex
     caption: Counts
@@ -746,6 +801,14 @@ cards:
             type: numeric
             tooltip: Total number of males tested (positive or negative) per 100,000 resident population
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/testing/tabPeopleTestedByAgeAndSex.md
+      # {{ EndDevOnlyBlock }}
+
+# TODO: PF to check - GA 20200717 - not added abstracts or About tabs as not yet publishing - shouldn't this sit on the testing page?
   - heading: People tested rates by age and sex
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
@@ -815,6 +878,13 @@ cards:
             type: numeric
             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
 
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/testing/tabPeopleTestedByAgeAndSex.md
+      # {{ EndDevOnlyBlock }}
+
 # {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}
@@ -849,9 +919,8 @@ cards:
     # GA added 20200717
     abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result since the start of the pandemic. 
-      Initially only NHS and, in England, PHE tests were included but commerical tests were included at different times by each 
-      nation between 15th June and 14th July 2020.  National data are not directly comparable - 
-      see the {indicator definition:cumCasesByPublishDate} for more information.
+      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -961,7 +1030,7 @@ cards:
             type: numeric # {{ DevOnly }}
             tooltip: Rate of total confirmed cases per 100,000 resident population # {{ DevOnly }}
 
-      - heading: About # {{ DevOnly }} md needs writing and also applying to every other tab.  This is just an example
+      - heading: About # {{ DevOnly }}
         tabType: metadata # {{ DevOnly }}
         filename: metadataTabs/cases/tabCasesAndRatesByArea.md # {{ DevOnly }}
 
@@ -969,7 +1038,7 @@ cards:
     cardType: simpleExternalStatic
     fullWidth: false
     # TODO: PF to check - GA comment 20200717 - presume the PHE maps use same definitions as dashboard?
-    # not added any definition detail to abstract as this now live on staging site. 
+    # not added any definition detail to abstract or About tab as this now live on staging site. 
     abstract: >
       View Coronavirus cases in England by Middle Super Output Area (MSOA)
     
@@ -1004,9 +1073,8 @@ cards:
     # GA added 20200717
     abstract: >
       Number of people with at least one lab-confirmed positive COVID-19 test result, by date reported, by nation. 
-      Initially only NHS and, in England, PHE tests were included but commerical tests were added at different times 
-      by each nation between 15th June and 14th July 2020.  National data are not directly comparable - 
-      see the {indicator definition:genCasesByPublishDate} for more information.
+      Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
+      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
     # {{ EndDevOnlyBlock }}
 
     download:
@@ -1065,3 +1133,10 @@ cards:
             value: cumCasesByPublishDate
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
+
+      # {{ StartDevOnlyBlock }}
+      # TODO: GA to write and reference md file
+      - heading: About 
+        tabType: metadata
+        filename: metadataTabs/cases/tabCases.md
+      # {{ EndDevOnlyBlock }}
