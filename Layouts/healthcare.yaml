@@ -57,7 +57,7 @@ cards:
     fullWidth: true
     abstract: >
       Daily and cumulative numbers of COVID-19 patients admitted to hospital. Data are not updated
-      at weekends.
+      every day.
       
     download:
       - newAdmissions
@@ -114,12 +114,9 @@ cards:
             type: numeric
             tooltip: Cumulative total number of COVID-19 patients admitted to hospital
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalWithRollingAverages.md
 
 # Only shown for UK
 
@@ -206,12 +203,9 @@ cards:
               type: numeric
               tooltip: Cumulative total number of COVID-19 patients admitted to hospital
 
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file
         - heading: About 
           tabType: metadata
-          filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
-        # {{ EndDevOnlyBlock }
+          filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
 
     UK total:
       download:
@@ -274,12 +268,9 @@ cards:
               type: numeric
               tooltip: Cumulative total number of COVID-19 patients admitted to hospital
 
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file
         - heading: About 
           tabType: metadata
-          filename: metadataTabs/healthcare/tabPatientsAdmittedToHospital.md
-        # {{ EndDevOnlyBlock }
+          filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
 
   - heading: Patients admitted to hospital, by age
     caption: Counts
@@ -287,7 +278,8 @@ cards:
     fullWidth: false
     abstract: >
       Total numbers of COVID-19 patients admitted to hospital since the start of the pandemic, by
-      age.
+      age. Data are not updated every day. Some admission records have missing age, so the sum of
+      the subgroups does not equal the total admissions for the area.
       
     download:
       - cumAdmissionsByAge
@@ -338,12 +330,9 @@ cards:
             type: numeric
             tooltip: COVID-19 admissions per 100,000 resident population
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file - include reference to missing age or sex, ie numbers don't sum to totals.
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/healthcare/tabPatientsAdmittedToHospitalByAge.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalByAge.md
 
   - heading: Admission rates by age
     caption: Rates per 100,000 resident population
@@ -402,12 +391,9 @@ cards:
             type: numeric
             tooltip: COVID-19 admissions per 100,000 resident population
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: metadataTabs/healthcare/tabPatientsAdmittedToHospitalByAge.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalByAge.md
 
 # Not shown for UK
 
@@ -420,7 +406,8 @@ cards:
       
     fullWidth: true
     abstract: >
-      Daily count of COVID-19 patients in hospital.
+      Daily count of confirmed COVID-19 patients in hospital at midnight the preceding
+      night. Data are not updated every day.
      
     download:
       - hospitalCases
@@ -450,13 +437,10 @@ cards:
             type: numeric
             tooltip: Number of COVID-19 patients currently in hospital
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: hospitalCases.md
-      # {{ EndDevOnlyBlock }}
-          
+        filename: cardMetadata/healthcare/cardPatientsInHospital.md
+
 # Only shown for UK
 
   - heading: Patients in hospital
@@ -468,11 +452,11 @@ cards:
 
     fullWidth: true
     abstract: >
-      Daily count of COVID-19 patients in hospital. Data from the four nations may not be
-      directly comparable as data about COVID-19 patients in hospitals are collected
-      differently. Data are not reported by each nation every day. The UK figure is the
-      sum of the four nations' figures and can only be calculated when all nations' data are
-      available.
+      Daily count of confirmed COVID-19 patients in hospital at midnight the preceding night.
+      Data from the four nations may not be directly comparable as data about COVID-19
+      patients in hospitals are collected differently. Data are not reported by each nation
+      every day. The UK figure is the sum of the four nations' figures and can only be
+      calculated when all nations' data are available.
 
     options:
       type: radio
@@ -520,12 +504,9 @@ cards:
               type: numeric
               tooltip: Number of COVID-19 patients currently in hospital
 
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file.  PF to check - do we define separate About tab for each toggle on card?
         - heading: About 
           tabType: metadata
           filename: hospitalCases.md
-        # {{ EndDevOnlyBlock }}
 
     UK total:
       download:
@@ -566,12 +547,9 @@ cards:
               type: numeric
               tooltip: Number of COVID-19 patients currently in hospital
 
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file.  PF to check - do we define separate About tab for each toggle on card?
         - heading: About 
           tabType: metadata
-          filename: hospitalCases.md
-        # {{ EndDevOnlyBlock }}
+          filename: cardMetadata/healthcare/cardPatientsInHospital.md
 
 # Only shown for England
 
@@ -584,7 +562,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Daily count of COVID-19 patients in hospital in each NHS region.
+      Daily count of confirmed COVID-19 patients in hospital at midnight the preceding
+      night in each NHS region. Data are not updated every day.
 
     download:
       - hospitalCases
@@ -624,12 +603,9 @@ cards:
             type: numeric
             tooltip: Number of COVID-19 patients currently in hospital
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file.  PF to check - do we define separate About tabs for each toggle on card?
       - heading: About 
         tabType: metadata
-        filename: hospitalCases.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/healthcare/cardPatientsInHospital.md
 
 # Not shown for UK
 
@@ -642,8 +618,8 @@ cards:
           - overview
       
     abstract: >
-      Daily count of COVID-19 patients in mechanical ventilation beds. Data are not reported
-      by each nation every day.
+      Daily count of confirmed COVID-19 patients in mechanical ventilation beds. Data are not updated
+      every day.
 
     download:
       - covidOccupiedMVBeds
@@ -725,12 +701,9 @@ cards:
 
           # {{ EndDevOnlyBlock }}
 
-      # {{ StartDevOnlyBlock }}
-      # TODO: GA to write and reference md file
       - heading: About 
         tabType: metadata
-        filename: covidOccupiedMVBeds.md
-      # {{ EndDevOnlyBlock }}
+        filename: cardMetadata/healthcare/cardPatientsInMVBeds.md
 
 # Only shown for UK
 
@@ -743,11 +716,11 @@ cards:
           - overview
 
     abstract: >
-      COVID-19 patients in mechanical ventilation beds. Data from the four nations may not be
-      directly comparable as data about COVID-19 patients in hospitals are collected
-      differently. Data are not reported by each nation every day. The UK figure is the
-      sum of the four nations' figures and can only be calculated when all nations' data are
-      available.
+      Confirmed COVID-19 patients in mechanical ventilation beds. Data from the four nations may not be
+      directly comparable as data about COVID-19 patients in hospitals are collected differently. Data
+      are not reported by each nation every day and England data are not available before 2 April. The
+      UK figure is the sum of the four nations' figures and can only be calculated when all nations'
+      data are available.
    
     options:
       type: radio
@@ -795,12 +768,9 @@ cards:
               type: numeric
               tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
 
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file
         - heading: About 
           tabType: metadata
-          filename: covidOccupiedMVBeds.md
-        # {{ EndDevOnlyBlock }}
+          filename: cardMetadata/healthcare/cardPatientsInMVBeds.md
 
     UK total:    
       download:
@@ -841,12 +811,9 @@ cards:
               type: numeric
               tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
 
-        # {{ StartDevOnlyBlock }}
-        # TODO: GA to write and reference md file
         - heading: About 
           tabType: metadata
-          filename: covidOccupiedMVBeds.md
-        # {{ EndDevOnlyBlock }}
+          filename: cardMetadata/healthcare/cardPatientsInMVBeds.md
 
 # # {{ StartDevOnlyBlock }}
 # # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
