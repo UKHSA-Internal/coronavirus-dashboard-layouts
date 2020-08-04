@@ -9,7 +9,7 @@ headlineNumbers:
         value: cumCasesByPublishDate
         tooltip: Cumulative total number of people with a lab-confirmed positive test result reported up to {date}
         
-# # {{ StartDevOnlyBlock }}
+# {{ StartDevOnlyBlock }}
 # # People tested not currently being published
 
 #   - caption: All people tested
@@ -324,7 +324,7 @@ cards:
         tabType: metadata
         filename: cardMetadata/cases/cardCasesTimeSeries.md
 
-# # {{ StartDevOnlyBlock }}
+# {{ StartDevOnlyBlock }}
 # # not live
 # # People tested not currently being published
 
@@ -333,13 +333,13 @@ cards:
 #     fullWidth: true
 #     # TODO: PF to check - had to create additional genPeopleTested not specific to daily/cumulative/by test data/by specimen date.
 #     # Why is this on the Cases page and repeated on the Tested page - just to show cases and tests side by side?  If so maybe card needs different title?
-#     # {{ StartDevOnlyBlock }} 
+    # {{ StartDevOnlyBlock }} 
 #     #  GA added 20200717
 #     abstract: >
 #       Number of people with at least one lab-confirmed positive or negative COVID-19 test result. 
 #       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
 #       different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
-#     # {{ EndDevOnlyBlock }}
+    # {{ EndDevOnlyBlock }}
 
 #     options:
 #       type: radio
@@ -408,12 +408,12 @@ cards:
 #               type: numeric
 #               tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
 
-#         # {{ StartDevOnlyBlock }}
+        # {{ StartDevOnlyBlock }}
 #         # TODO: GA to write and reference md file.  PF to check - do we link to different mds for each toggle within the card?
 #         - heading: About 
 #           tabType: metadata
 #           filename: cardMetadata/testing/cardPeopleTested.md
-#         # {{ EndDevOnlyBlock }}
+        # {{ EndDevOnlyBlock }}
 
 #     Reporting date:
 #       tabs:
@@ -475,16 +475,16 @@ cards:
 #               type: numeric
 #               tooltip: Cumulative total number of people tested (positive or negative) by date reported
 
-#         # {{ StartDevOnlyBlock }}
+        # {{ StartDevOnlyBlock }}
 #         # TODO: GA to write and reference md file
 #         - heading: About 
 #           tabType: metadata
 #           filename: cardMetadata/testing/cardPeopleTested.md
-#         # {{ EndDevOnlyBlock }}
+        # {{ EndDevOnlyBlock }}
 
-# # {{ EndDevOnlyBlock }}
+# {{ EndDevOnlyBlock }}
 
-# # {{ StartDevOnlyBlock }}
+# {{ StartDevOnlyBlock }}
 # # Not using this chart which shows which specimen dates the newly added cases refer to.  It's not useful now that
 # # case numbers are so low
 
@@ -536,7 +536,7 @@ cards:
 #   #           type: numeric
 #   #           tooltip: Change in number of new people with a lab-confirmed positive test result reported on {date}
 
-# # {{ EndDevOnlyBlock }}
+# {{ EndDevOnlyBlock }}
 
   - heading: Cases by age and sex
     caption: Counts
@@ -706,7 +706,7 @@ cards:
         tabType: metadata
         filename: cardMetadata/cases/cardCasesAndRatesByAgeAndSex.md
 
-# # {{ StartDevOnlyBlock }}
+# {{ StartDevOnlyBlock }}
 # # Not currently publishing people tested
 # # TODO: PF to check - GA 20200717 - not added abstracts as not yet publishing - shouldn't this sit on the testing page?
 
@@ -789,12 +789,12 @@ cards:
 #             type: numeric
 #             tooltip: Total number of males tested (positive or negative) per 100,000 resident population
 
-#       # {{ StartDevOnlyBlock }}
+      # {{ StartDevOnlyBlock }}
 #       # TODO: GA to write and reference md file
 #       - heading: About 
 #         tabType: metadata
 #         filename: cardMetadata/testing/tabPeopleTestedByAgeAndSex.md
-#       # {{ EndDevOnlyBlock }}
+      # {{ EndDevOnlyBlock }}
 
 #   - heading: People tested rates by age and sex
 #     caption: Rates per 100,000 resident population
@@ -875,14 +875,14 @@ cards:
 #             type: numeric
 #             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
 
-#       # {{ StartDevOnlyBlock }}
+      # {{ StartDevOnlyBlock }}
 #       # TODO: GA to write and reference md file
 #       - heading: About 
 #         tabType: metadata
 #         filename: cardMetadata/testing/tabPeopleTestedByAgeAndSex.md
-#       # {{ EndDevOnlyBlock }}
+      # {{ EndDevOnlyBlock }}
 
-# # {{ EndDevOnlyBlock }}
+# {{ EndDevOnlyBlock }}
 
 # {{ StartDevOnlyBlock }}
 # Scatterplot not a valid cardType yet - not built
