@@ -1035,12 +1035,12 @@ cards:
 
   - heading: Weekly cases by local area in England
     cardType: simpleExternalStatic
-    locationAware:
-      excluded:
-        areaName:
-          - Northern Ireland
-          - Scotland
-          - Wales
+    # locationAware:
+    #   excluded:
+    #     areaName:
+    #       - Northern Ireland
+    #       - Scotland
+    #       - Wales
 
 
     fullWidth: false
