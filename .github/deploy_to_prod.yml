@@ -1,0 +1,17 @@
+name: Deploy to production
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: muinmomin/webhook-action@v1.0.0
+        with:
+          url: ${{ secrets.PRODUCTIONPUBLISHPROFILE }}
+          data: >
+            {"command": "publish"}
