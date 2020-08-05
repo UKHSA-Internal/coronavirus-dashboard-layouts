@@ -333,13 +333,17 @@ cards:
 #     fullWidth: true
 #     # TODO: PF to check - had to create additional genPeopleTested not specific to daily/cumulative/by test data/by specimen date.
 #     # Why is this on the Cases page and repeated on the Tested page - just to show cases and tests side by side?  If so maybe card needs different title?
-    # {{ StartDevOnlyBlock }} 
-#     #  GA added 20200717
+
 #     abstract: >
 #       Number of people with at least one lab-confirmed positive or negative COVID-19 test result. 
 #       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
 #       different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
-    # {{ EndDevOnlyBlock }}
+
+#     download:
+#       - newCasesBySpecimenDate
+#       - cumCasesBySpecimenDate
+#       - newPeopleTestedBySpecimenDate
+#       - cumPeopleTestedBySpecimenDate
 
 #     options:
 #       type: radio
@@ -408,12 +412,10 @@ cards:
 #               type: numeric
 #               tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
 
-        # {{ StartDevOnlyBlock }}
 #         # TODO: GA to write and reference md file.  PF to check - do we link to different mds for each toggle within the card?
 #         - heading: About 
 #           tabType: metadata
 #           filename: cardMetadata/testing/cardPeopleTested.md
-        # {{ EndDevOnlyBlock }}
 
 #     Reporting date:
 #       tabs:
@@ -475,12 +477,10 @@ cards:
 #               type: numeric
 #               tooltip: Cumulative total number of people tested (positive or negative) by date reported
 
-        # {{ StartDevOnlyBlock }}
 #         # TODO: GA to write and reference md file
 #         - heading: About 
 #           tabType: metadata
 #           filename: cardMetadata/testing/cardPeopleTested.md
-        # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
 
@@ -491,6 +491,12 @@ cards:
 #   # - heading: Newly reported and total daily cases by specimen date
 #   #   cardType: chart
 #   #   fullWidth: true
+
+#   # download:
+#   #   - newCasesBySpecimenDate
+#   #   - changeInNewCasesBySpecimenDate
+#   #   - previouslyReportedNewCasesBySpecimenDate
+
 #   #   tabs: 
 #   #     - heading: Chart
 #   #       tabType: chart
@@ -789,12 +795,9 @@ cards:
 #             type: numeric
 #             tooltip: Total number of males tested (positive or negative) per 100,000 resident population
 
-      # {{ StartDevOnlyBlock }}
-#       # TODO: GA to write and reference md file
 #       - heading: About 
 #         tabType: metadata
 #         filename: cardMetadata/testing/tabPeopleTestedByAgeAndSex.md
-      # {{ EndDevOnlyBlock }}
 
 #   - heading: People tested rates by age and sex
 #     caption: Rates per 100,000 resident population
@@ -875,12 +878,9 @@ cards:
 #             type: numeric
 #             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
 
-      # {{ StartDevOnlyBlock }}
-#       # TODO: GA to write and reference md file
 #       - heading: About 
 #         tabType: metadata
 #         filename: cardMetadata/testing/tabPeopleTestedByAgeAndSex.md
-      # {{ EndDevOnlyBlock }}
 
 # {{ EndDevOnlyBlock }}
 

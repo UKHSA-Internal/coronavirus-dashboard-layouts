@@ -21,11 +21,16 @@ cards:
           - overview
 
     fullWidth: true
+
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19, by date reported.  
       The actual cause of death may not be COVID-19 in all cases. People who died from COVID-19 but
       had not tested positive are not included. Data from the four nations are not directly
       comparable as methodologies and inclusion criteria vary.
+
+    download:
+      - newDeathsByPublishDate
+      - cumDeathsByPublishDate
 
     options:
       type: radio
@@ -35,9 +40,7 @@ cards:
         - UK total
     
     By nation:
-      download:
-        - newDeathsByPublishDate
-        - cumDeathsByPublishDate
+      
       tabs:
         - heading: Daily
           tabType: chart
@@ -96,9 +99,7 @@ cards:
           filename: cardMetadata/deaths/cardDeathsTimeSeries.md
 
     UK total:
-      download:
-        - newDeathsByPublishDate
-        - cumDeathsByPublishDate
+
       tabs:
         - heading: Daily
           tabType: chart
