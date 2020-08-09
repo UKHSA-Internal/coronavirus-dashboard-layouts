@@ -114,7 +114,7 @@ cards:
               value: newDeathsByPublishDate
               tooltip: Daily number of new deaths, by date reported
               type: bar
-              rollingAverage: false
+              rollingAverage: true
 
         - heading: Cumulative
           tabType: chart
