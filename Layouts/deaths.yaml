@@ -104,7 +104,7 @@ cards:
         - heading: Daily
           tabType: chart
           barType: stack
-          colours: [0, 3] # areaNames in alphabetical order
+          colours: [0] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
@@ -116,10 +116,11 @@ cards:
               type: bar
               rollingAverage: false
 
-            - label: ""
+            - label: Deaths (7-day average)
               value: newDeathsByPublishDate
               tooltip: 7 day rolling average of the daily number of new deaths
               type: line
+              colour: 3
               rollingAverage: true
 
         - heading: Cumulative
