@@ -73,7 +73,7 @@ cards:
             value: cumTestsByPublishDate
             tooltip: Cumulative total number of tests processed (all pillars) by date reported
             type: bar
-            colour: 3
+            colour: 0
             rollingAverage: false
 
       - heading: Data

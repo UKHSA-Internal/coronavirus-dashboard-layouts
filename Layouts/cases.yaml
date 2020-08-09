@@ -26,152 +26,6 @@ headlineNumbers:
 
 cards:
 
-# Not shown for UK
-
-  - heading: Daily cases by specimen date
-    cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date.
-      Individuals tested positive more than once are only counted once, on the date of their first
-      positive test.
-
-    download:
-      - newCasesBySpecimenDate
-      - cumCasesBySpecimenDate
-
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: overlay
-        fields:
-          - label: Number of cases
-            value: newCasesBySpecimenDate
-            tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-          - label: Cases (7-day average)
-            value: newCasesBySpecimenDate
-            tooltip: 7 day rolling average of the daily number of cases by specimen date
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 3 #no of days to exclude for incomplete data
-
-      - heading: Cumulative
-        tabType: chart
-        fields:
-          - label: Number of cases
-            value: cumCasesBySpecimenDate
-            tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
-            type: line
-            colour: 0
-            fill: true
-            rollingAverage: false
-
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Specimen date
-            value: date
-            type: date
-            tooltip: Date the sample was taken from the person
-
-          - label: Daily cases
-            value: newCasesBySpecimenDate
-            type: numeric
-            tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
-
-          - label: Cumulative cases
-            value: cumCasesBySpecimenDate
-            type: numeric
-            tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-# Not shown for UK (identical to UK version but needs different abstract) or sub-national (no data)
-
-  - heading: Daily cases by date reported
-    cardType: chart
-    locationAware:
-      included:
-        areaType:
-          - nation
-
-    fullWidth: true
-    abstract: >
-      Number of individuals who have had at least one lab-confirmed positive COVID-19 test result,
-      by date reported. Initially only pillar 1 tests (NHS and, in England, PHE labs) were included
-      but commercial tests have been included from varying dates between 15th June and 14th July for
-      each nation, leading to step increases in the numbers of cases reported at different times.
-
-    download:
-      - newCasesByPublishDate
-      - cumCasesByPublishDate
-
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: overlay
-        fields:
-          - label: Number of cases
-            value: newCasesByPublishDate
-            tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
-            type: bar
-            colour: 0
-
-          - label: Cases (7-day average)
-            value: newCasesByPublishDate
-            tooltip: 7 day rolling average of the daily number of new positive cases reported
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage: true
-
-      - heading: Cumulative
-        tabType: chart
-        fields:
-          - label: Number of cases
-            value: cumCasesByPublishDate
-            tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
-            type: line
-            colour: 0
-            fill: true
-            rollingAverage: false
-
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported by the Department of Health and Social Care
-
-          - label: Daily cases
-            value: newCasesByPublishDate
-            type: numeric
-            tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
-
-          - label: Cumulative cases
-            value: cumCasesByPublishDate
-            type: numeric
-            tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesTimeSeries.md
-
 # Only shown for UK (identical to non-UK version but needs different abstract)
 
   - heading: Daily cases by date reported
@@ -217,9 +71,8 @@ cards:
           - label: Number of cases
             value: cumCasesByPublishDate
             tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
-            type: line
+            type: bar
             colour: 0
-            fill: true
             rollingAverage: false
 
       - heading: Data
@@ -324,6 +177,150 @@ cards:
         tabType: metadata
         filename: cardMetadata/cases/cardCasesTimeSeries.md
 
+# Not shown for UK
+
+  - heading: Daily cases by specimen date
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date.
+      Individuals tested positive more than once are only counted once, on the date of their first
+      positive test.
+
+    download:
+      - newCasesBySpecimenDate
+      - cumCasesBySpecimenDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: overlay
+        fields:
+          - label: Number of cases
+            value: newCasesBySpecimenDate
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Cases (7-day average)
+            value: newCasesBySpecimenDate
+            tooltip: 7 day rolling average of the daily number of cases by specimen date
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage:
+              window: 7
+              clipEnd: 3 #no of days to exclude for incomplete data
+
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of cases
+            value: cumCasesBySpecimenDate
+            tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Specimen date
+            value: date
+            type: date
+            tooltip: Date the sample was taken from the person
+
+          - label: Daily cases
+            value: newCasesBySpecimenDate
+            type: numeric
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+
+          - label: Cumulative cases
+            value: cumCasesBySpecimenDate
+            type: numeric
+            tooltip: Cumulative total number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+# Not shown for UK (identical to UK version but needs different abstract) or sub-national (no data)
+
+  - heading: Daily cases by date reported
+    cardType: chart
+    locationAware:
+      included:
+        areaType:
+          - nation
+
+    fullWidth: true
+    abstract: >
+      Number of individuals who have had at least one lab-confirmed positive COVID-19 test result,
+      by date reported. Initially only pillar 1 tests (NHS and, in England, PHE labs) were included
+      but commercial tests have been included from varying dates between 15th June and 14th July for
+      each nation, leading to step increases in the numbers of cases reported at different times.
+
+    download:
+      - newCasesByPublishDate
+      - cumCasesByPublishDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: overlay
+        fields:
+          - label: Number of cases
+            value: newCasesByPublishDate
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
+            type: bar
+            colour: 0
+
+          - label: Cases (7-day average)
+            value: newCasesByPublishDate
+            tooltip: 7 day rolling average of the daily number of new positive cases reported
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
+
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of cases
+            value: cumCasesByPublishDate
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by the Department of Health and Social Care
+
+          - label: Daily cases
+            value: newCasesByPublishDate
+            type: numeric
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
+
+          - label: Cumulative cases
+            value: cumCasesByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/cases/cardCasesTimeSeries.md
+
 # {{ StartDevOnlyBlock }}
 # not live
 # People tested not currently being published
@@ -379,9 +376,8 @@ cards:
             - label: Number of people tested
               value: cumPeopleTestedBySpecimenDate
               tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
-              type: line
+              type: bar
               colour: 0
-              fill: true
               rollingAverage: false
 
         - heading: Data
@@ -443,9 +439,8 @@ cards:
             - label: Number of people tested
               value: cumPeopleTestedByPublishDate
               tooltip: Cumulative total number of people tested (positive or negative) by date reported
-              type: line
-              colour: 6
-              fill: true
+              type: bar
+              colour: 0
               rollingAverage: false
 
         - heading: Data

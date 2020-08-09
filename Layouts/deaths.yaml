@@ -116,7 +116,7 @@ cards:
               type: bar
               rollingAverage: false
 
-            - label: Deaths (7-day average)
+            - label: (7-day average)
               value: newDeathsByPublishDate
               tooltip: 7 day rolling average of the daily number of new deaths
               type: line
@@ -126,7 +126,7 @@ cards:
         - heading: Cumulative
           tabType: chart
           barType: stack
-          colours: [3] # areaNames in alphabetical order
+          colours: [0] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
@@ -209,9 +209,8 @@ cards:
           - label: Number of deaths
             value: cumDeathsByDeathDate
             tooltip: Cumulative total number of deaths by date of death
-            type: line
+            type: bar
             colour: 0
-            fill: true
             rollingAverage: false
                   
       - heading: Data
@@ -282,9 +281,8 @@ cards:
           - label: Number of deaths
             value: cumDeathsByPublishDate
             tooltip: Cumulative total number of deaths by date reported
-            type: line
+            type: bar
             colour: 0
-            fill: true
             rollingAverage: false
             
       - heading: Data
