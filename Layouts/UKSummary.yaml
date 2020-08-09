@@ -129,7 +129,7 @@ summary:
           type: line
           colour: 6
           fill: true
-          rollingAverage: false
+          rollingAverage: true
           display: true
         
         valueItems: 
@@ -149,7 +149,7 @@ summary:
           type: line
           colour: 0
           fill: true
-          rollingAverage: false
+          rollingAverage: true
           display: true
         
         valueItems: 
