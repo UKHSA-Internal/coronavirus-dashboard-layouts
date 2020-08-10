@@ -73,6 +73,7 @@ summary:
 #           - label: Total
 #             value: cumPeopleTestedByPublishDate
 #             tooltip: Cumulative total number of people tested (positive or negative) reported on {date}
+
 # {{ EndDevOnlyBlock }}
 
   - heading: Healthcare
