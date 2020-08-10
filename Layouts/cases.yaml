@@ -1038,7 +1038,7 @@ cards:
     fullWidth: false
     abstract: >
       COVID-19 cases in England by Middle Super Output Area (MSOA).  MSOAs are small areas
-      with around 7,200 average population.  The data are updated every Thursday.
+      with around 7,200 average population.  The data show 7 days' cases, but are updated daily.
 
     image: 
       url: https://c19pubdev.azureedge.net/assets/images/msoa-outline.png
