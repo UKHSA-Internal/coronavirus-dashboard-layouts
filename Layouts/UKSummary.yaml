@@ -54,25 +54,25 @@ summary:
             tooltip: Cumulative total number of people with a lab-confirmed positive test result reported on {date}
 
 # {{ StartDevOnlyBlock }}
-# # Not currently publishing people tested
+# Not currently publishing people tested
 
-#       - caption: All people tested
-#         chart:
-#           value: newPeopleTestedByPublishDate
-#           type: line
-#           colour: 6
-#           fill: true
-#           rollingAverage: true
-#           display: true
+      - caption: All people tested
+        chart:
+          value: newPeopleTestedByPublishDate
+          type: line
+          colour: 6
+          fill: true
+          rollingAverage: true
+          display: true
         
-#         valueItems: 
-#           - label: Daily
-#             value: newPeopleTestedByPublishDate
-#             tooltip: Daily number of new people tested (positive or negative) reported on {date} - chart shows 7-day rolling average
+        valueItems: 
+          - label: Daily
+            value: newPeopleTestedByPublishDate
+            tooltip: Daily number of new people tested (positive or negative) reported on {date} - chart shows 7-day rolling average
 
-#           - label: Total
-#             value: cumPeopleTestedByPublishDate
-#             tooltip: Cumulative total number of people tested (positive or negative) reported on {date}
+          - label: Total
+            value: cumPeopleTestedByPublishDate
+            tooltip: Cumulative total number of people tested (positive or negative) reported on {date}
 
 # {{ EndDevOnlyBlock }}
 
@@ -144,23 +144,23 @@ summary:
 
 # {{ StartDevOnlyBlock }}
 
-      # - caption: Deaths within 28 days of positive test
-      #   chart:
-      #     value: newDeaths28DaysByPublishDate
-      #     type: line
-      #     colour: 0
-      #     fill: true
-      #     rollingAverage: true
-      #     display: true
+      - caption: Deaths within 28 days of positive test
+        chart:
+          value: newDeaths28DaysByPublishDate
+          type: line
+          colour: 0
+          fill: true
+          rollingAverage: true
+          display: true
         
-      #   valueItems: 
-      #     - label: Daily
-      #       tooltip: Daily number of deaths of people who have had a positive test result and died within 28 days, reported on {date} - chart shows 7-day rolling average
-      #       value: newDeaths28DaysByPublishDate
+        valueItems: 
+          - label: Daily
+            tooltip: Daily number of deaths of people who have had a positive test result and died within 28 days, reported on {date} - chart shows 7-day rolling average
+            value: newDeaths28DaysByPublishDate
 
-      #     - label: Total
-      #       tooltip: Total number of deaths of people who had a positive test result and died within 28 days, reported up to {date}
-      #       value: cumDeaths28DaysByPublishDate
+          - label: Total
+            tooltip: Total number of deaths of people who had a positive test result and died within 28 days, reported up to {date}
+            value: cumDeaths28DaysByPublishDate
 
 # {{ EndDevOnlyBlock }}
 
