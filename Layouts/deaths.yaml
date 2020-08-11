@@ -9,6 +9,20 @@ headlineNumbers:
         value: cumDeathsByPublishDate
         tooltip: Total number of deaths of people who have had a positive test result for COVID-19, reported up to {date}
 
+# {{ StartDevOnlyBlock }}
+
+  - caption: Deaths within 28 days of positive test
+    valueItems:
+      - label: Daily
+        value: newDeaths28DaysByPublishDate
+        tooltip: Daily number of deaths of people who have had a positive test result and died within 28 days, reported on {date}
+        
+      - label: Total
+        value: cumDeaths28DaysByPublishDate
+        tooltip: Total number of deaths of people who had a positive test result and died within 28 days, reported up to {date}
+
+# {{ StartDevOnlyBlock }}
+
 cards:
 
 # Only shown for UK
@@ -596,6 +610,7 @@ cards:
         filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
 
 # {{ StartDevOnlyBlock }}
+
 # Scatter chart is not a valid card type yet.  Intention is to join this up with a map and the table of area data, as in old dashboard
 
   # - heading: Deaths and cases rates
