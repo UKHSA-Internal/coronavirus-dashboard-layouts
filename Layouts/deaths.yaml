@@ -11,6 +11,9 @@ headlineNumbers:
 
 # {{ StartDevOnlyBlock }}
 
+# Not publishing these until different figures are available for four nations as it looks ridiculous to
+# have identical figures for two differently defined metrics 
+
   - caption: Deaths within 28 days of positive test
     valueItems:
       - label: Daily
