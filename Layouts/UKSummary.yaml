@@ -124,14 +124,14 @@ summary:
 
   - heading: Deaths
     fields:
-      - caption: Number of deaths
-        chart:
-          value: newDeathsByPublishDate
-          type: line
-          colour: 6
-          fill: true
-          rollingAverage: true
-          display: true
+      # - caption: Number of deaths
+      #   chart:
+      #     value: newDeathsByPublishDate
+      #     type: line
+      #     colour: 6
+      #     fill: true
+      #     rollingAverage: true
+      #     display: true
         
         valueItems: 
           - label: Daily
