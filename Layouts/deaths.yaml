@@ -24,7 +24,7 @@ headlineNumbers:
         value: cumDeaths28DaysByPublishDate
         tooltip: Total number of deaths of people who had a positive test result and died within 28 days, reported up to {date}
 
-# {{ StartDevOnlyBlock }}
+# {{ EndDevOnlyBlock }}
 
 cards:
 
