@@ -124,23 +124,23 @@ summary:
 
   - heading: Deaths
     fields:
-      # - caption: Number of deaths
-      #   chart:
-      #     value: newDeathsByPublishDate
-      #     type: line
-      #     colour: 6
-      #     fill: true
-      #     rollingAverage: true
-      #     display: true
+      - caption: Deaths with COVID-19 on the death certificate
+        chart:
+          value: newOnsDeathsByRegistrationDate
+          type: line
+          colour: 6
+          fill: true
+          rollingAverage: false
+          display: true
         
         valueItems: 
-          - label: Daily
-            tooltip: Daily number of deaths of people who have had a positive test result, reported on {date} - chart shows 7-day rolling average
-            value: newDeathsByPublishDate
+          - label: Weekly
+            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered during the week ending {date} - chart shows 7-day rolling average
+            value: newOnsDeathsByRegistrationDate
 
           - label: Total
-            tooltip: Total number of deaths of people who have had a positive test result, reported up to {date}
-            value: cumDeathsByPublishDate
+            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
+            value: cumOnsDeathsByRegistrationDate
 
       - caption: Deaths within 28 days of positive test
         chart:
