@@ -125,13 +125,13 @@ summary:
   - heading: Deaths
     fields:
       - caption: Deaths with COVID-19 on the death certificate
-        chart:
-          value: newOnsDeathsByRegistrationDate
-          type: line
-          colour: 6
-          fill: true
-          rollingAverage: false
-          display: false     # Can't display weekly figures - different scale, Will need to wait until we have daily.
+        # chart:   # Can't display weekly figures - different scale, Will need to wait until we have daily.
+        #   value: newOnsDeathsByRegistrationDate
+        #   type: line
+        #   colour: 6
+        #   fill: true
+        #   rollingAverage: false
+        #   display: true
         
         valueItems: 
           # - label: Weekly
