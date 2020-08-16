@@ -479,7 +479,7 @@ cards:
 
 # Not shown for UK
 
-  # - heading: Daily deaths by date of death
+  # - heading: Daily deaths within 28 days of positive test by date of death
   #   cardType: chart
   #   locationAware:
   #     excluded:
@@ -494,8 +494,8 @@ cards:
   #     the four nations.
 
   #   download:
-  #     - newDeathsByDeathDate
-  #     - cumDeathsByDeathDate
+  #     - newDeaths28DaysByDeathDate
+  #     - cumDeaths28DaysByDeathDate
 
   #   tabs: 
   #     - heading: Daily
@@ -503,14 +503,14 @@ cards:
   #       barType: normal
   #       fields:
   #         - label: Number of deaths
-  #           value: newDeathsByDeathDate
-  #           tooltip: Daily number of deaths by date of death
+  #           value: newDeaths28DaysByDeathDate
+  #           tooltip: Daily number of deaths within 28 days of positive test by date of death
   #           type: bar
   #           colour: 0
 
   #         - label: Deaths (7-day average)
-  #           value: newDeathsByDeathDate
-  #           tooltip: 7 day rolling average of the daily number of deaths
+  #           value: newDeaths28DaysByDeathDate
+  #           tooltip: 7 day rolling average of the daily number of deaths within 28 days of positive test
   #           type: line
   #           colour: 3
   #           fill: false
@@ -520,8 +520,8 @@ cards:
   #       tabType: chart
   #       fields:
   #         - label: Number of deaths
-  #           value: cumDeathsByDeathDate
-  #           tooltip: Cumulative total number of deaths by date of death
+  #           value: cumDeaths28DaysByDeathDate
+  #           tooltip: Cumulative total number of deaths within 28 days of positive test by date of death
   #           type: bar
   #           colour: 0
   #           rollingAverage: false
@@ -535,12 +535,12 @@ cards:
   #           tooltip: Date on which the death occurred
 
   #         - label: Daily deaths
-  #           value: newDeathsByDeathDate
+  #           value: newDeaths28DaysByDeathDate
   #           type: numeric
   #           tooltip: Daily number of deaths
 
   #         - label: Cumulative deaths
-  #           value: cumDeathsByDeathDate
+  #           value: cumDeaths28DaysByDeathDate
   #           type: numeric
   #           tooltip: Cumulative total number of deaths
 
@@ -550,75 +550,75 @@ cards:
 
 # Not shown for UK
 
-  # - heading: Daily deaths by date reported
-  #   cardType: chart
-  #   locationAware:
-  #     excluded:
-  #       areaType:
-  #         - overview
+  - heading: Daily deaths within 28 days of positive test by date reported
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
 
-  #   fullWidth: true
-  #   abstract: > 
-  #     Number of deaths of people who had had a positive test result for COVID-19, by date reported.  
-  #     The actual cause of death may not be COVID-19 in all cases. People who died from COVID-19 but
-  #     had not tested positive are not included. Methodologies and inclusion criteria vary between
-  #     the four nations. 
+    fullWidth: true
+    abstract: > 
+      Number of deaths of people who had had a positive test result for COVID-19, by date reported.  
+      The actual cause of death may not be COVID-19 in all cases. People who died from COVID-19 but
+      had not tested positive are not included. Methodologies and inclusion criteria vary between
+      the four nations. 
     
-  #   download:
-  #     - newDeathsByPublishDate
-  #     - cumDeathsByPublishDate
+    download:
+      - newDeaths28DaysByPublishDate
+      - cumDeaths28DaysByPublishDate
 
-  #   tabs: 
-  #     - heading: Daily
-  #       tabType: chart
-  #       barType: normal
-  #       fields:
-  #         - label: Number of deaths
-  #           value: newDeathsByPublishDate
-  #           tooltip: Daily number of deaths by date reported
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
+    tabs: 
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Number of deaths
+            value: newDeaths28DaysByPublishDate
+            tooltip: Daily number of deaths within 28 days of positive test by date reported 
+            type: bar
+            colour: 0
+            rollingAverage: false
 
-  #         - label: Deaths (7-day average)
-  #           value: newDeathsByPublishDate
-  #           tooltip: 7 day rolling average of the daily number of deaths reported
-  #           type: line
-  #           colour: 3
-  #           fill: false
-  #           rollingAverage: true
+          - label: Deaths (7-day average)
+            value: newDeaths28DaysByPublishDate
+            tooltip: 7 day rolling average of the daily number of deaths within 28 days of positive test reported
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
             
-  #     - heading: Cumulative
-  #       tabType: chart
-  #       fields:
-  #         - label: Number of deaths
-  #           value: cumDeathsByPublishDate
-  #           tooltip: Cumulative total number of deaths by date reported
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of deaths
+            value: cumDeaths28DaysByPublishDate
+            tooltip: Cumulative total number of deaths within 28 days of positive test by date reported
+            type: bar
+            colour: 0
+            rollingAverage: false
             
-  #     - heading: Data
-  #       tabType: table
-  #       fields:
-  #         - label: Date reported
-  #           value: date
-  #           type: date
-  #           tooltip: Date reported on coronavirus.data.gov.uk
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported on coronavirus.data.gov.uk
 
-  #         - label: Daily deaths
-  #           value: newDeathsByPublishDate
-  #           type: numeric
-  #           tooltip: Daily number of deaths by date reported
+          - label: Daily deaths
+            value: newDeaths28DaysByPublishDate
+            type: numeric
+            tooltip: Daily number of deaths within 28 days of positive test by date reported
 
-  #         - label: Cumulative deaths
-  #           value: cumDeathsByPublishDate
-  #           type: numeric
-  #           tooltip: Cumulative total number of deaths by date reported
+          - label: Cumulative deaths
+            value: cumDeaths28DaysByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of deaths within 28 days of positive test by date reported
 
-  #     - heading: About 
-  #       tabType: metadata
-  #       filename: cardMetadata/deaths/cardDeathsTimeSeries.md
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeathsTimeSeries.md
 
 
 
