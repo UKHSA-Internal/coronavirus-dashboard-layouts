@@ -655,7 +655,7 @@ cards:
       - cumOnsDeathsByRegistrationDate
 
     tabs: 
-      - heading: Daily
+      - heading: Weekly
         tabType: chart
         barType: normal
         fields:
@@ -679,17 +679,17 @@ cards:
       - heading: Data
         tabType: table
         fields:
-          - label: Date reported
+          - label: Week ending date
             value: date
             type: date
             tooltip: Date reported on coronavirus.data.gov.uk
 
-          - label: Daily deaths
+          - label: Weekly registered deaths
             value: newOnsDeathsByRegistrationDate
             type: numeric
-            tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
 
-          - label: Cumulative deaths
+          - label: Cumulative registered deaths
             value: cumOnsDeathsByRegistrationDate
             type: numeric
             tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
