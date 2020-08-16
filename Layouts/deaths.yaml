@@ -619,7 +619,7 @@ cards:
       be COVID-19 in all cases. People who died from COVID-19 but had not tested positive are not included
       and people who died from COVID-19 more than 28 days after their first positive test are not included.
       Data from the four nations are not directly comparable as methodologies and inclusion criteria vary.
-      Only data available for the latest reported date area shown.
+      Only data available for the latest reported date are shown.
 
     download:
       - cumDeaths28DaysByPublishDate
@@ -726,9 +726,9 @@ cards:
       #       type: numeric
       #       tooltip: Death rate per 100,000 resident population
 
-      # - heading: About 
-      #   tabType: metadata
-      #   filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
 
   - heading: Deaths with COVID-19 on the death certificate
     cardType: simpleTableStatic
@@ -737,7 +737,8 @@ cards:
       Total number of deaths since the start of the pandemic of people whose death certificate mentioned
       COVID-19 as one of the causes. The underlying cause of death may not be COVID-19 in all cases. Some
       of the deceased had not had a positive test result. Only data available for the latest reported
-      date area shown.  The data are published by the ONS, NRS and NISRA.
+      date are shown.  The data are published weekly by the ONS, NRS and NISRA and there is a lag in
+      reporting of at least 11 days because the data are based on death registrations.
 
     download:
       - cumOnsDeathsByRegistrationDate
