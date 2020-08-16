@@ -81,7 +81,7 @@ cards:
           - label: Date reported
             value: date
             type: date
-            tooltip: Date reported by the Department of Health and Social Care
+            tooltip: Date reported on coronavirus.data.gov.uk
 
           - label: Daily cases
             value: newCasesByPublishDate
@@ -161,7 +161,7 @@ cards:
           - label: Date reported
             value: date
             type: date
-            tooltip: Date reported by the Department of Health and Social Care
+            tooltip: Date reported on coronavirus.data.gov.uk
 
           - label: daily
             value: newCasesByPublishDate
@@ -305,7 +305,7 @@ cards:
           - label: Date reported
             value: date
             type: date
-            tooltip: Date reported by the Department of Health and Social Care
+            tooltip: Date reported on coronavirus.data.gov.uk
 
           - label: Daily cases
             value: newCasesByPublishDate
@@ -449,7 +449,7 @@ cards:
             - label: Date reported
               value: date
               type: date
-              tooltip: Date reported by the Department of Health and Social Care
+              tooltip: Date reported on coronavirus.data.gov.uk
 
             - label: Daily cases
               value: newCasesByPublishDate

@@ -82,7 +82,7 @@ cards:
           - label: Date reported
             value: date
             type: date
-            tooltip: Date reported by the Department of Health and Social Care
+            tooltip: Date reported on coronavirus.data.gov.uk
 
           - label: Daily tests processed
             value: newTestsByPublishDate
@@ -206,7 +206,7 @@ cards:
           - label: Date reported
             value: date
             type: date
-            tooltip: Date reported by the Department of Health and Social Care
+            tooltip: Date reported on coronavirus.data.gov.uk
 
           - label: Pillar 1
             value: newPillarOneTestsByPublishDate
@@ -239,7 +239,7 @@ cards:
           - label: Date reported
             value: date
             type: date
-            tooltip: Date reported by the Department of Health and Social Care
+            tooltip: Date reported on coronavirus.data.gov.uk
 
           - label: Pillar 1
             value: cumPillarOneTestsByPublishDate
@@ -334,7 +334,7 @@ cards:
           - label: Date reported
             value: date
             type: date
-            tooltip: Date reported by the Department of Health and Social Care
+            tooltip: Date reported on coronavirus.data.gov.uk
 
           - label: daily
             value: newPillarOneTestsByPublishDate
@@ -414,7 +414,7 @@ cards:
           - label: Date reported
             value: date
             type: date
-            tooltip: Date reported by the Department of Health and Social Care
+            tooltip: Date reported on coronavirus.data.gov.uk
 
           - label: daily
             value: newPillarTwoTestsByPublishDate
