@@ -417,7 +417,7 @@ cards:
 
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/deaths/cardDeathsTimeSeries.md
+          filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
     UK total:
 
@@ -483,7 +483,7 @@ cards:
 
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/deaths/cardDeathsTimeSeries.md
+          filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
 ##############################################################################################################################
 
@@ -557,7 +557,7 @@ cards:
 
   #     - heading: About 
   #       tabType: metadata
-  #       filename: cardMetadata/deaths/cardDeathsTimeSeries.md
+  #       filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
 ##############################################################################################################################
 
@@ -632,7 +632,7 @@ cards:
 
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/deaths/cardDeathsTimeSeries.md
+        filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
 ##############################################################################################################################
 
@@ -696,7 +696,7 @@ cards:
 
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/deaths/cardDeathsTimeSeries.md
+        filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
 
 ##############################################################################################################################
 
@@ -1112,7 +1112,7 @@ cards:
 
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
+        filename: cardMetadata/deaths/cardDeaths28DaysAndRatesByArea.md
 
 ##############################################################################################################################
 
@@ -1233,7 +1233,7 @@ cards:
 
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
+        filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
 
 ##############################################################################################################################
 

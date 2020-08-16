@@ -24,6 +24,8 @@ headlineNumbers:
 
 # {{ EndDevOnlyBlock }}
 
+##############################################################################################################################
+
 cards:
 
 # Only shown for UK (identical to non-UK version but needs different abstract)
@@ -96,6 +98,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+##############################################################################################################################
 
 # Only shown for UK
 
@@ -177,6 +181,8 @@ cards:
         tabType: metadata
         filename: cardMetadata/cases/cardCasesTimeSeries.md
 
+##############################################################################################################################
+
 # Not shown for UK
 
   - heading: Daily cases by specimen date
@@ -250,6 +256,8 @@ cards:
         tabType: metadata
         filename: cardMetadata/cases/cardCasesTimeSeries.md
 
+##############################################################################################################################
+
 # Not shown for UK (identical to UK version but needs different abstract) or sub-national (no data)
 
   - heading: Daily cases by date reported
@@ -320,6 +328,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+##############################################################################################################################
 
 # {{ StartDevOnlyBlock }}
 # not live
@@ -477,6 +487,8 @@ cards:
 
 # {{ EndDevOnlyBlock }}
 
+##############################################################################################################################
+
 # {{ StartDevOnlyBlock }}
 # # Not using this chart which shows which specimen dates the newly added cases refer to.  It's not useful now that
 # # case numbers are so low
@@ -536,6 +548,8 @@ cards:
 #   #           tooltip: Change in number of new people with a lab-confirmed positive test result reported on {date}
 
 # {{ EndDevOnlyBlock }}
+
+##############################################################################################################################
 
   - heading: Cases by age and sex
     caption: Counts
@@ -624,6 +638,8 @@ cards:
         tabType: metadata
         filename: cardMetadata/cases/cardCasesAndRatesByAgeAndSex.md
 
+##############################################################################################################################
+
   - heading: Case rates by age and sex 
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
@@ -704,6 +720,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/cases/cardCasesAndRatesByAgeAndSex.md
+
+##############################################################################################################################
 
 # {{ StartDevOnlyBlock }}
 # # Not currently publishing people tested
@@ -792,6 +810,8 @@ cards:
 #         tabType: metadata
 #         filename: cardMetadata/testing/tabPeopleTestedByAgeAndSex.md
 
+##############################################################################################################################
+
 #   - heading: People tested rates by age and sex
 #     caption: Rates per 100,000 resident population
 #     cardType: ageSexBreakdown
@@ -877,6 +897,8 @@ cards:
 
 # {{ EndDevOnlyBlock }}
 
+##############################################################################################################################
+
 # {{ StartDevOnlyBlock }}
 # Scatterplot not a valid cardType yet - not built
 
@@ -900,6 +922,8 @@ cards:
   #   tooltip: areaName
 
 # {{ EndDevOnlyBlock }}
+
+##############################################################################################################################
 
   - heading: Cases by area
     cardType: simpleTableStatic
@@ -1025,6 +1049,8 @@ cards:
       - heading: About
         tabType: metadata
         filename: cardMetadata/cases/cardCasesAndRatesByArea.md
+
+##############################################################################################################################
 
   - heading: Cases by local area in England
     cardType: simpleExternalStatic

@@ -14,6 +14,8 @@ headlineNumbers:
       - value: plannedCapacityByPublishDate
         tooltip: Estimated total capacity reported by laboratories on {date}
 
+##############################################################################################################################
+
 cards:
 
 # Only shown for UK
@@ -102,6 +104,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/testing/cardTestingAndCapacity.md
+
+##############################################################################################################################
 
   - heading: Testing by Pillar
     cardType: chart
@@ -270,6 +274,8 @@ cards:
         tabType: metadata
         filename: cardMetadata/testing/cardTestingByPillar.md
 
+##############################################################################################################################
+
 # Only shown for UK
 
   - heading: Pillar 1 tests by nation
@@ -349,6 +355,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/testing/cardPillar1TestsByNation.md
+
+##############################################################################################################################
 
 # Only shown for UK
 

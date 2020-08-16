@@ -36,6 +36,8 @@ headlineNumbers:
       - value: covidOccupiedMVBeds
         tooltip: Number of COVID-19 patients currently in mechanical ventilation beds, reported on {date}
     
+##############################################################################################################################
+
 cards:
   - heading: Patients admitted to hospital
     cardType: chart
@@ -116,6 +118,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalWithRollingAverages.md
+
+##############################################################################################################################
 
 # Only shown for UK
 
@@ -268,6 +272,8 @@ cards:
       #     tabType: metadata
       #     filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
 
+##############################################################################################################################
+
   - heading: Patients admitted to hospital, by age
     caption: Counts
     cardType: ageSexBreakdown
@@ -330,6 +336,8 @@ cards:
         tabType: metadata
         filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalByAge.md
 
+##############################################################################################################################
+
   - heading: Admission rates by age
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
@@ -391,6 +399,8 @@ cards:
         tabType: metadata
         filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalByAge.md
 
+##############################################################################################################################
+
 # Not shown for UK
 
   - heading: Patients in hospital
@@ -436,6 +446,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/healthcare/cardPatientsInHospital.md
+
+##############################################################################################################################
 
 # Only shown for UK
 
@@ -548,6 +560,8 @@ cards:
           tabType: metadata
           filename: cardMetadata/healthcare/cardPatientsInHospital.md
 
+##############################################################################################################################
+
 # Only shown for England
 
   - heading: Patients in hospital, by NHS region
@@ -603,6 +617,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/healthcare/cardPatientsInHospital.md
+
+##############################################################################################################################
 
 # Not shown for UK
 
@@ -701,6 +717,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/healthcare/cardPatientsInMVBeds.md
+
+##############################################################################################################################
 
 # Only shown for UK
 
@@ -813,6 +831,8 @@ cards:
           tabType: metadata
           filename: cardMetadata/healthcare/cardPatientsInMVBeds.md
 
+##############################################################################################################################
+
 # {{ StartDevOnlyBlock }}
 # # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
 # # We don't currently pull in the data from the DAs on this - they did agree to provide it when
@@ -881,6 +901,8 @@ cards:
 #             type: numeric
 #             tooltip: Cumulative total number of COVID-19 patients discharged from hospital
 
+##############################################################################################################################
+
 #   - heading: Discharges by age
 #     caption: Counts
 #     cardType: ageSexBreakdown
@@ -939,6 +961,8 @@ cards:
 #             value: cumDischargesByAgeRate
 #             type: numeric
 #             tooltip: COVID-19 discharges per 100,000 resident population
+
+##############################################################################################################################
 
 #   - heading: Discharge rates by age
 #     caption: Rates per 100,000 resident population
@@ -999,6 +1023,8 @@ cards:
 #             tooltip: COVID-19 discharges per 100,000 resident population
 
 # {{ EndDevOnlyBlock }}
+
+##############################################################################################################################
 
 # {{ StartDevOnlyBlock }}
 # not live - probably worth adding
