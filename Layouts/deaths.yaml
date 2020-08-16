@@ -646,7 +646,7 @@ cards:
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
-          - label: Rate
+          - label: Rate per 100,000 population
             value: cumDeaths28DaysByPublishDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population
@@ -671,7 +671,7 @@ cards:
       #       type: numeric
       #       tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
-      #     - label: Rate
+      #     - label: Rate per 100,000 population
       #       value: cumDeaths28DaysByPublishDateRate
       #       type: numeric
       #       tooltip: Death rate per 100,000 resident population
@@ -696,7 +696,7 @@ cards:
       #       type: numeric
       #       tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
-      #     - label: Rate
+      #     - label: Rate per 100,000 population
       #       value: cumDeaths28DaysByPublishDateRate
       #       type: numeric
       #       tooltip: Death rate per 100,000 resident population
@@ -721,7 +721,7 @@ cards:
       #       type: numeric
       #       tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
-      #     - label: Rate
+      #     - label: Rate per 100,000 population
       #       value: cumDeaths28DaysByPublishDateRate
       #       type: numeric
       #       tooltip: Death rate per 100,000 resident population
@@ -764,7 +764,7 @@ cards:
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
-          - label: Rate
+          - label: Rate per 100,000 population
             value: cumOnsDeathsByRegistrationDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population
@@ -789,7 +789,7 @@ cards:
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
-          - label: Rate
+          - label: Rate per 100,000 population
             value: cumOnsDeathsByRegistrationDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population
@@ -814,7 +814,7 @@ cards:
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
-          - label: Rate
+          - label: Rate per 100,000 population
             value: cumOnsDeathsByRegistrationDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population
@@ -839,7 +839,7 @@ cards:
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
-          - label: Rate
+          - label: Rate per 100,000 population
             value: cumOnsDeathsByRegistrationDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population

@@ -937,7 +937,7 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate
+          - label: Rate per 100,000 population
             value: cumCasesByPublishDateRate
             type: numeric
             tooltip: Rate of total confirmed cases per 100,000 resident population
@@ -963,7 +963,7 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate
+          - label: Rate per 100,000 population
             value: cumCasesByPublishDateRate
             type: numeric
             tooltip: Rate of total confirmed cases per 100,000 resident population
@@ -990,7 +990,7 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate
+          - label: Rate per 100,000 population
             value: cumCasesByPublishDateRate
             type: numeric
             tooltip: Rate of total confirmed cases per 100,000 resident population
@@ -1017,7 +1017,7 @@ cards:
             type: numeric
             tooltip: Cumulative total number of people with a lab-confirmed positive test result up to {date}
 
-          - label: Rate
+          - label: Rate per 100,000 population
             value: cumCasesByPublishDateRate
             type: numeric
             tooltip: Rate of total confirmed cases per 100,000 resident population
