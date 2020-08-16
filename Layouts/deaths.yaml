@@ -4,16 +4,6 @@
 
 
 headlineNumbers:
-  - caption: Deaths with COVID-19 on the death certificate
-    valueItems:
-      - label: Weekly
-        value: newOnsDeathsByRegistrationDate
-        tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered during the week ending {date}
-        
-      - label: Total
-        value: cumOnsDeathsByRegistrationDate
-        tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
-
   - caption: Deaths within 28 days of positive test
     valueItems:
       - label: Daily
@@ -23,6 +13,16 @@ headlineNumbers:
       - label: Total
         value: cumDeaths28DaysByPublishDate
         tooltip: Total number of deaths of people who had a positive test result and died within 28 days, reported up to {date}
+
+  - caption: Deaths with COVID-19 on the death certificate
+    valueItems:
+      - label: Weekly
+        value: newOnsDeathsByRegistrationDate
+        tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered during the week ending {date}
+        
+      - label: Total
+        value: cumOnsDeathsByRegistrationDate
+        tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
 
 cards:
 
@@ -610,124 +610,6 @@ cards:
   #       tabType: metadata
   #       filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
 
-  - heading: Deaths with COVID-19 on the death certificate
-    cardType: simpleTableStatic
-    fullWidth: false
-    abstract: >
-      Total number of deaths since the start of the pandemic of people whose death certificate mentioned
-      COVID-19 as one of the causes. The underlying cause of death may not be COVID-19 in all cases. Some
-      of the deceased had not had a positive test result. Only data available for the latest reported
-      date area shown.  The data are published by the ONS, NRS and NISRA.
-
-    download:
-      - cumOnsDeathsByRegistrationDate
-      - cumOnsDeathsByRegistrationDateRate
-
-    tabs:
-      - heading: Nation
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-
-        latestBy: cumOnsDeathsByRegistrationDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumOnsDeathsByRegistrationDate
-            type: numeric
-            tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
-
-          - label: Rate
-            value: cumOnsDeathsByRegistrationDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-      
-      - heading: Region
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: region
-
-        latestBy: cumOnsDeathsByRegistrationDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumOnsDeathsByRegistrationDate
-            type: numeric
-            tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
-
-          - label: Rate
-            value: cumOnsDeathsByRegistrationDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-     
-      - heading: Upper tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: utla
-
-        latestBy: cumOnsDeathsByRegistrationDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumOnsDeathsByRegistrationDate
-            type: numeric
-            tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
-
-          - label: Rate
-            value: cumOnsDeathsByRegistrationDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-  
-      - heading: Lower tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: ltla
-
-        latestBy: cumOnsDeathsByRegistrationDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumOnsDeathsByRegistrationDate
-            type: numeric
-            tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
-
-          - label: Rate
-            value: cumOnsDeathsByRegistrationDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
-
   - heading: Deaths within 28 days of positive test
     cardType: simpleTableStatic
     fullWidth: false
@@ -848,6 +730,123 @@ cards:
       #   tabType: metadata
       #   filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
 
+  - heading: Deaths with COVID-19 on the death certificate
+    cardType: simpleTableStatic
+    fullWidth: false
+    abstract: >
+      Total number of deaths since the start of the pandemic of people whose death certificate mentioned
+      COVID-19 as one of the causes. The underlying cause of death may not be COVID-19 in all cases. Some
+      of the deceased had not had a positive test result. Only data available for the latest reported
+      date area shown.  The data are published by the ONS, NRS and NISRA.
+
+    download:
+      - cumOnsDeathsByRegistrationDate
+      - cumOnsDeathsByRegistrationDateRate
+
+    tabs:
+      - heading: Nation
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+
+        latestBy: cumOnsDeathsByRegistrationDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumOnsDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
+
+          - label: Rate
+            value: cumOnsDeathsByRegistrationDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+      
+      - heading: Region
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: region
+
+        latestBy: cumOnsDeathsByRegistrationDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumOnsDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
+
+          - label: Rate
+            value: cumOnsDeathsByRegistrationDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+     
+      - heading: Upper tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: utla
+
+        latestBy: cumOnsDeathsByRegistrationDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumOnsDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
+
+          - label: Rate
+            value: cumOnsDeathsByRegistrationDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+  
+      - heading: Lower tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: ltla
+
+        latestBy: cumOnsDeathsByRegistrationDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumOnsDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
+
+          - label: Rate
+            value: cumOnsDeathsByRegistrationDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
 
 # {{ StartDevOnlyBlock }}
 
