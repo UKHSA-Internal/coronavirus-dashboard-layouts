@@ -24,6 +24,8 @@ headlineNumbers:
         value: cumOnsDeathsByRegistrationDate
         tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
 
+##############################################################################################################################
+
 cards:
 
 # Only shown for UK
@@ -179,6 +181,8 @@ cards:
   #         tabType: metadata
   #         filename: cardMetadata/deaths/cardDeathsTimeSeries.md
 
+##############################################################################################################################
+
 # Not shown for UK
 
   # - heading: Daily deaths by date of death
@@ -249,6 +253,8 @@ cards:
   #     - heading: About 
   #       tabType: metadata
   #       filename: cardMetadata/deaths/cardDeathsTimeSeries.md
+
+##############################################################################################################################
 
 # Not shown for UK
 
@@ -321,6 +327,8 @@ cards:
   #     - heading: About 
   #       tabType: metadata
   #       filename: cardMetadata/deaths/cardDeathsTimeSeries.md
+
+##############################################################################################################################
 
 # Only shown for UK
 
@@ -477,6 +485,8 @@ cards:
           tabType: metadata
           filename: cardMetadata/deaths/cardDeathsTimeSeries.md
 
+##############################################################################################################################
+
 # Not shown for UK
 
   # - heading: Daily deaths within 28 days of positive test by date of death
@@ -488,10 +498,11 @@ cards:
 
   #   fullWidth: true
   #   abstract: > 
-  #     Number of deaths of people who had had a positive test result for COVID-19, by date of death.  
-  #     The actual cause of death may not be COVID-19 in all cases. People who died from COVID-19 but
-  #     had not tested positive are not included. Methodologies and inclusion criteria vary between
-  #     the four nations.
+  #     Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
+  #     of the first positive test. The actual cause of death may not be COVID-19 in all cases. People who
+  #     died from COVID-19 but had not tested positive are not included and people who died from COVID-19
+  #     more than 28 days after their first positive test are not included. Data from the four nations are
+  #     not directly comparable as methodologies and inclusion criteria vary.
 
   #   download:
   #     - newDeaths28DaysByDeathDate
@@ -548,6 +559,8 @@ cards:
   #       tabType: metadata
   #       filename: cardMetadata/deaths/cardDeathsTimeSeries.md
 
+##############################################################################################################################
+
 # Not shown for UK
 
   - heading: Daily deaths within 28 days of positive test by date reported
@@ -559,10 +572,11 @@ cards:
 
     fullWidth: true
     abstract: > 
-      Number of deaths of people who had had a positive test result for COVID-19, by date reported.  
-      The actual cause of death may not be COVID-19 in all cases. People who died from COVID-19 but
-      had not tested positive are not included. Methodologies and inclusion criteria vary between
-      the four nations. 
+      Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
+      of the first positive test. The actual cause of death may not be COVID-19 in all cases. People who
+      died from COVID-19 but had not tested positive are not included and people who died from COVID-19
+      more than 28 days after their first positive test are not included. Data from the four nations are
+      not directly comparable as methodologies and inclusion criteria vary.
     
     download:
       - newDeaths28DaysByPublishDate
@@ -620,7 +634,71 @@ cards:
         tabType: metadata
         filename: cardMetadata/deaths/cardDeathsTimeSeries.md
 
+##############################################################################################################################
 
+  - heading: Weekly deaths with COVID-19 on the death certificate by date registered
+    cardType: chart
+    # locationAware:
+    #   excluded:
+    #     areaType:
+    #       - overview
+
+    fullWidth: true
+    abstract: > 
+      Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
+      The underlying cause of death may not be COVID-19 in all cases. Some of the deceased had not
+      had a positive test result. The data are published weekly by the ONS, NRS and NISRA and there
+      is a lag in reporting of at least 11 days because the data are based on death registrations.
+    
+    download:
+      - newOnsDeathsByRegistrationDate
+      - cumOnsDeathsByRegistrationDate
+
+    tabs: 
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Number of deaths
+            value: newOnsDeathsByRegistrationDate
+            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            type: bar
+            colour: 0
+            rollingAverage: false
+            
+      # - heading: Cumulative
+      #   tabType: chart
+      #   fields:
+      #     - label: Number of deaths
+      #       value: cumOnsDeathsByRegistrationDate
+      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+      #       type: bar
+      #       colour: 0
+      #       rollingAverage: false
+            
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported on coronavirus.data.gov.uk
+
+          - label: Daily deaths
+            value: newOnsDeathsByRegistrationDate
+            type: numeric
+            tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+
+          - label: Cumulative deaths
+            value: cumOnsDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeathsTimeSeries.md
+
+##############################################################################################################################
 
 # Only available for England and regions
 
@@ -710,6 +788,8 @@ cards:
   #       tabType: metadata
   #       filename: cardMetadata/deaths/cardDeathsAndRatesByAgeAndSex.md
 
+##############################################################################################################################
+
 # Only available for England and regions
 
   # - heading: Death rates by age and sex
@@ -790,6 +870,8 @@ cards:
   #     - heading: About 
   #       tabType: metadata
   #       filename: cardMetadata/deaths/cardDeathsAndRatesByAgeAndSex.md
+
+##############################################################################################################################
 
   # - heading: Deaths by area
   #   cardType: simpleTableStatic
@@ -909,6 +991,8 @@ cards:
   #     - heading: About 
   #       tabType: metadata
   #       filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
+
+##############################################################################################################################
 
   - heading: Deaths within 28 days of positive test
     cardType: simpleTableStatic
@@ -1030,6 +1114,8 @@ cards:
         tabType: metadata
         filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
 
+##############################################################################################################################
+
   - heading: Deaths with COVID-19 on the death certificate
     cardType: simpleTableStatic
     fullWidth: false
@@ -1148,6 +1234,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
+
+##############################################################################################################################
 
 # {{ StartDevOnlyBlock }}
 
