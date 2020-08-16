@@ -110,7 +110,7 @@ cards:
       Number of lab-confirmed positive or negative COVID-19 test results, by pillar (type of testing),
       by date reported. This is a count of test results and may include multiple tests for an
       individual person. Data for antibody and surveillance testing (pillars 3 and 4) are only
-      available for the UK as a whole. Northern Ireland no longer report at weekends.
+      available for the UK as a whole.
 
     download:
       - newPillarOneTestsByPublishDate
@@ -284,7 +284,7 @@ cards:
       Number of lab-confirmed positive or negative COVID-19 pillar 1 test results by date reported.
       Pillar 1 testing includes swab testing for COVID-19 processed by NHS and (in England) PHE
       labs. This is a count of test results and may include multiple tests for an individual
-      person. Northern Ireland no longer report at weekends.
+      person.
 
 
     download:
@@ -365,7 +365,7 @@ cards:
       Pillar 2 testing includes swab testing for COVID-19 processed by commercial partners.
       Commercial partner testing was introduced in all parts of the UK in April but data are not
       available for all nations on a consistent basis. Step changes in the series occur when new
-      data sources became available. Northern Ireland no longer report at weekends.
+      data sources became available.
 
     download:
       - newPillarTwoTestsByPublishDate
