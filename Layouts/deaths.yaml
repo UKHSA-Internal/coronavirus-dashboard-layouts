@@ -2,6 +2,8 @@
 #  IF WE END UP WITH 60 DAY FOR ENGLAND WE WILL FEED THAT THROUGH USING THE EXISTING METRICS AND THESE CARDS WILL BE
 #  ENGLAND AND SUB-ENGLAND ONLY.  WE WILL MOVE EXISTING PIPELINES FOR THE DAS INTO A FULL SET OF 28 DAY METRICS.
 
+#  ONS (DEATH CERTIFICATE) DEATHS ARE IN HERE IN DEV ONLY - DATA ARE READY IF GO AHEAD IS GIVEN - JUST NEED TO REMOVE
+#  DEV ONLY MARKERS
 
 headlineNumbers:
   - caption: Deaths within 28 days of positive test
@@ -14,6 +16,8 @@ headlineNumbers:
         value: cumDeaths28DaysByPublishDate
         tooltip: Total number of deaths of people who had a positive test result and died within 28 days, reported up to {date}
 
+# {{ StartDevOnlyBlock}}
+
   - caption: Deaths with COVID-19 on the death certificate
     valueItems:
       - label: Weekly
@@ -23,6 +27,8 @@ headlineNumbers:
       - label: Total
         value: cumOnsDeathsByRegistrationDate
         tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
+
+# {{ EndDevOnlyBlock}}
 
 ##############################################################################################################################
 
@@ -636,6 +642,8 @@ cards:
 
 ##############################################################################################################################
 
+# {{ StartDevOnlyBlock}}
+
   - heading: Weekly deaths with COVID-19 on the death certificate by date registered
     cardType: chart
     # locationAware:
@@ -697,6 +705,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
+
+# {{ EndDevOnlyBlock}}
 
 ##############################################################################################################################
 
@@ -1116,6 +1126,8 @@ cards:
 
 ##############################################################################################################################
 
+# {{ StartDevOnlyBlock}}
+
   - heading: Deaths with COVID-19 on the death certificate
     cardType: simpleTableStatic
     fullWidth: false
@@ -1234,6 +1246,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
+
+# {{ EndDevOnlyBlock}}
 
 ##############################################################################################################################
 
