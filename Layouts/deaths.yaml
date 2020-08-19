@@ -576,6 +576,7 @@ cards:
       excluded:
         areaType:
           - overview
+          - region
 
     fullWidth: true
     abstract: > 
