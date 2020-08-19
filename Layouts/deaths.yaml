@@ -524,6 +524,7 @@ cards:
             tooltip: Daily number of deaths within 28 days of positive test by date of death
             type: bar
             colour: 0
+            rollingAverage: false
 
           - label: Deaths (7-day average)
             value: newDeaths28DaysByDeathDate
@@ -554,12 +555,12 @@ cards:
           - label: Daily deaths
             value: newDeaths28DaysByDeathDate
             type: numeric
-            tooltip: Daily number of deaths
+            tooltip: Daily number of deaths within 28 days of positive test by date of death
 
           - label: Cumulative deaths
             value: cumDeaths28DaysByDeathDate
             type: numeric
-            tooltip: Cumulative total number of deaths
+            tooltip: Cumulative total number of deaths within 28 days of positive test by date of death
 
       - heading: About 
         tabType: metadata
