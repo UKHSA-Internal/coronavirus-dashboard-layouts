@@ -1052,7 +1052,7 @@ cards:
             sign: "="
             value: region
 
-        latestBy: cumDeaths28DaysByPublishDate
+        latestBy: cumDeaths28DaysByDeathDate
         sortBy: areaName
         fields:
           - label: Area
@@ -1061,12 +1061,12 @@ cards:
             tooltip: ""
 
           - label: Deaths
-            value: cumDeaths28DaysByPublishDate
+            value: cumDeaths28DaysByDeathDate
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
           - label: Rate per 100,000 population
-            value: cumDeaths28DaysByPublishDateRate
+            value: cumDeaths28DaysByDeathDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population
      
@@ -1077,7 +1077,7 @@ cards:
             sign: "="
             value: utla
 
-        latestBy: cumDeaths28DaysByPublishDate
+        latestBy: cumDeaths28DaysByDeathDate
         sortBy: areaName
         fields:
           - label: Area
@@ -1086,12 +1086,12 @@ cards:
             tooltip: ""
 
           - label: Deaths
-            value: cumDeaths28DaysByPublishDate
+            value: cumDeaths28DaysByDeathDate
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
           - label: Rate per 100,000 population
-            value: cumDeaths28DaysByPublishDateRate
+            value: cumDeaths28DaysByDeathDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population
   
@@ -1102,7 +1102,7 @@ cards:
             sign: "="
             value: ltla
 
-        latestBy: cumDeaths28DaysByPublishDate
+        latestBy: cumDeaths28DaysByDeathDate
         sortBy: areaName
         fields:
           - label: Area
@@ -1111,12 +1111,12 @@ cards:
             tooltip: ""
 
           - label: Deaths
-            value: cumDeaths28DaysByPublishDate
+            value: cumDeaths28DaysByDeathDate
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
           - label: Rate per 100,000 population
-            value: cumDeaths28DaysByPublishDateRate
+            value: cumDeaths28DaysByDeathDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population
 
