@@ -11,9 +11,10 @@ headlineNumbers:
       - label: Daily
         value: newDeaths28DaysByPublishDate
         tooltip: Daily number of deaths of people who have had a positive test result and died within 28 days, reported on {date}
-        
+
+# Use DeathDate field for Cumulative total as available for all locations and totals should match PubDate field values        
       - label: Total
-        value: cumDeaths28DaysByPublishDate
+        value: cumDeaths28DaysByDeathDate
         tooltip: Total number of deaths of people who had a positive test result and died within 28 days, reported up to {date}
 
 # {{ StartDevOnlyBlock}}
