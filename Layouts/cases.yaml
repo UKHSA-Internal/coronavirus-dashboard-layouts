@@ -183,14 +183,8 @@ cards:
 
 ##############################################################################################################################
 
-# Not shown for UK
-
   - heading: Daily cases by specimen date
     cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
 
     fullWidth: true
     abstract: >
