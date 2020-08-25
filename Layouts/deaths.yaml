@@ -1029,7 +1029,7 @@ cards:
             sign: "="
             value: nation
 
-        latestBy: cumDeaths28DaysByDeathDate
+        latestBy: cumDeaths28DaysByPublishDate
         sortBy: areaName
         fields:
           - label: Area
@@ -1038,12 +1038,12 @@ cards:
             tooltip: ""
 
           - label: Deaths
-            value: cumDeaths28DaysByDeathDate
+            value: cumDeaths28DaysByPublishDate
             type: numeric
             tooltip: Cumulative total number of new deaths of people resident in each area up to {date}
 
           - label: Rate per 100,000 population
-            value: cumDeaths28DaysByDeathDateRate
+            value: cumDeaths28DaysByPublishDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population
       
