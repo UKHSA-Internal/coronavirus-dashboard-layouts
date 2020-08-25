@@ -493,14 +493,8 @@ cards:
 
 ##############################################################################################################################
 
-# Not shown for UK
-
   - heading: Daily deaths within 28 days of positive test by date of death
     cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
 
     fullWidth: true
     abstract: > 
