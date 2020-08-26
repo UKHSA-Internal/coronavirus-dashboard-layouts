@@ -121,65 +121,136 @@ cards:
       - newCasesByPublishDate
       - cumCasesByPublishDate
       
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10] # areaNames in alphabetical order
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
+    options:
+      type: radio
+      heading: null
+      choices:
+        - By nation
+        - UK total
+    
+    By nation:
+      
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
 
-        fields:
-          - label: ""
-            value: newCasesByPublishDate
-            tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
-            type: bar
-            rollingAverage: false
+          fields:
+            - label: ""
+              value: newCasesByPublishDate
+              tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
+              type: bar
+              rollingAverage: false
 
-      - heading: Cumulative
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10] # areaNames in alphabetical order
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
 
-        fields:
-          - label: ""
-            value: cumCasesByPublishDate
-            tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
-            type: bar
-            rollingAverage: false
+          fields:
+            - label: ""
+              value: cumCasesByPublishDate
+              tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
+              type: bar
+              rollingAverage: false
 
-      - heading: Data
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
         
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported on coronavirus.data.gov.uk
+          fields:
+            - label: Date reported
+              value: date
+              type: date
+              tooltip: Date reported on coronavirus.data.gov.uk
 
-          - label: daily
-            value: newCasesByPublishDate
-            type: numeric
-            tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
+            - label: daily
+              value: newCasesByPublishDate
+              type: numeric
+              tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
 
-          - label: total
-            value: cumCasesByPublishDate
-            type: numeric
-            tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
+            - label: total
+              value: cumCasesByPublishDate
+              type: numeric
+              tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesTimeSeries.md
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+    UK total:
+      
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+
+          fields:
+            - label: ""
+              value: newCasesByPublishDate
+              tooltip: Daily number of new people with a lab-confirmed positive test result, by date reported
+              type: bar
+              rollingAverage: false
+
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+          colours: [0] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+
+          fields:
+            - label: ""
+              value: cumCasesByPublishDate
+              tooltip: Cumulative total number of people with a lab-confirmed positive test result, by date reported
+              type: bar
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+        
+          fields:
+            - label: Date reported
+              value: date
+              type: date
+              tooltip: Date reported on coronavirus.data.gov.uk
+
+            - label: daily
+              value: newCasesByPublishDate
+              type: numeric
+              tooltip: Daily number of new people with a lab-confirmed positive test result, by date reported
+
+            - label: total
+              value: cumCasesByPublishDate
+              type: numeric
+              tooltip: Cumulative total number of people with a lab-confirmed positive test result, by date reported
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardCasesTimeSeries.md
 
 ##############################################################################################################################
 
