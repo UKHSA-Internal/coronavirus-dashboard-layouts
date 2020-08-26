@@ -40,10 +40,10 @@ cards:
           - overview
 
     fullWidth: true
-#    abstract: >
-#      Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date, 
-#      by nation.  Individuals tested positive more than once are only counted once, on the date of 
-#      their first positive test.
+    abstract: >
+      Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date, 
+      by nation.  Individuals tested positive more than once are only counted once, on the date of 
+      their first positive test.
 
     download:
       - newCasesBySpecimenDate
@@ -58,11 +58,6 @@ cards:
     
     By nation:
       
-      abstract: >
-        Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date, 
-        by nation.  Individuals tested positive more than once are only counted once, on the date of 
-        their first positive test.
-        
       tabs:
         - heading: Daily
           tabType: chart
@@ -125,11 +120,6 @@ cards:
 
     UK total:
       
-      abstract: >
-        Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date, 
-        by nation.  Individuals tested positive more than once are only counted once, on the date of 
-        their first positive test
-
       tabs:
         - heading: Daily
           tabType: chart
