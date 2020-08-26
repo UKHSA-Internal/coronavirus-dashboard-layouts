@@ -650,10 +650,14 @@ cards:
 
 ##############################################################################################################################
 
-# to be removed from UK once happy showing correct data on radio button card
+# not shown for UK
 
   - heading: Daily deaths within 28 days of positive test by date of death
     cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
 
     fullWidth: true
     abstract: > 
@@ -721,7 +725,7 @@ cards:
 
 ##############################################################################################################################
 
-# Not shown for UK
+# Not shown for UK or Regions
 
   - heading: Daily deaths within 28 days of positive test by date reported
     cardType: chart
