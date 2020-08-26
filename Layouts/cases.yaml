@@ -192,6 +192,78 @@ cards:
 
 ##############################################################################################################################
 
+# Only shown for UK (identical to non-UK version but needs different abstract)
+
+  - heading: Daily cases by date reported
+    cardType: chart
+    locationAware:
+      included:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      Number of individuals who have had at least one lab-confirmed positive COVID-19 test result,
+      by date reported. On 2 July, case data from pillars 1 and 2 of the testing programme were
+      combined and de-duplicated, resulting in a step decrease in the cumulative number of cases
+      reported.
+    download:
+      - newCasesByPublishDate
+      - cumCasesByPublishDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: overlay
+        fields:
+          - label: Number of cases
+            value: newCasesByPublishDate
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
+            type: bar
+            colour: 0
+
+          - label: Cases (7-day average)
+            value: newCasesByPublishDate
+            tooltip: 7 day rolling average of the daily number of new positive cases reported
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
+
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of cases
+            value: cumCasesByPublishDate
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported on coronavirus.data.gov.uk
+
+          - label: Daily cases
+            value: newCasesByPublishDate
+            type: numeric
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date reported
+
+          - label: Cumulative cases
+            value: cumCasesByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result by date reported
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+##############################################################################################################################
+
 # Only shown for UK
 
   - heading: Cases by date reported, by nation
@@ -206,154 +278,70 @@ cards:
       Number of individuals who have had at least one lab-confirmed positive COVID-19 test result, by date
       reported, by nation.  Initially only pillar 1 tests (NHS and, in England, PHE labs) were included but
       pillar 2 (commercial tests) have been included from varying dates between 15th June and 14th July for
-      each nation. On 2 July, case data from pillars 1 and 2 of the testing programme were combined and 
-      de-duplicated.  These adjustments explain the step changes that can be seen in the numbers of cases 
-      reported on specific dates.
-      
+      each nation, leading to step increases in the numbers of cases reported at different times.  
     download:
       - newCasesByPublishDate
       - cumCasesByPublishDate
       
-    options:
-      type: radio
-      heading: null
-      choices:
-        - By nation
-        - UK total
-    
-    By nation:
-      
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10] # areaNames in alphabetical order
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
 
-          fields:
-            - label: ""
-              value: newCasesByPublishDate
-              tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
-              type: bar
-              rollingAverage: false
+        fields:
+          - label: ""
+            value: newCasesByPublishDate
+            tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
+            type: bar
+            rollingAverage: false
 
-        - heading: Cumulative
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
+      - heading: Cumulative
+        tabType: chart
+        barType: stack
+        colours: [0, 9, 3, 10] # areaNames in alphabetical order
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
 
-          fields:
-            - label: ""
-              value: cumCasesByPublishDate
-              tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
-              type: bar
-              rollingAverage: false
+        fields:
+          - label: ""
+            value: cumCasesByPublishDate
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
+            type: bar
+            rollingAverage: false
 
-        - heading: Data
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
+      - heading: Data
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
         
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported on coronavirus.data.gov.uk
 
-            - label: daily
-              value: newCasesByPublishDate
-              type: numeric
-              tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
+          - label: daily
+            value: newCasesByPublishDate
+            type: numeric
+            tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
 
-            - label: total
-              value: cumCasesByPublishDate
-              type: numeric
-              tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
+          - label: total
+            value: cumCasesByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-    UK total:
-      
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: ""
-              value: newCasesByPublishDate
-              tooltip: Daily number of new people with a lab-confirmed positive test result, by date reported
-              type: bar
-              rollingAverage: false
-
-            - label: Cases (7-day average)
-              value: newCasesByPublishDate
-              tooltip: 7 day rolling average of the daily number of cases by date reported
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 3 #no of days to exclude for incomplete data
-
-        - heading: Cumulative
-          tabType: chart
-          barType: stack
-          colours: [0] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: "Number of cases"
-              value: cumCasesByPublishDate
-              tooltip: Cumulative total number of people with a lab-confirmed positive test result, by date reported
-              type: bar
-              rollingAverage: false
-
-        - heading: Data
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-        
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
-
-            - label: daily
-              value: newCasesByPublishDate
-              type: numeric
-              tooltip: Daily number of new people with a lab-confirmed positive test result, by date reported
-
-            - label: total
-              value: cumCasesByPublishDate
-              type: numeric
-              tooltip: Cumulative total number of people with a lab-confirmed positive test result, by date reported
-
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesTimeSeries.md
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/cases/cardCasesTimeSeries.md
 
 ##############################################################################################################################
 
@@ -432,7 +420,7 @@ cards:
 
 ##############################################################################################################################
 
-# Not shown for UK (has separate radio button card) or sub-national (no data previously - could show this now?)
+# Not shown for UK (has separate date reported card for UK with different abstract) or sub-national (no data)
 
   - heading: Daily cases by date reported
     cardType: chart
