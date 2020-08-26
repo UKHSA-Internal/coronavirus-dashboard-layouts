@@ -234,7 +234,7 @@ cards:
               value: nation
 
           fields:
-            - label: "Number of cases"
+            - label: ""
               value: newCasesByPublishDate
               tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by date reported
               type: bar
@@ -250,7 +250,7 @@ cards:
               value: nation
 
           fields:
-            - label: "Number of cases"
+            - label: ""
               value: cumCasesByPublishDate
               tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by date reported
               type: bar
