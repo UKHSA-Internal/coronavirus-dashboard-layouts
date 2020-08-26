@@ -206,8 +206,10 @@ cards:
       Number of individuals who have had at least one lab-confirmed positive COVID-19 test result, by date
       reported, by nation.  Initially only pillar 1 tests (NHS and, in England, PHE labs) were included but
       pillar 2 (commercial tests) have been included from varying dates between 15th June and 14th July for
-      each nation, leading to step increases in the numbers of cases reported at different times.  
-
+      each nation. On 2 July, case data from pillars 1 and 2 of the testing programme were combined and 
+      de-duplicated.  These adjustments explain the step changes that can be seen in the numbers of cases 
+      reported on specific dates.
+      
     download:
       - newCasesByPublishDate
       - cumCasesByPublishDate
@@ -430,7 +432,7 @@ cards:
 
 ##############################################################################################################################
 
-# Not shown for UK (has separate radio button card) or sub-national (no data)
+# Not shown for UK (has separate radio button card) or sub-national (no data previously - could show this now?)
 
   - heading: Daily cases by date reported
     cardType: chart
