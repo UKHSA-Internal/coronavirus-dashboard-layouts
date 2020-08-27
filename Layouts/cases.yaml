@@ -28,6 +28,170 @@ headlineNumbers:
 
 cards:
 
+##############################################################################################################################
+
+# Only shown for UK
+
+  - heading: Cases by specimen date, by nation
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date, 
+      by nation.  Individuals tested positive more than once are only counted once, on the date of 
+      their first positive test.
+
+    download:
+      - newCasesBySpecimenDate
+      - cumCasesBySpecimenDate
+      
+    options:
+      type: radio
+      heading: null
+      choices:
+        - By nation
+        - UK total
+    
+    By nation:
+      
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+
+          fields:
+            - label: "Number of cases"
+              value: newCasesBySpecimenDate
+              tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by specimen date
+              type: bar
+              rollingAverage: false
+
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+
+          fields:
+            - label: "Number of cases"
+              value: cumCasesBySpecimenDate
+              tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by specimen date
+              type: bar
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+        
+          fields:
+            - label: Specimen date
+              value: date
+              type: date
+              tooltip: Date the sample was taken from the person
+
+            - label: daily
+              value: newCasesBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people with a lab-confirmed positive test result, resident in each nation, by specimen date
+
+            - label: total
+              value: cumCasesBySpecimenDate
+              type: numeric
+              tooltip: Cumulative total number of people with a lab-confirmed positive test result, resident in each nation, by specimen date
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+    UK total:
+      
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+
+          fields:
+            - label: "Number of cases"
+              value: newCasesBySpecimenDate
+              tooltip: Daily number of new people with a lab-confirmed positive test result, by specimen date
+              type: bar
+              rollingAverage: false
+
+            - label: Cases (7-day average)
+              value: newCasesBySpecimenDate
+              tooltip: 7 day rolling average of the daily number of cases by specimen date
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 3 #no of days to exclude for incomplete data
+
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+          colours: [0] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+
+          fields:
+            - label: "Number of cases"
+              value: cumCasesBySpecimenDate
+              tooltip: Cumulative total number of people with a lab-confirmed positive test result, by specimen date
+              type: bar
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+        
+          fields:
+            - label: Specimen date
+              value: date
+              type: date
+              tooltip: Date the sample was taken from the person
+
+            - label: daily
+              value: newCasesBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people with a lab-confirmed positive test result, by specimen date
+
+            - label: total
+              value: cumCasesBySpecimenDate
+              type: numeric
+              tooltip: Cumulative total number of people with a lab-confirmed positive test result, by specimen date
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+##############################################################################################################################
+
 # Only shown for UK (identical to non-UK version but needs different abstract)
 
   - heading: Daily cases by date reported
@@ -43,7 +207,6 @@ cards:
       by date reported. On 2 July, case data from pillars 1 and 2 of the testing programme were
       combined and de-duplicated, resulting in a step decrease in the cumulative number of cases
       reported.
-
     download:
       - newCasesByPublishDate
       - cumCasesByPublishDate
@@ -116,7 +279,6 @@ cards:
       reported, by nation.  Initially only pillar 1 tests (NHS and, in England, PHE labs) were included but
       pillar 2 (commercial tests) have been included from varying dates between 15th June and 14th July for
       each nation, leading to step increases in the numbers of cases reported at different times.  
-
     download:
       - newCasesByPublishDate
       - cumCasesByPublishDate
@@ -183,7 +345,7 @@ cards:
 
 ##############################################################################################################################
 
-# Not shown for UK
+# not shown for UK (has separate radio button card)
 
   - heading: Daily cases by specimen date
     cardType: chart
@@ -258,7 +420,7 @@ cards:
 
 ##############################################################################################################################
 
-# Not shown for UK (identical to UK version but needs different abstract) or sub-national (no data)
+# Not shown for UK (has separate date reported card for UK with different abstract) or sub-national (no data)
 
   - heading: Daily cases by date reported
     cardType: chart
@@ -1063,10 +1225,11 @@ cards:
 
     fullWidth: false
     abstract: >
-      COVID-19 cases (number of people with a lab-confirmed positive test result) in England
-      by Middle Super Output Area (MSOA).  MSOAs are small areas with around 7,200 average
-      population.  The data are updated each weekday, and show the latest 7 days for which
-      complete data are available.
+      COVID-19 cases (number of people with a lab-confirmed positive test result) in 
+      England by Middle Super Output Area (MSOA). MSOAs are small areas with 
+      around 7,200 average population. The data are updated each weekday, and show the 
+      latest 7 days for which near-complete data are available. Counts of 0-2 are shown 
+      as 0-2 in the spreadsheet or -99 in the machine-readable formats.
 
     image: 
       url: https://c19pubdev.azureedge.net/assets/images/msoa-outline.png
