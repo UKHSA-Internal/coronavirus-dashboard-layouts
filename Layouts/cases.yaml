@@ -1229,7 +1229,7 @@ cards:
       England by Middle Super Output Area (MSOA). MSOAs are small areas with 
       around 7,200 average population. The data are updated each weekday, and show the 
       latest 7 days for which near-complete data are available. Counts of 0-2 are shown 
-      as 0-2 in the spreadsheet or -99 in the machines-readable formats.
+      as 0-2 in the spreadsheet or -99 in the machine-readable formats.
 
     image: 
       url: https://c19pubdev.azureedge.net/assets/images/msoa-outline.png
