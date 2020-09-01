@@ -1163,6 +1163,10 @@ cards:
 
 ##############################################################################################################################
 
+# NOTE: Nation tab uses PublishDate metric, other tabs use DeathDate metric.  Download provides DeathDate metrics. This is
+# because latest date available varies for Nations for Death Date metric and PublishDate metric not available for smaller areas. 
+# Latest cumulative time point totals should match for both metrics so no anomaly in front end presentation. 
+
   - heading: Deaths within 28 days of positive test
     cardType: simpleTableStatic
     fullWidth: false
