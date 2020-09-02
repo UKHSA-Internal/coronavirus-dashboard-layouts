@@ -16,7 +16,7 @@ headlineNumbers:
         tooltip: Estimated total capacity reported by laboratories on {date}
 
       - label: Pillars 1, 2 & 4
-        value: plannedPillarOneTwoFourCapacityByPublishDate
+        value: newCapacityPillarsOneTwoFour
         tooltip: Estimated pillar 1, 2 and 4 capacity reported by laboratories on {date}
 
 ##############################################################################################################################
