@@ -41,7 +41,7 @@ cards:
 
     download:
       - plannedCapacityByPublishDate
-      - plannedPillarOneTwoFourCapacityByPublishDate
+      - newCapacityPillarsOneTwoFour
       - newTestsByPublishDate
       - cumTestsByPublishDate
 
@@ -74,7 +74,7 @@ cards:
             rollingAverage: false
 
           - label: Testing capacity (pillars 1, 2 & 4)
-            value: plannedPillarOneTwoFourCapacityByPublishDate
+            value: newCapacityPillarsOneTwoFour
             tooltip: Estimated daily pillar 1, 2 and 4 capacity reported by laboratories
             type: line
             colour: 1
