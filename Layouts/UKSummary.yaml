@@ -19,7 +19,7 @@ summary:
         chart:
           value: plannedPillarOneTwoFourCapacityByPublishDate
           type: line
-          colour: 3
+          colour: 0
           fill: true
           rollingAverage: false
           display: true
@@ -33,7 +33,7 @@ summary:
         chart:
           value: newTestsByPublishDate
           type: line
-          colour: 1
+          colour: 3
           fill: true
           rollingAverage: true
           display: true
