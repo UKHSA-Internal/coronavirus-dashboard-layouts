@@ -1,7 +1,7 @@
 summary:
   - heading: Testing
     fields:
-      - caption: Testing capacity
+      - caption: Testing capacity (all pillars)
         chart:
           value: plannedCapacityByPublishDate
           type: line
@@ -15,11 +15,25 @@ summary:
             value: plannedCapacityByPublishDate
             tooltip: Estimated total lab capacity on {date}
 
+      - caption: Testing capacity (pillars 1, 2 & 4)
+        chart:
+          value: plannedPillarOneTwoFourCapacityByPublishDate
+          type: line
+          colour: 3
+          fill: true
+          rollingAverage: false
+          display: true
+        
+        valueItems: 
+          - label: Daily
+            value: plannedPillarOneTwoFourCapacityByPublishDate
+            tooltip: Estimated pillar 1, 2 and 4 lab capacity on {date}
+
       - caption: Tests processed
         chart:
           value: newTestsByPublishDate
           type: line
-          colour: 0
+          colour: 1
           fill: true
           rollingAverage: true
           display: true
