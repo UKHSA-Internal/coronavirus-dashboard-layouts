@@ -110,10 +110,15 @@ cards:
             type: numeric
             tooltip: Cumulative total number of tests processed by date reported
      
-          - label: Lab capacity
+          - label: Lab capacity (all pillars)
             value: plannedCapacityByPublishDate
             type: numeric
             tooltip: Estimated daily total capacity reported by laboratories (all pillars)
+
+          - label: Lab capacity (pillars 1,2 & 4)
+            value: newCapacityPillarsOneTwoFour
+            type: numeric
+            tooltip: Estimated daily pillar 1, 2 and 4 capacity reported by laboratories
 
       - heading: About 
         tabType: metadata
