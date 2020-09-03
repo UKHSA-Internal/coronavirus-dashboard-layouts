@@ -11,8 +11,13 @@ headlineNumbers:
 
   - caption: Testing capacity
     valueItems:
-      - value: plannedCapacityByPublishDate
+      - label: All pillars
+        value: plannedCapacityByPublishDate
         tooltip: Estimated total capacity reported by laboratories on {date}
+
+      - label: Pillars 1, 2 & 4
+        value: newCapacityPillarsOneTwoFour
+        tooltip: Estimated pillar 1, 2 and 4 capacity reported by laboratories on {date}
 
 ##############################################################################################################################
 
@@ -36,6 +41,7 @@ cards:
 
     download:
       - plannedCapacityByPublishDate
+      - newCapacityPillarsOneTwoFour
       - newTestsByPublishDate
       - cumTestsByPublishDate
 
@@ -59,11 +65,19 @@ cards:
             fill: false
             rollingAverage: true
 
-          - label: Testing capacity
+          - label: Testing capacity (all pillars)
             value: plannedCapacityByPublishDate
             tooltip: Estimated daily total capacity reported by laboratories
             type: line
             colour: 6
+            fill: true
+            rollingAverage: false
+
+          - label: Testing capacity (pillars 1, 2 & 4)
+            value: newCapacityPillarsOneTwoFour
+            tooltip: Estimated daily pillar 1, 2 and 4 capacity reported by laboratories
+            type: line
+            colour: 1
             fill: true
             rollingAverage: false
 
@@ -96,10 +110,15 @@ cards:
             type: numeric
             tooltip: Cumulative total number of tests processed by date reported
      
-          - label: Lab capacity
+          - label: Lab capacity (all pillars)
             value: plannedCapacityByPublishDate
             type: numeric
             tooltip: Estimated daily total capacity reported by laboratories (all pillars)
+
+          - label: Lab capacity (pillars 1,2 & 4)
+            value: newCapacityPillarsOneTwoFour
+            type: numeric
+            tooltip: Estimated daily pillar 1, 2 and 4 capacity reported by laboratories
 
       - heading: About 
         tabType: metadata
