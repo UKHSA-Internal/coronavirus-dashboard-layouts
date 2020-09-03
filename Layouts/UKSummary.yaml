@@ -11,13 +11,12 @@ summary:
           display: true
         
         valueItems: 
-          - label: Daily
-            value: plannedCapacityByPublishDate
+          - value: plannedCapacityByPublishDate
             tooltip: Estimated total lab capacity on {date}
 
       - caption: Testing capacity (pillars 1, 2 & 4)
         chart:
-          value: newCapacityPillarsOneTwoFour
+          value: capacityPillarOneTwoFour
           type: line
           colour: 0
           fill: true
@@ -25,8 +24,7 @@ summary:
           display: true
         
         valueItems: 
-          - label: Daily
-            value: newCapacityPillarsOneTwoFour
+          - value: capacityPillarOneTwoFour
             tooltip: Estimated pillar 1, 2 and 4 lab capacity on {date}
 
       - caption: Tests processed

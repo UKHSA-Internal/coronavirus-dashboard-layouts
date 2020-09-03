@@ -16,7 +16,7 @@ headlineNumbers:
         tooltip: Estimated total capacity reported by laboratories on {date}
 
       - label: Pillars 1, 2 & 4
-        value: newCapacityPillarsOneTwoFour
+        value: capacityPillarOneTwoFour
         tooltip: Estimated pillar 1, 2 and 4 capacity reported by laboratories on {date}
 
 ##############################################################################################################################
@@ -41,7 +41,7 @@ cards:
 
     download:
       - plannedCapacityByPublishDate
-      - newCapacityPillarsOneTwoFour
+      - capacityPillarOneTwoFour
       - newTestsByPublishDate
       - cumTestsByPublishDate
 
@@ -74,7 +74,7 @@ cards:
             rollingAverage: false
 
           - label: Testing capacity (pillars 1, 2 & 4)
-            value: newCapacityPillarsOneTwoFour
+            value: capacityPillarOneTwoFour
             tooltip: Estimated daily pillar 1, 2 and 4 capacity reported by laboratories
             type: line
             colour: 1
@@ -116,7 +116,7 @@ cards:
             tooltip: Estimated daily total capacity reported by laboratories (all pillars)
 
           - label: Lab capacity (pillars 1,2 & 4)
-            value: newCapacityPillarsOneTwoFour
+            value: capacityPillarOneTwoFour
             type: numeric
             tooltip: Estimated daily pillar 1, 2 and 4 capacity reported by laboratories
 
