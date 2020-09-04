@@ -148,8 +148,8 @@ cards:
       - capacityPillarOne
       - capacityPillarTwo
       - capacityPillarThree
-      - capacityPillarsOneTwo
-      - capacityPillarsOneTwoFour
+      - capacityPillarOneTwo
+      - capacityPillarOneTwoFour
       - newTestsByPublishDate
       - newPillarOneTestsByPublishDate
       - newPillarTwoTestsByPublishDate
@@ -189,7 +189,7 @@ cards:
               rollingAverage: true
 
             - label: Testing capacity (pillars 1 & 2)
-              value: capacityPillarsOneTwo
+              value: capacityPillarOneTwo
               tooltip: Estimated daily pillar 1 and 2 capacity reported by laboratories
               type: line
               colour: 6
@@ -210,7 +210,7 @@ cards:
               tooltip: Daily number of pillar 1 and 2 tests processed by date reported
 
             - label: Lab capacity (pillars 1 & 2)
-              value: capacityPillarsOneTwo
+              value: capacityPillarOneTwo
               type: numeric
               tooltip: Estimated daily pillar 1 & 2 capacity reported by laboratories
 
@@ -262,7 +262,7 @@ cards:
               tooltip: Daily number of pillar 3 tests processed by date reported
 
             - label: Lab capacity (pillar 3)
-              value: capacityPillarsThree
+              value: capacityPillarThree
               type: numeric
               tooltip: Estimated daily pillar 3 capacity reported by laboratories
 
