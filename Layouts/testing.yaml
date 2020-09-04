@@ -178,7 +178,7 @@ cards:
           fields:
             - label: Tests processed (all pillars)
               value: newTestsByPublishDate
-              tooltip: Daily number of tests processed (all pillars) by date reported
+              tooltip: Daily number of tests processed by date reported (all pillars)
               type: bar
               colour: 0
               rollingAverage: false
@@ -193,22 +193,22 @@ cards:
 
             - label: Testing capacity (all pillars)
               value: plannedCapacityByPublishDate
-              tooltip: Estimated daily total capacity reported by laboratories
+              tooltip: Estimated daily capacity reported by laboratories (all pillars)
               type: line
               colour: 6
               fill: true
               rollingAverage: false
 
-        - heading: Cumulative
-          tabType: chart
-          barType: normal
-          fields:
-            - label: Tests processed
-              value: cumTestsByPublishDate
-              tooltip: Cumulative total number of tests processed (all pillars) by date reported
-              type: bar
-              colour: 0
-              rollingAverage: false
+#        - heading: Cumulative
+#          tabType: chart
+#          barType: normal
+#          fields:
+#            - label: Tests processed (all pillars)
+#              value: cumTestsByPublishDate
+#              tooltip: Cumulative number of tests processed (all pillars) by date reported
+#              type: bar
+#              colour: 0
+#              rollingAverage: false
 
         - heading: Data
           tabType: table
@@ -223,15 +223,15 @@ cards:
               type: numeric
               tooltip: Daily number of tests processed by date reported (all pillars)
 
-            - label: Cumulative tests processed
+            - label: Cumulative tests processed (all pillars)
               value: cumTestsByPublishDate
               type: numeric
-              tooltip: Cumulative total number of tests processed by date reported
+              tooltip: Cumulative number of tests processed by date reported (all pillars)
 
             - label: Lab capacity (all pillars)
               value: plannedCapacityByPublishDate
               type: numeric
-              tooltip: Estimated daily total capacity reported by laboratories
+              tooltip: Estimated daily capacity reported by laboratories (all pillars)
 
         - heading: About 
           tabType: metadata
@@ -246,7 +246,7 @@ cards:
           fields:
             - label: Tests processed (pillars 1, 2 & 4)
               value: newPillarOneTwoFourTestsByPublishDate
-              tooltip: Daily number of tests processed (pillars 1,2 & 4) by date reported
+              tooltip: Daily number of tests processed by date reported (pillars 1,2 & 4)
               type: bar
               colour: 0
               rollingAverage: false
@@ -261,7 +261,7 @@ cards:
 
             - label: Testing capacity (pillars 1, 2 & 4)
               value: capacityPillarOneTwoFour
-              tooltip: Estimated daily pillar 1 , 2 and 4 capacity reported by laboratories
+              tooltip: Estimated daily capacity reported by laboratories (pillars 1,2 & 4)
               type: line
               colour: 6
               fill: true
@@ -278,12 +278,12 @@ cards:
             - label: Daily tests processed (pillars 1, 2 & 4)
               value: newPillarOneTwoFourTestsByPublishDate
               type: numeric
-              tooltip: Daily number of pillar 1, 2 and 4 tests processed by date reported
+              tooltip: Daily number of tests processed by date reported (pillars 1,2 & 4)
 
             - label: Lab capacity (pillars 1, 2 & 4)
               value: capacityPillarOneTwoFour
               type: numeric
-              tooltip: Estimated daily pillar 1, 2 and 4 capacity reported by laboratories
+              tooltip: Estimated daily capacity reported by laboratories (pillars 1,2 & 4)
 
         - heading: About 
           tabType: metadata
@@ -298,7 +298,7 @@ cards:
           fields:
             - label: Tests processed (pillars 1 & 2)
               value: newPillarOneTwoTestsByPublishDate
-              tooltip: Daily number of tests processed (pillars 1 & 2) by date reported
+              tooltip: Daily number of tests processed by date reported (pillars 1 & 2)
               type: bar
               colour: 0
               rollingAverage: false
@@ -313,7 +313,7 @@ cards:
 
             - label: Testing capacity (pillars 1 & 2)
               value: capacityPillarOneTwo
-              tooltip: Estimated daily pillar 1 and 2 capacity reported by laboratories
+              tooltip: Estimated daily capacity reported by laboratories (pillars 1 & 2)
               type: line
               colour: 6
               fill: true
@@ -330,12 +330,12 @@ cards:
             - label: Daily tests processed (pillars 1 & 2)
               value: newPillarOneTwoTestsByPublishDate
               type: numeric
-              tooltip: Daily number of pillar 1 and 2 tests processed by date reported
+              tooltip: Daily number of tests processed by date reported (pillars 1 & 2)
 
             - label: Lab capacity (pillars 1 & 2)
               value: capacityPillarOneTwo
               type: numeric
-              tooltip: Estimated daily pillar 1 & 2 capacity reported by laboratories
+              tooltip: Estimated daily capacity reported by laboratories (pillars 1 & 2)
 
         - heading: About 
           tabType: metadata
@@ -350,7 +350,7 @@ cards:
           fields:
             - label: Tests processed (pillar 3)
               value: newPillarThreeTestsByPublishDate
-              tooltip: Daily number of tests processed (pillar 3) by date reported
+              tooltip: Daily number of tests processed by date reported (pillar 3)
               type: bar
               colour: 0
               rollingAverage: false
@@ -365,7 +365,7 @@ cards:
 
             - label: Testing capacity (pillar 3)
               value: capacityPillarThree
-              tooltip: Estimated daily pillar 3 capacity reported by laboratories
+              tooltip: Estimated daily capacity reported by laboratories (pillar 3)
               type: line
               colour: 6
               fill: true
@@ -382,12 +382,12 @@ cards:
             - label: Daily tests processed (pillar 3)
               value: newPillarThreeTestsByPublishDate
               type: numeric
-              tooltip: Daily number of pillar 3 tests processed by date reported
+              tooltip: Daily number of tests processed by date reported (pillar 3)
 
             - label: Lab capacity (pillar 3)
               value: capacityPillarThree
               type: numeric
-              tooltip: Estimated daily pillar 3 capacity reported by laboratories
+              tooltip: Estimated daily capacity reported by laboratories (pillar 3)
 
         - heading: About 
           tabType: metadata
@@ -402,7 +402,7 @@ cards:
           fields:
             - label: Tests processed (pillar 4)
               value: newPillarFourTestsByPublishDate
-              tooltip: Daily number of tests processed (pillar 4) by date reported
+              tooltip: Daily number of tests processed by date reported (pillar 4)
               type: bar
               colour: 0
               rollingAverage: false
@@ -426,7 +426,7 @@ cards:
             - label: Daily tests processed (pillar 4)
               value: newPillarFourTestsByPublishDate
               type: numeric
-              tooltip: Daily number of pillar 4 tests processed by date reported
+              tooltip: Daily number of tests processed by date reported (pillar 4)
 
         - heading: About 
           tabType: metadata
