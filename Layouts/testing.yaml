@@ -157,7 +157,7 @@ cards:
       - newPillarThreeTestsByPublishDate
       - newPillarFourTestsByPublishDate
       - newPillarOneTwoTestsByPublishDate
-      - newPillarOneTwoFourTestsByPublishDate
+#      - newPillarOneTwoFourTestsByPublishDate
 
     options:
       type: radio
@@ -199,16 +199,16 @@ cards:
               fill: true
               rollingAverage: false
 
-#        - heading: Cumulative
-#          tabType: chart
-#          barType: normal
-#          fields:
-#            - label: Tests processed (all pillars)
-#              value: cumTestsByPublishDate
-#              tooltip: Cumulative number of tests processed (all pillars) by date reported
-#              type: bar
-#              colour: 0
-#              rollingAverage: false
+        - heading: Cumulative
+          tabType: chart
+          barType: normal
+          fields:
+            - label: Tests processed (all pillars)
+              value: cumTestsByPublishDate
+              tooltip: Cumulative number of tests processed (all pillars) by date reported
+              type: bar
+              colour: 0
+              rollingAverage: false
 
         - heading: Data
           tabType: table
