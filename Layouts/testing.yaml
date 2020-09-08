@@ -146,16 +146,16 @@ cards:
 
     download:
       - plannedCapacityByPublishDate
-#      - capacityPillarOne
-#      - capacityPillarTwo
-#      - capacityPillarThree
+      - capacityPillarOne
+      - capacityPillarTwo
+      - capacityPillarThree
 #      - capacityPillarOneTwo
       - capacityPillarOneTwoFour
       - newTestsByPublishDate
-#      - newPillarOneTestsByPublishDate
-#      - newPillarTwoTestsByPublishDate
-#      - newPillarThreeTestsByPublishDate
-#      - newPillarFourTestsByPublishDate
+      - newPillarOneTestsByPublishDate
+      - newPillarTwoTestsByPublishDate
+      - newPillarThreeTestsByPublishDate
+      - newPillarFourTestsByPublishDate
 #      - newPillarOneTwoTestsByPublishDate
       - newPillarOneTwoFourTestsByPublishDate
 
