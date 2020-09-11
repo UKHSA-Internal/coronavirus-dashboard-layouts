@@ -27,7 +27,7 @@ summary:
           - value: capacityPillarOneTwo
             tooltip: Estimated pillar 1 and 2 lab capacity on {date}
 
-      - caption: Tests processed
+      - caption: Tests processed (all pillars)
         chart:
           value: newTestsByPublishDate
           type: line

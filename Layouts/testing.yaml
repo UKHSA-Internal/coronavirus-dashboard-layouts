@@ -1,15 +1,15 @@
 headlineNumbers:
   - caption: Tests processed
     valueItems:
-      - label: All pillars daily
+      - label: Daily (all pillars)
         value: newTestsByPublishDate
         tooltip: Daily number of tests processed (all pillars), reported on {date}
 
-      - label: Pillars 1 & 2 daily
+      - label: Daily (pillars 1 & 2)
         value: newPillarOneTwoTestsByPublishDate
         tooltip: Daily number of tests processed (pillars 1 and 2), reported up to {date}
 
-      - label: All pillars total
+      - label: Total (all pillars)
         value: cumTestsByPublishDate
         tooltip: Total number of tests processed (all pillars), reported up to {date}
 
