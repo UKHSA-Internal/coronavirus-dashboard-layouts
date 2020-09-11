@@ -152,7 +152,7 @@ cards:
       - capacityPillarOne
       - capacityPillarTwo
       - capacityPillarThree
-#      - capacityPillarFour
+      - capacityPillarFour
 #      - capacityPillarOneTwoFour
       - capacityPillarOneTwo
       - newTestsByPublishDate
@@ -172,7 +172,7 @@ cards:
 #        - Pillars 1 2 4
         - Pillars 1 2
         - Pillar 3
-#        - Pillar 4
+        - Pillar 4
     
     All pillars:
       
@@ -398,57 +398,57 @@ cards:
           tabType: metadata
           filename: cardMetadata/testing/cardTestingAndCapacity.md
 
-    # Pillar 4:
+    Pillar 4:
       
-    #   tabs:
-    #     - heading: Daily
-    #       tabType: chart
-    #       barType: normal
-    #       fields:
-    #         - label: Tests processed (pillar 4)
-    #           value: newPillarFourTestsByPublishDate
-    #           tooltip: Daily number of tests processed by date reported (pillar 4)
-    #           type: bar
-    #           colour: 0
-    #           rollingAverage: false
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: normal
+          fields:
+            - label: Tests processed (pillar 4)
+              value: newPillarFourTestsByPublishDate
+              tooltip: Daily number of tests processed by date reported (pillar 4)
+              type: bar
+              colour: 0
+              rollingAverage: false
 
-    #         - label: Tests processed (pillar 4, 7-day average)
-    #           value: newPillarFourTestsByPublishDate
-    #           tooltip: 7 day rolling average of the daily number of tests processed (pillar 4)
-    #           type: line
-    #           colour: 3
-    #           fill: false
-    #           rollingAverage: true
+            - label: Tests processed (pillar 4, 7-day average)
+              value: newPillarFourTestsByPublishDate
+              tooltip: 7 day rolling average of the daily number of tests processed (pillar 4)
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage: true
 
-    #         - label: Testing capacity (pillar 4)
-    #           value: capacityPillarFour
-    #           tooltip: Estimated daily capacity reported by laboratories (pillar 4)
-    #           type: line
-    #           colour: 6
-    #           fill: true
-    #           rollingAverage: false
+            - label: Testing capacity (pillar 4)
+              value: capacityPillarFour
+              tooltip: Estimated daily capacity reported by laboratories (pillar 4)
+              type: line
+              colour: 6
+              fill: true
+              rollingAverage: false
 
-    #     - heading: Data
-    #       tabType: table
-    #       fields:
-    #         - label: Date reported
-    #           value: date
-    #           type: date
-    #           tooltip: Date reported on coronavirus.data.gov.uk
+        - heading: Data
+          tabType: table
+          fields:
+            - label: Date reported
+              value: date
+              type: date
+              tooltip: Date reported on coronavirus.data.gov.uk
 
-    #         - label: Daily tests processed (pillar 4)
-    #           value: newPillarFourTestsByPublishDate
-    #           type: numeric
-    #           tooltip: Daily number of tests processed by date reported (pillar 4)
+            - label: Daily tests processed (pillar 4)
+              value: newPillarFourTestsByPublishDate
+              type: numeric
+              tooltip: Daily number of tests processed by date reported (pillar 4)
 
-    #         - label: Lab capacity (pillar 4)
-    #           value: capacityPillarFour
-    #           type: numeric
-    #           tooltip: Estimated daily capacity reported by laboratories (pillar 4)
+            - label: Lab capacity (pillar 4)
+              value: capacityPillarFour
+              type: numeric
+              tooltip: Estimated daily capacity reported by laboratories (pillar 4)
 
-    #     - heading: About 
-    #       tabType: metadata
-    #       filename: cardMetadata/testing/cardTestingAndCapacity.md
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/testing/cardTestingAndCapacity.md
 
 ##############################################################################################################################
 
