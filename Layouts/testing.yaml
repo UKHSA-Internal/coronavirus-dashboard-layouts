@@ -170,7 +170,7 @@ cards:
       choices:
         - All pillars
 #        - Pillars 1 2 4
-        - Pillars 1 & 2
+        - Pillars 1 2
         - Pillar 3
         - Pillar 4
     
@@ -294,7 +294,7 @@ cards:
     #       tabType: metadata
     #       filename: cardMetadata/testing/cardTestingAndCapacity.md
 
-    Pillars 1 & 2:
+    Pillars 1 2:
       
       tabs:
         - heading: Daily
