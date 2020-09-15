@@ -39,8 +39,8 @@ cards:
   #   fullWidth: true
   #   abstract: >
   #     Number of lab-confirmed positive or negative COVID-19 test results, by date reported.  This is a count of 
-  #     test results and may include multiple tests for an individual person.  It includes all types of testing (swab
-  #     testing for antigens, antibody testing and surveillance testing). Testing capacity is based on reports from 
+  #     test results and may include multiple tests for an individual person.  It includes all types of testing (PCR 
+  #     swab testing, antibody testing and surveillance testing). Testing capacity is based on reports from 
   #     labs on how many tests they have capacity to carry out each day based on availability of staff and resources.
 
   #   download:
@@ -143,7 +143,7 @@ cards:
     abstract: >
       Number of lab-confirmed positive or negative COVID-19 test results, by pillar, by date reported.  This is a 
       count of test results and may include multiple tests for an individual person.  Pillar breakdown options 
-      can be applied to filter the data to display estimates for antigen swab testing (pillars 1 & 2), antibody 
+      can be applied to filter the data to display estimates for PCR swab testing (pillars 1 & 2), antibody 
       serology testing (pillar 3) and surveillance testing (pillar 4). Testing capacity is based on reports from 
       labs on how many tests they have capacity to carry out each day based on availability of staff and resources.
 
