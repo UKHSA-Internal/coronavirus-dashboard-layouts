@@ -814,6 +814,10 @@ cards:
       Total case rates by age and sex.  There are fewer people in the oldest age groups so the
       rates show the relative impact on different age groups.
 
+    download:
+      - femaleCases 
+      - maleCases
+
     tabs: 
       - heading: Chart
         tabType: chart
