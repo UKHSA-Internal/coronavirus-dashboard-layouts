@@ -287,7 +287,6 @@ cards:
       
     download:
       - cumAdmissionsByAge
-      - cumAdmissionsByAgeRate
 
     tabs: 
       - heading: Chart
@@ -350,7 +349,6 @@ cards:
       
     download:
       - cumAdmissionsByAge
-      - cumAdmissionsByAgeRate
 
     tabs: 
       - heading: Chart
