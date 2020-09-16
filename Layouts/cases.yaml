@@ -728,10 +728,8 @@ cards:
       start of the pandemic, by age and sex.
 
     download:
-      - femaleCasesValue 
-      - femaleCasesRate
-      - maleCasesValue
-      - maleCasesRate
+      - femaleCases 
+      - maleCases
 
     tabs: 
       - heading: Chart
