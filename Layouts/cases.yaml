@@ -540,7 +540,9 @@ cards:
               type: line
               colour: 3
               fill: false
-              rollingAverage: true
+              rollingAverage:
+                window: 7
+                clipEnd: 3 #no of days to exclude for incomplete data
 
         - heading: Cumulative
           tabType: chart
@@ -689,7 +691,9 @@ cards:
 #   #           type: line
 #   #           colour: 3
 #   #           fill: false
-#   #           rollingAverage: true
+#   #           rollingAverage:
+#   #             window: 7
+#   #             clipEnd: 3 #no of days to exclude for incomplete data
  
 #   #     - heading: Data
 #   #       tabType: table

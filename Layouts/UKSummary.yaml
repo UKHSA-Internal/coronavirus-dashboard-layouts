@@ -1,18 +1,18 @@
 summary:
   - heading: Testing
     fields:
-      - caption: Testing capacity (all pillars)
-        chart:
-          value: plannedCapacityByPublishDate
-          type: line
-          colour: 6
-          fill: true
-          rollingAverage: false
-          display: true
+      # - caption: Testing capacity (all pillars)
+      #   chart:
+      #     value: plannedCapacityByPublishDate
+      #     type: line
+      #     colour: 6
+      #     fill: true
+      #     rollingAverage: false
+      #     display: true
         
-        valueItems: 
-          - value: plannedCapacityByPublishDate
-            tooltip: Estimated total lab capacity on {date}
+      #   valueItems: 
+      #     - value: plannedCapacityByPublishDate
+      #       tooltip: Estimated total lab capacity on {date}
 
       - caption: Testing capacity (pillars 1 & 2)
         chart:
@@ -27,9 +27,9 @@ summary:
           - value: capacityPillarOneTwo
             tooltip: Estimated pillar 1 and 2 lab capacity on {date}
 
-      - caption: Tests processed (all pillars)
+      - caption: Tests processed (pillars 1 & 2)
         chart:
-          value: newTestsByPublishDate
+          value: newPillarOneTwoTestsByPublishDate
           type: line
           colour: 3
           fill: true
@@ -38,12 +38,12 @@ summary:
         
         valueItems: 
           - label: Daily
-            value: newTestsByPublishDate
-            tooltip: Daily number of tests processed, reported on {date} - chart shows 7-day rolling average
+            value: newPillarOneTwoTestsByPublishDate
+            tooltip: Daily number of pillar 1 & 2 tests processed, reported on {date} - chart shows 7-day rolling average
           
           - label: Total
-            value: cumTestsByPublishDate
-            tooltip: Cumulative total number of tests processed, reported on {date}
+            value: cumPillarOneTwoTestsByPublishDate
+            tooltip: Cumulative total number of pillar 1 & 2 tests processed, reported on {date}
 
 ##############################################################################################################################
 
