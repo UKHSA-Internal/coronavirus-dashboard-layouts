@@ -15,9 +15,9 @@ headlineNumbers:
 
   - caption: Testing capacity
     valueItems:
-      - label: All pillars
-        value: plannedCapacityByPublishDate
-        tooltip: Estimated total capacity reported by laboratories on {date}
+#      - label: All pillars
+#        value: plannedCapacityByPublishDate
+#        tooltip: Estimated total capacity reported by laboratories on {date}
 
       - label: Pillars 1 & 2
         value: capacityPillarOneTwo
