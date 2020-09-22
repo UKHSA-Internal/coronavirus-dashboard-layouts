@@ -536,7 +536,7 @@ cards:
       tabs:
         - heading: Daily
           tabType: chart
-          barType: stack
+          barType: normal
           colours: [0] # areaNames in alphabetical order
           params:
             - key: areaType
@@ -544,13 +544,21 @@ cards:
               value: overview
 
           fields:
-            - label: ""
+            - label: Patients in hospital
               value: hospitalCases
               tooltip: Number of COVID-19 patients currently in hospital
               type: bar
+              rollingAverage: false
+
+            - label: Patients in hospital (7-day average)
+              value: hospitalCases
+              tooltip: Number of COVID-19 patients currently in hospital
+              type: line
+              colour: 3
+              fill: false
               rollingAverage: 
                 window: 7
-                clipEnd: 3
+                clipEnd: 0
 
         - heading: Data
           tabType: table
