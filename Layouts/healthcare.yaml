@@ -537,7 +537,6 @@ cards:
         - heading: Daily
           tabType: chart
           barType: normal
-          colours: [0] # areaNames in alphabetical order
           params:
             - key: areaType
               sign: "="
@@ -548,11 +547,12 @@ cards:
               value: hospitalCases
               tooltip: Number of COVID-19 patients currently in hospital
               type: bar
+              colour: 0
               rollingAverage: false
 
             - label: Patients in hospital (7-day average)
               value: hospitalCases
-              tooltip: Number of COVID-19 patients currently in hospital
+              tooltip: Number of COVID-19 patients currently in hospital (7-day average)
               type: line
               colour: 3
               fill: false
@@ -828,21 +828,29 @@ cards:
       tabs:
         - heading: Daily
           tabType: chart
-          barType: stack
-          colours: [0] # areaNames in alphabetical order
+          barType: normal
           params:
             - key: areaType
               sign: "="
               value: overview
 
           fields:
-            - label: ""
+            - label: Patients in MV beds
               value: covidOccupiedMVBeds
               tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
               type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: Patients in MV beds (7-day average)
+              value: covidOccupiedMVBeds
+              tooltip: Number of COVID-19 patients currently in mechanical ventilation beds (7-day average)
+              type: line
+              fill: false
+              colour: 3
               rollingAverage: 
                 window: 7
-                clipEnd: 3
+                clipEnd: 0
 
         - heading: Data
           tabType: table
