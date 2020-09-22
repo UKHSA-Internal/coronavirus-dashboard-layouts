@@ -653,8 +653,6 @@ cards:
 ##############################################################################################################################
 
 # {{ StartDevOnlyBlock }}
-# Not using this chart which shows which specimen dates the newly added cases refer to.  It's not useful now that
-# case numbers are so low
 
   - heading: Newly reported and total daily cases by specimen date (Dev Only)
     cardType: chart
@@ -674,7 +672,7 @@ cards:
     tabs: 
       - heading: Chart
         tabType: chart
-        barType: overlay
+        barType: stack
         fields:
           - label: Newly reported cases
             value: changeInNewCasesBySpecimenDate
@@ -711,12 +709,18 @@ cards:
           - label: Previously reported cases
             value: previouslyReportedNewCasesBySpecimenDate
             type: numeric
-            tooltip: Number of new people with a lab-confirmed positive test result as reported on {date-1} by the date the sample was taken from the person
+            tooltip: Number of people with a lab-confirmed positive test result as reported on {date-1} by the date the sample was taken from the person
 
           - label: Newly reported cases
             value: changeInNewCasesBySpecimenDate
             type: numeric
-            tooltip: Newly reported number of people with a lab-confirmed positive test result on {date} by the date the sample was taken from the person
+            tooltip: Number of people with a lab-confirmed positive test result newly reported on {date} by the date the sample was taken from the person
+
+          - label: Total daily cases
+            value: newCasesBySpecimenDate
+            type: numeric
+            tooltip: Number of people with a lab-confirmed positive test result as reported on {date} by the date the sample was taken from the person
+
 
 # {{ EndDevOnlyBlock }}
 

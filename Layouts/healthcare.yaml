@@ -231,7 +231,7 @@ cards:
               colour: 0
               rollingAverage: false
 
-            - label: patients admitted to hospital (7-day average)
+            - label: Patients admitted to hospital (7-day average)
               value: newAdmissions
               tooltip: Daily number of COVID-19 patients admitted to hospital (7-day average)
               type: line
