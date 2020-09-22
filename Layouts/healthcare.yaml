@@ -217,7 +217,7 @@ cards:
       tabs:
         - heading: Daily
           tabType: chart
-          barType: stack
+          barType: normal
           params:
             - key: areaType
               sign: "="
