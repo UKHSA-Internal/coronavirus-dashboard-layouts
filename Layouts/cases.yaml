@@ -656,7 +656,7 @@ cards:
 # Not using this chart which shows which specimen dates the newly added cases refer to.  It's not useful now that
 # case numbers are so low
 
-  - heading: Newly reported and total daily cases by specimen date
+  - heading: Newly reported and total daily cases by specimen date (Dev Only)
     cardType: chart
     fullWidth: true
     locationAware:
@@ -676,21 +676,21 @@ cards:
         tabType: chart
         barType: overlay
         fields:
-          - label: Total cases
-            value: newCasesBySpecimenDate
-            tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-          - label: Change from previous day
+          - label: Newly reported cases
             value: changeInNewCasesBySpecimenDate
-            tooltip: Change in numbers of cases reported on {date} from previously reported
+            tooltip: Newly reported number of people with a lab-confirmed positive test result on {date} by the date the sample was taken from the person
             type: bar
             colour: 9
             rollingAverage: false
 
-          - label: Cases (7-day average)
+          - label: previously reported cases
+            value: previouslyReportedNewCasesBySpecimenDate
+            tooltip: Number of people with a lab-confirmed positive test result as reported on {date-1} by the date the sample was taken from the person
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Total cases (7-day average)
             value: newCasesBySpecimenDate
             tooltip: 7 day rolling average of the daily number of cases by specimen date
             type: line
@@ -708,15 +708,15 @@ cards:
             type: date
             tooltip: Date the sample was taken from the person
 
-          - label: Daily cases
+          - label: Previously reported cases
             value: previouslyReportedNewCasesBySpecimenDate
             type: numeric
-            tooltip: Number of new people with a lab-confirmed positive test result as reported on {date-1}
+            tooltip: Number of new people with a lab-confirmed positive test result as reported on {date-1} by the date the sample was taken from the person
 
-          - label: Cumulative cases
+          - label: Newly reported cases
             value: changeInNewCasesBySpecimenDate
             type: numeric
-            tooltip: Change in number of new people with a lab-confirmed positive test result reported on {date}
+            tooltip: Newly reported number of people with a lab-confirmed positive test result on {date} by the date the sample was taken from the person
 
 # {{ EndDevOnlyBlock }}
 
