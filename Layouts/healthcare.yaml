@@ -152,65 +152,65 @@ cards:
     
     By nation:
 
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10] # areaNames in alphabetical order
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
 
-        fields:
-          - label: ""
-            value: newAdmissions
-            tooltip: Daily number of COVID-19 patients admitted to hospital
-            type: bar
-            rollingAverage: false
+          fields:
+            - label: ""
+              value: newAdmissions
+              tooltip: Daily number of COVID-19 patients admitted to hospital
+              type: bar
+              rollingAverage: false
 
-      - heading: Cumulative
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10] # areaNames in alphabetical order
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
 
-        fields:
-          - label: ""
-            value: cumAdmissions
-            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
-            type: bar
-            rollingAverage: false
+          fields:
+            - label: ""
+              value: cumAdmissions
+              tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+              type: bar
+              rollingAverage: false
 
-      - heading: Data
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
 
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported by healthcare providers
+          fields:
+            - label: Date reported
+              value: date
+              type: date
+              tooltip: Date reported by healthcare providers
 
-          - label: daily
-            value: newAdmissions
-            type: numeric
-            tooltip: Daily number of COVID-19 patients admitted to hospital
+            - label: daily
+              value: newAdmissions
+              type: numeric
+              tooltip: Daily number of COVID-19 patients admitted to hospital
 
-          - label: total
-            value: cumAdmissions
-            type: numeric
-            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+            - label: total
+              value: cumAdmissions
+              type: numeric
+              tooltip: Cumulative total number of COVID-19 patients admitted to hospital
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
 
     UK total:
 
@@ -423,13 +423,13 @@ cards:
     tabs: 
       - heading: Daily
         tabType: chart
+        barType: overlay
         fields:
           - label: COVID-19 patients
             value: hospitalCases
             tooltip: Number of COVID-19 patients currently in hospital
-            type: line
+            type: bar
             colour: 0
-            fill: true
             rollingAverage:
               window: 7
               clipEnd: 3
@@ -522,8 +522,6 @@ cards:
           filename: hospitalCases.md
 
     UK total:
-      download:
-        - hospitalCases
 
       tabs:
         - heading: Daily
@@ -650,12 +648,12 @@ cards:
     tabs: 
       - heading: Daily
         tabType: chart
-        barType: stack
+        barType: overlay
         fields:
           - label: COVID-19 patients
             value: covidOccupiedMVBeds
             tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
-            type: line
+            type: bar
             colour: 0
             rollingAverage: 
               window: 7
