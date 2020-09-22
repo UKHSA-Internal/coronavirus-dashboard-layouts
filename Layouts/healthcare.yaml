@@ -143,14 +143,14 @@ cards:
       - newAdmissions
       - cumAdmissions
 
-    # options:
-    #   type: radio
-    #   heading: null
-    #   choices:
-    #     - By nation
-    #     - UK total
+    options:
+      type: radio
+      heading: null
+      choices:
+        - By nation
+        - UK total
     
-    # By nation:
+    By nation:
 
     tabs:
       - heading: Daily
@@ -212,67 +212,69 @@ cards:
         tabType: metadata
         filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
 
-    # UK total:
+    UK total:
 
-      # tabs:
-      #   - heading: Daily
-      #     tabType: chart
-      #     barType: stack
-      #     colours: [0] # areaNames in alphabetical order
-      #     params:
-      #       - key: areaType
-      #         sign: "="
-      #         value: overview
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
 
-      #     fields:
-      #       - label: ""
-      #         value: newAdmissions
-      #         tooltip: Daily number of COVID-19 patients admitted to hospital
-      #         type: bar
-      #         rollingAverage: false 
+          fields:
+            - label: ""
+              value: newAdmissions
+              tooltip: Daily number of COVID-19 patients admitted to hospital
+              type: bar
+              rollingAverage: 
+                window: 7
+                clipEnd: 3 
 
-      #   - heading: Cumulative
-      #     tabType: chart
-      #     barType: stack
-      #     colours: [0] # areaNames in alphabetical order
-      #     params:
-      #       - key: areaType
-      #         sign: "="
-      #         value: overview
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+          colours: [0] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
 
-      #     fields:
-      #       - label: ""
-      #         value: cumAdmissions
-      #         tooltip: Cumulative total number of COVID-19 patients admitted to hospital
-      #         type: bar
-      #         rollingAverage: false
+          fields:
+            - label: ""
+              value: cumAdmissions
+              tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+              type: bar
+              rollingAverage: false
 
-      #   - heading: Data
-      #     tabType: table
-      #     params:
-      #       - key: areaType
-      #         sign: "="
-      #         value: overview
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
 
-      #     fields:
-      #       - label: Date reported
-      #         value: date
-      #         type: date
-      #         tooltip: Date reported by healthcare providers
+          fields:
+            - label: Date reported
+              value: date
+              type: date
+              tooltip: Date reported by healthcare providers
 
-      #       - label: daily
-      #         value: newAdmissions
-      #         type: numeric
-      #         tooltip: Daily number of COVID-19 patients admitted to hospital
+            - label: daily
+              value: newAdmissions
+              type: numeric
+              tooltip: Daily number of COVID-19 patients admitted to hospital
 
-      #       - label: total
-      #         value: cumAdmissions
-      #         type: numeric
-      #         tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+            - label: total
+              value: cumAdmissions
+              type: numeric
+              tooltip: Cumulative total number of COVID-19 patients admitted to hospital
 
-      #   - heading: About 
-      #     tabType: metadata
-      #     filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
 
 ##############################################################################################################################
 
@@ -428,7 +430,9 @@ cards:
             type: line
             colour: 0
             fill: true
-            rollingAverage: false
+            rollingAverage:
+              window: 7
+              clipEnd: 3
 
       - heading: Data
         tabType: table
@@ -536,7 +540,9 @@ cards:
               value: hospitalCases
               tooltip: Number of COVID-19 patients currently in hospital
               type: bar
-              rollingAverage: false
+              rollingAverage: 
+                window: 7
+                clipEnd: 3
 
         - heading: Data
           tabType: table
@@ -651,7 +657,9 @@ cards:
             tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
             type: line
             colour: 0
-            rollingAverage: false
+            rollingAverage: 
+              window: 7
+              clipEnd: 3
 
           # {{ StartDevOnlyBlock }}
 
@@ -808,7 +816,9 @@ cards:
               value: covidOccupiedMVBeds
               tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
               type: bar
-              rollingAverage: false
+              rollingAverage: 
+                window: 7
+                clipEnd: 3
 
         - heading: Data
           tabType: table
