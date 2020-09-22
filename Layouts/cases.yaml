@@ -685,7 +685,7 @@ cards:
             value: changeInNewCasesBySpecimenDate
             tooltip: Newly reported number of people with a lab-confirmed positive test result on {date} by the date the sample was taken from the person
             type: bar
-            colour: 4
+            colour: 9
             rollingAverage: false
 
           - label: Total cases (7-day average)
