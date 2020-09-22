@@ -659,6 +659,12 @@ cards:
   - heading: Newly reported and total daily cases by specimen date
     cardType: chart
     fullWidth: true
+    locationAware:
+      included:
+        areaType:
+          - nation
+        areaName:
+          - England
 
     download:
       - newCasesBySpecimenDate
