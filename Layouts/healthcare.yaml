@@ -563,60 +563,61 @@ cards:
 ##############################################################################################################################
 
 # Only shown for England
+# removed as exceeds 1000 row API call limit so Southest incomplete and South West missing (unless reduce time period...)
 
-  - heading: Patients in hospital, by NHS region
-    cardType: multiAreaStatic
-    locationAware:
-      included: 
-        areaName:
-          - England
+  # - heading: Patients in hospital, by NHS region
+  #   cardType: multiAreaStatic
+  #   locationAware:
+  #     included: 
+  #       areaName:
+  #         - England
 
-    fullWidth: true
-    abstract: >
-      Daily count of confirmed COVID-19 patients in hospital at midnight the preceding
-      night in each NHS region. Data are not updated every day.
+  #   fullWidth: true
+  #   abstract: >
+  #     Daily count of confirmed COVID-19 patients in hospital at midnight the preceding
+  #     night in each NHS region. Data are not updated every day.
 
-    download:
-      - hospitalCases
+  #   download:
+  #     - hospitalCases
     
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10, 6, 1, 4] # areaNames in alphabetical order
-        params:
-          - key: areaType
-            sign: "="
-            value: nhsRegion
+  #   tabs:
+  #     - heading: Daily
+  #       tabType: chart
+  #       barType: stack
+  #       colours: [0, 9, 3, 10, 6, 1, 4] # areaNames in alphabetical order
+  #       params:
+  #         - key: areaType
+  #           sign: "="
+  #           value: nhsRegion
 
-        fields:
-          - label: ""
-            value: hospitalCases
-            tooltip: Number of COVID-19 patients currently in hospital
-            type: bar
-            rollingAverage: false
+  #       fields:
+  #         - label: ""
+  #           value: hospitalCases
+  #           tooltip: Number of COVID-19 patients currently in hospital
+  #           type: bar
+  #           rollingAverage: false
 
-      - heading: Data
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nhsRegion
+  #     - heading: Data
+  #       tabType: table
+  #       params:
+  #         - key: areaType
+  #           sign: "="
+  #           value: nhsRegion
 
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported by healthcare providers
+  #       fields:
+  #         - label: Date reported
+  #           value: date
+  #           type: date
+  #           tooltip: Date reported by healthcare providers
 
-          - label: daily
-            value: hospitalCases
-            type: numeric
-            tooltip: Number of COVID-19 patients currently in hospital
+  #         - label: daily
+  #           value: hospitalCases
+  #           type: numeric
+  #           tooltip: Number of COVID-19 patients currently in hospital
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/healthcare/cardPatientsInHospital.md
+  #     - heading: About 
+  #       tabType: metadata
+  #       filename: cardMetadata/healthcare/cardPatientsInHospital.md
 
 ##############################################################################################################################
 
