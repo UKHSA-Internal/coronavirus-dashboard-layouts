@@ -674,18 +674,18 @@ cards:
         tabType: chart
         barType: stack
         fields:
-          - label: Newly reported cases
-            value: changeInNewCasesBySpecimenDate
-            tooltip: Newly reported number of people with a lab-confirmed positive test result on {date} by the date the sample was taken from the person
-            type: bar
-            colour: 9
-            rollingAverage: false
-
-          - label: previously reported cases
+          - label: Previously reported cases
             value: previouslyReportedNewCasesBySpecimenDate
             tooltip: Number of people with a lab-confirmed positive test result as reported on {date-1} by the date the sample was taken from the person
             type: bar
             colour: 0
+            rollingAverage: false
+
+          - label: Newly reported cases
+            value: changeInNewCasesBySpecimenDate
+            tooltip: Newly reported number of people with a lab-confirmed positive test result on {date} by the date the sample was taken from the person
+            type: bar
+            colour: 4
             rollingAverage: false
 
           - label: Total cases (7-day average)
