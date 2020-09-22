@@ -802,6 +802,103 @@ cards:
 ##############################################################################################################################
 
 # {{ StartDevOnlyBlock}}
+# not shown for UK
+
+  # - heading: Daily deaths by date of death (Dev Only)
+  #   cardType: chart
+  #   locationAware:
+  #     included:
+  #       areaType:
+  #         - nation
+  #         - region
+  #     excluded:
+  #       areaName:
+  #         - Northern Ireland
+  #         - Scotland
+  #         - Wales
+
+  #   fullWidth: true
+  #   abstract: > 
+  #     Number of deaths of people who had had a positive test result for COVID-19. The actual cause of 
+  #     death may not be COVID-19 in all cases. People who died from COVID-19 but had not tested positive 
+  #     are not included.  Options allow exploration of deaths that occurred within specified durations 
+  #     from the first positive test. 
+
+  #   download:
+  #     - newDeathsByDeathDate
+  #     - cumDeathsByDeathDate
+  #     - newDeaths28DaysByDeathDate
+  #     - cumDeaths28DaysByDeathDate
+  #     - newDeaths60DaysByDeathDate
+  #     - cumDeaths60DaysByDeathDate
+
+  #   options:
+  #     type: radio
+  #     heading: null
+  #     choices:
+  #       - All 
+  #       - Within 60 days
+  #       - Within 28 days
+    
+  #   Within 28 days:
+
+  #     tabs: 
+  #       - heading: Daily
+  #         tabType: chart
+  #         barType: normal
+  #         fields:
+  #           - label: Number of deaths
+  #             value: newDeaths28DaysByDeathDate
+  #             tooltip: Daily number of deaths within 28 days of positive test by date of death
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
+
+  #           - label: Deaths (7-day average)
+  #             value: newDeaths28DaysByDeathDate
+  #             tooltip: 7 day rolling average of the daily number of deaths within 28 days of positive test
+  #             type: line
+  #             colour: 3
+  #             fill: false
+  #             rollingAverage: true
+                  
+  #       - heading: Cumulative
+  #         tabType: chart
+  #         fields:
+  #           - label: Number of deaths
+  #             value: cumDeaths28DaysByDeathDate
+  #             tooltip: Cumulative total number of deaths within 28 days of positive test by date of death
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
+                  
+  #       - heading: Data
+  #         tabType: table
+  #         fields:
+  #           - label: Date of death
+  #             value: date
+  #             type: date
+  #             tooltip: Date on which the death occurred
+
+  #           - label: Daily deaths
+  #             value: newDeaths28DaysByDeathDate
+  #             type: numeric
+  #             tooltip: Daily number of deaths within 28 days of positive test by date of death
+
+  #           - label: Cumulative deaths
+  #             value: cumDeaths28DaysByDeathDate
+  #             type: numeric
+  #             tooltip: Cumulative total number of deaths within 28 days of positive test by date of death
+
+  #       - heading: About 
+  #         tabType: metadata
+  #         filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
+
+# {{ EndDevOnlyBlock}}
+
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock}}
 
   - heading: Weekly deaths with COVID-19 on the death certificate by date registered
     cardType: chart
@@ -1162,10 +1259,6 @@ cards:
   #       filename: cardMetadata/deaths/cardDeathsAndRatesByArea.md
 
 ##############################################################################################################################
-
-# NOTE: Nation tab uses PublishDate metric, other tabs use DeathDate metric.  Download provides DeathDate metrics. This is
-# because latest date available varies for Nations for Death Date metric and PublishDate metric not available for smaller areas. 
-# Latest cumulative time point totals should match for both metrics so no anomaly in front end presentation. 
 
   - heading: Deaths within 28 days of positive test
     cardType: simpleTableStatic
