@@ -500,7 +500,6 @@ cards:
   - heading: Daily people tested (Dev Only)
     cardType: chart
     fullWidth: true
-    # TODO: PF to check - had to create additional genPeopleTested not specific to daily/cumulative/by test data/by specimen date.
     # Why is this on the Cases page and repeated on the Tested page - just to show cases and tests side by side?  If so maybe card needs different title?
 
     abstract: >
@@ -654,64 +653,64 @@ cards:
 ##############################################################################################################################
 
 # {{ StartDevOnlyBlock }}
-# # Not using this chart which shows which specimen dates the newly added cases refer to.  It's not useful now that
-# # case numbers are so low
+# Not using this chart which shows which specimen dates the newly added cases refer to.  It's not useful now that
+# case numbers are so low
 
-#   # - heading: Newly reported and total daily cases by specimen date
-#   #   cardType: chart
-#   #   fullWidth: true
+  - heading: Newly reported and total daily cases by specimen date
+    cardType: chart
+    fullWidth: true
 
-#   # download:
-#   #   - newCasesBySpecimenDate
-#   #   - changeInNewCasesBySpecimenDate
-#   #   - previouslyReportedNewCasesBySpecimenDate
+    download:
+      - newCasesBySpecimenDate
+      - changeInNewCasesBySpecimenDate
+      - previouslyReportedNewCasesBySpecimenDate
 
-#   #   tabs: 
-#   #     - heading: Chart
-#   #       tabType: chart
-#   #       barType: overlay
-#   #       fields:
-#   #         - label: Total cases
-#   #           value: newCasesBySpecimenDate
-#   #           tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
-#   #           type: bar
-#   #           colour: 0
-#   #           rollingAverage: false
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: overlay
+        fields:
+          - label: Total cases
+            value: newCasesBySpecimenDate
+            tooltip: Daily number of new people with a lab-confirmed positive test result by date the sample was taken from the person
+            type: bar
+            colour: 0
+            rollingAverage: false
 
-#   #         - label: Change from previous day
-#   #           value: changeInNewCasesBySpecimenDate
-#   #           tooltip: Change in numbers of cases reported on {date} from previously reported
-#   #           type: bar
-#   #           colour: 9
-#   #           rollingAverage: false
+          - label: Change from previous day
+            value: changeInNewCasesBySpecimenDate
+            tooltip: Change in numbers of cases reported on {date} from previously reported
+            type: bar
+            colour: 9
+            rollingAverage: false
 
-#   #         - label: Cases (7-day average)
-#   #           value: newCasesBySpecimenDate
-#   #           tooltip: 7 day rolling average of the daily number of cases by specimen date
-#   #           type: line
-#   #           colour: 3
-#   #           fill: false
-#   #           rollingAverage:
-#   #             window: 7
-#   #             clipEnd: 3 #no of days to exclude for incomplete data
+          - label: Cases (7-day average)
+            value: newCasesBySpecimenDate
+            tooltip: 7 day rolling average of the daily number of cases by specimen date
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage:
+              window: 7
+              clipEnd: 3 #no of days to exclude for incomplete data
  
-#   #     - heading: Data
-#   #       tabType: table
-#   #       fields:
-#   #         - label: Specimen date
-#   #           value: date
-#   #           type: date
-#   #           tooltip: Date the sample was taken from the person
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Specimen date
+            value: date
+            type: date
+            tooltip: Date the sample was taken from the person
 
-#   #         - label: Daily cases
-#   #           value: previouslyReportedNewCasesBySpecimenDate
-#   #           type: numeric
-#   #           tooltip: Number of new people with a lab-confirmed positive test result as reported on {date-1}
+          - label: Daily cases
+            value: previouslyReportedNewCasesBySpecimenDate
+            type: numeric
+            tooltip: Number of new people with a lab-confirmed positive test result as reported on {date-1}
 
-#   #         - label: Cumulative cases
-#   #           value: changeInNewCasesBySpecimenDate
-#   #           type: numeric
-#   #           tooltip: Change in number of new people with a lab-confirmed positive test result reported on {date}
+          - label: Cumulative cases
+            value: changeInNewCasesBySpecimenDate
+            type: numeric
+            tooltip: Change in number of new people with a lab-confirmed positive test result reported on {date}
 
 # {{ EndDevOnlyBlock }}
 
@@ -893,7 +892,7 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 # # Not currently publishing people tested
-# # TODO: PF to check - GA 20200717 - not added abstracts as not yet publishing - shouldn't this sit on the testing page?
+# # not added abstracts as not yet publishing - shouldn't this sit on the testing page?
 
 #   - heading: People tested, by age and sex
 #     caption: Counts
