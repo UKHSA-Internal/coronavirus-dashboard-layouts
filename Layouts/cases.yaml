@@ -681,9 +681,9 @@ cards:
             colour: 0
             rollingAverage: false
 
-          - label: Newly reported cases
+          - label: Change in reported cases
             value: changeInNewCasesBySpecimenDate
-            tooltip: Newly reported number of people with a lab-confirmed positive test result on {date} by the date the sample was taken from the person
+            tooltip: Change in the number of people reported with a lab-confirmed positive test result between {date} and {date-1} by the date the sample was taken from the person
             type: bar
             colour: 9
             rollingAverage: false
@@ -711,15 +711,19 @@ cards:
             type: numeric
             tooltip: Number of people with a lab-confirmed positive test result as reported on {date-1} by the date the sample was taken from the person
 
-          - label: Newly reported cases
+          - label: Change in reported cases
             value: changeInNewCasesBySpecimenDate
             type: numeric
-            tooltip: Number of people with a lab-confirmed positive test result newly reported on {date} by the date the sample was taken from the person
+            tooltip: Change in the number of people reported with a lab-confirmed positive test result between {date} and {date-1} by the by the date the sample was taken from the person
 
           - label: Total daily cases
             value: newCasesBySpecimenDate
             type: numeric
             tooltip: Number of people with a lab-confirmed positive test result as reported on {date} by the date the sample was taken from the person
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/cases/cardCasesTimeseries.md
 
 
 # {{ EndDevOnlyBlock }}
