@@ -811,6 +811,7 @@ cards:
         areaType:
           - nation
           - region
+          - utla
       excluded:
         areaName:
           - Northern Ireland
@@ -821,8 +822,8 @@ cards:
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19. The actual cause of 
       death may not be COVID-19 in all cases. People who died from COVID-19 but had not tested positive 
-      are not included.  Options allow exploration of deaths that occurred within fixed durations from 
-      the first positive test. 
+      are not included.  The three metrics presented restrict inclusion to people who died within 28 days, 
+      60 days or at anytime after their first positive test. 
 
     download:
       - newDeathsByDeathDate
@@ -836,11 +837,11 @@ cards:
       type: radio
       heading: null
       choices:
-        - All 
+        - Anytime 
         - Within 60 days
         - Within 28 days
     
-    All:
+    Anytime:
 
       tabs: 
         - heading: Daily
@@ -894,7 +895,7 @@ cards:
 
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/deaths/cardDeathsTimeSeries.md
+          filename: cardMetadata/deaths/cardDeaths2860DaysTimeSeries.md
 
     Within 60 days:
 
@@ -950,7 +951,7 @@ cards:
 
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
+          filename: cardMetadata/deaths/cardDeaths2860DaysTimeSeries.md
 
     Within 28 days:
 
@@ -1006,7 +1007,7 @@ cards:
 
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
+          filename: cardMetadata/deaths/cardDeaths2860DaysTimeSeries.md
 
 # {{ EndDevOnlyBlock}}
 
