@@ -804,7 +804,7 @@ cards:
 # {{ StartDevOnlyBlock}}
 # not shown for UK
 
-  - heading: Daily deaths by date of death (Dev Only)
+  - heading: Daily deaths following a positive test by date of death (Dev Only)
     cardType: chart
     locationAware:
       included:
