@@ -494,6 +494,84 @@ cards:
 ##############################################################################################################################
 
 # {{ StartDevOnlyBlock }}
+
+  - heading: Daily change in reported cases by specimen date (Dev Only)
+    cardType: chart
+    fullWidth: true
+    locationAware:
+      included:
+        areaType:
+          - nation
+        areaName:
+          - England
+
+    download:
+      - newCasesBySpecimenDate
+      - changeInNewCasesBySpecimenDate
+      - previouslyReportedNewCasesBySpecimenDate
+
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: stack
+        fields:
+          - label: Previously reported cases
+            value: previouslyReportedNewCasesBySpecimenDate
+            tooltip: Number of people with a lab-confirmed positive test result as reported on {date-1} by the date the sample was taken from the person
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Change in reported cases
+            value: changeInNewCasesBySpecimenDate
+            tooltip: Change in the number of people reported with a lab-confirmed positive test result between {date} and {date-1} by the date the sample was taken from the person
+            type: bar
+            colour: 9
+            rollingAverage: false
+
+          - label: Total cases (7-day average)
+            value: newCasesBySpecimenDate
+            tooltip: 7 day rolling average of the daily number of cases by specimen date
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage:
+              window: 7
+              clipEnd: 3 #no of days to exclude for incomplete data
+ 
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Specimen date
+            value: date
+            type: date
+            tooltip: Date the sample was taken from the person
+
+          - label: Previously reported cases
+            value: previouslyReportedNewCasesBySpecimenDate
+            type: numeric
+            tooltip: Number of people with a lab-confirmed positive test result as reported on {date-1} by the date the sample was taken from the person
+
+          - label: Change in reported cases
+            value: changeInNewCasesBySpecimenDate
+            type: numeric
+            tooltip: Change in the number of people reported with a lab-confirmed positive test result between {date} and {date-1} by the by the date the sample was taken from the person
+
+          - label: Total daily cases
+            value: newCasesBySpecimenDate
+            type: numeric
+            tooltip: Number of people with a lab-confirmed positive test result as reported on {date} by the date the sample was taken from the person
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+
+# {{ EndDevOnlyBlock }}
+
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock }}
 # not live
 # People tested not currently being published
 
@@ -647,84 +725,6 @@ cards:
         - heading: About 
           tabType: metadata
           filename: cardMetadata/testing/cardPeopleTested.md
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-
-  - heading: Newly reported and total daily cases by specimen date (Dev Only)
-    cardType: chart
-    fullWidth: true
-    locationAware:
-      included:
-        areaType:
-          - nation
-        areaName:
-          - England
-
-    download:
-      - newCasesBySpecimenDate
-      - changeInNewCasesBySpecimenDate
-      - previouslyReportedNewCasesBySpecimenDate
-
-    tabs: 
-      - heading: Chart
-        tabType: chart
-        barType: stack
-        fields:
-          - label: Previously reported cases
-            value: previouslyReportedNewCasesBySpecimenDate
-            tooltip: Number of people with a lab-confirmed positive test result as reported on {date-1} by the date the sample was taken from the person
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-          - label: Change in reported cases
-            value: changeInNewCasesBySpecimenDate
-            tooltip: Change in the number of people reported with a lab-confirmed positive test result between {date} and {date-1} by the date the sample was taken from the person
-            type: bar
-            colour: 9
-            rollingAverage: false
-
-          - label: Total cases (7-day average)
-            value: newCasesBySpecimenDate
-            tooltip: 7 day rolling average of the daily number of cases by specimen date
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 3 #no of days to exclude for incomplete data
- 
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Specimen date
-            value: date
-            type: date
-            tooltip: Date the sample was taken from the person
-
-          - label: Previously reported cases
-            value: previouslyReportedNewCasesBySpecimenDate
-            type: numeric
-            tooltip: Number of people with a lab-confirmed positive test result as reported on {date-1} by the date the sample was taken from the person
-
-          - label: Change in reported cases
-            value: changeInNewCasesBySpecimenDate
-            type: numeric
-            tooltip: Change in the number of people reported with a lab-confirmed positive test result between {date} and {date-1} by the by the date the sample was taken from the person
-
-          - label: Total daily cases
-            value: newCasesBySpecimenDate
-            type: numeric
-            tooltip: Number of people with a lab-confirmed positive test result as reported on {date} by the date the sample was taken from the person
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesTimeseries.md
-
 
 # {{ EndDevOnlyBlock }}
 
