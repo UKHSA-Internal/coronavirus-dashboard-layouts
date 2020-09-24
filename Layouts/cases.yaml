@@ -493,8 +493,6 @@ cards:
 
 ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
-
   - heading: Daily change in reported cases by specimen date
     cardType: chart
     fullWidth: true
@@ -565,9 +563,6 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/cases/cardChangeInCasesTimeSeries.md
-
-
-# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
