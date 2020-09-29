@@ -433,7 +433,7 @@ cards:
 
 ##############################################################################################################################
 
-  - heading: Testing by Pillar
+  - heading: Tests processed by Pillar
     cardType: chart
     fullWidth: true
     abstract: >
@@ -466,9 +466,9 @@ cards:
             colour: 0
             rollingAverage: false
 
-          - label: Pillar 2 (Commercial partners)
+          - label: Pillar 2 (UK Government testing programme)
             value: newPillarTwoTestsByPublishDate
-            tooltip: Daily number of COVID-19 tests processed by commercial partners by date reported
+            tooltip: Daily number of COVID-19 tests processed by UK Government testing programme by date reported
             type: bar
             colour: 3
             rollingAverage: false
@@ -509,9 +509,9 @@ cards:
             colour: 0
             rollingAverage: false
 
-          - label: Pillar 2 (Commercial partners)
+          - label: Pillar 2 (UK Government testing programme)
             value: cumPillarTwoTestsByPublishDate
-            tooltip: Cumulative total number of COVID-19 tests processed by commercial partners by date reported
+            tooltip: Cumulative total number of COVID-19 tests processed by UK Government testing programme by date reported
             type: bar
             colour: 3
             rollingAverage: false
@@ -546,7 +546,7 @@ cards:
           - label: Pillar 2
             value: newPillarTwoTestsByPublishDate
             type: numeric
-            tooltip: Daily number of COVID-19 tests processed by commercial partners by date reported
+            tooltip: Daily number of COVID-19 tests processed by UK Government testing programme by date reported
 
           - label: Pillar 3
             value: newPillarThreeTestsByPublishDate
@@ -579,7 +579,7 @@ cards:
           - label: Pillar 2
             value: cumPillarTwoTestsByPublishDate
             type: numeric
-            tooltip: Cumulative total number of COVID-19 tests processed by commercial partners by date reported
+            tooltip: Cumulative total number of COVID-19 tests processed by UK Government testing programme by date reported
 
           - label: Pillar 3
             value: cumPillarThreeTestsByPublishDate
@@ -599,175 +599,3 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/testing/cardTestingByPillar.md
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock}}
-
-# Only shown for UK
-
-  - heading: Pillar 1 tests by nation
-    cardType: multiAreaStatic
-    locationAware:
-      included: 
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      Number of lab-confirmed positive or negative COVID-19 pillar 1 test results by date reported.
-      Pillar 1 testing includes swab testing for COVID-19 processed by NHS and (in England) PHE
-      labs. This is a count of test results and may include multiple tests for an individual
-      person.
-
-
-    download:
-      - newPillarOneTestsByPublishDate
-      - cumPillarOneTestsByPublishDate
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10] # areaNames in alphabetical order
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-
-        fields:
-          - label: ""
-            value: newPillarOneTestsByPublishDate
-            tooltip: Daily number of COVID-19 tests on the residents of each nation, processed by NHS (and, in England, PHE) labs, by date reported
-            type: bar
-            rollingAverage: false
-
-      - heading: Cumulative
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10] # areaNames in alphabetical order
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-
-        fields:
-          - label: ""
-            value: cumPillarOneTestsByPublishDate
-            tooltip: Cumulative number of COVID-19 tests on the residents of each nation, processed by NHS (and, in England, PHE) labs, by date reported
-            type: bar
-            rollingAverage: false
-
-      - heading: Data
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported on coronavirus.data.gov.uk
-
-          - label: daily
-            value: newPillarOneTestsByPublishDate
-            type: numeric
-            tooltip: Daily number of COVID-19 tests on the residents of each nation, processed by NHS (and, in England, PHE) labs, by date reported
-
-          - label: total
-            value: cumPillarOneTestsByPublishDate
-            type: numeric
-            tooltip: Cumulative number of COVID-19 tests on the residents of each nation, processed by NHS (and, in England, PHE) labs, by date reported
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/testing/cardPillar1TestsByNation.md
-
-# {{ EndDevOnlyBlock}}
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock}}
-
-# Only shown for UK
-
-  - heading: Pillar 2 tests by nation
-    cardType: multiAreaStatic
-    locationAware:
-      included: 
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      Number of lab-confirmed positive or negative COVID-19 pillar 2 test results, by date reported.
-      Pillar 2 testing includes swab testing for COVID-19 processed by commercial partners.
-      Commercial partner testing was introduced in all parts of the UK in April but data are not
-      available for all nations on a consistent basis. Step changes in the series occur when new
-      data sources became available.
-
-    download:
-      - newPillarTwoTestsByPublishDate
-      - cumPillarTwoTestsByPublishDate
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10] # areaNames in alphabetical order
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-
-        fields:
-          - label: ""
-            value: newPillarTwoTestsByPublishDate
-            tooltip: Daily number of COVID-19 tests on the residents of each nation, processed by commercial partners, by date reported
-            type: bar
-            rollingAverage: false
-
-      - heading: Cumulative
-        tabType: chart
-        barType: stack
-        colours: [0, 9, 3, 10] # areaNames in alphabetical order
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-
-        fields:
-          - label: ""
-            value: cumPillarTwoTestsByPublishDate
-            tooltip: Cumulative number of COVID-19 tests on the residents of each nation, processed by commercial partners, by date reported
-            type: bar
-            rollingAverage: false
-
-      - heading: Data
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported on coronavirus.data.gov.uk
-
-          - label: daily
-            value: newPillarTwoTestsByPublishDate
-            type: numeric
-            tooltip: Daily number of COVID-19 tests on the residents of each nation, processed by commercial partners, by date reported
-
-          - label: total
-            value: cumPillarTwoTestsByPublishDate
-            type: numeric
-            tooltip: Cumulative number of COVID-19 tests on the residents of each nation, processed by commercial partners, by date reported
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/testing/cardPillar1TestsByNation.md
-
-# {{ EndDevOnlyBlock}}
