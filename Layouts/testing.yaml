@@ -19,7 +19,7 @@ headlineNumbers:
 
 # {{ StartDevOnlyBlock }}
 
-  - caption: PCR Tests processed (Dev Only)
+  - caption: PCR tests processed (Dev Only)
     valueItems:
       - label: Daily
         value: newPCRTestsByPublishDate
@@ -28,7 +28,7 @@ headlineNumbers:
         value: cumPCRTestsByPublishDate
         tooltip: Cumulative total number of PCR tests processed, reported up to {date}
 
-  - caption: PCR Testing capacity (Dev Only)
+  - caption: PCR testing capacity (Dev Only)
     valueItems:
         value: plannedPCRCapacityByPublishDate
         tooltip: Estimated PCR testing capacity reported by laboratories on {date}
@@ -258,176 +258,176 @@ cards:
 # {{ StartDevOnlyBlock }}
 # Only shown for UK
 
-  - heading: Testing and capacity, by test type
-    cardType: chart
-    locationAware:
-      included: 
-        areaType:
-          - overview
+  # - heading: Testing and capacity, by test type (Dev Only)
+  #   cardType: chart
+  #   locationAware:
+  #     included: 
+  #       areaType:
+  #         - overview
 
-    fullWidth: true
-    abstract: >
-      Number of lab-confirmed positive or negative COVID-19 test results, by test type, by date reported.  This is a 
-      count of test results and may include multiple tests for an individual person.  PCR swab tests test for the 
-      presence of COVID-19 and include all pillar 1 and 2 tests and, for England, any PCR swab tests undertaken in 
-      pillar 4.  Antibody serology tests test for COVID-19 antibodies and include pillar 3 tests and, in England, 
-      any antibody serology tests undertaken in pillar 4.  Testing capacity is a projection based on reports from 
-      labs on how many tests they have capacity to carry out each day based on availability of staff and resources.
+  #   fullWidth: true
+  #   abstract: >
+  #     Number of lab-confirmed positive or negative COVID-19 test results, by test type, by date reported.  This is a 
+  #     count of test results and may include multiple tests for an individual person.  PCR swab tests test for the 
+  #     presence of COVID-19 and include all pillar 1 and 2 tests and, for England, any PCR swab tests undertaken in 
+  #     pillar 4.  Antibody serology tests test for COVID-19 antibodies and include pillar 3 tests and, in England, 
+  #     any antibody serology tests undertaken in pillar 4.  Testing capacity is a projection based on reports from 
+  #     labs on how many tests they have capacity to carry out each day based on availability of staff and resources.
 
-    download:
-      - plannedPCRCapacityByPublishDate
-      - plannedAntibodyCapacityByPublishDate
-      - newPCRTestsByPublishDate
-      - cumPCRTestsByPublishDate
-      - newAntibodyTestsByPublishDate
-      - cumAntibodyTestsByPublishDate
+  #   download:
+  #     - plannedPCRCapacityByPublishDate
+  #     - plannedAntibodyCapacityByPublishDate
+  #     - newPCRTestsByPublishDate
+  #     - cumPCRTestsByPublishDate
+  #     - newAntibodyTestsByPublishDate
+  #     - cumAntibodyTestsByPublishDate
 
-    options:
-      type: radio
-      heading: null
-      choices:
-        - PCR swab
-        - Antibody serology
+  #   options:
+  #     type: radio
+  #     heading: null
+  #     choices:
+  #       - PCR swab
+  #       - Antibody serology
 
-    PCR swab:
+  #   PCR swab:
       
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          fields:
-            - label: PCR tests processed
-              value: newPCRTestsByPublishDate
-              tooltip: Daily number of PCR swab tests processed by date reported
-              type: bar
-              colour: 0
-              rollingAverage: false
+  #     tabs:
+  #       - heading: Daily
+  #         tabType: chart
+  #         barType: normal
+  #         fields:
+  #           - label: PCR tests processed
+  #             value: newPCRTestsByPublishDate
+  #             tooltip: Daily number of PCR swab tests processed by date reported
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
 
-            - label: PCR tests processed (7-day average)
-              value: newPCRTestsByPublishDate
-              tooltip: 7 day rolling average of the daily number of PCR swab tests processed
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 3
+  #           - label: PCR tests processed (7-day average)
+  #             value: newPCRTestsByPublishDate
+  #             tooltip: 7 day rolling average of the daily number of PCR swab tests processed
+  #             type: line
+  #             colour: 3
+  #             fill: false
+  #             rollingAverage:
+  #               window: 7
+  #               clipEnd: 3
 
-            - label: PCR testing capacity
-              value: plannedPCRCapacityByPublishDate
-              tooltip: Estimated daily capacity for PCR swab testing reported by laboratories
-              type: line
-              colour: 6
-              fill: true
-              rollingAverage: false
+  #           - label: PCR testing capacity
+  #             value: plannedPCRCapacityByPublishDate
+  #             tooltip: Estimated daily capacity for PCR swab testing reported by laboratories
+  #             type: line
+  #             colour: 6
+  #             fill: true
+  #             rollingAverage: false
 
-        - heading: Cumulative
-          tabType: chart
-          barType: normal
-          fields:
-            - label: PCR tests processed
-              value: cumPCRTestsByPublishDate
-              tooltip: Cumulative number of PCR swab tests processed by date reported
-              type: bar
-              colour: 0
-              rollingAverage: false
+  #       - heading: Cumulative
+  #         tabType: chart
+  #         barType: normal
+  #         fields:
+  #           - label: PCR tests processed
+  #             value: cumPCRTestsByPublishDate
+  #             tooltip: Cumulative number of PCR swab tests processed by date reported
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
 
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
+  #       - heading: Data
+  #         tabType: table
+  #         fields:
+  #           - label: Date reported
+  #             value: date
+  #             type: date
+  #             tooltip: Date reported on coronavirus.data.gov.uk
 
-            - label: Daily PCR tests processed
-              value: newPCRTestsByPublishDate
-              type: numeric
-              tooltip: Daily number of PCR swab tests processed by date reported
+  #           - label: Daily PCR tests processed
+  #             value: newPCRTestsByPublishDate
+  #             type: numeric
+  #             tooltip: Daily number of PCR swab tests processed by date reported
 
-            - label: Cumulative PCR tests processed
-              value: cumPCRTestsByPublishDate
-              type: numeric
-              tooltip: Cumulative number of PCR swab tests processed by date reported
+  #           - label: Cumulative PCR tests processed
+  #             value: cumPCRTestsByPublishDate
+  #             type: numeric
+  #             tooltip: Cumulative number of PCR swab tests processed by date reported
 
-            - label: Lab capacity for PCR tests
-              value: plannedPCRCapacityByPublishDate
-              type: numeric
-              tooltip: Estimated daily capacity for PCR swab testing reported by laboratories
+  #           - label: PCR testing capacity
+  #             value: plannedPCRCapacityByPublishDate
+  #             type: numeric
+  #             tooltip: Estimated daily capacity for PCR swab testing reported by laboratories
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/testing/cardTestingAndCapacity.md
+  #       - heading: About 
+  #         tabType: metadata
+  #         filename: cardMetadata/testing/cardTestingAndCapacity.md
 
-    Antibody serology:
+  #   Antibody serology:
       
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          fields:
-            - label: Antibody serology tests processed
-              value: newAntibodyTestsByPublishDate
-              tooltip: Daily number of Antibody serology tests processed by date reported
-              type: bar
-              colour: 0
-              rollingAverage: false
+  #     tabs:
+  #       - heading: Daily
+  #         tabType: chart
+  #         barType: normal
+  #         fields:
+  #           - label: Antibody serology tests processed
+  #             value: newAntibodyTestsByPublishDate
+  #             tooltip: Daily number of antibody serology tests processed by date reported
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
 
-            - label: Antibody tests processed (7-day average)
-              value: newAntibodyTestsByPublishDate
-              tooltip: 7 day rolling average of the daily number of Antibody serology tests processed
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 3
+  #           - label: Antibody tests processed (7-day average)
+  #             value: newAntibodyTestsByPublishDate
+  #             tooltip: 7 day rolling average of the daily number of antibody serology tests processed
+  #             type: line
+  #             colour: 3
+  #             fill: false
+  #             rollingAverage:
+  #               window: 7
+  #               clipEnd: 3
 
-            - label: Antibody testing capacity
-              value: plannedAntibodyCapacityByPublishDate
-              tooltip: Estimated daily capacity for Antibody serology testing reported by laboratories
-              type: line
-              colour: 6
-              fill: true
-              rollingAverage: false
+  #           - label: Antibody testing capacity
+  #             value: plannedAntibodyCapacityByPublishDate
+  #             tooltip: Estimated daily capacity for antibody serology testing reported by laboratories
+  #             type: line
+  #             colour: 6
+  #             fill: true
+  #             rollingAverage: false
 
-        - heading: Cumulative
-          tabType: chart
-          barType: normal
-          fields:
-            - label: Antibody tests processed
-              value: cumAntibodyTestsByPublishDate
-              tooltip: Cumulative number of Antibody serology tests processed by date reported
-              type: bar
-              colour: 0
-              rollingAverage: false
+  #       - heading: Cumulative
+  #         tabType: chart
+  #         barType: normal
+  #         fields:
+  #           - label: Antibody tests processed
+  #             value: cumAntibodyTestsByPublishDate
+  #             tooltip: Cumulative number of antibody serology tests processed by date reported
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
 
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
+  #       - heading: Data
+  #         tabType: table
+  #         fields:
+  #           - label: Date reported
+  #             value: date
+  #             type: date
+  #             tooltip: Date reported on coronavirus.data.gov.uk
 
-            - label: Daily Antibody tests processed
-              value: newAntibodyTestsByPublishDate
-              type: numeric
-              tooltip: Daily number of Antibody serology tests processed by date reported
+  #           - label: Daily antibody tests processed
+  #             value: newAntibodyTestsByPublishDate
+  #             type: numeric
+  #             tooltip: Daily number of antibody serology tests processed by date reported
 
-            - label: Cumulative Antibody tests processed
-              value: cumAntibodyTestsByPublishDate
-              type: numeric
-              tooltip: Cumulative number of Antibody serology tests processed by date reported
+  #           - label: Cumulative antibody tests processed
+  #             value: cumAntibodyTestsByPublishDate
+  #             type: numeric
+  #             tooltip: Cumulative number of antibody serology tests processed by date reported
 
-            - label: Lab capacity for Antibody tests
-              value: plannedAntibodyCapacityByPublishDate
-              type: numeric
-              tooltip: Estimated daily capacity for Antibody testing reported by laboratories
+  #           - label: Antibody testing capacity
+  #             value: plannedAntibodyCapacityByPublishDate
+  #             type: numeric
+  #             tooltip: Estimated daily capacity for antibody testing reported by laboratories
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/testing/cardTestingAndCapacity.md
+  #       - heading: About 
+  #         tabType: metadata
+  #         filename: cardMetadata/testing/cardTestingAndCapacity.md
 
 # {{ EndDevOnlyBlock }}
 
