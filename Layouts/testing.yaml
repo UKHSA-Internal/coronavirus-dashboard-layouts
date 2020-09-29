@@ -19,19 +19,19 @@ headlineNumbers:
 
 # {{ StartDevOnlyBlock }}
 
-  - caption: PCR tests processed (Dev Only)
-    valueItems:
-      - label: Daily
-        value: newPCRTestsByPublishDate
-        tooltip: Daily number of new PCR tests processed, reported on {date}
-      - label: Total
-        value: cumPCRTestsByPublishDate
-        tooltip: Cumulative total number of PCR tests processed, reported up to {date}
+  # - caption: PCR tests processed (Dev Only)
+  #   valueItems:
+  #     - label: Daily
+  #       value: newPCRTestsByPublishDate
+  #       tooltip: Daily number of new PCR tests processed, reported on {date}
+  #     - label: Total
+  #       value: cumPCRTestsByPublishDate
+  #       tooltip: Cumulative total number of PCR tests processed, reported up to {date}
 
-  - caption: PCR testing capacity (Dev Only)
-    valueItems:
-        value: plannedPCRCapacityByPublishDate
-        tooltip: Estimated PCR testing capacity reported by laboratories on {date}
+  # - caption: PCR testing capacity (Dev Only)
+  #   valueItems:
+  #       value: plannedPCRCapacityByPublishDate
+  #       tooltip: Estimated PCR testing capacity reported by laboratories on {date}
 
 # {{ EndDevOnlyBlock }}
 ##############################################################################################################################
