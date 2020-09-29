@@ -1,9 +1,6 @@
 headlineNumbers:
   - caption: Tests processed
     valueItems:
-#      - label: Daily (all pillars)
-#        value: newTestsByPublishDate
-#        tooltip: Daily number of tests processed (all pillars), reported on {date}
 
       - label: Daily (pillars 1 & 2)
         value: newPillarOneTwoTestsByPublishDate
@@ -15,14 +12,29 @@ headlineNumbers:
 
   - caption: Testing capacity
     valueItems:
-#      - label: All pillars
-#        value: plannedCapacityByPublishDate
-#        tooltip: Estimated total capacity reported by laboratories on {date}
 
       - label: Pillars 1 & 2
         value: capacityPillarOneTwo
         tooltip: Estimated pillar 1 & 2 capacity reported by laboratories on {date}
 
+# {{ StartDevOnlyBlock }}
+
+  - caption: Tests processed (Dev Only)
+    valueItems:
+      - label: Daily (PCR)
+        value: newPCRTestsByPublishDate
+        tooltip: Daily number of new PCR tests processed, reported on {date}
+      - label: Total
+        value: cumPCRTestsByPublishDate
+        tooltip: Cumulative total number of PCR tests processed, reported up to {date}
+
+  - caption: Testing capacity (Dev Only)
+    valueItems:
+      - label: PCR tests
+        value: plannedPCRCapacityByPublishDate
+        tooltip: Estimated PCR testing capacity reported by laboratories on {date}
+
+# {{ EndDevOnlyBlock }}
 ##############################################################################################################################
 
 cards:
