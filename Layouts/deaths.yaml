@@ -804,7 +804,7 @@ cards:
 # {{ StartDevOnlyBlock}}
 # not shown for UK
 
-  - heading: Deaths following a positive test by date of death (Dev Only)
+  - heading: Deaths within 60 days of positive test (Dev Only)
     cardType: chart
     locationAware:
       included:
@@ -820,84 +820,25 @@ cards:
 
     fullWidth: true
     abstract: > 
-      Number of deaths of people who had had a positive test result for COVID-19. The actual cause of 
-      death may not be COVID-19 in all cases. People who died from COVID-19 but had not tested positive 
-      are not included.  The three metrics presented restrict inclusion to people who died within 28 days, 
-      60 days or at anytime after their first positive test. 
+      Number of deaths of people who had had a positive test result for COVID-19 and either died within 
+      60 days of the first positive test or had COVID-19 on their death certificate. The actual cause 
+      of death may not be COVID-19 in all cases. People who died from COVID-19 but had not tested positive 
+      are not included. 
 
     download:
-      - newDeaths28DaysByDeathDate
-      - cumDeaths28DaysByDeathDate
       - newDeaths60DaysByDeathDate
       - cumDeaths60DaysByDeathDate
-      - newDeathsByDeathDate
-      - cumDeathsByDeathDate
+      - newDeaths60DaysByPublishDate
+      - cumDeaths60DaysByPublishDate
 
     options:
       type: radio
       heading: null
       choices:
-        - Within 28 days
-        - Within 60 days
-        - Anytime 
+        - By date of death
+        - By date reported 
     
-    Within 28 days:
-
-      tabs: 
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          fields:
-            - label: Number of deaths
-              value: newDeaths28DaysByDeathDate
-              tooltip: Daily number of deaths within 28 days of positive test by date of death
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: Deaths (7-day average)
-              value: newDeaths28DaysByDeathDate
-              tooltip: 7 day rolling average of the daily number of deaths within 28 days of positive test
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 3
-                  
-        - heading: Cumulative
-          tabType: chart
-          fields:
-            - label: Number of deaths
-              value: cumDeaths28DaysByDeathDate
-              tooltip: Cumulative total number of deaths within 28 days of positive test by date of death
-              type: bar
-              colour: 0
-              rollingAverage: false
-                  
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Date of death
-              value: date
-              type: date
-              tooltip: Date on which the death occurred
-
-            - label: Daily deaths
-              value: newDeaths28DaysByDeathDate
-              type: numeric
-              tooltip: Daily number of deaths within 28 days of positive test by date of death
-
-            - label: Cumulative deaths
-              value: cumDeaths28DaysByDeathDate
-              type: numeric
-              tooltip: Cumulative total number of deaths within 28 days of positive test by date of death
-
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/deaths/cardDeaths2860DaysTimeSeries.md
-
-    Within 60 days:
+    By date of death:
 
       tabs: 
         - heading: Daily
@@ -951,9 +892,9 @@ cards:
 
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/deaths/cardDeaths2860DaysTimeSeries.md
+          filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
 
-    Anytime:
+    By date reported:
 
       tabs: 
         - heading: Daily
@@ -961,15 +902,15 @@ cards:
           barType: normal
           fields:
             - label: Number of deaths
-              value: newDeathsByDeathDate
-              tooltip: Daily number of deaths following a positive test by date of death
+              value: newDeaths60DaysByPublishDate
+              tooltip: Daily number of deaths within 60 days of positive test by date reported
               type: bar
               colour: 0
               rollingAverage: false
 
             - label: Deaths (7-day average)
-              value: newDeathsByDeathDate
-              tooltip: 7 day rolling average of the daily number of deaths following a positive test
+              value: newDeaths60DaysByPublishDate
+              tooltip: 7 day rolling average of the daily number of deaths within 60 days of positive test
               type: line
               colour: 3
               fill: false
@@ -981,8 +922,8 @@ cards:
           tabType: chart
           fields:
             - label: Number of deaths
-              value: cumDeathsByDeathDate
-              tooltip: Cumulative total number of deaths following a positive test by date of death
+              value: cumDeaths60DaysByPublishDate
+              tooltip: Cumulative total number of deaths within 60 days of positive test by date reported
               type: bar
               colour: 0
               rollingAverage: false
@@ -996,18 +937,19 @@ cards:
               tooltip: Date on which the death occurred
 
             - label: Daily deaths
-              value: newDeathsByDeathDate
+              value: newDeaths60DaysByPublishDate
               type: numeric
-              tooltip: Daily number of deaths following a positive test by date of death
+              tooltip: Daily number of deaths within 60 days of positive test by date reported
 
             - label: Cumulative deaths
-              value: cumDeathsByDeathDate
+              value: cumDeaths60DaysByPublishDate
               type: numeric
-              tooltip: Cumulative total number of deaths following a positive test by date of death
+              tooltip: Cumulative total number of deaths within 60 days of positive test by date reported
 
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/deaths/cardDeaths2860DaysTimeSeries.md
+          filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
+
 
 # {{ EndDevOnlyBlock}}
 
