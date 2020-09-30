@@ -821,7 +821,7 @@ cards:
     fullWidth: true
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19 and either died within 
-      60 days of the first positive test or had COVID-19 on their death certificate. The actual cause 
+      60 days of the first positive test or have COVID-19 mentioned on their death certificate. The actual cause 
       of death may not be COVID-19 in all cases. People who died from COVID-19 but had not tested positive 
       are not included. 
 
