@@ -1025,173 +1025,345 @@ cards:
 
 # Only available for England and regions
 
-  # - heading: Deaths within 28 days of positive test by age and sex
-  #   caption: Counts
-  #   cardType: ageSexBreakdown
-  #   locationAware:
-  #     included:
-  #       areaType:
-  #         - region
-  #       areaName:
-  #         - England
+  - heading: Deaths within 28 days of positive test by age and sex
+    caption: Counts
+    cardType: ageSexBreakdown
+    locationAware:
+      included:
+        areaType:
+          - region
+        areaName:
+          - England
   
-  #   fullWidth: false
-  #   abstract: >
-  #     Total number of deaths within 28 days of positive test since the start of the pandemic, by age and sex.
+    fullWidth: false
+    abstract: >
+      Total number of deaths within 28 days of positive test since the start of the pandemic, by age and sex.
 
-  #   download:
-  #     - femaleDeaths28Days
-  #     - maleDeaths28Days
+    download:
+      - femaleDeaths28Days
+      - maleDeaths28Days
 
-  #   tabs: 
-  #     - heading: Chart
-  #       tabType: chart
-  #       barType: group
-  #       groupKey: age
-  #       groupValues: 
-  #         - value 
-  #         - rate
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value 
+          - rate
 
-  #       requiredMetrics:
-  #         - femaleDeaths28Days
-  #         - maleDeaths28Days
+        requiredMetrics:
+          - femaleDeaths28Days
+          - maleDeaths28Days
 
-  #       fields:
-  #         - label: Females
-  #           value: femaleDeaths28DaysValue
-  #           tooltip: Total number of female deaths within 28 days of positive test
-  #           type: bar
-  #           colour: 3
+        fields:
+          - label: Females
+            value: femaleDeaths28DaysValue
+            tooltip: Total number of female deaths within 28 days of positive test
+            type: bar
+            colour: 3
             
-  #         - label: Males
-  #           value: maleDeaths28DaysValue
-  #           tooltip: Total number of male deaths within 28 days of positive test
-  #           type: bar
-  #           colour: 0
+          - label: Males
+            value: maleDeaths28DaysValue
+            tooltip: Total number of male deaths within 28 days of positive test
+            type: bar
+            colour: 0
       
-  #     - heading: Data
-  #       tabType: table
-  #       groupKey: age
-  #       groupValues: 
-  #         - value
-  #         - rate
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
 
-  #       requiredMetrics:
-  #         - femaleDeaths28Days
-  #         - maleDeaths28Days
+        requiredMetrics:
+          - femaleDeaths28Days
+          - maleDeaths28Days
 
-  #       fields:
-  #         - label: Age
-  #           value: age
-  #           type: string
-  #           tooltip: Age group
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
 
-  #         - label: Females
-  #           value: femaleDeaths28DaysValue
-  #           type: numeric
-  #           tooltip: Total number of female deaths within 28 days of positive test
+          - label: Females
+            value: femaleDeaths28DaysValue
+            type: numeric
+            tooltip: Total number of female deaths within 28 days of positive test
 
-  #         - label: Female rate
-  #           value: femaleDeaths28DaysRate
-  #           type: numeric
-  #           tooltip: Total number of female deaths within 28 days of positive test per 100,000 resident population
+          - label: Female rate
+            value: femaleDeaths28DaysRate
+            type: numeric
+            tooltip: Total number of female deaths within 28 days of positive test per 100,000 resident population
 
-  #         - label: Males
-  #           value: maleDeaths28DaysValue
-  #           type: numeric
-  #           tooltip: Total number of male deaths within 28 days of positive test
+          - label: Males
+            value: maleDeaths28DaysValue
+            type: numeric
+            tooltip: Total number of male deaths within 28 days of positive test
          
-  #         - label: Male rate
-  #           value: maleDeaths28DaysRate
-  #           type: numeric
-  #           tooltip: Total number of male deaths within 28 days of positive test per 100,000 resident population
+          - label: Male rate
+            value: maleDeaths28DaysRate
+            type: numeric
+            tooltip: Total number of male deaths within 28 days of positive test per 100,000 resident population
 
-  #     - heading: About 
-  #       tabType: metadata
-  #       filename: cardMetadata/deaths/cardDeathsAndRatesByAgeAndSex.md
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeaths28DaysAndRatesByAgeAndSex.md
 
 ##############################################################################################################################
 
 # Only available for England and regions
 
-  # - heading: Deaths within 28 days of positive test rates by age and sex
-  #   caption: Rates per 100,000 resident population
-  #   cardType: ageSexBreakdown
-  #   fullWidth: false
-  #   abstract: >
-  #     Total death within 28 days of positive test rates by age and sex. There are fewer people in the oldest age groups so the
-  #     rates show the relative impact on different age groups.
+  - heading: Deaths within 28 days of positive test rates by age and sex
+    caption: Rates per 100,000 resident population
+    cardType: ageSexBreakdown
+    fullWidth: false
+    abstract: >
+      Total death within 28 days of positive test rates by age and sex. There are fewer people in the oldest age groups so the
+      rates show the relative impact on different age groups.
 
-  #   download:
-  #     - femaleDeaths28Days
-  #     - maleDeaths28Days
+    download:
+      - femaleDeaths28Days
+      - maleDeaths28Days
 
-  #   tabs: 
-  #     - heading: Chart
-  #       tabType: chart
-  #       barType: group
-  #       groupKey: age
-  #       groupValues: 
-  #         - value
-  #         - rate
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
 
-  #       requiredMetrics:
-  #         - femaleDeaths28Days
-  #         - maleDeaths28Days
+        requiredMetrics:
+          - femaleDeaths28Days
+          - maleDeaths28Days
 
-  #       fields:
-  #         - label: Females
-  #           value: femaleDeaths28DaysRate
-  #           tooltip: Total number of female deaths within 28 days of positive test per 100,000 resident population
-  #           type: bar
-  #           colour: 3
+        fields:
+          - label: Females
+            value: femaleDeaths28DaysRate
+            tooltip: Total number of female deaths within 28 days of positive test per 100,000 resident population
+            type: bar
+            colour: 3
             
-  #         - label: Males
-  #           value: maleDeaths28DaysRate
-  #           tooltip: Total number of male deaths within 28 days of positive test per 100,000 resident population
-  #           type: bar
-  #           colour: 0
+          - label: Males
+            value: maleDeaths28DaysRate
+            tooltip: Total number of male deaths within 28 days of positive test per 100,000 resident population
+            type: bar
+            colour: 0
       
-  #     - heading: Data
-  #       tabType: table
-  #       groupKey: age
-  #       groupValues: 
-  #         - value
-  #         - rate
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
 
-  #       requiredMetrics:
-  #         - femaleDeaths28Days
-  #         - maleDeaths28Days
+        requiredMetrics:
+          - femaleDeaths28Days
+          - maleDeaths28Days
 
-  #       fields:
-  #         - label: Age
-  #           value: age
-  #           type: string
-  #           tooltip: Age group
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
 
-  #         - label: Female Deaths
-  #           value: femaleDeaths28DaysValue
-  #           type: numeric
-  #           tooltip: Total number of female deaths within 28 days of positive test
+          - label: Female Deaths
+            value: femaleDeaths28DaysValue
+            type: numeric
+            tooltip: Total number of female deaths within 28 days of positive test
 
-  #         - label: Female rate
-  #           value: femaleDeaths28DaysRate
-  #           type: numeric
-  #           tooltip: Total number of female deaths within 28 days of positive test per 100,000 resident population
+          - label: Female rate
+            value: femaleDeaths28DaysRate
+            type: numeric
+            tooltip: Total number of female deaths within 28 days of positive test per 100,000 resident population
 
-  #         - label: Male Deaths
-  #           value: maleDeaths28DaysValue
-  #           type: numeric
-  #           tooltip: Total number of male deaths within 28 days of positive test
+          - label: Male Deaths
+            value: maleDeaths28DaysValue
+            type: numeric
+            tooltip: Total number of male deaths within 28 days of positive test
           
-  #         - label: Male rate
-  #           value: maleDeaths28DaysRate
-  #           type: numeric
-  #           tooltip: Total number of male deaths within 28 days of positive test per 100,000 resident population
+          - label: Male rate
+            value: maleDeaths28DaysRate
+            type: numeric
+            tooltip: Total number of male deaths within 28 days of positive test per 100,000 resident population
 
-  #     - heading: About 
-  #       tabType: metadata
-  #       filename: cardMetadata/deaths/cardDeathsAndRatesByAgeAndSex.md
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeaths28DaysAndRatesByAgeAndSex.md
+
+##############################################################################################################################
+
+# Only available for England and regions
+
+  - heading: Deaths within 60 days of positive test by age and sex
+    caption: Counts
+    cardType: ageSexBreakdown
+    locationAware:
+      included:
+        areaType:
+          - region
+        areaName:
+          - England
+  
+    fullWidth: false
+    abstract: >
+      Total number of deaths within 60 days of positive test since the start of the pandemic, by age and sex.
+
+    download:
+      - femaleDeaths60Days
+      - maleDeaths60Days
+
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value 
+          - rate
+
+        requiredMetrics:
+          - femaleDeaths60Days
+          - maleDeaths60Days
+
+        fields:
+          - label: Females
+            value: femaleDeaths60DaysValue
+            tooltip: Total number of female deaths within 60 days of positive test
+            type: bar
+            colour: 3
+            
+          - label: Males
+            value: maleDeaths60DaysValue
+            tooltip: Total number of male deaths within 60 days of positive test
+            type: bar
+            colour: 0
+      
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+
+        requiredMetrics:
+          - femaleDeaths60Days
+          - maleDeaths60Days
+
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
+
+          - label: Females
+            value: femaleDeaths60DaysValue
+            type: numeric
+            tooltip: Total number of female deaths within 60 days of positive test
+
+          - label: Female rate
+            value: femaleDeaths60DaysRate
+            type: numeric
+            tooltip: Total number of female deaths within 60 days of positive test per 100,000 resident population
+
+          - label: Males
+            value: maleDeaths60DaysValue
+            type: numeric
+            tooltip: Total number of male deaths within 60 days of positive test
+         
+          - label: Male rate
+            value: maleDeaths60DaysRate
+            type: numeric
+            tooltip: Total number of male deaths within 60 days of positive test per 100,000 resident population
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeaths60DaysAndRatesByAgeAndSex.md
+
+##############################################################################################################################
+
+# Only available for England and regions
+
+  - heading: Deaths within 60 days of positive test rates by age and sex
+    caption: Rates per 100,000 resident population
+    cardType: ageSexBreakdown
+    fullWidth: false
+    abstract: >
+      Total death within 60 days of positive test rates by age and sex. There are fewer people in the oldest age groups so the
+      rates show the relative impact on different age groups.
+
+    download:
+      - femaleDeaths60Days
+      - maleDeaths60Days
+
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: group
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+
+        requiredMetrics:
+          - femaleDeaths60Days
+          - maleDeaths60Days
+
+        fields:
+          - label: Females
+            value: femaleDeaths60DaysRate
+            tooltip: Total number of female deaths within 60 days of positive test per 100,000 resident population
+            type: bar
+            colour: 3
+            
+          - label: Males
+            value: maleDeaths60DaysRate
+            tooltip: Total number of male deaths within 60 days of positive test per 100,000 resident population
+            type: bar
+            colour: 0
+      
+      - heading: Data
+        tabType: table
+        groupKey: age
+        groupValues: 
+          - value
+          - rate
+
+        requiredMetrics:
+          - femaleDeaths60Days
+          - maleDeaths60Days
+
+        fields:
+          - label: Age
+            value: age
+            type: string
+            tooltip: Age group
+
+          - label: Female Deaths
+            value: femaleDeaths60DaysValue
+            type: numeric
+            tooltip: Total number of female deaths within 60 days of positive test
+
+          - label: Female rate
+            value: femaleDeaths60DaysRate
+            type: numeric
+            tooltip: Total number of female deaths within 60 days of positive test per 100,000 resident population
+
+          - label: Male Deaths
+            value: maleDeaths60DaysValue
+            type: numeric
+            tooltip: Total number of male deaths within 60 days of positive test
+          
+          - label: Male rate
+            value: maleDeaths60DaysRate
+            type: numeric
+            tooltip: Total number of male deaths within 60 days of positive test per 100,000 resident population
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeaths60DaysAndRatesByAgeAndSex.md
 
 ##############################################################################################################################
 
