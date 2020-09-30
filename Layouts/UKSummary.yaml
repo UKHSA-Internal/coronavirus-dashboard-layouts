@@ -1,49 +1,37 @@
 summary:
   - heading: Testing
     fields:
-      # - caption: Testing capacity (all pillars)
-      #   chart:
-      #     value: plannedCapacityByPublishDate
-      #     type: line
-      #     colour: 6
-      #     fill: true
-      #     rollingAverage: false
-      #     display: true
-        
-      #   valueItems: 
-      #     - value: plannedCapacityByPublishDate
-      #       tooltip: Estimated total lab capacity on {date}
 
-      - caption: Testing capacity (pillars 1 & 2)
+      - caption: PCR testing capacity
         chart:
-          value: capacityPillarOneTwo
+          value: plannedPCRCapacityByPublishDate
           type: line
-          colour: 0
+          colour: 6
           fill: true
           rollingAverage: false
           display: true
         
         valueItems: 
-          - value: capacityPillarOneTwo
-            tooltip: Estimated pillar 1 and 2 lab capacity on {date}
+          - value: plannedPCRCapacityByPublishDate
+            tooltip: Estimated PCR testing capacity for {date}
 
-      - caption: Tests processed (pillars 1 & 2)
+      - caption: PCR tests processed
         chart:
-          value: newPillarOneTwoTestsByPublishDate
+          value: newPCRTestsByPublishDate
           type: line
-          colour: 3
+          colour: 0
           fill: true
           rollingAverage: true
           display: true
         
         valueItems: 
           - label: Daily
-            value: newPillarOneTwoTestsByPublishDate
-            tooltip: Daily number of pillar 1 & 2 tests processed, reported on {date} - chart shows 7-day rolling average
+            value: newPCRTestsByPublishDate
+            tooltip: Daily number of PCR swab tests processed, reported on {date} - chart shows 7-day rolling average
           
           - label: Total
-            value: cumPillarOneTwoTestsByPublishDate
-            tooltip: Cumulative total number of pillar 1 & 2 tests processed, reported on {date}
+            value: cumPCRTestsByPublishDate
+            tooltip: Cumulative total number of PCR swab tests processed, reported on {date}
 
 ##############################################################################################################################
 
