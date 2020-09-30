@@ -6,7 +6,7 @@ summary:
         chart:
           value: plannedPCRCapacityByPublishDate
           type: line
-          colour: 0
+          colour: 6
           fill: true
           rollingAverage: false
           display: true
@@ -19,7 +19,7 @@ summary:
         chart:
           value: newPCRTestsByPublishDate
           type: line
-          colour: 3
+          colour: 0
           fill: true
           rollingAverage: true
           display: true
