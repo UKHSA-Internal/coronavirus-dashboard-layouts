@@ -1025,7 +1025,7 @@ cards:
 
 # Only available for England and regions
 
-  # - heading: Deaths by age and sex
+  # - heading: Deaths within 28 days of positive test by age and sex
   #   caption: Counts
   #   cardType: ageSexBreakdown
   #   locationAware:
@@ -1037,12 +1037,11 @@ cards:
   
   #   fullWidth: false
   #   abstract: >
-  #     Total number of deaths of people who had had a positive test result for COVID-19 
-  #     since the start of the pandemic, by age and sex.
+  #     Total number of deaths within 28 days of positive test since the start of the pandemic, by age and sex.
 
   #   download:
-  #     - femaleDeaths
-  #     - maleDeaths
+  #     - femaleDeaths28Days
+  #     - maleDeaths28Days
 
   #   tabs: 
   #     - heading: Chart
@@ -1054,19 +1053,19 @@ cards:
   #         - rate
 
   #       requiredMetrics:
-  #         - femaleDeaths
-  #         - maleDeaths
+  #         - femaleDeaths28Days
+  #         - maleDeaths28Days
 
   #       fields:
   #         - label: Females
-  #           value: femaleDeathsValue
-  #           tooltip: Total number of deaths in females with a confirmed positive test
+  #           value: femaleDeaths28DaysValue
+  #           tooltip: Total number of female deaths within 28 days of positive test
   #           type: bar
   #           colour: 3
             
   #         - label: Males
-  #           value: maleDeathsValue
-  #           tooltip: Total number of deaths in males with a confirmed positive test
+  #           value: maleDeaths28DaysValue
+  #           tooltip: Total number of male deaths within 28 days of positive test
   #           type: bar
   #           colour: 0
       
@@ -1078,8 +1077,8 @@ cards:
   #         - rate
 
   #       requiredMetrics:
-  #         - femaleDeaths
-  #         - maleDeaths
+  #         - femaleDeaths28Days
+  #         - maleDeaths28Days
 
   #       fields:
   #         - label: Age
@@ -1088,24 +1087,24 @@ cards:
   #           tooltip: Age group
 
   #         - label: Females
-  #           value: femaleDeathsValue
+  #           value: femaleDeaths28DaysValue
   #           type: numeric
-  #           tooltip: Total number of deaths in females with a confirmed positive test
+  #           tooltip: Total number of female deaths within 28 days of positive test
 
   #         - label: Female rate
-  #           value: femaleDeathsRate
+  #           value: femaleDeaths28DaysRate
   #           type: numeric
-  #           tooltip: Total number of female deaths per 100,000 resident population
+  #           tooltip: Total number of female deaths within 28 days of positive test per 100,000 resident population
 
   #         - label: Males
-  #           value: maleDeathsValue
+  #           value: maleDeaths28DaysValue
   #           type: numeric
-  #           tooltip: Total number of deaths in males with a confirmed positive test
+  #           tooltip: Total number of male deaths within 28 days of positive test
          
   #         - label: Male rate
-  #           value: maleDeathsRate
+  #           value: maleDeaths28DaysRate
   #           type: numeric
-  #           tooltip: Total number of male deaths per 100,000 resident population
+  #           tooltip: Total number of male deaths within 28 days of positive test per 100,000 resident population
 
   #     - heading: About 
   #       tabType: metadata
@@ -1115,17 +1114,17 @@ cards:
 
 # Only available for England and regions
 
-  # - heading: Death rates by age and sex
+  # - heading: Deaths within 28 days of positive test rates by age and sex
   #   caption: Rates per 100,000 resident population
   #   cardType: ageSexBreakdown
   #   fullWidth: false
   #   abstract: >
-  #     Total death rates by age and sex. There are fewer people in the oldest age groups so the
+  #     Total death within 28 days of positive test rates by age and sex. There are fewer people in the oldest age groups so the
   #     rates show the relative impact on different age groups.
 
   #   download:
-  #     - femaleDeaths
-  #     - maleDeaths
+  #     - femaleDeaths28Days
+  #     - maleDeaths28Days
 
   #   tabs: 
   #     - heading: Chart
@@ -1137,19 +1136,19 @@ cards:
   #         - rate
 
   #       requiredMetrics:
-  #         - femaleDeaths
-  #         - maleDeaths
+  #         - femaleDeaths28Days
+  #         - maleDeaths28Days
 
   #       fields:
   #         - label: Females
-  #           value: femaleDeathsRate
-  #           tooltip: Total number of female deaths per 100,000 resident population
+  #           value: femaleDeaths28DaysRate
+  #           tooltip: Total number of female deaths within 28 days of positive test per 100,000 resident population
   #           type: bar
   #           colour: 3
             
   #         - label: Males
-  #           value: maleDeathsRate
-  #           tooltip: Total number of male deaths per 100,000 resident population
+  #           value: maleDeaths28DaysRate
+  #           tooltip: Total number of male deaths within 28 days of positive test per 100,000 resident population
   #           type: bar
   #           colour: 0
       
@@ -1161,8 +1160,8 @@ cards:
   #         - rate
 
   #       requiredMetrics:
-  #         - femaleDeaths
-  #         - maleDeaths
+  #         - femaleDeaths28Days
+  #         - maleDeaths28Days
 
   #       fields:
   #         - label: Age
@@ -1171,24 +1170,24 @@ cards:
   #           tooltip: Age group
 
   #         - label: Female Deaths
-  #           value: femaleDeathsValue
+  #           value: femaleDeaths28DaysValue
   #           type: numeric
-  #           tooltip: Total number of deaths in females with a confirmed positive test
+  #           tooltip: Total number of female deaths within 28 days of positive test
 
   #         - label: Female rate
-  #           value: femaleDeathsRate
+  #           value: femaleDeaths28DaysRate
   #           type: numeric
-  #           tooltip: Total number of female deaths per 100,000 resident population
+  #           tooltip: Total number of female deaths within 28 days of positive test per 100,000 resident population
 
   #         - label: Male Deaths
-  #           value: maleDeathsValue
+  #           value: maleDeaths28DaysValue
   #           type: numeric
-  #           tooltip: Total number of deaths in females with a confirmed positive test
+  #           tooltip: Total number of male deaths within 28 days of positive test
           
   #         - label: Male rate
-  #           value: maleDeathsRate
+  #           value: maleDeaths28DaysRate
   #           type: numeric
-  #           tooltip: Total number of female deaths per 100,000 resident population
+  #           tooltip: Total number of male deaths within 28 days of positive test per 100,000 resident population
 
   #     - heading: About 
   #       tabType: metadata
