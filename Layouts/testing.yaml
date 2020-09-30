@@ -1,25 +1,23 @@
 headlineNumbers:
-  - caption: Tests processed
-    valueItems:
+  # - caption: Tests processed
+  #   valueItems:
 
-      - label: Daily (pillars 1 & 2)
-        value: newPillarOneTwoTestsByPublishDate
-        tooltip: Daily number of tests processed (pillars 1 and 2), reported up to {date}
+  #     - label: Daily (pillars 1 & 2)
+  #       value: newPillarOneTwoTestsByPublishDate
+  #       tooltip: Daily number of tests processed (pillars 1 and 2), reported up to {date}
 
-      - label: Total (pillars 1 & 2)
-        value: cumPillarOneTwoTestsByPublishDate
-        tooltip: Total number of tests processed (pillars 1 & 2), reported up to {date}
+  #     - label: Total (pillars 1 & 2)
+  #       value: cumPillarOneTwoTestsByPublishDate
+  #       tooltip: Total number of tests processed (pillars 1 & 2), reported up to {date}
 
-  - caption: Testing capacity
-    valueItems:
+  # - caption: Testing capacity
+  #   valueItems:
 
-      - label: Pillars 1 & 2
-        value: capacityPillarOneTwo
-        tooltip: Estimated pillar 1 & 2 capacity reported by laboratories on {date}
+  #     - label: Pillars 1 & 2
+  #       value: capacityPillarOneTwo
+  #       tooltip: Estimated pillar 1 & 2 capacity reported by laboratories on {date}
 
-# {{ StartDevOnlyBlock }}
-
-  - caption: PCR tests processed (Dev Only)
+  - caption: PCR tests processed
     valueItems:
 
       - label: Daily
@@ -36,7 +34,6 @@ headlineNumbers:
       - value: plannedPCRCapacityByPublishDate
         tooltip: Estimated PCR testing capacity reported by laboratories on {date}
 
-# {{ EndDevOnlyBlock }}
 ##############################################################################################################################
 
 cards:
@@ -45,223 +42,222 @@ cards:
 
 # Only shown for UK
 
-  - heading: Testing and capacity, by pillar
-    cardType: chart
-    locationAware:
-      included: 
-        areaType:
-          - overview
+  # - heading: Testing and capacity, by pillar
+  #   cardType: chart
+  #   locationAware:
+  #     included: 
+  #       areaType:
+  #         - overview
 
-    fullWidth: true
-    abstract: >
-      Number of lab-confirmed positive or negative COVID-19 test results, by pillar, by date reported.  This is a 
-      count of test results and may include multiple tests for an individual person.  Pillar breakdown options 
-      provide estimates for PCR swab testing (pillars 1 & 2), antibody serology testing (pillar 3) and surveillance 
-      testing (pillar 4). Testing capacity is a projection based on reports from labs on how many tests they have 
-      capacity to carry out each day based on availability of staff and resources.
+  #   fullWidth: true
+  #   abstract: >
+  #     Number of lab-confirmed positive or negative COVID-19 test results, by pillar, by date reported.  This is a 
+  #     count of test results and may include multiple tests for an individual person.  Pillar breakdown options 
+  #     provide estimates for PCR swab testing (pillars 1 & 2), antibody serology testing (pillar 3) and surveillance 
+  #     testing (pillar 4). Testing capacity is a projection based on reports from labs on how many tests they have 
+  #     capacity to carry out each day based on availability of staff and resources.
 
-    download:
-      - plannedCapacityByPublishDate
-      - capacityPillarOne
-      - capacityPillarTwo
-      - capacityPillarThree
-      - capacityPillarFour
-      - capacityPillarOneTwo
-      - newTestsByPublishDate
-      - newPillarOneTestsByPublishDate
-      - newPillarTwoTestsByPublishDate
-      - newPillarThreeTestsByPublishDate
-      - newPillarFourTestsByPublishDate
-      - newPillarOneTwoTestsByPublishDate
-      - cumTestsByPublishDate
-      - cumPillarOneTwoTestsByPublishDate
+  #   download:
+  #     - plannedCapacityByPublishDate
+  #     - capacityPillarOne
+  #     - capacityPillarTwo
+  #     - capacityPillarThree
+  #     - capacityPillarFour
+  #     - capacityPillarOneTwo
+  #     - newTestsByPublishDate
+  #     - newPillarOneTestsByPublishDate
+  #     - newPillarTwoTestsByPublishDate
+  #     - newPillarThreeTestsByPublishDate
+  #     - newPillarFourTestsByPublishDate
+  #     - newPillarOneTwoTestsByPublishDate
+  #     - cumTestsByPublishDate
+  #     - cumPillarOneTwoTestsByPublishDate
 
-    options:
-      type: radio
-      heading: null
-      choices:
-        - Pillars 1 2
-        - Pillar 3
-        - Pillar 4
+  #   options:
+  #     type: radio
+  #     heading: null
+  #     choices:
+  #       - Pillars 1 2
+  #       - Pillar 3
+  #       - Pillar 4
 
-    Pillars 1 2:
+  #   Pillars 1 2:
       
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          fields:
-            - label: Tests processed (pillars 1 & 2)
-              value: newPillarOneTwoTestsByPublishDate
-              tooltip: Daily number of tests processed by date reported (pillars 1 & 2)
-              type: bar
-              colour: 0
-              rollingAverage: false
+  #     tabs:
+  #       - heading: Daily
+  #         tabType: chart
+  #         barType: normal
+  #         fields:
+  #           - label: Tests processed (pillars 1 & 2)
+  #             value: newPillarOneTwoTestsByPublishDate
+  #             tooltip: Daily number of tests processed by date reported (pillars 1 & 2)
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
 
-            - label: Tests processed (pillars 1 & 2, 7-day average)
-              value: newPillarOneTwoTestsByPublishDate
-              tooltip: 7 day rolling average of the daily number of tests processed (pillars 1 & 2)
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage: true
+  #           - label: Tests processed (pillars 1 & 2, 7-day average)
+  #             value: newPillarOneTwoTestsByPublishDate
+  #             tooltip: 7 day rolling average of the daily number of tests processed (pillars 1 & 2)
+  #             type: line
+  #             colour: 3
+  #             fill: false
+  #             rollingAverage: true
 
-            - label: Testing capacity (pillars 1 & 2)
-              value: capacityPillarOneTwo
-              tooltip: Estimated daily capacity reported by laboratories (pillars 1 & 2)
-              type: line
-              colour: 6
-              fill: true
-              rollingAverage: false
+  #           - label: Testing capacity (pillars 1 & 2)
+  #             value: capacityPillarOneTwo
+  #             tooltip: Estimated daily capacity reported by laboratories (pillars 1 & 2)
+  #             type: line
+  #             colour: 6
+  #             fill: true
+  #             rollingAverage: false
 
-        - heading: Cumulative
-          tabType: chart
-          barType: normal
-          fields:
-            - label: Tests processed (pillars 1 & 2)
-              value: cumPillarOneTwoTestsByPublishDate
-              tooltip: Cumulative number of tests processed (pillars 1 & 2) by date reported
-              type: bar
-              colour: 0
-              rollingAverage: false
+  #       - heading: Cumulative
+  #         tabType: chart
+  #         barType: normal
+  #         fields:
+  #           - label: Tests processed (pillars 1 & 2)
+  #             value: cumPillarOneTwoTestsByPublishDate
+  #             tooltip: Cumulative number of tests processed (pillars 1 & 2) by date reported
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
 
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
+  #       - heading: Data
+  #         tabType: table
+  #         fields:
+  #           - label: Date reported
+  #             value: date
+  #             type: date
+  #             tooltip: Date reported on coronavirus.data.gov.uk
 
-            - label: Daily tests processed (pillars 1 & 2)
-              value: newPillarOneTwoTestsByPublishDate
-              type: numeric
-              tooltip: Daily number of tests processed by date reported (pillars 1 & 2)
+  #           - label: Daily tests processed (pillars 1 & 2)
+  #             value: newPillarOneTwoTestsByPublishDate
+  #             type: numeric
+  #             tooltip: Daily number of tests processed by date reported (pillars 1 & 2)
 
-            - label: Cumulative tests processed (pillars 1 & 2)
-              value: cumPillarOneTwoTestsByPublishDate
-              type: numeric
-              tooltip: Cumulative number of tests processed by date reported (pillars 1 & 2)
+  #           - label: Cumulative tests processed (pillars 1 & 2)
+  #             value: cumPillarOneTwoTestsByPublishDate
+  #             type: numeric
+  #             tooltip: Cumulative number of tests processed by date reported (pillars 1 & 2)
 
-            - label: Lab capacity (pillars 1 & 2)
-              value: capacityPillarOneTwo
-              type: numeric
-              tooltip: Estimated daily capacity reported by laboratories (pillars 1 & 2)
+  #           - label: Lab capacity (pillars 1 & 2)
+  #             value: capacityPillarOneTwo
+  #             type: numeric
+  #             tooltip: Estimated daily capacity reported by laboratories (pillars 1 & 2)
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/testing/cardTestingAndCapacity.md
+  #       - heading: About 
+  #         tabType: metadata
+  #         filename: cardMetadata/testing/cardTestingAndCapacity.md
 
-    Pillar 3:
+  #   Pillar 3:
       
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          fields:
-            - label: Tests processed (pillar 3)
-              value: newPillarThreeTestsByPublishDate
-              tooltip: Daily number of tests processed by date reported (pillar 3)
-              type: bar
-              colour: 0
-              rollingAverage: false
+  #     tabs:
+  #       - heading: Daily
+  #         tabType: chart
+  #         barType: normal
+  #         fields:
+  #           - label: Tests processed (pillar 3)
+  #             value: newPillarThreeTestsByPublishDate
+  #             tooltip: Daily number of tests processed by date reported (pillar 3)
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
 
-            - label: Tests processed (pillar 3, 7-day average)
-              value: newPillarThreeTestsByPublishDate
-              tooltip: 7 day rolling average of the daily number of tests processed (pillar 3)
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage: true
+  #           - label: Tests processed (pillar 3, 7-day average)
+  #             value: newPillarThreeTestsByPublishDate
+  #             tooltip: 7 day rolling average of the daily number of tests processed (pillar 3)
+  #             type: line
+  #             colour: 3
+  #             fill: false
+  #             rollingAverage: true
 
-            - label: Testing capacity (pillar 3)
-              value: capacityPillarThree
-              tooltip: Estimated daily capacity reported by laboratories (pillar 3)
-              type: line
-              colour: 6
-              fill: true
-              rollingAverage: false
+  #           - label: Testing capacity (pillar 3)
+  #             value: capacityPillarThree
+  #             tooltip: Estimated daily capacity reported by laboratories (pillar 3)
+  #             type: line
+  #             colour: 6
+  #             fill: true
+  #             rollingAverage: false
 
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
+  #       - heading: Data
+  #         tabType: table
+  #         fields:
+  #           - label: Date reported
+  #             value: date
+  #             type: date
+  #             tooltip: Date reported on coronavirus.data.gov.uk
 
-            - label: Daily tests processed (pillar 3)
-              value: newPillarThreeTestsByPublishDate
-              type: numeric
-              tooltip: Daily number of tests processed by date reported (pillar 3)
+  #           - label: Daily tests processed (pillar 3)
+  #             value: newPillarThreeTestsByPublishDate
+  #             type: numeric
+  #             tooltip: Daily number of tests processed by date reported (pillar 3)
 
-            - label: Lab capacity (pillar 3)
-              value: capacityPillarThree
-              type: numeric
-              tooltip: Estimated daily capacity reported by laboratories (pillar 3)
+  #           - label: Lab capacity (pillar 3)
+  #             value: capacityPillarThree
+  #             type: numeric
+  #             tooltip: Estimated daily capacity reported by laboratories (pillar 3)
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/testing/cardTestingAndCapacity.md
+  #       - heading: About 
+  #         tabType: metadata
+  #         filename: cardMetadata/testing/cardTestingAndCapacity.md
 
-    Pillar 4:
+  #   Pillar 4:
       
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          fields:
-            - label: Tests processed (pillar 4)
-              value: newPillarFourTestsByPublishDate
-              tooltip: Daily number of tests processed by date reported (pillar 4)
-              type: bar
-              colour: 0
-              rollingAverage: false
+  #     tabs:
+  #       - heading: Daily
+  #         tabType: chart
+  #         barType: normal
+  #         fields:
+  #           - label: Tests processed (pillar 4)
+  #             value: newPillarFourTestsByPublishDate
+  #             tooltip: Daily number of tests processed by date reported (pillar 4)
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
 
-            - label: Tests processed (pillar 4, 7-day average)
-              value: newPillarFourTestsByPublishDate
-              tooltip: 7 day rolling average of the daily number of tests processed (pillar 4)
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage: true
+  #           - label: Tests processed (pillar 4, 7-day average)
+  #             value: newPillarFourTestsByPublishDate
+  #             tooltip: 7 day rolling average of the daily number of tests processed (pillar 4)
+  #             type: line
+  #             colour: 3
+  #             fill: false
+  #             rollingAverage: true
 
-            - label: Testing capacity (pillar 4)
-              value: capacityPillarFour
-              tooltip: Estimated daily capacity reported by laboratories (pillar 4)
-              type: line
-              colour: 6
-              fill: true
-              rollingAverage: false
+  #           - label: Testing capacity (pillar 4)
+  #             value: capacityPillarFour
+  #             tooltip: Estimated daily capacity reported by laboratories (pillar 4)
+  #             type: line
+  #             colour: 6
+  #             fill: true
+  #             rollingAverage: false
 
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
+  #       - heading: Data
+  #         tabType: table
+  #         fields:
+  #           - label: Date reported
+  #             value: date
+  #             type: date
+  #             tooltip: Date reported on coronavirus.data.gov.uk
 
-            - label: Daily tests processed (pillar 4)
-              value: newPillarFourTestsByPublishDate
-              type: numeric
-              tooltip: Daily number of tests processed by date reported (pillar 4)
+  #           - label: Daily tests processed (pillar 4)
+  #             value: newPillarFourTestsByPublishDate
+  #             type: numeric
+  #             tooltip: Daily number of tests processed by date reported (pillar 4)
 
-            - label: Lab capacity (pillar 4)
-              value: capacityPillarFour
-              type: numeric
-              tooltip: Estimated daily capacity reported by laboratories (pillar 4)
+  #           - label: Lab capacity (pillar 4)
+  #             value: capacityPillarFour
+  #             type: numeric
+  #             tooltip: Estimated daily capacity reported by laboratories (pillar 4)
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/testing/cardTestingAndCapacity.md
+  #       - heading: About 
+  #         tabType: metadata
+  #         filename: cardMetadata/testing/cardTestingAndCapacity.md
 
 ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
 # Only shown for UK
 
-  - heading: Testing and capacity, by test type (Dev Only)
+  - heading: Testing and capacity, by test type
     cardType: chart
     locationAware:
       included: 
@@ -431,8 +427,6 @@ cards:
         - heading: About 
           tabType: metadata
           filename: cardMetadata/testing/cardTestingAndCapacity.md
-
-# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
