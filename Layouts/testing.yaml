@@ -452,7 +452,7 @@ cards:
       - capacityPillarFour 
 
     tabs:
-      - heading: UK Summary
+      - heading: Data
         tabType: table
         params:
           - key: areaType
