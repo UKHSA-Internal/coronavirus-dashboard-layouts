@@ -1411,7 +1411,7 @@ cards:
 
 # not shown for UK
 
-  - heading: Deaths within 60 days of positive test (Dev Only)
+  - heading: Deaths within 60 days of positive test
     cardType: chart
     locationAware:
       included:
