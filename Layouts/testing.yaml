@@ -460,32 +460,32 @@ cards:
             value: overview
 
         fields:
-          - label: Area
-            value: areaName
-            type: string
+          - label: Date
+            value: date
+            type: date
             tooltip: ""
 
-          - label: Pillar one capacity
+          - label: Pillar one
             value: capacityPillarOne
             type: numeric
             tooltip: Estimated daily capacity for pillar 1 testing reported by laboratories up to {date}
 
-          - label: Pillar two capacity
+          - label: Pillar two
             value: capacityPillarTwo
             type: numeric
             tooltip: Estimated daily capacity for pillar 2 testing reported by laboratories up to {date}
 
-          - label: Pillar three capacity
+          - label: Pillar three
             value: capacityPillarThree
             type: numeric
             tooltip: Estimated daily capacity for pillar 3 testing reported by laboratories up to {date}
 
-          - label: Pillar four capacity
+          - label: Pillar four
             value: capacityPillarFour
             type: numeric
             tooltip: Estimated daily capacity for pillar 4 testing reported by laboratories up to {date}
 
-          - label: Pillar one capacity
+          - label: Total
             value: plannedCapacityByPublishDate
             type: numeric
             tooltip: Estimated daily capacity for testing, across all pillars, reported by laboratories up to {date}
