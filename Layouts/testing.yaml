@@ -430,6 +430,72 @@ cards:
 
 ##############################################################################################################################
 
+# only shown for UK
+
+  - heading: Testing capacity by Pillar
+    cardType: simpleTableStatic
+    locationAware:
+      included:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      Testing capacity is a projection based on reports from labs on how many tests they have capacity to carry out 
+      each day based on availability of staff and resources.
+
+    download:
+      - plannedCapacityByPublishDate
+      - capacityPillarOne
+      - capacityPillarTwo
+      - capacityPillarThree
+      - capacityPillarFour 
+
+    tabs:
+      - heading: UK Summary
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: overview
+
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Pillar one capacity
+            value: capacityPillarOne
+            type: numeric
+            tooltip: Estimated daily capacity for pillar 1 testing reported by laboratories up to {date}
+
+          - label: Pillar two capacity
+            value: capacityPillarTwo
+            type: numeric
+            tooltip: Estimated daily capacity for pillar 2 testing reported by laboratories up to {date}
+
+          - label: Pillar three capacity
+            value: capacityPillarThree
+            type: numeric
+            tooltip: Estimated daily capacity for pillar 3 testing reported by laboratories up to {date}
+
+          - label: Pillar four capacity
+            value: capacityPillarFour
+            type: numeric
+            tooltip: Estimated daily capacity for pillar 4 testing reported by laboratories up to {date}
+
+          - label: Pillar one capacity
+            value: plannedCapacityByPublishDate
+            type: numeric
+            tooltip: Estimated daily capacity for testing, across all pillars, reported by laboratories up to {date}
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/testing/cardCapacityByPillar.md
+
+##############################################################################################################################
+
   - heading: Tests processed by Pillar
     cardType: chart
     fullWidth: true
