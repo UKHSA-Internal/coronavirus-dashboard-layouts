@@ -1656,7 +1656,7 @@ cards:
 
 # Only available for England and regions
 
-  - heading: Deaths rates within 60 days of positive test by age and sex
+  - heading: Death rates within 60 days of positive test by age and sex
     caption: Rates per 100,000 resident population
     cardType: ageSexBreakdown
     fullWidth: false
