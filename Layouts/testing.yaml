@@ -465,22 +465,22 @@ cards:
             type: date
             tooltip: ""
 
-          - label: Pillar one
+          - label: Pillar 1
             value: capacityPillarOne
             type: numeric
             tooltip: Estimated daily capacity for pillar 1 testing reported by laboratories up to {date}
 
-          - label: Pillar two
+          - label: Pillar 2
             value: capacityPillarTwo
             type: numeric
             tooltip: Estimated daily capacity for pillar 2 testing reported by laboratories up to {date}
 
-          - label: Pillar three
+          - label: Pillar 3
             value: capacityPillarThree
             type: numeric
             tooltip: Estimated daily capacity for pillar 3 testing reported by laboratories up to {date}
 
-          - label: Pillar four
+          - label: Pillar 4
             value: capacityPillarFour
             type: numeric
             tooltip: Estimated daily capacity for pillar 4 testing reported by laboratories up to {date}
