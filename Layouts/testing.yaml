@@ -433,7 +433,7 @@ cards:
 # only shown for UK
 
   - heading: Testing capacity by Pillar
-    cardType: simpleTableStatic
+    cardType: chart
     locationAware:
       included:
         areaType:
@@ -454,10 +454,6 @@ cards:
     tabs:
       - heading: Data
         tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: overview
 
         fields:
           - label: Date
