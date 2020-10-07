@@ -148,7 +148,6 @@ summary:
             tooltip: Total number of deaths of people who had a positive test result and died within 28 days, reported up to {date}
             value: cumDeaths28DaysByPublishDate
 
-# {{ StartDevOnlyBlock}}
       - caption: Deaths with COVID-19 on the death certificate
         # chart:   # Can't display weekly figures - different scale, Will need to wait until we have daily.
         #   value: newOnsDeathsByRegistrationDate
@@ -166,6 +165,5 @@ summary:
           - label: Total
             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
             value: cumOnsDeathsByRegistrationDate
-# {{ EndDevOnlyBlock}}
 
 
