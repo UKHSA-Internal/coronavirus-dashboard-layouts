@@ -11,6 +11,7 @@ headlineNumbers:
         value: cumDeaths28DaysByPublishDate
         tooltip: Total number of deaths of people who had a positive test result and died within 28 days, reported up to {date}
 
+# {{ StartDevOnlyBlock}}
   - caption: Deaths with COVID-19 on the death certificate
     valueItems:
       - label: Weekly
@@ -20,7 +21,7 @@ headlineNumbers:
       - label: Total
         value: cumOnsDeathsByRegistrationDate
         tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
-
+# {{ EndDevOnlyBlock}}
 ##############################################################################################################################
 
 cards:
@@ -781,7 +782,7 @@ cards:
         filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
 ##############################################################################################################################
-
+# {{ StartDevOnlyBlock}}
   - heading: Weekly deaths with COVID-19 on the death certificate by date registered
     cardType: chart
 
@@ -838,7 +839,7 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
-
+# {{ EndDevOnlyBlock}}
 ##############################################################################################################################
 
 # Only available for England and regions
@@ -1253,7 +1254,7 @@ cards:
         filename: cardMetadata/deaths/cardDeaths28DaysAndRatesByArea.md
 
 ##############################################################################################################################
-
+# {{ StartDevOnlyBlock}}
   - heading: Deaths with COVID-19 on the death certificate by area
     cardType: simpleTableStatic
     fullWidth: false
@@ -1371,7 +1372,7 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
-
+# {{ EndDevOnlyBlock}}
 ##############################################################################################################################
 
 # not shown for UK
