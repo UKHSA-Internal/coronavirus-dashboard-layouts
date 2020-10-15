@@ -1243,19 +1243,7 @@ cards:
       alt: >
         Outline of the Middle Super Output Area (MSOA) map
         boundaries (not data included)
+
     resource: 
       label: View map
       url: https://coronavirus-staging.data.gov.uk/details/interactive-map
-      
-    download:
-      - format: CSV
-        url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.csv
-      
-      - format: JSON
-        url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.json
-      
-      - format: XML
-        url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.xml
-
-      - format: Spreadsheet
-        url: https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.xlsx
