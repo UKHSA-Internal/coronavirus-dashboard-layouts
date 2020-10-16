@@ -5,11 +5,11 @@ headlineNumbers:
     valueItems:
       - label: Daily
         value: newDeaths28DaysByPublishDate
-        tooltip: Daily number of deaths of people who have had a positive test result and died within 28 days, reported on {date}
+        tooltip: Daily number of deaths within 28 days of first positive test, reported on {date}
 
       - label: Total
         value: cumDeaths28DaysByPublishDate
-        tooltip: Total number of deaths of people who had a positive test result and died within 28 days, reported up to {date}
+        tooltip: Total number of deaths within 28 days of first positive test, reported up to {date}
 
   - caption: Deaths with COVID-19 on the death certificate
     valueItems:
@@ -368,7 +368,7 @@ cards:
           fields:
             - label: ""
               value: newDeaths28DaysByDeathDate
-              tooltip: Daily number of deaths within 28 days of positive test of people resident in each nation, by date of death
+              tooltip: Daily number of deaths within 28 days of first positive test of people resident in each nation, by date of death
               type: bar
               rollingAverage: false
 
@@ -383,7 +383,7 @@ cards:
           fields:
             - label: ""
               value: cumDeaths28DaysByDeathDate
-              tooltip: Cumulative total number of deaths within 28 days of positive test of people resident in each nation, by date of death
+              tooltip: Cumulative total number of deaths within 28 days of first positive test of people resident in each nation, by date of death
               type: bar
               rollingAverage: false
 
@@ -402,12 +402,12 @@ cards:
             - label: daily
               value: newDeaths28DaysByDeathDate
               type: numeric
-              tooltip: Daily number of deaths within 28 days of positive test of people resident in each nation, by date of death
+              tooltip: Daily number of deaths within 28 days of first positive test of people resident in each nation, by date of death
 
             - label: total
               value: cumDeaths28DaysByDeathDate
               type: numeric
-              tooltip: Cumulative total number of deaths within 28 days of positive test of people resident in each nation, by date of death
+              tooltip: Cumulative total number of deaths within 28 days of first positive test of people resident in each nation, by date of death
 
         - heading: About 
           tabType: metadata
@@ -427,13 +427,13 @@ cards:
           fields:
             - label: ""
               value: newDeaths28DaysByDeathDate
-              tooltip: Daily number of deaths within 28 days of positive test, by date of death
+              tooltip: Daily number of deaths within 28 days of first positive test, by date of death
               type: bar
               rollingAverage: false
 
             - label: (7-day average)
               value: newDeaths28DaysByDeathDate
-              tooltip: 7 day rolling average of the daily number of deaths within 28 days of positive test
+              tooltip: 7 day rolling average of the daily number of deaths within 28 days of first positive test
               type: line
               colour: 3
               rollingAverage: true
@@ -449,7 +449,7 @@ cards:
           fields:
             - label: ""
               value: cumDeaths28DaysByDeathDate
-              tooltip: Cumulative total number of deaths within 28 days of positive test, by date of death
+              tooltip: Cumulative total number of deaths within 28 days of first positive test, by date of death
               type: bar
               rollingAverage: false
 
@@ -468,12 +468,12 @@ cards:
             - label: daily
               value: newDeaths28DaysByDeathDate
               type: numeric
-              tooltip: Daily number of deaths within 28 days of positive test, by date of death
+              tooltip: Daily number of deaths within 28 days of first positive test, by date of death
 
             - label: total
               value: cumDeaths28DaysByDeathDate
               type: numeric
-              tooltip: Cumulative total number of deaths within 28 days of positive test, by date of death
+              tooltip: Cumulative total number of deaths within 28 days of first positive test, by date of death
 
         - heading: About 
           tabType: metadata
@@ -522,7 +522,7 @@ cards:
           fields:
             - label: ""
               value: newDeaths28DaysByPublishDate
-              tooltip: Daily number of new deaths within 28 days of positive test of people resident in each nation, by date reported
+              tooltip: Daily number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
               type: bar
               rollingAverage: false
 
@@ -537,7 +537,7 @@ cards:
           fields:
             - label: ""
               value: cumDeaths28DaysByPublishDate
-              tooltip: Cumulative total number of new deaths within 28 days of positive test of people resident in each nation, by date reported
+              tooltip: Cumulative total number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
               type: bar
               rollingAverage: false
 
@@ -556,12 +556,12 @@ cards:
             - label: daily
               value: newDeaths28DaysByPublishDate
               type: numeric
-              tooltip: Daily number of new deaths within 28 days of positive test of people resident in each nation, by date reported
+              tooltip: Daily number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
 
             - label: total
               value: cumDeaths28DaysByPublishDate
               type: numeric
-              tooltip: Cumulative total number of new deaths within 28 days of positive test of people resident in each nation, by date reported
+              tooltip: Cumulative total number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
 
         - heading: About 
           tabType: metadata
@@ -581,13 +581,13 @@ cards:
           fields:
             - label: ""
               value: newDeaths28DaysByPublishDate
-              tooltip: Daily number of new deaths within 28 days of positive test, by date reported
+              tooltip: Daily number of new deaths within 28 days of first positive test, by date reported
               type: bar
               rollingAverage: false
 
             - label: (7-day average)
               value: newDeaths28DaysByPublishDate
-              tooltip: 7 day rolling average of the daily number of new deaths within 28 days of positive test
+              tooltip: 7 day rolling average of the daily number of new deaths within 28 days of first positive test
               type: line
               colour: 3
               rollingAverage: true
@@ -603,7 +603,7 @@ cards:
           fields:
             - label: ""
               value: cumDeaths28DaysByPublishDate
-              tooltip: Cumulative total number of new deaths within 28 days of positive test, by date reported
+              tooltip: Cumulative total number of new deaths within 28 days of first positive test, by date reported
               type: bar
               rollingAverage: false
 
@@ -622,12 +622,12 @@ cards:
             - label: daily
               value: newDeaths28DaysByPublishDate
               type: numeric
-              tooltip: Daily number of new deaths within 28 days of positive test, by date reported
+              tooltip: Daily number of new deaths within 28 days of first positive test, by date reported
 
             - label: total
               value: cumDeaths28DaysByPublishDate
               type: numeric
-              tooltip: Cumulative total number of new deaths within 28 days of positive test, by date reported
+              tooltip: Cumulative total number of new deaths within 28 days of first positive test, by date reported
 
         - heading: About 
           tabType: metadata
@@ -661,14 +661,14 @@ cards:
         fields:
           - label: Number of deaths
             value: newDeaths28DaysByDeathDate
-            tooltip: Daily number of deaths within 28 days of positive test by date of death
+            tooltip: Daily number of deaths within 28 days of first positive test by date of death
             type: bar
             colour: 0
             rollingAverage: false
 
           - label: Deaths (7-day average)
             value: newDeaths28DaysByDeathDate
-            tooltip: 7 day rolling average of the daily number of deaths within 28 days of positive test
+            tooltip: 7 day rolling average of the daily number of deaths within 28 days of first positive test
             type: line
             colour: 3
             fill: false
@@ -679,7 +679,7 @@ cards:
         fields:
           - label: Number of deaths
             value: cumDeaths28DaysByDeathDate
-            tooltip: Cumulative total number of deaths within 28 days of positive test by date of death
+            tooltip: Cumulative total number of deaths within 28 days of first positive test by date of death
             type: bar
             colour: 0
             rollingAverage: false
@@ -695,12 +695,12 @@ cards:
           - label: Daily deaths
             value: newDeaths28DaysByDeathDate
             type: numeric
-            tooltip: Daily number of deaths within 28 days of positive test by date of death
+            tooltip: Daily number of deaths within 28 days of first positive test by date of death
 
           - label: Cumulative deaths
             value: cumDeaths28DaysByDeathDate
             type: numeric
-            tooltip: Cumulative total number of deaths within 28 days of positive test by date of death
+            tooltip: Cumulative total number of deaths within 28 days of first positive test by date of death
 
       - heading: About 
         tabType: metadata
@@ -735,14 +735,14 @@ cards:
         fields:
           - label: Number of deaths
             value: newDeaths28DaysByPublishDate
-            tooltip: Daily number of deaths within 28 days of positive test by date reported 
+            tooltip: Daily number of deaths within 28 days of first positive test by date reported 
             type: bar
             colour: 0
             rollingAverage: false
 
           - label: Deaths (7-day average)
             value: newDeaths28DaysByPublishDate
-            tooltip: 7 day rolling average of the daily number of deaths within 28 days of positive test reported
+            tooltip: 7 day rolling average of the daily number of deaths within 28 days of first positive test
             type: line
             colour: 3
             fill: false
@@ -753,7 +753,7 @@ cards:
         fields:
           - label: Number of deaths
             value: cumDeaths28DaysByPublishDate
-            tooltip: Cumulative total number of deaths within 28 days of positive test by date reported
+            tooltip: Cumulative total number of deaths within 28 days of first positive test by date reported
             type: bar
             colour: 0
             rollingAverage: false
@@ -769,12 +769,12 @@ cards:
           - label: Daily deaths
             value: newDeaths28DaysByPublishDate
             type: numeric
-            tooltip: Daily number of deaths within 28 days of positive test by date reported
+            tooltip: Daily number of deaths within 28 days of first positive testby date reported
 
           - label: Cumulative deaths
             value: cumDeaths28DaysByPublishDate
             type: numeric
-            tooltip: Cumulative total number of deaths within 28 days of positive test by date reported
+            tooltip: Cumulative total number of deaths within 28 days of first positive test by date reported
 
       - heading: About 
         tabType: metadata
@@ -877,13 +877,13 @@ cards:
         fields:
           - label: Females
             value: femaleDeaths28DaysValue
-            tooltip: Total number of female deaths within 28 days of positive test
+            tooltip: Total number of female deaths within 28 days of first positive test
             type: bar
             colour: 3
             
           - label: Males
             value: maleDeaths28DaysValue
-            tooltip: Total number of male deaths within 28 days of positive test
+            tooltip: Total number of male deaths within 28 days of first positive test
             type: bar
             colour: 0
       
@@ -907,22 +907,22 @@ cards:
           - label: Females
             value: femaleDeaths28DaysValue
             type: numeric
-            tooltip: Total number of female deaths within 28 days of positive test
+            tooltip: Total number of female deaths within 28 days of first positive test
 
           - label: Female rate
             value: femaleDeaths28DaysRate
             type: numeric
-            tooltip: Total number of female deaths within 28 days of positive test per 100,000 resident population
+            tooltip: Total number of female deaths within 28 days of first positive test per 100,000 resident population
 
           - label: Males
             value: maleDeaths28DaysValue
             type: numeric
-            tooltip: Total number of male deaths within 28 days of positive test
+            tooltip: Total number of male deaths within 28 days of first positive test
          
           - label: Male rate
             value: maleDeaths28DaysRate
             type: numeric
-            tooltip: Total number of male deaths within 28 days of positive test per 100,000 resident population
+            tooltip: Total number of male deaths within 28 days of first positive test per 100,000 resident population
 
       - heading: About 
         tabType: metadata
@@ -960,13 +960,13 @@ cards:
         fields:
           - label: Females
             value: femaleDeaths28DaysRate
-            tooltip: Total number of female deaths within 28 days of positive test per 100,000 resident population
+            tooltip: Total number of female deaths within 28 days of first positive test per 100,000 resident population
             type: bar
             colour: 3
             
           - label: Males
             value: maleDeaths28DaysRate
-            tooltip: Total number of male deaths within 28 days of positive test per 100,000 resident population
+            tooltip: Total number of male deaths within 28 days of first positive test per 100,000 resident population
             type: bar
             colour: 0
       
@@ -990,22 +990,22 @@ cards:
           - label: Female Deaths
             value: femaleDeaths28DaysValue
             type: numeric
-            tooltip: Total number of female deaths within 28 days of positive test
+            tooltip: Total number of female deaths within 28 days of first positive test
 
           - label: Female rate
             value: femaleDeaths28DaysRate
             type: numeric
-            tooltip: Total number of female deaths within 28 days of positive test per 100,000 resident population
+            tooltip: Total number of female deaths within 28 days of first positive test per 100,000 resident population
 
           - label: Male Deaths
             value: maleDeaths28DaysValue
             type: numeric
-            tooltip: Total number of male deaths within 28 days of positive test
+            tooltip: Total number of male deaths within 28 days of first positive test
           
           - label: Male rate
             value: maleDeaths28DaysRate
             type: numeric
-            tooltip: Total number of male deaths within 28 days of positive test per 100,000 resident population
+            tooltip: Total number of male deaths within 28 days of first positive test per 100,000 resident population
 
       - heading: About 
         tabType: metadata
@@ -1166,7 +1166,7 @@ cards:
           - label: Deaths
             value: cumDeaths28DaysByPublishDate
             type: numeric
-            tooltip: Cumulative total number of deaths within 28 days of positive test of people resident in each area up to {date}
+            tooltip: Cumulative total number of deaths within 28 days of first positive test of people resident in each area up to {date}
 
           - label: Rate per 100,000 population
             value: cumDeaths28DaysByPublishDateRate
@@ -1191,7 +1191,7 @@ cards:
           - label: Deaths
             value: cumDeaths28DaysByPublishDate
             type: numeric
-            tooltip: Cumulative total number of deaths within 28 days of positive test of people resident in each area up to {date}
+            tooltip: Cumulative total number of deaths within 28 days of first positive test of people resident in each area up to {date}
 
           - label: Rate per 100,000 population
             value: cumDeaths28DaysByPublishDateRate
@@ -1216,7 +1216,7 @@ cards:
           - label: Deaths
             value: cumDeaths28DaysByPublishDate
             type: numeric
-            tooltip: Cumulative total number of deaths within 28 days of positive test of people resident in each area up to {date}
+            tooltip: Cumulative total number of deaths within 28 days of first positive test of people resident in each area up to {date}
 
           - label: Rate per 100,000 population
             value: cumDeaths28DaysByPublishDateRate
@@ -1241,7 +1241,7 @@ cards:
           - label: Deaths
             value: cumDeaths28DaysByPublishDate
             type: numeric
-            tooltip: Cumulative total number of deaths within 28 days of positive test of people resident in each area up to {date}
+            tooltip: Cumulative total number of deaths within 28 days of first positive test of people resident in each area up to {date}
 
           - label: Rate per 100,000 population
             value: cumDeaths28DaysByPublishDateRate
@@ -1417,14 +1417,14 @@ cards:
           fields:
             - label: Number of deaths
               value: newDeaths60DaysByDeathDate
-              tooltip: Daily number of deaths within 60 days of positive test by date of death
+              tooltip: Daily number of deaths within 60 days of first positive test by date of death
               type: bar
               colour: 0
               rollingAverage: false
 
             - label: Deaths (7-day average)
               value: newDeaths60DaysByDeathDate
-              tooltip: 7 day rolling average of the daily number of deaths within 60 days of positive test
+              tooltip: 7 day rolling average of the daily number of deaths within 60 days of first positive test
               type: line
               colour: 3
               fill: false
@@ -1437,7 +1437,7 @@ cards:
           fields:
             - label: Number of deaths
               value: cumDeaths60DaysByDeathDate
-              tooltip: Cumulative total number of deaths within 60 days of positive test by date of death
+              tooltip: Cumulative total number of deaths within 60 days of first positive test by date of death
               type: bar
               colour: 0
               rollingAverage: false
@@ -1453,12 +1453,12 @@ cards:
             - label: Daily deaths
               value: newDeaths60DaysByDeathDate
               type: numeric
-              tooltip: Daily number of deaths within 60 days of positive test by date of death
+              tooltip: Daily number of deaths within 60 days of first positive test by date of death
 
             - label: Cumulative deaths
               value: cumDeaths60DaysByDeathDate
               type: numeric
-              tooltip: Cumulative total number of deaths within 60 days of positive test by date of death
+              tooltip: Cumulative total number of deaths within 60 days of first positive test by date of death
 
         - heading: About 
           tabType: metadata
@@ -1473,14 +1473,14 @@ cards:
           fields:
             - label: Number of deaths
               value: newDeaths60DaysByPublishDate
-              tooltip: Daily number of deaths within 60 days of positive test by date reported
+              tooltip: Daily number of deaths within 60 days of first positive test by date reported
               type: bar
               colour: 0
               rollingAverage: false
 
             - label: Deaths (7-day average)
               value: newDeaths60DaysByPublishDate
-              tooltip: 7 day rolling average of the daily number of deaths within 60 days of positive test
+              tooltip: 7 day rolling average of the daily number of deaths within 60 days of first positive test
               type: line
               colour: 3
               fill: false
@@ -1510,12 +1510,12 @@ cards:
             - label: Daily deaths
               value: newDeaths60DaysByPublishDate
               type: numeric
-              tooltip: Daily number of deaths within 60 days of positive test by date reported
+              tooltip: Daily number of deaths within 60 days of first positive test by date reported
 
             - label: Cumulative deaths
               value: cumDeaths60DaysByPublishDate
               type: numeric
-              tooltip: Cumulative total number of deaths within 60 days of positive test by date reported
+              tooltip: Cumulative total number of deaths within 60 days of first positive test by date reported
 
         - heading: About 
           tabType: metadata
@@ -1538,7 +1538,7 @@ cards:
   
     fullWidth: false
     abstract: >
-      Total number of deaths within 60 days of positive test since the start of the pandemic, by age and sex.
+      Total deaths within 60 days of first positive test since the start of the pandemic, by age and sex.
 
     download:
       - femaleDeaths60Days
@@ -1560,13 +1560,13 @@ cards:
         fields:
           - label: Females
             value: femaleDeaths60DaysValue
-            tooltip: Total number of female deaths within 60 days of positive test
+            tooltip: Total number of female deaths within 60 days of first positive test
             type: bar
             colour: 3
             
           - label: Males
             value: maleDeaths60DaysValue
-            tooltip: Total number of male deaths within 60 days of positive test
+            tooltip: Total number of male deaths within 60 days of first positive test
             type: bar
             colour: 0
       
@@ -1590,22 +1590,22 @@ cards:
           - label: Females
             value: femaleDeaths60DaysValue
             type: numeric
-            tooltip: Total number of female deaths within 60 days of positive test
+            tooltip: Total number of female deaths within 60 days of first positive test
 
           - label: Female rate
             value: femaleDeaths60DaysRate
             type: numeric
-            tooltip: Total number of female deaths within 60 days of positive test per 100,000 resident population
+            tooltip: Total number of female deaths within 60 days of first positive test per 100,000 resident population
 
           - label: Males
             value: maleDeaths60DaysValue
             type: numeric
-            tooltip: Total number of male deaths within 60 days of positive test
+            tooltip: Total number of male deaths within 60 days of first positive test
          
           - label: Male rate
             value: maleDeaths60DaysRate
             type: numeric
-            tooltip: Total number of male deaths within 60 days of positive test per 100,000 resident population
+            tooltip: Total number of male deaths within 60 days of first positive test per 100,000 resident population
 
       - heading: About 
         tabType: metadata
@@ -1624,7 +1624,7 @@ cards:
     cardType: ageSexBreakdown
     fullWidth: false
     abstract: >
-      Total deaths within 60 days of positive test rates by age and sex. There are fewer people in the oldest age 
+      Total deaths within 60 days of first positive test rates by age and sex. There are fewer people in the oldest age 
       groups so the rates show the relative impact on different age groups.
 
     download:
@@ -1647,13 +1647,13 @@ cards:
         fields:
           - label: Females
             value: femaleDeaths60DaysRate
-            tooltip: Total number of female deaths within 60 days of positive test per 100,000 resident population
+            tooltip: Total number of female deaths within 60 days of first positive test per 100,000 resident population
             type: bar
             colour: 3
             
           - label: Males
             value: maleDeaths60DaysRate
-            tooltip: Total number of male deaths within 60 days of positive test per 100,000 resident population
+            tooltip: Total number of male deaths within 60 days of first positive test per 100,000 resident population
             type: bar
             colour: 0
       
@@ -1677,22 +1677,22 @@ cards:
           - label: Female Deaths
             value: femaleDeaths60DaysValue
             type: numeric
-            tooltip: Total number of female deaths within 60 days of positive test
+            tooltip: Total number of female deaths within 60 days of first positive test
 
           - label: Female rate
             value: femaleDeaths60DaysRate
             type: numeric
-            tooltip: Total number of female deaths within 60 days of positive test per 100,000 resident population
+            tooltip: Total number of female deaths within 60 days of first positive test per 100,000 resident population
 
           - label: Male Deaths
             value: maleDeaths60DaysValue
             type: numeric
-            tooltip: Total number of male deaths within 60 days of positive test
+            tooltip: Total number of male deaths within 60 days of first positive test
           
           - label: Male rate
             value: maleDeaths60DaysRate
             type: numeric
-            tooltip: Total number of male deaths within 60 days of positive test per 100,000 resident population
+            tooltip: Total number of male deaths within 60 days of first positive test per 100,000 resident population
 
       - heading: About 
         tabType: metadata
