@@ -49,11 +49,11 @@ summary:
         valueItems: 
           - label: Daily
             value: newCasesByPublishDate
-            tooltip: Daily number of new people with a lab-confirmed positive test result reported on {date} - chart shows 7-day rolling average
+            tooltip: Daily number of new people tested positive reported on {date} - chart shows 7-day rolling average
 
           - label: Total
             value: cumCasesByPublishDate
-            tooltip: Cumulative total number of people with a lab-confirmed positive test result reported on {date}
+            tooltip: Cumulative total number of people tested positive reported on {date}
 
 # {{ StartDevOnlyBlock }}
 # Not currently publishing people tested
@@ -141,11 +141,11 @@ summary:
         
         valueItems: 
           - label: Daily
-            tooltip: Daily number of deaths of people who have had a positive test result and died within 28 days, reported on {date} - chart shows 7-day rolling average
+            tooltip: Daily number of deaths within 28 days of first positive test, reported on {date} - chart shows 7-day rolling average
             value: newDeaths28DaysByPublishDate
 
           - label: Total
-            tooltip: Total number of deaths of people who had a positive test result and died within 28 days, reported up to {date}
+            tooltip: Total number of deaths within 28 days of first positive test, reported up to {date}
             value: cumDeaths28DaysByPublishDate
 
       - caption: Deaths with COVID-19 on the death certificate
