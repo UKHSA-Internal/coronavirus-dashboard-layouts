@@ -31,7 +31,7 @@ summary:
           
           - label: Total
             value: cumPCRTestsByPublishDate
-            tooltip: Cumulative total number of PCR swab tests processed, reported on {date}
+            tooltip: Cumulative total number of PCR swab tests processed, reported up to {date}
 
 ##############################################################################################################################
 
@@ -53,7 +53,7 @@ summary:
 
           - label: Total
             value: cumCasesByPublishDate
-            tooltip: Cumulative total number of people tested positive reported on {date}
+            tooltip: Cumulative total number of people tested positive reported up to {date}
 
 # {{ StartDevOnlyBlock }}
 # Not currently publishing people tested
@@ -74,7 +74,7 @@ summary:
 
           - label: Total
             value: cumPeopleTestedByPublishDate
-            tooltip: Cumulative total number of people tested (positive or negative) reported on {date}
+            tooltip: Cumulative total number of people tested (positive or negative) reported up to {date}
 
 # {{ EndDevOnlyBlock }}
 
@@ -123,7 +123,7 @@ summary:
             value: newAdmissions
 
           - label: Total
-            tooltip: Cumulative total number of COVID-19 patients admitted to hospital reported on {date}
+            tooltip: Cumulative total number of COVID-19 patients admitted to hospital reported up to {date}
             value: cumAdmissions
 
 ##############################################################################################################################

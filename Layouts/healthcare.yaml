@@ -7,7 +7,7 @@ headlineNumbers:
     
       - label: Total
         value: cumAdmissions
-        tooltip: Cumulative total number of COVID-19 patients admitted to hospital, reported on {date}
+        tooltip: Cumulative total number of COVID-19 patients admitted to hospital, reported up to {date}
 
 # {{ StartDevOnlyBlock }}
 # # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
