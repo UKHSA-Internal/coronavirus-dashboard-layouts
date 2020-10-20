@@ -1125,7 +1125,7 @@ cards:
             sign: "="
             value: nation
 
-        latestBy: newCasesBySpecimenDateRollingRate
+        latestBy: newCasesBySpecimenDateRollingRate - 5
         sortBy: areaName
 
         fields:
@@ -1151,7 +1151,7 @@ cards:
             sign: "="
             value: region
 
-        latestBy: newCasesBySpecimenDateRollingRate
+        latestBy: newCasesBySpecimenDateRollingRate - 5
         sortBy: areaName
 
         fields:
@@ -1177,7 +1177,7 @@ cards:
             sign: "="
             value: utla
 
-        latestBy: newCasesBySpecimenDateRollingRate
+        latestBy: newCasesBySpecimenDateRollingRate - 5
         sortBy: areaName
         searchBy: areaName
 
@@ -1204,7 +1204,7 @@ cards:
             sign: "="
             value: ltla
 
-        latestBy: newCasesBySpecimenDateRollingRate
+        latestBy: newCasesBySpecimenDateRollingRate - 5
         sortBy: areaName
         searchBy: areaName
 
