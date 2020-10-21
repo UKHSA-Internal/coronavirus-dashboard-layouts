@@ -117,7 +117,7 @@ cards:
               type: numeric
               tooltip: Cumulative number of virus tests processed by date reported
 
-            - label: PCR testing capacity
+            - label: Virus testing capacity
               value: plannedPCRCapacityByPublishDate
               type: numeric
               tooltip: Estimated daily capacity for virus testing reported by laboratories
@@ -266,8 +266,8 @@ cards:
     abstract: >
       Number of confirmed positive, negative or void lab-based COVID-19 test results, by pillar, 
       by date reported. This is a count of test results and may include multiple tests for an
-      individual person. Data for antibody and surveillance testing (pillars 3 and 4) are only
-      available for the UK as a whole.
+      individual person. Data for surveillance testing (pillar 4) are only available for the UK 
+      as a whole.
 
     download:
       - newPillarOneTestsByPublishDate
