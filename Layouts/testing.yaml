@@ -5,11 +5,11 @@ headlineNumbers:
 
       - label: Daily
         value: newPCRTestsByPublishDate
-        tooltip: Daily number of new virus tests processed, reported on {date}
+        tooltip: Daily number of new virus tests processed on {date}
 
       - label: Total
         value: cumPCRTestsByPublishDate
-        tooltip: Cumulative total number of virus tests processed, reported up to {date}
+        tooltip: Cumulative total number of virus tests processed up to {date}
 
   - caption: Virus testing capacity
     valueItems:
@@ -65,14 +65,14 @@ cards:
           fields:
             - label: Virus tests processed
               value: newPCRTestsByPublishDate
-              tooltip: Daily number of virus tests processed by date reported
+              tooltip: Daily number of virus tests processed
               type: bar
               colour: 0
               rollingAverage: false
 
             - label: Virus tests processed (7-day average)
               value: newPCRTestsByPublishDate
-              tooltip: 7 day rolling average of the daily number of virus tests processed
+              tooltip: 7 day rolling average of the daily number of virus tests processed on {date}
               type: line
               colour: 3
               fill: false
@@ -82,7 +82,7 @@ cards:
 
             - label: Virus testing capacity
               value: plannedPCRCapacityByPublishDate
-              tooltip: Estimated daily capacity for virus testing reported by laboratories
+              tooltip: Estimated daily capacity for virus testing reported by laboratories for {date}
               type: line
               colour: 6
               fill: true
@@ -94,7 +94,7 @@ cards:
           fields:
             - label: Virus tests processed
               value: cumPCRTestsByPublishDate
-              tooltip: Cumulative number of virus tests processed by date reported
+              tooltip: Cumulative number of virus tests processed up to {date}
               type: bar
               colour: 0
               rollingAverage: false
@@ -110,17 +110,17 @@ cards:
             - label: Daily virus tests processed
               value: newPCRTestsByPublishDate
               type: numeric
-              tooltip: Daily number of virus tests processed by date reported
+              tooltip: Daily number of virus tests processed on {date}
 
             - label: Cumulative virus tests processed
               value: cumPCRTestsByPublishDate
               type: numeric
-              tooltip: Cumulative number of virus tests processed by date reported
+              tooltip: Cumulative number of virus tests processed up to {date}
 
             - label: Virus testing capacity
               value: plannedPCRCapacityByPublishDate
               type: numeric
-              tooltip: Estimated daily capacity for virus testing reported by laboratories
+              tooltip: Estimated daily capacity for virus testing reported by laboratories for {date}
 
         - heading: About 
           tabType: metadata
@@ -135,7 +135,7 @@ cards:
           fields:
             - label: Antibody tests processed
               value: newAntibodyTestsByPublishDate
-              tooltip: Daily number of antibody serology tests processed by date reported
+              tooltip: Daily number of antibody serology tests processed on {date}
               type: bar
               colour: 0
               rollingAverage: false
@@ -152,7 +152,7 @@ cards:
 
             - label: Antibody testing capacity
               value: plannedAntibodyCapacityByPublishDate
-              tooltip: Estimated daily capacity for antibody serology testing reported by laboratories
+              tooltip: Estimated daily capacity for antibody serology testing reported by laboratories for {date}
               type: line
               colour: 6
               fill: true
@@ -164,7 +164,7 @@ cards:
           fields:
             - label: Antibody tests processed
               value: cumAntibodyTestsByPublishDate
-              tooltip: Cumulative number of antibody serology tests processed by date reported
+              tooltip: Cumulative number of antibody serology tests processed up to {date}
               type: bar
               colour: 0
               rollingAverage: false
@@ -180,17 +180,17 @@ cards:
             - label: Daily antibody tests processed
               value: newAntibodyTestsByPublishDate
               type: numeric
-              tooltip: Daily number of antibody serology tests processed by date reported
+              tooltip: Daily number of antibody serology tests processed on {date}
 
             - label: Cumulative antibody tests processed
               value: cumAntibodyTestsByPublishDate
               type: numeric
-              tooltip: Cumulative number of antibody serology tests processed by date reported
+              tooltip: Cumulative number of antibody serology tests processed up to {date}
 
             - label: Antibody testing capacity
               value: plannedAntibodyCapacityByPublishDate
               type: numeric
-              tooltip: Estimated daily capacity for antibody testing reported by laboratories
+              tooltip: Estimated daily capacity for antibody testing reported by laboratories for {date}
 
         - heading: About 
           tabType: metadata
@@ -288,28 +288,28 @@ cards:
         fields:
           - label: Pillar 1 (NHS and, in England, PHE)
             value: newPillarOneTestsByPublishDate
-            tooltip: Daily number of lab-based COVID-19 tests processed by NHS (and, in England, PHE) labs by date reported
+            tooltip: Daily number of lab-based COVID-19 tests processed by NHS (and, in England, PHE) labs on {date}
             type: bar
             colour: 0
             rollingAverage: false
 
           - label: Pillar 2 (UK Government testing programme)
             value: newPillarTwoTestsByPublishDate
-            tooltip: Daily number of lab-based COVID-19 tests processed by UK Government testing programme by date reported
+            tooltip: Daily number of lab-based COVID-19 tests processed by UK Government testing programme on {date}
             type: bar
             colour: 3
             rollingAverage: false
 
           - label: Pillar 3 (Antibody)
             value: newPillarThreeTestsByPublishDate
-            tooltip: Daily number of lab-based COVID-19 antibody tests by date reported
+            tooltip: Daily number of lab-based COVID-19 antibody tests processed on {date}
             type: bar
             colour: 4
             rollingAverage: false
 
           - label: Pillar 4 (Surveillance)
             value: newPillarFourTestsByPublishDate
-            tooltip: Daily number of lab-based COVID-19 surveillance tests by date reported
+            tooltip: Daily number of lab-based COVID-19 surveillance tests processed on {date}
             type: bar
             colour: 1
             rollingAverage: false
@@ -320,28 +320,28 @@ cards:
         fields:
           - label: Pillar 1 (NHS and, in England, PHE)
             value: cumPillarOneTestsByPublishDate
-            tooltip: Cumulative total number of lab-based COVID-19 tests processed by NHS (and, in England, PHE) labs by date reported
+            tooltip: Cumulative total number of lab-based COVID-19 tests processed by NHS (and, in England, PHE) laboratories up to {date}
             type: bar
             colour: 0
             rollingAverage: false
 
           - label: Pillar 2 (UK Government testing programme)
             value: cumPillarTwoTestsByPublishDate
-            tooltip: Cumulative total number of lab-based COVID-19 tests processed by UK Government testing programme by date reported
+            tooltip: Cumulative total number of lab-based COVID-19 tests processed by UK Government testing programme up to {date}
             type: bar
             colour: 3
             rollingAverage: false
 
           - label: Pillar 3 (Antibody)
             value: cumPillarThreeTestsByPublishDate
-            tooltip: Cumulative total number of lab-based COVID-19 antibody tests by date reported
+            tooltip: Cumulative total number of lab-based COVID-19 antibody tests processed up to {date}
             type: bar
             colour: 4
             rollingAverage: false
 
           - label: Pillar 4 (Surveillance)
             value: cumPillarFourTestsByPublishDate
-            tooltip: Cumulative total number of lab-based COVID-19 surveillance tests by date reported
+            tooltip: Cumulative total number of lab-based COVID-19 surveillance tests processed up to {date}
             type: bar
             colour: 1
             rollingAverage: false
@@ -357,27 +357,27 @@ cards:
           - label: Pillar 1
             value: newPillarOneTestsByPublishDate
             type: numeric
-            tooltip: Daily number of lab-based COVID-19 tests processed by NHS (and, in England, PHE) labs by date reported
+            tooltip: Daily number of lab-based COVID-19 tests processed by NHS (and, in England, PHE) laboratories on {date}
 
           - label: Pillar 2
             value: newPillarTwoTestsByPublishDate
             type: numeric
-            tooltip: Daily number of lab-based COVID-19 tests processed by UK Government testing programme by date reported
+            tooltip: Daily number of lab-based COVID-19 tests processed by UK Government testing programme on {date}
 
           - label: Pillar 3
             value: newPillarThreeTestsByPublishDate
             type: numeric
-            tooltip: Daily number of lab-based COVID-19 antibody tests by date reported
+            tooltip: Daily number of lab-based COVID-19 antibody tests processed on {date}
 
           - label: Pillar 4
             value: newPillarFourTestsByPublishDate
             type: numeric
-            tooltip: Daily number of lab-based COVID-19 surveillance tests by date reported
+            tooltip: Daily number of lab-based COVID-19 surveillance tests processed on {date}
 
           - label: All pillars
             value: newTestsByPublishDate
             type: numeric
-            tooltip: Daily number of lab-based COVID-19 tests processed by date reported
+            tooltip: Daily number of lab-based COVID-19 tests processed on {date}
 
       - heading: Cumulative data
         tabType: table
@@ -390,27 +390,27 @@ cards:
           - label: Pillar 1
             value: cumPillarOneTestsByPublishDate
             type: numeric
-            tooltip: Cumulative total number of lab-based COVID-19 tests processed by NHS (and, in England, PHE) labs by date reported
+            tooltip: Cumulative total number of lab-based COVID-19 tests processed by NHS (and, in England, PHE) laboratories up to {date}
 
           - label: Pillar 2
             value: cumPillarTwoTestsByPublishDate
             type: numeric
-            tooltip: Cumulative total number of lab-based COVID-19 tests processed by UK Government testing programme by date reported
+            tooltip: Cumulative total number of lab-based COVID-19 tests processed by UK Government testing programme up to {date}
 
           - label: Pillar 3
             value: cumPillarThreeTestsByPublishDate
             type: numeric
-            tooltip: Cumulative total number of lab-based COVID-19 antibody tests by date reported
+            tooltip: Cumulative total number of lab-based COVID-19 antibody tests processed up to {date}
 
           - label: Pillar 4
             value: cumPillarFourTestsByPublishDate
             type: numeric
-            tooltip: Cumulative total number of lab-based COVID-19 surveillance tests by date reported
+            tooltip: Cumulative total number of lab-based COVID-19 surveillance tests processed up to {date}
 
           - label: All pillars
             value: cumTestsByPublishDate
             type: numeric
-            tooltip: Cumulative total number of lab-based COVID-19 tests processed by date reported
+            tooltip: Cumulative total number of lab-based COVID-19 tests processed up to {date}
 
       - heading: About 
         tabType: metadata
