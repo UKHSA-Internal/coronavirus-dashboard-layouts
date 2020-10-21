@@ -737,7 +737,7 @@ cards:
 
     fullWidth: false
     abstract: > 
-      Number of people with at least one lab-confirmed COVID-19 positive test result since the
+      Number of people with at least one lab-confirmed positive COVID-19 test result since the
       start of the pandemic, by age and sex.
 
     download:
@@ -1125,7 +1125,7 @@ cards:
             sign: "="
             value: nation
 
-        latestBy: newCasesBySpecimenDateRollingRate - 5
+        latestBy: newCasesBySpecimenDateRollingRate
         sortBy: areaName
 
         fields:
@@ -1137,7 +1137,7 @@ cards:
           - label: Cases
             value: newCasesBySpecimenDateRollingSum
             type: numeric
-            tooltip: Total number of people tested positive in the seven day period ending {date-5}
+            tooltip: Total number of people tested positive in the seven day period ending {date}
 
           - label: Rate per 100,000 population
             value: newCasesBySpecimenDateRollingRate
@@ -1151,7 +1151,7 @@ cards:
             sign: "="
             value: region
 
-        latestBy: newCasesBySpecimenDateRollingRate - 5
+        latestBy: newCasesBySpecimenDateRollingRate
         sortBy: areaName
 
         fields:
@@ -1163,7 +1163,7 @@ cards:
           - label: Cases
             value: newCasesBySpecimenDateRollingSum
             type: numeric
-            tooltip: Total number of people tested positive in the seven day period ending {date-5}
+            tooltip: Total number of people tested positive in the seven day period ending {date}
 
           - label: Rate per 100,000 population
             value: newCasesBySpecimenDateRollingRate
@@ -1177,7 +1177,7 @@ cards:
             sign: "="
             value: utla
 
-        latestBy: newCasesBySpecimenDateRollingRate - 5
+        latestBy: newCasesBySpecimenDateRollingRate
         sortBy: areaName
         searchBy: areaName
 
@@ -1190,7 +1190,7 @@ cards:
           - label: Cases
             value: newCasesBySpecimenDateRollingSum
             type: numeric
-            tooltip: Total number of people tested positive in the week ending {date-5}
+            tooltip: Total number of people tested positive in the week ending {date}
 
           - label: Rate per 100,000 population
             value: newCasesBySpecimenDateRollingRate
@@ -1204,7 +1204,7 @@ cards:
             sign: "="
             value: ltla
 
-        latestBy: newCasesBySpecimenDateRollingRate - 5
+        latestBy: newCasesBySpecimenDateRollingRate
         sortBy: areaName
         searchBy: areaName
 
@@ -1217,7 +1217,7 @@ cards:
           - label: Cases
             value: newCasesBySpecimenDateRollingSum
             type: numeric
-            tooltip: Total number of people tested positive in the seven day period ending {date-5}
+            tooltip: Total number of people tested positive in the seven day period ending {date}
 
           - label: Rate per 100,000 population
             value: newCasesBySpecimenDateRollingRate
