@@ -54,7 +54,7 @@ cards:
       heading: null
       choices:
         - By nation
-#        - UK total
+        - UK total
     
     By nation:
       
@@ -118,77 +118,77 @@ cards:
           tabType: metadata
           filename: cardMetadata/cases/cardCasesTimeSeries.md
 
-    # UK total:
+    UK total:
       
-    #   tabs:
-    #     - heading: Daily
-    #       tabType: chart
-    #       barType: stack
-    #       colours: [0] # areaNames in alphabetical order
-    #       params:
-    #         - key: areaType
-    #           sign: "="
-    #           value: overview
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
 
-    #       fields:
-    #         - label: "Number of cases"
-    #           value: newCasesBySpecimenDate
-    #           tooltip: Daily number of new people tested positive, by specimen date
-    #           type: bar
-    #           rollingAverage: false
+          fields:
+            - label: "Number of cases"
+              value: newCasesBySpecimenDate
+              tooltip: Daily number of new people tested positive, by specimen date
+              type: bar
+              rollingAverage: false
 
-    #         - label: Cases (7-day average)
-    #           value: newCasesBySpecimenDate
-    #           tooltip: 7 day rolling average of the daily number of cases by specimen date
-    #           type: line
-    #           colour: 3
-    #           fill: false
-    #           rollingAverage:
-    #             window: 7
-    #             clipEnd: 3 #no of days to exclude for incomplete data
+            - label: Cases (7-day average)
+              value: newCasesBySpecimenDate
+              tooltip: 7 day rolling average of the daily number of cases by specimen date
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 3 #no of days to exclude for incomplete data
 
-    #     - heading: Cumulative
-    #       tabType: chart
-    #       barType: stack
-    #       colours: [0] # areaNames in alphabetical order
-    #       params:
-    #         - key: areaType
-    #           sign: "="
-    #           value: overview
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+          colours: [0] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
 
-    #       fields:
-    #         - label: "Number of cases"
-    #           value: cumCasesBySpecimenDate
-    #           tooltip: Cumulative total number of people tested positive, by specimen date
-    #           type: bar
-    #           rollingAverage: false
+          fields:
+            - label: "Number of cases"
+              value: cumCasesBySpecimenDate
+              tooltip: Cumulative total number of people tested positive, by specimen date
+              type: bar
+              rollingAverage: false
 
-    #     - heading: Data
-    #       tabType: table
-    #       params:
-    #         - key: areaType
-    #           sign: "="
-    #           value: overview
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
         
-    #       fields:
-    #         - label: Specimen date
-    #           value: date
-    #           type: date
-    #           tooltip: Date the sample was taken from the person
+          fields:
+            - label: Specimen date
+              value: date
+              type: date
+              tooltip: Date the sample was taken from the person
 
-    #         - label: daily
-    #           value: newCasesBySpecimenDate
-    #           type: numeric
-    #           tooltip: Daily number of new people tested positive, by specimen date
+            - label: daily
+              value: newCasesBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people tested positive, by specimen date
 
-    #         - label: total
-    #           value: cumCasesBySpecimenDate
-    #           type: numeric
-    #           tooltip: Cumulative total number of people tested positive, by specimen date
+            - label: total
+              value: cumCasesBySpecimenDate
+              type: numeric
+              tooltip: Cumulative total number of people tested positive, by specimen date
 
-        # - heading: About 
-        #   tabType: metadata
-        #   filename: cardMetadata/cases/cardCasesTimeSeries.md
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardCasesTimeSeries.md
 
 ##############################################################################################################################
 
