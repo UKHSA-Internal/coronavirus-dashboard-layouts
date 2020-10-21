@@ -31,7 +31,7 @@ summary:
           
           - label: Total
             value: cumPCRTestsByPublishDate
-            tooltip: Cumulative total number of virus tests processed on {date}
+            tooltip: Cumulative total number of virus tests processed up to {date}
 
 ##############################################################################################################################
 
