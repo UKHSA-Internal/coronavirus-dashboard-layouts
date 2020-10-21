@@ -27,7 +27,7 @@ summary:
         valueItems: 
           - label: Daily
             value: newPCRTestsByPublishDate
-            tooltip: Daily number of virus tests processed, reported on {date} - chart shows 7-day rolling average
+            tooltip: Daily number of virus tests processed on {date} - chart shows 7-day rolling average
           
           - label: Total
             value: cumPCRTestsByPublishDate
