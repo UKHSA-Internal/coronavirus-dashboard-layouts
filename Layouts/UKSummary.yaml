@@ -2,7 +2,7 @@ summary:
   - heading: Testing
     fields:
 
-      - caption: PCR testing capacity
+      - caption: Virus testing capacity
         chart:
           value: plannedPCRCapacityByPublishDate
           type: line
@@ -13,9 +13,9 @@ summary:
         
         valueItems: 
           - value: plannedPCRCapacityByPublishDate
-            tooltip: Estimated PCR testing capacity for {date}
+            tooltip: Estimated virus testing capacity reported by laboratories for {date}
 
-      - caption: PCR tests processed
+      - caption: Virus tests processed
         chart:
           value: newPCRTestsByPublishDate
           type: line
@@ -27,11 +27,11 @@ summary:
         valueItems: 
           - label: Daily
             value: newPCRTestsByPublishDate
-            tooltip: Daily number of PCR swab tests processed, reported on {date} - chart shows 7-day rolling average
+            tooltip: Daily number of virus tests processed on {date} - chart shows 7-day rolling average
           
           - label: Total
             value: cumPCRTestsByPublishDate
-            tooltip: Cumulative total number of PCR swab tests processed, reported up to {date}
+            tooltip: Cumulative total number of virus tests processed on {date}
 
 ##############################################################################################################################
 
@@ -70,11 +70,11 @@ summary:
         valueItems: 
           - label: Daily
             value: newPeopleTestedByPublishDate
-            tooltip: Daily number of new people tested (positive or negative) reported on {date} - chart shows 7-day rolling average
+            tooltip: Daily number of new people tested (positive, negative or void) reported on {date} - chart shows 7-day rolling average
 
           - label: Total
             value: cumPeopleTestedByPublishDate
-            tooltip: Cumulative total number of people tested (positive or negative) reported up to {date}
+            tooltip: Cumulative total number of people tested (positive, negative or void) reported up to {date}
 
 # {{ EndDevOnlyBlock }}
 

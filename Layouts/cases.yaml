@@ -16,11 +16,11 @@ headlineNumbers:
     valueItems:
       - label: Daily
         value: newPeopleTestedByPublishDate
-        tooltip: Daily number of new people tested (positive or negative) reported on {date}
+        tooltip: Daily number of new people tested (positive, negative or void) reported on {date}
 
       - label: Total
         value: cumPeopleTestedByPublishDate
-        tooltip: Cumulative total number of people tested (positive or negative) reported up to {date}
+        tooltip: Cumulative total number of people tested (positive, negative or void) reported up to {date}
 
 # {{ EndDevOnlyBlock }}
 
@@ -577,7 +577,7 @@ cards:
     # Why is this on the Cases page and repeated on the Tested page - just to show cases and tests side by side?  If so maybe card needs different title?
 
     abstract: >
-      Number of people with at least one lab-confirmed positive or negative COVID-19 test result. 
+      Number of people with at least one lab-confirmed positive, negative or void COVID-19 test result. 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
       different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
 
@@ -602,7 +602,7 @@ cards:
           fields:
             - label: Number of people tested
               value: newPeopleTestedBySpecimenDate
-              tooltip: Daily number of people tested (positive or negative) by date the sample was taken from the person
+              tooltip: Daily number of people tested (positive, negative or void) by date the sample was taken from the person
               type: bar
               colour: 0
               rollingAverage: false
@@ -622,7 +622,7 @@ cards:
           fields:
             - label: Number of people tested
               value: cumPeopleTestedBySpecimenDate
-              tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
+              tooltip: Cumulative total number of people tested (positive, negative or void) by date the sample was taken from the person
               type: bar
               colour: 0
               rollingAverage: false
@@ -648,12 +648,12 @@ cards:
             - label: Daily people tested
               value: newPeopleTestedBySpecimenDate
               type: numeric
-              tooltip: Daily number of people tested (positive or negative) by date the sample was taken from the person
+              tooltip: Daily number of people tested (positive, negative or void) by date the sample was taken from the person
 
             - label: Cumulative people tested
               value: cumPeopleTestedBySpecimenDate
               type: numeric
-              tooltip: Cumulative total number of people tested (positive or negative) by date the sample was taken from the person
+              tooltip: Cumulative total number of people tested (positive, negative or void) by date the sample was taken from the person
 
         - heading: About 
           tabType: metadata
@@ -667,7 +667,7 @@ cards:
           fields:
             - label: Number of people tested
               value: newPeopleTestedByPublishDate
-              tooltip: Daily number of new people tested (positive or negative) by date reported
+              tooltip: Daily number of new people tested (positive, negative or void) by date reported
               type: bar
               colour: 0
               rollingAverage: false
@@ -685,7 +685,7 @@ cards:
           fields:                
             - label: Number of people tested
               value: cumPeopleTestedByPublishDate
-              tooltip: Cumulative total number of people tested (positive or negative) by date reported
+              tooltip: Cumulative total number of people tested (positive, negative or void) by date reported
               type: bar
               colour: 0
               rollingAverage: false
@@ -711,12 +711,12 @@ cards:
             - label: Daily people tested
               value: newPeopleTestedByPublishDate
               type: numeric
-              tooltip: Daily number of new people tested (positive or negative) by date reported
+              tooltip: Daily number of new people tested (positive, negative or void) by date reported
 
             - label: Cumulative people tested
               value: cumPeopleTestedByPublishDate
               type: numeric
-              tooltip: Cumulative total number of people tested (positive or negative) by date reported
+              tooltip: Cumulative total number of people tested (positive, negative or void) by date reported
 
         - heading: About 
           tabType: metadata
@@ -737,7 +737,7 @@ cards:
 
     fullWidth: false
     abstract: > 
-      Number of people with at least one lab-confirmed COVID-19 positive test result since the
+      Number of people with at least one lab-confirmed positive COVID-19 test result since the
       start of the pandemic, by age and sex.
 
     download:
@@ -936,13 +936,13 @@ cards:
 #         fields:
 #           - label: Females
 #             value: femalePeopleTestedValue
-#             tooltip: Total number of females tested (positive or negative)
+#             tooltip: Total number of females tested (positive, negative or void)
 #             type: bar
 #             colour: 3
             
 #           - label: Males
 #             value: malePeopleTestedValue
-#             tooltip: Total number of males tested (positive or negative)
+#             tooltip: Total number of males tested (positive, negative or void)
 #             type: bar
 #             colour: 0
       
@@ -966,22 +966,22 @@ cards:
 #           - label: Females
 #             value: femalePeopleTestedValue
 #             type: numeric
-#             tooltip: Total number of females tested (positive or negative)
+#             tooltip: Total number of females tested (positive, negative or void)
 
 #           - label: Female rate
 #             value: femalePeopleTestedRate
 #             type: numeric
-#             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+#             tooltip: Total number of females tested (positive, negative or void) per 100,000 resident population
 
 #           - label: Males
 #             value: malePeopleTestedValue
 #             type: numeric
-#             tooltip: Total number of males tested (positive or negative)
+#             tooltip: Total number of males tested (positive, negative or void
           
 #           - label: Male rate
 #             value: malePeopleTestedRate
 #             type: numeric
-#             tooltip: Total number of males tested (positive or negative) per 100,000 resident population
+#             tooltip: Total number of males tested (positive, negative or void) per 100,000 resident population
 
 #       - heading: About 
 #         tabType: metadata
@@ -1021,13 +1021,13 @@ cards:
 #         fields:
 #           - label: Females
 #             value: femalePeopleTestedRate
-#             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+#             tooltip: Total number of females tested (positive, negative or void per 100,000 resident population
 #             type: bar
 #             colour: 3
             
 #           - label: Males
 #             value: malePeopleTestedRate
-#             tooltip: Total number of males tested (positive or negative) per 100,000 resident population
+#             tooltip: Total number of males tested (positive, negative or void) per 100,000 resident population
 #             type: bar
 #             colour: 0
       
@@ -1051,22 +1051,22 @@ cards:
 #           - label: Female cases
 #             value: femalePeopleTestedValue
 #             type: numeric
-#             tooltip: Total number of females tested (positive or negative)
+#             tooltip: Total number of females tested (positive, negative or void)
 
 #           - label: Female rate
 #             value: femalePeopleTestedRate
 #             type: numeric
-#             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+#             tooltip: Total number of females tested (positive, negative or void) per 100,000 resident population
 
 #           - label: Male cases
 #             value: malePeopleTestedValue
 #             type: numeric
-#             tooltip: Total number of males tested (positive or negative)
+#             tooltip: Total number of males tested (positive, negative or void)
           
 #           - label: Male rate
 #             value: malePeopleTestedRate
 #             type: numeric
-#             tooltip: Total number of females tested (positive or negative) per 100,000 resident population
+#             tooltip: Total number of females tested (positive, negative or void) per 100,000 resident population
 
 #       - heading: About 
 #         tabType: metadata
@@ -1085,11 +1085,11 @@ cards:
   #   userOptions: areaType # linked to map and table below?
   #   x-label: People tested per 100,000 population
   #   x-value: CumPeopleTestedByPublishDateRate
-  #   x-tooltip: Cumulative total number of people tested (positive or negative) per 100,000 resident population
+  #   x-tooltip: Cumulative total number of people tested (positive, negative or void) per 100,000 resident population
 
   #   y-label: Cases per 100,000 population
   #   y-value: CumCasesByPublishDateRate
-  #   y-tooltip: Cumulative total number of new people with a lab-confirmed positive test result per 100,000 resident population
+  #   y-tooltip: Cumulative total number of new people with a confirmed positive lab-based test result per 100,000 resident population
 
   # - heading: Cases rates by area
   #   cardType: mapStatic
@@ -1137,7 +1137,7 @@ cards:
           - label: Cases
             value: newCasesBySpecimenDateRollingSum
             type: numeric
-            tooltip: Total number of people tested positive in the seven day period ending {date-5}
+            tooltip: Total number of people tested positive in the seven day period ending {date}
 
           - label: Rate per 100,000 population
             value: newCasesBySpecimenDateRollingRate
@@ -1163,7 +1163,7 @@ cards:
           - label: Cases
             value: newCasesBySpecimenDateRollingSum
             type: numeric
-            tooltip: Total number of people tested positive in the seven day period ending {date-5}
+            tooltip: Total number of people tested positive in the seven day period ending {date}
 
           - label: Rate per 100,000 population
             value: newCasesBySpecimenDateRollingRate
@@ -1190,7 +1190,7 @@ cards:
           - label: Cases
             value: newCasesBySpecimenDateRollingSum
             type: numeric
-            tooltip: Total number of people tested positive in the week ending {date-5}
+            tooltip: Total number of people tested positive in the week ending {date}
 
           - label: Rate per 100,000 population
             value: newCasesBySpecimenDateRollingRate
@@ -1217,7 +1217,7 @@ cards:
           - label: Cases
             value: newCasesBySpecimenDateRollingSum
             type: numeric
-            tooltip: Total number of people tested positive in the seven day period ending {date-5}
+            tooltip: Total number of people tested positive in the seven day period ending {date}
 
           - label: Rate per 100,000 population
             value: newCasesBySpecimenDateRollingRate
