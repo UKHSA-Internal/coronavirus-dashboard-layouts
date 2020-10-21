@@ -352,7 +352,7 @@ cards:
       heading: null
       choices:
         - By nation
-#        - UK total
+        - UK total
     
     By nation:
       
@@ -413,71 +413,71 @@ cards:
           tabType: metadata
           filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
-    # UK total:
+    UK total:
 
-    #   tabs:
-    #     - heading: Daily
-    #       tabType: chart
-    #       barType: stack
-    #       colours: [0] # areaNames in alphabetical order
-    #       params:
-    #         - key: areaType
-    #           sign: "="
-    #           value: overview
-    #       fields:
-    #         - label: ""
-    #           value: newDeaths28DaysByDeathDate
-    #           tooltip: Daily number of deaths within 28 days of first positive test, by date of death
-    #           type: bar
-    #           rollingAverage: false
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+          fields:
+            - label: ""
+              value: newDeaths28DaysByDeathDate
+              tooltip: Daily number of deaths within 28 days of first positive test, by date of death
+              type: bar
+              rollingAverage: false
 
-    #         - label: (7-day average)
-    #           value: newDeaths28DaysByDeathDate
-    #           tooltip: 7 day rolling average of the daily number of deaths within 28 days of first positive test
-    #           type: line
-    #           colour: 3
-    #           rollingAverage: true
+            - label: (7-day average)
+              value: newDeaths28DaysByDeathDate
+              tooltip: 7 day rolling average of the daily number of deaths within 28 days of first positive test
+              type: line
+              colour: 3
+              rollingAverage: true
 
-    #     - heading: Cumulative
-    #       tabType: chart
-    #       barType: stack
-    #       colours: [0] # areaNames in alphabetical order
-    #       params:
-    #         - key: areaType
-    #           sign: "="
-    #           value: overview
-    #       fields:
-    #         - label: ""
-    #           value: cumDeaths28DaysByDeathDate
-    #           tooltip: Cumulative total number of deaths within 28 days of first positive test, by date of death
-    #           type: bar
-    #           rollingAverage: false
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+          colours: [0] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+          fields:
+            - label: ""
+              value: cumDeaths28DaysByDeathDate
+              tooltip: Cumulative total number of deaths within 28 days of first positive test, by date of death
+              type: bar
+              rollingAverage: false
 
-    #     - heading: Data
-    #       tabType: table
-    #       params:
-    #         - key: areaType
-    #           sign: "="
-    #           value: overview
-    #       fields:
-    #         - label: Date of death
-    #           value: date
-    #           type: date
-    #           tooltip: Date on which the death occurred
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+          fields:
+            - label: Date of death
+              value: date
+              type: date
+              tooltip: Date on which the death occurred
 
-    #         - label: daily
-    #           value: newDeaths28DaysByDeathDate
-    #           type: numeric
-    #           tooltip: Daily number of deaths within 28 days of first positive test, by date of death
+            - label: daily
+              value: newDeaths28DaysByDeathDate
+              type: numeric
+              tooltip: Daily number of deaths within 28 days of first positive test, by date of death
 
-    #         - label: total
-    #           value: cumDeaths28DaysByDeathDate
-    #           type: numeric
-    #           tooltip: Cumulative total number of deaths within 28 days of first positive test, by date of death
+            - label: total
+              value: cumDeaths28DaysByDeathDate
+              type: numeric
+              tooltip: Cumulative total number of deaths within 28 days of first positive test, by date of death
 
-    #     - heading: About 
-    #       tabType: metadata
-    #       filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
           
 ##############################################################################################################################
 
