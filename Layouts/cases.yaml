@@ -1102,16 +1102,16 @@ cards:
 
 ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
-
-  - heading: Seven day cases by area
+  - heading: Cases by area (last 7 days)
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
       Total number of people with at least one lab-confirmed positive COVID-19 test result in the most 
-      recent seven day period for which data are considered to be complete. The rates per 100,000 resident 
-      population give a fairer comparison of the number of cases in each area but they do not take account 
-      of the different rates of testing or differences in the age and sex of the local populations. 
+      recent seven day period. The rates per 100,000 resident population give a fairer comparison of 
+      the number of cases in each area but they do not take account of the different rates of testing 
+      or differences in the age and sex of the local populations. Data shown are cases by specimen date 
+      and because these are incomplete for the most recent dates, the period represented is the seven 
+      days ending 5 days before the date when the website was last updated.
 
     download:
       - newCasesBySpecimenDateRollingSum
@@ -1228,18 +1228,17 @@ cards:
         tabType: metadata
         filename: cardMetadata/cases/cardSevenDayCasesAndRatesByArea.md
 
-# {{ EndDevOnlyBlock }}
-
 ##############################################################################################################################
 
-  - heading: Cases by area
+  - heading: Cases by area (whole pandemic)
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
       Total number of people with at least one lab-confirmed positive COVID-19 test result since the start
       of the pandemic in each area. The rates per 100,000 resident population give a fairer comparison of
       the number of cases in each area but they do not take account of the different rates of testing or
-      differences in the age and sex of the local populations. 
+      differences in the age and sex of the local populations. Only data available for the latest reported
+      date are shown. 
 
     download:
       - cumCasesByPublishDate
