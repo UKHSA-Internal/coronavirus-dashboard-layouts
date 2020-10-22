@@ -16,11 +16,11 @@ headlineNumbers:
     valueItems:
       - label: Daily
         value: newPeopleTestedByPublishDate
-        tooltip: Daily number of new people tested (positive, negative or void) reported on {date}
+        tooltip: Daily number of new people tested reported on {date}
 
       - label: Total
         value: cumPeopleTestedByPublishDate
-        tooltip: Cumulative total number of people tested (positive, negative or void) reported up to {date}
+        tooltip: Cumulative total number of people tested reported up to {date}
 
 # {{ EndDevOnlyBlock }}
 
@@ -602,7 +602,7 @@ cards:
           fields:
             - label: Number of people tested
               value: newPeopleTestedBySpecimenDate
-              tooltip: Daily number of people tested (positive, negative or void) by date the sample was taken from the person
+              tooltip: Daily number of people tested by date the sample was taken from the person
               type: bar
               colour: 0
               rollingAverage: false
@@ -622,7 +622,7 @@ cards:
           fields:
             - label: Number of people tested
               value: cumPeopleTestedBySpecimenDate
-              tooltip: Cumulative total number of people tested (positive, negative or void) by date the sample was taken from the person
+              tooltip: Cumulative total number of people tested by date the sample was taken from the person
               type: bar
               colour: 0
               rollingAverage: false
@@ -648,12 +648,12 @@ cards:
             - label: Daily people tested
               value: newPeopleTestedBySpecimenDate
               type: numeric
-              tooltip: Daily number of people tested (positive, negative or void) by date the sample was taken from the person
+              tooltip: Daily number of people tested by date the sample was taken from the person
 
             - label: Cumulative people tested
               value: cumPeopleTestedBySpecimenDate
               type: numeric
-              tooltip: Cumulative total number of people tested (positive, negative or void) by date the sample was taken from the person
+              tooltip: Cumulative total number of people tested by date the sample was taken from the person
 
         - heading: About 
           tabType: metadata
@@ -667,7 +667,7 @@ cards:
           fields:
             - label: Number of people tested
               value: newPeopleTestedByPublishDate
-              tooltip: Daily number of new people tested (positive, negative or void) by date reported
+              tooltip: Daily number of new people tested by date reported
               type: bar
               colour: 0
               rollingAverage: false
@@ -685,7 +685,7 @@ cards:
           fields:                
             - label: Number of people tested
               value: cumPeopleTestedByPublishDate
-              tooltip: Cumulative total number of people tested (positive, negative or void) by date reported
+              tooltip: Cumulative total number of people tested by date reported
               type: bar
               colour: 0
               rollingAverage: false
@@ -711,12 +711,12 @@ cards:
             - label: Daily people tested
               value: newPeopleTestedByPublishDate
               type: numeric
-              tooltip: Daily number of new people tested (positive, negative or void) by date reported
+              tooltip: Daily number of new people tested by date reported
 
             - label: Cumulative people tested
               value: cumPeopleTestedByPublishDate
               type: numeric
-              tooltip: Cumulative total number of people tested (positive, negative or void) by date reported
+              tooltip: Cumulative total number of people tested by date reported
 
         - heading: About 
           tabType: metadata
@@ -936,13 +936,13 @@ cards:
 #         fields:
 #           - label: Females
 #             value: femalePeopleTestedValue
-#             tooltip: Total number of females tested (positive, negative or void)
+#             tooltip: Total number of females tested
 #             type: bar
 #             colour: 3
             
 #           - label: Males
 #             value: malePeopleTestedValue
-#             tooltip: Total number of males tested (positive, negative or void)
+#             tooltip: Total number of males tested
 #             type: bar
 #             colour: 0
       
@@ -966,22 +966,22 @@ cards:
 #           - label: Females
 #             value: femalePeopleTestedValue
 #             type: numeric
-#             tooltip: Total number of females tested (positive, negative or void)
+#             tooltip: Total number of females tested
 
 #           - label: Female rate
 #             value: femalePeopleTestedRate
 #             type: numeric
-#             tooltip: Total number of females tested (positive, negative or void) per 100,000 resident population
+#             tooltip: Total number of females tested per 100,000 resident population
 
 #           - label: Males
 #             value: malePeopleTestedValue
 #             type: numeric
-#             tooltip: Total number of males tested (positive, negative or void
+#             tooltip: Total number of males tested
           
 #           - label: Male rate
 #             value: malePeopleTestedRate
 #             type: numeric
-#             tooltip: Total number of males tested (positive, negative or void) per 100,000 resident population
+#             tooltip: Total number of males tested per 100,000 resident population
 
 #       - heading: About 
 #         tabType: metadata
@@ -1021,13 +1021,13 @@ cards:
 #         fields:
 #           - label: Females
 #             value: femalePeopleTestedRate
-#             tooltip: Total number of females tested (positive, negative or void per 100,000 resident population
+#             tooltip: Total number of females tested per 100,000 resident population
 #             type: bar
 #             colour: 3
             
 #           - label: Males
 #             value: malePeopleTestedRate
-#             tooltip: Total number of males tested (positive, negative or void) per 100,000 resident population
+#             tooltip: Total number of males tested per 100,000 resident population
 #             type: bar
 #             colour: 0
       
@@ -1051,22 +1051,22 @@ cards:
 #           - label: Female cases
 #             value: femalePeopleTestedValue
 #             type: numeric
-#             tooltip: Total number of females tested (positive, negative or void)
+#             tooltip: Total number of females tested
 
 #           - label: Female rate
 #             value: femalePeopleTestedRate
 #             type: numeric
-#             tooltip: Total number of females tested (positive, negative or void) per 100,000 resident population
+#             tooltip: Total number of females tested per 100,000 resident population
 
 #           - label: Male cases
 #             value: malePeopleTestedValue
 #             type: numeric
-#             tooltip: Total number of males tested (positive, negative or void)
+#             tooltip: Total number of males tested
           
 #           - label: Male rate
 #             value: malePeopleTestedRate
 #             type: numeric
-#             tooltip: Total number of females tested (positive, negative or void) per 100,000 resident population
+#             tooltip: Total number of females tested per 100,000 resident population
 
 #       - heading: About 
 #         tabType: metadata
@@ -1085,7 +1085,7 @@ cards:
   #   userOptions: areaType # linked to map and table below?
   #   x-label: People tested per 100,000 population
   #   x-value: CumPeopleTestedByPublishDateRate
-  #   x-tooltip: Cumulative total number of people tested (positive, negative or void) per 100,000 resident population
+  #   x-tooltip: Cumulative total number of people tested per 100,000 resident population
 
   #   y-label: Cases per 100,000 population
   #   y-value: CumCasesByPublishDateRate
