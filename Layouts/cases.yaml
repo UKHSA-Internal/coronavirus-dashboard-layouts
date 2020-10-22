@@ -1102,6 +1102,101 @@ cards:
 
 ##############################################################################################################################
 
+  - heading: 7-day cases by specimen date
+    cardType: chart
+    fullWidth: true
+    abstract: >
+      Number of people with at least one lab-confirmed positive COVID-19 test result in the rolling 
+      seven day period ending on the dates shown. Data are presented as either counts or rates per 
+      100,000 population. The rates give a fairer comparison of the number of cases in each area but 
+      they do not take account of the different rates of testing or differences in the age and sex 
+      of the local populations. Data shown are cases by specimen date and because these are incomplete 
+      for the most recent dates, the latest period represented is the seven day period ending 5 days 
+      before the date when the website was last updated.
+
+    download:
+      - newCasesByPublishDateRollingSum
+      - newCasesByPublishDateRollingRate
+
+    options:
+      type: radio
+      heading: null
+      choices:
+        - Counts
+        - Rates
+
+    Counts:
+
+      tabs:
+        - heading: Seven day periods
+          tabType: chart
+          barType: overlay
+          fields:
+            - label: Number of cases in 7-day period
+              value: newCasesBySpecimenDateRollingSum
+              tooltip: Number of new people tested positive in the seven day period ending on the date shown by date the sample was taken 
+              colour: 0
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          fields:
+            - label: Seven day period ending
+              value: date
+              type: date
+              tooltip: End date for the seven day period when the sample was taken from the person
+
+            - label: Count of cases
+              value: newCasesBySpecimenDateRollingSum
+              type: numeric
+              tooltip: Number of new people tested positive in the seven day period ending on the date shown by date the sample was taken
+
+            - label: Rate per 100,000 population
+              value: newCasesBySpecimenDateRollingRate
+              type: numeric
+              tooltip: Rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken per 100,000 population
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
+
+    Rates:
+
+      tabs:
+        - heading: Seven day periods
+          tabType: chart
+          barType: overlay
+          fields:
+            - label: Rate of cases per 100,000 population in 7-day period
+              value: newCasesBySpecimenDateRollingRate
+              tooltip: Rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken per 100,000 population 
+              colour: 0
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          fields:
+            - label: Seven day period ending
+              value: date
+              type: date
+              tooltip: End date for the seven day period when the sample was taken from the person
+
+            - label: Count of cases
+              value: newCasesBySpecimenDateRollingSum
+              type: numeric
+              tooltip: Number of new people tested positive in the seven day period ending on the date shown by date the sample was taken
+
+            - label: Rate per 100,000 population
+              value: newCasesBySpecimenDateRollingRate
+              type: numeric
+              tooltip: Rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken per 100,000 population
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
+
+##############################################################################################################################
+
   - heading: Cases by area (last 7 days)
     cardType: simpleTableStatic
     fullWidth: false
