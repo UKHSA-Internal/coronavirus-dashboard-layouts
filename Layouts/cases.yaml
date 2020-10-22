@@ -1104,7 +1104,7 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 
-  - heading: Seven day case counts and rates by area (dev only)
+  - heading: Seven day cases by area
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
@@ -1239,8 +1239,7 @@ cards:
       Total number of people with at least one lab-confirmed positive COVID-19 test result since the start
       of the pandemic in each area. The rates per 100,000 resident population give a fairer comparison of
       the number of cases in each area but they do not take account of the different rates of testing or
-      differences in the age and sex of the local populations. Only data available for the latest reported
-      date are shown.
+      differences in the age and sex of the local populations. 
 
     download:
       - cumCasesByPublishDate
