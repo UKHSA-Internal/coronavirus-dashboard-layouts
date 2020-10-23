@@ -1102,6 +1102,8 @@ cards:
 
 ##############################################################################################################################
 
+# {{ StartDevOnlyBlock }}
+
   - heading: 7-day cases by specimen date
     cardType: chart
     fullWidth: true
@@ -1196,6 +1198,8 @@ cards:
         - heading: About 
           tabType: metadata
           filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
+
+# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
