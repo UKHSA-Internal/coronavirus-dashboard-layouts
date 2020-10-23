@@ -34,7 +34,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void lab-based COVID-19 test results, by test type, by date reported.  
+      Number of confirmed positive, negative or void lab-based COVID-19 test results, by test type.  
       This is a count of test results and may include multiple tests for an individual person.  Virus tests test for 
       the presence of COVID-19 and include all pillar 1 and 2 lab-based tests and any virus tests undertaken 
       in pillar 4.  Antibody serology tests test for COVID-19 antibodies and include pillar 3 tests and any antibody 
@@ -264,10 +264,9 @@ cards:
     cardType: chart
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void lab-based COVID-19 test results, by pillar, 
-      by date reported. This is a count of test results and may include multiple tests for an
-      individual person. Data for surveillance testing (pillar 4) are only available for the UK 
-      as a whole.
+      Number of confirmed positive, negative or void lab-based COVID-19 test results, by pillar. 
+      This is a count of test results and may include multiple tests for an individual person. 
+      Data for surveillance testing (pillar 4) are only available for the UK as a whole.
 
     download:
       - newPillarOneTestsByPublishDate
