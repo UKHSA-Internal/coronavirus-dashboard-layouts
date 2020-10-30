@@ -966,6 +966,7 @@ cards:
           - nation
           - region
           - utla
+          - ltla
       excluded:
         areaName:
           - Northern Ireland
