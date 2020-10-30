@@ -417,6 +417,7 @@ cards:
           - overview
           - region
           - ltla
+          - utla
 
     fullWidth: true
     abstract: > 
