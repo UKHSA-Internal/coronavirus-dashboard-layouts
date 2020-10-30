@@ -416,6 +416,7 @@ cards:
         areaType:
           - overview
           - region
+          - ltla
 
     fullWidth: true
     abstract: > 
