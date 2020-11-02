@@ -1115,8 +1115,8 @@ cards:
       before the date when the website was last updated.
 
     download:
-      - newCasesByPublishDateRollingSum
-      - newCasesByPublishDateRollingRate
+      - newCasesBySpecimenDateRollingSum
+      - newCasesBySpecimenDateRollingRate
 
     options:
       type: radio
