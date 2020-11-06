@@ -1100,6 +1100,7 @@ cards:
 
     download:
       - covidOccupiedMVBeds
+      - suspectedCovidOccupiedMVBeds
       - nonCovidOccupiedMVBeds
       - unoccupiedMVBeds
       - totalMVBeds
@@ -1109,11 +1110,11 @@ cards:
         tabType: chart
         barType: stack
         fields:
-          - label: Covid occupied
-            value: covidOccupiedMVBeds
-            tooltip: Number of mechanical ventilation beds occupied by COVID-19 patients
+          - label: Unoccupied MV beds
+            value: unoccupiedMVBeds
+            tooltip: Number of unoccupied mechanical ventilation beds
             type: bar
-            colour: 0
+            colour: 4
             rollingAverage: false
 
           - label: Non-covid occupied MV beds
@@ -1123,11 +1124,18 @@ cards:
             colour: 3
             rollingAverage: false
 
-          - label: Unoccupied MV beds
-            value: unoccupiedMVBeds
-            tooltip: Number of unoccupied mechanical ventilation beds
+          - label: Suspected covid occupied MV beds
+            value: suspectedCovidOccupiedMVBeds
+            tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
             type: bar
-            colour: 4
+            colour: 3
+            rollingAverage: false
+
+          - label: Covid occupied
+            value: covidOccupiedMVBeds
+            tooltip: Number of mechanical ventilation beds occupied by confirmed COVID-19 patients
+            type: bar
+            colour: 0
             rollingAverage: false
 
       - heading: Data
@@ -1142,6 +1150,11 @@ cards:
             value: covidOccupiedMVBeds
             type: numeric
             tooltip: Number of mechanical ventilation beds occupied by COVID-19 patients
+
+          - label: Suspected covid occupied MV beds
+            value: suspectedCovidOccupiedMVBeds
+            type: numeric
+            tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
 
           - label: Non-covid occupied MV beds
             value: nonCovidOccupiedMVBeds
