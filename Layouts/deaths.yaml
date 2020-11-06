@@ -50,68 +50,9 @@ cards:
       type: radio
       heading: null
       choices:
-        - By nation
         - UK total
+        - By nation
     
-    By nation:
-      
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: ""
-              value: newDeaths28DaysByDeathDate
-              tooltip: Daily number of deaths within 28 days of first positive test of people resident in each nation, by date of death
-              type: bar
-              rollingAverage: false
-
-        - heading: Cumulative
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: ""
-              value: cumDeaths28DaysByDeathDate
-              tooltip: Cumulative total number of deaths within 28 days of first positive test of people resident in each nation, by date of death
-              type: bar
-              rollingAverage: false
-
-        - heading: Data
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: Date of death
-              value: date
-              type: date
-              tooltip: Date on which the death occurred
-
-            - label: daily
-              value: newDeaths28DaysByDeathDate
-              type: numeric
-              tooltip: Daily number of deaths within 28 days of first positive test of people resident in each nation, by date of death
-
-            - label: total
-              value: cumDeaths28DaysByDeathDate
-              type: numeric
-              tooltip: Cumulative total number of deaths within 28 days of first positive test of people resident in each nation, by date of death
-
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
-
     UK total:
 
       tabs:
@@ -178,6 +119,65 @@ cards:
           tabType: metadata
           filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
           
+    By nation:
+      
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+          fields:
+            - label: ""
+              value: newDeaths28DaysByDeathDate
+              tooltip: Daily number of deaths within 28 days of first positive test of people resident in each nation, by date of death
+              type: bar
+              rollingAverage: false
+
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+          fields:
+            - label: ""
+              value: cumDeaths28DaysByDeathDate
+              tooltip: Cumulative total number of deaths within 28 days of first positive test of people resident in each nation, by date of death
+              type: bar
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+          fields:
+            - label: Date of death
+              value: date
+              type: date
+              tooltip: Date on which the death occurred
+
+            - label: daily
+              value: newDeaths28DaysByDeathDate
+              type: numeric
+              tooltip: Daily number of deaths within 28 days of first positive test of people resident in each nation, by date of death
+
+            - label: total
+              value: cumDeaths28DaysByDeathDate
+              type: numeric
+              tooltip: Cumulative total number of deaths within 28 days of first positive test of people resident in each nation, by date of death
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
+
 ##############################################################################################################################
 
 # Only shown for UK
@@ -204,68 +204,9 @@ cards:
       type: radio
       heading: null
       choices:
-        - By nation
         - UK total
+        - By nation
     
-    By nation:
-      
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: ""
-              value: newDeaths28DaysByPublishDate
-              tooltip: Daily number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
-              type: bar
-              rollingAverage: false
-
-        - heading: Cumulative
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: ""
-              value: cumDeaths28DaysByPublishDate
-              tooltip: Cumulative total number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
-              type: bar
-              rollingAverage: false
-
-        - heading: Data
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported on coronavirus.data.gov.uk/
-
-            - label: daily
-              value: newDeaths28DaysByPublishDate
-              type: numeric
-              tooltip: Daily number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
-
-            - label: total
-              value: cumDeaths28DaysByPublishDate
-              type: numeric
-              tooltip: Cumulative total number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
-
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
-
     UK total:
 
       tabs:
@@ -327,6 +268,65 @@ cards:
               value: cumDeaths28DaysByPublishDate
               type: numeric
               tooltip: Cumulative total number of new deaths within 28 days of first positive test, by date reported
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
+
+    By nation:
+      
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+          fields:
+            - label: ""
+              value: newDeaths28DaysByPublishDate
+              tooltip: Daily number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
+              type: bar
+              rollingAverage: false
+
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+          fields:
+            - label: ""
+              value: cumDeaths28DaysByPublishDate
+              tooltip: Cumulative total number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
+              type: bar
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+          fields:
+            - label: Date reported
+              value: date
+              type: date
+              tooltip: Date reported on coronavirus.data.gov.uk/
+
+            - label: daily
+              value: newDeaths28DaysByPublishDate
+              type: numeric
+              tooltip: Daily number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
+
+            - label: total
+              value: cumDeaths28DaysByPublishDate
+              type: numeric
+              tooltip: Cumulative total number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
 
         - heading: About 
           tabType: metadata
