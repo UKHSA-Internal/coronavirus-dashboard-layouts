@@ -1106,7 +1106,7 @@ cards:
       - totalMVBeds
 
     tabs:
-      - heading: Daily
+      - heading: Daily (option 1)
         tabType: chart
         barType: stack
         fields:
@@ -1135,6 +1135,38 @@ cards:
             value: unoccupiedMVBeds
             tooltip: Number of unoccupied mechanical ventilation beds
             type: bar
+            colour: 1
+            rollingAverage: false
+
+      - heading: Daily (option 2)
+        tabType: chart
+        barType: line
+        fields:
+          - label: Covid occupied
+            value: covidOccupiedMVBeds
+            tooltip: Number of mechanical ventilation beds occupied by confirmed COVID-19 patients
+            type: line
+            colour: 0
+            rollingAverage: false
+
+          - label: Suspected-covid occupied MV beds
+            value: suspectedCovidOccupiedMVBeds
+            tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
+            type: line
+            colour: 3
+            rollingAverage: false
+
+          - label: Non-covid occupied MV beds
+            value: nonCovidOccupiedMVBeds
+            tooltip: Number of mechanical ventilation beds occupied by non-COVID-19 patients 
+            type: line
+            colour: 4
+            rollingAverage: false
+
+          - label: Unoccupied MV beds
+            value: unoccupiedMVBeds
+            tooltip: Number of unoccupied mechanical ventilation beds
+            type: line
             colour: 1
             rollingAverage: false
 
