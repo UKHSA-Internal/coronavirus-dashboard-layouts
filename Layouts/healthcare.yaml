@@ -1087,4 +1087,79 @@ cards:
   #     - TBC
 
 # {{ EndDevOnlyBlock }}
-  
+
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock }}
+
+  - heading: Mechanical ventilation bed occupancy, by occupant type (dev only)
+    cardType: chart
+    fullWidth: true
+    abstract: >
+      To Add - abstract.
+
+    download:
+      - covidOccupiedMVBeds
+      - nonCovidOccupiedMVBeds
+      - unoccupiedMVBeds
+      - totalMVBeds
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: stack
+        fields:
+          - label: Covid occupied
+            value: covidOccupiedMVBeds
+            tooltip: Number of mechanical ventilation beds occupied by COVID-19 patients
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Non-covid occupied MV beds
+            value: nonCovidOccupiedMVBeds
+            tooltip: Number of mechanical ventilation beds occupied by non-COVID-19 patients 
+            type: bar
+            colour: 3
+            rollingAverage: false
+
+          - label: Unoccupied MV beds
+            value: unoccupiedMVBeds
+            tooltip: Number of unoccupied mechanical ventilation beds
+            type: bar
+            colour: 4
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date
+            value: date
+            type: date
+            tooltip: Date
+
+          - label: Covid occupied MV beds
+            value: covidOccupiedMVBeds
+            type: numeric
+            tooltip: Number of mechanical ventilation beds occupied by COVID-19 patients
+
+          - label: Non-covid occupied MV beds
+            value: nonCovidOccupiedMVBeds
+            type: numeric
+            tooltip: Number of mechanical ventilation beds occupied by non-COVID-19 patients 
+
+          - label: Unoccupied MV beds
+            value: unoccupiedMVBeds
+            type: numeric
+            tooltip: Number of unoccupied mechanical ventilation beds
+
+          - label: Total MV beds
+            value: totalMVBeds
+            type: numeric
+            tooltip: Total number of mechanical ventilation beds
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/healthcare/cardPatientsInMVBeds.md  
+
+# {{ EndDevOnlyBlock }}
