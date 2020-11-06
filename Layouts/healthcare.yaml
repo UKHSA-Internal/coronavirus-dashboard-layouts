@@ -1179,7 +1179,7 @@ cards:
             tooltip: Number of mechanical ventilation beds occupied by confirmed COVID-19 patients
             type: line
             fill: true
-            colour: 0
+            colour: 3
             rollingAverage: false
 
           - label: Suspected-covid occupied MV beds
@@ -1187,7 +1187,7 @@ cards:
             tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
             type: line
             fill: false
-            colour: 3
+            colour: 0
             rollingAverage: false
 
           - label: Non-covid occupied MV beds
