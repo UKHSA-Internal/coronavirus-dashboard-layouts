@@ -1092,7 +1092,7 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 
-  - heading: Mechanical ventilation bed occupancy, by occupant type (dev only)
+  - heading: Mechanical ventilation bed occupancy (dev only)
     cardType: chart
     fullWidth: true
     abstract: >
@@ -1110,30 +1110,30 @@ cards:
         tabType: chart
         barType: stack
         fields:
-          - label: Unoccupied MV beds
-            value: unoccupiedMVBeds
-            tooltip: Number of unoccupied mechanical ventilation beds
+          - label: Covid occupied
+            value: covidOccupiedMVBeds
+            tooltip: Number of mechanical ventilation beds occupied by confirmed COVID-19 patients
             type: bar
             colour: 0
+            rollingAverage: false
+
+          - label: Suspected-covid occupied MV beds
+            value: suspectedCovidOccupiedMVBeds
+            tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
+            type: bar
+            colour: 3
             rollingAverage: false
 
           - label: Non-covid occupied MV beds
             value: nonCovidOccupiedMVBeds
             tooltip: Number of mechanical ventilation beds occupied by non-COVID-19 patients 
             type: bar
-            colour: 3
-            rollingAverage: false
-
-          - label: Suspected covid occupied MV beds
-            value: suspectedCovidOccupiedMVBeds
-            tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
-            type: bar
             colour: 4
             rollingAverage: false
 
-          - label: Covid occupied
-            value: covidOccupiedMVBeds
-            tooltip: Number of mechanical ventilation beds occupied by confirmed COVID-19 patients
+          - label: Unoccupied MV beds
+            value: unoccupiedMVBeds
+            tooltip: Number of unoccupied mechanical ventilation beds
             type: bar
             colour: 1
             rollingAverage: false
@@ -1151,7 +1151,7 @@ cards:
             type: numeric
             tooltip: Number of mechanical ventilation beds occupied by COVID-19 patients
 
-          - label: Suspected covid occupied MV beds
+          - label: Suspected-covid occupied MV beds
             value: suspectedCovidOccupiedMVBeds
             type: numeric
             tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
