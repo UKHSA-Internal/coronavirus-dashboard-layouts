@@ -425,8 +425,6 @@ cards:
     cardType: chart
     locationAware:
       included: 
-        areaType:
-          - nation
         areaName:
           - England
 
