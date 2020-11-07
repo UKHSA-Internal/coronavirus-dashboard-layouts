@@ -421,7 +421,7 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 
-  - heading: Lateral flow tests processed (dev only)
+  - heading: Lateral flow tests processed (dev only template - dummy data)
     cardType: chart
     locationAware:
       included: 
@@ -434,8 +434,9 @@ cards:
     abstract: >
       This card is visible on Development site only and currently populated with a 
       dummy metric to allow us to create the card template.  The real data will 
-      be substituted when available.  TO DO - replace data with lft data, write 
-      abstract, link to metadata in About tab, agree visualisation.
+      be substituted when available.  TO DO - replace data with lft data (this 
+      will also fix download), write abstract, link to metadata in About tab, 
+      agree visualisation, fix download.
 
     download:
       - lftTestsProcessedBySpecimenDate
