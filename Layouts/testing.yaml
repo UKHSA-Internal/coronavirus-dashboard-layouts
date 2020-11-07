@@ -414,3 +414,69 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/testing/cardTestingByPillar.md
+
+##############################################################################################################################
+
+# Only shown for England
+
+# {{ StartDevOnlyBlock }}
+
+  - heading: Lateral flow tests processed (dev only)
+    cardType: chart
+    locationAware:
+      included: 
+        areaType:
+          - nation
+        areaName:
+          - England
+
+    fullWidth: true
+    abstract: >
+      This card is visible on Development site only and currently populated with a 
+      dummy metric to allow us to create the card template.  The real data will 
+      be substituted when available.  TO DO - replace data with lft data, write 
+      abstract, link to metadata in About tab, agree visualisation.
+
+    download:
+      - lftTestsProcessedBySpecimenDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Lateral flow tests processed
+            value: newPCRTestsByPublishDate #lftTestsProcessedBySpecimenDate
+            tooltip: Daily number of lateral flow tests processed
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Lateral flow tests processed (7-day average)
+            value: newPCRTestsByPublishDate #lftTestsProcessedBySpecimenDate
+            tooltip: 7 day rolling average of the daily number of lateral flow tests processed on {date}
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage:
+              window: 7
+              clipEnd: 3
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date
+            value: date
+            type: date
+            tooltip: Date
+
+          - label: Daily lateral flow tests processed
+            value: newPCRTestsByPublishDate #lftTestsProcessedBySpecimenDate
+            type: numeric
+            tooltip: Daily number of lateral flow tests processed on {date}
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/testing/cardTestingAndCapacity.md
+
+# {{ EndDevOnlyBlock }}
