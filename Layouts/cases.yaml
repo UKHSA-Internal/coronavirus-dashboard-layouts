@@ -41,7 +41,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date, 
+      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), by specimen date, 
       by nation.  Individuals tested positive more than once are only counted once, on the date of 
       their first positive test.
 
@@ -203,7 +203,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of individuals who have had at least one lab-confirmed positive COVID-19 test result,
+      Number of individuals who have had at least one positive COVID-19 test result (either lab-reported or lateral flow device),
       by date reported. On 2 July, case data from pillars 1 and 2 of the testing programme were
       combined and de-duplicated, resulting in a step decrease in the cumulative number of cases
       reported.
@@ -276,7 +276,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of individuals who have had at least one lab-confirmed positive COVID-19 test result, by date
+      Number of individuals who have had at least one positive COVID-19 test result (either lab-reported or lateral flow device), by date
       reported, by nation.  Initially only pillar 1 tests (NHS and, in England, PHE labs) were included but
       pillar 2 (commercial tests) have been included from varying dates between 15th June and 14th July for
       each nation, leading to step increases in the numbers of cases reported at different times.  
@@ -357,7 +357,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people with at least one lab-confirmed positive COVID-19 test result, by specimen date.
+      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), by specimen date.
       Individuals tested positive more than once are only counted once, on the date of their first
       positive test.
 
@@ -432,7 +432,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of individuals who have had at least one lab-confirmed positive COVID-19 test result,
+      Number of individuals who have had at least one positive COVID-19 test result (either lab-reported or lateral flow device),
       by date reported. Initially only pillar 1 tests (NHS and, in England, PHE labs) were included
       but commercial tests have been included from varying dates between 15th June and 14th July for
       each nation, leading to step increases in the numbers of cases reported at different times.
@@ -577,7 +577,7 @@ cards:
     # Why is this on the Cases page and repeated on the Tested page - just to show cases and tests side by side?  If so maybe card needs different title?
 
     abstract: >
-      Number of people with at least one lab-confirmed positive, negative or void COVID-19 test result. 
+      Number of people with at least one positive, negative or void COVID-19 test result (either lab-reported or lateral flow device). 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
       different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
 
@@ -737,7 +737,7 @@ cards:
 
     fullWidth: false
     abstract: > 
-      Number of people with at least one lab-confirmed positive COVID-19 test result since the
+      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device) since the
       start of the pandemic, by age and sex.
 
     download:
@@ -1089,7 +1089,7 @@ cards:
 
   #   y-label: Cases per 100,000 population
   #   y-value: CumCasesByPublishDateRate
-  #   y-tooltip: Cumulative total number of new people with a confirmed positive lab-based test result per 100,000 resident population
+  #   y-tooltip: Cumulative total number of new people with a confirmed positive test result (either lab-reported or lateral flow device) per 100,000 resident population
 
   # - heading: Cases rates by area
   #   cardType: mapStatic
@@ -1106,7 +1106,7 @@ cards:
     cardType: chart
     fullWidth: true
     abstract: >
-      Number of people with at least one lab-confirmed positive COVID-19 test result in the rolling 
+      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device) in the rolling 
       seven day period ending on the dates shown. Data are presented as either counts or rates per 
       100,000 population. The rates give a fairer comparison of the number of cases in each area but 
       they do not take account of the different rates of testing or differences in the age and sex 
@@ -1203,7 +1203,7 @@ cards:
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
-      Total number of people with at least one lab-confirmed positive COVID-19 test result in the most 
+      Total number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device) in the most 
       recent seven day period. The rates per 100,000 resident population give a fairer comparison of 
       the number of cases in each area but they do not take account of the different rates of testing 
       or differences in the age and sex of the local populations. Data shown are cases by specimen date 
@@ -1331,7 +1331,7 @@ cards:
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
-      Total number of people with at least one lab-confirmed positive COVID-19 test result since the start
+      Total number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device) since the start
       of the pandemic in each area. The rates per 100,000 resident population give a fairer comparison of
       the number of cases in each area but they do not take account of the different rates of testing or
       differences in the age and sex of the local populations. Only data available for the latest reported
