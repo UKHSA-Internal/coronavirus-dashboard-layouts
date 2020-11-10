@@ -460,9 +460,7 @@ cards:
             type: line
             colour: 3
             fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 3
+            rollingAverage: true
 
       - heading: Cumulative
         tabType: chart
