@@ -419,9 +419,7 @@ cards:
 
 # Only shown for England
 
-# {{ StartDevOnlyBlock }}
-
-  - heading: Lateral flow device tests processed (dev only template)
+  - heading: Lateral flow device tests processed
     cardType: chart
     locationAware:
       included: 
@@ -436,8 +434,7 @@ cards:
       results in less than an hour, without needing to go to a laboratory. Lateral flow device tests
       have been used in trials of mass testing in schools, universities and care homes, and have been 
       available for those who live or work in Liverpool for a two-week period from 6 November 2020.
-      # {{ DevOnly }} TO DO - agree abstract, update metadata in About tab when know how will publish data, agree visualisation.
-
+     
     download:
       - newLFDTests
       - cumLFDTests
@@ -495,4 +492,3 @@ cards:
         tabType: metadata
         filename: cardMetadata/testing/cardLFDTesting.md
 
-# {{ EndDevOnlyBlock }}
