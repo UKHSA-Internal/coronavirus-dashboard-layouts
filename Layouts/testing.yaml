@@ -421,7 +421,7 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 
-  - heading: Lateral flow device tests processed (dev only template - dummy data)
+  - heading: Lateral flow device tests processed (dev only template)
     cardType: chart
     locationAware:
       included: 
@@ -436,7 +436,7 @@ cards:
       results in less than an hour, without needing to go to a laboratory. Lateral flow device tests
       have been used in trials of mass testing in schools, universities and care homes, and have been 
       available for those who live or work in Liverpool for a two-week period from 6 November 2020.
-      TO DO - replace data with lft data (this will also fix download), agree abstract, update metadata
+      TO DO - agree abstract, update metadata
       in About tab when know how will publish data, agree visualisation.
 
     download:
@@ -448,14 +448,14 @@ cards:
         barType: normal
         fields:
           - label: Lateral flow tests processed
-            value: newPCRTestsByPublishDate #newLFDTestsBySpecimenDate
+            value: newLFDTestsBySpecimenDate
             tooltip: Daily number of lateral flow tests processed
             type: bar
             colour: 0
             rollingAverage: false
 
           - label: Lateral flow tests processed (7-day average)
-            value: newPCRTestsByPublishDate #newLFDTestsBySpecimenDate
+            value: newLFDTestsBySpecimenDate
             tooltip: 7 day rolling average of the daily number of lateral flow tests processed on {date}
             type: line
             colour: 3
@@ -469,7 +469,7 @@ cards:
         barType: normal
         fields:
           - label: Lateral flow tests processed
-            value: newPCRTestsByPublishDate #cumLFDTestsBySpecimenDate
+            value: newLFDTestsBySpecimenDate
             tooltip: Cumulative number of lateral flow tests processed
             type: bar
             colour: 0
@@ -484,7 +484,7 @@ cards:
             tooltip: Date
 
           - label: Daily lateral flow tests processed
-            value: newPCRTestsByPublishDate #newLFDTestsBySpecimenDate
+            value: newLFDTestsBySpecimenDate
             type: numeric
             tooltip: Daily number of lateral flow tests processed on {date}
 
