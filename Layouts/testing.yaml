@@ -436,8 +436,8 @@ cards:
       results in less than an hour, without needing to go to a laboratory. Lateral flow device tests
       have been used in trials of mass testing in schools, universities and care homes, and have been 
       available for those who live or work in Liverpool for a two-week period from 6 November 2020.
-      TO DO - replace data with lft data (this will also fix download), update abstract, link to metadata in About tab, 
-      agree visualisation, fix download.
+      TO DO - replace data with lft data (this will also fix download), agree abstract, update metadata
+      in About tab when know how will publish data, agree visualisation.
 
     download:
       - newLFDTestsBySpecimenDate
@@ -490,6 +490,6 @@ cards:
 
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/testing/cardTestingAndCapacity.md
+        filename: cardMetadata/testing/cardLFDTesting.md
 
 # {{ EndDevOnlyBlock }}
