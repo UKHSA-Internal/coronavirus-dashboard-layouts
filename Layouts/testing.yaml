@@ -439,8 +439,8 @@ cards:
       # {{ DevOnly }} TO DO - agree abstract, update metadata in About tab when know how will publish data, agree visualisation.
 
     download:
-      - newLFDTestsBySpecimenDate
-      - cumLFDTestsBySpecimenDate
+      - newLFDTests
+      - cumLFDTests
 
     tabs:
       - heading: Daily
@@ -448,14 +448,14 @@ cards:
         barType: normal
         fields:
           - label: Lateral flow tests processed
-            value: newLFDTestsBySpecimenDate
+            value: newLFDTests
             tooltip: Daily number of lateral flow tests processed
             type: bar
             colour: 0
             rollingAverage: false
 
           - label: Lateral flow tests processed (7-day average)
-            value: newLFDTestsBySpecimenDate
+            value: newLFDTests
             tooltip: 7 day rolling average of the daily number of lateral flow tests processed on {date}
             type: line
             colour: 3
@@ -467,7 +467,7 @@ cards:
         barType: normal
         fields:
           - label: Lateral flow tests processed
-            value: cumLFDTestsBySpecimenDate
+            value: cumLFDTests
             tooltip: Cumulative number of lateral flow tests processed
             type: bar
             colour: 0
@@ -482,12 +482,12 @@ cards:
             tooltip: Date
 
           - label: Daily lateral flow tests processed
-            value: newLFDTestsBySpecimenDate
+            value: newLFDTests
             type: numeric
             tooltip: Daily number of lateral flow tests processed up to {date}
 
           - label: Total lateral flow tests processed
-            value: cumLFDTestsBySpecimenDate
+            value: cumLFDTests
             type: numeric
             tooltip: Total number of lateral flow tests processed up to {date}
 
