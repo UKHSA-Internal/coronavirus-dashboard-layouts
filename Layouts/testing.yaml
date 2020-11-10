@@ -436,11 +436,11 @@ cards:
       results in less than an hour, without needing to go to a laboratory. Lateral flow device tests
       have been used in trials of mass testing in schools, universities and care homes, and have been 
       available for those who live or work in Liverpool for a two-week period from 6 November 2020.
-      TO DO - agree abstract, update metadata
-      in About tab when know how will publish data, agree visualisation.
+      # {{ DevOnly }} TO DO - agree abstract, update metadata in About tab when know how will publish data, agree visualisation.
 
     download:
       - newLFDTestsBySpecimenDate
+      - cumLFDTestsBySpecimenDate
 
     tabs:
       - heading: Daily
@@ -467,7 +467,7 @@ cards:
         barType: normal
         fields:
           - label: Lateral flow tests processed
-            value: newLFDTestsBySpecimenDate
+            value: cumLFDTestsBySpecimenDate
             tooltip: Cumulative number of lateral flow tests processed
             type: bar
             colour: 0
@@ -484,7 +484,12 @@ cards:
           - label: Daily lateral flow tests processed
             value: newLFDTestsBySpecimenDate
             type: numeric
-            tooltip: Daily number of lateral flow tests processed on {date}
+            tooltip: Daily number of lateral flow tests processed up to {date}
+
+          - label: Total lateral flow tests processed
+            value: cumLFDTestsBySpecimenDate
+            type: numeric
+            tooltip: Total number of lateral flow tests processed up to {date}
 
       - heading: About 
         tabType: metadata
