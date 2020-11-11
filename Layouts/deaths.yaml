@@ -76,7 +76,9 @@ cards:
               tooltip: 7 day rolling average of the daily number of deaths within 28 days of first positive test
               type: line
               colour: 3
-              rollingAverage: true
+              rollingAverage:
+                window: 7
+                clipEnd: 3 #no of days to exclude for incomplete data
 
         - heading: Cumulative
           tabType: chart
@@ -371,7 +373,9 @@ cards:
             type: line
             colour: 3
             fill: false
-            rollingAverage: true
+            rollingAverage:
+                window: 7
+                clipEnd: 3 #no of days to exclude for incomplete data
                   
       - heading: Cumulative
         tabType: chart
