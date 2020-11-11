@@ -419,18 +419,14 @@ cards:
 
 # Only shown for England
 
-  - heading: Lateral flow device tests processed
+  - heading: Lateral flow device tests conducted
     cardType: chart
     locationAware:
       included: 
 
-# {{ StartDevOnlyBlock }}
-
         areaType:
           - utla
           - ltla
-
-# {{ EndDevOnlyBlock }}
 
         areaName:
           - England
@@ -453,16 +449,16 @@ cards:
         tabType: chart
         barType: normal
         fields:
-          - label: Lateral flow tests processed
+          - label: Lateral flow tests conducted
             value: newLFDTests
-            tooltip: Daily number of lateral flow tests processed
+            tooltip: Daily number of lateral flow tests conducted
             type: bar
             colour: 0
             rollingAverage: false
 
-          - label: Lateral flow tests processed (7-day average)
+          - label: Lateral flow tests conducted (7-day average)
             value: newLFDTests
-            tooltip: 7 day rolling average of the daily number of lateral flow tests processed on {date}
+            tooltip: 7 day rolling average of the daily number of lateral flow tests conducted on {date}
             type: line
             colour: 3
             fill: false
@@ -472,9 +468,9 @@ cards:
         tabType: chart
         barType: normal
         fields:
-          - label: Lateral flow tests processed
+          - label: Lateral flow tests conducted
             value: cumLFDTests
-            tooltip: Cumulative number of lateral flow tests processed
+            tooltip: Cumulative number of lateral flow tests conducted
             type: bar
             colour: 0
             rollingAverage: false
@@ -487,15 +483,15 @@ cards:
             type: date
             tooltip: Date
 
-          - label: Daily lateral flow tests processed
+          - label: Daily lateral flow tests conducted
             value: newLFDTests
             type: numeric
-            tooltip: Daily number of lateral flow tests processed up to {date}
+            tooltip: Daily number of lateral flow tests conducted up to {date}
 
-          - label: Total lateral flow tests processed
+          - label: Total lateral flow tests conducted
             value: cumLFDTests
             type: numeric
-            tooltip: Total number of lateral flow tests processed up to {date}
+            tooltip: Total number of lateral flow tests conducted up to {date}
 
       - heading: About 
         tabType: metadata
