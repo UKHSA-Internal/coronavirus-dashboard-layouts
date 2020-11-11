@@ -423,6 +423,15 @@ cards:
     cardType: chart
     locationAware:
       included: 
+
+# {{ StartDevOnlyBlock }}
+
+        areaType:
+          - utla
+          - ltla
+
+# {{ EndDevOnlyBlock }}
+
         areaName:
           - England
 
