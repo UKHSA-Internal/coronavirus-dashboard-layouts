@@ -44,7 +44,7 @@ downloads:
   - linkText: Age demographic of cases by reporting date as CSV (unstacked)
     linkUrl: /downloads/demographic/cases/publishDate_ageDemographic-unstacked.csv
 
-   - linkText: Age demographic of cases by reporting date as CSV (stacked)
+  - linkText: Age demographic of cases by reporting date as CSV (stacked)
     linkUrl: /downloads/demographic/cases/publishDate_ageDemographic-stacked.csv
 
   - linkText: Legacy download of cases from the previous version of the dashboard as CSV (stacked)
