@@ -1,0 +1,33 @@
+# =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
+# Documentations
+# --------------
+# Attributes:
+# 
+# `linkText`: The text on which the user clicks to get the document. 
+# 
+# Should ideally:
+# - be around 100 characters 
+# - not end with a full stop
+# 
+# `linkUrl`: Use the URI for contents hosted on the website, or absolute, 
+#            fully qualified URL with protocol for external contents.
+# 
+# Example
+# -------
+# 
+#     downloads:
+#       - linkText: Age demographic of cases by specimen date as CSV (stacked)
+#         linkUrl: /downloads/demographic/cases/specimenDate_ageDemographic-stacked.csv
+# 
+#       - linkText: Age demographic of cases by specimen date as CSV (unstacked)
+#         linkUrl: /downloads/demographic/cases/specimenDate_ageDemographic-unstacked.csv
+# 
+# =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
+
+
+downloads:
+  - linkText: 
+    linkUrl: 
+
+  - linkText: 
+    linkUrl: 
