@@ -16,11 +16,13 @@
 # -------
 # 
 #     downloads:
-#       - linkText: Age demographic of cases by specimen date as CSV (stacked)
-#         linkUrl: /downloads/demographic/cases/specimenDate_ageDemographic-stacked.csv
+#       - label: Age demographic of cases by specimen date
+#         links:
+#           - text: CSV (stacked)
+#             url: /downloads/demographic/cases/specimenDate_ageDemographic-stacked.csv
 # 
-#       - linkText: Age demographic of cases by specimen date as CSV (unstacked)
-#         linkUrl: /downloads/demographic/cases/specimenDate_ageDemographic-unstacked.csv
+#           - text: CSV (unstacked)
+#             url: /downloads/demographic/cases/specimenDate_ageDemographic-unstacked.csv
 # 
 # =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 
