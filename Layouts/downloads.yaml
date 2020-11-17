@@ -16,36 +16,48 @@
 # -------
 # 
 #     downloads:
-#       - linkText: Age demographic of cases by specimen date as CSV (stacked)
-#         linkUrl: /downloads/demographic/cases/specimenDate_ageDemographic-stacked.csv
+#       - label: Age demographic of cases by specimen date
+#         links:
+#           - text: CSV (stacked)
+#             url: /downloads/demographic/cases/specimenDate_ageDemographic-stacked.csv
 # 
-#       - linkText: Age demographic of cases by specimen date as CSV (unstacked)
-#         linkUrl: /downloads/demographic/cases/specimenDate_ageDemographic-unstacked.csv
+#           - text: CSV (unstacked)
+#             url: /downloads/demographic/cases/specimenDate_ageDemographic-unstacked.csv
 # 
 # =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 
 
 downloads:
-  - linkText: Weekly cases by specimen date at MSOA level as CSV (stacked)
-    linkUrl: /downloads/msoa_data/MSOAs_latest.csv
+  - label: Weekly cases by specimen date at MSOA level
+    links:
+      - text: CSV (stacked)
+        url: /downloads/msoa_data/MSOAs_latest.csv
 
-  - linkText: Weekly cases by specimen date at MSOA level as JSON
-    linkUrl: /downloads/msoa_data/MSOAs_latest.json
-
-  - linkText: Geographic lookup of MSOA to local authority and region as CSV 
-    linkUrl: /downloads/supplements/lookup_table.csv
-
-  - linkText: Age demographic of cases by specimen date as CSV (unstacked)
-    linkUrl: /downloads/demographic/cases/specimenDate_ageDemographic-unstacked.csv
+      - text: JSON
+        url: /downloads/msoa_data/MSOAs_latest.json
   
-  - linkText: Age demographic of cases by specimen date as CSV (stacked)
-    linkUrl: /downloads/demographic/cases/specimenDate_ageDemographic-stacked.csv
+  - label: Geographic lookup of MSOA to local authority and region
+    links: 
+      - text: CSV
+        url: /downloads/supplements/lookup_table.csv
 
-  - linkText: Age demographic of cases by reporting date as CSV (unstacked)
-    linkUrl: /downloads/demographic/cases/publishDate_ageDemographic-unstacked.csv
+  - label: Age demographic of cases by specimen date
+    links:
+      - text: CSV (unstacked)
+        url: /downloads/demographic/cases/specimenDate_ageDemographic-unstacked.csv
 
-  - linkText: Age demographic of cases by reporting date as CSV (stacked)
-    linkUrl: /downloads/demographic/cases/publishDate_ageDemographic-stacked.csv
+      - text: CSV (stacked)
+        url: /downloads/demographic/cases/specimenDate_ageDemographic-stacked.csv
 
-  - linkText: Legacy download of cases from the previous version of the dashboard as CSV (stacked)
-    linkUrl: /downloads/csv/coronavirus-cases_latest.csv
+  - label: Age demographic of cases by reporting date
+    links:
+      - text: CSV (unstacked)
+        url: /downloads/demographic/cases/publishDate_ageDemographic-unstacked.csv
+
+      - text: CSV (stacked)
+        url: /downloads/demographic/cases/publishDate_ageDemographic-stacked.csv
+
+  - label: Legacy download of cases from the previous version of the dashboard
+    links:
+      - text: CSV (stacked)
+        url: /downloads/csv/coronavirus-cases_latest.csv

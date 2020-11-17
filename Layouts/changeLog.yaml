@@ -1,19 +1,19 @@
 change log:
 
-  - date: 2020-10-26
+  - date: "2020-10-26"
     linkText: Cases by age group
     relativeUrl: /details/cases
     body: >
       These have been added to the cases page. The current trend is a higher rate is starting 
       to appear in the over 60s, leading to increased hospital admissions. 
 
-  - date: 2020-10-22
+  - date: "2020-10-22"
     linkText: Local R numbers
     relativeUrl: /
     body: >
       When you search for a postcode, the local R number for the region will now be displayed.
 
-  - date: 2020-10-19
+  - date: "2020-10-19"
     linkText: Local alert levels
     relativeUrl: /
     body: >
