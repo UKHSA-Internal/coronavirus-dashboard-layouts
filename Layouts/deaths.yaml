@@ -1132,7 +1132,7 @@ cards:
       - newDeaths60DaysByPublishDate
       - cumDeaths60DaysByPublishDate
 
-     tabs: 
+    tabs: 
       - heading: Daily
         tabType: chart
         barType: normal
