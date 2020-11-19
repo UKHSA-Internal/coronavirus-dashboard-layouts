@@ -962,7 +962,7 @@ cards:
 
 # England only 60 day chart, not shown for UK. NOTE: similar chart for regions and LAs defined as separate card below
 
-  - heading: Deaths within 60 days of positive test 1
+  - heading: Deaths within 60 days of positive test
     cardType: chart
     locationAware:
       included:
@@ -1109,7 +1109,7 @@ cards:
 
 # 60 day chart for regions and LAs NOTE: similar chart for England defined as separate card above
 
-  - heading: Deaths within 60 days of positive test 2
+  - heading: Deaths within 60 days of positive test
     cardType: chart
     locationAware:
       included:
