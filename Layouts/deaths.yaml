@@ -1167,10 +1167,10 @@ cards:
       - heading: Data
         tabType: table
         fields:
-         - label: Date of death
-           value: date
-           type: date
-           tooltip: Date on which the death occurred
+          - label: Date of death
+            value: date
+            type: date
+            tooltip: Date on which the death occurred
 
           - label: Daily deaths
             value: newDeaths60DaysByDeathDate
