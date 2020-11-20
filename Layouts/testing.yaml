@@ -46,8 +46,8 @@ cards:
       - cumVirusTests
       - newPCRTestsByPublishDate
       - cumPCRTestsByPublishDate
-      - newLFDTests
-      - cumLFDTests
+      - newLFDTestsByPublishDate
+      - cumLFDTestsByPublishDate
 
     options:
       type: radio
@@ -65,7 +65,7 @@ cards:
           fields:
             - label: Virus tests conducted
               value: newVirusTests
-              tooltip: Daily number of virus tests conducted
+              tooltip: Daily number of virus tests conducted on {date}
               type: bar
               colour: 0
               rollingAverage: false
@@ -94,10 +94,10 @@ cards:
         - heading: Data
           tabType: table
           fields:
-            - label: Date reported
+            - label: Date
               value: date
               type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
+              tooltip: Date
 
             - label: Daily virus tests conducted
               value: newVirusTests
@@ -118,7 +118,7 @@ cards:
       tabs:
         - heading: Daily
           tabType: chart
-          barType: normal
+          barType: stack
           fields:
             - label: PCR tests processed
               value: newPCRTestsByPublishDate
@@ -128,7 +128,7 @@ cards:
               rollingAverage: false
 
             - label: LFD tests processed
-              value: newLFDTests
+              value: newLFDTestsByPublishDate
               tooltip: Daily number of lateral flow device tests conducted on {date}
               type: bar
               colour: 0
@@ -136,7 +136,7 @@ cards:
 
         - heading: Cumulative
           tabType: chart
-          barType: normal
+          barType: stack
           fields:
             - label: PCR tests processed
               value: cumPCRTestsByPublishDate
@@ -146,7 +146,7 @@ cards:
               rollingAverage: false
 
             - label: LFD tests processed
-              value: cumLFDTests
+              value: cumLFDTestsByPublishDate
               tooltip: Cumulative number of LFD tests conducted up to {date}
               type: bar
               colour: 0
@@ -166,7 +166,7 @@ cards:
               tooltip: Daily number of PCR tests conducted on {date}
 
             - label: Daily LFD tests conducted
-              value: newLFDTests
+              value: newLFDTestsByPublishDate
               type: numeric
               tooltip: Daily number of LFD tests conducted on {date}
 
@@ -181,7 +181,7 @@ cards:
               tooltip: Total number of PCR tests conducted up to {date}
 
             - label: Cumulative LFD tests conducted
-              value: cumLFDTests
+              value: cumLFDTestsByPublishDate
               type: numeric
               tooltip: Total number of LFD tests conducted up to {date}
 
@@ -238,7 +238,7 @@ cards:
           fields:
             - label: PCR tests conducted
               value: newPCRTestsByPublishDate
-              tooltip: Daily number of PCR tests conducted
+              tooltip: Daily number of PCR tests conducted on {date}
               type: bar
               colour: 0
               rollingAverage: false
@@ -275,10 +275,10 @@ cards:
         - heading: Data
           tabType: table
           fields:
-            - label: Date reported
+            - label: Date
               value: date
               type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
+              tooltip: Date
 
             - label: Daily PCR tests conducted
               value: newPCRTestsByPublishDate
@@ -345,10 +345,10 @@ cards:
         - heading: Data
           tabType: table
           fields:
-            - label: Date reported
+            - label: Date
               value: date
               type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
+              tooltip: Date
 
             - label: Daily antibody tests processed
               value: newAntibodyTestsByPublishDate
