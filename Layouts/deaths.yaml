@@ -960,7 +960,7 @@ cards:
 
 ##############################################################################################################################
 
-# not shown for UK
+# England only 60 day chart, not shown for UK. NOTE: similar chart for regions and LAs defined as separate card below
 
   - heading: Deaths within 60 days of positive test
     cardType: chart
@@ -968,9 +968,6 @@ cards:
       included:
         areaType:
           - nation
-          - region
-          - utla
-          - ltla
       excluded:
         areaName:
           - Northern Ireland
@@ -1107,6 +1104,87 @@ cards:
         - heading: About 
           tabType: metadata
           filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
+
+##############################################################################################################################
+
+# 60 day chart for regions and LAs NOTE: similar chart for England defined as separate card above
+
+  - heading: Deaths within 60 days of positive test
+    cardType: chart
+    locationAware:
+      included:
+        areaType:
+          - region
+          - utla
+          - ltla
+      excluded:
+        areaType:
+          - nation
+
+    fullWidth: true
+    abstract: > 
+      Number of deaths of people who had had a positive test result for COVID-19 and either died within 
+      60 days of the first positive test or have COVID-19 mentioned on their death certificate. 
+
+    download:
+      - newDeaths60DaysByDeathDate
+      - cumDeaths60DaysByDeathDate
+      - newDeaths60DaysByPublishDate
+      - cumDeaths60DaysByPublishDate
+
+    tabs: 
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Number of deaths
+            value: newDeaths60DaysByDeathDate
+            tooltip: Daily number of deaths within 60 days of first positive test by date of death
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Deaths (7-day average)
+            value: newDeaths60DaysByDeathDate
+            tooltip: 7 day rolling average of the daily number of deaths within 60 days of first positive test
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage:
+              window: 7
+              clipEnd: 3
+                  
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of deaths
+            value: cumDeaths60DaysByDeathDate
+            tooltip: Cumulative total number of deaths within 60 days of first positive test by date of death
+            type: bar
+            colour: 0
+            rollingAverage: false
+                  
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date of death
+            value: date
+            type: date
+            tooltip: Date on which the death occurred
+
+          - label: Daily deaths
+            value: newDeaths60DaysByDeathDate
+            type: numeric
+            tooltip: Daily number of deaths within 60 days of first positive test by date of death
+
+          - label: Cumulative deaths
+            value: cumDeaths60DaysByDeathDate
+            type: numeric
+            tooltip: Cumulative total number of deaths within 60 days of first positive test by date of death
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
 
 ##############################################################################################################################
 

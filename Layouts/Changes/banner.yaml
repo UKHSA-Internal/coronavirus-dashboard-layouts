@@ -1,0 +1,15 @@
+banner:
+
+# {{ StartDevOnlyBlock }}
+
+  - fromDate: "2020-11-18"
+    toDate: "2020-11-20"
+    appearByUpdate: "2020-11-18"
+    disappearByUpdate: "2020-11-20"
+    body: >
+      Test banner in Dev Only Block to be displayed on Dev site only.  As an example, second
+      sentence can signpost to another page eg [Cases](https://coronavirus.data.gov.uk/details/cases)
+
+# {{ EndDevOnlyBlock }}
+
+  

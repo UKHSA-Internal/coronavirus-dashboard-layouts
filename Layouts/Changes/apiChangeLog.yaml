@@ -1,0 +1,7 @@
+apiChangeLog:
+
+  - metricName: newCasesBySpecimenDate
+    date: "2020-11-16"
+
+  - metricName: cumCasesBySpecimenDate
+    date: "2020-11-16"
