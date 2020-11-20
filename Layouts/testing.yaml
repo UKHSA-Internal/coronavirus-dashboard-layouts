@@ -131,7 +131,7 @@ cards:
               value: newLFDTestsByPublishDate
               tooltip: Daily number of lateral flow device tests conducted on {date}
               type: bar
-              colour: 0
+              colour: 3
               rollingAverage: false
 
         - heading: Cumulative
@@ -149,7 +149,7 @@ cards:
               value: cumLFDTestsByPublishDate
               tooltip: Cumulative number of LFD tests conducted up to {date}
               type: bar
-              colour: 0
+              colour: 3
               rollingAverage: false
 
         - heading: Data
