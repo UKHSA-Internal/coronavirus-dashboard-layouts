@@ -25,7 +25,7 @@ cards:
 
 # Only shown for UK
 
-  - heading: Virus tests conducted, by test type
+  - heading: Virus tests conducted
     cardType: chart
     locationAware:
       included: 
@@ -34,7 +34,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void COVID-19 virus test results, by test type.  
+      Number of confirmed positive, negative or void COVID-19 virus test results.  
       This is a count of test results and may include multiple tests for an individual person.  
       Virus tests test for the presence of COVID-19 and include all pillar 1 and 2 tests and 
       any virus tests undertaken in pillar 4. Virus tests include PCR tests conducted in 
@@ -44,155 +44,155 @@ cards:
     download:
       - newVirusTests
       - cumVirusTests
-      - newPCRTestsByPublishDate
-      - cumPCRTestsByPublishDate
-      - newLFDTestsByPublishDate
-      - cumLFDTestsByPublishDate
+#      - newPCRTestsByPublishDate
+#      - cumPCRTestsByPublishDate
+#      - newLFDTestsByPublishDate
+#      - cumLFDTestsByPublishDate
 
-    options:
-      type: radio
-      heading: null
-      choices:
-        - All virus tests
-        - By test type
+#    options:
+#      type: radio
+#      heading: null
+#      choices:
+#        - All virus tests
+#        - By test type
 
-    All virus tests:
+#    All virus tests:
       
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          fields:
-            - label: Virus tests conducted
-              value: newVirusTests
-              tooltip: Daily number of virus tests conducted on {date}
-              type: bar
-              colour: 0
-              rollingAverage: false
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Virus tests conducted
+            value: newVirusTests
+            tooltip: Daily number of virus tests conducted on {date}
+            type: bar
+            colour: 0
+            rollingAverage: false
 
-            - label: Virus tests conducted (7-day average)
-              value: newVirusTests
-              tooltip: 7 day rolling average of the daily number of virus tests conducted on {date}
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 3
+          - label: Virus tests conducted (7-day average)
+            value: newVirusTests
+            tooltip: 7 day rolling average of the daily number of virus tests conducted on {date}
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage:
+              window: 7
+              clipEnd: 3
 
-        - heading: Cumulative
-          tabType: chart
-          barType: normal
-          fields:
-            - label: Virus tests conducted
-              value: cumVirusTests
-              tooltip: Cumulative number of virus tests conducted up to {date}
-              type: bar
-              colour: 0
-              rollingAverage: false
+      - heading: Cumulative
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Virus tests conducted
+            value: cumVirusTests
+            tooltip: Cumulative number of virus tests conducted up to {date}
+            type: bar
+            colour: 0
+            rollingAverage: false
 
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Date
-              value: date
-              type: date
-              tooltip: Date
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date
+            value: date
+            type: date
+            tooltip: Date
 
-            - label: Daily virus tests conducted
-              value: newVirusTests
-              type: numeric
-              tooltip: Daily number of virus tests conducted on {date}
+          - label: Daily virus tests conducted
+            value: newVirusTests
+            type: numeric
+            tooltip: Daily number of virus tests conducted on {date}
 
-            - label: Cumulative virus tests conducted
-              value: cumVirusTests
-              type: numeric
-              tooltip: Cumulative number of virus tests conducted up to {date}
+          - label: Cumulative virus tests conducted
+            value: cumVirusTests
+            type: numeric
+            tooltip: Cumulative number of virus tests conducted up to {date}
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/testing/cardVirusTestsConducted.md
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/testing/cardVirusTestsConducted.md
 
-    By test type:
+    # By test type:
       
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          fields:
-            - label: PCR tests processed
-              value: newPCRTestsByPublishDate
-              tooltip: Daily number of PCR tests conducted by laboratories on {date}
-              type: bar
-              colour: 0
-              rollingAverage: false
+    #   tabs:
+    #     - heading: Daily
+    #       tabType: chart
+    #       barType: stack
+    #       fields:
+    #         - label: PCR tests processed
+    #           value: newPCRTestsByPublishDate
+    #           tooltip: Daily number of PCR tests conducted by laboratories on {date}
+    #           type: bar
+    #           colour: 0
+    #           rollingAverage: false
 
-            - label: LFD tests processed
-              value: newLFDTestsByPublishDate
-              tooltip: Daily number of lateral flow device tests conducted on {date}
-              type: bar
-              colour: 3
-              rollingAverage: false
+    #         - label: LFD tests processed
+    #           value: newLFDTestsByPublishDate
+    #           tooltip: Daily number of lateral flow device tests conducted on {date}
+    #           type: bar
+    #           colour: 3
+    #           rollingAverage: false
 
-        - heading: Cumulative
-          tabType: chart
-          barType: stack
-          fields:
-            - label: PCR tests processed
-              value: cumPCRTestsByPublishDate
-              tooltip: Cumulative number of PCR tests conducted by laboratories up to {date}
-              type: bar
-              colour: 0
-              rollingAverage: false
+    #     - heading: Cumulative
+    #       tabType: chart
+    #       barType: stack
+    #       fields:
+    #         - label: PCR tests processed
+    #           value: cumPCRTestsByPublishDate
+    #           tooltip: Cumulative number of PCR tests conducted by laboratories up to {date}
+    #           type: bar
+    #           colour: 0
+    #           rollingAverage: false
 
-            - label: LFD tests processed
-              value: cumLFDTestsByPublishDate
-              tooltip: Cumulative number of LFD tests conducted up to {date}
-              type: bar
-              colour: 3
-              rollingAverage: false
+    #         - label: LFD tests processed
+    #           value: cumLFDTestsByPublishDate
+    #           tooltip: Cumulative number of LFD tests conducted up to {date}
+    #           type: bar
+    #           colour: 3
+    #           rollingAverage: false
 
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Date
-              value: date
-              type: date
-              tooltip: Date
+    #     - heading: Data
+    #       tabType: table
+    #       fields:
+    #         - label: Date
+    #           value: date
+    #           type: date
+    #           tooltip: Date
 
-            - label: Daily PCR tests conducted
-              value: newPCRTestsByPublishDate
-              type: numeric
-              tooltip: Daily number of PCR tests conducted on {date}
+    #         - label: Daily PCR tests conducted
+    #           value: newPCRTestsByPublishDate
+    #           type: numeric
+    #           tooltip: Daily number of PCR tests conducted on {date}
 
-            - label: Daily LFD tests conducted
-              value: newLFDTestsByPublishDate
-              type: numeric
-              tooltip: Daily number of LFD tests conducted on {date}
+    #         - label: Daily LFD tests conducted
+    #           value: newLFDTestsByPublishDate
+    #           type: numeric
+    #           tooltip: Daily number of LFD tests conducted on {date}
 
-            - label: Daily virus tests conducted
-              value: newVirusTests
-              type: numeric
-              tooltip: Daily number of virus tests conducted on {date}
+    #         - label: Daily virus tests conducted
+    #           value: newVirusTests
+    #           type: numeric
+    #           tooltip: Daily number of virus tests conducted on {date}
 
-            - label: Cumulative PCR tests conducted
-              value: cumPCRTestsByPublishDate
-              type: numeric
-              tooltip: Total number of PCR tests conducted up to {date}
+    #         - label: Cumulative PCR tests conducted
+    #           value: cumPCRTestsByPublishDate
+    #           type: numeric
+    #           tooltip: Total number of PCR tests conducted up to {date}
 
-            - label: Cumulative LFD tests conducted
-              value: cumLFDTestsByPublishDate
-              type: numeric
-              tooltip: Total number of LFD tests conducted up to {date}
+    #         - label: Cumulative LFD tests conducted
+    #           value: cumLFDTestsByPublishDate
+    #           type: numeric
+    #           tooltip: Total number of LFD tests conducted up to {date}
 
-            - label: Cumulative virus tests conducted
-              value: cumVirusTests
-              type: numeric
-              tooltip: Total number of virus tests conducted up to {date}
+    #         - label: Cumulative virus tests conducted
+    #           value: cumVirusTests
+    #           type: numeric
+    #           tooltip: Total number of virus tests conducted up to {date}
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/testing/cardVirusTestsConducted.md
+    #     - heading: About 
+    #       tabType: metadata
+    #       filename: cardMetadata/testing/cardVirusTestsConducted.md
 
 ##############################################################################################################################
 
