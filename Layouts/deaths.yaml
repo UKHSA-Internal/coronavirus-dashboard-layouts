@@ -902,32 +902,30 @@ cards:
             type: numeric
             tooltip: Death rate per 100,000 resident population
 
-# temporarily excluded due to issues with E07 and E10 geography data feeds,
-     
-      # - heading: Upper tier LA
-      #   tabType: table
-      #   params:
-      #     - key: areaType
-      #       sign: "="
-      #       value: utla
+      - heading: Upper tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: utla
 
-      #   latestBy: cumOnsDeathsByRegistrationDate
-      #   sortBy: areaName
-      #   fields:
-      #     - label: Area
-      #       value: areaName
-      #       type: string
-      #       tooltip: ""
+        latestBy: cumOnsDeathsByRegistrationDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
 
-      #     - label: Deaths
-      #       value: cumOnsDeathsByRegistrationDate
-      #       type: numeric
-      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+          - label: Deaths
+            value: cumOnsDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
 
-      #     - label: Rate per 100,000 population
-      #       value: cumOnsDeathsByRegistrationDateRate
-      #       type: numeric
-      #       tooltip: Death rate per 100,000 resident population
+          - label: Rate per 100,000 population
+            value: cumOnsDeathsByRegistrationDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
   
       # - heading: Lower tier LA
       #   tabType: table
