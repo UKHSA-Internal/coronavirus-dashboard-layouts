@@ -40,7 +40,7 @@ cards:
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
       of the first positive test. Data from the four nations are not directly comparable as methodologies 
-      and inclusion criteria vary.
+      and inclusion criteria vary. The most recent 5 days' data, highlighted in grey, are incomplete.
 
     download:
       - newDeaths28DaysByDeathDate
@@ -70,6 +70,11 @@ cards:
               tooltip: Daily number of deaths within 28 days of first positive test, by date of death
               type: bar
               rollingAverage: false
+              highlight: 
+                from: -5
+                to: 0
+                colour: 6
+                label: "Most recent 5 days (incomplete)"
 
             - label: (7-day average)
               value: newDeaths28DaysByDeathDate
@@ -94,6 +99,11 @@ cards:
               tooltip: Cumulative total number of deaths within 28 days of first positive test, by date of death
               type: bar
               rollingAverage: false
+              highlight: 
+                from: -5
+                to: 0
+                colour: 6
+                label: "Most recent 5 days (incomplete)"
 
         - heading: Data
           tabType: table
@@ -349,7 +359,7 @@ cards:
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
       of the first positive test. Data from the four nations are not directly comparable as methodologies 
-      and inclusion criteria vary.
+      and inclusion criteria vary. The most recent 5 days' data, highlighted in grey, are incomplete.
 
     download:
       - newDeaths28DaysByDeathDate
@@ -366,6 +376,11 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
+            highlight: 
+                from: -5
+                to: 0
+                colour: 6
+                label: "Most recent 5 days (incomplete)"
 
           - label: Deaths (7-day average)
             value: newDeaths28DaysByDeathDate
@@ -386,6 +401,11 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
+            highlight: 
+                from: -5
+                to: 0
+                colour: 6
+                label: "Most recent 5 days (incomplete)"
                   
       - heading: Data
         tabType: table
@@ -528,7 +548,7 @@ cards:
           - label: Week ending date
             value: date
             type: date
-            tooltip: Date reported on coronavirus.data.gov.uk
+            tooltip: Week ending date
 
           - label: Weekly registered deaths
             value: newOnsDeathsByRegistrationDate
@@ -543,6 +563,73 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
+
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock }}
+
+  - heading: Weekly care home deaths with COVID-19 on the death certificate by date registered (dev only)
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: > 
+      Number of care home deaths where the death certificate mentioned COVID-19 as one of the causes.
+      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
+      at least 11 days because the data are based on death registrations.
+    
+    download:
+      - newOnsCareHomeDeathsByRegistrationDate
+      - cumOnsCareHomeDeathsByRegistrationDate
+
+    tabs: 
+      - heading: Weekly
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Number of care home deaths
+            value: newOnsCareHomeDeathsByRegistrationDate
+            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            type: bar
+            colour: 0
+            rollingAverage: false
+            
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of care home deaths
+            value: cumOnsCareHomeDeathsByRegistrationDate
+            tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            type: bar
+            colour: 0
+            rollingAverage: false
+            
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Week ending date
+            value: date
+            type: date
+            tooltip: Week ending date
+
+          - label: Weekly registered care home deaths
+            value: newOnsCareHomeDeathsByRegistrationDate
+            type: numeric
+            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+
+          - label: Cumulative registered care home deaths
+            value: cumOnsCareHomeDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+
+#      - heading: About 
+#        tabType: metadata
+#        filename: cardMetadata/deaths/cardOnsCareHomeDeathsTimeSeries.md
+
+# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
@@ -902,32 +989,30 @@ cards:
             type: numeric
             tooltip: Death rate per 100,000 resident population
 
-# temporarily excluded due to issues with E07 and E10 geography data feeds,
-     
-      # - heading: Upper tier LA
-      #   tabType: table
-      #   params:
-      #     - key: areaType
-      #       sign: "="
-      #       value: utla
+      - heading: Upper tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: utla
 
-      #   latestBy: cumOnsDeathsByRegistrationDate
-      #   sortBy: areaName
-      #   fields:
-      #     - label: Area
-      #       value: areaName
-      #       type: string
-      #       tooltip: ""
+        latestBy: cumOnsDeathsByRegistrationDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
 
-      #     - label: Deaths
-      #       value: cumOnsDeathsByRegistrationDate
-      #       type: numeric
-      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+          - label: Deaths
+            value: cumOnsDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
 
-      #     - label: Rate per 100,000 population
-      #       value: cumOnsDeathsByRegistrationDateRate
-      #       type: numeric
-      #       tooltip: Death rate per 100,000 resident population
+          - label: Rate per 100,000 population
+            value: cumOnsDeathsByRegistrationDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
   
       # - heading: Lower tier LA
       #   tabType: table
@@ -977,7 +1062,8 @@ cards:
     fullWidth: true
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19 and either died within 
-      60 days of the first positive test or have COVID-19 mentioned on their death certificate. 
+      60 days of the first positive test or have COVID-19 mentioned on their death certificate. The most 
+      recent 5 days' data by date of death, highlighted in grey, are incomplete.
 
     download:
       - newDeaths60DaysByDeathDate
@@ -1005,6 +1091,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+              highlight: 
+                from: -5
+                to: 0
+                colour: 6
+                label: "Most recent 5 days (incomplete)"
 
             - label: Deaths (7-day average)
               value: newDeaths60DaysByDeathDate
@@ -1025,6 +1116,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+              highlight: 
+                from: -5
+                to: 0
+                colour: 6
+                label: "Most recent 5 days (incomplete)"
                   
         - heading: Data
           tabType: table
@@ -1124,7 +1220,7 @@ cards:
     fullWidth: true
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19 and either died within 
-      60 days of the first positive test or have COVID-19 mentioned on their death certificate. 
+      60 days of the first positive test or have COVID-19 mentioned on their death certificate. The most recent 5 days' data, highlighted in grey, are incomplete.
 
     download:
       - newDeaths60DaysByDeathDate
@@ -1143,6 +1239,11 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
+            highlight: 
+              from: -5
+              to: 0
+              colour: 6
+              label: "Most recent 5 days (incomplete)"
 
           - label: Deaths (7-day average)
             value: newDeaths60DaysByDeathDate
@@ -1163,6 +1264,11 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
+            highlight: 
+              from: -5
+              to: 0
+              colour: 6
+              label: "Most recent 5 days (incomplete)"
                   
       - heading: Data
         tabType: table
