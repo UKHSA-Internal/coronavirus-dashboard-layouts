@@ -919,7 +919,7 @@ cards:
             value: suspectedCovidOccupiedMVBeds
             tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
             type: bar
-            colour: 0
+            colour: 1
             rollingAverage: false
 
           - label: Non-covid occupied MV beds
@@ -933,7 +933,7 @@ cards:
             value: unoccupiedMVBeds
             tooltip: Number of unoccupied mechanical ventilation beds
             type: bar
-            colour: 1
+            colour: 0
             rollingAverage: false
 
       - heading: Data
