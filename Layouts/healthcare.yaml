@@ -890,7 +890,7 @@ cards:
     cardType: chart
     fullWidth: true
     abstract: >
-      mechanical ventilation bed occupany by occupant type. Data from the four nations may not be
+      Mechanical ventilation bed occupany by occupant type. Data from the four nations may not be
       directly comparable as data about COVID-19 patients in hospitals are collected differently. Data
       are not reported by each nation every day and England data are not available before 2 April. The
       UK figure is the sum of the four nations' figures and can only be calculated when all nations'
