@@ -28,19 +28,6 @@
 
 
 downloads:
-  - label: Weekly cases by specimen date at MSOA level
-    links:
-      - text: CSV (stacked)
-        url: /downloads/msoa_data/MSOAs_latest.csv
-
-      - text: JSON
-        url: /downloads/msoa_data/MSOAs_latest.json
-  
-  - label: Geographic lookup of MSOA to local authority and region
-    links: 
-      - text: CSV
-        url: /downloads/supplements/lookup_table.csv
-
   - label: Age demographic of cases by specimen date
     links:
       - text: CSV (unstacked)
