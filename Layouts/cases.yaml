@@ -1147,50 +1147,8 @@ cards:
       type: radio
       heading: null
       choices:
-        - Counts
         - Rates
         - Change
-
-    Counts:
-
-      tabs:
-        - heading: Seven day periods
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of cases in 7-day period
-              value: newCasesBySpecimenDateRollingSum
-              tooltip: Number of new people tested positive in the seven day period ending on the date shown by date the sample was taken 
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Seven day period ending
-              value: date
-              type: date
-              tooltip: End date for the seven day period when the sample was taken from the person
-
-            - label: Count of cases
-              value: newCasesBySpecimenDateRollingSum
-              type: numeric
-              tooltip: Number of new people tested positive in the seven day period ending on the date shown by date the sample was taken
-
-            - label: Rate per 100,000 population
-              value: newCasesBySpecimenDateRollingRate
-              type: numeric
-              tooltip: Rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken per 100,000 population
-
-            - label: Percentage change in rate per 100,000 population
-              value: newCasesBySpecimenDateChangePercentage
-              type: numeric
-              tooltip: Percentage change in rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken
-
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
 
     Rates:
 
@@ -1236,6 +1194,22 @@ cards:
     Change:
 
       tabs:
+
+# {{ StartDevOnlyBlock }}
+
+        - heading: Seven day periods
+          tabType: chart
+          barType: logy
+          fields:
+            - label: Percentage change in rate of cases in 7-day period
+              value: newCasesBySpecimenDateChangePercentage
+              tooltip: Percentage change in rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken 
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+# {{ EndDevOnlyBlock }}
+
         - heading: Data
           tabType: table
           fields:
@@ -1258,17 +1232,6 @@ cards:
               value: newCasesBySpecimenDateChangePercentage
               type: numeric
               tooltip: Percentage change in rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken
-
-        - heading: Seven day periods
-          tabType: chart
-          barType: logy
-          fields:
-            - label: Percentage change in rate of cases in 7-day period
-              value: newCasesBySpecimenDateChangePercentage
-              tooltip: Percentage change in rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken 
-              type: bar
-              colour: 0
-              rollingAverage: false
 
         - heading: About 
           tabType: metadata
