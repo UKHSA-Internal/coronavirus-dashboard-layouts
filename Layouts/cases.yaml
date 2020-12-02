@@ -1128,60 +1128,26 @@ cards:
     cardType: chart
     fullWidth: true
     abstract: >
-      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device) in the rolling 
-      seven day period ending on the dates shown. Data are presented as either counts or rates per 
-      100,000 population. The rates give a fairer comparison of the number of cases in each area but 
+      Rate of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device) per 100,000 population
+      in the rolling seven day period ending on the dates shown. The rates give a fairer comparison of the number of cases in each area but 
       they do not take account of the different rates of testing or differences in the age and sex 
       of the local populations. Data shown are cases by specimen date and because these are incomplete 
       for the most recent dates, the latest period represented is the seven day period ending 5 days 
-      before the date when the website was last updated.
+      before the date when the website was last updated. Percentage changes are calculated by comparing to the previous non-overlapping 
+      seven day period.
 
     download:
       - newCasesBySpecimenDateRollingSum
       - newCasesBySpecimenDateRollingRate
+      - newCasesBySpecimenDateChange
+      - newCasesBySpecimenDateChangePercentage
 
     options:
       type: radio
       heading: null
       choices:
-        - Counts
         - Rates
-
-    Counts:
-
-      tabs:
-        - heading: Seven day periods
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of cases in 7-day period
-              value: newCasesBySpecimenDateRollingSum
-              tooltip: Number of new people tested positive in the seven day period ending on the date shown by date the sample was taken 
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Seven day period ending
-              value: date
-              type: date
-              tooltip: End date for the seven day period when the sample was taken from the person
-
-            - label: Count of cases
-              value: newCasesBySpecimenDateRollingSum
-              type: numeric
-              tooltip: Number of new people tested positive in the seven day period ending on the date shown by date the sample was taken
-
-            - label: Rate per 100,000 population
-              value: newCasesBySpecimenDateRollingRate
-              type: numeric
-              tooltip: Rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken per 100,000 population
-
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
+        - Change
 
     Rates:
 
@@ -1214,6 +1180,57 @@ cards:
               value: newCasesBySpecimenDateRollingRate
               type: numeric
               tooltip: Rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken per 100,000 population
+            
+            - label: Percentage change in rate per 100,000 population
+              value: newCasesBySpecimenDateChangePercentage
+              type: numeric
+              tooltip: Percentage change in rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
+
+    Change:
+
+      tabs:
+
+# {{ StartDevOnlyBlock }}
+
+        - heading: Seven day periods
+          tabType: chart
+          barType: logy
+          fields:
+            - label: Percentage change in rate of cases in 7-day period
+              value: newCasesBySpecimenDateChangePercentage
+              tooltip: Percentage change in rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken 
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+# {{ EndDevOnlyBlock }}
+
+        - heading: Data
+          tabType: table
+          fields:
+            - label: Seven day period ending
+              value: date
+              type: date
+              tooltip: End date for the seven day period when the sample was taken from the person
+
+            - label: Count of cases
+              value: newCasesBySpecimenDateRollingSum
+              type: numeric
+              tooltip: Number of new people tested positive in the seven day period ending on the date shown by date the sample was taken
+
+            - label: Rate per 100,000 population
+              value: newCasesBySpecimenDateRollingRate
+              type: numeric
+              tooltip: Rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken per 100,000 population
+            
+            - label: Percentage change in rate per 100,000 population
+              value: newCasesBySpecimenDateChangePercentage
+              type: numeric
+              tooltip: Percentage change in rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken
 
         - heading: About 
           tabType: metadata
