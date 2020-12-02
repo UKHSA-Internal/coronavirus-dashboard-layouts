@@ -11,6 +11,8 @@
 # 
 # `linkUrl`: Use the URI for contents hosted on the website, or absolute, 
 #            fully qualified URL with protocol for external contents.
+
+#  If no link required, use links: []
 # 
 # Example
 # -------
@@ -28,6 +30,9 @@
 
 
 downloads:
+  - label: Weekly cases by specimen date at MSOA level - Select MSOA from "Area type"
+    links: []
+
   - label: Age demographic of cases by specimen date
     links:
       - text: CSV (unstacked)
