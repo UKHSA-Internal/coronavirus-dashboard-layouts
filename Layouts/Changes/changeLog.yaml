@@ -16,6 +16,9 @@
 # 
 # `date`: Date of which the change came into effect.
 # 
+# :ATTENTION: To show the banner, the date must be greater than or 
+#             equal to the date portion of the release timestamp. 
+# 
 # `displayBanner: Whether or not to display the change headline as a 
 #                 banner on the frontpage.
 # 
