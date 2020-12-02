@@ -1,20 +1,76 @@
-change log:
+# =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
+# Documentations
+# ==============
+# The base (parent) attribute is `changeLog`. Contents must be itemised.
+# 
+# Attributes
+# ----------
+# `type`: Type of content, which must be referenced from base `type`. 
+#  
+# Example
+# .......
+# 
+#     changeLog:
+#       - type: *newMetric
+#       ... other attributes
+# 
+# `date`: Date of which the change came into effect.
+# 
+# `displayBanner: Whether or not to display the change headline as a 
+#                 banner on the frontpage.
+# 
+# `relativeUrl`: URI to the page where the change has occurred. 
+# 
+# `headline`: A single sentence that describes the change. Must not 
+#             exceed 160 characters.
+# 
+# `body`: Additional information on the change. Ideally must not exceed 
+#         one paragraph - approximately 500 characters.
+# =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 
-  - date: "2020-10-26"
+type:
+  newMetric:     &newMetric     "NEW METRIC"
+  newFeature:    &newFeature    "NEW FEATURE"
+  changedMetric: &changedMetric "CHANGE TO METRIC"
+  update:        &update        "UPDATE"
+  newContent:    &newContent    "NEW CONTENT"
+  
+
+changeLog:
+  - type: *newFeature
+    date: "2020-10-30"
+    displayBanner: true
+    relativeUrl: /details/download
+    headline: MSOA data have been added to the downloads page.
+    body: > 
+      Area types in the download page now include MSOAs. The data are now available for 
+      download by region, local authority, a single MSOA, or the full dataset. Downloaded 
+      conetnts will also include information on region and local authority as well as MSOA. 
+
+  - type: *newContent
+    date: "2020-10-26"
+    displayBanner: true
     linkText: Cases by age group
     relativeUrl: /details/cases
+    headline: 
     body: >
       These have been added to the cases page. The current trend is a higher rate is starting 
       to appear in the over 60s, leading to increased hospital admissions. 
 
-  - date: "2020-10-22"
+  - type: *newContent
+    date: "2020-10-22"
+    displayBanner: true
     linkText: Local R numbers
     relativeUrl: /
+    headline:
     body: >
       When you search for a postcode, the local R number for the region will now be displayed.
 
-  - date: "2020-10-19"
+  - type: *newContent
+    date: "2020-10-19"
+    displayBanner: true
     linkText: Local alert levels
     relativeUrl: /
+    headline:
     body: >
       When you search for a postcode, the local alert level will now be displayed.
