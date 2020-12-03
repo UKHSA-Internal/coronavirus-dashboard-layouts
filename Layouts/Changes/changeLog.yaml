@@ -37,7 +37,23 @@ type:
   changedMetric: &changedMetric "CHANGE TO METRIC"
   update:        &update        "UPDATE"
   newContent:    &newContent    "NEW CONTENT"
-  
+
+colours:
+    *newFeature:
+        background: #CCE2D8
+        text: #005A30
+    *newMetric: 
+        background: #BFE3E0
+        text: #10403C
+    *changedMetric: 
+        background: #FFF7BF
+        text: #594D00
+    *update: 
+        background: #FCD6C3
+        text: #6E3619
+    *newContent: 
+        background: #DBD5E9
+        text: #3D2375
 
 changeLog:
   - type: *newFeature
