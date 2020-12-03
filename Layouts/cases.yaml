@@ -1134,7 +1134,7 @@ cards:
       of the local populations. Data shown are cases by specimen date and because these are incomplete 
       for the most recent dates, the latest period represented is the seven day period ending 5 days 
       before the date when the website was last updated. Percentage changes are calculated by comparing to the previous non-overlapping 
-      seven day period.
+      seven day period, and are presented on a log scale.
 
     download:
       - newCasesBySpecimenDateRollingSum
@@ -1181,7 +1181,7 @@ cards:
               type: numeric
               tooltip: Rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken per 100,000 population
             
-            - label: Percentage change in rate per 100,000 population
+            - label: Percentage change in 7-day case rate
               value: newCasesBySpecimenDateChangePercentage
               type: numeric
               tooltip: Percentage change in rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken
@@ -1200,7 +1200,7 @@ cards:
           tabType: chart
           barType: logy
           fields:
-            - label: Percentage change in rate of cases in 7-day period
+            - label: Percentage change in 7-day case rate
               value: newCasesBySpecimenDateChangePercentage
               tooltip: Percentage change in rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken 
               type: bar
@@ -1227,7 +1227,7 @@ cards:
               type: numeric
               tooltip: Rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken per 100,000 population
             
-            - label: Percentage change in rate per 100,000 population
+            - label: Percentage change in 7-day case rate
               value: newCasesBySpecimenDateChangePercentage
               type: numeric
               tooltip: Percentage change in rate of new people tested positive in the seven day period ending on the date shown by date the sample was taken
