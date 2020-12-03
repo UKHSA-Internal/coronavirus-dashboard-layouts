@@ -1135,7 +1135,7 @@ cards:
       for the most recent dates, the latest period represented is the 7-day period ending 5 days 
       before the date when the website was last updated. Rates and percentage changes are presented for the most recent 
       3 months, in order to provide transparency around decision making. Percentage changes are calculated by comparing 
-      to the previous non-overlapping 7-day period, and are presented on a log scale.
+      to the previous non-overlapping 7-day period.
 
     download:
       - newCasesBySpecimenDateRollingSum
