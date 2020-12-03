@@ -1124,7 +1124,7 @@ cards:
 
 ##############################################################################################################################
 
-  - heading: 7-day cases by specimen date
+  - heading: Seven-day case rates by specimen date
     cardType: chart
     fullWidth: true
     abstract: >
