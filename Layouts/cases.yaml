@@ -1129,11 +1129,7 @@ cards:
     fullWidth: true
     abstract: >
       Rate of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device) per 100,000 population
-      in the rolling 7-day period ending on the dates shown. The rates give a fairer comparison of the number of cases in each area but 
-      they do not take account of the different rates of testing or differences in the age and sex 
-      of the local populations. Data shown are cases by specimen date and because these are incomplete 
-      for the most recent dates, the latest period represented is the 7-day period ending 5 days 
-      before the date when the website was last updated. Rates and percentage changes are presented for the most recent 
+      in the rolling 7-day period ending on the dates shown. Rates and percentage changes are presented for the most recent 
       3 months, in order to provide transparency around decision making. Percentage changes are calculated by comparing 
       to the previous non-overlapping 7-day period.
 
