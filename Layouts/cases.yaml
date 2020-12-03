@@ -1144,7 +1144,7 @@ cards:
       heading: null
       choices:
         - Rates
-        - Change
+        - Percentage change
 
     Rates:
 
@@ -1187,12 +1187,9 @@ cards:
           tabType: metadata
           filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
 
-    Change:
+    Percentage change:
 
       tabs:
-
-# {{ StartDevOnlyBlock }}
-
         - heading: 7-day periods
           tabType: chart
           barType: overlay
@@ -1203,8 +1200,6 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-
-# {{ EndDevOnlyBlock }}
 
         - heading: Data
           tabType: table
