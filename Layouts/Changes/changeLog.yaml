@@ -42,39 +42,35 @@ type:
 
 
 colours:
-    [*newFeature]: 
-        background: "#CCE2D8"
-        text: "#005A30"
+    - type: *newFeature
+      background: "#CCE2D8"
+      text: "#005A30"
 
-    [*newMetric]: 
-        background: "#BFE3E0"
-        text: "#10403C"
+    - type: *newMetric
+      background: "#BFE3E0"
+      text: "#10403C"
 
-    [*changedMetric]: 
-        background: "#FFF7BF"
-        text: "#594D00"
+    - type: *changedMetric
+      background: "#FFF7BF"
+      text: "#594D00"
 
-    [*update]: 
-        background: "#FCD6C3"
-        text: "#6E3619"
+    - type: *update
+      background: "#FCD6C3"
+      text: "#6E3619"
 
-    [*newContent]: 
-        background: "#DBD5E9"
-        text: "#3D2375"
+    - type: *newContent
+      background: "#DBD5E9"
+      text: "#3D2375"
     
-    # PLACEHOLDERGREY:
     #     background: "#EEEFEF"
     #     text: "#383F43"
 
-    # PLACEHOLDERBLUE:
     #     background: "#D2E2F1"
     #     text: "#144E81"
 
-    # PLACEHOLDERRED:
     #     background: "#F6D7D2"
     #     text: "#942514"
 
-    # PLACEHOLDERPINK:
     #     background: "#F7D7E6"
     #     text: "#80224D"
 
