@@ -1,4 +1,4 @@
-# =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
+# =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 # Documentations
 # ==============
 # The base (parent) attribute is `changeLog`. Contents must be itemised.
@@ -14,22 +14,24 @@
 #       - type: *newMetric
 #       ... other attributes
 # 
-# `date`: Date of which the change came into effect.
+# `date`: REQUIRED. Date of which the change came into effect.
 # 
 # :ATTENTION: To show the banner, the date must be greater than or 
 #             equal to the date portion of the release timestamp. 
 # 
-# `displayBanner: Whether or not to display the change headline as a 
-#                 banner on the frontpage.
+# `displayBanner: OPTIONAL. Default: ``false``. Whether or not to display 
+#                 the change headline as a banner on the frontpage.
 # 
-# `relativeUrl`: URI to the page where the change has occurred. 
+# `relativeUrl`: OPTIONAL. URI to the page where the change has occurred.
+#                If missing, the URL will be omitted and the name will be 
+#                displayed as simple text.
 # 
-# `headline`: A single sentence that describes the change. Must not 
-#             exceed 160 characters.
+# `headline`: REQUIRED. A single sentence that describes the change. Must 
+#             not exceed 160 characters.
 # 
-# `body`: Additional information on the change. Ideally must not exceed 
-#         one paragraph - approximately 500 characters.
-# =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
+# `body`: REQUIRED. Additional information on the change. Ideally should not 
+#         exceed two paragraphs. Supports Markdown syntax.
+# =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 
 type:
   newMetric:     &newMetric     "NEW METRIC"
@@ -40,39 +42,35 @@ type:
 
 
 colours:
-    [*newFeature]: 
-        background: "#CCE2D8"
-        text: "#005A30"
+    - type: *newFeature
+      background: "#CCE2D8"
+      text: "#005A30"
 
-    [*newMetric]: 
-        background: "#BFE3E0"
-        text: "#10403C"
+    - type: *newMetric
+      background: "#BFE3E0"
+      text: "#10403C"
 
-    [*changedMetric]: 
-        background: "#FFF7BF"
-        text: "#594D00"
+    - type: *changedMetric
+      background: "#FFF7BF"
+      text: "#594D00"
 
-    [*update]: 
-        background: "#FCD6C3"
-        text: "#6E3619"
+    - type: *update
+      background: "#FCD6C3"
+      text: "#6E3619"
 
-    [*newContent]: 
-        background: "#DBD5E9"
-        text: "#3D2375"
+    - type: *newContent
+      background: "#DBD5E9"
+      text: "#3D2375"
     
-    # PLACEHOLDERGREY:
     #     background: "#EEEFEF"
     #     text: "#383F43"
 
-    # PLACEHOLDERBLUE:
     #     background: "#D2E2F1"
     #     text: "#144E81"
 
-    # PLACEHOLDERRED:
     #     background: "#F6D7D2"
     #     text: "#942514"
 
-    # PLACEHOLDERPINK:
     #     background: "#F7D7E6"
     #     text: "#80224D"
 
