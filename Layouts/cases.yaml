@@ -24,6 +24,28 @@ headlineNumbers:
 
 # {{ EndDevOnlyBlock }}
 
+
+baseSpecimenDateDemogrphics: &baseSpecimenDateDemographics
+  value: newCasesBySpecimenDateAgeDemographics
+  isArray: true
+
+
+specimenDateDemographics0_59: &specimenDateDemographics0_59
+  << : &baseSpecimenDateDemogrphics
+  filters:
+    parameter: age
+    value: 0_59
+
+
+specimenDateDemographics60+: &specimenDateDemographics60+
+  << : &baseSpecimenDateDemogrphics
+  filters:
+    parameter: age
+    value: 60+
+
+
+
+
 ##############################################################################################################################
 
 cards:
@@ -440,6 +462,65 @@ cards:
         filename: cardMetadata/cases/cardCasesTimeSeries.md
 
 ##############################################################################################################################
+
+  # {{ StartDevOnlyBlock }}
+  - heading: Cases by specimen date
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), by specimen date.
+      Individuals tested positive more than once are only counted once, on the date of their first
+      positive test. The most recent 5 days' data, highlighted in grey, are incomplete.
+
+    download:
+      - newCasesBySpecimenDateAgeDemographics
+    
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: overlay
+        fields:
+          - label: Number of cases 0 to 59
+            << : *specimenDateDemographics0_59
+            tooltip: Daily number of new people tested positive by date the sample was taken from the person
+            type: bar
+            colour: 0
+            rollingAverage: false
+            highlight: 
+              from: -5
+              to: 0
+              colour: 6
+              label: "Most recent 5 days (incomplete)"
+
+          - label: Number of cases 60+
+            << : *specimenDateDemographics60+
+            tooltip: Daily number of new people tested positive by date the sample was taken from the person
+            type: bar
+            colour: 0
+            rollingAverage: false
+            highlight: 
+              from: -5
+              to: 0
+              colour: 6
+              label: "Most recent 5 days (incomplete)"
+
+          - label: 
+            type: heatmap
+            value: newCasesBySpecimenDateAgeDemographics  # Assumed to be an array
+            # date is the x-axis by default.
+            amplitude: rollingRate  # z-axis
+            metrics:  # y-axis
+              - 0_4
+              - 5_9
+  # {{ EndDevOnlyBlock }}
+
+##############################################################################################################################
+
 
 # Not shown for UK (has separate date reported card for UK with different abstract) or sub-national (no data)
 
