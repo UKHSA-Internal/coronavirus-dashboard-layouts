@@ -464,7 +464,7 @@ cards:
 ##############################################################################################################################
 
   # {{ StartDevOnlyBlock }}
-  - heading: Cases by specimen date - experimental
+  - heading: Cases by specimen date age demographics - Above and below 60 [experimental]
     cardType: chart
     locationAware:
       excluded:
@@ -501,14 +501,104 @@ cards:
             rollingAverage: false
             metric: rollingRate
 
-          # - label: 
-          #   type: heatmap
-          #   value: newCasesBySpecimenDateAgeDemographics  # Assumed to be an array
-          #   # date is the x-axis by default.
-          #   amplitude: rollingRate  # z-axis
-          #   metrics:  # y-axis
-          #     - 0_4
-          #     - 5_9
+  - heading: Cases by specimen date age demographics [experimental]
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), by specimen date.
+      Individuals tested positive more than once are only counted once, on the date of their first
+      positive test. The most recent 5 days' data, highlighted in grey, are incomplete.
+
+    download:
+      - newCasesBySpecimenDateAgeDemographics
+    
+    tabs:
+      - heading: Heatmap
+        tabType: heatmap
+        value: newCasesBySpecimenDateAgeDemographics
+        amplitude: rollingRate
+        fields:
+          - label: 0 to 4
+            parameter: age
+            value: 04_09
+
+          - label: 5 to 9
+            parameter: age
+            value: 05_09
+            
+          - label: 10 to 14
+            parameter: age
+            value: 10_14
+
+          - label: 15 to 19
+            parameter: age
+            value: 15_19
+
+          - label: 20 to 24
+            parameter: age
+            value: 20_24
+
+          - label: 25 to 29
+            parameter: age
+            value: 25_29
+
+          - label: 30 to 34
+            parameter: age
+            value: 30_34
+
+          - label: 35 to 39
+            parameter: age
+            value: 35_39
+
+          - label: 40 to 44
+            parameter: age
+            value: 40_44
+
+          - label: 45 to 49
+            parameter: age
+            value: 45_49
+
+          - label: 50 to 54
+            parameter: age
+            value: 50_54
+
+          - label: 55 to 59
+            parameter: age
+            value: 55_59
+
+          - label: 60 to 64
+            parameter: age
+            value: 60_64
+
+          - label: 65 to 69
+            parameter: age
+            value: 65_69
+
+          - label: 70 to 74
+            parameter: age
+            value: 70_74
+
+          - label: 75 to 79
+            parameter: age
+            value: 75_79
+
+          - label: 80 to 84
+            parameter: age
+            value: 80_84
+
+          - label: 85 to 89
+            parameter: age
+            value: 85_89
+
+          - label: 90+
+            parameter: age
+            value: 90+
+            
   # {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
