@@ -31,14 +31,14 @@ baseSpecimenDateDemogrphics: &baseSpecimenDateDemographics
 
 
 specimenDateDemographics0_59: &specimenDateDemographics0_59
-  << : &baseSpecimenDateDemogrphics
+  << : *baseSpecimenDateDemographics
   filters:
     parameter: age
     value: 0_59
 
 
 specimenDateDemographics60+: &specimenDateDemographics60Plus
-  << : &baseSpecimenDateDemogrphics
+  << : *baseSpecimenDateDemographics
   filters:
     parameter: age
     value: 60+
