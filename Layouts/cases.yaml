@@ -34,7 +34,7 @@ specimenDateDemographics0_59: &specimenDateDemographics0_59
   << : *baseSpecimenDateDemographics
   filters:
     parameter: age
-    value: 0_59
+    value: 00_59
 
 
 specimenDateDemographics60+: &specimenDateDemographics60Plus
