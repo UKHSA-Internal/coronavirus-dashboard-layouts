@@ -492,24 +492,14 @@ cards:
             colour: 0
             rollingAverage: false
             metric: rollingRate
-            highlight: 
-              from: -5
-              to: 0
-              colour: 6
-              label: "Most recent 5 days (incomplete)"
 
           - label: Number of cases 60+
             << : *specimenDateDemographics60Plus
             tooltip: Daily number of new people tested positive by date the sample was taken from the person
             type: bar
-            colour: 0
+            colour: 4
             metric: rollingRate
             rollingAverage: false
-            highlight: 
-              from: -5
-              to: 0
-              colour: 4
-              label: "Most recent 5 days (incomplete)"
 
           - label: 
             type: heatmap
