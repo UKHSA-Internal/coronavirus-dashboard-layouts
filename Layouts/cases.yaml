@@ -497,7 +497,7 @@ cards:
             << : *specimenDateDemographics60Plus
             tooltip: Daily number of new people tested positive by date the sample was taken from the person
             type: bar
-            colour: 4
+            colour: 3
             metric: rollingRate
             rollingAverage: false
 
