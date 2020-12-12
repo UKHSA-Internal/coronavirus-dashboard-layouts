@@ -37,7 +37,7 @@ specimenDateDemographics0_59: &specimenDateDemographics0_59
     value: 0_59
 
 
-specimenDateDemographics60+: &specimenDateDemographics60+
+specimenDateDemographics60+: &specimenDateDemographics60Plus
   << : &baseSpecimenDateDemogrphics
   filters:
     parameter: age
@@ -499,7 +499,7 @@ cards:
               label: "Most recent 5 days (incomplete)"
 
           - label: Number of cases 60+
-            << : *specimenDateDemographics60+
+            << : *specimenDateDemographics60Plus
             tooltip: Daily number of new people tested positive by date the sample was taken from the person
             type: bar
             colour: 0
