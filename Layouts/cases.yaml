@@ -491,6 +491,7 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
+            metric: rollingRate
             highlight: 
               from: -5
               to: 0
@@ -502,6 +503,7 @@ cards:
             tooltip: Daily number of new people tested positive by date the sample was taken from the person
             type: bar
             colour: 0
+            metric: rollingRate
             rollingAverage: false
             highlight: 
               from: -5
