@@ -485,6 +485,14 @@ cards:
         tabType: chart
         barType: overlay
         fields:
+          - label: Number of cases 60+
+            << : *specimenDateDemographics60Plus
+            tooltip: Daily number of new people tested positive by date the sample was taken from the person
+            type: bar
+            colour: 3
+            metric: rollingRate
+            rollingAverage: false
+            
           - label: Number of cases 0 to 59
             << : *specimenDateDemographics0_59
             tooltip: Daily number of new people tested positive by date the sample was taken from the person
@@ -493,22 +501,14 @@ cards:
             rollingAverage: false
             metric: rollingRate
 
-          - label: Number of cases 60+
-            << : *specimenDateDemographics60Plus
-            tooltip: Daily number of new people tested positive by date the sample was taken from the person
-            type: bar
-            colour: 3
-            metric: rollingRate
-            rollingAverage: false
-
-          - label: 
-            type: heatmap
-            value: newCasesBySpecimenDateAgeDemographics  # Assumed to be an array
-            # date is the x-axis by default.
-            amplitude: rollingRate  # z-axis
-            metrics:  # y-axis
-              - 0_4
-              - 5_9
+          # - label: 
+          #   type: heatmap
+          #   value: newCasesBySpecimenDateAgeDemographics  # Assumed to be an array
+          #   # date is the x-axis by default.
+          #   amplitude: rollingRate  # z-axis
+          #   metrics:  # y-axis
+          #     - 0_4
+          #     - 5_9
   # {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
