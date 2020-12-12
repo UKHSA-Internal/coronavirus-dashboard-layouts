@@ -464,7 +464,7 @@ cards:
 ##############################################################################################################################
 
   # {{ StartDevOnlyBlock }}
-  - heading: Cases by specimen date
+  - heading: Cases by specimen date - experimental
     cardType: chart
     locationAware:
       excluded:
