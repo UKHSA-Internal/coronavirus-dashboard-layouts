@@ -509,43 +509,49 @@ cards:
             type: date
           
           - label: "Cases: 0-59"
-            value: cases
-            parent: newCasesBySpecimenDateAgeDemographics
+            metric: cases
+            value: newCasesBySpecimenDateAgeDemographics
+            type: numeric
             filters:
               parameter: age
               value: 00_59
 
           - label: "Rolling sum: 0-59"
-            value: rollingSum
-            parent: newCasesBySpecimenDateAgeDemographics
+            metric: rollingSum
+            value: newCasesBySpecimenDateAgeDemographics
+            type: numeric
             filters:
               parameter: age
               value: 00_59
 
           - label: "Rolling rate: 0-59"
-            value: rollingRate
-            parent: newCasesBySpecimenDateAgeDemographics
+            metric: rollingRate
+            value: newCasesBySpecimenDateAgeDemographics
+            type: numeric
             filters:
               parameter: age
               value: 00_59
 
           - label: "Cases: 60+"
-            value: cases
-            parent: newCasesBySpecimenDateAgeDemographics
+            metric: cases
+            value: newCasesBySpecimenDateAgeDemographics
+            type: numeric
             filters:
               parameter: age
               value: 60+
 
           - label: "Rolling sum: 60+"
-            value: rollingSum
-            parent: newCasesBySpecimenDateAgeDemographics
+            metric: rollingSum
+            value: newCasesBySpecimenDateAgeDemographics
+            type: numeric
             filters:
               parameter: age
               value: 60+
 
           - label: "Rolling rate: 60+"
-            value: rollingRate
-            parent: newCasesBySpecimenDateAgeDemographics
+            metric: rollingRate
+            value: newCasesBySpecimenDateAgeDemographics
+            type: numeric
             filters:
               parameter: age
               value: 60+
