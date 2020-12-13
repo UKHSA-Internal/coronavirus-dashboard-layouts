@@ -501,6 +501,56 @@ cards:
             rollingAverage: false
             metric: rollingRate
 
+      - heading: Data
+        tabType: nestedTable
+        fields:
+          - label: Date
+            value: date
+            type: date
+          
+          - label: "Cases: 0-59"
+            value: cases
+            parent: newCasesBySpecimenDateAgeDemographics
+            filters:
+              parameter: age
+              value: 00_59
+
+          - label: "Rolling sum: 0-59"
+            value: rollingSum
+            parent: newCasesBySpecimenDateAgeDemographics
+            filters:
+              parameter: age
+              value: 00_59
+
+          - label: "Rolling rate: 0-59"
+            value: rollingRate
+            parent: newCasesBySpecimenDateAgeDemographics
+            filters:
+              parameter: age
+              value: 00_59
+
+          - label: "Cases: 60+"
+            value: cases
+            parent: newCasesBySpecimenDateAgeDemographics
+            filters:
+              parameter: age
+              value: 60+
+
+          - label: "Rolling sum: 60+"
+            value: rollingSum
+            parent: newCasesBySpecimenDateAgeDemographics
+            filters:
+              parameter: age
+              value: 60+
+
+          - label: "Rolling rate: 60+"
+            value: rollingRate
+            parent: newCasesBySpecimenDateAgeDemographics
+            filters:
+              parameter: age
+              value: 60+
+
+
   - heading: Cases by specimen date age demographics [experimental]
     cardType: chart
     locationAware:
