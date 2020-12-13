@@ -525,6 +525,7 @@ cards:
             value: newCasesBySpecimenDateAgeDemographics
             amplitude: rollingRate
             amplitudeLabel: Rolling rate
+            metricLabel: Age group
             parameter: age
             metrics:
             - label: 0 to 4
