@@ -527,7 +527,7 @@ cards:
             parameter: age
             metrics:
             - label: 0 to 4
-              value: "04_09"
+              value: "00_04"
 
             - label: 5 to 9
               value: "05_09"
