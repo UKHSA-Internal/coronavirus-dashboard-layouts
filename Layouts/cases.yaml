@@ -521,7 +521,7 @@ cards:
       - heading: Heatmap
         tabType: heatmap
         fields:
-          - label: New cases by specimen date age demographics
+          - label: Age demographics
             value: newCasesBySpecimenDateAgeDemographics
             amplitude: rollingRate
             amplitudeLabel: Rolling rate
