@@ -311,7 +311,7 @@ cards:
 
   # {{ StartDevOnlyBlock }}
 
-  - heading: Cases by specimen date age demographics [experimental]
+  - heading: Cases by specimen date age demographics
     cardType: chart
     experimental: true
     locationAware:
