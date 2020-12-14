@@ -309,8 +309,6 @@ cards:
 
 ##############################################################################################################################
 
-  # {{ StartDevOnlyBlock }}
-
   - heading: Cases by specimen date age demographics
     cardType: chart
     experimental: true
@@ -400,8 +398,6 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/cases/cardRatesByFiveYearAge.md
-
-  # {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
@@ -1347,8 +1343,6 @@ cards:
           filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
 
 ##############################################################################################################################
- 
-  # {{ StartDevOnlyBlock }}
 
   - heading: Cases by specimen date age demographics - Above and below 60
     cardType: chart
@@ -1466,8 +1460,6 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/cases/cardCasesAndRatesByAgeUnderOver60.md
-
-   # {{ EndDevOnlyBlock }} 
 
 ##############################################################################################################################
   - heading: Cases by area (last 7 days)
