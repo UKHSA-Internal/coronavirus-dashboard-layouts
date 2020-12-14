@@ -76,6 +76,26 @@ colours:
 
 
 changeLog:
+
+  - type: *changedMetric
+    date: "2020-12-03"
+    displayBanner: false
+    relativeUrl: /details/cases
+    headline: Percentage change in seven-day case rate per 100,000 population method adjusted.
+    body: > 
+      The method used to calculate the seven-day case rate per 100,000 population has been adjusted 
+      to improve reporting where instances of zero counts occur.   
+
+  - type: *newContent
+    date: "2020-12-02"
+    displayBanner: false
+    relativeUrl: /details/cases
+    headline: Percentage change in seven-day case rate per 100,000 population charts added.
+    body: > 
+      The seven-day cases by specimen date card no longer shows seven-day case counts.  Seven-day 
+      case rates per 100,000 population are still displayed and percentage change in these rates 
+      have been added to the charts and tables.  
+
   - type: *newFeature
     date: "2020-10-30"
     displayBanner: true
