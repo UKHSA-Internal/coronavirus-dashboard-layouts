@@ -1383,7 +1383,7 @@ cards:
        
       - heading: Rolling rate
         tabType: chart
-        barType: line
+        barType: stack
         fields:
           - label: Number of cases 0 to 59
             << : *specimenDateDemographics0_59
