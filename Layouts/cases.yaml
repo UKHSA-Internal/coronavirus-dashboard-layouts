@@ -490,6 +490,26 @@ cards:
             tooltip: Daily number of new people tested positive by date the sample was taken from the person
             type: bar
             colour: 3
+            metric: cases
+            rollingAverage: false
+            
+          - label: Number of cases 0 to 59
+            << : *specimenDateDemographics0_59
+            tooltip: Daily number of new people tested positive by date the sample was taken from the person
+            type: bar
+            colour: 0
+            rollingAverage: false
+            metric: cases
+
+      - heading: Rolling rate
+        tabType: chart
+        barType: stack
+        fields:
+          - label: Number of cases 60+
+            << : *specimenDateDemographics60Plus
+            tooltip: Daily number of new people tested positive by date the sample was taken from the person
+            type: bar
+            colour: 3
             metric: rollingRate
             rollingAverage: false
             
