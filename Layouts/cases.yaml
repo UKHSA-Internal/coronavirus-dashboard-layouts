@@ -1365,7 +1365,7 @@ cards:
         tabType: chart
         barType: stack
         fields:
-            - label: Number of cases 0 to 59
+          - label: Number of cases 0 to 59
             << : *specimenDateDemographics0_59
             tooltip: Daily number of new people tested positive by date the sample was taken from the person
             type: bar
@@ -1385,7 +1385,7 @@ cards:
         tabType: chart
         barType: line
         fields:
-            - label: Number of cases 0 to 59
+          - label: Number of cases 0 to 59
             << : *specimenDateDemographics0_59
             tooltip: Daily number of new people tested positive by date the sample was taken from the person
             type: bar
