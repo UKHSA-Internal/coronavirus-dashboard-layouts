@@ -320,10 +320,11 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), by specimen date.
+      Rate of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device)
+      per 100,000 population in the rolling 7-day period ending on the dates shown, by age. 
       Individuals tested positive more than once are only counted once, on the date of their first
-      positive test. The most recent 5 days' data, highlighted in grey, are incomplete.
-
+      positive test.
+    
     download:
       - newCasesBySpecimenDateAgeDemographics
     
@@ -394,6 +395,10 @@ cards:
 
             - label: 90+
               value: "90+"
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
 
   # {{ EndDevOnlyBlock }}
 
@@ -1353,9 +1358,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), by specimen date.
-      Individuals tested positive more than once are only counted once, on the date of their first
-      positive test. The most recent 5 days' data, highlighted in grey, are incomplete.
+      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), 
+      by age and specimen date. Individuals tested positive more than once are only counted once, on the date of their first
+      positive test. Rates are presented as rates per 100,000 population in the rolling 7-day period ending on the dates shown.
 
     download:
       - newCasesBySpecimenDateAgeDemographics
@@ -1365,17 +1370,17 @@ cards:
         tabType: chart
         barType: stack
         fields:
-          - label: Number of cases 0 to 59
+          - label: Number of cases aged 0 to 59
             << : *specimenDateDemographics0_59
-            tooltip: Daily number of new people tested positive by date the sample was taken from the person
+            tooltip: Daily number of new people tested positive aged 0-59 by date the sample was taken from the person
             type: bar
             colour: 0
             rollingAverage: false
             metric: cases
 
-          - label: Number of cases 60+
+          - label: Number of cases aged 60+
             << : *specimenDateDemographics60Plus
-            tooltip: Daily number of new people tested positive by date the sample was taken from the person
+            tooltip: Daily number of new people tested positive aged 60+ by date the sample was taken from the person
             type: bar
             colour: 3
             metric: cases
@@ -1383,24 +1388,24 @@ cards:
        
       - heading: Rolling rate
         tabType: chart
-        fields:
-          - label: Number of cases 0 to 59
-            << : *specimenDateDemographics0_59
-            tooltip: Daily number of new people tested positive by date the sample was taken from the person
-            type: line
-            colour: 0
-            fill: false
-            rollingAverage: false
-            metric: rollingRate
+          fields:
+            - label: Rate of cases aged 0 to 59 per 100,000 population in 7-day period
+              << : *specimenDateDemographics0_59
+              tooltip: Rate of new people aged 0-59 tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
+              type: line
+              colour: 0
+              fill: false
+              rollingAverage: false
+              metric: rollingRate
 
-          - label: Number of cases 60+
-            << : *specimenDateDemographics60Plus
-            tooltip: Daily number of new people tested positive by date the sample was taken from the person
-            type: line
-            colour: 3
-            fill: false
-            metric: rollingRate
-            rollingAverage: false
+            - label: Rate of cases aged 60+ per 100,000 population in 7-day period
+              << : *specimenDateDemographics60Plus
+              tooltip: Rate of new people aged 60+ tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
+              type: line
+              colour: 3
+              fill: false
+              metric: rollingRate
+              rollingAverage: false
           
       - heading: Data
         tabType: nestedTable
@@ -1456,6 +1461,10 @@ cards:
             filters:
               parameter: age
               value: 60+
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
 
    # {{ EndDevOnlyBlock }} 
 
