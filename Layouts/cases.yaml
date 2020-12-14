@@ -399,7 +399,7 @@ cards:
 
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
+        filename: cardMetadata/cases/cardRatesByFiveYearAge.md
 
   # {{ EndDevOnlyBlock }}
 
@@ -1465,7 +1465,7 @@ cards:
 
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
+        filename: cardMetadata/cases/cardCasesAndRatesByAgeUnderOver60.md
 
    # {{ EndDevOnlyBlock }} 
 
