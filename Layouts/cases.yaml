@@ -1369,7 +1369,7 @@ cards:
             << : *specimenDateDemographics0_59
             tooltip: Daily number of new people tested positive by date the sample was taken from the person
             type: bar
-            colour: 3
+            colour: 0
             rollingAverage: false
             metric: cases
 
@@ -1377,7 +1377,7 @@ cards:
             << : *specimenDateDemographics60Plus
             tooltip: Daily number of new people tested positive by date the sample was taken from the person
             type: bar
-            colour: 0
+            colour: 3
             metric: cases
             rollingAverage: false
        
