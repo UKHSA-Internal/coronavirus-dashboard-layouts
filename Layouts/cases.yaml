@@ -313,6 +313,7 @@ cards:
 
   - heading: Cases by specimen date age demographics [experimental]
     cardType: chart
+    experimental: true
     locationAware:
       excluded:
         areaType:
