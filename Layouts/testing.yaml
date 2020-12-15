@@ -715,6 +715,8 @@ cards:
             value: uniqueCasePositivityBySpecimenDateRollingSum
             type: numeric
             tooltip: 7-day positivity by specimen date
+            overlaying: "y"  # Which axis to overlay
+            side: right  # Which side to show the overlayed axis
 
           - label: People tested (PCR)  
             value: uniquePeopleTestedBySpecimenDateRollingSum
