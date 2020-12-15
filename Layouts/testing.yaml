@@ -700,7 +700,7 @@ cards:
             value: uniquePeopleTestedBySpecimenDateRollingSum
             tooltip: Number of people who received a PCR test in the previous 7 days
             type: line
-            colour: 6
+            colour: 7
             solidFill: true
             rollingAverage: false
             
