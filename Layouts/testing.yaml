@@ -703,6 +703,15 @@ cards:
             colour: 0
             fill: false
 
+          - label: Number of people tested (PCR)
+            value: uniquePeopleTestedBySpecimenDateRollingSum
+            tooltip: Number of people who received a PCR test in the previous 7 days
+            type: bar
+            colour: 0
+            rollingAverage: false
+            overlaying: "y"  # Which axis to overlay
+            side: right  # Which side to show the overlayed axis
+
       - heading: Data
         tabType: table
         fields:
@@ -715,8 +724,6 @@ cards:
             value: uniqueCasePositivityBySpecimenDateRollingSum
             type: numeric
             tooltip: 7-day positivity by specimen date
-            overlaying: "y"  # Which axis to overlay
-            side: right  # Which side to show the overlayed axis
 
           - label: People tested (PCR)  
             value: uniquePeopleTestedBySpecimenDateRollingSum
