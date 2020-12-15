@@ -707,7 +707,8 @@ cards:
             value: uniquePeopleTestedBySpecimenDateRollingSum
             tooltip: Number of people who received a PCR test in the previous 7 days
             type: line
-            colour: 0
+            colour: 6
+            solidFill: true
             rollingAverage: false
             overlaying: "y"  # Which axis to overlay
             side: right  # Which side to show the overlayed axis
