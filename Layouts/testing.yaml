@@ -696,13 +696,6 @@ cards:
       - heading: 7-day periods
         tabType: chart
         fields:
-          - label: 7-day positivity (%)
-            value: uniqueCasePositivityBySpecimenDateRollingSum
-            tooltip: 7-day positivity by specimen date
-            type: line
-            colour: 0
-            fill: false
-
           - label: Number of people tested (PCR)
             value: uniquePeopleTestedBySpecimenDateRollingSum
             tooltip: Number of people who received a PCR test in the previous 7 days
@@ -712,6 +705,13 @@ cards:
             rollingAverage: false
             overlaying: "y"  # Which axis to overlay
             side: right  # Which side to show the overlayed axis
+
+          - label: 7-day positivity (%)
+            value: uniqueCasePositivityBySpecimenDateRollingSum
+            tooltip: 7-day positivity by specimen date
+            type: line
+            colour: 0
+            fill: false
 
       - heading: Data
         tabType: table
