@@ -703,15 +703,15 @@ cards:
             colour: 6
             solidFill: true
             rollingAverage: false
-            overlaying: "y"  # Which axis to overlay
-            side: right  # Which side to show the overlayed axis
-
+            
           - label: 7-day positivity (%)
             value: uniqueCasePositivityBySpecimenDateRollingSum
             tooltip: 7-day positivity by specimen date
             type: line
             colour: 0
             fill: false
+            overlaying: "y"  # Which axis to overlay
+            side: right  # Which side to show the overlayed axis
 
       - heading: Data
         tabType: table
