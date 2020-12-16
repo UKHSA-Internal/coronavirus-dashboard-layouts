@@ -209,7 +209,7 @@ cards:
     abstract: >
       Number of confirmed positive, negative or void COVID-19 lab-based test results, by test type.  
       This is a count of test results and may include multiple tests for an individual person.  PCR tests test for 
-      the presence of of SARS-CoV-2 virus and include all lab-based pillar 1 and 2 tests and any PCR tests undertaken 
+      the presence of SARS-CoV-2 virus and include all lab-based pillar 1 and 2 tests and any PCR tests undertaken 
       in pillar 4. Antibody serology tests test for COVID-19 antibodies and include pillar 3 tests and any antibody 
       serology tests undertaken in pillar 4. Testing capacity is a projection based on reports from labs on how 
       many lab-based tests they have capacity to carry out each day based on availability of staff and resources.
@@ -590,6 +590,70 @@ cards:
 
 ##############################################################################################################################
 
+# not shown for UK
+  - heading: PCR testing positivity and people tested
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      The number of people who received a PCR test in the previous 7 days, and the percentage of those who had at least 
+      one positive COVID-19 PCR test result in the same 7 days, by specimen date.
+      Individuals tested more than once in the period are only counted once in the denominator, 
+      and those with more than one positive test result in the period are only included once in the numerator.
+
+    download:
+      - uniqueCasePositivityBySpecimenDateRollingSum
+      - uniquePeopleTestedBySpecimenDateRollingSum
+
+    tabs:
+      - heading: 7-day periods
+        tabType: chart
+        fields:
+          - label: Number of people tested (PCR)
+            value: uniquePeopleTestedBySpecimenDateRollingSum
+            tooltip: Number of people who received a PCR test in the previous 7 days
+            type: bar
+            colour: 7
+            solidFill: true
+            rollingAverage: false
+                      
+          - label: 7-day positivity (%)
+            value: uniqueCasePositivityBySpecimenDateRollingSum
+            tooltip: 7-day positivity by specimen date
+            type: line
+            colour: 0
+            fill: false
+            overlaying: "y"  # Which axis to overlay
+            side: right  # Which side to show the overlayed axis
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: 7-day period ending
+            value: date
+            type: date
+            tooltip: End date for the 7-day period when the sample was taken from the person
+
+          - label: PCR postivity (%)
+            value: uniqueCasePositivityBySpecimenDateRollingSum
+            type: numeric
+            tooltip: 7-day positivity by specimen date
+
+          - label: People tested (PCR)  
+            value: uniquePeopleTestedBySpecimenDateRollingSum
+            type: numeric
+            tooltip: Number of people who received a PCR test in the period
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/testing/cardPCRPositivity.md
+
+##############################################################################################################################
+
 # Only shown for England
 
   - heading: Lateral flow device tests conducted
@@ -600,6 +664,7 @@ cards:
         areaType:
           - utla
           - ltla
+          - region
 
         areaName:
           - England
@@ -669,4 +734,5 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/testing/cardLFDTesting.md
+
 
