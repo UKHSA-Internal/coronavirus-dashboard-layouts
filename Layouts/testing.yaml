@@ -622,7 +622,6 @@ cards:
             colour: 7
             solidFill: true
             rollingAverage: false
-              clipEnd: 5
                       
           - label: 7-day positivity (%)
             value: uniqueCasePositivityBySpecimenDateRollingSum
