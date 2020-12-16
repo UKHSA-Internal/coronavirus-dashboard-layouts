@@ -590,8 +590,6 @@ cards:
 
 ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
-
 # not shown for UK
   - heading: PCR testing positivity and people tested
     cardType: chart
@@ -653,8 +651,6 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/testing/cardPCRPositivity.md
-
-# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
