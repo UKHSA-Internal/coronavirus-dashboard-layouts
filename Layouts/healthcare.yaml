@@ -422,8 +422,7 @@ cards:
       
     fullWidth: true
     abstract: >
-      Daily count of confirmed COVID-19 patients in hospital at midnight the preceding
-      night. Data are not updated every day.
+      Daily count of confirmed COVID-19 patients in hospital at 8am. Data are not updated every day.
      
     download:
       - hospitalCases
@@ -482,7 +481,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Daily count of confirmed COVID-19 patients in hospital at midnight the preceding night.
+      Daily count of confirmed COVID-19 patients in hospital at 8am.
       Data from the four nations may not be directly comparable as data about COVID-19
       patients in hospitals are collected differently. Data are not reported by each nation
       every day. The UK figure is the sum of the four nations' figures and can only be

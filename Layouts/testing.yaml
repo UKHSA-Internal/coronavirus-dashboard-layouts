@@ -209,7 +209,7 @@ cards:
     abstract: >
       Number of confirmed positive, negative or void COVID-19 lab-based test results, by test type.  
       This is a count of test results and may include multiple tests for an individual person.  PCR tests test for 
-      the presence of of SARS-CoV-2 virus and include all lab-based pillar 1 and 2 tests and any PCR tests undertaken 
+      the presence of SARS-CoV-2 virus and include all lab-based pillar 1 and 2 tests and any PCR tests undertaken 
       in pillar 4. Antibody serology tests test for COVID-19 antibodies and include pillar 3 tests and any antibody 
       serology tests undertaken in pillar 4. Testing capacity is a projection based on reports from labs on how 
       many lab-based tests they have capacity to carry out each day based on availability of staff and resources.
