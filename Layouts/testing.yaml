@@ -600,6 +600,7 @@ cards:
         areaType:
           - utla
           - ltla
+          - region
 
         areaName:
           - England
