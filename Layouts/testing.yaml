@@ -685,8 +685,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      The percentage of people who received a PCR test in the previous 7 days who had at least one positive COVID-19 PCR 
-      test result, by specimen date. Individuals tested more than once in the period are only counted once in the denominator, 
+      The number of people who received a PCR test in the previous 7 days, and the percentage of those who had at least 
+      one positive COVID-19 PCR test result, by specimen date.
+      Individuals tested more than once in the period are only counted once in the denominator, 
       and those with more than one positive test result in the period are only included once in the numerator.
 
     download:
@@ -704,7 +705,7 @@ cards:
             colour: 7
             solidFill: true
             rollingAverage: false
-            
+                      
           - label: 7-day positivity (%)
             value: uniqueCasePositivityBySpecimenDateRollingSum
             tooltip: 7-day positivity by specimen date
@@ -734,63 +735,6 @@ cards:
 
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-
-# not shown for UK
-  - heading: People who received a PCR test in the previous 7 days
-    cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      The number of people who received a PCR test in the previous 7 days, by specimen date. 
-      Individuals tested more than once are only counted once.
-
-    download:
-      - uniqueCasePositivityBySpecimenDateRollingSum
-      - uniquePeopleTestedBySpecimenDateRollingSum
-
-    tabs:
-      - heading: 7-day periods
-        tabType: chart
-        barType: overlay
-        fields:
-          - label: Number of people tested (PCR)
-            value: uniquePeopleTestedBySpecimenDateRollingSum
-            tooltip: Number of people who received a PCR test in the previous 7 days
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-      - heading: Data
-        tabType: table
-        fields:
-          - label: 7-day period ending
-            value: date
-            type: date
-            tooltip: End date for the 7-day period when the sample was taken from the person
-
-          - label: PCR postivity (%)
-            value: uniqueCasePositivityBySpecimenDateRollingSum
-            type: numeric
-            tooltip: 7-day positivity by specimen date
-
-          - label: People tested (PCR)  
-            value: uniquePeopleTestedBySpecimenDateRollingSum
-            type: numeric
-            tooltip: Number of people who received a PCR test in the period
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesTimeSeries.md
+        filename: cardMetadata/testing/cardPCRPositivity.md
 
 # {{ EndDevOnlyBlock }}
