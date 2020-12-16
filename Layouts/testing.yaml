@@ -676,7 +676,7 @@ cards:
 # {{ StartDevOnlyBlock }}
 
 # not shown for UK
-  - heading: PCR testing positivity
+  - heading: PCR testing positivity and people tested
     cardType: chart
     locationAware:
       excluded:
@@ -709,7 +709,7 @@ cards:
           - label: 7-day positivity (%)
             value: uniqueCasePositivityBySpecimenDateRollingSum
             tooltip: 7-day positivity by specimen date
-            type: line
+            type: bar
             colour: 0
             fill: false
             overlaying: "y"  # Which axis to overlay
