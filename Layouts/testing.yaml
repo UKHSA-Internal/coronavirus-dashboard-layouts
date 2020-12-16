@@ -686,7 +686,7 @@ cards:
     fullWidth: true
     abstract: >
       The number of people who received a PCR test in the previous 7 days, and the percentage of those who had at least 
-      one positive COVID-19 PCR test result, by specimen date.
+      one positive COVID-19 PCR test result in the same 7 days, by specimen date.
       Individuals tested more than once in the period are only counted once in the denominator, 
       and those with more than one positive test result in the period are only included once in the numerator.
 
@@ -701,7 +701,7 @@ cards:
           - label: Number of people tested (PCR)
             value: uniquePeopleTestedBySpecimenDateRollingSum
             tooltip: Number of people who received a PCR test in the previous 7 days
-            type: line
+            type: bar
             colour: 7
             solidFill: true
             rollingAverage: false
@@ -709,7 +709,7 @@ cards:
           - label: 7-day positivity (%)
             value: uniqueCasePositivityBySpecimenDateRollingSum
             tooltip: 7-day positivity by specimen date
-            type: bar
+            type: line
             colour: 0
             fill: false
             overlaying: "y"  # Which axis to overlay
