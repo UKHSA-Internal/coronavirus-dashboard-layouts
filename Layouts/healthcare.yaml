@@ -282,6 +282,61 @@ cards:
 
 ##############################################################################################################################
 
+  - heading: 7-day rate of patients admitted to hospital
+    cardType: chart
+    locationAware:
+      excluded: 
+        areaType:
+          - nhsTrust
+
+    fullWidth: true
+    abstract: >
+      Rate of COVID-19 patients admitted to hospital in the rolling 7-day period ending
+      on the dates shown. Data are not
+      updated every day by all four nations and the figures are not comparable as Wales
+      include suspected COVID-19 patients while the other nations include only confirmed
+      cases.
+
+    download:
+      - newAdmissionsRollingSum
+      - newAdmissionsRollingRate
+
+     tabs:
+      - heading: 7-day periods
+        tabType: chart
+        barType: overlay
+        fields:
+          - label: Rate of patients admitted per 100,000 population in 7-day period
+            value: newAdmissionsRollingRate
+            tooltip: Rate of patients admitted in the 7-day period ending on the date shown per 100,000 population 
+            colour: 0
+            type: bar
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: 7-day period ending
+            value: date
+            type: date
+            tooltip: End date for the 7-day period
+
+          - label: Count of admissions
+            value: newAdmissionsRollingSum
+            type: numeric
+            tooltip: Number of patients admitted in the 7-day period ending on the date shown
+
+          - label: Rate per 100,000 population
+            value: newAdmissionsRollingRate
+            type: numeric
+            tooltip: Rate of patients admitted in the 7-day period ending on the date shown per 100,000 population
+            
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
+
+##############################################################################################################################
+
   - heading: Patients admitted to hospital, by age
     caption: Counts
     cardType: ageSexBreakdown
