@@ -591,7 +591,7 @@ cards:
 ##############################################################################################################################
 
 # not shown for UK
-  - heading: PCR testing positivity and people tested
+  - heading: Weekly number of people receiving a PCR test and positivity
     cardType: chart
     locationAware:
       excluded:
@@ -613,20 +613,20 @@ cards:
       - heading: 7-day periods
         tabType: chart
         fields:
-          - label: Number of people tested (PCR)
+          - label: Number of people tested in the previous 7 days (PCR)
             value: uniquePeopleTestedBySpecimenDateRollingSum
             tooltip: Number of people who received a PCR test in the previous 7 days
             type: bar
             colour: 7
             solidFill: true
-            rollingAverage: false
-                      
-          - label: 7-day positivity (%)
+            rollingAverage: false 
+
+          - label: 7-day PCR positivity (%)
             value: uniqueCasePositivityBySpecimenDateRollingSum
             tooltip: 7-day positivity by specimen date
             type: line
             colour: 0
-            fill: false
+            fill: false           
             overlaying: "y"  # Which axis to overlay
             side: right  # Which side to show the overlayed axis
 
@@ -638,15 +638,15 @@ cards:
             type: date
             tooltip: End date for the 7-day period when the sample was taken from the person
 
-          - label: PCR postivity (%)
-            value: uniqueCasePositivityBySpecimenDateRollingSum
-            type: numeric
-            tooltip: 7-day positivity by specimen date
-
-          - label: People tested (PCR)  
+          - label: Number of people tested in the previous 7 days (PCR)  
             value: uniquePeopleTestedBySpecimenDateRollingSum
             type: numeric
             tooltip: Number of people who received a PCR test in the period
+
+          - label: 7-day PCR postivity (%)
+            value: uniqueCasePositivityBySpecimenDateRollingSum
+            type: numeric
+            tooltip: 7-day positivity by specimen date
 
       - heading: About 
         tabType: metadata
