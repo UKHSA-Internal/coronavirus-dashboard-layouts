@@ -591,7 +591,7 @@ cards:
 ##############################################################################################################################
 
 # not shown for UK
-  - heading: PCR testing positivity and people tested
+  - heading: Weekly number of people receiving a PCR test and positivity
     cardType: chart
     locationAware:
       excluded:
@@ -613,7 +613,7 @@ cards:
       - heading: 7-day periods
         tabType: chart
         fields:
-          - label: Number of people tested (PCR)
+          - label: Number of people tested in the previous 7 days (PCR)
             value: uniquePeopleTestedBySpecimenDateRollingSum
             tooltip: Number of people who received a PCR test in the previous 7 days
             type: bar
@@ -643,7 +643,7 @@ cards:
             type: numeric
             tooltip: 7-day positivity by specimen date
 
-          - label: People tested (PCR)  
+          - label: People tested in the previous 7 days (PCR)  
             value: uniquePeopleTestedBySpecimenDateRollingSum
             type: numeric
             tooltip: Number of people who received a PCR test in the period
