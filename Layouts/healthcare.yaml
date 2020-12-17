@@ -45,93 +45,11 @@ cards:
     # example of locationAware for including or excluding specific area types or area names
     # syntax set out in full below, but don't need to include empty lists
 
-    # Only shown for NHS Trust
-
-    locationAware:
-      included: 
-        areaType:
-          - nhsTrust
-      
-    fullWidth: true
-    abstract: >
-      Daily and cumulative numbers of COVID-19 patients admitted to hospital. Data are not
-      updated every day by all four nations and the figures for Wales are not comparable to those
-      for other nations as Wales include suspected COVID-19 patients while the other nations include 
-      only confirmed cases.
-      
-    download:
-      - newAdmissions
-      - cumAdmissions
-
-    tabs: 
-      - heading: Daily
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Admissions
-            value: newAdmissions
-            tooltip: Daily number of COVID-19 patients admitted to hospital
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-          - label: Admissions (7-day average)
-            value: newAdmissions
-            tooltip: 7 day rolling average of the daily number of admissions
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 0 #no of days to exclude for incomplete data
-
-      - heading: Cumulative
-        tabType: chart
-        fields:
-          - label: Admissions
-            value: cumAdmissions
-            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported by healthcare providers
-
-          - label: Daily admissions
-            value: newAdmissions
-            type: numeric
-            tooltip: Daily number of COVID-19 patients admitted to hospital
-
-          - label: Total admissions
-            value: cumAdmissions
-            type: numeric
-            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalWithRollingAverages.md
-
-##############################################################################################################################
-
-cards:
-  - heading: Patients admitted to hospital
-    cardType: chart
-
-    # example of locationAware for including or excluding specific area types or area names
-    # syntax set out in full below, but don't need to include empty lists
-
-    # Not shown for NHS Trust or UK
+    # Not shown for UK
 
     locationAware:
       excluded: 
         areaType:
-          - nhsTrust
           - overview
       
     fullWidth: true
@@ -194,11 +112,6 @@ cards:
             value: cumAdmissions
             type: numeric
             tooltip: Cumulative total number of COVID-19 patients admitted to hospital
-          
-          - label: 7-day rolling rate per 100,000
-            value: newAdmissionsRollingRate
-            type: numeric
-            tooltip: Rate of admissions in the 7-day period ending on the date shown
 
       - heading: About 
         tabType: metadata
@@ -301,11 +214,6 @@ cards:
               type: numeric
               tooltip: Cumulative total number of COVID-19 patients admitted to hospital
 
-            - label: 7-day rolling rate per 100,000
-              value: newAdmissionsRollingRate
-              type: numeric
-              tooltip: Rate of admissions in the 7-day period ending on the date shown
-
         - heading: About 
           tabType: metadata
           filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
@@ -367,11 +275,6 @@ cards:
               value: cumAdmissions
               type: numeric
               tooltip: Cumulative total number of COVID-19 patients admitted to hospital
-
-            - label: 7-day rolling rate per 100,000
-              value: newAdmissionsRollingRate
-              type: numeric
-              tooltip: Rate of admissions in the 7-day period ending on the date shown
 
         - heading: About 
           tabType: metadata
