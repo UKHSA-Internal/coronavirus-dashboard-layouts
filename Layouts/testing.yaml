@@ -621,7 +621,7 @@ cards:
             solidFill: true
             rollingAverage: false 
 
-          - label: 7-day positivity (%)
+          - label: 7-day PCR positivity (%)
             value: uniqueCasePositivityBySpecimenDateRollingSum
             tooltip: 7-day positivity by specimen date
             type: line
@@ -638,15 +638,15 @@ cards:
             type: date
             tooltip: End date for the 7-day period when the sample was taken from the person
 
-          - label: PCR postivity (%)
-            value: uniqueCasePositivityBySpecimenDateRollingSum
-            type: numeric
-            tooltip: 7-day positivity by specimen date
-
-          - label: People tested in the previous 7 days (PCR)  
+          - label: Number of people tested in the previous 7 days (PCR)  
             value: uniquePeopleTestedBySpecimenDateRollingSum
             type: numeric
             tooltip: Number of people who received a PCR test in the period
+
+          - label: 7-day PCR postivity (%)
+            value: uniqueCasePositivityBySpecimenDateRollingSum
+            type: numeric
+            tooltip: 7-day positivity by specimen date
 
       - heading: About 
         tabType: metadata
