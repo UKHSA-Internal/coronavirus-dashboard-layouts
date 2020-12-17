@@ -301,7 +301,7 @@ cards:
       - newAdmissionsRollingSum
       - newAdmissionsRollingRate
 
-     tabs:
+    tabs:
       - heading: 7-day periods
         tabType: chart
         barType: overlay
