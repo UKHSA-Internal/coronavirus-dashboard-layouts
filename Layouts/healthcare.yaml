@@ -282,6 +282,8 @@ cards:
 
 ##############################################################################################################################
 
+# {{ StartDevOnlyBlock }}
+
   - heading: 7-day rate of patients admitted to hospital
     cardType: chart
     locationAware:
@@ -334,6 +336,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
+
+# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
