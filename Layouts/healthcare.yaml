@@ -1,7 +1,7 @@
 headlineNumbers:
   - caption: Patients admitted
     valueItems:
-      - label: Daily
+      - label: Latest daily
         value: newAdmissions
         tooltip: Daily number of COVID-19 patients admitted to hospital, reported on {date}
     
@@ -28,12 +28,14 @@ headlineNumbers:
 
   - caption: Patients in hospital
     valueItems:
-      - value: hospitalCases
+      - label: Latest daily
+        value: hospitalCases
         tooltip: Number of COVID-19 patients currently in hospital, reported on {date}
 
   - caption: Patients on ventilation
     valueItems:
-      - value: covidOccupiedMVBeds
+      - label: Latest daily
+        value: covidOccupiedMVBeds
         tooltip: Number of COVID-19 patients currently in mechanical ventilation beds, reported on {date}
     
 ##############################################################################################################################
