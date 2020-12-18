@@ -1,7 +1,7 @@
 headlineNumbers:
   - caption: Patients admitted
     valueItems:
-      - label: Latest daily available
+      - label: Latest daily
         value: newAdmissions
         tooltip: Daily number of COVID-19 patients admitted to hospital, reported on {date}
     
