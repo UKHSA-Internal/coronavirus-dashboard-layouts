@@ -3,6 +3,7 @@ dtypes:
   float:    &float    !!python/name:builtins.float ''
   int:      &int      !!python/name:builtins.int ''
   list:     &list     !!python/name:builtins.list ''
+  dict:     &dict     !!python/name:builtins.dict ''
   datetime: &datetime !!python/name:datetime.datetime ''
 
 
@@ -177,10 +178,14 @@ Metric groups:
     releaseTimestamp: *datetime
 
   Generic: &generic
-    alertLevel: *list
+    alertLevel: *dict
     areaName: *str
     areaNameLower: *str
 
+    transmissionRateMin: *float
+    transmissionRateMax: *float
+    transmissionRateGrowthRateMin: *float
+    transmissionRateGrowthRateMax: *float
 
 
 UNDER DEVELOPMENT: &under-development
