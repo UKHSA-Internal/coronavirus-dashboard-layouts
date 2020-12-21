@@ -1,0 +1,235 @@
+dtypes:
+  str:      &str      !!python/name:builtins.str ''
+  float:    &float    !!python/name:builtins.float ''
+  int:      &int      !!python/name:builtins.int ''
+  list:     &list     !!python/name:builtins.list ''
+  dict:     &dict     !!python/name:builtins.dict ''
+  datetime: &datetime !!python/name:datetime.datetime ''
+
+
+Metric groups:
+  Testing:
+    Capacity: &testing-capacity
+      capacityPillarOne: *int
+      capacityPillarTwo: *int
+      capacityPillarOneTwo: *int
+      capacityPillarThree: *int
+      capacityPillarFour: *int
+      capacityPillarOneTwoFour: *int
+      plannedAntibodyCapacityByPublishDate: *int
+      plannedCapacityByPublishDate: *int
+      plannedPCRCapacityByPublishDate: *int
+
+    Testing by method: &testing-method
+      newLFDTests: *int
+      cumLFDTests: *int
+
+      newPCRTestsByPublishDate: *int
+      cumPCRTestsByPublishDate: *int
+      newPCRTestsByPublishDateChange: *int
+      newPCRTestsByPublishDateRollingSum: *int
+      newPCRTestsByPublishDateRollingRate: *float
+      newPCRTestsByPublishDateChangePercentage: *float
+      newPCRTestsByPublishDateDirection: *str
+
+      newAntibodyTestsByPublishDate: *int
+      cumAntibodyTestsByPublishDate: *int
+
+    Testing by pillar: &testing-by-pillar
+      newPillarOneTestsByPublishDate: *int
+      cumPillarOneTestsByPublishDate: *int
+
+      newPillarTwoTestsByPublishDate: *int
+      cumPillarTwoTestsByPublishDate: *int
+
+      newPillarThreeTestsByPublishDate: *int
+      cumPillarThreeTestsByPublishDate: *int
+
+      newPillarFourTestsByPublishDate: *int
+      cumPillarFourTestsByPublishDate: *int
+
+      newPillarOneTwoTestsByPublishDate: *int
+      cumPillarOneTwoTestsByPublishDate: *int
+
+    Deduplicated: &testing-deduplicated
+      uniqueCasePositivityBySpecimenDateRollingSum: *float
+      uniquePeopleTestedBySpecimenDateRollingSum: *int
+
+    Other: &testing-other
+      newVirusTests: *int
+      cumVirusTests: *int
+      newVirusTestsChange: *int
+      newVirusTestsRollingSum: *int
+      newVirusTestsRollingRate: *float
+      newVirusTestsChangePercentage: *float
+      newVirusTestsDirection: *str
+
+      newTestsByPublishDate: *int
+      cumTestsByPublishDate: *int
+
+
+  Healthcare:
+    Admissions: &healthcare-admissions
+      newAdmissions: *int
+      cumAdmissions: *int
+      newAdmissionsChange: *int
+      newAdmissionsChangePercentage: *float
+      newAdmissionsDirection: *str
+      newAdmissionsRollingRate: *float
+      newAdmissionsRollingSum: *int
+
+    Occupancy: &healthcare-occupancy
+      hospitalCases: *int
+
+      covidOccupiedMVBeds: *int
+
+    Demographics: &healthcare-demographics
+      cumAdmissionsByAge: *list
+
+  Cases:
+    Reporting date: &cases-reporting-date
+      newCasesByPublishDate: *int
+      newCasesByPublishDateChange: *int
+      newCasesByPublishDateChangePercentage: *float
+      newCasesByPublishDateDirection: *str
+      newCasesByPublishDateRollingRate: *float
+      newCasesByPublishDateRollingSum: *int
+      cumCasesByPublishDate: *int
+      cumCasesByPublishDateRate: *float
+
+    Event date: &cases-event-date
+      newCasesBySpecimenDate: *int
+      newCasesBySpecimenDateChange: *int
+      newCasesBySpecimenDateChangePercentage: *float
+      newCasesBySpecimenDateDirection: *str
+      newCasesBySpecimenDateRollingRate: *float
+      newCasesBySpecimenDateRollingSum: *int
+      previouslyReportedNewCasesBySpecimenDate: *int
+      changeInNewCasesBySpecimenDate: *int
+      cumCasesBySpecimenDate: *int
+      cumCasesBySpecimenDateRate: *float
+
+    Demographics: &cases-demographics
+      maleCases: *list
+      femaleCases: *list
+      newCasesBySpecimenDateAgeDemographics: *list
+      newCasesByPublishDateAgeDemographics: *list
+
+
+  Deaths:
+    Reporting date: &deaths-reporting-date
+      newDeaths28DaysByPublishDate: *int
+      newDeaths28DaysByPublishDateChange: *int
+      newDeaths28DaysByPublishDateChangePercentage: *float
+      newDeaths28DaysByPublishDateDirection: *str
+      newDeaths28DaysByPublishDateRollingRate: *float
+      newDeaths28DaysByPublishDateRollingSum: *int
+
+      newDeaths60DaysByPublishDate: *int
+      newDeathsByPublishDate: *int
+
+      cumDeaths28DaysByPublishDate: *int
+      cumDeaths28DaysByPublishDateRate: *float
+
+      cumDeaths60DaysByPublishDate: *int
+      cumDeaths60DaysByPublishDateRate: *float
+
+      cumDeathsByPublishDate: *int
+      cumDeathsByPublishDateRate: *float
+
+    Event date: &deaths-event-date
+      newDeaths28DaysByDeathDate: *int
+      newDeaths28DaysByDeathDateRate: *float
+      newDeaths28DaysByDeathDateRollingRate: *float
+      newDeaths28DaysByDeathDateRollingSum: *int
+
+      newDeaths60DaysByDeathDate: *int
+      newDeaths60DaysByDeathDateRate: *float
+      newDeaths60DaysByDeathDateRollingRate: *float
+      newDeaths60DaysByDeathDateRollingSum: *int
+
+      newDeathsByDeathDate: *int
+      newDeathsByDeathDateRate: *float
+      newDeathsByDeathDateRollingRate: *float
+      newDeathsByDeathDateRollingSum: *int
+
+      cumDeaths28DaysByDeathDate: *int
+      cumDeaths28DaysByDeathDateRate: *float
+      cumDeaths60DaysByDeathDate: *int
+      cumDeaths60DaysByDeathDateRate: *float
+
+      cumDeathsByDeathDate: *int
+      cumDeathsByDeathDateRate: *float
+
+    Certified: &deaths-certified
+      newOnsDeathsByRegistrationDate: *int
+      cumOnsDeathsByRegistrationDate: *int
+      cumOnsDeathsByRegistrationDateRate: *float
+
+    Demographics: &deaths-demographics
+      maleDeaths28Days: *int
+      femaleDeaths28Days: *int
+
+  Record identifiers: &record-identifiers
+    hash: *str
+    areaType: *str
+    areaCode: *str
+    date: *datetime
+    releaseTimestamp: *datetime
+
+  Generic: &generic
+    alertLevel: *dict
+    areaName: *str
+    areaNameLower: *str
+
+    transmissionRateMin: *float
+    transmissionRateMax: *float
+    transmissionRateGrowthRateMin: *float
+    transmissionRateGrowthRateMax: *float
+
+
+UNDER DEVELOPMENT: &under-development
+  newPeopleReceivingFirstDose: *int
+  cumPeopleReceivingFirstDose: *int
+  newPeopleReceivingSecondDose: *int
+  cumPeopleReceivingSecondDose: *int
+  cumWeeklyNsoDeathsByRegDate: *int
+  newWeeklyNsoDeathsByRegDate: *int
+  cumWeeklyNsoCareHomeDeathsByRegDate: *int
+  newWeeklyNsoCareHomeDeathsByRegDate: *int
+
+
+PRODUCTION: &production
+  <<: *record-identifiers
+  <<: *generic
+
+  <<: *testing-capacity
+  <<: *testing-method
+  <<: *testing-by-pillar
+  <<: *testing-by-pillar
+  <<: *testing-deduplicated
+  <<: *testing-other
+
+  <<: *healthcare-admissions
+  <<: *healthcare-occupancy
+  <<: *healthcare-demographics
+
+  <<: *cases-event-date
+  <<: *cases-reporting-date
+  <<: *cases-demographics
+
+  <<: *deaths-event-date
+  <<: *deaths-reporting-date
+  <<: *deaths-certified
+  <<: *deaths-demographics
+
+
+
+STAGING: &staging
+  <<: *production
+
+
+
+DEVELOPMENT: &development
+  <<: *production
+  <<: *under-development
