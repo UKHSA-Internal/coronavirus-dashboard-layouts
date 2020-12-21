@@ -97,7 +97,7 @@ cards:
               type: bar
               rollingAverage: false
               highlight: 
-                from: -5
+                from: -4
                 to: 0
                 colour: 6
                 label: "Most recent 5 days (incomplete)"
@@ -128,7 +128,7 @@ cards:
               type: bar
               rollingAverage: false
               highlight: 
-                from: -5
+                from: -4
                 to: 0
                 colour: 6
                 label: "Most recent 5 days (incomplete)"
@@ -255,7 +255,7 @@ cards:
             colour: 0
             rollingAverage: false
             highlight: 
-              from: -5
+              from: -4
               to: 0
               colour: 6
               label: "Most recent 5 days (incomplete)"
@@ -280,7 +280,7 @@ cards:
             colour: 0
             rollingAverage: false
             highlight: 
-              from: -5
+              from: -4
               to: 0
               colour: 6
               label: "Most recent 5 days (incomplete)"

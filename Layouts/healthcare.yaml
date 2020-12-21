@@ -1241,7 +1241,7 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 
-  - heading: People who have received vaccinations
+  - heading: People who have received vaccinations - DUMMY DATA DO NOT USE
     cardType: chart
     locationAware:
       included: 
