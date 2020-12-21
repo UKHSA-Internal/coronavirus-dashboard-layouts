@@ -1242,7 +1242,7 @@ cards:
 # {{ StartDevOnlyBlock }}
 
   - heading: People who have received vaccinations
-    cardType: multiAreaStatic
+    cardType: chart
     locationAware:
       included: 
         areaType:
