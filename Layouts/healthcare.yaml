@@ -1272,11 +1272,6 @@ cards:
       tabs:
         - heading: Data
           tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-        
           fields:
             - label: 7-day period ending
               value: date
@@ -1377,11 +1372,6 @@ cards:
     tabs:
       - heading: Data
         tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: overview
-        
         fields:
           - label: 7-day period ending
             value: date
