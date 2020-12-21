@@ -40,7 +40,8 @@ cards:
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
       of the first positive test. Data from the four nations are not directly comparable as methodologies 
-      and inclusion criteria vary. The most recent 5 days' data, highlighted in grey, are incomplete.
+      and inclusion criteria vary. Data for the period ending 5 days before the date when the website was 
+      last updated with data for the selected area, highlighted in grey, is incomplete.
 
     download:
       - newDeaths28DaysByDeathDate
@@ -359,7 +360,8 @@ cards:
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
       of the first positive test. Data from the four nations are not directly comparable as methodologies 
-      and inclusion criteria vary. The most recent 5 days' data, highlighted in grey, are incomplete.
+      and inclusion criteria vary. Data for the period ending 5 days before the date when the website was 
+      last updated with data for the selected area, highlighted in grey, is incomplete.
 
     download:
       - newDeaths28DaysByDeathDate
@@ -1062,8 +1064,9 @@ cards:
     fullWidth: true
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19 and either died within 
-      60 days of the first positive test or have COVID-19 mentioned on their death certificate. The most 
-      recent 5 days' data by date of death, highlighted in grey, are incomplete.
+      60 days of the first positive test or have COVID-19 mentioned on their death certificate. Data for the 
+      period ending 5 days before the date when the website was last updated with data for the selected area, 
+      highlighted in grey, is incomplete.
 
     download:
       - newDeaths60DaysByDeathDate
@@ -1220,7 +1223,9 @@ cards:
     fullWidth: true
     abstract: > 
       Number of deaths of people who had had a positive test result for COVID-19 and either died within 
-      60 days of the first positive test or have COVID-19 mentioned on their death certificate. The most recent 5 days' data, highlighted in grey, are incomplete.
+      60 days of the first positive test or have COVID-19 mentioned on their death certificate. Data for the 
+      period ending 5 days before the date when the website was last updated with data for the selected area, 
+      highlighted in grey, is incomplete.
 
     download:
       - newDeaths60DaysByDeathDate
