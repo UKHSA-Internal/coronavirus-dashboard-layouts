@@ -1821,7 +1821,7 @@ cards:
             sign: "="
             value: utla
 
-        latestBy: cumOnsDeathsByRegistrationDate
+        latestBy: cumNsoDeathsByRegistrationDate
         sortBy: areaName
         fields:
           - label: Area
