@@ -20,6 +20,38 @@ headlineNumbers:
         value: cumOnsDeathsByRegistrationDate
         tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
 
+# {{ StartDevOnlyBlock}}
+
+  - caption: Deaths with COVID-19 on the death certificate
+    valueItems:
+      - label: Weekly
+        value: newOnsDeathsByRegistrationDate
+        tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered during the week ending {date}
+        
+      - label: Total
+        value: cumOnsDeathsByRegistrationDate
+        tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
+
+# {{ EndDevOnlyBlock}}
+
+baseDeaths28DaysByDeathDateDemogrphics: &baseDeaths28DaysByDeathDateDemogrphics
+  value: newDeaths28DaysByDeathDateAgeDemographics
+  isArray: true
+
+
+Deaths28DaysByDeathDateDemogrphics0_59: &specimenDateDemographics0_59
+  << : *baseDeaths28DaysByDeathDateDemogrphics
+  filters:
+    parameter: age
+    value: 00_59
+
+
+Deaths28DaysByDeathDateDemogrphics60+: &specimenDateDemographics60Plus
+  << : *baseDeaths28DaysByDeathDateDemogrphics
+  filters:
+    parameter: age
+    value: 60+
+
 ##############################################################################################################################
 
 cards:
@@ -1493,5 +1525,347 @@ cards:
   #   y-label: Deaths per 100,000 population
   #   y-value: CumDeathsByPublishDateRate
   #   y-tooltip: Cumulative total number of deaths per 100,000 resident population
+
+# {{ EndDevOnlyBlock}}
+
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock}}
+
+  - heading: Deaths within 28 days of positive test by date of death age demographics
+    cardType: chart
+    experimental: true
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+          - utla
+          - ltla
+
+    fullWidth: true
+    abstract: >
+      Rate of deaths of people who had at least one positive test result for COVID-19 and died within 28 days of the first
+      positive test per 100,000 population in the rolling 7-day period ending on the dates shown, by age. 
+    
+    download:
+      - newDeaths28DaysByDeathDateAgeDemographics
+    
+    tabs:
+      - heading: Heatmap
+        tabType: heatmap
+        fields:
+          - label: Age demographics
+            value: newDeaths28DaysByDeathDateAgeDemographics
+            amplitude: rollingRate
+            amplitudeLabel: Rolling rate
+            metricLabel: Age group
+            parameter: age
+            metrics:
+            - label: 0 to 4
+              value: "00_04"
+
+            - label: 5 to 9
+              value: "05_09"
+              
+            - label: 10 to 14
+              value: "10_14"
+
+            - label: 15 to 19
+              value: "15_19"
+
+            - label: 20 to 24
+              value: "20_24"
+
+            - label: 25 to 29
+              value: "25_29"
+
+            - label: 30 to 34
+              value: "30_34"
+
+            - label: 35 to 39
+              value: "35_39"
+
+            - label: 40 to 44
+              value: "40_44"
+
+            - label: 45 to 49
+              value: "45_49"
+
+            - label: 50 to 54
+              value: "50_54"
+
+            - label: 55 to 59
+              value: "55_59"
+
+            - label: 60 to 64
+              value: "60_64"
+
+            - label: 65 to 69
+              value: "65_69"
+
+            - label: 70 to 74
+              value: "70_74"
+
+            - label: 75 to 79
+              value: "75_79"
+
+            - label: 80 to 84
+              value: "80_84"
+
+            - label: 85 to 89
+              value: "85_89"
+
+            - label: 90+
+              value: "90+"
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardRatesByFiveYearAge.md
+
+# {{ EndDevOnlyBlock}}
+
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock}}
+
+  - heading: Deaths within 28 days of positive test by date of death age demographics - Above and below 60
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      Number of deaths of people who had at least one positive test result for COVID-19 and died within 28 days of the first
+      positive test by age and date of death. Rates are presented as rates per 100,000 population in the rolling 7-day period ending on the dates shown.
+
+    download:
+      - newDeaths28DaysByDeathDateAgeDemographics
+    
+    tabs:
+      - heading: Rolling rate
+        tabType: chart
+        fields:
+          - label: Rate of deaths aged 0 to 59
+            << : *newDeaths28DaysByDeathDateAgeDemographics0_59
+            tooltip: Rate of deaths of people aged 0-59 in the 7-day period ending on the date shown by date of death per 100,000 population
+            type: line
+            colour: 0
+            fill: false
+            rollingAverage: false
+            metric: rollingRate
+
+          - label: Rate of deaths aged 60+
+            << : *newDeaths28DaysByDeathDateAgeDemographics60Plus
+            tooltip: Rate of deaths of people aged 60+ in the 7-day period ending on the date shown by date of death per 100,000 population
+            type: line
+            colour: 3
+            fill: false
+            metric: rollingRate
+            rollingAverage: false
+
+      - heading: Daily deaths
+        tabType: chart
+        barType: stack
+        fields:
+          - label: Number of deaths aged 0 to 59
+            << : *newDeaths28DaysByDeathDateAgeDemographics0_59
+            tooltip: Daily number of deaths of people aged 0-59 by date of death
+            type: bar
+            colour: 0
+            rollingAverage: false
+            metric: deaths
+
+          - label: Number of deaths aged 60+
+            << : *newDeaths28DaysByDeathDateAgeDemographics60Plus
+            tooltip: Daily number of deaths of people aged 60+ by date of death
+            type: bar
+            colour: 3
+            metric: deaths
+            rollingAverage: false
+              
+      - heading: Data
+        tabType: nestedTable
+        fields:
+          - label: Date
+            value: date
+            type: date
+          
+          - label: "Deaths: 0-59"
+            metric: deaths
+            value: newDeaths28DaysByDeathDateAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 00_59
+
+          - label: "Rolling sum: 0-59"
+            metric: rollingSum
+            value: newDeaths28DaysByDeathDateAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 00_59
+
+          - label: "Rolling rate: 0-59"
+            metric: rollingRate
+            value: newDeaths28DaysByDeathDateAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 00_59
+
+          - label: "Deaths: 60+"
+            metric: deaths
+            value: newDeaths28DaysByDeathDateAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 60+
+
+          - label: "Rolling sum: 60+"
+            metric: rollingSum
+            value: newDeaths28DaysByDeathDateAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 60+
+
+          - label: "Rolling rate: 60+"
+            metric: rollingRate
+            value: newDeaths28DaysByDeathDateAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 60+
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
+
+# {{ EndDevOnlyBlock}}
+
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock}}
+
+  - heading: Deaths with COVID-19 on the death certificate by area
+    cardType: simpleTableStatic
+    fullWidth: false
+    abstract: >
+      Total number of deaths since the start of the pandemic of people whose death certificate mentioned
+      COVID-19 as one of the causes. The data are published weekly by the ONS, NRS and NISRA and there is 
+      a lag in reporting of at least 11 days because the data are based on death registrations. Only data 
+      available for the latest reported date are shown. 
+
+    download:
+      - cumNsoDeathsByRegistrationDate
+      - cumNsoDeathsByRegistrationDateRate
+
+    tabs:
+      - heading: Nation
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+
+        latestBy: cumNsoDeathsByRegistrationDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumNsoDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumNsoDeathsByRegistrationDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+      
+      - heading: Region
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: region
+
+        latestBy: cumNsoDeathsByRegistrationDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumNsoDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumNsoDeathsByRegistrationDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
+      - heading: Upper tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: utla
+
+        latestBy: cumOnsDeathsByRegistrationDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumNsoDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumNsoDeathsByRegistrationDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+  
+      # - heading: Lower tier LA
+      #   tabType: table
+      #   params:
+      #     - key: areaType
+      #       sign: "="
+      #       value: ltla
+
+      #   latestBy: cumNsoDeathsByRegistrationDate
+      #   sortBy: areaName
+      #   fields:
+      #     - label: Area
+      #       value: areaName
+      #       type: string
+      #       tooltip: ""
+
+      #     - label: Deaths
+      #       value: cumNsoDeathsByRegistrationDate
+      #       type: numeric
+      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+      #     - label: Rate per 100,000 population
+      #       value: cumNsoDeathsByRegistrationDateRate
+      #       type: numeric
+      #       tooltip: Death rate per 100,000 resident population
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
 
 # {{ EndDevOnlyBlock}}
