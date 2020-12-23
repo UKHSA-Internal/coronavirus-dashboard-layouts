@@ -1355,7 +1355,7 @@ cards:
               value: nation
 
           fields:
-            - label: Weekly number of people received first dose
+            - label: "weekly: 1st dose"
               value: newPeopleReceivingFirstDose
               tooltip: Weekly number of people who received the first dose of COVID-19 vaccine in each nation
               type: bar
@@ -1371,7 +1371,7 @@ cards:
               value: nation
 
           fields:
-            - label: Cumulative number of people received first dose
+            - label: "cumulative: 1st dose"
               value: cumPeopleReceivingFirstDose
               tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine in each nation
               type: bar
