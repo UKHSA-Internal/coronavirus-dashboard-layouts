@@ -37,6 +37,16 @@ headlineNumbers:
       - label: Latest available
         value: covidOccupiedMVBeds
         tooltip: Number of COVID-19 patients currently in mechanical ventilation beds, reported on {date}
+
+# {{ StartDevOnlyBlock }}
+
+  - caption: People received vaccination
+    valueItems: 
+      - label: First dose total
+        value: cumPeopleReceivingFirstDose
+        tooltip: Total number of people who have received the first dose of COVID-19 vaccine, up to {date}
+
+# # {{ EndDevOnlyBlock }}
     
 ##############################################################################################################################
 
@@ -1252,8 +1262,8 @@ cards:
     fullWidth: true
     abstract: >
       Number of people who have received a vaccination for COVID-19, by week in which the vaccine was administered. Data was
-      provided by NHS England for the combined period 8-20 December, which is published here as the value for the week ending 
-      20 December, and included in the UK values for that week. For this reason, no England or UK values are presented for 
+      provided by NHS England for the combined period 8-20 December, which is published here as the England value for the week 
+      ending 20 December, and included in the UK values for that week. For this reason, no England or UK values are presented for 
       week ending 13 December. 
       
     download:
