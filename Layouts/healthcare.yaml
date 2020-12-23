@@ -1299,8 +1299,8 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 
-  - heading: People who have received vaccinations by nation
-    cardType: ageSexBreakdown
+  - heading: People who have received vaccinations
+    cardType: chart
     locationAware:
       included: 
         areaType:
@@ -1313,40 +1313,51 @@ cards:
       provided by NHS England for the combined period 8-20 December, which is published here as the England value for the week 
       ending 20 December, and included in the UK values for that week. For this reason, no England or UK values are presented for 
       week ending 13 December. 
-      
+    
     download:
       - newPeopleReceivingFirstDose
       - cumPeopleReceivingFirstDose
-      
-    tabs:
-      - heading: Nation
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
 
+    tabs: 
+      - heading: Weekly
+        tabType: chart
+        barType: normal
         fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: 7-day period ending
+          - label: Number of people received first dose
+            value: newPeopleReceivingFirstDose
+            tooltip: Weekly number of people who received the first dose of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false
+            
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of people received first dose
+            value: cumPeopleReceivingFirstDose
+            tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false
+            
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Week ending date
             value: date
             type: date
-            tooltip: Date the vaccination was given
+            tooltip: Week ending date
 
-          - label: Number received first dose in the week
+          - label: Weekly number of people received first dose
             value: newPeopleReceivingFirstDose
             type: numeric
-            tooltip: Weekly number of new people receiving first dose of vaccine
+            tooltip: Weekly number of people who received the first dose of COVID-19 vaccine 
 
-          - label: Total received first dose
+          - label: Cumulative number of people received first dose
             value: cumPeopleReceivingFirstDose
             type: numeric
-            tooltip: Cumulative number of people receiving first dose of vaccine
- 
+            tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+
       - heading: About 
         tabType: metadata
         filename: cardMetadata/healthcare/cardVaccinations.md
