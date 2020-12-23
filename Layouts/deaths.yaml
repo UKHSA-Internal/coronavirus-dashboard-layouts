@@ -39,14 +39,14 @@ baseDeaths28DaysByDeathDateDemogrphics: &baseDeaths28DaysByDeathDateDemogrphics
   isArray: true
 
 
-Deaths28DaysByDeathDateDemogrphics0_59: &specimenDateDemographics0_59
+Deaths28DaysByDeathDateDemogrphics0_59: &newDeaths28DaysByDeathDateAgeDemographics0_59
   << : *baseDeaths28DaysByDeathDateDemogrphics
   filters:
     parameter: age
     value: 00_59
 
 
-Deaths28DaysByDeathDateDemogrphics60+: &specimenDateDemographics60Plus
+Deaths28DaysByDeathDateDemogrphics60+: &newDeaths28DaysByDeathDateAgeDemographics60Plus
   << : *baseDeaths28DaysByDeathDateDemogrphics
   filters:
     parameter: age
