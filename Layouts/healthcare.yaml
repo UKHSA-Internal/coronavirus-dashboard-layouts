@@ -1305,12 +1305,12 @@ cards:
             type: date
             tooltip: Week ending date
 
-          - label: Weekly number of people received first dose
+          - label: "Weekly: 1st dose"
             value: newPeopleReceivingFirstDose
             type: numeric
             tooltip: Weekly number of people who received the first dose of COVID-19 vaccine 
 
-          - label: Cumulative number of people received first dose
+          - label: "Cumulative: 1st dose"
             value: cumPeopleReceivingFirstDose
             type: numeric
             tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
