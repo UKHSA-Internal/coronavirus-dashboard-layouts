@@ -1251,7 +1251,7 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 
-  - heading: People who have received vaccinations - DUMMY DATA DO NOT USE
+  - heading: People who have received vaccinations
     cardType: chart
     locationAware:
       included: 
@@ -1259,7 +1259,7 @@ cards:
           - overview
           - nation
 
-    fullWidth: true
+    fullWidth: false
     abstract: >
       Number of people who have received a vaccination for COVID-19, by week in which the vaccine was administered. Data was
       provided by NHS England for the combined period 8-20 December, which is published here as the England value for the week 
@@ -1274,6 +1274,64 @@ cards:
       - heading: Data
         tabType: table
         fields:
+          - label: 7-day period ending
+            value: date
+            type: date
+            tooltip: Date the vaccination was given
+
+          - label: Number received first dose in the week
+            value: newPeopleReceivingFirstDose
+            type: numeric
+            tooltip: Weekly number of new people receiving first dose of vaccine
+
+          - label: Total received first dose
+            value: cumPeopleReceivingFirstDose
+            type: numeric
+            tooltip: Cumulative number of people receiving first dose of vaccine
+ 
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/healthcare/cardVaccinations.md
+
+# {{ EndDevOnlyBlock }}
+
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock }}
+
+  - heading: People who have received vaccinations by nation
+    cardType: ageSexBreakdown
+    locationAware:
+      included: 
+        areaType:
+          - overview
+          - nation
+
+    fullWidth: false
+    abstract: >
+      Number of people who have received a vaccination for COVID-19, by week in which the vaccine was administered. Data was
+      provided by NHS England for the combined period 8-20 December, which is published here as the England value for the week 
+      ending 20 December, and included in the UK values for that week. For this reason, no England or UK values are presented for 
+      week ending 13 December. 
+      
+    download:
+      - newPeopleReceivingFirstDose
+      - cumPeopleReceivingFirstDose
+      
+    tabs:
+      - heading: Nation
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
           - label: 7-day period ending
             value: date
             type: date
