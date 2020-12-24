@@ -37,6 +37,16 @@ headlineNumbers:
       - label: Latest available
         value: covidOccupiedMVBeds
         tooltip: Number of COVID-19 patients currently in mechanical ventilation beds, reported on {date}
+
+# {{ StartDevOnlyBlock }}
+
+  - caption: People received vaccination
+    valueItems: 
+      - label: First dose total
+        value: cumPeopleReceivingFirstDose
+        tooltip: Total number of people who have received the first dose of COVID-19 vaccine, up to {date}
+
+# # {{ EndDevOnlyBlock }}
     
 ##############################################################################################################################
 
@@ -1241,58 +1251,157 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 
-  - heading: People who have received vaccinations - DUMMY DATA DO NOT USE
+  - heading: People who have received vaccinations
     cardType: chart
     locationAware:
       included: 
         areaType:
           - overview
           - nation
-          - nhsRegion
 
-    fullWidth: true
+    fullWidth: false
     abstract: >
-      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), by specimen date.
-      Individuals tested positive more than once are only counted once, on the date of 
-      their first positive test. The most recent 5 days' data, highlighted in grey, are incomplete.
+      Number of people who have received a vaccination for COVID-19, by week in which the vaccine was administered. Data was
+      provided by NHS England for the combined period 8-20 December, which is published here as the England value for the week 
+      ending 20 December, and included in the UK values for that week. For this reason, no England or UK values are presented for 
+      week ending 13 December. 
+    
+    download:
+      - newPeopleReceivingFirstDose
+      - cumPeopleReceivingFirstDose
+
+    tabs: 
+
+  # {{ StartDevOnlyBlock }}
+
+      - heading: Weekly
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Number of people received first dose
+            value: newPeopleReceivingFirstDose
+            tooltip: Weekly number of people who received the first dose of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false
+            
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of people received first dose
+            value: cumPeopleReceivingFirstDose
+            tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+  # {{ EndDevOnlyBlock }}
+            
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Week ending date
+            value: date
+            type: date
+            tooltip: Week ending date
+
+          - label: "Weekly: 1st dose"
+            value: newPeopleReceivingFirstDose
+            type: numeric
+            tooltip: Weekly number of people who received the first dose of COVID-19 vaccine 
+
+          - label: "Cumulative: 1st dose"
+            value: cumPeopleReceivingFirstDose
+            type: numeric
+            tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/healthcare/cardVaccinations.md
+
+# {{ EndDevOnlyBlock }}
+
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock }}
+
+  - heading: People who have received vaccinations
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - overview
+          - nation
+
+    fullWidth: false
+    abstract: >
+      Number of people who have received a vaccination for COVID-19, by week in which the vaccine was administered. Data was
+      provided by NHS England for the combined period 8-20 December, which is published here as the England value for the week 
+      ending 20 December, and included in the UK values for that week. For this reason, no England or UK values are presented for 
+      week ending 13 December. 
 
     download:
       - newPeopleReceivingFirstDose
       - cumPeopleReceivingFirstDose
-      - newPeopleReceivingSecondDose
-      - cumPeopleReceivingSecondDose
-      
+
     tabs:
-      - heading: Data
-        tabType: table
-        fields:
-          - label: 7-day period ending
+        - heading: Weekly
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+
+          fields:
+            - label: "weekly: 1st dose"
+              value: newPeopleReceivingFirstDose
+              tooltip: Weekly number of people who received the first dose of COVID-19 vaccine in each nation
+              type: bar
+              rollingAverage: false
+
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+
+          fields:
+            - label: "cumulative: 1st dose"
+              value: cumPeopleReceivingFirstDose
+              tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine in each nation
+              type: bar
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+        
+          fields:
+          - label: Week ending date
             value: date
             type: date
-            tooltip: Date the vaccination was given
+            tooltip: Week ending date
 
-          - label: Number received first dose in the week
+          - label: "weekly: 1st dose" 
             value: newPeopleReceivingFirstDose
             type: numeric
-            tooltip: Weekly number of new people receiving first dose of vaccine
+            tooltip: Weekly number of people who received the first dose of COVID-19 vaccine 
 
-          - label: Total received first dose
+          - label: "cumulative: 1st dose"
             value: cumPeopleReceivingFirstDose
             type: numeric
-            tooltip: Cumulative number of people receiving first dose of vaccine
+            tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
 
-          - label: Number received second dose in the week
-            value: newPeopleReceivingSecondDose
-            type: numeric
-            tooltip: Weekly number of new people receiving second dose of vaccine
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/healthcare/cardVaccinations.md    
 
-          - label: Total received second dose
-            value: cumPeopleReceivingFirstDose
-            type: numeric
-            tooltip: Cumulative number of people receiving second dose of vaccine        
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-# {{ EndDevOnlyBlock }}
+   # {{ EndDevOnlyBlock }}
