@@ -46,7 +46,7 @@ headlineNumbers:
         value: cumPeopleReceivingFirstDose
         tooltip: Total number of people who have received the first dose of COVID-19 vaccine, up to {date}
 
-# # {{ EndDevOnlyBlock }}
+# {{ EndDevOnlyBlock }}
     
 ##############################################################################################################################
 
