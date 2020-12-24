@@ -38,15 +38,12 @@ headlineNumbers:
         value: covidOccupiedMVBeds
         tooltip: Number of COVID-19 patients currently in mechanical ventilation beds, reported on {date}
 
-# {{ StartDevOnlyBlock }}
-
   - caption: People received vaccination
     valueItems: 
       - label: First dose total
         value: cumPeopleReceivingFirstDose
         tooltip: Total number of people who have received the first dose of COVID-19 vaccine, up to {date}
 
-# {{ EndDevOnlyBlock }}
     
 ##############################################################################################################################
 
@@ -1249,8 +1246,6 @@ cards:
 
 ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
-
   - heading: People who have received vaccinations
     cardType: chart
     locationAware:
@@ -1319,13 +1314,10 @@ cards:
         tabType: metadata
         filename: cardMetadata/healthcare/cardVaccinations.md
 
-# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
-
-  - heading: People who have received vaccinations
+  - heading: People who have received vaccinations, by nation
     cardType: multiAreaStatic
     locationAware:
       included: 
@@ -1404,4 +1396,3 @@ cards:
           tabType: metadata
           filename: cardMetadata/healthcare/cardVaccinations.md    
 
-# {{ EndDevOnlyBlock }}
