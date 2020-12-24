@@ -1,6 +1,4 @@
 banner:
-  fromDate: "2020-12-23"
-  toDate: "2021-01-05"
   appearByUpdate: "2020-12-23"
   disappearByUpdate: "2020-01-05"
   body: >
