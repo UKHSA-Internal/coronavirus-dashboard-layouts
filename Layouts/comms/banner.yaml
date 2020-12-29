@@ -3,4 +3,16 @@
   body: >
     During the holiday period, the COVID-19 Dashboard will be updated every day, but the 
     amount of data being updated will vary. See full details in 
-    the [About the Data](/details/about-data#holiday-season-2020-schedule) page.
+    the [About the Data](/details/about-data#new-year-2021-schedule) page.
+
+# {{ StartDevOnlyBlock }}
+
+- appearByUpdate: "2020-12-26"
+  disappearByUpdate: "2020-12-31"
+  displayUri:
+    - /details/cases
+    - /details/testing
+  body: >
+    Test banner.
+
+# {{ EndDevOnlyBlock }}
