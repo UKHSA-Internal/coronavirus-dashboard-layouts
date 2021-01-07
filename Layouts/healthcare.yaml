@@ -1340,6 +1340,8 @@ cards:
     Second dose:
     
       tabs: 
+
+ # {{ StartDevOnlyBlock }}    
         - heading: Weekly
           tabType: chart
           barType: normal
@@ -1360,6 +1362,8 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+
+  # {{ EndDevOnlyBlock }}
             
         - heading: Data
           tabType: table
@@ -1490,6 +1494,8 @@ cards:
     Second dose:
 
       tabs:
+
+  # {{ StartDevOnlyBlock }}
           - heading: Weekly
             tabType: chart
             barType: stack
@@ -1521,6 +1527,8 @@ cards:
                 tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine in each nation
                 type: bar
                 rollingAverage: false
+
+  # {{ EndDevOnlyBlock }}
 
           - heading: Data
             tabType: table
