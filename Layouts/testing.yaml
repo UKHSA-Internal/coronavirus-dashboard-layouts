@@ -673,7 +673,7 @@ cards:
     abstract: >
       Number of confirmed positive, negative or void lateral flow device test results. 
       This is a count of test results and may include multiple tests for an individual person. 
-      Lateral flow device tests test for the presence of of SARS-CoV-2 virus and are swab tests that give 
+      Lateral flow device tests test for the presence of SARS-CoV-2 virus and are swab tests that give 
       results in less than an hour, without needing to go to a laboratory.
      
     download:
