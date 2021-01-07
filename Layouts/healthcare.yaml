@@ -38,7 +38,7 @@ headlineNumbers:
         value: covidOccupiedMVBeds
         tooltip: Number of COVID-19 patients currently in mechanical ventilation beds, reported on {date}
 
-  - caption: People received vaccination
+  - caption: People vaccinated
     valueItems: 
       - label: First dose total
         value: cumPeopleReceivingFirstDose
