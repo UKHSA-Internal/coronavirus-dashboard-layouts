@@ -44,13 +44,9 @@ headlineNumbers:
         value: cumPeopleReceivingFirstDose
         tooltip: Total number of people who have received the first dose of COVID-19 vaccine, up to {date}
 
-# {{ StartDevOnlyBlock }}
-
       - label: Second dose total
         value: cumPeopleReceivingSecondDose
         tooltip: Total number of people who have received the second dose of COVID-19 vaccine, up to {date}
-
-# {{ EndDevOnlyBlock }}
 
     
 ##############################################################################################################################
@@ -1272,26 +1268,20 @@ cards:
     download:
       - newPeopleReceivingFirstDose
       - cumPeopleReceivingFirstDose
-
-  # {{ StartDevOnlyBlock }}  
       - newPeopleReceivingSecondDose
       - cumPeopleReceivingSecondDose
-  # {{ EndDevOnlyBlock }}
+
 
     options:
       type: radio
       heading: null
       choices:
         - First dose
-  # {{ StartDevOnlyBlock }}         
         - Second dose
-  # {{ EndDevOnlyBlock }}
 
     First dose:
     
       tabs: 
-
-  # {{ StartDevOnlyBlock }}
 
         - heading: Weekly
           tabType: chart
@@ -1313,8 +1303,6 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-
-  # {{ EndDevOnlyBlock }}
             
         - heading: Data
           tabType: table
@@ -1334,8 +1322,6 @@ cards:
               type: numeric
               tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
 
-  # {{ StartDevOnlyBlock }}
-
             - label: "Weekly: 2nd dose"
               value: newPeopleReceivingSecondDose
               type: numeric
@@ -1345,14 +1331,11 @@ cards:
               value: cumPeopleReceivingSecondDose
               type: numeric
               tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
-
-   # {{ EndDevOnlyBlock }}        
-
+ 
         - heading: About 
           tabType: metadata
           filename: cardMetadata/healthcare/cardVaccinations.md
 
-  # {{ StartDevOnlyBlock }}
 
     Second dose:
     
@@ -1410,7 +1393,6 @@ cards:
           tabType: metadata
           filename: cardMetadata/healthcare/cardVaccinations.md
 
-  # {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
@@ -1432,19 +1414,16 @@ cards:
     download:
       - newPeopleReceivingFirstDose
       - cumPeopleReceivingFirstDose
-  # {{ StartDevOnlyBlock }}  
       - newPeopleReceivingSecondDose
       - cumPeopleReceivingSecondDose
-  # {{ EndDevOnlyBlock }}
+
 
     options:
       type: radio
       heading: null
       choices:
-        - First dose
-  # {{ StartDevOnlyBlock }}         
+        - First dose   
         - Second dose
-  # {{ EndDevOnlyBlock }}
 
     First dose:
 
@@ -1508,8 +1487,6 @@ cards:
             tabType: metadata
             filename: cardMetadata/healthcare/cardVaccinations.md    
 
-  # {{ StartDevOnlyBlock }}
-
     Second dose:
 
       tabs:
@@ -1571,5 +1548,3 @@ cards:
           - heading: About 
             tabType: metadata
             filename: cardMetadata/healthcare/cardVaccinations.md    
-
-  # {{ EndDevOnlyBlock }}
