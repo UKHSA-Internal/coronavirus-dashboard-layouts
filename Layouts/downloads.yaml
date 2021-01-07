@@ -41,7 +41,7 @@ downloads:
       - text: CSV (stacked)
         url: /downloads/demographic/cases/specimenDate_ageDemographic-stacked.csv
 
-  - label: Age demographic of cases by reporting date
+  - label: Age demographic of cases by reporting date [Deprecated - files not updated after 23 December 2020]
     links:
       - text: CSV (unstacked)
         url: /downloads/demographic/cases/publishDate_ageDemographic-unstacked.csv
