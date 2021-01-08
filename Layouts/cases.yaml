@@ -717,7 +717,7 @@ cards:
     abstract: >
       Number of people with at least one positive, negative or void COVID-19 test result (either lab-reported or lateral flow device). 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
-      different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
+      different dates between 15th June and 14th July for each nation.  National data is not directly comparable.
 
     download:
       - newCasesBySpecimenDate

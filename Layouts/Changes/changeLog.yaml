@@ -102,7 +102,7 @@ changeLog:
     relativeUrl: /details/download
     headline: MSOA data have been added to the downloads page.
     body: > 
-      Area types in the download page now include MSOAs. The data are now available for 
+      Area types in the download page now include MSOAs. The data is now available for 
       download by region, local authority, a single MSOA, or the full dataset. Downloaded 
       conetnts will also include information on region and local authority as well as MSOA. 
 

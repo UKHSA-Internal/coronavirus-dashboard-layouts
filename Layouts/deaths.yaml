@@ -757,8 +757,8 @@ cards:
     fullWidth: true
     abstract: > 
       Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
-      at least 11 days because the data are based on death registrations.
+      The data is published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
+      at least 11 days because the data is based on death registrations.
     
     download:
       - newOnsDeathsByRegistrationDate
@@ -822,8 +822,8 @@ cards:
     fullWidth: true
     abstract: > 
       Number of care home deaths where the death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
-      at least 11 days because the data are based on death registrations.
+      The data is published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
+      at least 11 days because the data is based on death registrations.
     
     download:
       - newOnsCareHomeDeathsByRegistrationDate
@@ -1174,8 +1174,8 @@ cards:
     fullWidth: false
     abstract: >
       Total number of deaths since the start of the pandemic of people whose death certificate mentioned
-      COVID-19 as one of the causes. The data are published weekly by the ONS, NRS and NISRA and there is 
-      a lag in reporting of at least 11 days because the data are based on death registrations. Only data 
+      COVID-19 as one of the causes. The data is published weekly by the ONS, NRS and NISRA and there is 
+      a lag in reporting of at least 11 days because the data is based on death registrations. Only data 
       available for the latest reported date are shown. 
 
     download:
@@ -1748,8 +1748,8 @@ cards:
     fullWidth: true
     abstract: > 
       Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
-      at least 11 days because the data are based on death registrations.
+      The data is published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
+      at least 11 days because the data is based on death registrations.
     
     download:
       - newWeeklyNsoDeathsByRegDate
@@ -1815,8 +1815,8 @@ cards:
     fullWidth: true
     abstract: > 
       Number of care home deaths where the death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
-      at least 11 days because the data are based on death registrations.
+      The data is published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
+      at least 11 days because the data is based on death registrations.
     
     download:
       - newWeeklyNsoCareHomeDeathsByRegDate
