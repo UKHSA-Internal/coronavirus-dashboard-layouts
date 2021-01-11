@@ -9,7 +9,7 @@
     Scotland are missing, and the UK totals therefore exclude Scotland. 
 # {{ EndDevOnlyBlock }}
 
-# {{ StartDevOnlyBlock }}
+
 
 - appearByUpdate: "2020-12-23"
   disappearByUpdate: "2021-01-05"
@@ -18,7 +18,7 @@
     amount of data being updated will vary. See full details in 
     the [About the Data](/details/about-data#new-year-2021-schedule) page.
 
-
+# {{ StartDevOnlyBlock }}
 - appearByUpdate: "2020-12-26"
   disappearByUpdate: "2020-12-31"
   displayUri:
