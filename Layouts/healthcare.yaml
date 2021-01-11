@@ -1506,7 +1506,7 @@ cards:
       type: radio
       heading: null
       choices:
-        - UK total
+        # - UK total
         - By nation
 
     UK total:
