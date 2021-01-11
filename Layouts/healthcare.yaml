@@ -38,14 +38,14 @@ headlineNumbers:
         value: covidOccupiedMVBeds
         tooltip: Number of COVID-19 patients currently in mechanical ventilation beds, reported on {date}
 
-  - caption: People vaccinated
+  - caption: People vaccinated (weekly)
     valueItems: 
       - label: First dose total
-        value: cumPeopleReceivingFirstDose
+        value: cumPeopleVaccinatedFirstDoseByVaccinationDate
         tooltip: Total number of people who have received the first dose of COVID-19 vaccine, up to {date}
 
       - label: Second dose total
-        value: cumPeopleReceivingSecondDose
+        value: cumPeopleVaccinatedSecondDoseByVaccinationDate
         tooltip: Total number of people who have received the second dose of COVID-19 vaccine, up to {date}
 
     
@@ -1252,7 +1252,7 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 
-  - heading: People who have received vaccinations - daily
+  - heading: People who have received vaccinations, by report date (daily)
     cardType: multiAreaStatic
     locationAware:
       included: 
@@ -1262,15 +1262,11 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people who have received a vaccination for COVID-19, by day in which the vaccine was reported. Data was
-      provided by NHS England for the combined period 8-20 December, which is published here as the England value for the week 
-      ending 20 December, and included in the UK values for that week. For this reason, no England or UK values are presented for 
-      week ending 13 December. 
+      Number of people who have received a vaccination for COVID-19, by day in which the vaccine was reported.
     
     download:
       - cumPeopleVaccinatedFirstDoseByPublishDate
       - cumPeopleVaccinatedSecondDoseByPublishDate
-
 
     options:
       type: radio
@@ -1353,7 +1349,7 @@ cards:
 
 ############################################################################################################################## 
 
-  - heading: People who have received vaccinations - weekly
+  - heading: People who have received vaccinations, by vaccination date (weekly)
     cardType: multiAreaStatic
     locationAware:
       included: 
@@ -1369,19 +1365,20 @@ cards:
       week ending 13 December. 
     
     download:
-      - newPeopleReceivingFirstDose
-      - cumPeopleReceivingFirstDose
-      - newPeopleReceivingSecondDose
-      - cumPeopleReceivingSecondDose
+      - weeklyPeopleVaccinatedFirstDoseByVaccinationDate
+      - cumPeopleVaccinatedFirstDoseByVaccinationDate
+      - weeklyPeopleVaccinatedSecondDoseByVaccinationDate
+      - cumPeopleVaccinatedSecondDoseByVaccinationDate
+
 
     options:
       type: radio
       heading: null
       choices:
-        - UK total
+        - Total
         - By nation
 
-    UK total:
+    Total:
     
       tabs: 
 
@@ -1390,7 +1387,7 @@ cards:
           barType: normal
           fields:
             - label: Number of people received first dose
-              value: newPeopleReceivingFirstDose
+              value: weeklyPeopleVaccinatedFirstDoseByVaccinationDate
               tooltip: Weekly number of people who received the first dose of COVID-19 vaccine
               type: bar
               colour: 0
@@ -1400,7 +1397,7 @@ cards:
           tabType: chart
           fields:
             - label: Number of people received first dose
-              value: cumPeopleReceivingFirstDose
+              value: cumPeopleVaccinatedFirstDoseByVaccinationDate
               tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
               type: bar
               colour: 0
@@ -1413,7 +1410,7 @@ cards:
           barType: normal
           fields:
             - label: Number of people received second dose
-              value: newPeopleReceivingSecondDose
+              value: weeklyPeopleVaccinatedSecondDoseByVaccinationDate
               tooltip: Weekly number of people who received the secind dose of COVID-19 vaccine
               type: bar
               colour: 0
@@ -1423,7 +1420,7 @@ cards:
           tabType: chart
           fields:
             - label: Number of people received second dose
-              value: cumPeopleReceivingSecondDose
+              value: cumPeopleVaccinatedSecondDoseByVaccinationDate
               tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
               type: bar
               colour: 0
@@ -1440,22 +1437,22 @@ cards:
               tooltip: Week ending date
 
             - label: "Weekly: 1st dose"
-              value: newPeopleReceivingFirstDose
+              value: weeklyPeopleVaccinatedFirstDoseByVaccinationDate
               type: numeric
               tooltip: Weekly number of people who received the first dose of COVID-19 vaccine 
 
             - label: "Cumulative: 1st dose"
-              value: cumPeopleReceivingFirstDose
+              value: cumPeopleVaccinatedFirstDoseByVaccinationDate
               type: numeric
               tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
 
             - label: "Weekly: 2nd dose"
-              value: newPeopleReceivingSecondDose
+              value: weeklyPeopleVaccinatedSecondDoseByVaccinationDate
               type: numeric
               tooltip: Weekly number of people who received the second dose of COVID-19 vaccine 
 
             - label: "Cumulative: 2nd dose"
-              value: cumPeopleReceivingSecondDose
+              value: cumPeopleVaccinatedSecondDoseByVaccinationDate
               type: numeric
               tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
  
@@ -1478,7 +1475,7 @@ cards:
 
             fields:
               - label: "weekly: 1st dose"
-                value: newPeopleReceivingFirstDose
+                value: weeklyPeopleVaccinatedFirstDoseByVaccinationDate
                 tooltip: Weekly number of people who received the first dose of COVID-19 vaccine in each nation
                 type: bar
                 rollingAverage: false
@@ -1494,7 +1491,7 @@ cards:
 
             fields:
               - label: "cumulative: 1st dose"
-                value: cumPeopleReceivingFirstDose
+                value: cumPeopleVaccinatedFirstDoseByVaccinationDate
                 tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine in each nation
                 type: bar
                 rollingAverage: false
@@ -1512,7 +1509,7 @@ cards:
 
             fields:
               - label: "weekly: 2nd dose"
-                value: newPeopleReceivingSecondDose
+                value: weeklyPeopleVaccinatedSecondDoseByVaccinationDate
                 tooltip: Weekly number of people who received the second dose of COVID-19 vaccine in each nation
                 type: bar
                 rollingAverage: false
@@ -1528,7 +1525,7 @@ cards:
 
             fields:
               - label: "cumulative: 2nd dose"
-                value: cumPeopleReceivingSecondDose
+                value: cumPeopleVaccinatedSecondDoseByVaccinationDate
                 tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine in each nation
                 type: bar
                 rollingAverage: false
@@ -1549,12 +1546,12 @@ cards:
               tooltip: Week ending date
 
             - label: "weekly: 1st dose" 
-              value: newPeopleReceivingFirstDose
+              value: weeklyPeopleVaccinatedFirstDoseByVaccinationDate
               type: numeric
               tooltip: Weekly number of people who received the first dose of COVID-19 vaccine 
 
             - label: "cumulative: 1st dose"
-              value: cumPeopleReceivingFirstDose
+              value: cumPeopleVaccinatedFirstDoseByVaccinationDate
               type: numeric
               tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
 
@@ -1572,12 +1569,12 @@ cards:
               tooltip: Week ending date
 
             - label: "weekly: 2nd dose" 
-              value: newPeopleReceivingSecondDose
+              value: weeklyPeopleVaccinatedSecondDoseByVaccinationDate
               type: numeric
               tooltip: Weekly number of people who received the second dose of COVID-19 vaccine 
 
             - label: "cumulative: 2nd dose"
-              value: cumPeopleReceivingSecondDose
+              value: cumPeopleVaccinatedSecondDoseByVaccinationDate
               type: numeric
               tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine         
 
