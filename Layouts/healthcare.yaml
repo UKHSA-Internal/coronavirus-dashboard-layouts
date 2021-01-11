@@ -1281,6 +1281,11 @@ cards:
                
         - heading: Data
           tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+        
           fields:
             - label: Date
               value: date
