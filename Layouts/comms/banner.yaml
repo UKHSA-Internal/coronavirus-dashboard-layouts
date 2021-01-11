@@ -3,7 +3,7 @@
   displayUri: 
     - /details/deaths
   body: >
-    Owing to issues with Public Health Scotland Open Data API service, death by date of death for 
+    Owing to issues with Public Health Scotland Open Data API service, deaths by date of death for 
     Scotland are missing, and the UK totals therefore exclude Scotland. 
 
 
