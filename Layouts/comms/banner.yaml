@@ -1,3 +1,14 @@
+- appearByUpdate: "2021-01-11"
+  disappearByUpdate: "2021-01-12"
+  displayUri: 
+    - /details/deaths
+  body: >
+    Owing to issues with Public Health Scotland Open Data API service, death by date of death for 
+    Scotland are missing, and the UK totals therefore exclude Scotland. 
+
+
+# {{ StartDevOnlyBlock }}
+
 - appearByUpdate: "2020-12-23"
   disappearByUpdate: "2021-01-05"
   body: >
@@ -5,7 +16,6 @@
     amount of data being updated will vary. See full details in 
     the [About the Data](/details/about-data#new-year-2021-schedule) page.
 
-# {{ StartDevOnlyBlock }}
 
 - appearByUpdate: "2020-12-26"
   disappearByUpdate: "2020-12-31"
