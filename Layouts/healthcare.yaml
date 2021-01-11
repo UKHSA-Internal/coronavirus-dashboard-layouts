@@ -1250,7 +1250,168 @@ cards:
 
 ##############################################################################################################################
 
-  - heading: People who have received vaccinations
+# {{ StartDevOnlyBlock }}
+
+  - heading: People who have received vaccinations - daily
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - overview
+          - nation
+
+    fullWidth: true
+    abstract: >
+      Number of people who have received a vaccination for COVID-19, by day in which the vaccine was reported. Data was
+      provided by NHS England for the combined period 8-20 December, which is published here as the England value for the week 
+      ending 20 December, and included in the UK values for that week. For this reason, no England or UK values are presented for 
+      week ending 13 December. 
+    
+    download:
+      - newPeopleVaccinatedFirstDoseByPublishDate
+      - cumPeopleVaccinatedFirstDoseByPublishDate
+      - newPeopleVaccinatedSecondDoseByPublishDate
+      - cumPeopleVaccinatedSecondDoseByPublishDate
+      - newVaccinesGivenByPublishDate
+      - cumVaccinesGivenByPublishDate
+
+
+    options:
+      type: radio
+      heading: null
+      choices:
+        - UK total
+        - By nation
+
+    UK total:
+    
+      tabs: 
+               
+        - heading: Data
+          tabType: table
+          fields:
+            - label: Date
+              value: date
+              type: date
+              tooltip: Week ending date
+
+            - label: "Daily: 1st dose"
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              type: numeric
+              tooltip: Daily number of people who received the first dose of COVID-19 vaccine 
+
+            - label: "Cumulative: 1st dose"
+              value: cumPeopleVaccinatedFirstDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+
+            - label: "Daily: 2nd dose"
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Daily number of people who received the second dose of COVID-19 vaccine 
+
+            - label: "Cumulative: 2nd dose"
+              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
+
+            - label: "Daily: any dose"
+              value: newVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Daily number of doses of COVID-19 vaccine given
+
+            - label: "Cumulative: any dose"
+              value: cumVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Cumulative doses of COVID-19 vaccine given
+
+ 
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/healthcare/cardVaccinations.md
+
+
+    By nation:
+
+      tabs:
+          - heading: 1st dose data
+            tabType: table
+            params:
+              - key: areaType
+                sign: "="
+                value: nation
+        
+            fields:
+            - label: Date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "daily: 1st dose" 
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              type: numeric
+              tooltip: Daily number of people who received the first dose of COVID-19 vaccine 
+
+            - label: "cumulative: 1st dose"
+              value: cumPeopleVaccinatedFirstDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+
+          - heading: 2nd dose data
+            tabType: table
+            params:
+              - key: areaType
+                sign: "="
+                value: nation
+        
+            fields:
+            - label: Date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "daily: 2nd dose" 
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Daily number of people who received the second dose of COVID-19 vaccine 
+
+            - label: "cumulative: 2nd dose"
+              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine    
+
+          - heading: Any dose data
+            tabType: table
+            params:
+              - key: areaType
+                sign: "="
+                value: nation
+        
+            fields:
+            - label: Date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "daily: any dose" 
+              value: newVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Daily number of doses of COVID-19 vaccine given
+
+            - label: "cumulative: 2nd dose"
+              value: cumPeopleVaccinatedCompleteByPublishDate
+              type: numeric
+              tooltip: Cumulative number of doses of COVID-19 vaccine given                
+
+          - heading: About 
+            tabType: metadata
+            filename: cardMetadata/healthcare/cardVaccinations.md
+
+# {{ EndDevOnlyBlock }}
+
+############################################################################################################################## 
+
+  - heading: People who have received vaccinations - weekly
     cardType: multiAreaStatic
     locationAware:
       included: 
