@@ -1399,7 +1399,7 @@ cards:
               tooltip: Daily number of doses of COVID-19 vaccine given
 
             - label: "cumulative: 2nd dose"
-              value: cumPeopleVaccinatedCompleteByPublishDate
+              value: cumVaccinesGivenByPublishDate
               type: numeric
               tooltip: Cumulative number of doses of COVID-19 vaccine given                
 
