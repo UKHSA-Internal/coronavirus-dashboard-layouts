@@ -42,11 +42,11 @@ headlineNumbers:
     valueItems: 
       - label: First dose total
         value: cumPeopleVaccinatedFirstDoseByPublishDate
-        tooltip: Total number of people who have received the first dose of COVID-19 vaccine, up to {date}
+        tooltip: Total number of people who have received the first dose of COVID-19 vaccine, reported up to {date}
 
       - label: Second dose total
         value: cumPeopleVaccinatedSecondDoseByPublishDate
-        tooltip: Total number of people who have received the second dose of COVID-19 vaccine, up to {date}
+        tooltip: Total number of people who have received the second dose of COVID-19 vaccine, reported up to {date}
 
     
 ##############################################################################################################################
@@ -1260,7 +1260,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people who have received a vaccination for COVID-19, by day in which the vaccine was reported.
+      Number of people who have received a vaccination for COVID-19, by day on which the vaccine was reported. This represents vaccination events which
+      have been reported, that occurred up to and including the day prior to the report date.
     
     download:
       - cumPeopleVaccinatedFirstDoseByPublishDate
@@ -1285,10 +1286,10 @@ cards:
               value: overview
         
           fields:
-            - label: Date
+            - label: Report date
               value: date
               type: date
-              tooltip: Week ending date
+              tooltip: Date
 
             - label: "Cumulative: 1st dose"
               value: cumPeopleVaccinatedFirstDoseByPublishDate
@@ -1302,7 +1303,7 @@ cards:
  
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/healthcare/cardVaccinations.md
+          filename: cardMetadata/healthcare/cardVaccinationsDaily.md
 
 
     By nation:
@@ -1316,7 +1317,7 @@ cards:
                 value: nation
         
             fields:
-            - label: Date
+            - label: Report date
               value: date
               type: date
               tooltip: Date
@@ -1334,7 +1335,7 @@ cards:
                 value: nation
         
             fields:
-            - label: Date
+            - label: Report date
               value: date
               type: date
               tooltip: Date
@@ -1346,7 +1347,7 @@ cards:
 
           - heading: About 
             tabType: metadata
-            filename: cardMetadata/healthcare/cardVaccinations.md
+            filename: cardMetadata/healthcare/cardVaccinationsDaily.md
 
 
 
@@ -1461,7 +1462,7 @@ cards:
  
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/healthcare/cardVaccinations.md
+          filename: cardMetadata/healthcare/cardVaccinationsWeekly.md
 
 
     By nation:
@@ -1583,6 +1584,6 @@ cards:
 
           - heading: About 
             tabType: metadata
-            filename: cardMetadata/healthcare/cardVaccinations.md
+            filename: cardMetadata/healthcare/cardVaccinationsWeekly.md
 
 
