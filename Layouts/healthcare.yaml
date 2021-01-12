@@ -1272,10 +1272,10 @@ cards:
       type: radio
       heading: null
       choices:
-        # - UK total
+        - Total
         - By nation
 
-    UK total:
+    Total:
     
       tabs: 
                
