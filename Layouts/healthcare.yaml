@@ -1388,6 +1388,11 @@ cards:
         - heading: 1st dose weekly
           tabType: chart
           barType: normal
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+
           fields:
             - label: Number of people received first dose
               value: weeklyPeopleVaccinatedFirstDoseByVaccinationDate
@@ -1411,6 +1416,11 @@ cards:
         - heading: 2nd dose weekly
           tabType: chart
           barType: normal
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+
           fields:
             - label: Number of people received second dose
               value: weeklyPeopleVaccinatedSecondDoseByVaccinationDate
@@ -1433,6 +1443,11 @@ cards:
             
         - heading: Data
           tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+
           fields:
             - label: Week ending date
               value: date
@@ -1584,5 +1599,3 @@ cards:
           - heading: About 
             tabType: metadata
             filename: cardMetadata/healthcare/cardVaccinations.md
-
-
