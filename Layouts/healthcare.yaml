@@ -1260,8 +1260,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people who have received a vaccination for COVID-19, by day on which the vaccine was reported. This represents vaccination events which
-      have been reported, that occurred up to and including the day prior to the report date.
+      Number of people who have received a vaccination for COVID-19, by day on which the vaccine was reported. Data are reported daily, and include all 
+      vaccination events that are entered on the relevant system at the time of extract. Data are presented for vaccinations carried out up to and including 
+      the end of the report date.
     
     download:
       - cumPeopleVaccinatedFirstDoseByPublishDate
