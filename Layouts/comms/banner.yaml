@@ -1,3 +1,8 @@
+- appearByUpdate: "2021-01-13"
+  disappearByUpdate: "2021-01-14"
+  body: >
+    Due to an issue with the processing of deaths data, the update for 14 January 2021 is delayed.
+
 # {{ StartDevOnlyBlock }}
 
 - appearByUpdate: "2021-01-11"
