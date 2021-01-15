@@ -61,7 +61,7 @@ colours:
     - type: *newContent
       background: "#DBD5E9"
       text: "#3D2375"
-    
+
     #     background: "#EEEFEF"
     #     text: "#383F43"
 
