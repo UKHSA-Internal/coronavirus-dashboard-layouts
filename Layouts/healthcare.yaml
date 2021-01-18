@@ -1274,10 +1274,10 @@ cards:
       type: radio
       heading: null
       choices:
-        - Total
+        - UK total
         - By nation
 
-    Total:
+    UK total:
     
       tabs: 
 
@@ -1315,6 +1315,10 @@ cards:
             
         - heading: 1st dose cumulative
           tabType: chart
+          params:
+            - key: areaType
+              sign: "="
+              value: overview         
           fields:
             - label: number of people received 1st dose
               value: cumPeopleVaccinatedFirstDoseByPublishDate
@@ -1325,6 +1329,10 @@ cards:
             
         - heading: 2nd dose cumulative
           tabType: chart
+          params:
+            - key: areaType
+              sign: "="
+              value: overview         
           fields:
             - label: number of people received 2nd dose
               value: cumPeopleVaccinatedSecondDoseByPublishDate
@@ -1518,10 +1526,10 @@ cards:
       type: radio
       heading: null
       choices:
-        - Total
+        - UK total
         - By nation
 
-    Total:
+    UK total:
     
       tabs: 
 
@@ -1559,6 +1567,10 @@ cards:
 
         - heading: 1st dose cumulative
           tabType: chart
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
           fields:
             - label: number of people received 1st dose
               value: cumPeopleVaccinatedFirstDoseByVaccinationDate
@@ -1569,6 +1581,10 @@ cards:
           
         - heading: 2nd dose cumulative
           tabType: chart
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
           fields:
             - label: number of people received 2nd dose
               value: cumPeopleVaccinatedSecondDoseByVaccinationDate
