@@ -34,11 +34,11 @@
 # =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 
 type:
-  newMetric:     &newMetric     "NEW METRIC"
-  newFeature:    &newFeature    "NEW FEATURE"
-  changedMetric: &changedMetric "CHANGE TO METRIC"
+  #newMetric:     &newMetric     "NEW METRIC"
+  newFeature:    &newFeature    "NEW"
+  #changedMetric: &changedMetric "CHANGE TO METRIC"
   update:        &update        "UPDATE"
-  newContent:    &newContent    "NEW CONTENT"
+  #newContent:    &newContent    "NEW CONTENT"
 
 
 colours:
@@ -46,21 +46,21 @@ colours:
       background: "#CCE2D8"
       text: "#005A30"
 
-    - type: *newMetric
-      background: "#BFE3E0"
-      text: "#10403C"
+    #- type: *newMetric
+     # background: "#BFE3E0"
+     # text: "#10403C"
 
-    - type: *changedMetric
-      background: "#FFF7BF"
-      text: "#594D00"
+    #- type: *changedMetric
+     # background: "#FFF7BF"
+     # text: "#594D00"
 
     - type: *update
       background: "#FCD6C3"
       text: "#6E3619"
 
-    - type: *newContent
-      background: "#DBD5E9"
-      text: "#3D2375"
+    #- type: *newContent
+     # background: "#DBD5E9"
+     # text: "#3D2375"
 
     #     background: "#EEEFEF"
     #     text: "#383F43"
@@ -77,59 +77,36 @@ colours:
 
 changeLog:
 
-  - type: *changedMetric
-    date: "2020-12-03"
+  - type: *newFeature
+    date: "2021-01-22"
     displayBanner: false
-    relativeUrl: /details/cases
-    headline: Percentage change in seven-day case rate per 100,000 population method adjusted.
+    relativeUrl: /details/updates
+    headline: New features and Updates - page launched 
     body: > 
-      The method used to calculate the seven-day case rate per 100,000 population has been adjusted 
-      to improve reporting where instances of zero counts occur.   
-
-  - type: *newContent
-    date: "2020-12-02"
-    displayBanner: false
-    relativeUrl: /details/cases
-    headline: Percentage change in seven-day case rate per 100,000 population charts added.
-    body: > 
-      The seven-day cases by specimen date card no longer shows seven-day case counts.  Seven-day 
-      case rates per 100,000 population are still displayed and percentage change in these rates 
-      have been added to the charts and tables.  
+      This page is a record of all important changes to the dashboard. 
+      It will show newly added features such as new charts or metrics and 
+      changes and information about the data you see.
+      This page is there to highlight news that are important for most users - it is not a detailed log.
+  
 
   - type: *newFeature
-    date: "2020-10-30"
-    displayBanner: true
-    relativeUrl: /details/download
-    headline: MSOA data have been added to the downloads page.
+    date: "2021-01-19"
+    displayBanner: false
+    relativeUrl: /details/vaccinations
+    headline: Vaccinations
     body: > 
-      Area types in the download page now include MSOAs. The data are now available for 
-      download by region, local authority, a single MSOA, or the full dataset. Downloaded 
-      conetnts will also include information on region and local authority as well as MSOA. 
+      The vaccinations topic page is now live. 
+      We know this information is important for people and this is the space where you'll find vaccinations data.
+      We will be adding new data as it becomes available.  
 
-  - type: *newContent
-    date: "2020-10-26"
-    displayBanner: true
-    linkText: Cases by age group
-    relativeUrl: /details/cases
-    headline: 
-    body: >
-      These have been added to the cases page. The current trend is a higher rate is starting 
-      to appear in the over 60s, leading to increased hospital admissions. 
+ # - type: *newFeature
+  #  date: "2020-10-30"
+  #  displayBanner: true
+  #  relativeUrl: /details/download
+  #  headline: MSOA data have been added to the downloads page.
+  #  body: > 
+  #    Area types in the download page now include MSOAs. The data are now available for 
+  #    download by region, local authority, a single MSOA, or the full dataset. Downloaded 
+  #   conetnts will also include information on region and local authority as well as MSOA. 
 
-  - type: *newContent
-    date: "2020-10-22"
-    displayBanner: true
-    linkText: Local R numbers
-    relativeUrl: /
-    headline:
-    body: >
-      When you search for a postcode, the local R number for the region will now be displayed.
 
-  - type: *newContent
-    date: "2020-10-19"
-    displayBanner: true
-    linkText: Local alert levels
-    relativeUrl: /
-    headline:
-    body: >
-      When you search for a postcode, the local alert level will now be displayed.
