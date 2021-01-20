@@ -637,6 +637,10 @@ cards:
       included:
         areaName:
           - England
+ # {{ StartDevOnlyBlock }}       
+        areaType:
+          - region
+  # {{ EndDevOnlyBlock }}
     abstract: >
       Number of people with at least one positive COVID-19 virus test result broken down to show the number of these cases 
       that have been previously reported and the latest daily change. The daily change includes newly reported cases, plus 
