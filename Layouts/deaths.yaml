@@ -1870,7 +1870,7 @@ cards:
 
 ##############################################################################################################################
 
-# {{ StartDevOnlyBlock}}
+# {{ StartDevOnlyBlock }}
 
   - heading: Daily deaths with COVID-19 on the death certificate by date of death
     cardType: chart
@@ -1929,6 +1929,6 @@ cards:
         tabType: metadata
         filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
 
-# {{ EndDevOnlyBlock}}
+# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
