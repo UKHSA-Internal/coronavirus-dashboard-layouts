@@ -1867,3 +1867,68 @@ cards:
 #        filename: cardMetadata/deaths/cardOnsCareHomeDeathsTimeSeries.md
 
 # {{ EndDevOnlyBlock }}
+
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock}}
+
+  - heading: Daily deaths with COVID-19 on the death certificate by date of death
+    cardType: chart
+
+    fullWidth: true
+    abstract: > 
+      Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
+      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
+      at least 11 days because the data are based on death registrations.
+    
+    download:
+      - newDailyNsoDeathsByDeathDate
+      - cumDailyNsoDeathsByDeathDate
+
+    tabs: 
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Number of deaths
+            value: newDailyNsoDeathsByDeathDate
+            tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death 
+            type: bar
+            colour: 0
+            rollingAverage: false
+            
+      # - heading: Cumulative
+      #   tabType: chart
+      #   fields:
+      #     - label: Number of deaths
+      #       value: cumDailyNsoDeathsByDeathDate
+      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death 
+      #       type: bar
+      #       colour: 0
+      #       rollingAverage: false
+            
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date
+            value: date
+            type: date
+            tooltip: Date
+
+          - label: Daily deaths
+            value: newDailyNsoDeathsByDeathDate
+            type: numeric
+            tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death 
+
+          - label: Cumulative deaths
+            value: cumDailyNsoDeathsByDeathDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
+
+# {{ EndDevOnlyBlock}}
+
+##############################################################################################################################
