@@ -1896,6 +1896,20 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
+            highlight: 
+                from: -7
+                to: 0
+                colour: 6
+                label: "Most recent week (incomplete)"
+
+          - label: (7-day average)
+            value: newDailyNsoDeathsByDeathDate
+            tooltip: 7 day rolling average of the daily number of deaths where COVID-19 is mentioned as a cause on the death certificate
+            type: line
+            colour: 3
+            rollingAverage:
+              window: 7
+              clipEnd: 7 #no of days to exclude for incomplete data
             
       # - heading: Cumulative
       #   tabType: chart
@@ -1927,7 +1941,7 @@ cards:
 
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
+        filename: cardMetadata/deaths/cardNsoDailyDeathsTimeSeries.md
 
 # {{ EndDevOnlyBlock }}
 
