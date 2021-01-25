@@ -1442,30 +1442,30 @@ cards:
             type: numeric
             tooltip: Death rate per 100,000 resident population
 
-      # - heading: Lower tier LA
-      #   tabType: table
-      #   params:
-      #     - key: areaType
-      #       sign: "="
-      #       value: ltla
+      - heading: Lower tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: ltla
 
-      #   latestBy: cumWeeklyNsoDeathsByRegDate
-      #   sortBy: areaName
-      #   fields:
-      #     - label: Area
-      #       value: areaName
-      #       type: string
-      #       tooltip: ""
+        latestBy: cumWeeklyNsoDeathsByRegDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
 
-      #     - label: Deaths
-      #       value: cumWeeklyNsoDeathsByRegDate
-      #       type: numeric
-      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+          - label: Deaths
+            value: cumWeeklyNsoDeathsByRegDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
 
-      #     - label: Rate per 100,000 population
-      #       value: cumWeeklyNsoDeathsByRegDateRate
-      #       type: numeric
-      #       tooltip: Death rate per 100,000 resident population
+          - label: Rate per 100,000 population
+            value: cumWeeklyNsoDeathsByRegDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
 
       - heading: About
         tabType: metadata
