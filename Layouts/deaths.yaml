@@ -10,16 +10,6 @@ headlineNumbers:
         value: cumDeaths28DaysByPublishDate
         tooltip: Total number of deaths within 28 days of first positive test, reported up to {date}
 
-  # - caption: Deaths with COVID-19 on the death certificate
-  #   valueItems:
-  #     - label: Weekly
-  #       value: newOnsDeathsByRegistrationDate
-  #       tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered during the week ending {date}
-
-  #     - label: Total
-  #       value: cumOnsDeathsByRegistrationDate
-  #       tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
-
   - caption: Deaths with COVID-19 on the death certificate
     valueItems:
       - label: Weekly
@@ -747,65 +737,6 @@ cards:
 
 ##############################################################################################################################
 
-  # - heading: Weekly deaths with COVID-19 on the death certificate by date registered
-  #   cardType: chart
-
-  #   fullWidth: true
-  #   abstract: >
-  #     Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
-  #     The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of
-  #     at least 11 days because the data are based on death registrations.
-
-  #   download:
-  #     - newOnsDeathsByRegistrationDate
-  #     - cumOnsDeathsByRegistrationDate
-
-  #   tabs:
-  #     - heading: Weekly
-  #       tabType: chart
-  #       barType: normal
-  #       fields:
-  #         - label: Number of deaths
-  #           value: newOnsDeathsByRegistrationDate
-  #           tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
-
-  #     # - heading: Cumulative
-  #     #   tabType: chart
-  #     #   fields:
-  #     #     - label: Number of deaths
-  #     #       value: cumOnsDeathsByRegistrationDate
-  #     #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-  #     #       type: bar
-  #     #       colour: 0
-  #     #       rollingAverage: false
-
-  #     - heading: Data
-  #       tabType: table
-  #       fields:
-  #         - label: Week ending date
-  #           value: date
-  #           type: date
-  #           tooltip: Week ending date
-
-  #         - label: Weekly registered deaths
-  #           value: newOnsDeathsByRegistrationDate
-  #           type: numeric
-  #           tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-
-  #         - label: Cumulative registered deaths
-  #           value: cumOnsDeathsByRegistrationDate
-  #           type: numeric
-  #           tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-
-  #     - heading: About
-  #       tabType: metadata
-  #       filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
-
-##############################################################################################################################
-
   - heading: Weekly deaths with COVID-19 on the death certificate by date registered
     cardType: chart
 
@@ -863,73 +794,6 @@ cards:
         tabType: metadata
         filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
 
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-
-  # - heading: Weekly care home deaths with COVID-19 on the death certificate by date registered (dev only)
-  #   cardType: chart
-  #   locationAware:
-  #     excluded:
-  #       areaType:
-  #         - overview
-
-  #   fullWidth: true
-  #   abstract: >
-  #     Number of care home deaths where the death certificate mentioned COVID-19 as one of the causes.
-  #     The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of
-  #     at least 11 days because the data are based on death registrations.
-
-  #   download:
-  #     - newOnsCareHomeDeathsByRegistrationDate
-  #     - cumOnsCareHomeDeathsByRegistrationDate
-
-  #   tabs:
-  #     - heading: Weekly
-  #       tabType: chart
-  #       barType: normal
-  #       fields:
-  #         - label: Number of care home deaths
-  #           value: newOnsCareHomeDeathsByRegistrationDate
-  #           tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
-
-  #     - heading: Cumulative
-  #       tabType: chart
-  #       fields:
-  #         - label: Number of care home deaths
-  #           value: cumOnsCareHomeDeathsByRegistrationDate
-  #           tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
-
-  #     - heading: Data
-  #       tabType: table
-  #       fields:
-  #         - label: Week ending date
-  #           value: date
-  #           type: date
-  #           tooltip: Week ending date
-
-  #         - label: Weekly registered care home deaths
-  #           value: newOnsCareHomeDeathsByRegistrationDate
-  #           type: numeric
-  #           tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-
-  #         - label: Cumulative registered care home deaths
-  #           value: cumOnsCareHomeDeathsByRegistrationDate
-  #           type: numeric
-  #           tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-
-#      - heading: About
-#        tabType: metadata
-#        filename: cardMetadata/deaths/cardOnsCareHomeDeathsTimeSeries.md
-
-# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
