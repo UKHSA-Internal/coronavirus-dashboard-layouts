@@ -810,6 +810,70 @@ cards:
 
 ##############################################################################################################################
 
+# {{ StartDevOnlyBlock}}
+
+  - heading: Weekly deaths with COVID-19 on the death certificate by date registered
+    cardType: chart
+
+    fullWidth: true
+    abstract: > 
+      Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
+      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
+      at least 11 days because the data are based on death registrations.
+    
+    download:
+      - newWeeklyNsoDeathsByRegDate
+      - cumWeeklyNsoDeathsByRegDate
+
+    tabs: 
+      - heading: Weekly
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Number of deaths
+            value: newWeeklyNsoDeathsByRegDate
+            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            type: bar
+            colour: 0
+            rollingAverage: false
+            
+      # - heading: Cumulative
+      #   tabType: chart
+      #   fields:
+      #     - label: Number of deaths
+      #       value: cumWeeklyNsoDeathsByRegDate
+      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+      #       type: bar
+      #       colour: 0
+      #       rollingAverage: false
+            
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Week ending date
+            value: date
+            type: date
+            tooltip: Week ending date
+
+          - label: Weekly registered deaths
+            value: newWeeklyNsoDeathsByRegDate
+            type: numeric
+            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+
+          - label: Cumulative registered deaths
+            value: cumWeeklyNsoDeathsByRegDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
+
+# {{ EndDevOnlyBlock}}
+
+
+##############################################################################################################################
+
 # {{ StartDevOnlyBlock }}
 
   - heading: Weekly care home deaths with COVID-19 on the death certificate by date registered (dev only)
@@ -866,6 +930,73 @@ cards:
 
           - label: Cumulative registered care home deaths
             value: cumOnsCareHomeDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+
+#      - heading: About 
+#        tabType: metadata
+#        filename: cardMetadata/deaths/cardOnsCareHomeDeathsTimeSeries.md
+
+# {{ EndDevOnlyBlock }}
+
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock }}
+
+  - heading: Weekly care home deaths with COVID-19 on the death certificate by date registered (dev only)
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: > 
+      Number of care home deaths where the death certificate mentioned COVID-19 as one of the causes.
+      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
+      at least 11 days because the data are based on death registrations.
+    
+    download:
+      - newWeeklyNsoCareHomeDeathsByRegDate
+      - cumWeeklyNsoCareHomeDeathsByRegDate
+
+    tabs: 
+      - heading: Weekly
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Number of care home deaths
+            value: newWeeklyNsoCareHomeDeathsByRegDate
+            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            type: bar
+            colour: 0
+            rollingAverage: false
+            
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of care home deaths
+            value: cumWeeklyNsoCareHomeDeathsByRegDate
+            tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            type: bar
+            colour: 0
+            rollingAverage: false
+            
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Week ending date
+            value: date
+            type: date
+            tooltip: Week ending date
+
+          - label: Weekly registered care home deaths
+            value: newWeeklyNsoCareHomeDeathsByRegDate
+            type: numeric
+            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+
+          - label: Cumulative registered care home deaths
+            value: cumWeeklyNsoCareHomeDeathsByRegDate
             type: numeric
             tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
 
@@ -1063,6 +1194,32 @@ cards:
       - cumDeaths28DaysByPublishDateRate
 
     tabs:
+      - heading: UK
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: overview
+
+        latestBy: cumDeaths28DaysByPublishDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumDeaths28DaysByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of deaths within 28 days of first positive test of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumDeaths28DaysByPublishDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
+
       - heading: Nation
         tabType: table
         params:
@@ -1183,6 +1340,32 @@ cards:
       - cumOnsDeathsByRegistrationDateRate
 
     tabs:
+
+      - heading: UK
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: overview
+
+        latestBy: cumOnsDeathsByRegistrationDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumOnsDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumOnsDeathsByRegistrationDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
       - heading: Nation
         tabType: table
         params:
@@ -1286,6 +1469,155 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
+
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock}}
+
+  - heading: Deaths with COVID-19 on the death certificate by area
+    cardType: simpleTableStatic
+    fullWidth: false
+    abstract: >
+      Total number of deaths since the start of the pandemic of people whose death certificate mentioned
+      COVID-19 as one of the causes. The data are published weekly by the ONS, NRS and NISRA and there is 
+      a lag in reporting of at least 11 days because the data are based on death registrations. Only data 
+      available for the latest reported date are shown. 
+
+    download:
+      - cumWeeklyNsoDeathsByRegDate
+      - cumWeeklyNsoDeathsByRegDateRate
+
+    tabs:
+      - heading: UK
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: overview
+
+        latestBy: cumWeeklyNsoDeathsByRegDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumWeeklyNsoDeathsByRegDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumWeeklyNsoDeathsByRegDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
+      - heading: Nation
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+
+        latestBy: cumWeeklyNsoDeathsByRegDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumWeeklyNsoDeathsByRegDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumWeeklyNsoDeathsByRegDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+      
+      - heading: Region
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: region
+
+        latestBy: cumWeeklyNsoDeathsByRegDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumWeeklyNsoDeathsByRegDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumWeeklyNsoDeathsByRegDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
+      - heading: Upper tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: utla
+
+        latestBy: cumWeeklyNsoDeathsByRegDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumWeeklyNsoDeathsByRegDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumWeeklyNsoDeathsByRegDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+  
+      # - heading: Lower tier LA
+      #   tabType: table
+      #   params:
+      #     - key: areaType
+      #       sign: "="
+      #       value: ltla
+
+      #   latestBy: cumWeeklyNsoDeathsByRegDate
+      #   sortBy: areaName
+      #   fields:
+      #     - label: Area
+      #       value: areaName
+      #       type: string
+      #       tooltip: ""
+
+      #     - label: Deaths
+      #       value: cumWeeklyNsoDeathsByRegDate
+      #       type: numeric
+      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+      #     - label: Rate per 100,000 population
+      #       value: cumWeeklyNsoDeathsByRegDateRate
+      #       type: numeric
+      #       tooltip: Death rate per 100,000 resident population
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
+
+# {{ EndDevOnlyBlock}}
 
 ##############################################################################################################################
 
@@ -1737,136 +2069,6 @@ cards:
   #   y-tooltip: Cumulative total number of deaths per 100,000 resident population
 
 # {{ EndDevOnlyBlock}}
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock}}
-
-  - heading: Weekly deaths with COVID-19 on the death certificate by date registered
-    cardType: chart
-
-    fullWidth: true
-    abstract: > 
-      Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
-      at least 11 days because the data are based on death registrations.
-    
-    download:
-      - newWeeklyNsoDeathsByRegDate
-      - cumWeeklyNsoDeathsByRegDate
-
-    tabs: 
-      - heading: Weekly
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Number of deaths
-            value: newWeeklyNsoDeathsByRegDate
-            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-            type: bar
-            colour: 0
-            rollingAverage: false
-            
-      # - heading: Cumulative
-      #   tabType: chart
-      #   fields:
-      #     - label: Number of deaths
-      #       value: cumWeeklyNsoDeathsByRegDate
-      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-      #       type: bar
-      #       colour: 0
-      #       rollingAverage: false
-            
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Week ending date
-            value: date
-            type: date
-            tooltip: Week ending date
-
-          - label: Weekly registered deaths
-            value: newWeeklyNsoDeathsByRegDate
-            type: numeric
-            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-
-          - label: Cumulative registered deaths
-            value: cumWeeklyNsoDeathsByRegDate
-            type: numeric
-            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
-
-# {{ EndDevOnlyBlock}}
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-
-  - heading: Weekly care home deaths with COVID-19 on the death certificate by date registered (dev only)
-    cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: > 
-      Number of care home deaths where the death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
-      at least 11 days because the data are based on death registrations.
-    
-    download:
-      - newWeeklyNsoCareHomeDeathsByRegDate
-      - cumWeeklyNsoCareHomeDeathsByRegDate
-
-    tabs: 
-      - heading: Weekly
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Number of care home deaths
-            value: newWeeklyNsoCareHomeDeathsByRegDate
-            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-            type: bar
-            colour: 0
-            rollingAverage: false
-            
-      - heading: Cumulative
-        tabType: chart
-        fields:
-          - label: Number of care home deaths
-            value: cumWeeklyNsoCareHomeDeathsByRegDate
-            tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-            type: bar
-            colour: 0
-            rollingAverage: false
-            
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Week ending date
-            value: date
-            type: date
-            tooltip: Week ending date
-
-          - label: Weekly registered care home deaths
-            value: newWeeklyNsoCareHomeDeathsByRegDate
-            type: numeric
-            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-
-          - label: Cumulative registered care home deaths
-            value: cumWeeklyNsoCareHomeDeathsByRegDate
-            type: numeric
-            tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-
-#      - heading: About 
-#        tabType: metadata
-#        filename: cardMetadata/deaths/cardOnsCareHomeDeathsTimeSeries.md
-
-# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
