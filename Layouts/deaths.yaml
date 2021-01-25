@@ -1182,153 +1182,151 @@ cards:
 
 ##############################################################################################################################
 
-  - heading: Deaths with COVID-19 on the death certificate by area
-    cardType: simpleTableStatic
-    fullWidth: false
-    abstract: >
-      Total number of deaths since the start of the pandemic of people whose death certificate mentioned
-      COVID-19 as one of the causes. The data are published weekly by the ONS, NRS and NISRA and there is
-      a lag in reporting of at least 11 days because the data are based on death registrations. Only data
-      available for the latest reported date are shown.
+  # - heading: Deaths with COVID-19 on the death certificate by area
+  #   cardType: simpleTableStatic
+  #   fullWidth: false
+  #   abstract: >
+  #     Total number of deaths since the start of the pandemic of people whose death certificate mentioned
+  #     COVID-19 as one of the causes. The data are published weekly by the ONS, NRS and NISRA and there is
+  #     a lag in reporting of at least 11 days because the data are based on death registrations. Only data
+  #     available for the latest reported date are shown.
 
-    download:
-      - cumOnsDeathsByRegistrationDate
-      - cumOnsDeathsByRegistrationDateRate
+  #   download:
+  #     - cumOnsDeathsByRegistrationDate
+  #     - cumOnsDeathsByRegistrationDateRate
 
-    tabs:
+  #   tabs:
 
-      - heading: UK
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: overview
+  #     - heading: UK
+  #       tabType: table
+  #       params:
+  #         - key: areaType
+  #           sign: "="
+  #           value: overview
 
-        latestBy: cumOnsDeathsByRegistrationDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
+  #       latestBy: cumOnsDeathsByRegistrationDate
+  #       sortBy: areaName
+  #       fields:
+  #         - label: Area
+  #           value: areaName
+  #           type: string
+  #           tooltip: ""
 
-          - label: Deaths
-            value: cumOnsDeathsByRegistrationDate
-            type: numeric
-            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+  #         - label: Deaths
+  #           value: cumOnsDeathsByRegistrationDate
+  #           type: numeric
+  #           tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
 
-          - label: Rate per 100,000 population
-            value: cumOnsDeathsByRegistrationDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
+  #         - label: Rate per 100,000 population
+  #           value: cumOnsDeathsByRegistrationDateRate
+  #           type: numeric
+  #           tooltip: Death rate per 100,000 resident population
 
-      - heading: Nation
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
+  #     - heading: Nation
+  #       tabType: table
+  #       params:
+  #         - key: areaType
+  #           sign: "="
+  #           value: nation
 
-        latestBy: cumOnsDeathsByRegistrationDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
+  #       latestBy: cumOnsDeathsByRegistrationDate
+  #       sortBy: areaName
+  #       fields:
+  #         - label: Area
+  #           value: areaName
+  #           type: string
+  #           tooltip: ""
 
-          - label: Deaths
-            value: cumOnsDeathsByRegistrationDate
-            type: numeric
-            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+  #         - label: Deaths
+  #           value: cumOnsDeathsByRegistrationDate
+  #           type: numeric
+  #           tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
 
-          - label: Rate per 100,000 population
-            value: cumOnsDeathsByRegistrationDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
+  #         - label: Rate per 100,000 population
+  #           value: cumOnsDeathsByRegistrationDateRate
+  #           type: numeric
+  #           tooltip: Death rate per 100,000 resident population
 
-      - heading: Region
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: region
+  #     - heading: Region
+  #       tabType: table
+  #       params:
+  #         - key: areaType
+  #           sign: "="
+  #           value: region
 
-        latestBy: cumOnsDeathsByRegistrationDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
+  #       latestBy: cumOnsDeathsByRegistrationDate
+  #       sortBy: areaName
+  #       fields:
+  #         - label: Area
+  #           value: areaName
+  #           type: string
+  #           tooltip: ""
 
-          - label: Deaths
-            value: cumOnsDeathsByRegistrationDate
-            type: numeric
-            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+  #         - label: Deaths
+  #           value: cumOnsDeathsByRegistrationDate
+  #           type: numeric
+  #           tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
 
-          - label: Rate per 100,000 population
-            value: cumOnsDeathsByRegistrationDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
+  #         - label: Rate per 100,000 population
+  #           value: cumOnsDeathsByRegistrationDateRate
+  #           type: numeric
+  #           tooltip: Death rate per 100,000 resident population
 
-      - heading: Upper tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: utla
+  #     - heading: Upper tier LA
+  #       tabType: table
+  #       params:
+  #         - key: areaType
+  #           sign: "="
+  #           value: utla
 
-        latestBy: cumOnsDeathsByRegistrationDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
+  #       latestBy: cumOnsDeathsByRegistrationDate
+  #       sortBy: areaName
+  #       fields:
+  #         - label: Area
+  #           value: areaName
+  #           type: string
+  #           tooltip: ""
 
-          - label: Deaths
-            value: cumOnsDeathsByRegistrationDate
-            type: numeric
-            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+  #         - label: Deaths
+  #           value: cumOnsDeathsByRegistrationDate
+  #           type: numeric
+  #           tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
 
-          - label: Rate per 100,000 population
-            value: cumOnsDeathsByRegistrationDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
+  #         - label: Rate per 100,000 population
+  #           value: cumOnsDeathsByRegistrationDateRate
+  #           type: numeric
+  #           tooltip: Death rate per 100,000 resident population
 
-      # - heading: Lower tier LA
-      #   tabType: table
-      #   params:
-      #     - key: areaType
-      #       sign: "="
-      #       value: ltla
+  #     # - heading: Lower tier LA
+  #     #   tabType: table
+  #     #   params:
+  #     #     - key: areaType
+  #     #       sign: "="
+  #     #       value: ltla
 
-      #   latestBy: cumOnsDeathsByRegistrationDate
-      #   sortBy: areaName
-      #   fields:
-      #     - label: Area
-      #       value: areaName
-      #       type: string
-      #       tooltip: ""
+  #     #   latestBy: cumOnsDeathsByRegistrationDate
+  #     #   sortBy: areaName
+  #     #   fields:
+  #     #     - label: Area
+  #     #       value: areaName
+  #     #       type: string
+  #     #       tooltip: ""
 
-      #     - label: Deaths
-      #       value: cumOnsDeathsByRegistrationDate
-      #       type: numeric
-      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+  #     #     - label: Deaths
+  #     #       value: cumOnsDeathsByRegistrationDate
+  #     #       type: numeric
+  #     #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
 
-      #     - label: Rate per 100,000 population
-      #       value: cumOnsDeathsByRegistrationDateRate
-      #       type: numeric
-      #       tooltip: Death rate per 100,000 resident population
+  #     #     - label: Rate per 100,000 population
+  #     #       value: cumOnsDeathsByRegistrationDateRate
+  #     #       type: numeric
+  #     #       tooltip: Death rate per 100,000 resident population
 
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
+  #     - heading: About
+  #       tabType: metadata
+  #       filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
 
 ##############################################################################################################################
-
-# {{ StartDevOnlyBlock}}
 
   - heading: Deaths with COVID-19 on the death certificate by area
     cardType: simpleTableStatic
@@ -1472,8 +1470,6 @@ cards:
       - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
-
-# {{ EndDevOnlyBlock}}
 
 ##############################################################################################################################
 
