@@ -59,6 +59,20 @@ cards:
               colour: 0
               rollingAverage: false
 
+ # {{ StartDevOnlyBlock }}             
+
+            - label: 1st dose (7-day average)
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              tooltip: 7-day rolling average of the daily reported number of people who received the first dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 0 #no of days to exclude for incomplete data
+
+# {{ EndDevOnlyBlock }}
+
         - heading: 2nd dose daily
           tabType: chart
           barType: normal
@@ -74,6 +88,21 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+
+ # {{ StartDevOnlyBlock }}             
+
+            - label: 2nd dose (7-day average)
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              tooltip: 7-day rolling average of the daily reported number of people who received the second dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 0 #no of days to exclude for incomplete data
+
+# {{ EndDevOnlyBlock }}
+
             
         - heading: 1st dose cumulative
           tabType: chart
