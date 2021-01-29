@@ -1,3 +1,8 @@
+- appearByUpdate: "2021-01-29"
+  disappearByUpdate: "2021-01-30"
+  body: >
+    Due to an issue with the processing of deaths data, the update for 29 January 2021 does not include any updates to deaths figures. These will be added later today.
+
 - appearByUpdate: "2021-01-13"
   disappearByUpdate: "2021-01-14"
   body: >
