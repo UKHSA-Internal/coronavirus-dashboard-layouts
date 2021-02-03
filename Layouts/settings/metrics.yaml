@@ -1,0 +1,3269 @@
+References:
+  categories:
+    cases: &cases cases
+    testing: &testing testing
+    vaccination: &vaccination vaccination
+    deaths: &deaths deaths
+    healthcare: &healthcare healthcare
+    other: &other other
+  
+  types:
+    cumulative: &cumulative cumulative
+    daily: &daily daily
+    demographics: &demographics demographics
+    eventDate: &eventDate eventDate
+    nso: &nso nso
+    rate: &rate rate
+    reportingDate: &reportingDate reportingDate
+    rollingRate: &rollingRate rollingRate
+    weekly: &weekly weekly
+
+
+metrics:
+
+  alertLevel:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ES
+    dateAdded: null
+    dateDeprecated: null
+    description: alertLevel.md
+    methodology: null
+    sources:
+      England: null
+      Scotland: null
+    tags:
+    - *other
+    updateFrequency: null
+
+  capacityPillarFour:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: capacityPillarFour.md
+    methodology: null
+    sources:
+      United Kingdom: null
+    tags:
+    - *testing
+    updateFrequency: null
+
+  capacityPillarOne:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: capacityPillarOne.md
+    methodology: null
+    sources:
+      United Kingdom: null
+    tags:
+    - *testing
+    updateFrequency: null
+
+  capacityPillarOneTwo:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: capacityPillarOneTwo.md
+    methodology: null
+    sources:
+      United Kingdom: null
+    tags:
+    - *testing
+    updateFrequency: null
+
+  capacityPillarThree:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: capacityPillarThree.md
+    methodology: null
+    sources:
+      United Kingdom: null
+    tags:
+    - *testing
+    updateFrequency: null
+
+  capacityPillarTwo:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: capacityPillarTwo.md
+    methodology: null
+    sources:
+      United Kingdom: null
+    tags:
+    - *testing
+    updateFrequency: null
+
+  changeInCumCasesBySpecimenDate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      nation: E
+      region: E
+    dateAdded: null
+    dateDeprecated: null
+    description: changeInCumCasesBySpecimenDate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *cases
+    - *eventDate
+    - *cumulative
+    updateFrequency: null
+
+  changeInNewCasesBySpecimenDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: E
+      region: E
+    dateAdded: null
+    dateDeprecated: null
+    description: changeInNewCasesBySpecimenDate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *cases
+    - *daily
+    - *eventDate
+    updateFrequency: null
+
+  covidOccupiedMVBeds:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      nhsTrust: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: covidOccupiedMVBeds.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *healthcare
+    updateFrequency: null
+
+  cumAdmissions:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      nhsTrust: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumAdmissions.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *healthcare
+    - *nso
+    - *cumulative
+    updateFrequency: null
+
+  cumAdmissionsByAge:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: E
+      nhsRegion: E
+    dateAdded: null
+    dateDeprecated: null
+    description: cumAdmissionsByAge.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *demographics
+    - *nso
+    - *cumulative
+    - *healthcare
+    updateFrequency: null
+
+  cumAdmissionsRate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumAdmissionsRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *healthcare
+    - *nso
+    - *rate
+    - *cumulative
+    updateFrequency: null
+
+  cumAntibodyTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumAntibodyTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      United Kingdom: null
+    tags:
+    - *reportingDate
+    - *cumulative
+    - *testing
+    updateFrequency: null
+
+  cumCasesByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: cumCasesByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cases
+    - *cumulative
+    updateFrequency: null
+
+  cumCasesByPublishDateRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: cumCasesByPublishDateRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cases
+    - *rate
+    - *cumulative
+    updateFrequency: null
+
+  cumCasesBySpecimenDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: cumCasesBySpecimenDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *cases
+    - *eventDate
+    - *cumulative
+    updateFrequency: null
+
+  cumCasesBySpecimenDateRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: cumCasesBySpecimenDateRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *rate
+    - *cases
+    - *eventDate
+    - *cumulative
+    updateFrequency: null
+
+  cumDailyNsoDeathsByDeathDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+      region: E
+    dateAdded: null
+    dateDeprecated: null
+    description: cumDailyNsoDeathsByDeathDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *deaths
+    - *nso
+    - *eventDate
+    - *daily
+    - *cumulative
+    updateFrequency: null
+
+  cumDeaths28DaysByDeathDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ESN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: ESN
+    dateAdded: null
+    dateDeprecated: null
+    description: cumDeaths28DaysByDeathDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *eventDate
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumDeaths28DaysByDeathDateRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ESN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: ESN
+    dateAdded: null
+    dateDeprecated: null
+    description: cumDeaths28DaysByDeathDateRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *rate
+    - *eventDate
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumDeaths28DaysByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ESN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: ESN
+    dateAdded: null
+    dateDeprecated: null
+    description: cumDeaths28DaysByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumDeaths28DaysByPublishDateRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ESN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: ESN
+    dateAdded: null
+    dateDeprecated: null
+    description: cumDeaths28DaysByPublishDateRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *rate
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumDeaths60DaysByDeathDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: cumDeaths60DaysByDeathDate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *eventDate
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumDeaths60DaysByDeathDateRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: cumDeaths60DaysByDeathDateRate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *rate
+    - *eventDate
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumDeaths60DaysByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: cumDeaths60DaysByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *reportingDate
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumDeaths60DaysByPublishDateRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: cumDeaths60DaysByPublishDateRate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *reportingDate
+    - *rate
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumDeathsByDeathDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: cumDeathsByDeathDate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *eventDate
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumDeathsByDeathDateRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: cumDeathsByDeathDateRate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *rate
+    - *eventDate
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumDeathsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: EWSN
+      overview: K
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: cumDeathsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumDeathsByPublishDateRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: EWSN
+      overview: K
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: cumDeathsByPublishDateRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *rate
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumLFDTests:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: cumLFDTests.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *cumulative
+    - *testing
+    updateFrequency: null
+
+  cumNegativesBySpecimenDate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      ltla: EWS
+      nation: EW
+      region: E
+      utla: EWS
+    dateAdded: null
+    dateDeprecated: null
+    description: cumNegativesBySpecimenDate.md
+    methodology: null
+    sources:
+      England: null
+      Scotland: null
+      Wales: null
+    tags:
+    - *eventDate
+    - *cumulative
+    updateFrequency: null
+
+  cumOnsCareHomeDeathsByRegistrationDate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      ltla: EW
+      nation: EW
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: cumOnsCareHomeDeathsByRegistrationDate.md
+    methodology: null
+    sources:
+      England: null
+      Wales: null
+    tags:
+    - *nso
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumOnsDeathsByRegistrationDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EW
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EW
+    dateAdded: null
+    dateDeprecated: null
+    description: cumOnsDeathsByRegistrationDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *nso
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumOnsDeathsByRegistrationDateRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EW
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EW
+    dateAdded: null
+    dateDeprecated: null
+    description: cumOnsDeathsByRegistrationDateRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *nso
+    - *rate
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumPCRTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPCRTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cumulative
+    - *testing
+    updateFrequency: null
+
+  cumPeopleTestedByPublishDate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      ltla: EWS
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWS
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPeopleTestedByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cumulative
+    - *testing
+    updateFrequency: null
+
+  cumPeopleTestedByPublishDateRate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      ltla: EWS
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWS
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPeopleTestedByPublishDateRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *rate
+    - *cumulative
+    - *testing
+    updateFrequency: null
+
+  cumPeopleTestedBySpecimenDate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      ltla: EWS
+      nation: EW
+      region: E
+      utla: EWS
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPeopleTestedBySpecimenDate.md
+    methodology: null
+    sources:
+      England: null
+      Scotland: null
+      Wales: null
+    tags:
+    - *eventDate
+    - *cumulative
+    - *testing
+    updateFrequency: null
+
+  cumPeopleVaccinatedCompleteByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPeopleVaccinatedCompleteByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cumulative
+    - *vaccination
+    updateFrequency: null
+
+  cumPeopleVaccinatedFirstDoseByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPeopleVaccinatedFirstDoseByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cumulative
+    - *vaccination
+    updateFrequency: null
+
+  cumPeopleVaccinatedFirstDoseByVaccinationDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPeopleVaccinatedFirstDoseByVaccinationDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *eventDate
+    - *cumulative
+    - *vaccination
+    updateFrequency: null
+
+  cumPeopleVaccinatedSecondDoseByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPeopleVaccinatedSecondDoseByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cumulative
+    - *vaccination
+    updateFrequency: null
+
+  cumPeopleVaccinatedSecondDoseByVaccinationDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPeopleVaccinatedSecondDoseByVaccinationDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *eventDate
+    - *cumulative
+    - *vaccination
+    updateFrequency: null
+
+  cumPillarFourTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPillarFourTestsByPublishDate.md
+    methodology: null
+    sources:
+      United Kingdom: null
+    tags:
+    - *reportingDate
+    - *cumulative
+    - *testing
+    updateFrequency: null
+
+  cumPillarOneTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPillarOneTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cumulative
+    - *testing
+    updateFrequency: null
+
+  cumPillarOneTwoTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPillarOneTwoTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cumulative
+    - *testing
+    updateFrequency: null
+
+  cumPillarThreeTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPillarThreeTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      United Kingdom: null
+    tags:
+    - *reportingDate
+    - *cumulative
+    - *testing
+    updateFrequency: null
+
+  cumPillarTwoTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumPillarTwoTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cumulative
+    - *testing
+    updateFrequency: null
+
+  cumTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cumulative
+    - *testing
+    updateFrequency: null
+
+  cumVirusTests:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: cumVirusTests.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *cumulative
+    - *testing
+    updateFrequency: null
+
+  cumWeeklyNsoCareHomeDeathsByRegDate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      ltla: EW
+      nation: EWSN
+      overview: K
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: cumWeeklyNsoCareHomeDeathsByRegDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *nso
+    - *weekly
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumWeeklyNsoDeathsByRegDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: cumWeeklyNsoDeathsByRegDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *nso
+    - *weekly
+    - *deaths
+    - *cumulative
+    updateFrequency: null
+
+  cumWeeklyNsoDeathsByRegDateRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: cumWeeklyNsoDeathsByRegDateRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *deaths
+    - *nso
+    - *weekly
+    - *rate
+    - *cumulative
+    updateFrequency: null
+
+  femaleCases:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EW
+      region: E
+    dateAdded: null
+    dateDeprecated: null
+    description: femaleCases.md
+    methodology: null
+    sources:
+      England: null
+      Wales: null
+    tags:
+    - *cases
+    - *demographics
+    updateFrequency: null
+
+  femaleNegatives:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      nation: E
+      region: E
+    dateAdded: null
+    dateDeprecated: null
+    description: femaleNegatives.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *demographics
+    updateFrequency: null
+
+  hash:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      nhsRegion: E
+      nhsTrust: E
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: hash.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *other
+    updateFrequency: null
+
+  hospitalCases:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      nhsTrust: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: hospitalCases.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *cases
+    - *healthcare
+    updateFrequency: null
+
+  maleCases:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EW
+      region: E
+    dateAdded: null
+    dateDeprecated: null
+    description: maleCases.md
+    methodology: null
+    sources:
+      England: null
+      Wales: null
+    tags:
+    - *cases
+    - *demographics
+    updateFrequency: null
+
+  maleNegatives:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      nation: E
+      region: E
+    dateAdded: null
+    dateDeprecated: null
+    description: maleNegatives.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *demographics
+    updateFrequency: null
+
+  newAdmissions:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      nhsTrust: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newAdmissions.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *nso
+    - *healthcare
+    updateFrequency: null
+
+  newAdmissionsByAge:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      nation: E
+      nhsRegion: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newAdmissionsByAge.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *daily
+    - *nso
+    - *healthcare
+    - *demographics
+    updateFrequency: null
+
+  newAdmissionsChange:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      nhsTrust: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newAdmissionsChange.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *nso
+    - *healthcare
+    updateFrequency: null
+
+  newAdmissionsChangePercentage:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      nhsTrust: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newAdmissionsChangePercentage.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *nso
+    - *healthcare
+    - *demographics
+    updateFrequency: null
+
+  newAdmissionsDirection:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      nhsTrust: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newAdmissionsDirection.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *nso
+    - *healthcare
+    updateFrequency: null
+
+  newAdmissionsRollingRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newAdmissionsRollingRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *rollingRate
+    - *daily
+    - *nso
+    - *healthcare
+    updateFrequency: null
+
+  newAdmissionsRollingSum:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      nhsTrust: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newAdmissionsRollingSum.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *nso
+    - *healthcare
+    updateFrequency: null
+
+  newAntibodyTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newAntibodyTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      United Kingdom: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newCasesByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cases
+    - *daily
+    updateFrequency: null
+
+  newCasesByPublishDateChange:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesByPublishDateChange.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cases
+    - *daily
+    updateFrequency: null
+
+  newCasesByPublishDateChangePercentage:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesByPublishDateChangePercentage.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cases
+    - *daily
+    - *demographics
+    updateFrequency: null
+
+  newCasesByPublishDateDirection:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesByPublishDateDirection.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cases
+    - *daily
+    updateFrequency: null
+
+  newCasesByPublishDateRollingRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesByPublishDateRollingRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cases
+    - *daily
+    - *rollingRate
+    updateFrequency: null
+
+  newCasesByPublishDateRollingSum:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesByPublishDateRollingSum.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *cases
+    - *daily
+    updateFrequency: null
+
+  newCasesBySpecimenDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesBySpecimenDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *cases
+    - *daily
+    - *eventDate
+    updateFrequency: null
+
+  newCasesBySpecimenDateAgeDemographics:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      overview: K
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesBySpecimenDateAgeDemographics.md
+    methodology: null
+    sources:
+      England: null
+      United Kingdom: null
+    tags:
+    - *cases
+    - *daily
+    - *eventDate
+    - *demographics
+    updateFrequency: null
+
+  newCasesBySpecimenDateChange:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesBySpecimenDateChange.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *cases
+    - *daily
+    - *eventDate
+    updateFrequency: null
+
+  newCasesBySpecimenDateChangePercentage:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesBySpecimenDateChangePercentage.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *cases
+    - *daily
+    - *eventDate
+    - *demographics
+    updateFrequency: null
+
+  newCasesBySpecimenDateDirection:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesBySpecimenDateDirection.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *cases
+    - *daily
+    - *eventDate
+    updateFrequency: null
+
+  newCasesBySpecimenDateRate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesBySpecimenDateRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *rate
+    - *cases
+    - *daily
+    - *eventDate
+    updateFrequency: null
+
+  newCasesBySpecimenDateRollingRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesBySpecimenDateRollingRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *rollingRate
+    - *cases
+    - *daily
+    - *eventDate
+    updateFrequency: null
+
+  newCasesBySpecimenDateRollingSum:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newCasesBySpecimenDateRollingSum.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *cases
+    - *daily
+    - *eventDate
+    updateFrequency: null
+
+  newDailyNsoDeathsByDeathDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+      region: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newDailyNsoDeathsByDeathDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *nso
+    - *eventDate
+    - *deaths
+    updateFrequency: null
+
+  newDeaths28DaysByDeathDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ESN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: ESN
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths28DaysByDeathDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *eventDate
+    - *deaths
+    updateFrequency: null
+
+  newDeaths28DaysByDeathDateAgeDemographics:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: E
+      region: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths28DaysByDeathDateAgeDemographics.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *daily
+    - *eventDate
+    - *deaths
+    - *demographics
+    updateFrequency: null
+
+  newDeaths28DaysByDeathDateRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ESN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: ESN
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths28DaysByDeathDateRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *rate
+    - *daily
+    - *eventDate
+    - *deaths
+    updateFrequency: null
+
+  newDeaths28DaysByDeathDateRollingRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ESN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: ESN
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths28DaysByDeathDateRollingRate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *rollingRate
+    - *eventDate
+    - *deaths
+    updateFrequency: null
+
+  newDeaths28DaysByDeathDateRollingSum:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ESN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: ESN
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths28DaysByDeathDateRollingSum.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *eventDate
+    - *deaths
+    updateFrequency: null
+
+  newDeaths28DaysByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ESN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: ESN
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths28DaysByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *deaths
+    updateFrequency: null
+
+  newDeaths28DaysByPublishDateChange:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ESN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: ESN
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths28DaysByPublishDateChange.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *deaths
+    updateFrequency: null
+
+  newDeaths28DaysByPublishDateChangePercentage:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ESN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: ESN
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths28DaysByPublishDateChangePercentage.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *deaths
+    - *demographics
+    updateFrequency: null
+
+  newDeaths28DaysByPublishDateDirection:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ESN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: ESN
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths28DaysByPublishDateDirection.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *deaths
+    updateFrequency: null
+
+  newDeaths28DaysByPublishDateRollingSum:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: ESN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: ESN
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths28DaysByPublishDateRollingSum.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *deaths
+    updateFrequency: null
+
+  newDeaths60DaysByDeathDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths60DaysByDeathDate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *daily
+    - *eventDate
+    - *deaths
+    updateFrequency: null
+
+  newDeaths60DaysByDeathDateRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths60DaysByDeathDateRate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *rate
+    - *daily
+    - *eventDate
+    - *deaths
+    updateFrequency: null
+
+  newDeaths60DaysByDeathDateRollingRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths60DaysByDeathDateRollingRate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *daily
+    - *rollingRate
+    - *eventDate
+    - *deaths
+    updateFrequency: null
+
+  newDeaths60DaysByDeathDateRollingSum:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths60DaysByDeathDateRollingSum.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *daily
+    - *eventDate
+    - *deaths
+    updateFrequency: null
+
+  newDeaths60DaysByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeaths60DaysByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *deaths
+    updateFrequency: null
+
+  newDeathsByDeathDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeathsByDeathDate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *daily
+    - *eventDate
+    - *deaths
+    updateFrequency: null
+
+  newDeathsByDeathDateRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeathsByDeathDateRate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *rate
+    - *daily
+    - *eventDate
+    - *deaths
+    updateFrequency: null
+
+  newDeathsByDeathDateRollingRate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeathsByDeathDateRollingRate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *daily
+    - *rollingRate
+    - *eventDate
+    - *deaths
+    updateFrequency: null
+
+  newDeathsByDeathDateRollingSum:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeathsByDeathDateRollingSum.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *daily
+    - *eventDate
+    - *deaths
+    updateFrequency: null
+
+  newDeathsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: EWSN
+      overview: K
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newDeathsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *deaths
+    updateFrequency: null
+
+  newLFDTests:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newLFDTests.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newNegativesBySpecimenDate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      ltla: EWS
+      nation: EW
+      region: E
+      utla: EWS
+    dateAdded: null
+    dateDeprecated: null
+    description: newNegativesBySpecimenDate.md
+    methodology: null
+    sources:
+      England: null
+      Scotland: null
+      Wales: null
+    tags:
+    - *daily
+    - *eventDate
+    updateFrequency: null
+
+  newOnsCareHomeDeathsByRegistrationDate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      ltla: EW
+      nation: EW
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newOnsCareHomeDeathsByRegistrationDate.md
+    methodology: null
+    sources:
+      England: null
+      Wales: null
+    tags:
+    - *daily
+    - *nso
+    - *deaths
+    updateFrequency: null
+
+  newOnsDeathsByRegistrationDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EW
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EW
+    dateAdded: null
+    dateDeprecated: null
+    description: newOnsDeathsByRegistrationDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *nso
+    - *deaths
+    updateFrequency: null
+
+  newPCRTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPCRTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newPCRTestsByPublishDateChange:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPCRTestsByPublishDateChange.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newPCRTestsByPublishDateChangePercentage:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPCRTestsByPublishDateChangePercentage.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *testing
+    - *demographics
+    updateFrequency: null
+
+  newPCRTestsByPublishDateDirection:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPCRTestsByPublishDateDirection.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newPCRTestsByPublishDateRollingSum:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPCRTestsByPublishDateRollingSum.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newPeopleTestedByPublishDate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPeopleTestedByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newPeopleTestedBySpecimenDate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      ltla: EWS
+      nation: EW
+      region: E
+      utla: EWS
+    dateAdded: null
+    dateDeprecated: null
+    description: newPeopleTestedBySpecimenDate.md
+    methodology: null
+    sources:
+      England: null
+      Scotland: null
+      Wales: null
+    tags:
+    - *daily
+    - *eventDate
+    - *testing
+    updateFrequency: null
+
+  newPeopleVaccinatedCompleteByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPeopleVaccinatedCompleteByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *vaccination
+    updateFrequency: null
+
+  newPeopleVaccinatedFirstDoseByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPeopleVaccinatedFirstDoseByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *vaccination
+    updateFrequency: null
+
+  newPeopleVaccinatedSecondDoseByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPeopleVaccinatedSecondDoseByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *vaccination
+    updateFrequency: null
+
+  newPillarFourTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPillarFourTestsByPublishDate.md
+    methodology: null
+    sources:
+      United Kingdom: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newPillarOneTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPillarOneTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newPillarOneTwoTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPillarOneTwoTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newPillarThreeTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPillarThreeTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      United Kingdom: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newPillarTwoTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newPillarTwoTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newTestsByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newTestsByPublishDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *reportingDate
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newVirusTests:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newVirusTests.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newVirusTestsChange:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newVirusTestsChange.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newVirusTestsChangePercentage:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newVirusTestsChangePercentage.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *testing
+    - *demographics
+    updateFrequency: null
+
+  newVirusTestsDirection:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newVirusTestsDirection.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newVirusTestsRollingSum:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: newVirusTestsRollingSum.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *daily
+    - *testing
+    updateFrequency: null
+
+  newWeeklyNsoCareHomeDeathsByRegDate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      ltla: EW
+      nation: EWSN
+      overview: K
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: newWeeklyNsoCareHomeDeathsByRegDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *nso
+    - *daily
+    - *weekly
+    - *deaths
+    updateFrequency: null
+
+  newWeeklyNsoDeathsByRegDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: newWeeklyNsoDeathsByRegDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *nso
+    - *daily
+    - *weekly
+    - *deaths
+    updateFrequency: null
+
+  nonCovidOccupiedMVBeds:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      nation: WSN
+    dateAdded: null
+    dateDeprecated: null
+    description: nonCovidOccupiedMVBeds.md
+    methodology: null
+    sources:
+      Northern Ireland: null
+      Scotland: null
+      Wales: null
+    tags:
+    - *healthcare
+    updateFrequency: null
+
+  plannedAntibodyCapacityByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: plannedAntibodyCapacityByPublishDate.md
+    methodology: null
+    sources:
+      United Kingdom: null
+    tags:
+    - *reportingDate
+    - *testing
+    updateFrequency: null
+
+  plannedCapacityByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: plannedCapacityByPublishDate.md
+    methodology: null
+    sources:
+      United Kingdom: null
+    tags:
+    - *reportingDate
+    - *testing
+    updateFrequency: null
+
+  plannedPCRCapacityByPublishDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: plannedPCRCapacityByPublishDate.md
+    methodology: null
+    sources:
+      United Kingdom: null
+    tags:
+    - *reportingDate
+    - *testing
+    updateFrequency: null
+
+  previouslyReportedCumCasesBySpecimenDate:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      nation: E
+      region: E
+    dateAdded: null
+    dateDeprecated: null
+    description: previouslyReportedCumCasesBySpecimenDate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *reportingDate
+    - *cases
+    - *eventDate
+    - *cumulative
+    updateFrequency: null
+
+  previouslyReportedNewCasesBySpecimenDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: E
+      region: E
+    dateAdded: null
+    dateDeprecated: null
+    description: previouslyReportedNewCasesBySpecimenDate.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *reportingDate
+    - *cases
+    - *daily
+    - *eventDate
+    updateFrequency: null
+
+  releaseTimestamp:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: EWSN
+      nation: EWSN
+      nhsRegion: E
+      nhsTrust: E
+      overview: K
+      region: E
+      utla: EWSN
+    dateAdded: null
+    dateDeprecated: null
+    description: releaseTimestamp.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *other
+    updateFrequency: null
+
+  suspectedCovidOccupiedMVBeds:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      nation: W
+    dateAdded: null
+    dateDeprecated: null
+    description: suspectedCovidOccupiedMVBeds.md
+    methodology: null
+    sources:
+      Wales: null
+    tags:
+    - *healthcare
+    updateFrequency: null
+
+  totalMVBeds:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      nation: WSN
+    dateAdded: null
+    dateDeprecated: null
+    description: totalMVBeds.md
+    methodology: null
+    sources:
+      Northern Ireland: null
+      Scotland: null
+      Wales: null
+    tags:
+    - *healthcare
+    updateFrequency: null
+
+  transmissionRateGrowthRateMax:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: transmissionRateGrowthRateMax.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *rate
+    - *other
+    updateFrequency: null
+
+  transmissionRateGrowthRateMin:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: transmissionRateGrowthRateMin.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *rate
+    - *other
+    updateFrequency: null
+
+  transmissionRateMax:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: transmissionRateMax.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *rate
+    - *other
+    updateFrequency: null
+
+  transmissionRateMin:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      nhsRegion: E
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: transmissionRateMin.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *rate
+    - *other
+    updateFrequency: null
+
+  uniqueCasePositivityBySpecimenDateRollingSum:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: uniqueCasePositivityBySpecimenDateRollingSum.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *cases
+    - *eventDate
+    updateFrequency: null
+
+  uniquePeopleTestedBySpecimenDateRollingSum:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      ltla: E
+      nation: E
+      region: E
+      utla: E
+    dateAdded: null
+    dateDeprecated: null
+    description: uniquePeopleTestedBySpecimenDateRollingSum.md
+    methodology: null
+    sources:
+      England: null
+    tags:
+    - *eventDate
+    - *testing
+    updateFrequency: null
+
+  unoccupiedMVBeds:
+    PUBLISHED: false
+    abstract: null
+    availability:
+      nation: WSN
+    dateAdded: null
+    dateDeprecated: null
+    description: unoccupiedMVBeds.md
+    methodology: null
+    sources:
+      Northern Ireland: null
+      Scotland: null
+      Wales: null
+    tags:
+    - *healthcare
+    updateFrequency: null
+
+  weeklyPeopleVaccinatedFirstDoseByVaccinationDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: weeklyPeopleVaccinatedFirstDoseByVaccinationDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *weekly
+    - *eventDate
+    - *vaccination
+    updateFrequency: null
+
+  weeklyPeopleVaccinatedSecondDoseByVaccinationDate:
+    PUBLISHED: true
+    abstract: null
+    availability:
+      nation: EWSN
+      overview: K
+    dateAdded: null
+    dateDeprecated: null
+    description: weeklyPeopleVaccinatedSecondDoseByVaccinationDate.md
+    methodology: null
+    sources:
+      England: null
+      Northern Ireland: null
+      Scotland: null
+      United Kingdom: null
+      Wales: null
+    tags:
+    - *weekly
+    - *eventDate
+    - *vaccination
+    updateFrequency: null

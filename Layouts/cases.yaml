@@ -637,6 +637,9 @@ cards:
       included:
         areaName:
           - England
+        areaType:
+          - region
+
     abstract: >
       Number of people with at least one positive COVID-19 virus test result broken down to show the number of these cases 
       that have been previously reported and the latest daily change. The daily change includes newly reported cases, plus 
@@ -1480,6 +1483,32 @@ cards:
       - newCasesBySpecimenDateRollingRate
 
     tabs:
+      - heading: UK
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: overview
+
+        latestBy: newCasesBySpecimenDateRollingRate
+        sortBy: areaName
+
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Cases
+            value: newCasesBySpecimenDateRollingSum
+            type: numeric
+            tooltip: Total number of people tested positive in the 7-day period ending {date}
+
+          - label: Rate per 100,000 population
+            value: newCasesBySpecimenDateRollingRate
+            type: numeric
+            tooltip: Rate of total number of people tested positive in the 7-day period per 100,000 resident population
+
       - heading: Nation
         tabType: table
         params:
@@ -1607,6 +1636,32 @@ cards:
       - cumCasesByPublishDateRate
 
     tabs:
+      - heading: UK
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: overview
+
+        latestBy: cumCasesByPublishDate
+        sortBy: areaName
+
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Cases
+            value: cumCasesByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people tested positive up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumCasesByPublishDateRate
+            type: numeric
+            tooltip: Rate of total confirmed people tested positive per 100,000 resident population
+
       - heading: Nation
         tabType: table
         params:

@@ -13,26 +13,12 @@ headlineNumbers:
   - caption: Deaths with COVID-19 on the death certificate
     valueItems:
       - label: Weekly
-        value: newOnsDeathsByRegistrationDate
-        tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered during the week ending {date}
-        
-      - label: Total
-        value: cumOnsDeathsByRegistrationDate
-        tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
-
-# {{ StartDevOnlyBlock}}
-
-  - caption: Deaths with COVID-19 on the death certificate
-    valueItems:
-      - label: Weekly
         value: newWeeklyNsoDeathsByRegDate
         tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered during the week ending {date}
-        
+
       - label: Total
         value: cumWeeklyNsoDeathsByRegDate
         tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
-
-# {{ EndDevOnlyBlock}}
 
 baseDeaths28DaysByDeathDateDemographics: &baseDeaths28DaysByDeathDateDemographics
   value: newDeaths28DaysByDeathDateAgeDemographics
@@ -63,16 +49,16 @@ cards:
   - heading: Deaths within 28 days of positive test by date of death
     cardType: multiAreaStatic
     locationAware:
-      included: 
+      included:
         areaType:
           - overview
 
     fullWidth: true
 
-    abstract: > 
+    abstract: >
       Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
-      of the first positive test. Data from the four nations are not directly comparable as methodologies 
-      and inclusion criteria vary. Data for the period ending 5 days before the date when the website was 
+      of the first positive test. Data from the four nations are not directly comparable as methodologies
+      and inclusion criteria vary. Data for the period ending 5 days before the date when the website was
       last updated with data for the selected area, highlighted in grey, is incomplete.
 
     download:
@@ -85,7 +71,7 @@ cards:
       choices:
         - UK total
         - By nation
-    
+
     UK total:
 
       tabs:
@@ -103,7 +89,7 @@ cards:
               tooltip: Daily number of deaths within 28 days of first positive test, by date of death
               type: bar
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -4
                 to: 0
                 colour: 6
@@ -132,7 +118,7 @@ cards:
               tooltip: Cumulative total number of deaths within 28 days of first positive test, by date of death
               type: bar
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -4
                 to: 0
                 colour: 6
@@ -160,12 +146,12 @@ cards:
               type: numeric
               tooltip: Cumulative total number of deaths within 28 days of first positive test, by date of death
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
-          
+
     By nation:
-      
+
       tabs:
         - heading: Daily
           tabType: chart
@@ -219,7 +205,7 @@ cards:
               type: numeric
               tooltip: Cumulative total number of deaths within 28 days of first positive test of people resident in each nation, by date of death
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
@@ -235,17 +221,17 @@ cards:
           - overview
 
     fullWidth: true
-    abstract: > 
+    abstract: >
       Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
-      of the first positive test. Data from the four nations are not directly comparable as methodologies 
-      and inclusion criteria vary. Data for the period ending 5 days before the date when the website was 
+      of the first positive test. Data from the four nations are not directly comparable as methodologies
+      and inclusion criteria vary. Data for the period ending 5 days before the date when the website was
       last updated with data for the selected area, highlighted in grey, is incomplete.
 
     download:
       - newDeaths28DaysByDeathDate
       - cumDeaths28DaysByDeathDate
 
-    tabs: 
+    tabs:
       - heading: Daily
         tabType: chart
         barType: normal
@@ -256,7 +242,7 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
-            highlight: 
+            highlight:
                 from: -4
                 to: 0
                 colour: 6
@@ -271,7 +257,7 @@ cards:
             rollingAverage:
                 window: 7
                 clipEnd: 3 #no of days to exclude for incomplete data
-                  
+
       - heading: Cumulative
         tabType: chart
         fields:
@@ -281,12 +267,12 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
-            highlight: 
+            highlight:
                 from: -4
                 to: 0
                 colour: 6
                 label: "Most recent 5 days (incomplete)"
-                  
+
       - heading: Data
         tabType: table
         fields:
@@ -305,7 +291,7 @@ cards:
             type: numeric
             tooltip: Cumulative total number of deaths within 28 days of first positive test by date of death
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
@@ -324,11 +310,11 @@ cards:
     fullWidth: true
     abstract: >
       Rate of deaths of people who had at least one positive test result for COVID-19 and died within 28 days of the first
-      positive test per 100,000 population in the rolling 7-day period ending on the dates shown, by age. 
-    
+      positive test per 100,000 population in the rolling 7-day period ending on the dates shown, by age.
+
     download:
       - newDeaths28DaysByDeathDateAgeDemographics
-    
+
     tabs:
       - heading: Heatmap
         tabType: heatmap
@@ -345,7 +331,7 @@ cards:
 
             - label: 5 to 9
               value: "05_09"
-              
+
             - label: 10 to 14
               value: "10_14"
 
@@ -397,7 +383,7 @@ cards:
             - label: 90+
               value: "90+"
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardRatesByFiveYearAge.md
 
@@ -417,7 +403,7 @@ cards:
 
     download:
       - newDeaths28DaysByDeathDateAgeDemographics
-    
+
     tabs:
       - heading: Rolling rate
         tabType: chart
@@ -459,14 +445,14 @@ cards:
             colour: 3
             metric: deaths
             rollingAverage: false
-              
+
       - heading: Data
         tabType: nestedTable
         fields:
           - label: Date
             value: date
             type: date
-          
+
           - label: "Deaths: 0-59"
             metric: deaths
             value: newDeaths28DaysByDeathDateAgeDemographics
@@ -515,7 +501,7 @@ cards:
               parameter: age
               value: 60+
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
 
@@ -526,15 +512,15 @@ cards:
   - heading: Deaths within 28 days of positive test by date reported
     cardType: multiAreaStatic
     locationAware:
-      included: 
+      included:
         areaType:
           - overview
 
     fullWidth: true
 
-    abstract: > 
+    abstract: >
       Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
-      of the first positive test. Data from the four nations are not directly comparable as methodologies 
+      of the first positive test. Data from the four nations are not directly comparable as methodologies
       and inclusion criteria vary.
 
     download:
@@ -547,7 +533,7 @@ cards:
       choices:
         - UK total
         - By nation
-    
+
     UK total:
 
       tabs:
@@ -610,12 +596,12 @@ cards:
               type: numeric
               tooltip: Cumulative total number of new deaths within 28 days of first positive test, by date reported
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
     By nation:
-      
+
       tabs:
         - heading: Daily
           tabType: chart
@@ -669,7 +655,7 @@ cards:
               type: numeric
               tooltip: Cumulative total number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
@@ -688,23 +674,23 @@ cards:
           - utla
 
     fullWidth: true
-    abstract: > 
+    abstract: >
       Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
-      of the first positive test. Data from the four nations are not directly comparable as methodologies 
+      of the first positive test. Data from the four nations are not directly comparable as methodologies
       and inclusion criteria vary.
-    
+
     download:
       - newDeaths28DaysByPublishDate
       - cumDeaths28DaysByPublishDate
 
-    tabs: 
+    tabs:
       - heading: Daily
         tabType: chart
         barType: normal
         fields:
           - label: Number of deaths
             value: newDeaths28DaysByPublishDate
-            tooltip: Daily number of deaths within 28 days of first positive test by date reported 
+            tooltip: Daily number of deaths within 28 days of first positive test by date reported
             type: bar
             colour: 0
             rollingAverage: false
@@ -716,7 +702,7 @@ cards:
             colour: 3
             fill: false
             rollingAverage: true
-            
+
       - heading: Cumulative
         tabType: chart
         fields:
@@ -726,7 +712,7 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
-            
+
       - heading: Data
         tabType: table
         fields:
@@ -745,9 +731,258 @@ cards:
             type: numeric
             tooltip: Cumulative total number of deaths within 28 days of first positive test by date reported
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
+##############################################################################################################################
+
+# only shown for UK
+
+  - heading: Daily deaths with COVID-19 on the death certificate by date of death
+    cardType: multiAreaStatic
+    locationAware:
+      included:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
+      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of
+      at least 11 days because the data are based on death registrations.
+
+    download:
+      - newDailyNsoDeathsByDeathDate
+      - cumDailyNsoDeathsByDeathDate
+
+    options:
+      type: radio
+      heading: null
+      choices:
+        - UK total
+        - By nation
+
+    UK total:
+
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+          fields:
+            - label: ""
+              value: newDailyNsoDeathsByDeathDate
+              tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+              type: bar
+              colour: 0
+              rollingAverage: false
+              highlight:
+                from: -11
+                to: 0
+                colour: 6
+                label: "Most recent 11 days (incomplete)"
+
+            - label: (7-day average)
+              value: newDailyNsoDeathsByDeathDate
+              tooltip: 7 day rolling average of the daily number of deaths where COVID-19 is mentioned as a cause on the death certificate
+              type: line
+              colour: 3
+              rollingAverage:
+                window: 7
+                clipEnd: 11 #no of days to exclude for incomplete data
+
+      # - heading: Cumulative
+      #   tabType: chart
+      #   barType: stack
+      #   colours: [0] # areaNames in alphabetical order
+      #   params:
+      #     - key: areaType
+      #       sign: "="
+      #       value: overview
+      #   fields:
+      #     - label: ""
+      #       value: cumDailyNsoDeathsByDeathDate
+      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+      #       type: bar
+      #       colour: 0
+      #       rollingAverage: false
+      #       highlight:
+      #         from: -11
+      #         to: 0
+      #         colour: 6
+      #         label: "Most recent 11 days (incomplete)"
+
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+          fields:
+            - label: Date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: daily
+              value: newDailyNsoDeathsByDeathDate
+              type: numeric
+              tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+            - label: total
+              value: cumDailyNsoDeathsByDeathDate
+              type: numeric
+              tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+        - heading: About
+          tabType: metadata
+          filename: cardMetadata/deaths/cardNsoDailyDeathsTimeSeries.md
+
+    By nation:
+
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          colours: [0, 9, 3, 10] # areaNames in alphabetical order
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+          fields:
+            - label: ""
+              value: newDailyNsoDeathsByDeathDate
+              tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+
+      # - heading: Cumulative
+      #   tabType: chart
+      #   barType: stack
+      #   colours: [0, 9, 3, 10] # areaNames in alphabetical order
+      #   params:
+      #     - key: areaType
+      #       sign: "="
+      #       value: nation
+      #   fields:
+      #     - label: ""
+      #       value: cumDailyNsoDeathsByDeathDate
+      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+      #       type: bar
+      #       colour: 0
+      #       rollingAverage: false
+
+
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
+          fields:
+            - label: Date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: daily
+              value: newDailyNsoDeathsByDeathDate
+              type: numeric
+              tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+            - label: total
+              value: cumDailyNsoDeathsByDeathDate
+              type: numeric
+              tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+        - heading: About
+          tabType: metadata
+          filename: cardMetadata/deaths/cardNsoDailyDeathsTimeSeries.md
+
+##############################################################################################################################
+
+# not shown for UK
+
+  - heading: Daily deaths with COVID-19 on the death certificate by date of death
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
+      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of
+      at least 11 days because the data are based on death registrations.
+
+    download:
+      - newDailyNsoDeathsByDeathDate
+      - cumDailyNsoDeathsByDeathDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Number of deaths
+            value: newDailyNsoDeathsByDeathDate
+            tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+            type: bar
+            colour: 0
+            rollingAverage: false
+            highlight:
+                from: -11
+                to: 0
+                colour: 6
+                label: "Most recent 11 days (incomplete)"
+
+          - label: (7-day average)
+            value: newDailyNsoDeathsByDeathDate
+            tooltip: 7 day rolling average of the daily number of deaths where COVID-19 is mentioned as a cause on the death certificate
+            type: line
+            colour: 3
+            rollingAverage:
+              window: 7
+              clipEnd: 11 #no of days to exclude for incomplete data
+
+      # - heading: Cumulative
+      #   tabType: chart
+      #   fields:
+      #     - label: Number of deaths
+      #       value: cumDailyNsoDeathsByDeathDate
+      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+      #       type: bar
+      #       colour: 0
+      #       rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date
+            value: date
+            type: date
+            tooltip: Date
+
+          - label: Daily deaths
+            value: newDailyNsoDeathsByDeathDate
+            type: numeric
+            tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+          - label: Cumulative deaths
+            value: cumDailyNsoDeathsByDeathDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/deaths/cardNsoDailyDeathsTimeSeries.md
 
 ##############################################################################################################################
 
@@ -755,37 +990,37 @@ cards:
     cardType: chart
 
     fullWidth: true
-    abstract: > 
+    abstract: >
       Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
+      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of
       at least 11 days because the data are based on death registrations.
-    
-    download:
-      - newOnsDeathsByRegistrationDate
-      - cumOnsDeathsByRegistrationDate
 
-    tabs: 
+    download:
+      - newWeeklyNsoDeathsByRegDate
+      - cumWeeklyNsoDeathsByRegDate
+
+    tabs:
       - heading: Weekly
         tabType: chart
         barType: normal
         fields:
           - label: Number of deaths
-            value: newOnsDeathsByRegistrationDate
-            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            value: newWeeklyNsoDeathsByRegDate
+            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
             type: bar
             colour: 0
             rollingAverage: false
-            
+
       # - heading: Cumulative
       #   tabType: chart
       #   fields:
       #     - label: Number of deaths
-      #       value: cumOnsDeathsByRegistrationDate
-      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+      #       value: cumWeeklyNsoDeathsByRegDate
+      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
       #       type: bar
       #       colour: 0
       #       rollingAverage: false
-            
+
       - heading: Data
         tabType: table
         fields:
@@ -795,18 +1030,19 @@ cards:
             tooltip: Week ending date
 
           - label: Weekly registered deaths
-            value: newOnsDeathsByRegistrationDate
+            value: newWeeklyNsoDeathsByRegDate
             type: numeric
-            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
 
           - label: Cumulative registered deaths
-            value: cumOnsDeathsByRegistrationDate
+            value: cumWeeklyNsoDeathsByRegDate
             type: numeric
-            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
+
 
 ##############################################################################################################################
 
@@ -820,37 +1056,37 @@ cards:
           - overview
 
     fullWidth: true
-    abstract: > 
+    abstract: >
       Number of care home deaths where the death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
+      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of
       at least 11 days because the data are based on death registrations.
-    
-    download:
-      - newOnsCareHomeDeathsByRegistrationDate
-      - cumOnsCareHomeDeathsByRegistrationDate
 
-    tabs: 
+    download:
+      - newWeeklyNsoCareHomeDeathsByRegDate
+      - cumWeeklyNsoCareHomeDeathsByRegDate
+
+    tabs:
       - heading: Weekly
         tabType: chart
         barType: normal
         fields:
           - label: Number of care home deaths
-            value: newOnsCareHomeDeathsByRegistrationDate
-            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            value: newWeeklyNsoCareHomeDeathsByRegDate
+            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
             type: bar
             colour: 0
             rollingAverage: false
-            
+
       - heading: Cumulative
         tabType: chart
         fields:
           - label: Number of care home deaths
-            value: cumOnsCareHomeDeathsByRegistrationDate
-            tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            value: cumWeeklyNsoCareHomeDeathsByRegDate
+            tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
             type: bar
             colour: 0
             rollingAverage: false
-            
+
       - heading: Data
         tabType: table
         fields:
@@ -860,16 +1096,16 @@ cards:
             tooltip: Week ending date
 
           - label: Weekly registered care home deaths
-            value: newOnsCareHomeDeathsByRegistrationDate
+            value: newWeeklyNsoCareHomeDeathsByRegDate
             type: numeric
-            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
 
           - label: Cumulative registered care home deaths
-            value: cumOnsCareHomeDeathsByRegistrationDate
+            value: cumWeeklyNsoCareHomeDeathsByRegDate
             type: numeric
-            tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
+            tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
 
-#      - heading: About 
+#      - heading: About
 #        tabType: metadata
 #        filename: cardMetadata/deaths/cardOnsCareHomeDeathsTimeSeries.md
 
@@ -888,7 +1124,7 @@ cards:
           - region
         areaName:
           - England
-  
+
     fullWidth: false
     abstract: >
       Total number of deaths within 28 days of first positive test since the start of the pandemic, by age and sex.
@@ -897,13 +1133,13 @@ cards:
       - femaleDeaths28Days
       - maleDeaths28Days
 
-    tabs: 
+    tabs:
       - heading: Chart
         tabType: chart
         barType: group
         groupKey: age
-        groupValues: 
-          - value 
+        groupValues:
+          - value
           - rate
 
         requiredMetrics:
@@ -916,17 +1152,17 @@ cards:
             tooltip: Total number of female deaths within 28 days of first positive test
             type: bar
             colour: 3
-            
+
           - label: Males
             value: maleDeaths28DaysValue
             tooltip: Total number of male deaths within 28 days of first positive test
             type: bar
             colour: 0
-      
+
       - heading: Data
         tabType: table
         groupKey: age
-        groupValues: 
+        groupValues:
           - value
           - rate
 
@@ -954,13 +1190,13 @@ cards:
             value: maleDeaths28DaysValue
             type: numeric
             tooltip: Total number of male deaths within 28 days of first positive test
-         
+
           - label: Male rate
             value: maleDeaths28DaysRate
             type: numeric
             tooltip: Total number of male deaths within 28 days of first positive test per 100,000 resident population
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardDeaths28DaysAndRatesByAgeAndSex.md
 
@@ -973,19 +1209,19 @@ cards:
     cardType: ageSexBreakdown
     fullWidth: false
     abstract: >
-      Total death within 28 days of first positive test rates by age and sex. There are fewer people in the 
+      Total death within 28 days of first positive test rates by age and sex. There are fewer people in the
       oldest age groups so the rates show the relative impact on different age groups.
 
     download:
       - femaleDeaths28Days
       - maleDeaths28Days
 
-    tabs: 
+    tabs:
       - heading: Chart
         tabType: chart
         barType: group
         groupKey: age
-        groupValues: 
+        groupValues:
           - value
           - rate
 
@@ -999,17 +1235,17 @@ cards:
             tooltip: Total number of female deaths within 28 days of first positive test per 100,000 resident population
             type: bar
             colour: 3
-            
+
           - label: Males
             value: maleDeaths28DaysRate
             tooltip: Total number of male deaths within 28 days of first positive test per 100,000 resident population
             type: bar
             colour: 0
-      
+
       - heading: Data
         tabType: table
         groupKey: age
-        groupValues: 
+        groupValues:
           - value
           - rate
 
@@ -1037,13 +1273,13 @@ cards:
             value: maleDeaths28DaysValue
             type: numeric
             tooltip: Total number of male deaths within 28 days of first positive test
-          
+
           - label: Male rate
             value: maleDeaths28DaysRate
             type: numeric
             tooltip: Total number of male deaths within 28 days of first positive test per 100,000 resident population
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardDeaths28DaysAndRatesByAgeAndSex.md
 
@@ -1054,8 +1290,8 @@ cards:
     fullWidth: false
     abstract: >
       Total number of deaths since the start of the pandemic of people who had had a positive test result
-      for COVID-19 and died within 28 days of the first positive test. Data from the four nations are not 
-      directly comparable as methodologies and inclusion criteria vary. Only data available for the latest 
+      for COVID-19 and died within 28 days of the first positive test. Data from the four nations are not
+      directly comparable as methodologies and inclusion criteria vary. Only data available for the latest
       reported date are shown.
 
     download:
@@ -1063,6 +1299,32 @@ cards:
       - cumDeaths28DaysByPublishDateRate
 
     tabs:
+      - heading: UK
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: overview
+
+        latestBy: cumDeaths28DaysByPublishDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumDeaths28DaysByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of deaths within 28 days of first positive test of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumDeaths28DaysByPublishDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
+
       - heading: Nation
         tabType: table
         params:
@@ -1087,7 +1349,7 @@ cards:
             value: cumDeaths28DaysByPublishDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population
-      
+
       - heading: Region
         tabType: table
         params:
@@ -1112,7 +1374,7 @@ cards:
             value: cumDeaths28DaysByPublishDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population
-     
+
       - heading: Upper tier LA
         tabType: table
         params:
@@ -1137,7 +1399,7 @@ cards:
             value: cumDeaths28DaysByPublishDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population
-  
+
       - heading: Lower tier LA
         tabType: table
         params:
@@ -1163,9 +1425,12 @@ cards:
             type: numeric
             tooltip: Death rate per 100,000 resident population
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardDeaths28DaysAndRatesByArea.md
+
+
+
 
 ##############################################################################################################################
 
@@ -1174,15 +1439,41 @@ cards:
     fullWidth: false
     abstract: >
       Total number of deaths since the start of the pandemic of people whose death certificate mentioned
-      COVID-19 as one of the causes. The data are published weekly by the ONS, NRS and NISRA and there is 
-      a lag in reporting of at least 11 days because the data are based on death registrations. Only data 
-      available for the latest reported date are shown. 
+      COVID-19 as one of the causes. The data are published weekly by the ONS, NRS and NISRA and there is
+      a lag in reporting of at least 11 days because the data are based on death registrations. Only data
+      available for the latest reported date are shown.
 
     download:
       - cumOnsDeathsByRegistrationDate
       - cumOnsDeathsByRegistrationDateRate
 
     tabs:
+
+      - heading: UK
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: overview
+
+        latestBy: cumOnsDeathsByRegistrationDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumOnsDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumOnsDeathsByRegistrationDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
       - heading: Nation
         tabType: table
         params:
@@ -1207,7 +1498,7 @@ cards:
             value: cumOnsDeathsByRegistrationDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population
-      
+
       - heading: Region
         tabType: table
         params:
@@ -1257,35 +1548,183 @@ cards:
             value: cumOnsDeathsByRegistrationDateRate
             type: numeric
             tooltip: Death rate per 100,000 resident population
-  
-      # - heading: Lower tier LA
-      #   tabType: table
-      #   params:
-      #     - key: areaType
-      #       sign: "="
-      #       value: ltla
 
-      #   latestBy: cumOnsDeathsByRegistrationDate
-      #   sortBy: areaName
-      #   fields:
-      #     - label: Area
-      #       value: areaName
-      #       type: string
-      #       tooltip: ""
+      - heading: Lower tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: ltla
 
-      #     - label: Deaths
-      #       value: cumOnsDeathsByRegistrationDate
-      #       type: numeric
-      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+        latestBy: cumOnsDeathsByRegistrationDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
 
-      #     - label: Rate per 100,000 population
-      #       value: cumOnsDeathsByRegistrationDateRate
-      #       type: numeric
-      #       tooltip: Death rate per 100,000 resident population
+          - label: Deaths
+            value: cumOnsDeathsByRegistrationDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
 
-      - heading: About 
+          - label: Rate per 100,000 population
+            value: cumOnsDeathsByRegistrationDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
+      - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
+
+##############################################################################################################################
+# {{ StartDevOnlyBlock }}
+
+  - heading: Deaths with COVID-19 on the death certificate by area
+    cardType: simpleTableStatic
+    fullWidth: false
+    abstract: >
+      Total number of deaths since the start of the pandemic of people whose death certificate mentioned
+      COVID-19 as one of the causes. The data are published weekly by the ONS, NRS and NISRA and there is
+      a lag in reporting of at least 11 days because the data are based on death registrations. Only data
+      available for the latest reported date are shown.
+
+    download:
+      - cumWeeklyNsoDeathsByRegDate
+      - cumWeeklyNsoDeathsByRegDateRate
+
+    tabs:
+      - heading: UK
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: overview
+
+        latestBy: cumWeeklyNsoDeathsByRegDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumWeeklyNsoDeathsByRegDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumWeeklyNsoDeathsByRegDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
+      - heading: Nation
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: nation
+
+        latestBy: cumWeeklyNsoDeathsByRegDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumWeeklyNsoDeathsByRegDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumWeeklyNsoDeathsByRegDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
+      - heading: Region
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: region
+
+        latestBy: cumWeeklyNsoDeathsByRegDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumWeeklyNsoDeathsByRegDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumWeeklyNsoDeathsByRegDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
+      - heading: Upper tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: utla
+
+        latestBy: cumWeeklyNsoDeathsByRegDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumWeeklyNsoDeathsByRegDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumWeeklyNsoDeathsByRegDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
+      - heading: Lower tier LA
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: ltla
+
+        latestBy: cumWeeklyNsoDeathsByRegDate
+        sortBy: areaName
+        fields:
+          - label: Area
+            value: areaName
+            type: string
+            tooltip: ""
+
+          - label: Deaths
+            value: cumWeeklyNsoDeathsByRegDate
+            type: numeric
+            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+          - label: Rate per 100,000 population
+            value: cumWeeklyNsoDeathsByRegDateRate
+            type: numeric
+            tooltip: Death rate per 100,000 resident population
+
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
+
+# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
@@ -1304,10 +1743,10 @@ cards:
           - Wales
 
     fullWidth: true
-    abstract: > 
-      Number of deaths of people who had had a positive test result for COVID-19 and either died within 
-      60 days of the first positive test or have COVID-19 mentioned on their death certificate. Data for the 
-      period ending 5 days before the date when the website was last updated with data for the selected area, 
+    abstract: >
+      Number of deaths of people who had had a positive test result for COVID-19 and either died within
+      60 days of the first positive test or have COVID-19 mentioned on their death certificate. Data for the
+      period ending 5 days before the date when the website was last updated with data for the selected area,
       highlighted in grey, is incomplete.
 
     download:
@@ -1321,11 +1760,11 @@ cards:
       heading: null
       choices:
         - By date of death
-        - By date reported 
-    
+        - By date reported
+
     By date of death:
 
-      tabs: 
+      tabs:
         - heading: Daily
           tabType: chart
           barType: normal
@@ -1336,7 +1775,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -4
                 to: 0
                 colour: 6
@@ -1351,7 +1790,7 @@ cards:
               rollingAverage:
                 window: 7
                 clipEnd: 3
-                  
+
         - heading: Cumulative
           tabType: chart
           fields:
@@ -1361,12 +1800,12 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -4
                 to: 0
                 colour: 6
                 label: "Most recent 5 days (incomplete)"
-                  
+
         - heading: Data
           tabType: table
           fields:
@@ -1385,13 +1824,13 @@ cards:
               type: numeric
               tooltip: Cumulative total number of deaths within 60 days of first positive test by date of death
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
 
     By date reported:
 
-      tabs: 
+      tabs:
         - heading: Daily
           tabType: chart
           barType: normal
@@ -1413,7 +1852,7 @@ cards:
                 window: 7
                 clipEnd: 3
 
-        # cumulative chart not shown as time series only goes back to mid Aug when most deaths had already occurred                  
+        # cumulative chart not shown as time series only goes back to mid Aug when most deaths had already occurred
         # - heading: Cumulative
         #   tabType: chart
         #   fields:
@@ -1423,7 +1862,7 @@ cards:
         #       type: bar
         #       colour: 0
         #       rollingAverage: false
-                  
+
         - heading: Data
           tabType: table
           fields:
@@ -1442,7 +1881,7 @@ cards:
               type: numeric
               tooltip: Cumulative total number of deaths within 60 days of first positive test by date reported
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
 
@@ -1463,10 +1902,10 @@ cards:
           - nation
 
     fullWidth: true
-    abstract: > 
-      Number of deaths of people who had had a positive test result for COVID-19 and either died within 
-      60 days of the first positive test or have COVID-19 mentioned on their death certificate. Data for the 
-      period ending 5 days before the date when the website was last updated with data for the selected area, 
+    abstract: >
+      Number of deaths of people who had had a positive test result for COVID-19 and either died within
+      60 days of the first positive test or have COVID-19 mentioned on their death certificate. Data for the
+      period ending 5 days before the date when the website was last updated with data for the selected area,
       highlighted in grey, is incomplete.
 
     download:
@@ -1475,7 +1914,7 @@ cards:
       - newDeaths60DaysByPublishDate
       - cumDeaths60DaysByPublishDate
 
-    tabs: 
+    tabs:
       - heading: Daily
         tabType: chart
         barType: normal
@@ -1486,7 +1925,7 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
-            highlight: 
+            highlight:
               from: -4
               to: 0
               colour: 6
@@ -1501,7 +1940,7 @@ cards:
             rollingAverage:
               window: 7
               clipEnd: 3
-                  
+
       - heading: Cumulative
         tabType: chart
         fields:
@@ -1511,12 +1950,12 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
-            highlight: 
+            highlight:
               from: -4
               to: 0
               colour: 6
               label: "Most recent 5 days (incomplete)"
-                  
+
       - heading: Data
         tabType: table
         fields:
@@ -1535,7 +1974,7 @@ cards:
             type: numeric
             tooltip: Cumulative total number of deaths within 60 days of first positive test by date of death
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
 
@@ -1553,7 +1992,7 @@ cards:
           - region
         areaName:
           - England
-  
+
     fullWidth: false
     abstract: >
       Total deaths within 60 days of first positive test since the start of the pandemic, by age and sex.
@@ -1562,13 +2001,13 @@ cards:
       - femaleDeaths60Days
       - maleDeaths60Days
 
-    tabs: 
+    tabs:
       - heading: Chart
         tabType: chart
         barType: group
         groupKey: age
-        groupValues: 
-          - value 
+        groupValues:
+          - value
           - rate
 
         requiredMetrics:
@@ -1581,17 +2020,17 @@ cards:
             tooltip: Total number of female deaths within 60 days of first positive test
             type: bar
             colour: 3
-            
+
           - label: Males
             value: maleDeaths60DaysValue
             tooltip: Total number of male deaths within 60 days of first positive test
             type: bar
             colour: 0
-      
+
       - heading: Data
         tabType: table
         groupKey: age
-        groupValues: 
+        groupValues:
           - value
           - rate
 
@@ -1619,13 +2058,13 @@ cards:
             value: maleDeaths60DaysValue
             type: numeric
             tooltip: Total number of male deaths within 60 days of first positive test
-         
+
           - label: Male rate
             value: maleDeaths60DaysRate
             type: numeric
             tooltip: Total number of male deaths within 60 days of first positive test per 100,000 resident population
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardDeaths60DaysAndRatesByAgeAndSex.md
 
@@ -1642,19 +2081,19 @@ cards:
     cardType: ageSexBreakdown
     fullWidth: false
     abstract: >
-      Total deaths within 60 days of first positive test rates by age and sex. There are fewer people in the oldest age 
+      Total deaths within 60 days of first positive test rates by age and sex. There are fewer people in the oldest age
       groups so the rates show the relative impact on different age groups.
 
     download:
       - femaleDeaths60Days
       - maleDeaths60Days
 
-    tabs: 
+    tabs:
       - heading: Chart
         tabType: chart
         barType: group
         groupKey: age
-        groupValues: 
+        groupValues:
           - value
           - rate
 
@@ -1668,17 +2107,17 @@ cards:
             tooltip: Total number of female deaths within 60 days of first positive test per 100,000 resident population
             type: bar
             colour: 3
-            
+
           - label: Males
             value: maleDeaths60DaysRate
             tooltip: Total number of male deaths within 60 days of first positive test per 100,000 resident population
             type: bar
             colour: 0
-      
+
       - heading: Data
         tabType: table
         groupKey: age
-        groupValues: 
+        groupValues:
           - value
           - rate
 
@@ -1706,13 +2145,13 @@ cards:
             value: maleDeaths60DaysValue
             type: numeric
             tooltip: Total number of male deaths within 60 days of first positive test
-          
+
           - label: Male rate
             value: maleDeaths60DaysRate
             type: numeric
             tooltip: Total number of male deaths within 60 days of first positive test per 100,000 resident population
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardDeaths60DaysAndRatesByAgeAndSex.md
 
@@ -1739,131 +2178,3 @@ cards:
 # {{ EndDevOnlyBlock}}
 
 ##############################################################################################################################
-
-# {{ StartDevOnlyBlock}}
-
-  - heading: Weekly deaths with COVID-19 on the death certificate by date registered
-    cardType: chart
-
-    fullWidth: true
-    abstract: > 
-      Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
-      at least 11 days because the data are based on death registrations.
-    
-    download:
-      - newWeeklyNsoDeathsByRegDate
-      - cumWeeklyNsoDeathsByRegDate
-
-    tabs: 
-      - heading: Weekly
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Number of deaths
-            value: newWeeklyNsoDeathsByRegDate
-            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-            type: bar
-            colour: 0
-            rollingAverage: false
-            
-      # - heading: Cumulative
-      #   tabType: chart
-      #   fields:
-      #     - label: Number of deaths
-      #       value: cumWeeklyNsoDeathsByRegDate
-      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-      #       type: bar
-      #       colour: 0
-      #       rollingAverage: false
-            
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Week ending date
-            value: date
-            type: date
-            tooltip: Week ending date
-
-          - label: Weekly registered deaths
-            value: newWeeklyNsoDeathsByRegDate
-            type: numeric
-            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-
-          - label: Cumulative registered deaths
-            value: cumWeeklyNsoDeathsByRegDate
-            type: numeric
-            tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
-
-# {{ EndDevOnlyBlock}}
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-
-  - heading: Weekly care home deaths with COVID-19 on the death certificate by date registered (dev only)
-    cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: > 
-      Number of care home deaths where the death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of 
-      at least 11 days because the data are based on death registrations.
-    
-    download:
-      - newWeeklyNsoCareHomeDeathsByRegDate
-      - cumWeeklyNsoCareHomeDeathsByRegDate
-
-    tabs: 
-      - heading: Weekly
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Number of care home deaths
-            value: newWeeklyNsoCareHomeDeathsByRegDate
-            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-            type: bar
-            colour: 0
-            rollingAverage: false
-            
-      - heading: Cumulative
-        tabType: chart
-        fields:
-          - label: Number of care home deaths
-            value: cumWeeklyNsoCareHomeDeathsByRegDate
-            tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-            type: bar
-            colour: 0
-            rollingAverage: false
-            
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Week ending date
-            value: date
-            type: date
-            tooltip: Week ending date
-
-          - label: Weekly registered care home deaths
-            value: newWeeklyNsoCareHomeDeathsByRegDate
-            type: numeric
-            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-
-          - label: Cumulative registered care home deaths
-            value: cumWeeklyNsoCareHomeDeathsByRegDate
-            type: numeric
-            tooltip: Cumulative total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered 
-
-#      - heading: About 
-#        tabType: metadata
-#        filename: cardMetadata/deaths/cardOnsCareHomeDeathsTimeSeries.md
-
-# {{ EndDevOnlyBlock }}
