@@ -99,7 +99,7 @@ changeLog:
       the impact was minimal due to the small numbers of deaths in either age group. 
       The related charts which were offline while we were fixing the problem are back online.  
 
-- type: *newContent
+  - type: *newContent
     date: "2021-01-11"
     displayBanner: false
     relativeUrl: /details/vaccinations
@@ -108,7 +108,7 @@ changeLog:
       We can now report daily figures for vaccinations to provide a more detailed picture of the progress that is made in this area. 
        
 
-- type: *newFeature
+  - type: *newFeature
     date: "2020-01-06"
     displayBanner: false
     relativeUrl: /easy_read
@@ -118,7 +118,7 @@ changeLog:
       The contents has been reviewed and they are now in HTML which is accessible with most technologies.
       A PDF-version is still there and can be downloaded from the page.  
 
-type: *newContent
+  - type: *newContent
     date: "2020-12-24"
     displayBanner: false
     relativeUrl: /details/vaccinations
