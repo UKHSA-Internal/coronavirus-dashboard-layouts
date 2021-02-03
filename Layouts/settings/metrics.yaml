@@ -1,18 +1,18 @@
 References:
-  types:
+  categories:
     cases: &cases cases
     testing: &testing testing
     vaccination: &vaccination vaccination
     deaths: &deaths deaths
     healthcare: &healthcare healthcare
+    other: &other other
   
-  topics:
+  types:
     cumulative: &cumulative cumulative
     daily: &daily daily
     demographics: &demographics demographics
     eventDate: &eventDate eventDate
     nso: &nso nso
-    other: &other other
     rate: &rate rate
     reportingDate: &reportingDate reportingDate
     rollingRate: &rollingRate rollingRate
