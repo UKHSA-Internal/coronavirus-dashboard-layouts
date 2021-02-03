@@ -1,19 +1,22 @@
 References:
-  cases: &cases cases
-  cumulative: &cumulative cumulative
-  daily: &daily daily
-  deaths: &deaths deaths
-  demographics: &demographics demographics
-  eventDate: &eventDate eventDate
-  healthcare: &healthcare healthcare
-  nso: &nso nso
-  other: &other other
-  rate: &rate rate
-  reportingDate: &reportingDate reportingDate
-  rollingRate: &rollingRate rollingRate
-  testing: &testing testing
-  vaccination: &vaccination vaccination
-  weekly: &weekly weekly
+  types:
+    cases: &cases cases
+    testing: &testing testing
+    vaccination: &vaccination vaccination
+    deaths: &deaths deaths
+    healthcare: &healthcare healthcare
+  
+  topics:
+    cumulative: &cumulative cumulative
+    daily: &daily daily
+    demographics: &demographics demographics
+    eventDate: &eventDate eventDate
+    nso: &nso nso
+    other: &other other
+    rate: &rate rate
+    reportingDate: &reportingDate reportingDate
+    rollingRate: &rollingRate rollingRate
+    weekly: &weekly weekly
 
 
 metrics:
