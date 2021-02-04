@@ -106,7 +106,7 @@ changeLog:
     body: > 
       We are now reporting daily figures for vaccinations as well as weekly figures. 
        
- - type: *newContent
+  - type: *newContent
     date: "2020-01-10"
     displayBanner: false
     relativeUrl: /details/vaccinations
