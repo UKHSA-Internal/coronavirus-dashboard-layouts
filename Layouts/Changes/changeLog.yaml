@@ -78,26 +78,25 @@ colours:
 changeLog:
 
   - type: *newFeature
-    date: "2021-02-03"
+    date: "2021-02-04"
     displayBanner: false
     relativeUrl: /details/whats-new
-    headline: What's new? - page launched 
+    headline: What's new page launched 
     body: > 
       This page is a record of all important changes to the dashboard. 
-      It will show newly added features such as new charts or metrics and 
-      changes and information about the data you see.
-      This page is there to highlight news that are important for most users - it is not a detailed log.
+      It will show new features, such as new charts or data and 
+      changes to the data.
+      This page highlights news that is important to most people. It is not a detailed log.
   
 
   - type: *update
     date: "2021-02-03"
     displayBanner: false
     relativeUrl: /details/deaths
-    headline: Correction to deaths for two age bands
+    headline: Deaths for 0–4 age group corrected
     body: > 
-      We have corrected a technical error which affected the deaths for the age groups 0-4 years and 40-44, albeit  
-      the impact was minimal due to the small numbers of deaths in either age group. 
-      The related charts which were offline while we were fixing the problem are back online.  
+      The number of deaths in the 0–4 age group was showing as higher than it actually is 
+      because of a technical error. This has now been corrected.  
 
   - type: *newContent
     date: "2021-01-11"
@@ -105,37 +104,46 @@ changeLog:
     relativeUrl: /details/vaccinations
     headline: Daily vaccinations added
     body: > 
-      We can now report daily figures for vaccinations to provide a more detailed picture of the progress that is made in this area. 
+      We are now reporting daily figures for vaccinations as well as weekly figures. 
        
+ - type: *newContent
+    date: "2020-01-10"
+    displayBanner: false
+    relativeUrl: /details/vaccinations
+    headline: Vaccinations page launched
+    body: > 
+      The vaccinations topic page is now live. 
+      We know this information is important for people and 
+      will be adding new data as it becomes available.  
 
   - type: *newFeature
-    date: "2020-01-06"
+    date: "2021-01-06"
     displayBanner: false
     relativeUrl: /easy_read
-    headline: New easy-read summary reports
+    headline: Easy-read summary reports
     body: > 
-      Accessibility is important for us and therefore we have improved the easy-read summaries on the dashboard. 
-      The contents has been reviewed and they are now in HTML which is accessible with most technologies.
-      A PDF-version is still there and can be downloaded from the page.  
+      We have made the easy-read summaries more accessible and reviewed the content. 
+      They are now in HTML which is more accessible than the previous Word documents.
+      PDF downloads are still available.  
 
   - type: *newContent
     date: "2020-12-24"
     displayBanner: false
     relativeUrl: /details/vaccinations
-    headline: Vaccinations 
+    headline: First vaccination figures added 
     body: > 
-      The vaccinations topic page is now live. 
-      We know this information is important for people and this is the space where you'll find vaccinations data.
-      We will be adding new data as it becomes available.  
+      On the homepage, you can now see the number of vaccinations given.
+      We will be adding more data as it becomes available.  
 
 
   - type: *changedMetric
     date: "2020-12-11"
     displayBanner: true
     relativeUrl: /details/about-data#patients-in-hospital
-    headline: Alignment of Patients in Hospital figures with NHS England
+    headline: Patients in hospital figures aligned with NHS England
     body: > 
-      The coverage of data for patients in hospital was updated to align with NHS England publications 
-      and as a result the full time series for this item was revised. For details please follow the link. 
+      We have updated the patients in hospital figures on this site to align 
+      them with NHS England publications.
+      
 
 
