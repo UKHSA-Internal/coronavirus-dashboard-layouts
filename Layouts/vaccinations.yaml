@@ -419,9 +419,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people who have received a vaccination for COVID-19, by week in which the vaccine was administered. Data were
-      provided by NHS England for the combined period 8 to 20 December. This is shown in the England and UK values for the week 
-      ending 20 December, so no England or UK values are presented for week ending 13 December. 
+      Number of people who have received a vaccination for COVID-19, by week in which the vaccine was administered. Data are reported weekly, 
+      and include all vaccination events that are entered on the relevant system at the time of extract.
     
     download:
       - weeklyPeopleVaccinatedFirstDoseByVaccinationDate
@@ -669,9 +668,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people who have received a vaccination for COVID-19, by week in which the vaccine was administered. Data were
-      provided by NHS England for the combined period 8 to 20 December. This is shown in the England and UK values for the week 
-      ending 20 December, so no England or UK values are presented for week ending 13 December. 
+      Number of people who have received a vaccination for COVID-19, by week in which the vaccine was administered. Data are reported weekly, 
+      and include all vaccination events that are entered on the relevant system at the time of extract.
     
     download:
       - weeklyPeopleVaccinatedFirstDoseByVaccinationDate
