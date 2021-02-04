@@ -90,7 +90,7 @@ changeLog:
       changes to the data.
       This page highlights news that is important to most people. It is not a detailed log.
 
-    details: >
+    details: |
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pellentesque sagittis 
       ipsum. Morbi accumsan augue quis lectus bibendum, commodo dignissim mauris molestie. 
       In et vehicula ex. Aenean posuere, dolor ut auctor venenatis, mi urna lacinia risus, 
