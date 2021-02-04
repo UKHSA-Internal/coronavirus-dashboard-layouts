@@ -107,7 +107,7 @@ changeLog:
       We are now reporting daily figures for vaccinations as well as weekly figures. 
        
   - type: *newContent
-    date: "2020-01-10"
+    date: "2021-01-10"
     displayBanner: false
     relativeUrl: /details/vaccinations
     headline: Vaccinations page launched
@@ -139,7 +139,7 @@ changeLog:
   - type: *changedMetric
     date: "2020-12-11"
     displayBanner: true
-    relativeUrl: /details/about-data#patients-in-hospital
+    relativeUrl: "/details/about-data#patients-in-hospital"
     headline: Patients in hospital figures aligned with NHS England
     body: > 
       We have updated the patients in hospital figures on this site to align 
