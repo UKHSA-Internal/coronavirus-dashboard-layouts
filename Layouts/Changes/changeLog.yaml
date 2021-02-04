@@ -89,7 +89,20 @@ changeLog:
       It will show new features, such as new charts or data and 
       changes to the data.
       This page highlights news that is important to most people. It is not a detailed log.
-  
+
+    details: >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pellentesque sagittis 
+      ipsum. Morbi accumsan augue quis lectus bibendum, commodo dignissim mauris molestie. 
+      In et vehicula ex. Aenean posuere, dolor ut auctor venenatis, mi urna lacinia risus, 
+      at sodales orci enim a lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Cras at mi ac sapien tincidunt placerat. Phasellus mi ante, rutrum non pellentesque a, 
+      commodo sit amet eros.
+
+      Aliquam laoreet tempor est dapibus ultrices. Suspendisse sed lacus ligula. Nam varius, 
+      erat vel gravida tempor, felis diam malesuada elit, eget sollicitudin dui nisi ac turpis. 
+      Quisque at enim libero. Duis vitae nunc id eros molestie aliquam a dignissim nulla. Nullam 
+      consequat velit diam. Nam semper rhoncus magna a semper. Praesent tincidunt luctus risus 
+      sed vehicula. Aliquam placerat dolor vitae dolor congue, at scelerisque sapien porta.
 
   - type: *update
     date: "2021-02-03"
