@@ -29,8 +29,10 @@
 # `headline`: REQUIRED. A single sentence that describes the change. Must 
 #             not exceed 160 characters.
 # 
-# `body`: REQUIRED. Additional information on the change. Ideally should not 
+# `body`: REQUIRED. Easy-read information on the change. Ideally should not 
 #         exceed two paragraphs. Supports Markdown syntax.
+# 
+# `details`: OPTIONAL. Additional details on the change.
 # =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 
 type:
