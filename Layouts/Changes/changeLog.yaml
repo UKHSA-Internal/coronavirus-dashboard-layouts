@@ -80,7 +80,7 @@ colours:
 changeLog:
 
   - type: *newFeature
-    date: "2021-02-04"
+    date: "2021-02-05"
     displayBanner: false
     relativeUrl: /details/whats-new
     headline: What's new page launched 
@@ -90,28 +90,19 @@ changeLog:
       changes to the data.
       This page highlights news that is important to most people. It is not a detailed log.
 
-    details: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pellentesque sagittis 
-      ipsum. Morbi accumsan augue quis lectus bibendum, commodo dignissim mauris molestie. 
-      In et vehicula ex. Aenean posuere, dolor ut auctor venenatis, mi urna lacinia risus, 
-      at sodales orci enim a lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Cras at mi ac sapien tincidunt placerat. Phasellus mi ante, rutrum non pellentesque a, 
-      commodo sit amet eros.
-
-      Aliquam laoreet tempor est dapibus ultrices. Suspendisse sed lacus ligula. Nam varius, 
-      erat vel gravida tempor, felis diam malesuada elit, eget sollicitudin dui nisi ac turpis. 
-      Quisque at enim libero. Duis vitae nunc id eros molestie aliquam a dignissim nulla. Nullam 
-      consequat velit diam. Nam semper rhoncus magna a semper. Praesent tincidunt luctus risus 
-      sed vehicula. Aliquam placerat dolor vitae dolor congue, at scelerisque sapien porta.
-
   - type: *update
     date: "2021-02-03"
     displayBanner: false
-    relativeUrl: /details/deaths
-    headline: Deaths for 0–4 age group corrected
+    relativeUrl: "/details/deaths?areaType=nation%26areaName=England#card-deaths_within_28_days_of_positive_test_by_date_of_death_age_demographics"
+    headline: England deaths within 28 days of a positive test for 0–4 year olds corrected
     body: > 
-      The number of deaths in the 0–4 age group was showing as higher than it actually is 
-      because of a technical error. This has now been corrected.  
+      Until 1 February 2021, the numbers of deaths within 28 days of a positive test
+      in the 0–4 age group in England were showing as higher than they
+      actually were because of a data error. This was corrected on 3 February 2021. 
+    details: |
+      On 2 February 2021 the breakdown of deaths by age for England was not included 
+      on the website. This issue only affected this single age group, the total number of 
+      deaths did not change. 
 
   - type: *newContent
     date: "2021-01-11"
@@ -119,7 +110,8 @@ changeLog:
     relativeUrl: /details/vaccinations
     headline: Daily vaccinations added
     body: > 
-      We are now reporting daily figures for vaccinations as well as weekly figures. 
+      We are now reporting daily figures for first and second dose vaccinations at 
+      UK and nation level as well as weekly figures. 
        
   - type: *newContent
     date: "2021-01-10"
@@ -128,8 +120,8 @@ changeLog:
     headline: Vaccinations page launched
     body: > 
       The vaccinations topic page is now live. 
-      We know this information is important for people and 
-      will be adding new data as it becomes available.  
+      We have moved the available vaccinations data from the healthcare page
+      to a separate vaccinations page.  
 
   - type: *newFeature
     date: "2021-01-06"
@@ -138,17 +130,16 @@ changeLog:
     headline: Easy-read summary reports
     body: > 
       We have made the easy-read summaries more accessible and reviewed the content. 
-      They are now in HTML which is more accessible than the previous Word documents.
-      PDF downloads are still available.  
+      They are now in HTML format. PDF downloads are still available.  
 
   - type: *newContent
     date: "2020-12-24"
     displayBanner: false
     relativeUrl: /details/vaccinations
-    headline: First vaccination figures added 
+    headline: Weekly vaccination figures added 
     body: > 
-      On the homepage, you can now see the number of vaccinations given.
-      We will be adding more data as it becomes available.  
+      We are now reporting the number of first dose vaccinations given each week 
+      at UK and nation level.  
 
 
   - type: *changedMetric
@@ -158,7 +149,13 @@ changeLog:
     headline: Patients in hospital figures aligned with NHS England
     body: > 
       We have updated the patients in hospital figures on this site to align 
-      them with NHS England publications.
-      
+      them with NHS England publications and the other measures of healthcare 
+      on the dashboard. UK totals and historic data has been revised in line 
+      with this change.
+    details: |
+      Previously the number of patients in hospital had only included patients 
+      in acute trusts with a type 1 A&E department, this has now been extended 
+      to include all acute trusts, mental health trusts and independent sector 
+      providers.    
 
 
