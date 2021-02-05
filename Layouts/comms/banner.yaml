@@ -1,3 +1,12 @@
+- appearByUpdate: "2021-02-02"
+  disappearByUpdate: "2021-02-09"
+  body: >
+    Complete our [quick survey](https://docs.google.com/forms/d/e/1FAIpQLSc4GnaNWayFyBJxnoGHOnL1Igwo6KsOtDBAQYBN6uxWCDvH7Q/viewform) to help us improve this website.
+    
+
+
+# {{ StartDevOnlyBlock }}
+
 - appearByUpdate: "2021-02-05"
   disappearByUpdate: "2021-02-06"  
   displayUri: 
@@ -8,15 +17,7 @@
     recent figures are incorrect. We are working to fix the issue and will publish 
     corrected figures as soon as possible.
 
-
-- appearByUpdate: "2021-02-02"
-  disappearByUpdate: "2021-02-09"
-  body: >
-    Complete our [quick survey](https://docs.google.com/forms/d/e/1FAIpQLSc4GnaNWayFyBJxnoGHOnL1Igwo6KsOtDBAQYBN6uxWCDvH7Q/viewform) to help us improve this website.
     
-
-
-# {{ StartDevOnlyBlock }}
 - appearByUpdate: "2021-01-29"
   disappearByUpdate: "2021-01-30"
   body: >
