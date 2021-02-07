@@ -92,6 +92,16 @@ changeLog:
       might have a small impact on the total number of deaths reported on that date. This 
       delay will be reflected on the numbers published on 9 February 2021. 
 
+  - type: *dataIssue
+    date: "2021-02-07"
+    displayBanner: false
+    relativeUrl: /details/cases?areaType=nation&areaName=Scotland
+    headline: Incomplete number of cases for Scotland
+    body: > 
+      An issue was identified with data submissions for cases in Scotland overnight which 
+      affected the completeness of the newly reported. Any backlog is reported in next 
+      publication.
+      
   - type: *newFeature
     date: "2021-02-05"
     displayBanner: false
