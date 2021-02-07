@@ -80,7 +80,17 @@ colours:
 changeLog:
 
   - type: *newFeature
-    date: "2021-02-05"
+    date: "2021-02-08"
+    displayBanner: false
+    relativeUrl: /details/deaths
+    headline: Artificially low death figures for Tuesday due to late submission 
+    body: > 
+      Due to a delay in the submission of death data from one of the contributors
+      the death figures which will be published on Tuesday, 9 February 2021,  
+      may be artificially low. 
+
+  - type: *newFeature
+    date: "2021-02-08"
     displayBanner: false
     relativeUrl: /details/whats-new
     headline: What's new page launched 
@@ -106,21 +116,21 @@ changeLog:
       This issue only affected this single age group, the total number of 
       deaths is unaffected.
       
-      # Here starts the testing 
-      ## Heading 2 
-      ### Heading 3
-      on the website.**On 2 February 2021**
-      1. On 2 February 2021 the breakdown of deaths by age for England was not included 
-      2. on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
-      3. on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
-      ### Heading 3
-      on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
-      on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
-      ### Heading 3
-      [link on the website](https://coronavirus.data.gov.uk/search?postcode=rg28+7bj).On 2 February 2021 the breakdown of deaths by age for England was not included 
-      
-      on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
-      on the website.On 2 February 2021 the breakdown of deaths by age for England was not included    
+    #  # Here starts the testing 
+    #  ## Heading 2 
+    #  ### Heading 3
+    #  on the website.**On 2 February 2021**
+    #  1. On 2 February 2021 the breakdown of deaths by age for England was not included 
+    #  2. on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
+    #  3. on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
+    #  ### Heading 3
+    #  on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
+    #  on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
+    #  ### Heading 3
+    #  [link on the website](https://coronavirus.data.gov.uk/search?postcode=rg28+7bj).On 2 February 2021 the breakdown of deaths by age for England was not included 
+    #  
+    #  on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
+    #  on the website.On 2 February 2021 the breakdown of deaths by age for England was not included    
    
   
   - type: *newContent
@@ -158,8 +168,48 @@ changeLog:
     headline: Weekly vaccination figures added 
     body: > 
       We are now reporting the number of first dose vaccinations given each week 
-      at UK and nation level.  
+      at UK and nation level. 
 
+  - type: *changedMetric
+    date: "2020-12-22"
+    displayBanner: true
+    relativeUrl: "https://coronavirus.data.gov.uk/details/deaths?areaType=nation%26areaName=England#card-deaths_within_28_days_of_positive_test_by_date_of_death_age_demographics"
+    headline: Deaths by age group in England added
+    body: > 
+      We have added a heatmap of rates of new cases by five-year age group, 
+      for England and areas within England. Rates for those aged 
+      under 60 and 60 and over have also been added.
+
+  - type: *changedMetric
+    date: "2020-12-17"
+    displayBanner: true
+    relativeUrl: "https://coronavirus.data.gov.uk/details/healthcare?areaType=overview&areaName=United%20Kingdom"
+    headline: Addition of data at NHS Trust level in England
+    body: > 
+      The healthcare page now includes data for English NHS Trusts. 
+      Trust data will be updated every Thursday, with data for each 
+      of the previous seven days. 
+
+  - type: *changedMetric
+    date: "2020-12-16"
+    displayBanner: true
+    relativeUrl: "https://coronavirus.data.gov.uk/details/testing?areaType=nation%26areaName=England#card-weekly_number_of_people_receiving_a_pcr_test_and_positivity"
+    headline: Addition of positivity data and people tested, for PCR tests in England
+    body: > 
+      We have added the number of people who received a PCR test in 
+      the previous 7 days, and the percentage of those who had at 
+      least one positive COVID-19 PCR test result in the same 7 days 
+      for England and areas within England.
+
+  - type: *changedMetric
+    date: "2020-12-14"
+    displayBanner: true
+    relativeUrl: "https://coronavirus.data.gov.uk/details/cases?areaType=nation%26areaName=England#card-cases_by_specimen_date_age_demographics"
+    headline: Rate of new cases added for age groups in England
+    body: > 
+      We have added a heatmap of rates of new cases by five-year age group, 
+      for England and areas within England. Rates for those aged under 60 
+      and 60 and over have also been added.     
 
   - type: *changedMetric
     date: "2020-12-11"
@@ -175,6 +225,17 @@ changeLog:
       Previously the number of patients in hospital had only included patients 
       in acute trusts with a type 1 A&E department, this has now been extended 
       to include all acute trusts, mental health trusts and independent sector 
-      providers.    
+      providers.
+
+  
+  - type: *changedMetric
+    date: "2020-12-03"
+    displayBanner: true
+    relativeUrl: "https://coronavirus.data.gov.uk/details/cases?areaType=overview%26areaName=United%20Kingdom#card-recent_7-day_case_rates_by_specimen_date"
+    headline: Addition of case rates and percentage change in rates
+    body: > 
+      We have added rates of new cases in the previous seven days, 
+      along with the percentage change in rate compared to the previous 
+      non-overlapping seven-day period.     
 
 
