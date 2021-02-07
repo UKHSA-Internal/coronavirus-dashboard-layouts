@@ -99,7 +99,7 @@ changeLog:
     headline: Incomplete number of cases for Scotland
     body: > 
       An issue was identified with data submissions for cases in Scotland overnight which 
-      affected the completeness of the newly reported. Any backlog is reported in next 
+      affected the completeness of the newly reported. Any backlog is reported in the next 
       publication.
       
   - type: *newFeature
