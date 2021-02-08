@@ -41,6 +41,7 @@ type:
   changedMetric: &changedMetric "CHANGE TO METRIC"
   update:        &update        "UPDATE"
   newContent:    &newContent    "NEW CONTENT"
+  dataIssue:     &dataIssue     "DATA ISSUE"
 
 
 colours:
@@ -64,8 +65,9 @@ colours:
       background: "#DBD5E9"
       text: "#3D2375"
 
-    #     background: "#EEEFEF"
-    #     text: "#383F43"
+    - type: *dataIssue
+      background: "#EEEFEF"
+      text: "#383F43"
 
     #     background: "#D2E2F1"
     #     text: "#144E81"
@@ -79,6 +81,27 @@ colours:
 
 changeLog:
 
+  - type: *dataIssue
+    date: "2021-02-08"
+    displayBanner: false
+    relativeUrl: /details/deaths
+    headline: England deaths within 28 days of positive test affected by delay 
+    body: > 
+      Daily counts of deaths in England rely on multiple data sources. On 6 February 2021 
+      there was a delay in receiving this information from one of these sources. This 
+      might have a small impact on the total number of deaths reported on that date. This 
+      delay will be reflected on the numbers published on 9 February 2021. 
+
+  - type: *dataIssue
+    date: "2021-02-07"
+    displayBanner: false
+    relativeUrl: /details/cases?areaType=nation&areaName=Scotland
+    headline: Incomplete number of cases for Scotland
+    body: > 
+      An issue was identified with data submissions for cases in Scotland overnight which 
+      affected the completeness of the newly reported. Any backlog is reported in the next 
+      publication.
+      
   - type: *newFeature
     date: "2021-02-08"
     displayBanner: false

@@ -6,6 +6,18 @@
 
 
 # {{ StartDevOnlyBlock }}
+
+- appearByUpdate: "2021-02-05"
+  disappearByUpdate: "2021-02-06"  
+  displayUri: 
+    - /
+    - /details/healthcare
+  body: >
+    Due to an issue with the processing of healthcare data for England, the most 
+    recent figures are incorrect. We are working to fix the issue and will publish 
+    corrected figures as soon as possible.
+
+    
 - appearByUpdate: "2021-01-29"
   disappearByUpdate: "2021-01-30"
   body: >
