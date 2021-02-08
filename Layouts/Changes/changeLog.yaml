@@ -243,7 +243,7 @@ changeLog:
   - type: *changedMetric
     date: "2020-12-03"
     displayBanner: false
-    relativeUrl: "https://coronavirus.data.gov.uk/details/cases?areaType=overview%26areaName=United%20Kingdom#card-recent_7-day_case_rates_by_specimen_date"
+    relativeUrl: "/details/cases?areaType=overview%26areaName=United%20Kingdom#card-recent_7-day_case_rates_by_specimen_date"
     headline: Addition of case rates and percentage change in rates
     body: > 
       We have added rates of new cases in the previous seven days, 
