@@ -94,7 +94,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-02-08"
     displayBanner: false
-    relativeUrl: /details/deaths
+    relativeUrl: /details/deaths?areaType=nation&areaName=England
     headline: England deaths within 28 days of positive test affected by delay 
     body: > 
       Daily counts of deaths in England rely on multiple data sources. On 6 February 2021 
@@ -148,7 +148,7 @@ changeLog:
   - type: *newContent
     date: "2021-01-11"
     displayBanner: false
-    relativeUrl: /details/vaccinations
+    relativeUrl: "/details/vaccinations#card-people_who_have_received_vaccinations_by_report_date_daily"
     headline: Daily vaccinations added
     body: > 
       We are now reporting daily figures for first and second dose vaccinations at 
@@ -176,7 +176,7 @@ changeLog:
   - type: *newContent
     date: "2020-12-24"
     displayBanner: false
-    relativeUrl: /details/vaccinations
+    relativeUrl: "/details/vaccinations#card-people_who_have_received_vaccinations_by_vaccination_date_weekly"
     headline: Weekly vaccination figures added 
     body: > 
       We are now reporting the number of first dose vaccinations given each week 
@@ -185,7 +185,7 @@ changeLog:
   - type: *changedMetric
     date: "2020-12-22"
     displayBanner: true
-    relativeUrl: "https://coronavirus.data.gov.uk/details/deaths?areaType=nation%26areaName=England#card-deaths_within_28_days_of_positive_test_by_date_of_death_age_demographics"
+    relativeUrl: "/details/deaths?areaType=nation%26areaName=England#card-deaths_within_28_days_of_positive_test_by_date_of_death_age_demographics"
     headline: Deaths by age group in England added
     body: > 
       We have added a heatmap of rates of new cases by five-year age group, 
@@ -195,7 +195,7 @@ changeLog:
   - type: *changedMetric
     date: "2020-12-17"
     displayBanner: true
-    relativeUrl: "https://coronavirus.data.gov.uk/details/healthcare?areaType=overview&areaName=United%20Kingdom"
+    relativeUrl: /details/healthcare?areaType=overview&areaName=United%20Kingdom
     headline: Addition of data at NHS Trust level in England
     body: > 
       The healthcare page now includes data for English NHS Trusts. 
@@ -204,8 +204,8 @@ changeLog:
 
   - type: *changedMetric
     date: "2020-12-16"
-    displayBanner: true
-    relativeUrl: "https://coronavirus.data.gov.uk/details/testing?areaType=nation%26areaName=England#card-weekly_number_of_people_receiving_a_pcr_test_and_positivity"
+    displayBanner: false
+    relativeUrl: "/details/testing?areaType=nation%26areaName=England#card-weekly_number_of_people_receiving_a_pcr_test_and_positivity"
     headline: Addition of positivity data and people tested, for PCR tests in England
     body: > 
       We have added the number of people who received a PCR test in 
@@ -215,8 +215,8 @@ changeLog:
 
   - type: *changedMetric
     date: "2020-12-14"
-    displayBanner: true
-    relativeUrl: "https://coronavirus.data.gov.uk/details/cases?areaType=nation%26areaName=England#card-cases_by_specimen_date_age_demographics"
+    displayBanner: false
+    relativeUrl: "/details/cases?areaType=nation%26areaName=England#card-cases_by_specimen_date_age_demographics"
     headline: Rate of new cases added for age groups in England
     body: > 
       We have added a heatmap of rates of new cases by five-year age group, 
@@ -225,7 +225,7 @@ changeLog:
 
   - type: *changedMetric
     date: "2020-12-11"
-    displayBanner: true
+    displayBanner: false
     relativeUrl: "/details/about-data#patients-in-hospital"
     headline: Patients in hospital figures aligned with NHS England
     body: > 
@@ -242,7 +242,7 @@ changeLog:
   
   - type: *changedMetric
     date: "2020-12-03"
-    displayBanner: true
+    displayBanner: false
     relativeUrl: "https://coronavirus.data.gov.uk/details/cases?areaType=overview%26areaName=United%20Kingdom#card-recent_7-day_case_rates_by_specimen_date"
     headline: Addition of case rates and percentage change in rates
     body: > 
