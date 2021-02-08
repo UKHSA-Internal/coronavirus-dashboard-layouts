@@ -80,6 +80,16 @@ colours:
 
 
 changeLog:
+  - type: *newFeature
+    date: "2021-02-08"
+    displayBanner: false
+    relativeUrl: /details/whats-new
+    headline: What's new page launched 
+    body: > 
+      This page is a record of all important changes to the dashboard. 
+      It will show new features, such as new charts or data and 
+      changes to the data.
+      This page highlights news that is important to most people. It is not a detailed log.
 
   - type: *dataIssue
     date: "2021-02-08"
@@ -102,27 +112,6 @@ changeLog:
       affected the completeness of the newly reported. Any backlog is reported in the next 
       publication.
       
-  - type: *newFeature
-    date: "2021-02-08"
-    displayBanner: false
-    relativeUrl: /details/deaths
-    headline: Artificially low death figures for Tuesday due to late submission 
-    body: > 
-      Due to a delay in the submission of death data from one of the contributors
-      the death figures which will be published on Tuesday, 9 February 2021,  
-      may be artificially low. 
-
-  - type: *newFeature
-    date: "2021-02-08"
-    displayBanner: false
-    relativeUrl: /details/whats-new
-    headline: What's new page launched 
-    body: > 
-      This page is a record of all important changes to the dashboard. 
-      It will show new features, such as new charts or data and 
-      changes to the data.
-      This page highlights news that is important to most people. It is not a detailed log.
-
   - type: *update
     date: "2021-02-03"
     displayBanner: false
