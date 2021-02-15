@@ -23,7 +23,7 @@ metrics:
 
   alertLevel:
     PUBLISHED: true
-    abstract: null
+    abstract: Alert level
     availability:
       ltla: ES
     dateAdded: null
@@ -39,7 +39,7 @@ metrics:
 
   capacityPillarFour:
     PUBLISHED: true
-    abstract: null
+    abstract: Pillar four testing capacity
     availability:
       overview: K
     dateAdded: null
@@ -54,7 +54,7 @@ metrics:
 
   capacityPillarOne:
     PUBLISHED: true
-    abstract: null
+    abstract: Pillar one testing capacity
     availability:
       overview: K
     dateAdded: null
@@ -69,7 +69,7 @@ metrics:
 
   capacityPillarOneTwo:
     PUBLISHED: true
-    abstract: null
+    abstract: Pillar one and two testing capacity
     availability:
       overview: K
     dateAdded: null
@@ -84,7 +84,7 @@ metrics:
 
   capacityPillarThree:
     PUBLISHED: true
-    abstract: null
+    abstract: Pillar three testing capacity
     availability:
       overview: K
     dateAdded: null
@@ -99,7 +99,7 @@ metrics:
 
   capacityPillarTwo:
     PUBLISHED: true
-    abstract: null
+    abstract: Pillar two testing capacity
     availability:
       overview: K
     dateAdded: null
@@ -114,7 +114,7 @@ metrics:
 
   changeInCumCasesBySpecimenDate:
     PUBLISHED: false
-    abstract: null
+    abstract: Change in cumulative cases by specimen date
     availability:
       nation: E
       region: E
@@ -132,7 +132,7 @@ metrics:
 
   changeInNewCasesBySpecimenDate:
     PUBLISHED: true
-    abstract: null
+    abstract: Change in new cases by specimen date
     availability:
       nation: E
       region: E
@@ -150,7 +150,7 @@ metrics:
 
   covidOccupiedMVBeds:
     PUBLISHED: true
-    abstract: null
+    abstract: Patients in mechanical ventilation beds
     availability:
       nation: EWSN
       nhsRegion: E
@@ -172,7 +172,7 @@ metrics:
 
   cumAdmissions:
     PUBLISHED: true
-    abstract: null
+    abstract: Cumulative number of patients admitted to hospital
     availability:
       nation: EWSN
       nhsRegion: E
@@ -196,7 +196,7 @@ metrics:
 
   cumAdmissionsByAge:
     PUBLISHED: true
-    abstract: null
+    abstract: Cumulative number of patients admitted to hospital by age
     availability:
       nation: E
       nhsRegion: E
@@ -215,7 +215,7 @@ metrics:
 
   cumAdmissionsRate:
     PUBLISHED: false
-    abstract: null
+    abstract: Rate of cumulative number of patients admitted to hospital per 100,000 population
     availability:
       nation: EWSN
       nhsRegion: E
@@ -239,7 +239,7 @@ metrics:
 
   cumAntibodyTestsByPublishDate:
     PUBLISHED: true
-    abstract: null
+    abstract: Cumulative number of antibody tests conducted by date reported
     availability:
       nation: E
       overview: K
@@ -258,7 +258,7 @@ metrics:
 
   cumCasesByPublishDate:
     PUBLISHED: true
-    abstract: null
+    abstract: Cumulative number of cases by date reported
     availability:
       ltla: EWSN
       nation: EWSN
@@ -283,7 +283,7 @@ metrics:
 
   cumCasesByPublishDateRate:
     PUBLISHED: true
-    abstract: null
+    abstract: Rate of cumulative number of cases per 100,000 population by date reported
     availability:
       ltla: EWSN
       nation: EWSN
@@ -309,7 +309,7 @@ metrics:
 
   cumCasesBySpecimenDate:
     PUBLISHED: true
-    abstract: null
+    abstract: Cumulative number of cases by specimen date
     availability:
       ltla: EWSN
       nation: EWSN
@@ -334,7 +334,7 @@ metrics:
 
   cumCasesBySpecimenDateRate:
     PUBLISHED: true
-    abstract: null
+    abstract: Rate of cumulative number of cases per 100,000 population by specimen date
     availability:
       ltla: EWSN
       nation: EWSN
