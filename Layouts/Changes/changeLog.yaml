@@ -80,6 +80,15 @@ colours:
 
 
 changeLog:
+  - type: *newFeature
+    date: "2021-02-08"
+    displayBanner: false
+    relativeUrl: /
+    headline: Clicking on the summary page opens related topics 
+    body: > 
+      The line charts only give a rough illustration of the developments. By clicking on the 
+      chart area you can open the related topics page for more details and insights.  
+
   - type: *dataIssue
     date: "2021-02-15"
     displayBanner: false
@@ -89,6 +98,15 @@ changeLog:
       Due to technical issues, NHS England were not able to produce an 
       update to hospital data for publication on the dashboard on 15 Feb 2021.  
       Data will next be updated on 16 February. 
+
+  - type: *newFeature
+    date: "2021-02-08"
+    displayBanner: false
+    relativeUrl: /
+    headline: Summary page graphs are now clickable 
+    body: > 
+      The graphs on the homepage only give a summary view of the changes over time. Click on the 
+      line charts to open the related topics page for more details and insights.
 
   - type: *newFeature
     date: "2021-02-08"
