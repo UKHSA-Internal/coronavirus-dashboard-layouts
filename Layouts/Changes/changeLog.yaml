@@ -93,6 +93,15 @@ changeLog:
   - type: *newFeature
     date: "2021-02-08"
     displayBanner: false
+    relativeUrl: /
+    headline: Summary page graphs are now clickable 
+    body: > 
+      The graphs on the homepage only give a summary view of the changes over time. Click on them 
+      to open the related topics page for more details and insights.
+
+  - type: *newFeature
+    date: "2021-02-08"
+    displayBanner: false
     relativeUrl: /details/whats-new
     headline: What's new page launched 
     body: > 
