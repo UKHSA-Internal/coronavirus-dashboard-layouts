@@ -26,7 +26,7 @@ cards:
       Number of people who have received a vaccination for COVID-19, by day on which the vaccine was reported. 
       Data are reported daily, and include all vaccination events that are entered on the relevant system at 
       the time of extract. This includes reported vaccines that were administered up to and including the date 
-      shown. Data for Scotland and Wales were not available for 15 and 16 January 2021, and are shown as zeros. 
+      shown. Data for Wales were not available for 15 and 16 January 2021, and are shown as zeros. 
       Their newly reported numbers for 17 January 2021 include vaccinations recorded in the period 15 to 17 January 2021.
     
     download:
