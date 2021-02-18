@@ -81,6 +81,14 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-02-18"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations?areaType=nation%26areaName=Scotland#card-people_who_have_received_vaccinations_by_report_date_daily"
+    headline: Vaccinations data added for 15 and 16 January for Scotland 
+    body: > 
+      These data were previously unavailable. 
+
+  - type: *dataIssue
     date: "2021-02-15"
     displayBanner: false
     relativeUrl: /details/healthcare
