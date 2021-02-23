@@ -81,6 +81,15 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-02-22"
+    displayBanner: false
+    relativeUrl: /details/vaccinations?areaType=nation&areaName=Northern%20Ireland
+    headline: Vaccination numbers for Northern Ireland corrected 
+    body: > 
+      We were notified of an error in the reported vaccination figure for second doses in Northern Ireland.
+      This was corrected and results in a negative daily change on the following day.
+
+  - type: *dataIssue
     date: "2021-02-18"
     displayBanner: false
     relativeUrl: "/details/vaccinations?areaType=nation%26areaName=Scotland#card-people_who_have_received_vaccinations_by_report_date_daily"
