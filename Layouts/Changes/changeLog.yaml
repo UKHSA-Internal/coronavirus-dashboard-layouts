@@ -81,6 +81,16 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-02-24"
+    displayBanner: false
+    relativeUrl: /details/healthcare?areaType=nation&areaName=England
+    headline: No update to England hospital data 
+    body: > 
+      Due to technical issues, NHS England were not able to produce an update to 
+      hospital data for publication on the dashboard. Data will be updated in the 
+      next release.
+
+  - type: *dataIssue
     date: "2021-02-22"
     displayBanner: false
     relativeUrl: /details/vaccinations?areaType=nation&areaName=Northern%20Ireland
