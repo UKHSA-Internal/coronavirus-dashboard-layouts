@@ -81,14 +81,45 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-02-25"
+
+    displayBanner: false
+    relativeUrl: "/details/deaths?areaType=ltla%26areaName=Bedford#card-weekly_deaths_with_covid-19_on_the_death_certificate_by_date_registered"
+    headline: Issue with weekly cumulative registered deaths 
+    body: > 
+      Thank you to the users who notified us of a problem with the cumulative weekly numbers of deaths for local authorities in Great Britain.
+      The issue is now fixed.
+
+  - type: *dataIssue
+    date: "2021-02-25"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations#card-people_who_have_received_vaccinations_by_vaccination_date_weekly"
+    headline: Re-scheduled release of weekly vaccination figures 
+    body: > 
+      Due to a change in schedule for the release of weekly vaccination figures 
+      from Scotland the weekly updates of the UK figures will also have to be re-scheduled.
+      We expect an update tomorrow. 
+
+  - type: *dataIssue
+    date: "2021-02-25"
+    displayBanner: true
+    relativeUrl: "/details/healthcare?areaType=nhstrust&areaName=Ashford%20and%20St%20Peter%27s%20Hospitals%20NHS%20Foundation%20Trust"
+    headline: No update to hospital data in England 
+    body: > 
+      Due to technical issues, NHS England were not able to produce an update to  data for 
+      individual hospitals for publication on the dashboard. Data will  be released in the 
+      next regular Thursday update at the latest. In the meantime, the data  are available 
+      in spreadsheet format from [NHS England](https://www.england.nhs.uk/statistics/statistical-work-areas/covid-19-hospital-activity/).
+
+
+  - type: *dataIssue
     date: "2021-02-24"
     displayBanner: false
     relativeUrl: /details/healthcare?areaType=nation&areaName=England
     headline: No update to England hospital data 
     body: > 
-      Due to technical issues, NHS England were not able to produce an update to 
-      hospital data for publication on the dashboard. Data will be updated in the 
-      next release.
+      Due to technical issues, NHS England were not able to produce an update to hospital 
+      data for publication on the dashboard. Data will be updated in the next release.
 
   - type: *dataIssue
     date: "2021-02-22"
