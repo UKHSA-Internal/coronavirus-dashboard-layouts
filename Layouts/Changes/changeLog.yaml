@@ -102,7 +102,7 @@ changeLog:
 
   - type: *dataIssue
     date: "2021-02-25"
-    displayBanner: false
+    displayBanner: true
     relativeUrl: "/details/healthcare?areaType=nhstrust&areaName=Ashford%20and%20St%20Peter%27s%20Hospitals%20NHS%20Foundation%20Trust"
     headline: No update to hospital data in England 
     body: > 
