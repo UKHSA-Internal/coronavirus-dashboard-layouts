@@ -83,7 +83,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-02-27"
     displayBanner: false
-    headline: Issue with deaths following a positive at local authority and region levels in England 
+    headline: Issue with deaths following a positive test at local authority and region levels in England 
     body: >
       Owing to a technical difficulty, it has not been possible to assign lower and upper tier local 
       authorities and regions to 254 deaths within 28 days of a positive test and 457 deaths within 
