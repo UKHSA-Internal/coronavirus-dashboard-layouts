@@ -81,8 +81,16 @@ colours:
 
 changeLog:
   - type: *dataIssue
-    date: "2021-02-25"
+    date: "2021-02-27"
+    displayBanner: false
+    headline: Issue with deaths following a positive test at local authority and region levels in England 
+    body: >
+      Owing to a technical difficulty, it has not been possible to assign lower and upper tier local 
+      authorities and regions to 254 deaths within 28 days of a positive test and 457 deaths within 
+      60 days of a positive test in England. This will be resolved in the next release.
 
+  - type: *dataIssue
+    date: "2021-02-25"
     displayBanner: false
     relativeUrl: "/details/deaths?areaType=ltla%26areaName=Bedford#card-weekly_deaths_with_covid-19_on_the_death_certificate_by_date_registered"
     headline: Issue with weekly cumulative registered deaths 
