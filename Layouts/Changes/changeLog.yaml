@@ -88,6 +88,13 @@ changeLog:
       Cases and deaths data were not available for Scotland at time of processing for the dashboard. This will be updated in the next release.
 
   - type: *dataIssue
+    date: "2021-03-01"
+    displayBanner: false
+    headline: No update to Scotland cases by specimen date and deaths by date of death 
+    body: >
+      Cases and deaths data were not available for Scotland at time of processing for the dashboard. This will be updated in the next release.
+
+  - type: *dataIssue
     date: "2021-02-27"
     displayBanner: false
     headline: Issue with deaths following a positive test at local authority and region levels in England 
