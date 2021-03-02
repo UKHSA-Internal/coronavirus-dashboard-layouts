@@ -83,7 +83,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-03-02"
     displayBanner: false
-    headline: Added historical cases affecting today's figures
+    headline: Addition of historical cases
     relativeUrl: /details/cases
     body: >
       350 cases have been added to the UK and England totals due to a previous failure to report the cases at source. This increases newly reported cases in the South East of England mainly Tandridge, Reigate and Banstead, Crawley, Horsham, Mid Sussex and Mole Valley.
