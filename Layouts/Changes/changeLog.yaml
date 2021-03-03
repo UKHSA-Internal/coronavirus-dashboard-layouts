@@ -81,12 +81,26 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-03-03"
+    displayBanner: true
+    headline: 172 deaths within 28 days of a positive test added to Scotland and UK totals
+    relativeUrl: /details/deaths
+    body: >
+      Public Health Scotland has improved its method for linking daily confirmed 
+      COVID-19 cases with deaths reported through the National Records of Scotland. 
+      As a result, an extra 172 deaths were identified as having occurred 
+      within 28 days of a first positive test result since the start of the outbreak. 
+      These have now been added to the cumulative totals for Scotland and the UK.
+
+  - type: *dataIssue
     date: "2021-03-02"
     displayBanner: false
-    headline: Addition of historical cases
+    headline: Addition of his
+    torical cases
     relativeUrl: /details/cases
     body: >
-      350 cases have been added to the UK and England totals due to a previous failure to report the cases at source. This increases newly reported cases in the South East of England mainly Tandridge, Reigate and Banstead, Crawley, Horsham, Mid Sussex and Mole Valley.
+      350 cases have been added to the UK and England totals due to a previous failure to report 
+      the cases at source. This increases newly reported cases in the South East of England mainly Tandridge, Reigate and Banstead, Crawley, Horsham, Mid Sussex and Mole Valley.
 
   - type: *dataIssue
     date: "2021-03-01"
