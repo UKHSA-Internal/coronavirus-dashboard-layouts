@@ -81,6 +81,19 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-03-04"
+    displayBanner: false
+    headline: Adjustments to deaths within 28 days of a positive test for Wales, Scotland and UK totals
+    relativeUrl: /details/deaths
+    body: >
+      Following clinical validation work in Wales, three individuals previously
+      reported as having died within 28 days of a positive test result have been 
+      removed from the figures. Public Health Scotland identified an additional 
+      3 recently registered deaths within 28 days of a positive test result.
+      The total number of deaths in Wales, Scotland and the United Kingdom 
+      have been adjusted accordingly.
+      
+  - type: *dataIssue
     date: "2021-03-03"
     displayBanner: true
     headline: 172 deaths within 28 days of a positive test added to Scotland and UK totals
