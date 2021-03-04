@@ -81,6 +81,16 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-03-04"
+    displayBanner: false
+    headline: 3 deaths within 28 days of a positive test removed from Wales and UK totals
+    relativeUrl: /details/deaths
+    body: >
+      Following clinical validation work in Wales, three individuals previously reported 
+      as having died within 28 days of a positive test result have been removed from the figures. 
+      The total number of deaths in Wales and the United Kingdom have been adjusted accordingly. 
+
+  - type: *dataIssue
     date: "2021-03-03"
     displayBanner: true
     headline: 172 deaths within 28 days of a positive test added to Scotland and UK totals
