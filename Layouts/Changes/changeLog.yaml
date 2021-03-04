@@ -82,7 +82,7 @@ colours:
 changeLog:
   - type: *dataIssue
     date: "2021-03-04"
-    displayBanner: false
+    displayBanner: true
     headline: Adjustments to deaths within 28 days of a positive test for Wales, Scotland and UK totals
     relativeUrl: /details/deaths
     body: >
