@@ -111,7 +111,7 @@ cards:
               fill: false
               rollingAverage:
                 window: 7
-                clipEnd: 3 #no of days to exclude for incomplete data
+                clipEnd: 4 #no of days to exclude for incomplete data
 
         - heading: Cumulative
           tabType: chart
@@ -270,7 +270,7 @@ cards:
             fill: false
             rollingAverage:
               window: 7
-              clipEnd: 3 #no of days to exclude for incomplete data
+              clipEnd: 4 #no of days to exclude for incomplete data
 
       - heading: Cumulative
         tabType: chart
@@ -1771,3 +1771,130 @@ cards:
       - heading: About
         tabType: metadata
         filename: cardMetadata/cases/cardCasesAndRatesByArea.md
+
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock }}
+
+# Only shown for England
+
+  - heading: Cases by test type and specimen date
+    cardType: chart
+    locationAware:
+      included:
+        areaName:
+          - England
+
+    fullWidth: true
+    abstract: >
+      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), by type of test and specimen date.
+      Individuals tested positive more than once are only counted once, on the date of their first positive test. Data for the period ending 5 days before 
+      the date when the website was last updated with data for the selected area is incomplete.
+
+    download:
+      - newCasesPCROnlyBySpecimenDate
+      - cumCasesPCROnlyBySpecimenDate
+      - newCasesLFDOnlyBySpecimenDate
+      - cumCasesLFDOnlyBySpecimenDate
+      - newCasesLFDConfirmedPCRBySpecimenDate
+      - cumCasesLFDConfirmedPCRBySpecimenDate
+      
+    tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+
+          fields:
+            - label: Number of cases - PCR only
+              value: newCasesPCROnlyBySpecimenDate
+              tooltip: Daily number of new people tested positive using a PCR test by specimen date
+              type: bar
+              colour: 3
+              rollingAverage: false
+
+            - label: Number of cases - LFD with confirmatory PCR
+              value: newCasesLFDConfirmedPCRBySpecimenDate
+              tooltip: Daily number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
+              type: bar
+              colour: 1
+              rollingAverage: false
+
+            - label: Number of cases - LFD with no confirmatory PCR
+              value: newCasesLFDOnlyBySpecimenDate
+              tooltip: Daily number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
+              type: bar
+              colour: 4
+              rollingAverage: false
+
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+
+          fields:
+            - label: Number of cases - PCR only
+              value: cumCasesPCROnlyBySpecimenDate
+              tooltip: Total number of new people tested positive using a PCR test by specimen date
+              type: bar
+              colour: 3
+              rollingAverage: false
+
+            - label: Number of cases - LFD with confirmatory PCR
+              value: cumCasesLFDConfirmedPCRBySpecimenDate
+              tooltip: Total number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
+              type: bar
+              colour: 1
+              rollingAverage: false
+
+            - label: Number of cases - LFD with no confirmatory PCR
+              value: cumCasesLFDOnlyBySpecimenDate
+              tooltip: Total number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
+              type: bar
+              colour: 4
+              rollingAverage: false
+ 
+        - heading: Data
+          tabType: table
+        
+          fields:
+            - label: Specimen date
+              value: date
+              type: date
+              tooltip: Date the sample was taken from the person
+
+            - label: PCR only daily
+              value: newCasesPCROnlyBySpecimenDate
+              tooltip: Daily number of new people tested positive using a PCR test by specimen date
+              type: bar
+
+            - label: LFD with confirmatory PCR daily
+              value: newCasesLFDConfirmedPCRBySpecimenDate
+              tooltip: Daily number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
+              type: bar
+
+            - label: LFD with no confirmatory PCR daily
+              value: newCasesLFDOnlyBySpecimenDate
+              tooltip: Daily number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
+              type: bar
+      
+            - label: PCR only total
+              value: cumCasesPCROnlyBySpecimenDate
+              tooltip: Total number of new people tested positive using a PCR test by specimen date
+              type: bar
+
+            - label: LFD with confirmatory PCR total
+              value: cumCasesLFDConfirmedPCRBySpecimenDate
+              tooltip: Total number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
+              type: bar
+
+            - label: LFD with no confirmatory PCR total
+              value: cumCasesLFDOnlyBySpecimenDate
+              tooltip: Total number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
+              type: bar
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+# {{ EndDevOnlyBlock }}         
+
+##############################################################################################################################

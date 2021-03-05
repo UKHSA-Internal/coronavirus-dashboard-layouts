@@ -102,7 +102,7 @@ cards:
               colour: 3
               rollingAverage:
                 window: 7
-                clipEnd: 3 #no of days to exclude for incomplete data
+                clipEnd: 4 #no of days to exclude for incomplete data
 
         - heading: Cumulative
           tabType: chart
@@ -256,7 +256,7 @@ cards:
             fill: false
             rollingAverage:
                 window: 7
-                clipEnd: 3 #no of days to exclude for incomplete data
+                clipEnd: 4 #no of days to exclude for incomplete data
 
       - heading: Cumulative
         tabType: chart
@@ -1789,7 +1789,7 @@ cards:
               fill: false
               rollingAverage:
                 window: 7
-                clipEnd: 3
+                clipEnd: 4
 
         - heading: Cumulative
           tabType: chart
@@ -1850,7 +1850,7 @@ cards:
               fill: false
               rollingAverage:
                 window: 7
-                clipEnd: 3
+                clipEnd: 0
 
         # cumulative chart not shown as time series only goes back to mid Aug when most deaths had already occurred
         # - heading: Cumulative
@@ -1939,7 +1939,7 @@ cards:
             fill: false
             rollingAverage:
               window: 7
-              clipEnd: 3
+              clipEnd: 4
 
       - heading: Cumulative
         tabType: chart
