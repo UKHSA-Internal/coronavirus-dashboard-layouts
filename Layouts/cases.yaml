@@ -1823,7 +1823,7 @@ cards:
               value: newCasesLFDOnlyBySpecimenDate
               tooltip: Daily number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
               type: bar
-              colour: 5
+              colour: 3
               rollingAverage: false
 
         - heading: Cumulative
@@ -1849,7 +1849,7 @@ cards:
               value: cumCasesLFDOnlyBySpecimenDate
               tooltip: Total number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
               type: bar
-              colour: 5
+              colour: 3
               rollingAverage: false
  
         - heading: Data
