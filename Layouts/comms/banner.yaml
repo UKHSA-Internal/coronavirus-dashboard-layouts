@@ -1,3 +1,12 @@
+- appearByUpdate: "2021-03-04"
+  disappearByUpdate: "2021-03-05"
+  date: "2021-03-05"
+  body: >
+    Owing to a delay in the submission of cases data for England to PHE, today's 
+    update is delayed.
+
+# {{ StartDevOnlyBlock }}
+
 - appearByUpdate: "2021-03-02"
   disappearByUpdate: "2021-03-03"
   body: >
@@ -9,9 +18,6 @@
   body: >
     Complete our [quick survey](https://docs.google.com/forms/d/e/1FAIpQLSc4GnaNWayFyBJxnoGHOnL1Igwo6KsOtDBAQYBN6uxWCDvH7Q/viewform) to help us improve this website.
     
-
-
-# {{ StartDevOnlyBlock }}
 
 - appearByUpdate: "2021-02-05"
   disappearByUpdate: "2021-02-06"  
@@ -28,7 +34,6 @@
   disappearByUpdate: "2021-01-30"
   body: >
     Due to an issue with the processing of deaths data, the update for 29 January 2021 does not include any updates to deaths figures. These will be added later today.
-# {{ EndDevOnlyBlock }}
 
 
 - appearByUpdate: "2021-01-13"
@@ -36,7 +41,6 @@
   body: >
     Due to an issue with the processing of deaths data, the update for 14 January 2021 is delayed.
 
-# {{ StartDevOnlyBlock }}
 
 - appearByUpdate: "2021-01-11"
   disappearByUpdate: "2021-01-12"
@@ -45,7 +49,6 @@
   body: >
     Owing to issues with Public Health Scotland Open Data API service, deaths by date of death for 
     Scotland are missing, and the UK totals therefore exclude Scotland. 
-# {{ EndDevOnlyBlock }}
 
 
 
@@ -56,7 +59,6 @@
     amount of data being updated will vary. See full details in 
     the [About the Data](/details/about-data#new-year-2021-schedule) page.
 
-# {{ StartDevOnlyBlock }}
 - appearByUpdate: "2020-12-26"
   disappearByUpdate: "2020-12-31"
   displayUri:
