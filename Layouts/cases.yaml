@@ -1809,21 +1809,21 @@ cards:
               value: newCasesPCROnlyBySpecimenDate
               tooltip: Daily number of new people tested positive using a PCR test by specimen date
               type: bar
-              colour: 1
+              colour: 0
               rollingAverage: false
 
             - label: Number of cases - LFD with confirmatory PCR
               value: newCasesLFDConfirmedPCRBySpecimenDate
               tooltip: Daily number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
               type: bar
-              colour: 4
+              colour: 9
               rollingAverage: false
 
             - label: Number of cases - LFD with no confirmatory PCR
               value: newCasesLFDOnlyBySpecimenDate
               tooltip: Daily number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
               type: bar
-              colour: 3
+              colour: 4
               rollingAverage: false
 
         - heading: Cumulative
@@ -1835,21 +1835,21 @@ cards:
               value: cumCasesPCROnlyBySpecimenDate
               tooltip: Total number of new people tested positive using a PCR test by specimen date
               type: bar
-              colour: 1
+              colour: 0
               rollingAverage: false
 
             - label: Number of cases - LFD with confirmatory PCR
               value: cumCasesLFDConfirmedPCRBySpecimenDate
               tooltip: Total number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
               type: bar
-              colour: 4
+              colour: 9
               rollingAverage: false
 
             - label: Number of cases - LFD with no confirmatory PCR
               value: cumCasesLFDOnlyBySpecimenDate
               tooltip: Total number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
               type: bar
-              colour: 3
+              colour: 4
               rollingAverage: false
  
         - heading: Data
