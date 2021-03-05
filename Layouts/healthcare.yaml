@@ -1034,6 +1034,67 @@ cards:
 
 ##############################################################################################################################
 
+
+# {{ StartDevOnlyBlock }}
+
+  - heading: R number and growth rate
+    cardType: chart
+    fullWidth: true
+    abstract: >
+      The estimated R number (transmission rate) and daily infection growth rate.
+
+    download:
+      - transmissionRateMin
+      - transmissionRateMax
+      - transmissionRateGrowthRateMin
+      - transmissionRateGrowthRateMax
+
+    tabs:
+      - heading: R number
+        tabType: table
+        fields:
+          - label: Date
+            value: date
+            type: date
+            tooltip: Date
+
+          - label: Minimum
+            value: transmissionRateMin
+            type: numeric
+            tooltip: Estimated R number minimum
+
+          - label: Maximum
+            value: transmissionRateMax
+            type: numeric
+            tooltip: Estimated R number maximum 
+
+      - heading: Growth rate
+        tabType: table
+        fields:
+          - label: Date
+            value: date
+            type: date
+            tooltip: Date
+
+          - label: Minimum
+            value: transmissionRateGrowthRateMin
+            type: numeric
+            tooltip: Estimated daily infection growth rate minimum
+
+          - label: Maximum
+            value: transmissionRateGrowthRateMax
+            type: numeric
+            tooltip: Estimated daily infection growth rate maximum 
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/healthcare/cardrNumberRate.md  
+
+# {{ EndDevOnlyBlock }}
+
+##############################################################################################################################
+
+
 # {{ StartDevOnlyBlock }}
 # # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
 # # We don't currently pull in the data from the DAs on this - they did agree to provide it when
