@@ -1,3 +1,4 @@
+# {{ StartDevOnlyBlock }}
 - appearByUpdate: "2021-03-07"
   disappearByUpdate: "2021-03-08"
   body: >
@@ -5,8 +6,6 @@
     throughout the UK will be updated later. In the meantime, the number of 
     newly reported deaths for 7 March 2021 may incorrectly show as zero. 
 
-
-# {{ StartDevOnlyBlock }}
 
 - appearByUpdate: "2021-03-04"
   disappearByUpdate: "2021-03-05"
