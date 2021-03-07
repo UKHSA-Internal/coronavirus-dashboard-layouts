@@ -1,3 +1,13 @@
+- appearByUpdate: "2021-03-07"
+  disappearByUpdate: "2021-03-08"
+  body: >
+    Owing to processing issues for deaths in England, the numbers of deaths 
+    throughout the UK will be updated later. In the meantime, the number of 
+    newly reported deaths for 7 March 2021 may incorrectly show as zero. 
+
+
+# {{ StartDevOnlyBlock }}
+
 - appearByUpdate: "2021-03-04"
   disappearByUpdate: "2021-03-05"
   date: "2021-03-05"
@@ -5,7 +15,6 @@
     Owing to a delay in the submission of cases data for England to PHE, today's 
     update is delayed.
 
-# {{ StartDevOnlyBlock }}
 
 - appearByUpdate: "2021-03-02"
   disappearByUpdate: "2021-03-03"
