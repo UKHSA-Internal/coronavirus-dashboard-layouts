@@ -66,7 +66,7 @@ cards:
       Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), by specimen date.
       Individuals tested positive more than once are only counted once, on the date of 
       their first positive test. Data for the period ending 5 days before the date when the website was last updated with data for 
-      the selected area, highlighted in grey, is incomplete.
+      the selected area, highlighted in grey, are incomplete.
 
     download:
       - newCasesBySpecimenDate
@@ -239,7 +239,7 @@ cards:
       Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), by specimen date.
       Individuals tested positive more than once are only counted once, on the date of their first
       positive test. Data for the period ending 5 days before the date when the website was last updated with data for the 
-      selected area, highlighted in grey, is incomplete.
+      selected area, highlighted in grey, are incomplete.
 
     download:
       - newCasesBySpecimenDate
@@ -1787,12 +1787,11 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), by type of test used in their first
-      positive test, and specimen date.
-      Test types are shown as PCR (including LAMP and LamPORE), LFD confirmed (where a positive PCR result has been returned within 3 days of the positive LFD)
-      and LFD unconfirmed (where a positive PCR result has not been returned within 3 days of the positive LFD).
+      Number of people with at least one positive COVID-19 test result by type of test used in their first positive test, and specimen date.
+      Test types are shown as PCR, LFD confirmed (positive PCR result has been returned within 3 days)
+      and LFD unconfirmed (positive PCR result has not been returned within 3 days).
       Individuals tested positive more than once are only counted once, on the date of their first positive test. Data for the period ending 5 days before 
-      the date when the website was last updated with data for the selected area is incomplete, and some LFD results may change from unconfirmed to confirmed
+      the date when the website was last updated with data for the selected area are incomplete, and some LFD results may change from unconfirmed to confirmed
       as further PCR results are reported.
 
     download:
