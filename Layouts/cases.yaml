@@ -1896,7 +1896,7 @@ cards:
 
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/cases/cardCasesTimeSeries.md
+          filename: cardMetadata/cases/cardCasesByTestType.md
 
 # {{ EndDevOnlyBlock }}         
 
