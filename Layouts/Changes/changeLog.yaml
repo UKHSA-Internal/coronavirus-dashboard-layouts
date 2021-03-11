@@ -83,7 +83,7 @@ changeLog:
   - type: *changedMetric
     date: "2021-03-11"
     displayBanner: true
-    headline: Removal of weekly vaccination data
+    headline: Deprecation of weekly vaccination data
     relativeUrl: /details/vaccinations
     body: >
       Weekly data on people who have received vaccinations are no longer included on the dashboard. 
