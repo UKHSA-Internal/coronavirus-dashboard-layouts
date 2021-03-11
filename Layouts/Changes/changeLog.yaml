@@ -84,7 +84,7 @@ changeLog:
     date: "2021-03-11"
     displayBanner: true
     headline: Removal of weekly vaccination data
-    relativeUrl: details/vaccinations
+    relativeUrl: /details/vaccinations
     body: >
       Weekly data on people who have received vaccinations are no longer included on the dashboard. 
       Daily vaccinations data are still shown and are more timely.
@@ -105,7 +105,7 @@ changeLog:
     date: "2021-03-10"
     displayBanner: true
     headline: Cases by test type in England added
-    relativeUrl: details/cases?areaType=nation&areaName=England
+    relativeUrl: /details/cases?areaType=nation&areaName=England
     body: >
       The number of people with at least one positive COVID-19 test result in England is now shown by the type of test 
       used in their first positive test and by specimen date.
