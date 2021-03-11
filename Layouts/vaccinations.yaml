@@ -411,8 +411,9 @@ cards:
 ############################################################################################################################## 
 
 # Uk only (card with nation version below)
+# {{ StartDevOnlyBlock }}
 
-  - heading: People who have received vaccinations, by vaccination date (weekly)
+  - heading: [Deprecated] People who have received vaccinations, by vaccination date (weekly)
     cardType: multiAreaStatic
     locationAware:
       included: 
@@ -657,11 +658,14 @@ cards:
             tabType: metadata
             filename: cardMetadata/healthcare/cardVaccinationsWeekly.md
 
+# {{ EndDevOnlyBlock }}
+
 ############################################################################################################################## 
 
+# {{ StartDevOnlyBlock }}
 # nations only (UK version in card above)
 
-  - heading: People who have received vaccinations, by vaccination date (weekly)
+  - heading: [Deprecated] People who have received vaccinations, by vaccination date (weekly)
     cardType: multiAreaStatic
     locationAware:
       included: 
@@ -757,3 +761,4 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/healthcare/cardVaccinationsWeekly.md
+# {{ EndDevOnlyBlock }}
