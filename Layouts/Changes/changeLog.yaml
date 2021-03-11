@@ -80,6 +80,21 @@ colours:
 
 
 changeLog:
+  - type: *newMetric
+    date: "2021-03-11"
+    displayBanner: true
+    headline: Cases by test type in England added
+    relativeUrl: details/cases?areaType=nation&areaName=England
+    body: >
+      The number of people with at least one positive COVID-19 test result in England are now shown by the type of test 
+      used in their first positive test and by specimen date.
+    details: |
+      The test types shown are: 
+      
+      - lab-based polymerase chain reaction (PCR)
+      - lateral flow device (LFD) confirmed (this means the LFD result has been verified with a positive PCR result taken within 3 days) 
+      - LFD unconfirmed (no positive PCR result taken within 3 days).
+ 
   - type: *dataIssue
     date: "2021-03-04"
     displayBanner: true
