@@ -94,7 +94,7 @@ changeLog:
       - [England](https://www.england.nhs.uk/statistics/statistical-work-areas/covid-19-vaccinations/)
       - [Northern Ireland](https://covid-19.hscni.net/ni-covid-19-vaccinations-dashboard/)
       - [Scotland](https://public.tableau.com/profile/phs.covid.19#!/vizhome/COVID-19DailyDashboard_15960160643010/Overview)
-      - [Wales](https://public.tableau.com/profile/public.health.wales.health.protection#!/vizhome/RapidCOVID-19virology-Public/Headlinesummary).
+      - [Wales](https://public.tableau.com/profile/public.health.wales.health.protection#!/vizhome/RapidCOVID-19virology-Public/Headlinesummary)
 
       API metrics affected by this change are as follows:
 
