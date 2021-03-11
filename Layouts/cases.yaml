@@ -1799,6 +1799,8 @@ cards:
       - cumCasesLFDOnlyBySpecimenDate
       - newCasesLFDConfirmedPCRBySpecimenDate
       - cumCasesLFDConfirmedPCRBySpecimenDate
+      - newCasesBySpecimenDate
+      - cumCasesBySpecimenDate
       
     tabs:
         - heading: Daily
@@ -1877,15 +1879,11 @@ cards:
               type: numeric
               tooltip: Daily number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
 
-# {{ StartDevOnlyBlock }}
-
             - label: All cases daily
               value: newCasesBySpecimenDate
               type: numeric
               tooltip: Daily number of new people tested positive by specimen date  
-
-# {{ EndDevOnlyBlock }}                          
-      
+                         
             - label: PCR total
               value: cumCasesPCROnlyBySpecimenDate
               type: numeric
@@ -1901,15 +1899,11 @@ cards:
               value: cumCasesLFDOnlyBySpecimenDate
               tooltip: Total number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
 
- # {{ StartDevOnlyBlock }}
-
             - label: All cases total
               value: cumCasesBySpecimenDate
               type: numeric
               tooltip: Total number of new people tested positive by specimen date  
-
-# {{ EndDevOnlyBlock }}             
-
+      
         - heading: About 
           tabType: metadata
           filename: cardMetadata/cases/cardCasesByTestType.md
