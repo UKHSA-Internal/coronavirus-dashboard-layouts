@@ -299,7 +299,7 @@ cards:
 
   - heading: Deaths within 28 days of positive test by date of death age demographics
     cardType: chart
-    experimental: true
+    experimental: false
     locationAware:
       excluded:
         areaType:
