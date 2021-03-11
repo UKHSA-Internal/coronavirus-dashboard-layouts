@@ -403,6 +403,142 @@ cards:
 
 ##############################################################################################################################
 
+  # Only shown for England
+
+  - heading: Cases by test type and specimen date
+    cardType: chart
+    locationAware:
+      included:
+        areaName:
+          - England
+
+    fullWidth: true
+    abstract: >
+      Number of people with at least one positive COVID-19 test result. Cases are shown by type of test used in their first positive test and by specimen date.
+      The test types shown are lab-based polymerase chain reaction (PCR), lateral flow device (LFD) confirmed (this means the LFD result has been verified
+      with a positive PCR result taken within 3 days) and LFD unconfirmed (no positive PCR result taken within 3 days).
+      Individuals tested positive more than once are only counted once, on the date of their first positive test. Data for the period ending 5 days before 
+      the date when the website was last updated with data for the selected area are incomplete, and some LFD results may change from unconfirmed to confirmed
+      as more PCR results are reported.
+
+    download:
+      - newCasesPCROnlyBySpecimenDate
+      - cumCasesPCROnlyBySpecimenDate
+      - newCasesLFDOnlyBySpecimenDate
+      - cumCasesLFDOnlyBySpecimenDate
+      - newCasesLFDConfirmedPCRBySpecimenDate
+      - cumCasesLFDConfirmedPCRBySpecimenDate
+      - newCasesBySpecimenDate
+      - cumCasesBySpecimenDate
+      
+    tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+
+          fields:
+            - label: Number of PCR cases
+              value: newCasesPCROnlyBySpecimenDate
+              tooltip: Daily number of new people tested positive using a PCR test by specimen date
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: Number of LFD confirmed cases
+              value: newCasesLFDConfirmedPCRBySpecimenDate
+              tooltip: Daily number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
+              type: bar
+              colour: 9
+              rollingAverage: false
+
+            - label: Number of LFD unconfirmed cases
+              value: newCasesLFDOnlyBySpecimenDate
+              tooltip: Daily number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
+              type: bar
+              colour: 3
+              rollingAverage: false
+
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+
+          fields:
+            - label: Number of PCR cases 
+              value: cumCasesPCROnlyBySpecimenDate
+              tooltip: Total number of new people tested positive using a PCR test by specimen date
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: Number of LFD confirmed cases
+              value: cumCasesLFDConfirmedPCRBySpecimenDate
+              tooltip: Total number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
+              type: bar
+              colour: 9
+              rollingAverage: false
+
+            - label: Number of LFD unconfirmed cases
+              value: cumCasesLFDOnlyBySpecimenDate
+              tooltip: Total number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
+              type: bar
+              colour: 3
+              rollingAverage: false
+ 
+        - heading: Data
+          tabType: table
+        
+          fields:
+            - label: Date
+              value: date
+              type: date
+              tooltip: Date the sample was taken from the person
+
+            - label: PCR daily
+              value: newCasesPCROnlyBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people tested positive using a PCR test by specimen date
+
+            - label: LFD confirmed daily
+              value: newCasesLFDConfirmedPCRBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
+
+            - label: LFD unconfirmed daily
+              value: newCasesLFDOnlyBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
+
+            - label: All cases daily
+              value: newCasesBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people tested positive by specimen date  
+                         
+            - label: PCR total
+              value: cumCasesPCROnlyBySpecimenDate
+              type: numeric
+              tooltip: Total number of new people tested positive using a PCR test by specimen date
+
+            - label: LFD confirmed total
+              type: numeric
+              value: cumCasesLFDConfirmedPCRBySpecimenDate
+              tooltip: Total number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
+
+            - label: LFD unconfirmed total
+              type: numeric
+              value: cumCasesLFDOnlyBySpecimenDate
+              tooltip: Total number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
+
+            - label: All cases total
+              value: cumCasesBySpecimenDate
+              type: numeric
+              tooltip: Total number of new people tested positive by specimen date  
+      
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardCasesByTestType.md
+
+##############################################################################################################################
+
 # Only shown for UK (identical to non-UK version but needs different abstract)
 
   - heading: Cases by date reported
@@ -867,6 +1003,112 @@ cards:
 
 ##############################################################################################################################
 
+  - heading: Recent 7-day case rates by specimen date
+    cardType: recentData
+    fullWidth: true
+    abstract: >
+      Rate of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) per 100,000 population
+      in the rolling 7-day period ending on the dates shown. Rates and percentage changes are presented for the most recent 
+      3 months, in order to provide transparency around decision making. Percentage changes are calculated by comparing 
+      to the previous non-overlapping 7-day period.
+
+    download:
+      - newCasesBySpecimenDateRollingSum
+      - newCasesBySpecimenDateRollingRate
+      - newCasesBySpecimenDateChange
+      - newCasesBySpecimenDateChangePercentage
+
+    options:
+      type: radio
+      heading: null
+      choices:
+        - Rates
+        - Percentage change
+
+    Rates:
+
+      tabs:
+        - heading: 7-day periods
+          tabType: chart
+          barType: overlay
+          fields:
+            - label: Rate of cases per 100,000 population in 7-day period
+              value: newCasesBySpecimenDateRollingRate
+              tooltip: Rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population 
+              colour: 0
+              type: bar
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          fields:
+            - label: 7-day period ending
+              value: date
+              type: date
+              tooltip: End date for the 7-day period when the sample was taken from the person
+
+            - label: Count of cases
+              value: newCasesBySpecimenDateRollingSum
+              type: numeric
+              tooltip: Number of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
+
+            - label: Rate per 100,000 population
+              value: newCasesBySpecimenDateRollingRate
+              type: numeric
+              tooltip: Rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
+            
+            - label: Percentage change in 7-day case rate
+              value: newCasesBySpecimenDateChangePercentage
+              type: numeric
+              tooltip: Percentage change in rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
+
+    Percentage change:
+
+      tabs:
+        - heading: 7-day periods
+          tabType: chart
+          barType: overlay
+          fields:
+            - label: Percentage change in 7-day case rate
+              value: newCasesBySpecimenDateChangePercentage
+              tooltip: Percentage change in rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken 
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          fields:
+            - label: 7-day period ending
+              value: date
+              type: date
+              tooltip: End date for the 7-day period when the sample was taken from the person
+
+            - label: Count of cases
+              value: newCasesBySpecimenDateRollingSum
+              type: numeric
+              tooltip: Number of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
+
+            - label: Rate per 100,000 population
+              value: newCasesBySpecimenDateRollingRate
+              type: numeric
+              tooltip: Rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
+            
+            - label: Percentage change in 7-day case rate
+              value: newCasesBySpecimenDateChangePercentage
+              type: numeric
+              tooltip: Percentage change in rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
+
+##############################################################################################################################
+
   - heading: Cases by age and sex
     caption: Counts
     cardType: ageSexBreakdown
@@ -1240,112 +1482,6 @@ cards:
   #   tooltip: areaName
 
 # {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-  - heading: Recent 7-day case rates by specimen date
-    cardType: recentData
-    fullWidth: true
-    abstract: >
-      Rate of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) per 100,000 population
-      in the rolling 7-day period ending on the dates shown. Rates and percentage changes are presented for the most recent 
-      3 months, in order to provide transparency around decision making. Percentage changes are calculated by comparing 
-      to the previous non-overlapping 7-day period.
-
-    download:
-      - newCasesBySpecimenDateRollingSum
-      - newCasesBySpecimenDateRollingRate
-      - newCasesBySpecimenDateChange
-      - newCasesBySpecimenDateChangePercentage
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - Rates
-        - Percentage change
-
-    Rates:
-
-      tabs:
-        - heading: 7-day periods
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Rate of cases per 100,000 population in 7-day period
-              value: newCasesBySpecimenDateRollingRate
-              tooltip: Rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population 
-              colour: 0
-              type: bar
-              rollingAverage: false
-
-        - heading: Data
-          tabType: table
-          fields:
-            - label: 7-day period ending
-              value: date
-              type: date
-              tooltip: End date for the 7-day period when the sample was taken from the person
-
-            - label: Count of cases
-              value: newCasesBySpecimenDateRollingSum
-              type: numeric
-              tooltip: Number of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
-
-            - label: Rate per 100,000 population
-              value: newCasesBySpecimenDateRollingRate
-              type: numeric
-              tooltip: Rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
-            
-            - label: Percentage change in 7-day case rate
-              value: newCasesBySpecimenDateChangePercentage
-              type: numeric
-              tooltip: Percentage change in rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
-
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
-
-    Percentage change:
-
-      tabs:
-        - heading: 7-day periods
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Percentage change in 7-day case rate
-              value: newCasesBySpecimenDateChangePercentage
-              tooltip: Percentage change in rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken 
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-        - heading: Data
-          tabType: table
-          fields:
-            - label: 7-day period ending
-              value: date
-              type: date
-              tooltip: End date for the 7-day period when the sample was taken from the person
-
-            - label: Count of cases
-              value: newCasesBySpecimenDateRollingSum
-              type: numeric
-              tooltip: Number of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
-
-            - label: Rate per 100,000 population
-              value: newCasesBySpecimenDateRollingRate
-              type: numeric
-              tooltip: Rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
-            
-            - label: Percentage change in 7-day case rate
-              value: newCasesBySpecimenDateChangePercentage
-              type: numeric
-              tooltip: Percentage change in rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
-
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
 
 ##############################################################################################################################
 
@@ -1774,138 +1910,4 @@ cards:
 
 ##############################################################################################################################
 
-  # Only shown for England
 
-  - heading: Cases by test type and specimen date
-    cardType: chart
-    locationAware:
-      included:
-        areaName:
-          - England
-
-    fullWidth: true
-    abstract: >
-      Number of people with at least one positive COVID-19 test result. Cases are shown by type of test used in their first positive test and by specimen date.
-      The test types shown are lab-based polymerase chain reaction (PCR), lateral flow device (LFD) confirmed (this means the LFD result has been verified
-      with a positive PCR result taken within 3 days) and LFD unconfirmed (no positive PCR result taken within 3 days).
-      Individuals tested positive more than once are only counted once, on the date of their first positive test. Data for the period ending 5 days before 
-      the date when the website was last updated with data for the selected area are incomplete, and some LFD results may change from unconfirmed to confirmed
-      as more PCR results are reported.
-
-    download:
-      - newCasesPCROnlyBySpecimenDate
-      - cumCasesPCROnlyBySpecimenDate
-      - newCasesLFDOnlyBySpecimenDate
-      - cumCasesLFDOnlyBySpecimenDate
-      - newCasesLFDConfirmedPCRBySpecimenDate
-      - cumCasesLFDConfirmedPCRBySpecimenDate
-      - newCasesBySpecimenDate
-      - cumCasesBySpecimenDate
-      
-    tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-
-          fields:
-            - label: Number of PCR cases
-              value: newCasesPCROnlyBySpecimenDate
-              tooltip: Daily number of new people tested positive using a PCR test by specimen date
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: Number of LFD confirmed cases
-              value: newCasesLFDConfirmedPCRBySpecimenDate
-              tooltip: Daily number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
-              type: bar
-              colour: 9
-              rollingAverage: false
-
-            - label: Number of LFD unconfirmed cases
-              value: newCasesLFDOnlyBySpecimenDate
-              tooltip: Daily number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
-              type: bar
-              colour: 3
-              rollingAverage: false
-
-        - heading: Cumulative
-          tabType: chart
-          barType: stack
-
-          fields:
-            - label: Number of PCR cases 
-              value: cumCasesPCROnlyBySpecimenDate
-              tooltip: Total number of new people tested positive using a PCR test by specimen date
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: Number of LFD confirmed cases
-              value: cumCasesLFDConfirmedPCRBySpecimenDate
-              tooltip: Total number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
-              type: bar
-              colour: 9
-              rollingAverage: false
-
-            - label: Number of LFD unconfirmed cases
-              value: cumCasesLFDOnlyBySpecimenDate
-              tooltip: Total number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
-              type: bar
-              colour: 3
-              rollingAverage: false
- 
-        - heading: Data
-          tabType: table
-        
-          fields:
-            - label: Date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
-
-            - label: PCR daily
-              value: newCasesPCROnlyBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive using a PCR test by specimen date
-
-            - label: LFD confirmed daily
-              value: newCasesLFDConfirmedPCRBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
-
-            - label: LFD unconfirmed daily
-              value: newCasesLFDOnlyBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
-
-            - label: All cases daily
-              value: newCasesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive by specimen date  
-                         
-            - label: PCR total
-              value: cumCasesPCROnlyBySpecimenDate
-              type: numeric
-              tooltip: Total number of new people tested positive using a PCR test by specimen date
-
-            - label: LFD confirmed total
-              type: numeric
-              value: cumCasesLFDConfirmedPCRBySpecimenDate
-              tooltip: Total number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
-
-            - label: LFD unconfirmed total
-              type: numeric
-              value: cumCasesLFDOnlyBySpecimenDate
-              tooltip: Total number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
-
-            - label: All cases total
-              value: cumCasesBySpecimenDate
-              type: numeric
-              tooltip: Total number of new people tested positive by specimen date  
-      
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesByTestType.md
-
-##############################################################################################################################
