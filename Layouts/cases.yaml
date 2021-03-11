@@ -1864,33 +1864,33 @@ cards:
 
             - label: PCR daily
               value: newCasesPCROnlyBySpecimenDate
+              type: numeric
               tooltip: Daily number of new people tested positive using a PCR test by specimen date
-              type: bar
 
             - label: LFD confirmed daily
               value: newCasesLFDConfirmedPCRBySpecimenDate
+              type: numeric
               tooltip: Daily number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
-              type: bar
 
             - label: LFD unconfirmed daily
               value: newCasesLFDOnlyBySpecimenDate
+              type: numeric
               tooltip: Daily number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
-              type: bar
       
             - label: PCR total
               value: cumCasesPCROnlyBySpecimenDate
+              type: numeric
               tooltip: Total number of new people tested positive using a PCR test by specimen date
-              type: bar
 
             - label: LFD confirmed total
+              type: numeric
               value: cumCasesLFDConfirmedPCRBySpecimenDate
               tooltip: Total number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
-              type: bar
 
             - label: LFD unconfirmed total
+              type: numeric
               value: cumCasesLFDOnlyBySpecimenDate
               tooltip: Total number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
-              type: bar
 
         - heading: About 
           tabType: metadata
