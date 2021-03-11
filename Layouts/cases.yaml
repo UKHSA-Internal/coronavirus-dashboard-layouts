@@ -1774,9 +1774,7 @@ cards:
 
 ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
-
-# Only shown for England
+  # Only shown for England
 
   - heading: Cases by test type and specimen date
     cardType: chart
@@ -1897,7 +1895,5 @@ cards:
         - heading: About 
           tabType: metadata
           filename: cardMetadata/cases/cardCasesByTestType.md
-
-# {{ EndDevOnlyBlock }}         
 
 ##############################################################################################################################
