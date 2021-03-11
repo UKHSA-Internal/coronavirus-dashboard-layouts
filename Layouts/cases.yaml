@@ -63,7 +63,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), by specimen date.
+      Number of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only), by specimen date.
       Individuals tested positive more than once are only counted once, on the date of 
       their first positive test. Data for the period ending 5 days before the date when the website was last updated with data for 
       the selected area, highlighted in grey, are incomplete.
@@ -236,7 +236,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), by specimen date.
+      Number of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only), by specimen date.
       Individuals tested positive more than once are only counted once, on the date of their first
       positive test. Data for the period ending 5 days before the date when the website was last updated with data for the 
       selected area, highlighted in grey, are incomplete.
@@ -321,7 +321,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Rate of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device)
+      Rate of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) 
       per 100,000 population in the rolling 7-day period ending on the dates shown, by age. 
       Individuals tested positive more than once are only counted once, on the date of their first
       positive test.
@@ -414,7 +414,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of individuals who have had at least one positive COVID-19 test result (either lab-reported or lateral flow device),
+      Number of individuals who have had at least one positive COVID-19 test result either lab-reported or lateral flow device (England only),
       by date reported. On 2 July, case data from pillars 1 and 2 of the testing programme were
       combined and de-duplicated, resulting in a step decrease in the cumulative number of cases
       reported.
@@ -487,7 +487,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of individuals who have had at least one positive COVID-19 test result (either lab-reported or lateral flow device), by date
+      Number of individuals who have had at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only), by date
       reported, by nation.  Initially only pillar 1 tests (NHS and, in England, PHE labs) were included but
       pillar 2 (commercial tests) have been included from varying dates between 15th June and 14th July for
       each nation, leading to step increases in the numbers of cases reported at different times.  
@@ -568,7 +568,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of individuals who have had at least one positive COVID-19 test result (either lab-reported or lateral flow device),
+      Number of individuals who have had at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only),
       by date reported. Initially only pillar 1 tests (NHS and, in England, PHE labs) were included
       but commercial tests have been included from varying dates between 15th June and 14th July for
       each nation, leading to step increases in the numbers of cases reported at different times.
@@ -718,7 +718,7 @@ cards:
     # Why is this on the Cases page and repeated on the Tested page - just to show cases and tests side by side?  If so maybe card needs different title?
 
     abstract: >
-      Number of people with at least one positive, negative or void COVID-19 test result (either lab-reported or lateral flow device). 
+      Number of people with at least one positive, negative or void COVID-19 test result, either lab-reported or lateral flow device (England only). 
       Initially only NHS and, in England, PHE tests were included but commercial tests have been included from   
       different dates between 15th June and 14th July for each nation.  National data are not directly comparable.
 
@@ -878,7 +878,7 @@ cards:
 
     fullWidth: false
     abstract: > 
-      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device) since the
+      Number of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) since the
       start of the pandemic, by age and sex.
 
     download:
@@ -1230,7 +1230,7 @@ cards:
 
   #   y-label: Cases per 100,000 population
   #   y-value: CumCasesByPublishDateRate
-  #   y-tooltip: Cumulative total number of new people with a confirmed positive test result (either lab-reported or lateral flow device) per 100,000 resident population
+  #   y-tooltip: Cumulative total number of new people with a confirmed positive test result, either lab-reported or lateral flow device (England only) per 100,000 resident population
 
   # - heading: Cases rates by area
   #   cardType: mapStatic
@@ -1247,7 +1247,7 @@ cards:
     cardType: recentData
     fullWidth: true
     abstract: >
-      Rate of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device) per 100,000 population
+      Rate of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) per 100,000 population
       in the rolling 7-day period ending on the dates shown. Rates and percentage changes are presented for the most recent 
       3 months, in order to provide transparency around decision making. Percentage changes are calculated by comparing 
       to the previous non-overlapping 7-day period.
@@ -1358,7 +1358,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device), 
+      Number of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only), 
       by age and specimen date. Individuals tested positive more than once are only counted once, on the date of their first
       positive test. Rates are presented as rates per 100,000 population in the rolling 7-day period ending on the dates shown.
 
@@ -1471,7 +1471,7 @@ cards:
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
-      Total number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device) in the most 
+      Total number of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) in the most 
       recent 7-day period. The rates per 100,000 resident population give a fairer comparison of 
       the number of cases in each area but they do not take account of the different rates of testing 
       or differences in the age and sex of the local populations. Data shown are cases by specimen date 
@@ -1625,7 +1625,7 @@ cards:
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
-      Total number of people with at least one positive COVID-19 test result (either lab-reported or lateral flow device) since the start
+      Total number of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) since the start
       of the pandemic in each area. The rates per 100,000 resident population give a fairer comparison of
       the number of cases in each area but they do not take account of the different rates of testing or
       differences in the age and sex of the local populations. Only data available for the latest reported
@@ -1789,7 +1789,7 @@ cards:
     abstract: >
       Number of people with at least one positive COVID-19 test result. Cases are shown by type of test used in their first positive test and by specimen date.
       The test types shown are lab-based polymerase chain reaction (PCR), lateral flow device (LFD) confirmed (this means the LFD result has been verified
-      with a positive PCR result taken within 2 days) and LFD unconfirmed (no positive PCR result taken within 2 days).
+      with a positive PCR result taken within 3 days) and LFD unconfirmed (no positive PCR result taken within 3 days).
       Individuals tested positive more than once are only counted once, on the date of their first positive test. Data for the period ending 5 days before 
       the date when the website was last updated with data for the selected area are incomplete, and some LFD results may change from unconfirmed to confirmed
       as more PCR results are reported.
