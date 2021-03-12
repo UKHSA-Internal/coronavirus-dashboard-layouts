@@ -444,14 +444,14 @@ cards:
               colour: 0
               rollingAverage: false
 
-            - label: Number of LFD confirmed cases
+            - label: Number of LFD with positive PCR cases
               value: newCasesLFDConfirmedPCRBySpecimenDate
               tooltip: Daily number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
               type: bar
               colour: 9
               rollingAverage: false
 
-            - label: Number of LFD unconfirmed cases
+            - label: Number of LFD without positive PCR cases
               value: newCasesLFDOnlyBySpecimenDate
               tooltip: Daily number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
               type: bar
@@ -470,14 +470,14 @@ cards:
               colour: 0
               rollingAverage: false
 
-            - label: Number of LFD confirmed cases
+            - label: Number of LFD with positive PCR cases
               value: cumCasesLFDConfirmedPCRBySpecimenDate
               tooltip: Total number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
               type: bar
               colour: 9
               rollingAverage: false
 
-            - label: Number of LFD unconfirmed cases
+            - label: Number of LFD without positive PCR cases
               value: cumCasesLFDOnlyBySpecimenDate
               tooltip: Total number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
               type: bar
@@ -498,12 +498,12 @@ cards:
               type: numeric
               tooltip: Daily number of new people tested positive using a PCR test by specimen date
 
-            - label: LFD confirmed daily
+            - label: LFD with positive PCR daily
               value: newCasesLFDConfirmedPCRBySpecimenDate
               type: numeric
               tooltip: Daily number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
 
-            - label: LFD unconfirmed daily
+            - label: LFD without positive PCR daily
               value: newCasesLFDOnlyBySpecimenDate
               type: numeric
               tooltip: Daily number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
@@ -518,12 +518,12 @@ cards:
               type: numeric
               tooltip: Total number of new people tested positive using a PCR test by specimen date
 
-            - label: LFD confirmed total
+            - label: LFD with positive PCR total
               type: numeric
               value: cumCasesLFDConfirmedPCRBySpecimenDate
               tooltip: Total number of new people tested positive using an LFD test with subsequent confirmatory PCR by specimen date
 
-            - label: LFD unconfirmed total
+            - label: LFD without positive PCR total
               type: numeric
               value: cumCasesLFDOnlyBySpecimenDate
               tooltip: Total number of new people tested positive using an LFD test with no subsequent confirmatory PCR by specimen date
