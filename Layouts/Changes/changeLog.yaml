@@ -80,6 +80,17 @@ colours:
 
 
 changeLog:
+  - type: *dataIssue
+    date: "2021-03-13"
+    displayBanner: true
+    relativeUrl: "/details/deaths?areaType=nation&areaName=England"
+    headline: England deaths within 28 days of positive test affected by delay 
+    body: > 
+      Daily counts of deaths in England rely on multiple data sources. On 13 March 2021 
+      there was a delay in receiving this information from one of these sources. This 
+      might have a small impact on the total number of deaths reported on that date. This 
+      delay will be reflected on the numbers published on 14 March 2021. 
+
   - type: *changedMetric
     date: "2021-03-11"
     displayBanner: true
