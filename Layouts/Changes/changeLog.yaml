@@ -80,7 +80,7 @@ colours:
 
 
 changeLog:
-- type: *changedMetric
+  - type: *changedMetric
     date: "2021-03-15"
     displayBanner: true
     relativeUrl: /details/testing
