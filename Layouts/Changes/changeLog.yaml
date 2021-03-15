@@ -80,6 +80,16 @@ colours:
 
 
 changeLog:
+- type: *changedMetric
+    date: "2021-03-15"
+    displayBanner: true
+    relativeUrl: /details/testing
+    headline: Change to reporting of daily figures for lab testing capacity 
+    body: > 
+      Northern Ireland Health and Social Care trusts have discontinued daily reporting of the Pillar 1 
+      capacity figure, moving to weekly reporting. This means that daily figures for UK PCR capacity and Pillar 1 
+      capacity will will be reported retrospectively once a week on Friday.  
+
   - type: *dataIssue
     date: "2021-03-13"
     displayBanner: true
