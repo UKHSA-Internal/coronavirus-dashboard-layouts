@@ -80,6 +80,21 @@ colours:
 
 
 changeLog:
+  - type: *dataIssue
+    date: "2021-03-16"
+    displayBanner: false
+    relativeUrl: "/details/deaths#card-weekly_deaths_with_covid-19_on_the_death_certificate_by_date_registered"
+    headline: Change to UK figure for weekly deaths with COVID-19 on the death certificate by date registered 
+    body: > 
+      The figure for weekly deaths with COVID-19 on the death certificate by date registered in the UK has increased by 946 deaths. 
+      This is due to the inclusion of deaths of non-residents for England and Wales during 2020. 
+      Figures for 2021 already include non-residents for England and Wales. 
+    details: |
+      The Office for National Statistics (ONS) reports [deaths registered weekly.](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/weeklyprovisionalfiguresondeathsregisteredinenglandandwales) 
+      The "2020: up to week ending 1 January 2021" version of this release does not include deaths registered to non-residents in England and Wales in the UK figure, while the 2021 version does.
+      ONS produces a statistical bulletin to accompany each release which includes a section on [deaths registered in the UK.](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsregisteredweeklyinenglandandwalesprovisional/weekending5march2021#deaths-registered-in-the-uk) 
+      This includes deaths registered to non-residents in England and Wales in 2020 and 2021. For consistency, the dashboard has been updated to match this figure. 
+
   - type: *changedMetric
     date: "2021-03-15"
     displayBanner: true
@@ -87,8 +102,8 @@ changeLog:
     headline: Change to reporting of daily figures for lab testing capacity 
     body: > 
       Northern Ireland Health and Social Care trusts have discontinued daily reporting of the Pillar 1 
-      capacity figure, moving to weekly reporting. This means that daily figures for UK PCR capacity and Pillar 1 
-      capacity will will be reported retrospectively once a week on Friday.  
+      capacity figure, moving to weekly reporting. This means that daily figures for UK PCR and Pillar 1 
+      capacity will be reported retrospectively once a week on Friday.  
 
   - type: *dataIssue
     date: "2021-03-13"
