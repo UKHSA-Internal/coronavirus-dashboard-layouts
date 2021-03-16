@@ -64,7 +64,7 @@ cards:
     fullWidth: true
     abstract: >
       Number of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only), by specimen date.
-      Individuals tested positive more than once are only counted once, on the date of 
+      People tested positive more than once are only counted once, on the date of 
       their first positive test. Data for the period ending 5 days before the date when the website was last updated with data for 
       the selected area, highlighted in grey, are incomplete.
 
@@ -237,7 +237,7 @@ cards:
     fullWidth: true
     abstract: >
       Number of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only), by specimen date.
-      Individuals tested positive more than once are only counted once, on the date of their first
+      People tested positive more than once are only counted once, on the date of their first
       positive test. Data for the period ending 5 days before the date when the website was last updated with data for the 
       selected area, highlighted in grey, are incomplete.
 
@@ -323,7 +323,7 @@ cards:
     abstract: >
       Rate of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) 
       per 100,000 population in the rolling 7-day period ending on the dates shown, by age. 
-      Individuals tested positive more than once are only counted once, on the date of their first
+      People tested positive more than once are only counted once, on the date of their first
       positive test.
     
     download:
@@ -417,7 +417,7 @@ cards:
       Number of people with at least one positive COVID-19 test result. Cases are shown by type of test used in their first positive test and by specimen date.
       The test types shown are lab-based polymerase chain reaction (PCR), lateral flow device (LFD) confirmed (this means the LFD result has been verified
       with a positive PCR result taken within 3 days) and LFD unconfirmed (no positive PCR result taken within 3 days).
-      Individuals tested positive more than once are only counted once, on the date of their first positive test. Data for the period ending 5 days before 
+      People tested positive more than once are only counted once, on the date of their first positive test. Data for the period ending 5 days before 
       the date when the website was last updated with data for the selected area are incomplete, and some LFD results may change from unconfirmed to confirmed
       as more PCR results are reported.
 
@@ -550,8 +550,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of individuals who have had at least one positive COVID-19 test result either lab-reported or lateral flow device (England only),
-      by date reported. Individuals tested positive more than once are only counted once.
+      Number of people who have had at least one positive COVID-19 test result either lab-reported or lateral flow device (England only),
+      by date reported. People tested positive more than once are only counted once.
 
     download:
       - newCasesByPublishDate
@@ -699,160 +699,6 @@ cards:
 
 ##############################################################################################################################
 
-# Only shown for UK (identical to non-UK version but needs different abstract)
-
-  # - heading: Cases by date reported
-  #   cardType: chart
-  #   locationAware:
-  #     included:
-  #       areaType:
-  #         - overview
-
-  #   fullWidth: true
-  #   abstract: >
-  #     Number of individuals who have had at least one positive COVID-19 test result either lab-reported or lateral flow device (England only),
-  #     by date reported. On 2 July, case data from pillars 1 and 2 of the testing programme were
-  #     combined and de-duplicated, resulting in a step decrease in the cumulative number of cases
-  #     reported.
-
-  #   download:
-  #     - newCasesByPublishDate
-  #     - cumCasesByPublishDate
-
-  #   tabs:
-  #     - heading: Daily
-  #       tabType: chart
-  #       barType: overlay
-  #       fields:
-  #         - label: Number of cases
-  #           value: newCasesByPublishDate
-  #           tooltip: Daily number of new people tested positive by date reported
-  #           type: bar
-  #           colour: 0
-
-  #         - label: Cases (7-day average)
-  #           value: newCasesByPublishDate
-  #           tooltip: 7-day rolling average of the daily number of new people tested positive reported
-  #           type: line
-  #           colour: 3
-  #           fill: false
-  #           rollingAverage: true
-
-  #     - heading: Cumulative
-  #       tabType: chart
-  #       fields:
-  #         - label: Number of cases
-  #           value: cumCasesByPublishDate
-  #           tooltip: Cumulative total number of people tested positive by date reported
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
-
-  #     - heading: Data
-  #       tabType: table
-  #       fields:
-  #         - label: Date reported
-  #           value: date
-  #           type: date
-  #           tooltip: Date reported on coronavirus.data.gov.uk
-
-  #         - label: Daily cases
-  #           value: newCasesByPublishDate
-  #           type: numeric
-  #           tooltip: Daily number of new people tested positive by date reported
-
-  #         - label: Cumulative cases
-  #           value: cumCasesByPublishDate
-  #           type: numeric
-  #           tooltip: Cumulative total number of people tested positive by date reported
-
-  #     - heading: About 
-  #       tabType: metadata
-  #       filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-##############################################################################################################################
-
-# Only shown for UK
-
-  # - heading: Cases by date reported, by nation
-  #   cardType: multiAreaStatic
-  #   locationAware:
-  #     included: 
-  #       areaType:
-  #         - overview
-
-  #   fullWidth: true
-  #   abstract: >
-  #     Number of individuals who have had at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only), by date
-  #     reported, by nation.  Initially only pillar 1 tests (NHS and, in England, PHE labs) were included but
-  #     pillar 2 (commercial tests) have been included from varying dates between 15th June and 14th July for
-  #     each nation, leading to step increases in the numbers of cases reported at different times.  
-  #   download:
-  #     - newCasesByPublishDate
-  #     - cumCasesByPublishDate
-      
-  #   tabs:
-  #     - heading: Daily
-  #       tabType: chart
-  #       barType: stack
-  #       colours: [0, 9, 3, 10] # areaNames in alphabetical order
-  #       params:
-  #         - key: areaType
-  #           sign: "="
-  #           value: nation
-
-  #       fields:
-  #         - label: ""
-  #           value: newCasesByPublishDate
-  #           tooltip: Daily number of new people tested positive, resident in each nation, by date reported
-  #           type: bar
-  #           rollingAverage: false
-
-  #     - heading: Cumulative
-  #       tabType: chart
-  #       barType: stack
-  #       colours: [0, 9, 3, 10] # areaNames in alphabetical order
-  #       params:
-  #         - key: areaType
-  #           sign: "="
-  #           value: nation
-
-  #       fields:
-  #         - label: ""
-  #           value: cumCasesByPublishDate
-  #           tooltip: Cumulative total number of people tested positive, resident in each nation, by date reported
-  #           type: bar
-  #           rollingAverage: false
-
-  #     - heading: Data
-  #       tabType: table
-  #       params:
-  #         - key: areaType
-  #           sign: "="
-  #           value: nation
-        
-  #       fields:
-  #         - label: Date reported
-  #           value: date
-  #           type: date
-  #           tooltip: Date reported on coronavirus.data.gov.uk
-
-  #         - label: daily
-  #           value: newCasesByPublishDate
-  #           type: numeric
-  #           tooltip: Daily number of new people tested positive, resident in each nation, by date reported
-
-  #         - label: total
-  #           value: cumCasesByPublishDate
-  #           type: numeric
-  #           tooltip: Cumulative total number of people tested positive, resident in each nation, by date reported
-
-  #     - heading: About 
-  #       tabType: metadata
-  #       filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-##############################################################################################################################
-
 # Not shown for UK (has separate date reported card for UK with different abstract) or sub-national (no data)
 
   - heading: Cases by date reported
@@ -864,8 +710,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of individuals who have had at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only),
-      by date reported. Initially only pillar 1 tests (NHS and, in England, PHE labs) were included
+      Number of people who have had at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only),
+      by date reported. People tested positive more than once are only counted once. Initially only pillar 1 tests (NHS and, in England, PHE labs) were included
       but commercial tests have been included from varying dates between 15th June and 14th July for
       each nation, leading to step increases in the numbers of cases reported at different times.
 
@@ -1655,7 +1501,7 @@ cards:
     fullWidth: true
     abstract: >
       Number of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only), 
-      by age and specimen date. Individuals tested positive more than once are only counted once, on the date of their first
+      by age and specimen date. People tested positive more than once are only counted once, on the date of their first
       positive test. Rates are presented as rates per 100,000 population in the rolling 7-day period ending on the dates shown.
 
     download:
