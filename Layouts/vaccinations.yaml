@@ -507,7 +507,7 @@ cards:
 ############################################################################################################################## 
 
   - heading: Vax waffle
-    cardType: waffleCard
+    cardType: tabContentRaw
     locationAware:
       included: 
         areaType:
