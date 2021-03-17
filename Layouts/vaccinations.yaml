@@ -507,7 +507,7 @@ cards:
 ############################################################################################################################## 
 # {{ StartDevOnlyBlock }}
 
-  - heading: Vaccination uptake, by report date
+  - heading: Latest reported vaccination uptake
     cardType: tabContentRaw
     locationAware:
       included: 
@@ -516,7 +516,7 @@ cards:
 
     fullWidth: false
     abstract: >
-      Total percentage of people who have received a vaccination for COVID-19, by dose and day on which the vaccine was reported.
+      Total percentage of people who have received a vaccination for COVID-19, by dose, up to the latest day on which vaccine data were reported.
       Data are reported daily, and include all vaccination events that are entered on the relevant system at 
       the time of extract. This includes reported vaccines that were administered up to and including the date 
       shown.
@@ -526,7 +526,7 @@ cards:
       - cumVaccinationSecondDoseUptakeByPublishDatePercentage
     
     tabs: 
-      - heading: Coverage
+      - heading: Uptake
         tabType: percentageWaffle
         params:
           - key: areaType
@@ -534,12 +534,12 @@ cards:
             value: overview
 
         fields:
-          - label: Percentage uptake - 1st dose
+          - label: 1st dose
             value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
             tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
             colour: 0
           
-          - label: Percentage uptake - 2nd dose
+          - label: 2nd dose
             value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
             tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
             colour: 3
@@ -949,9 +949,7 @@ cards:
       the time of extract. Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
     
     download:
-      - cumPeopleVaccinatedFirstDoseByPublishDate
       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
-      - cumPeopleVaccinatedSecondDoseByPublishDate
       - cumVaccinationSecondDoseUptakeByPublishDatePercentage
 
     options:
@@ -965,28 +963,28 @@ cards:
     
       tabs: 
 
-        - heading: 1st dose uptake
+        - heading: 1st dose
           tabType: chart
           params:
             - key: areaType
               sign: "="
               value: overview         
           fields:
-            - label: percentage uptake
+            - label: percentage
               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
               tooltip: Cumulative reported percentage of people who received the first dose of COVID-19 vaccine
               type: line
               colour: 0
               rollingAverage: false
 
-        - heading: 2nd dose uptake
+        - heading: 2nd dose
           tabType: chart
           params:
             - key: areaType
               sign: "="
               value: overview         
           fields:
-            - label: percentage uptake
+            - label: percentage
               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
               tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine
               type: line
@@ -1006,22 +1004,12 @@ cards:
               type: date
               tooltip: Date
 
-            - label: "1st dose total"
-              value: cumPeopleVaccinatedFirstDoseByPublishDate
-              type: numeric
-              tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
-
-            - label: "1st dose uptake"
+            - label: "1st dose"
               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
               type: numeric
               tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
 
-            - label: "2nd dose total"
-              value: cumPeopleVaccinatedSecondDoseByPublishDate
-              type: numeric
-              tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
-
-            - label: "2nd dose uptake"
+            - label: "2nd dose"
               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
               type: numeric
               tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine             
@@ -1035,7 +1023,7 @@ cards:
 
       tabs:
 
-          - heading: 1st dose uptake
+          - heading: 1st dose
             tabType: chart
             colours: [0, 9, 3, 10] # areaNames in alphabetical order
             params:
@@ -1044,14 +1032,14 @@ cards:
                 value: nation
 
             fields:
-              - label: "percentage uptake"
+              - label: "percentage"
                 value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
                 tooltip: Cumulative reported percentage of people who received the first dose of COVID-19 vaccine in each nation
                 type: line
                 rollingAverage: false
                 fill: false
 
-          - heading: 2nd dose uptake
+          - heading: 2nd dose
             tabType: chart
             colours: [0, 9, 3, 10] # areaNames in alphabetical order
             params:
@@ -1060,7 +1048,7 @@ cards:
                 value: nation
 
             fields:
-              - label: "percentage uptake"
+              - label: "percentage"
                 value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
                 tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine in each nation
                 type: line
@@ -1081,22 +1069,12 @@ cards:
               type: date
               tooltip: Date
 
-            # - label: "1st dose total"
-            #   value: cumPeopleVaccinatedFirstDoseByPublishDate
-            #   type: numeric
-            #   tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
-
-            - label: "1st dose uptake"
+            - label: "1st dose"
               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
               type: numeric
               tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
 
-            # - label: "2nd dose total"
-            #   value: cumPeopleVaccinatedSecondDoseByPublishDate
-            #   type: numeric
-            #   tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
-
-            - label: "2nd dose uptake"
+            - label: "2nd dose"
               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
               type: numeric
               tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine      
