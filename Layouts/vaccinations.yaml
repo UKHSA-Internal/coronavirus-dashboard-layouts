@@ -505,6 +505,7 @@ cards:
         filename: cardMetadata/healthcare/cardVaccinationsDaily.md
 
 ############################################################################################################################## 
+# {{ StartDevOnlyBlock }}
 
   - heading: Vax waffle
     cardType: tabContentRaw
@@ -566,6 +567,8 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/healthcare/cardVaccinationsDaily.md
+
+# {{ EndDevOnlyBlock }}
 
 ############################################################################################################################# 
 
@@ -940,9 +943,7 @@ cards:
     abstract: >
       Total percentage of people who have received a vaccination for COVID-19, by day on which the vaccine was reported. 
       Data are reported daily, and include all vaccination events that are entered on the relevant system at 
-      the time of extract. This includes reported vaccines that were administered up to and including the date 
-      shown. Data for Wales were not available for 15 and 16 January 2021, and are shown as zeros. 
-      Their newly reported numbers for 17 January 2021 include vaccinations recorded in the period 15 to 17 January 2021.
+      the time of extract. Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
     
     download:
       - cumPeopleVaccinatedFirstDoseByPublishDate
@@ -974,6 +975,7 @@ cards:
               type: line
               colour: 0
               rollingAverage: false
+              fill: false
 
         - heading: 2nd dose uptake
           tabType: chart
@@ -988,6 +990,7 @@ cards:
               type: line
               colour: 0
               rollingAverage: false
+              fill: false
            
         - heading: Data
           tabType: table
@@ -1045,6 +1048,7 @@ cards:
                 tooltip: Cumulative reported percentage of people who received the first dose of COVID-19 vaccine in each nation
                 type: line
                 rollingAverage: false
+                fill: false
 
           - heading: 2nd dose uptake
             tabType: chart
@@ -1060,6 +1064,7 @@ cards:
                 tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine in each nation
                 type: line
                 rollingAverage: false
+                fill: false
           
 
           - heading: Data
@@ -1080,20 +1085,20 @@ cards:
               type: numeric
               tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
 
-            - label: "1st dose uptake"
-              value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-              type: numeric
-              tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+            # - label: "1st dose uptake"
+            #   value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
+            #   type: numeric
+            #   tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
 
             - label: "2nd dose total"
               value: cumPeopleVaccinatedSecondDoseByPublishDate
               type: numeric
               tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
 
-            - label: "2nd dose uptake"
-              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-              type: numeric
-              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine      
+            # - label: "2nd dose uptake"
+            #   value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
+            #   type: numeric
+            #   tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine      
 
           - heading: About 
             tabType: metadata
