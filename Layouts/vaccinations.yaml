@@ -507,7 +507,7 @@ cards:
 ############################################################################################################################## 
 
   - heading: Vax waffle
-    cardType: percentageWaffle
+    cardType: waffleCard
     locationAware:
       included: 
         areaType:
@@ -523,7 +523,7 @@ cards:
     
     tabs: 
       - heading: Coverage
-        tabType: chart
+        tabType: percentageWaffle
         params:
           - key: areaType
             sign: "="
