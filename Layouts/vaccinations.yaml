@@ -109,7 +109,7 @@ cards:
 
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/healthcare/cardVaccinationsDaily.md
+          filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
 
 
     By nation:
@@ -173,7 +173,7 @@ cards:
 
           - heading: About 
             tabType: metadata
-            filename: cardMetadata/healthcare/cardVaccinationsDaily.md
+            filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
 
 ############################################################################################################################## 
 
@@ -255,7 +255,7 @@ cards:
  
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/healthcare/cardVaccinationsDaily.md
+        filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
 
 ############################################################################################################################# 
 
@@ -356,7 +356,7 @@ cards:
 
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/healthcare/cardVaccinationsDaily.md
+          filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
 
 
     By nation:
@@ -420,7 +420,7 @@ cards:
 
           - heading: About 
             tabType: metadata
-            filename: cardMetadata/healthcare/cardVaccinationsDaily.md
+            filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
 
 ############################################################################################################################## 
 
@@ -502,7 +502,7 @@ cards:
  
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/healthcare/cardVaccinationsDaily.md
+        filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
 
 ############################################################################################################################## 
 # {{ StartDevOnlyBlock }}
@@ -566,7 +566,7 @@ cards:
 
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/healthcare/cardVaccinationsDaily.md
+        filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
 
 # {{ EndDevOnlyBlock }}
 
@@ -701,7 +701,7 @@ cards:
  
   #       - heading: About 
   #         tabType: metadata
-  #         filename: cardMetadata/healthcare/cardVaccinationsWeekly.md
+  #         filename: cardMetadata/vaccinations/cardVaccinationsWeekly.md
 
 
   #   By nation:
@@ -819,7 +819,7 @@ cards:
 
   #         - heading: About 
   #           tabType: metadata
-  #           filename: cardMetadata/healthcare/cardVaccinationsWeekly.md
+  #           filename: cardMetadata/vaccinations/cardVaccinationsWeekly.md
 
 # {{ EndDevOnlyBlock }}
 
@@ -923,7 +923,7 @@ cards:
  
   #     - heading: About 
   #       tabType: metadata
-  #       filename: cardMetadata/healthcare/cardVaccinationsWeekly.md
+  #       filename: cardMetadata/vaccinations/cardVaccinationsWeekly.md
 
 # {{ EndDevOnlyBlock }}
 
@@ -1025,7 +1025,7 @@ cards:
 
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/healthcare/cardVaccinationsDailyUptake.md
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 
     By nation:
@@ -1100,7 +1100,7 @@ cards:
 
           - heading: About 
             tabType: metadata
-            filename: cardMetadata/healthcare/cardVaccinationsDailyUptake.md
+            filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 # {{ EndDevOnlyBlock }}
 ############################################################################################################################## 
