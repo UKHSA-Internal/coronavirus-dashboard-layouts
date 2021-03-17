@@ -1025,7 +1025,7 @@ cards:
 
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/healthcare/cardVaccinationsDaily.md
+          filename: cardMetadata/healthcare/cardVaccinationsDailyUptake.md
 
 
     By nation:
@@ -1100,7 +1100,7 @@ cards:
 
           - heading: About 
             tabType: metadata
-            filename: cardMetadata/healthcare/cardVaccinationsDaily.md
+            filename: cardMetadata/healthcare/cardVaccinationsDailyUptake.md
 
 # {{ EndDevOnlyBlock }}
 ############################################################################################################################## 
