@@ -81,6 +81,25 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-03-17"
+    displayBanner: true
+    relativeUrl: /details/testing
+    headline: No update to testing data
+    body: > 
+      Due to testing data not being available for the whole of the UK, these metrics have not been updated. 
+      They will be updated in the next release. 
+
+  - type: *dataIssue
+    date: "2021-03-17"
+    displayBanner: false
+    relativeUrl: 
+    headline: Data by specimen date and date of death not updated for UK and Northern Ireland
+    body: > 
+      [The Northern Ireland dashboard](https://app.powerbi.com/view?r=eyJrIjoiZGYxNjYzNmUtOTlmZS00ODAxLWE1YTEtMjA0NjZhMzlmN2JmIiwidCI6IjljOWEzMGRlLWQ4ZDctNGFhNC05NjAwLTRiZTc2MjVmZjZjNSIsImMiOjh9) 
+      is not being updated today. Because of this only headline metrics (reported cases, deaths and vaccinations) are available. 
+      The additional metrics will be updated in the next release. 
+
+  - type: *dataIssue
     date: "2021-03-16"
     displayBanner: false
     relativeUrl: "/details/deaths#card-weekly_deaths_with_covid-19_on_the_death_certificate_by_date_registered"
