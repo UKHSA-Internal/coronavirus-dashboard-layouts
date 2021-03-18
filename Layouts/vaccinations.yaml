@@ -53,14 +53,14 @@ cards:
               value: overview
 
           fields:
-            - label: number of people received 1st dose
+            - label: daily
               value: newPeopleVaccinatedFirstDoseByPublishDate
               tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
            
-            - label: 1st dose (7-day average)
+            - label: (7-day average)
               value: newPeopleVaccinatedFirstDoseByPublishDate
               tooltip: 7-day rolling average of the daily reported number of people who received the first dose of COVID-19 vaccine
               type: line
@@ -77,7 +77,7 @@ cards:
               sign: "="
               value: overview         
           fields:
-            - label: number of people received 1st dose
+            - label: total
               value: cumPeopleVaccinatedFirstDoseByPublishDate
               tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
               type: bar
@@ -205,14 +205,14 @@ cards:
         barType: normal
 
         fields:
-          - label: number of people received 1st dose
+          - label: daily
             value: newPeopleVaccinatedFirstDoseByPublishDate
             tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
             type: bar
             colour: 0
             rollingAverage: false
 
-          - label: 1st dose (7-day average)
+          - label: (7-day average)
             value: newPeopleVaccinatedFirstDoseByPublishDate
             tooltip: 7-day rolling average of the daily reported number of people who received the first dose of COVID-19 vaccine
             type: line
@@ -226,7 +226,7 @@ cards:
         tabType: chart
        
         fields:
-          - label: number of people received 1st dose
+          - label: total
             value: cumPeopleVaccinatedFirstDoseByPublishDate
             tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
             type: bar
@@ -300,14 +300,14 @@ cards:
               value: overview
 
           fields:
-            - label: number of people received 2nd dose
+            - label: daily
               value: newPeopleVaccinatedSecondDoseByPublishDate
               tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
            
-            - label: 2nd dose (7-day average)
+            - label: (7-day average)
               value: newPeopleVaccinatedSecondDoseByPublishDate
               tooltip: 7-day rolling average of the daily reported number of people who received the second dose of COVID-19 vaccine
               type: line
@@ -324,7 +324,7 @@ cards:
               sign: "="
               value: overview         
           fields:
-            - label: number of people received 2nd dose
+            - label: total
               value: cumPeopleVaccinatedSecondDoseByPublishDate
               tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
               type: bar
@@ -452,14 +452,14 @@ cards:
         barType: normal
 
         fields:
-          - label: number of people received 2nd dose
+          - label: daily
             value: newPeopleVaccinatedSecondDoseByPublishDate
             tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
             type: bar
             colour: 0
             rollingAverage: false
 
-          - label: 2nd dose (7-day average)
+          - label: (7-day average)
             value: newPeopleVaccinatedSecondDoseByPublishDate
             tooltip: 7-day rolling average of the daily reported number of people who received the second dose of COVID-19 vaccine
             type: line
@@ -473,7 +473,7 @@ cards:
         tabType: chart
        
         fields:
-          - label: number of people received 2nd dose
+          - label: total
             value: cumPeopleVaccinatedSecondDoseByPublishDate
             tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
             type: bar
