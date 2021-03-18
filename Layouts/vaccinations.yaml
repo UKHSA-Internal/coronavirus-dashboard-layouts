@@ -516,7 +516,7 @@ cards:
 
     fullWidth: false
     abstract: >
-      Total percentage of people who have received a vaccination for COVID-19, by dose, up to the latest day on which vaccine data were reported.
+      Total percentage of people aged 18 and over who have received a vaccination for COVID-19, by dose, up to the latest day on which vaccine data were reported.
       Data are reported daily, and include all vaccination events that are entered on the relevant system at 
       the time of extract. This includes reported vaccines that were administered up to and including the date 
       shown.
@@ -944,7 +944,7 @@ cards:
 
     fullWidth: false
     abstract: >
-      Total percentage of people who have received a vaccination for COVID-19, by day on which the vaccine was reported. 
+      Total percentage of people aged 18 and over who have received a vaccination for COVID-19, by day on which the vaccine was reported. 
       Data are reported daily, and include all vaccination events that are entered on the relevant system at 
       the time of extract. Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
     
