@@ -99,6 +99,7 @@ changeLog:
       
       - `cumVaccinationFirstDoseUptakeByPublishDatePercentage`
       - `cumVaccinationSecondDoseUptakeByPublishDatePercentage`
+      - `cumVaccinationCompleteCoverageByPublishDatePercentage`
 
   - type: *dataIssue
     date: "2021-03-17"
