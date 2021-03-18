@@ -23,11 +23,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people who have received the first dose of a vaccination for COVID-19, by day on which the vaccine was reported. 
-      Data are reported daily, and include all vaccination events that are entered on the relevant system at 
-      the time of extract. This includes reported vaccines that were administered up to and including the date 
-      shown. Data for Wales were not available for 15 and 16 January 2021, and are shown as zeros. 
-      Their newly reported numbers for 17 January 2021 include vaccinations recorded in the period 15 to 17 January 2021.
+      The number of people who have received a first dose COVID-19 vaccination, shown by date reported. 
+      Daily figures include all vaccines that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
     
     download:
       - newPeopleVaccinatedFirstDoseByPublishDate
@@ -188,11 +186,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people who have received the first dose of a vaccination for COVID-19, by day on which the vaccine was reported. 
-      Data are reported daily, and include all vaccination events that are entered on the relevant system at 
-      the time of extract. This includes reported vaccines that were administered up to and including the date 
-      shown. Data for Wales were not available for 15 and 16 January 2021, and are shown as zeros. 
-      Their newly reported numbers for 17 January 2021 include vaccinations recorded in the period 15 to 17 January 2021.
+      The number of people who have received a first dose COVID-19 vaccination, shown by date reported. 
+      Daily figures include all vaccines that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
     
     download:
       - newPeopleVaccinatedFirstDoseByPublishDate
@@ -270,11 +266,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people who have received the second dose of a vaccination for COVID-19, by day on which the vaccine was reported. 
-      Data are reported daily, and include all vaccination events that are entered on the relevant system at 
-      the time of extract. This includes reported vaccines that were administered up to and including the date 
-      shown. Data for Wales were not available for 15 and 16 January 2021, and are shown as zeros. 
-      Their newly reported numbers for 17 January 2021 include vaccinations recorded in the period 15 to 17 January 2021.
+      The number of people who have received a second dose COVID-19 vaccination, shown by date reported. 
+      Daily figures include all vaccines that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
     
     download:
       - newPeopleVaccinatedSecondDoseByPublishDate
@@ -435,11 +429,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people who have received the second dose of a vaccination for COVID-19, by day on which the vaccine was reported. 
-      Data are reported daily, and include all vaccination events that are entered on the relevant system at 
-      the time of extract. This includes reported vaccines that were administered up to and including the date 
-      shown. Data for Wales were not available for 15 and 16 January 2021, and are shown as zeros. 
-      Their newly reported numbers for 17 January 2021 include vaccinations recorded in the period 15 to 17 January 2021.
+      The number of people who have received a second dose COVID-19 vaccination, shown by date reported. 
+      Daily figures include all vaccines that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
     
     download:
       - newPeopleVaccinatedSecondDoseByPublishDate
@@ -516,10 +508,10 @@ cards:
 
     fullWidth: false
     abstract: >
-      Total percentage of people aged 18 and over who have received a vaccination for COVID-19, by dose, up to the latest day on which vaccine data were reported.
-      Data are reported daily, and include all vaccination events that are entered on the relevant system at 
-      the time of extract. This includes reported vaccines that were administered up to and including the date 
-      shown.
+      Total percentage of people aged 18 and over who have received a COVID-19 vaccination, 
+      by dose, up to the latest day on which vaccine data were reported.
+      Daily figures include all vaccines that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
     
     download:
       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
@@ -944,9 +936,11 @@ cards:
 
     fullWidth: false
     abstract: >
-      Total percentage of people aged 18 and over who have received a vaccination for COVID-19, by day on which the vaccine was reported. 
-      Data are reported daily, and include all vaccination events that are entered on the relevant system at 
-      the time of extract. Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
+      Total percentage of people aged 18 and over who have received a COVID-19 vaccination, 
+      shown by date reported.
+      Daily figures include all vaccines that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
+      Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
     
     download:
       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
