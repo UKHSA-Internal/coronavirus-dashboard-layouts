@@ -497,7 +497,6 @@ cards:
         filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
 
 ############################################################################################################################## 
-# {{ StartDevOnlyBlock }}
 
   - heading: Latest reported vaccination uptake
     cardType: tabContentRaw
@@ -562,8 +561,6 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-# {{ EndDevOnlyBlock }}
 
 ############################################################################################################################# 
 
@@ -924,7 +921,6 @@ cards:
 
 ############################################################################################################################## 
 
-# {{ StartDevOnlyBlock }}
 # UK only
 
   - heading: Vaccination uptake, by report date
@@ -1077,5 +1073,4 @@ cards:
             tabType: metadata
             filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
-# {{ EndDevOnlyBlock }}
 ############################################################################################################################## 
