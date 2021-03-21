@@ -80,6 +80,17 @@ colours:
 
 
 changeLog:
+  - type: *dataIssue
+    date: "2021-03-21"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations?areaType=nation&areaName=Scotland"
+    headline: Revision to vaccinations reported in Scotland
+    body: > 
+      Note from [gov.scot](https://www.gov.scot/publications/coronavirus-covid-19-daily-data-for-scotland/):
+      
+      Vaccinations reported yesterday (20/03/2021) have been revised today (21/03/2021) due to connectivity issues when extracting the information from the database on 20/03/2021, 
+      which meant that lower vaccination figures were initially reported. No connectivity issues impact the reporting today (21/03/2021).
+
   - type: *newMetric
     date: "2021-03-18"
     displayBanner: true
