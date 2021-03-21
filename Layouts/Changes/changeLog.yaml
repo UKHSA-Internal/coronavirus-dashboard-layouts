@@ -82,10 +82,14 @@ colours:
 changeLog:
   - type: *dataIssue
     date: "2021-03-21"
-    displayBanner: false
+    displayBanner: true
     relativeUrl: "/details/vaccinations?areaType=nation&areaName=Scotland"
     headline: Revision to vaccinations reported in Scotland
     body: > 
+      As a result, the UK totals of 1st and 2nd dose vaccinations have also been revised.
+
+      The revised figures affect the calculation of the number of vaccines administered.
+    details: |
       Note from [gov.scot](https://www.gov.scot/publications/coronavirus-covid-19-daily-data-for-scotland/):
       
       Vaccinations reported yesterday (20/03/2021) have been revised today (21/03/2021) due to connectivity issues when extracting the information from the database on 20/03/2021, 
