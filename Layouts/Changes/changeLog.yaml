@@ -42,6 +42,7 @@ type:
   update:        &update        "UPDATE"
   newContent:    &newContent    "NEW CONTENT"
   dataIssue:     &dataIssue     "DATA ISSUE"
+  other:         &other         "OTHER"
 
 
 colours:
@@ -69,8 +70,9 @@ colours:
       background: "#EEEFEF"
       text: "#383F43"
 
-    #     background: "#D2E2F1"
-    #     text: "#144E81"
+    - type: *other
+      background: "#D2E2F1"
+      text: "#144E81"
 
     #     background: "#F6D7D2"
     #     text: "#942514"
