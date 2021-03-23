@@ -1130,6 +1130,29 @@ cards:
               rollingAverage:
                 window: 7
                 clipEnd: 0 #no of days to exclude for incomplete data
+
+        - heading: Daily by dose
+          tabType: chart
+          barType: stack
+          params:
+            - key: areaType
+              sign: "="
+              value: overview 
+
+          fields:
+            - label: 1st dose daily
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false  
+
+            - label: 2nd dose daily
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+              type: bar
+              colour: 3
+              rollingAverage: false                              
           
         - heading: Cumulative
           tabType: chart
@@ -1144,7 +1167,31 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-            
+
+        - heading: Cumulative by dose
+          tabType: chart
+          barType: stack
+          params:
+            - key: areaType
+              sign: "="
+              value: overview 
+
+          fields:
+            - label: 1st dose total
+              value: cumPeopleVaccinatedFirstDoseByPublishDate
+              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false  
+
+            - label: 2nd dose total
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+              type: bar
+              colour: 3
+              rollingAverage: false 
+
+
         - heading: Data
           tabType: table
           params:
@@ -1281,6 +1328,26 @@ cards:
               window: 7
               clipEnd: 0 #no of days to exclude for incomplete data
            
+      - heading: Daily by dose
+        tabType: chart
+        barType: stack
+
+        fields:
+          - label: 1st dose daily
+            value: newPeopleVaccinatedFirstDoseByPublishDate
+            tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false  
+
+          - label: 2nd dose daily
+            value: newPeopleVaccinatedSecondDoseByPublishDate
+            tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+            type: bar
+            colour: 3
+            rollingAverage: false 
+
+
       - heading: Cumulative
         tabType: chart
        
@@ -1292,7 +1359,25 @@ cards:
             colour: 0
             rollingAverage: false
             
-         
+      - heading: Cumulative by dose
+        tabType: chart
+        barType: stack
+
+        fields:
+          - label: 1st dose total
+            value: cumPeopleVaccinatedFirstDoseByPublishDate
+            tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false  
+
+          - label: 2nd dose total
+            value: cumPeopleVaccinatedSecondDoseByPublishDate
+            tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
+            type: bar
+            colour: 3
+            rollingAverage: false         
+
       - heading: Data
         tabType: table
         
