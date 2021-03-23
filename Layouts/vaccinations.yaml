@@ -1121,15 +1121,15 @@ cards:
               colour: 0
               rollingAverage: false
            
-            - label: (7-day average)
-              value: newVaccinesGivenByPublishDate
-              tooltip: 7-day rolling average of the daily reported number of COVID-19 vaccines given
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 0 #no of days to exclude for incomplete data
+            # - label: (7-day average)
+            #   value: newVaccinesGivenByPublishDate
+            #   tooltip: 7-day rolling average of the daily reported number of COVID-19 vaccines given
+            #   type: line
+            #   colour: 3
+            #   fill: false
+            #   rollingAverage:
+            #     window: 7
+            #     clipEnd: 0 #no of days to exclude for incomplete data
           
         - heading: Cumulative
           tabType: chart
