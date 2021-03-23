@@ -1074,7 +1074,7 @@ cards:
             filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 ############################################################################################################################## 
-# {{ StartDevOnlyBlock }}
+
 # UK only (nation version in separate card below)
 
   - heading: Number of vaccinations given, by report date
@@ -1306,9 +1306,9 @@ cards:
           - heading: About 
             tabType: metadata
             filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
-# {{ EndDevOnlyBlock }}
+
 ############################################################################################################################## 
-# {{ StartDevOnlyBlock }}
+
 # nations only (uk version in card above) 
 
   - heading: Number of vaccines given, by report date
@@ -1444,5 +1444,5 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
-# {{ EndDevOnlyBlock }}
+
 ############################################################################################################################# 
