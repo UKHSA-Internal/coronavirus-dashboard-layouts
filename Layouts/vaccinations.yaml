@@ -1185,7 +1185,7 @@ cards:
               rollingAverage: false  
 
             - label: 2nd dose total
-              value: newPeopleVaccinatedSecondDoseByPublishDate
+              value: cumPeopleVaccinatedSecondDoseByPublishDate
               tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
               type: bar
               colour: 3
