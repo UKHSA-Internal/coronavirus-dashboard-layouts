@@ -1225,7 +1225,7 @@ cards:
               tooltip: Daily reported number of COVID-19 vaccines given
 
             - label: "1st dose total"
-              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              value: cumPeopleVaccinatedFirstDoseByPublishDate
               type: numeric
               tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
             
@@ -1427,7 +1427,7 @@ cards:
               tooltip: Daily reported number of COVID-19 vaccines given
 
             - label: "1st dose total"
-              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              value: cumPeopleVaccinatedFirstDoseByPublishDate
               type: numeric
               tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
             
