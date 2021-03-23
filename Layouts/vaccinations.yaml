@@ -1074,3 +1074,246 @@ cards:
             filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 ############################################################################################################################## 
+# {{ StartDevOnlyBlock }}
+# UK only (nation version in separate card below)
+
+  - heading: Number of vaccinations given, by report date
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      The number of COVID-19 vaccinations given, shown by date reported. 
+      Daily figures include all vaccines (both first and second dose) that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
+    
+    download:
+      - newVaccinesGivenByPublishDate
+      - cumVaccinesGivenByPublishDate
+
+    options:
+      type: radio
+      heading: null
+      choices:
+        - UK total
+        - By nation
+
+    UK total:
+    
+      tabs: 
+
+        - heading: Daily
+          tabType: chart
+          barType: normal
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+
+          fields:
+            - label: daily
+              value: newVaccinesGivenByPublishDate
+              tooltip: Daily reported number of COVID-19 vaccines given
+              type: bar
+              colour: 0
+              rollingAverage: false
+           
+            - label: (7-day average)
+              value: newVaccinesGivenByPublishDate
+              tooltip: 7-day rolling average of the daily reported number of COVID-19 vaccines given
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 0 #no of days to exclude for incomplete data
+          
+        - heading: Cumulative
+          tabType: chart
+          params:
+            - key: areaType
+              sign: "="
+              value: overview         
+          fields:
+            - label: total
+              value: cumVaccinesGivenByPublishDate
+              tooltip: Cumulative reported number of COVID-19 vaccines given
+              type: bar
+              colour: 0
+              rollingAverage: false
+            
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+        
+          fields:
+            - label: Report date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "daily"
+              value: newVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Daily reported number of COVID-19 vaccines given
+
+            - label: "total"
+              value: cumVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Cumulative number of COVID-19 vaccines given
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
+
+
+    By nation:
+
+      tabs:
+
+          - heading: Daily
+            tabType: chart
+            barType: stack
+            colours: [0, 9, 3, 10] # areaNames in alphabetical order
+            params:
+              - key: areaType
+                sign: "="
+                value: nation
+
+            fields:
+              - label: "daily"
+                value: newVaccinesGivenByPublishDate
+                tooltip: Daily reported number of COVID-19 vaccines given in each nation
+                type: bar
+                rollingAverage: false
+
+          - heading: Cumulative
+            tabType: chart
+            barType: stack
+            colours: [0, 9, 3, 10] # areaNames in alphabetical order
+            params:
+              - key: areaType
+                sign: "="
+                value: nation
+
+            fields:
+              - label: "total"
+                value: cumVaccinesGivenByPublishDate
+                tooltip: Cumulative reported number COVID-19 vaccines given in each nation
+                type: bar
+                rollingAverage: false
+
+          - heading: Data
+            tabType: table
+            params:
+              - key: areaType
+                sign: "="
+                value: nation
+        
+            fields:
+            - label: Report date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "daily"
+              value: newVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Daily reported number of COVID-19 vaccines given
+
+            - label: "total"
+              value: cumVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Cumulative number of COVID-19 vaccines given
+
+          - heading: About 
+            tabType: metadata
+            filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
+# {{ EndDevOnlyBlock }}
+############################################################################################################################## 
+# {{ StartDevOnlyBlock }}
+# nations only (uk version in card above) 
+
+  - heading: Number of vaccines given, by report date
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - nation
+
+    fullWidth: true
+    abstract: >
+      The number of COVID-19 vaccinations given, shown by date reported. 
+      Daily figures include all vaccines (both first and second dose) that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
+    
+    download:
+      - newVaccinesGivenByPublishDate
+      - cumVaccinesGivenByPublishDate
+    
+    tabs: 
+
+      - heading: Daily
+        tabType: chart
+        barType: normal
+
+        fields:
+          - label: daily
+            value: newVaccinesGivenByPublishDate
+            tooltip: Daily reported number of COVID-19 vaccines given
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: (7-day average)
+            value: newVaccinesGivenByPublishDate
+            tooltip: 7-day rolling average of the daily reported number of COVID-19 vaccines given
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage:
+              window: 7
+              clipEnd: 0 #no of days to exclude for incomplete data
+           
+      - heading: Cumulative
+        tabType: chart
+       
+        fields:
+          - label: total
+            value: cumVaccinesGivenByPublishDate
+            tooltip: Cumulative reported number of COVID-19 vaccines given
+            type: bar
+            colour: 0
+            rollingAverage: false
+            
+         
+      - heading: Data
+        tabType: table
+        
+        fields:
+            - label: Report date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "daily"
+              value: newVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Daily reported number of COVID-19 vaccines given
+
+            - label: "total"
+              value: cumVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Cumulative number of COVID-19 vaccines given
+ 
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
+# {{ EndDevOnlyBlock }}
+############################################################################################################################# 
