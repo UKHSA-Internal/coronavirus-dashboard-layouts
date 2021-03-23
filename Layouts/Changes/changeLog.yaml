@@ -82,6 +82,32 @@ colours:
 
 
 changeLog:
+
+  - type: *dataIssue
+    date: "2021-03-23"
+    displayBanner: true
+    relativeUrl: "/details/vaccinations"
+    headline: No update to vaccinations data for Northern Ireland
+    body: > 
+      Due to processing issues, no update is available for vaccinations in Northern Ireland. 
+      The UK total includes daily updates from England, Scotland and Wales only.
+      The Northern Ireland daily number is shown as zero and the total is unchanged from 
+      22 March 2021. These will be updated in the next release.
+
+  - type: *newMetric
+    date: "2021-03-23"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations#card-number_of_vaccinations_given_by_report_date"
+    headline: Total vaccinations (both doses combined) added
+    body: > 
+      The number of COVID-19 vaccinations given (both first and second doses combined) is now shown on the dashboard by report date. 
+      You can view vaccinations for the UK and the 4 nations.
+    details: |
+      API metrics added are as follows:
+      
+      - `newVaccinesGivenByPublishDate`
+      - `cumVaccinesGivenByPublishDate`
+
   - type: *other
     date: "2021-03-22"
     displayBanner: true
