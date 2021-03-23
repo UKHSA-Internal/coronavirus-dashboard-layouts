@@ -1093,6 +1093,10 @@ cards:
     download:
       - newVaccinesGivenByPublishDate
       - cumVaccinesGivenByPublishDate
+      - newPeopleVaccinatedFirstDoseByPublishDate
+      - cumPeopleVaccinatedFirstDoseByPublishDate
+      - newPeopleVaccinatedSecondDoseByPublishDate
+      - cumPeopleVaccinatedSecondDoseByPublishDate
 
     options:
       type: radio
@@ -1205,19 +1209,39 @@ cards:
               type: date
               tooltip: Date
 
-            - label: "daily"
+            - label: "1st dose daily"
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+
+            - label: "2nd dose daily"
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+
+            - label: "daily total"
               value: newVaccinesGivenByPublishDate
               type: numeric
               tooltip: Daily reported number of COVID-19 vaccines given
 
-            - label: "total"
+            - label: "1st dose total"
+              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+            
+            - label: "2nd dose total"
+              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+
+            - label: "cumulative total"
               value: cumVaccinesGivenByPublishDate
               type: numeric
               tooltip: Cumulative number of COVID-19 vaccines given
 
         - heading: About 
           tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
+          filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
 
 
     By nation:
@@ -1281,7 +1305,7 @@ cards:
 
           - heading: About 
             tabType: metadata
-            filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
+            filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
 # {{ EndDevOnlyBlock }}
 ############################################################################################################################## 
 # {{ StartDevOnlyBlock }}
@@ -1387,18 +1411,38 @@ cards:
               type: date
               tooltip: Date
 
-            - label: "daily"
+            - label: "1st dose daily"
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+
+            - label: "2nd dose daily"
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+
+            - label: "daily total"
               value: newVaccinesGivenByPublishDate
               type: numeric
               tooltip: Daily reported number of COVID-19 vaccines given
 
-            - label: "total"
+            - label: "1st dose total"
+              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+            
+            - label: "2nd dose total"
+              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+
+            - label: "cumulative total"
               value: cumVaccinesGivenByPublishDate
               type: numeric
               tooltip: Cumulative number of COVID-19 vaccines given
  
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
+        filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
 # {{ EndDevOnlyBlock }}
 ############################################################################################################################# 
