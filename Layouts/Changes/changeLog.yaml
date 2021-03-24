@@ -84,6 +84,15 @@ colours:
 changeLog:
 
   - type: *dataIssue
+    date: "2021-03-24"
+    displayBanner: false
+    relativeUrl: "/details/cases"
+    headline: Addition of historical cases
+    body: > 
+      57 cases from 15 February to 4 March 2021 from the NHS Lothian laboratory are now included 
+      in the reported number of new cases for Scotland and the UK.
+
+  - type: *dataIssue
     date: "2021-03-23"
     displayBanner: true
     relativeUrl: "/details/vaccinations"
