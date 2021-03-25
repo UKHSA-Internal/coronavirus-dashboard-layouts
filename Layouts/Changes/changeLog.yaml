@@ -84,6 +84,34 @@ colours:
 changeLog:
 
   - type: *dataIssue
+    date: "2021-03-25"
+    displayBanner: false
+    relativeUrl: "/details/cases"
+    headline: Addition of historical cases in Wales
+    body: > 
+      Due to a data flow issue which has now been resolved, data for Wales published on 25 March 2021 includes 33 cases 
+      from tests carried out on 25 January 2021.
+
+  - type: *dataIssue
+    date: "2021-03-25"
+    displayBanner: false
+    relativeUrl: "/details/cases"
+    headline: Exclusion of duplicate cases in Scotland total
+    body: > 
+      177 historical cases were sent in duplicate from the NHS Lothian laboratory on 25 March 2021 and have been excluded 
+      from the cases for 25 March 2021. Therefore, the cumulative number of cases for Scotland and the UK are not equal to the cumulative 
+      cases from 24 March 2021 plus new cases reported on 25 March 2021.
+
+  - type: *dataIssue
+    date: "2021-03-25"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations"
+    headline: Revision to Northern Ireland and UK historical vaccination counts
+    body: > 
+      The Northern Ireland Department of Health has migrated to a single data management system for vaccinations, which has required 
+      data reconciliation. Numbers of vaccinations given for 22 March 2021 and earlier have been revised for both Northern Ireland and the UK.
+
+  - type: *dataIssue
     date: "2021-03-24"
     displayBanner: false
     relativeUrl: "/details/cases"
