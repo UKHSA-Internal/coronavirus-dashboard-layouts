@@ -98,8 +98,8 @@ changeLog:
     relativeUrl: "/details/cases"
     headline: Exclusion of duplicate cases in Scotland total
     body: > 
-      177 historical cases were sent in duplicate from the NHS Lothian laboratory on 25 March 2021 and have been excluded 
-      from the cases for 25 March 2021. Therefore, the cumulative number of cases for Scotland and the UK are not equal to the cumulative 
+      177 historical cases were identified as duplicates received from the NHS Lothian laboratory, and have been removed from the cumulative total number of 
+      cases on 25 March 2021. Therefore, the cumulative number of cases for Scotland and the UK are not equal to the cumulative 
       cases from 24 March 2021 plus new cases reported on 25 March 2021.
 
   - type: *dataIssue
