@@ -82,6 +82,36 @@ colours:
 
 
 changeLog:
+  - type: *dataIssue
+    date: "2021-03-27"
+    displayBanner: true
+    relativeUrl: "/details/cases"
+    headline: Removal of cases incorrectly reported by laboratory
+    body: > 
+      On 27 March 2021, 850 historic cases were removed from the dashboard. Due to a laboratory 
+      processing error these tests were reported as positive when they should have been recorded 
+      as void. This affected specimen dates between 23 and 25 March in local authorities primarily 
+      in the North East and Yorkshire. The cumulative total number of people tested positive was 
+      revised down on 27 March 2021. Historic published date totals have not been changed.
+
+  - type: *dataIssue
+    date: "2021-03-27"
+    displayBanner: false
+    relativeUrl: "/details/cases"
+    headline: Addition of historical cases in Wales
+    body: > 
+      Due to a processing issue, data for cases by test type in England is not presented. It 
+      will be included in the next update.
+      
+    details: |
+      API metrics added are as follows:
+      
+      - `newCasesPCROnlyBySpecimenDate`
+      - `cumCasesPCROnlyBySpecimenDate`
+      - `newCasesLFDOnlyBySpecimenDate`
+      - `cumCasesLFDOnlyBySpecimenDate`
+      - `newCasesLFDConfirmedPCRBySpecimenDate`
+      - `cumCasesLFDConfirmedPCRBySpecimenDate`
 
   - type: *dataIssue
     date: "2021-03-25"
