@@ -1,10 +1,11 @@
+# {{ StartDevOnlyBlock }}
 - appearByUpdate: "2021-03-26"
   disappearByUpdate: "2021-03-27"
   date: "2021-03-27"
   body: >
     Owing to a delay in receiving data from Northern Ireland, today's update is delayed. 
 
-# {{ StartDevOnlyBlock }}
+
 - appearByUpdate: "2021-03-07"
   disappearByUpdate: "2021-03-08"
   body: >
