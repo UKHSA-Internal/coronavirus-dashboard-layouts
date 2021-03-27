@@ -96,7 +96,7 @@ changeLog:
 
   - type: *dataIssue
     date: "2021-03-27"
-    displayBanner: false
+    displayBanner: true
     relativeUrl: "/details/cases"
     headline: Addition of historical cases in Wales
     body: > 
