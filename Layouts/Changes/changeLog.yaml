@@ -98,13 +98,13 @@ changeLog:
     date: "2021-03-27"
     displayBanner: true
     relativeUrl: "/details/cases"
-    headline: Cases by test type not presented
+    headline: Cases by test type not presented in England
     body: > 
       Due to a processing issue, data for cases by test type in England is not presented. It 
       will be included in the next update.
       
     details: |
-      API metrics added are as follows:
+      API metrics affected are as follows:
       
       - `newCasesPCROnlyBySpecimenDate`
       - `cumCasesPCROnlyBySpecimenDate`
