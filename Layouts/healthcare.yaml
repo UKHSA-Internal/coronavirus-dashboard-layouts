@@ -1050,6 +1050,21 @@ cards:
       - transmissionRateGrowthRateMax
 
     tabs:
+      # {{ StartDevOnlyBlock }}
+      - heading: Weekly
+        tabType: twoWayLollipop
+        markerColour: 0
+        lineColour: 3
+        fields:
+          - label: Mininmum transmission rate
+            value: transmissionRateMin
+            tooltip: Something smart
+
+          - label: Maximum transmission rate
+            value: transmissionRateMax
+            tooltip: Something smarter
+      # {{ EndDevOnlyBlock }}
+
       - heading: R number
         tabType: table
         fields:
