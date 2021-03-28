@@ -404,7 +404,6 @@ cards:
 ##############################################################################################################################
 
   # Only shown for England
-  # {{ StartDevOnlyBlock }}
   - heading: Cases by test type and specimen date
     cardType: chart
     locationAware:
@@ -537,7 +536,6 @@ cards:
           tabType: metadata
           filename: cardMetadata/cases/cardCasesByTestType.md
 
-  # {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
