@@ -1062,7 +1062,7 @@ cards:
             value: transmissionRateMax
             tooltip: Something smarter
 
-          - label: Mininmum
+          - label: Minimum
             value: transmissionRateMin
             tooltip: Something smart
       # {{ EndDevOnlyBlock }}
