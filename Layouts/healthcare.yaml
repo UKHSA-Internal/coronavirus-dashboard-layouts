@@ -1053,7 +1053,9 @@ cards:
       # {{ StartDevOnlyBlock }}
       - heading: Weekly
         tabType: twoWayLollipop
-        markerColour: 0
+        threshold: 1
+        markerColourBelowThreshold: 11
+        markerColourAboveThreshold: 10
         lineColour: 3
         fields:
           - label: Mininmum transmission rate
