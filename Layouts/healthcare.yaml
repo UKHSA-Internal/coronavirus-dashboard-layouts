@@ -1058,13 +1058,13 @@ cards:
         markerColourAboveThreshold: 10
         lineColour: 3
         fields:
-          - label: Mininmum transmission rate
-            value: transmissionRateMin
-            tooltip: Something smart
-
-          - label: Maximum transmission rate
+          - label: Maximum
             value: transmissionRateMax
             tooltip: Something smarter
+
+          - label: Mininmum
+            value: transmissionRateMin
+            tooltip: Something smart
       # {{ EndDevOnlyBlock }}
 
       - heading: R number
