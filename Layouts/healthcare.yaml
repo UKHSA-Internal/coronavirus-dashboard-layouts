@@ -1041,7 +1041,12 @@ cards:
     cardType: chart
     fullWidth: true
     abstract: >
-      The estimated R number (transmission rate) and daily infection growth rate.
+      The estimated R number (transmission rate) and daily infection growth rate. The R number, or reproduction number, 
+      is the average number of secondary infections produced by a single infected person. The infection growth rate is an
+      approximation of the percentage change in the number of infections each day and indicates how quickly the number of 
+      infections is changing. Both estimates are presented as ranges, and the minimum and maximum values of these ranges are shown.
+      Values greater than or equal to 1 for R number and 0% for the growth rate are shown as red triangles pointing upwards. Values
+      less than 1 for R number and 0% for the growth rate are shown as green triangles pointing downwards.
 
     download:
       - transmissionRateMin
@@ -1051,7 +1056,7 @@ cards:
 
     tabs:
       # {{ StartDevOnlyBlock }}
-      - heading: Weekly
+      - heading: R number
         tabType: twoWayLollipop
         threshold: 1
         markerColourBelowThreshold: 11
@@ -1062,14 +1067,14 @@ cards:
         fields:
           - label: Maximum
             value: transmissionRateMax
-            tooltip: Something smarter
+            tooltip: The maximum value in the estimated range of R number
 
           - label: Minimum
             value: transmissionRateMin
-            tooltip: Something smart
+            tooltip: The minimum value in the estimated range of R number
       # {{ EndDevOnlyBlock }}
 
-      - heading: R number
+      - heading: R number data
         tabType: table
         fields:
           - label: Date
@@ -1080,14 +1085,33 @@ cards:
           - label: Minimum
             value: transmissionRateMin
             type: numeric
-            tooltip: Estimated R number minimum
+            tooltip: The minimum value in the estimated range of R number
 
           - label: Maximum
             value: transmissionRateMax
             type: numeric
-            tooltip: Estimated R number maximum 
+            tooltip: The maximum value in the estimated range of R number 
 
+      # {{ StartDevOnlyBlock }}
       - heading: Growth rate
+        tabType: twoWayLollipop
+        threshold: 1
+        markerColourBelowThreshold: 11
+        markerColourAboveThreshold: 10
+        symbolAboveThreshold: triangle-up
+        symbolBelowThreshold: triangle-down
+        lineColour: 3
+        fields:
+          - label: Maximum (%)
+            value: transmissionRateGrowthRateMax
+            tooltip: The maximum percentage value in the estimated range of daily infection growth rate
+
+          - label: Minimum (%)
+            value: transmissionRateGrowthRateMin
+            tooltip: The minimum percentage value in the estimated range of daily infection growth rate
+      # {{ EndDevOnlyBlock }}
+
+      - heading: Growth rate data
         tabType: table
         fields:
           - label: Date
@@ -1095,15 +1119,15 @@ cards:
             type: date
             tooltip: Date
 
-          - label: Minimum
+          - label: Minimum (%)
             value: transmissionRateGrowthRateMin
             type: numeric
-            tooltip: Estimated daily infection growth rate minimum
+            tooltip: The minimum percentage value in the estimated range of daily infection growth rate
 
-          - label: Maximum
+          - label: Maximum (%)
             value: transmissionRateGrowthRateMax
             type: numeric
-            tooltip: Estimated daily infection growth rate maximum 
+            tooltip: The maximum percentage value in the estimated range of daily infection growth rate 
 
       - heading: About 
         tabType: metadata
