@@ -1095,7 +1095,7 @@ cards:
       # {{ StartDevOnlyBlock }}
       - heading: Growth rate
         tabType: twoWayLollipop
-        threshold: 1
+        threshold: 0
         markerColourBelowThreshold: 11
         markerColourAboveThreshold: 10
         symbolAboveThreshold: triangle-up
