@@ -82,6 +82,14 @@ colours:
 
 
 changeLog:
+  - type: *dataIssue
+    date: "2021-03-30"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations"
+    headline: Revision to Northern Ireland and UK historical vaccination counts
+    body: > 
+      In order to align data across nations, the vaccination data for Northern Ireland has been revised to be shown by date reported. 
+      Numbers of vaccinations given for 22 March 2021 and earlier have been revised for both Northern Ireland and the UK.
 
   # NOTE: Data updated at 8pm on 29 March 2021.
   # - type: *dataIssue
