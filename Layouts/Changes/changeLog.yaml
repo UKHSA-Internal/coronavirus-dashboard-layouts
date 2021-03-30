@@ -84,6 +84,15 @@ colours:
 changeLog:
   - type: *dataIssue
     date: "2021-03-30"
+    displayBanner: true
+    relativeUrl: /details/testing
+    headline: No update to testing data
+    body: > 
+      Due to testing data not being available for the whole of the UK, these metrics have not been updated. 
+      They will be updated in the next release. 
+
+  - type: *dataIssue
+    date: "2021-03-30"
     displayBanner: false
     relativeUrl: "/details/vaccinations"
     headline: Revision to Northern Ireland and UK historical vaccination counts
