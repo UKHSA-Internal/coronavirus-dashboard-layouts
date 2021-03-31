@@ -1,3 +1,10 @@
+- appearByUpdate: "2021-03-30"
+  disappearByUpdate: "2021-04-07"
+  date: "2021-03-31"
+  body: >
+    During the Easter period, the COVID-19 Dashboard will be updated every day, but the amount of data being updated will vary. 
+    See full details in the [About the Data](/details/about-data#easter-2021-schedule) page.
+
 # {{ StartDevOnlyBlock }}
 - appearByUpdate: "2021-03-26"
   disappearByUpdate: "2021-03-27"
