@@ -82,6 +82,25 @@ colours:
 
 
 changeLog:
+
+  - type: *dataIssue
+    date: "2021-04-02"
+    displayBanner: true
+    relativeUrl:
+    headline: No data reported for Wales
+    body: > 
+      As previously announced, no data have been reported for Wales. The UK numbers have therefore only been updated with data from 
+      England, Northern Ireland and Scotland.
+
+  - type: *dataIssue
+    date: "2021-04-02"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations"
+    headline: Revision to historical vaccination data in Scotland
+    body: > 
+      Due to a problem with data flowing from GP systems, vaccination data for Scotland was incomplete for vaccines reported 
+      on 27 to 30 March 2021. Numbers for the affected days have been revised.
+
   - type: *dataIssue
     date: "2021-03-30"
     displayBanner: true
