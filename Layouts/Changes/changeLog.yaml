@@ -84,6 +84,17 @@ colours:
 changeLog:
 
   - type: *dataIssue
+    date: "2021-04-04"
+    displayBanner: true
+    relativeUrl:
+    headline: No data reported for Wales, only vaccinations reported for Northern Ireland
+    body: > 
+      As previously announced, no data have been reported for Wales. The UK numbers for cases and deaths have therefore only been updated with data from 
+      England and Scotland. 
+      
+      The UK numbers for vaccinations have been updated with data from England, Northern Ireland and Scotland.
+
+  - type: *dataIssue
     date: "2021-04-02"
     displayBanner: true
     relativeUrl:
