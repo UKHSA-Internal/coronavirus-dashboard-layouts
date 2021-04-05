@@ -90,7 +90,8 @@ changeLog:
     headline: Cases and deaths reported for Wales and Northern Ireland cover 48 hour periods
     body: > 
       The UK numbers for cases and deaths contain 48 hour reporting periods for Wales and Northern Ireland.
-      Vaccination figures for all nations are for the usual 24 hour period.
+      Vaccination figures for all nations and the UK are for the usual 24 hour period. 
+      Previously missing vaccination figures for Wales for 3 April have also been added.
     details: |
       Wales:
 
