@@ -84,6 +84,14 @@ colours:
 changeLog:
 
   - type: *dataIssue
+    date: "2021-04-06"
+    displayBanner: true
+    relativeUrl:
+    headline: Cases and deaths reported for Wales cover 48 hour period
+    body: > 
+      The UK numbers for cases and deaths contain a 48 hour reporting period for Wales, up to 9am Monday 5th April 2021
+
+  - type: *dataIssue
     date: "2021-04-05"
     displayBanner: true
     relativeUrl:
