@@ -13,7 +13,7 @@ headlineNumbers:
     valueItems: 
       - label: Total
         value: cumVaccinesGivenByPublishDate
-        tooltip: Cumulative number of COVID-19 vaccines given
+        tooltip: Total number of COVID-19 vaccines given, reported up to {date}
 
 ############################################################################################################################## 
 
