@@ -8,6 +8,12 @@ headlineNumbers:
       - label: Second dose total
         value: cumPeopleVaccinatedSecondDoseByPublishDate
         tooltip: Total number of people who have received the second dose of COVID-19 vaccine, reported up to {date}
+  
+  - caption: Vaccinations given
+    valueItems: 
+      - label: Total
+        value: cumVaccinesGivenByPublishDate
+        tooltip: Cumulative number of COVID-19 vaccines given
 
 ############################################################################################################################## 
 
