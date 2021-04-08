@@ -7,16 +7,11 @@
     **Change to case reporting and revision to historical case data in England**
 
 
-    A change has been made to the way cases are reported. Any cases that have been identified through a positive 
-    Lateral Flow Device (LFD) test will be removed if a subsequent Polymerase Chain Reaction (PCR) test, taken within 
-    3 days of the positive LFD test, is negative. Cases of this type that were previously reported have been removed 
-    from the cumulative total, reducing the total by x,xxx. The newly reported numbers of cases for the UK and England 
-    are unaffected by the removal of these.
-    
-    
-    As the newly reported cases at regional and local authority level within England are calculated as the daily change 
-    in the total number of cases, for 9 April 2021, these will show significant lower numbers or zero, and should not be 
-    considered as the actual number of new cases reported on that date.
+    The way cases are reported has changed. Cases that have been identified through a positive 
+    Lateral Flow Device (LFD) test will be removed for people who took Polymerase Chain Reaction (PCR) tests within 
+    3 days that were all negative. x,xxx cases of this type have been removed from the cumulative total. The newly reported numbers 
+    of cases for the UK and England are unaffected. However, the newly reported cases for regions and local authorities in England are affected
+    by the removal of these cases, and will show significantly lower numbers or zero. These should not be considered as the actual number of new cases reported.
 
 - appearByUpdate: "2021-03-30"
   disappearByUpdate: "2021-04-07"
