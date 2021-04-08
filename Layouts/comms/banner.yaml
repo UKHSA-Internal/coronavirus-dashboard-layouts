@@ -1,11 +1,10 @@
 # {{ StartDevOnlyBlock }}
 
 - appearByUpdate: "2021-04-07"
-  disappearByUpdate: "2021-04-09"
-  date: "2021-04-08"
+  disappearByUpdate: "2021-04-10"
+  date: "2021-04-09"
+  headline: Change to case reporting and revision to historical case data in England
   body: >
-    Change to case reporting and revision to historical case data in England
-
     A change has been made to the way cases are reported. Any cases that have been identified through a positive 
     Lateral Flow Device (LFD) test will be removed if a subsequent Polymerase Chain Reaction (PCR) test, taken within 
     3 days of the positive LFD test, is negative. Cases of this type that were previously reported have been removed 
