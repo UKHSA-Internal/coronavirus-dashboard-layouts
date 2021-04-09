@@ -84,6 +84,29 @@ colours:
 changeLog:
 
   - type: *dataIssue
+    date: "2021-04-09"
+    displayBanner: false
+    relativeUrl:
+    headline: Change to case reporting in England
+    body: > 
+     The way cases are reported has changed. Cases that have been identified through a positive rapid lateral flow 
+     test will be removed for people who took Polymerase Chain Reaction (PCR) tests within 3 days that were all negative. Cases of this type that were 
+     previously reported were removed from the cumulative total, reducing the total by 8,010. Newly reported numbers of cases for the UK and England 
+     were unaffected by the removal of these. Historic published date totals have not been changed.
+
+     Newly reported cases at regional and local authority level within England are calculated as the daily change in the total number of cases. 
+     This means that for 9 April 2021, these show significantly lower numbers or zero, and should not be considered as the actual number of new cases reported on that date. 
+     Details of the changes and numbers of newly reported cases for 9 April 2021 are available in [csv (wide format)](link) and [csv (long format)](link).
+
+  - type: *dataIssue
+    date: "2021-04-09"
+    displayBanner: false
+    relativeUrl:
+    headline: No R number for the UK presented
+    body: > 
+      As no UK estimates for the R number and growth rate have been agreed by SAGE, no values are shown on the dashboard.
+
+  - type: *dataIssue
     date: "2021-04-06"
     displayBanner: true
     relativeUrl:
@@ -137,6 +160,14 @@ changeLog:
     body: > 
       Due to a problem with data flowing from GP systems, vaccination data for Scotland was incomplete for vaccines reported 
       on 27 to 30 March 2021. Numbers for the affected days have been revised.
+
+  - type: *dataIssue
+    date: "2021-04-02"
+    displayBanner: false
+    relativeUrl:
+    headline: No R number for the UK presented
+    body: > 
+      As no UK estimates for the R number and growth rate have been agreed by SAGE, no values are shown on the dashboard.
 
   - type: *dataIssue
     date: "2021-03-30"

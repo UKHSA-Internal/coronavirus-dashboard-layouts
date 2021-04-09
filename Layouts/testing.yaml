@@ -38,7 +38,7 @@ cards:
       This is a count of test results and may include multiple tests for an individual person.  
       Virus tests test for the presence of SARS-CoV-2 virus and include all pillar 1 and 2 tests and 
       any virus tests undertaken in pillar 4. Virus tests include PCR tests conducted in 
-      laboratories and lateral flow device tests that give results in less than an hour, without 
+      laboratories and rapid lateral flow tests that give results in less than an hour, without 
       needing to go to a laboratory.
 
     download:
@@ -656,7 +656,7 @@ cards:
 
 # Only shown for England
 
-  - heading: Lateral flow device tests conducted
+  - heading: Rapid lateral flow tests conducted
     cardType: chart
     locationAware:
       included: 
@@ -671,9 +671,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void lateral flow device test results. 
+      Number of confirmed positive, negative or void rapid lateral flow test results. 
       This is a count of test results and may include multiple tests for an individual person. 
-      Lateral flow device tests test for the presence of SARS-CoV-2 virus and are swab tests that give 
+      Rapid lateral flow tests test for the presence of SARS-CoV-2 virus and are swab tests that give 
       results in less than an hour, without needing to go to a laboratory.
      
     download:
@@ -685,16 +685,16 @@ cards:
         tabType: chart
         barType: normal
         fields:
-          - label: Lateral flow tests conducted
+          - label: Rapid lateral flow tests conducted
             value: newLFDTests
             tooltip: Daily number of lateral flow tests conducted
             type: bar
             colour: 0
             rollingAverage: false
 
-          - label: Lateral flow tests conducted (7-day average)
+          - label: Rapid lateral flow tests conducted (7-day average)
             value: newLFDTests
-            tooltip: 7 day rolling average of the daily number of lateral flow tests conducted on {date}
+            tooltip: 7 day rolling average of the daily number of rapid lateral flow tests conducted on {date}
             type: line
             colour: 3
             fill: false
@@ -704,9 +704,9 @@ cards:
         tabType: chart
         barType: normal
         fields:
-          - label: Lateral flow tests conducted
+          - label: Rapid lateral flow tests conducted
             value: cumLFDTests
-            tooltip: Cumulative number of lateral flow tests conducted
+            tooltip: Cumulative number of rapid lateral flow tests conducted
             type: bar
             colour: 0
             rollingAverage: false
