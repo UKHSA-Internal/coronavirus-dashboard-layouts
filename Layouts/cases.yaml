@@ -418,7 +418,7 @@ cards:
     abstract: >
       Number of people with at least one positive COVID-19 test result. Cases are shown by type of test used in their first positive test and by specimen date.
       Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      The test types shown are lab-based polymerase chain reaction (PCR), rapid lateral flow test (LFD) with postitive PCR (this means the result has been verified
+      The test types shown are lab-based polymerase chain reaction (PCR), rapid lateral flow test (LFD) with positive PCR (this means the result has been verified
       with a positive PCR result taken within 3 days) and LFD without PCR (no positive PCR result taken within 3 days).
       People tested positive more than once are only counted once, on the date of their first positive test. Data for the period ending 5 days before 
       the date when the website was last updated with data for the selected area are incomplete. Some LFD results may change or be removed as more PCR results are reported.
