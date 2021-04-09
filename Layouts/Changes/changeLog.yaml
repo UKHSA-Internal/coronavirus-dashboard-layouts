@@ -86,7 +86,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-04-09"
     displayBanner: false
-    relativeUrl:
+    relativeUrl: "/details/cases"
     headline: Change to case reporting in England
     body: > 
      The way cases are reported has changed. Cases that have been identified through a positive rapid lateral flow 
