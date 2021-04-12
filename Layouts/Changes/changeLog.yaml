@@ -105,9 +105,22 @@ changeLog:
     date: "2021-04-09"
     displayBanner: false
     relativeUrl:
-    headline: No R number for the UK presented
+    headline: R number for the UK no longer to be produced
     body: > 
-      As no UK estimates for the R number and growth rate have been agreed by SAGE, no values are shown on the dashboard.
+      UK estimates of the R number and growth rate will no longer be produced by SAGE, and therefore will not be available on the dashboard.
+      Further details are available on the [R number in the UK publication](https://www.gov.uk/guidance/the-r-number-in-the-uk).
+
+      The R value and growth rates for the 4 nations and NHS England regions are more robust and useful metrics than those for the whole UK, and 
+      will continue to available on the dashboard. The current ranges for relevant areas are displayed on the postcode search pages, and 
+      available to download for all areas from the download data page, along with historical data.
+
+    details: |
+      API metrics affected are as follows:
+      
+      - `transmissionRateMin`
+      - `transmissionRateMax`
+      - `transmissionRateGrowthRateMin`
+      - `transmissionRateGrowthRateMax`     
 
   - type: *dataIssue
     date: "2021-04-06"
@@ -170,7 +183,21 @@ changeLog:
     relativeUrl:
     headline: No R number for the UK presented
     body: > 
-      As no UK estimates for the R number and growth rate have been agreed by SAGE, no values are shown on the dashboard.
+      As no UK estimates for the R number and growth rate have been agreed by SAGE, no values are shown on the dashboard. Further details are 
+      available on the [R number in the UK publication](https://www.gov.uk/guidance/the-r-number-in-the-uk).
+
+      R number and daily infection growth rate ranges are still available for the four nations and NHS regions in England. These are displayed
+      on the postcode search pages, and available to download from the download data page, along with historical data.
+
+    details: |
+      API metrics affected are as follows:
+      
+      - `transmissionRateMin`
+      - `transmissionRateMax`
+      - `transmissionRateGrowthRateMin`
+      - `transmissionRateGrowthRateMax`
+
+
 
   - type: *dataIssue
     date: "2021-03-30"
