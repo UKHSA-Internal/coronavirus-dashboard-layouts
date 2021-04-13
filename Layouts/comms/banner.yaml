@@ -1,4 +1,12 @@
 
+- appearByUpdate: "2021-04-12"
+  disappearByUpdate: "2021-04-13"
+  date: "2021-04-13"
+  body: >
+    Owing to a delay in receiving data from Public Health Wales, today's update is delayed.
+    
+# {{ StartDevOnlyBlock }}
+
 - appearByUpdate: "2021-04-07"
   disappearByUpdate: "2021-04-10"
   date: "2021-04-09"
@@ -7,8 +15,6 @@
     The way cases are reported has changed. This has resulted in the removal of a number of previously reported cases in England. 
     This affects newly reported cases on 9 April 2021. Regions and local authorities do not show the actual number of new cases reported. 
     UK and England numbers of newly reported cases have been adjusted and correctly reflect new cases reported. [**More**](/details/whats-new)
-    
-# {{ StartDevOnlyBlock }}
 
 - appearByUpdate: "2021-03-30"
   disappearByUpdate: "2021-04-07"
