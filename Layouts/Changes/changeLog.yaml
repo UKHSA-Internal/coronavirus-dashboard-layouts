@@ -86,11 +86,11 @@ changeLog:
     date: "2021-04-13"
     displayBanner: true
     relativeUrl: 
-    headline: Only update to headline figures available for Wales
+    headline: Headline figures only for Wales
     body: > 
      Due to an issue with data from Public Health Wales, figures are only available for cases and deaths for Wales by report date. 
      The additional figures, including for local authorities in Wales, will be updated in the next release. 
-     Hosptial and vaccination data for Wales has been updated as normal.
+     Hospital and vaccination data for Wales have been updated as normal.
 
 
   - type: *dataIssue
