@@ -82,6 +82,32 @@ colours:
 
 
 changeLog:
+  - type: *dataIssue
+    date: "2021-04-13"
+    displayBanner: true
+    relativeUrl: 
+    headline: Only update to headline figures available for Wales
+    body: > 
+     Due to an issue with data from Public Health Wales, figures are only available for cases and deaths for Wales by report date. 
+     The additional figures, including for local authorities in Wales, will be updated in the next release. 
+     Hosptial and vaccination data for Wales has been updated as normal.
+
+
+  - type: *dataIssue
+    date: "2021-04-13"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations?areaType=nation&areaName=Scotland"
+    headline: Incomplete vaccination figures in Scotland
+    body: > 
+     Vaccination figures in Scotland exclude data from GP systems on Sunday 11 April.
+
+  - type: *dataIssue
+    date: "2021-04-11"
+    displayBanner: false
+    relativeUrl: "/details/cases"
+    headline: Error in case reporting in England
+    body: > 
+     Due to a processing error, 550 historical cases were removed from the England and UK figures. Affected cases were restored in the next release.
 
   - type: *dataIssue
     date: "2021-04-09"
