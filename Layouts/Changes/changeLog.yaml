@@ -83,6 +83,18 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-04-14"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations?areaType=nation&areaName=Scotland"
+    headline: Backlog of vaccination figures included for Scotland
+    body: > 
+     As noted on [gov.scot:](https://www.gov.scot/publications/coronavirus-covid-19-daily-data-for-scotland/) 
+
+     Vaccination figures for Scotland on 14 April include a backlog of GP system data that was not included in yesterday's totals. 
+     This includes 886 vaccinations from 11 April and around 5,700 from the days prior to the 11th.
+     This will also be included in vaccination figures for the UK.
+
+  - type: *dataIssue
     date: "2021-04-13"
     displayBanner: true
     relativeUrl: 
