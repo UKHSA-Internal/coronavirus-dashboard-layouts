@@ -82,7 +82,7 @@ colours:
 
 
 changeLog:
-- type: *dataIssue
+  - type: *dataIssue
     date: "2021-04-16"
     displayBanner: true
     relativeUrl: "/details/cases?areaType=nation&areaName=Scotland"
