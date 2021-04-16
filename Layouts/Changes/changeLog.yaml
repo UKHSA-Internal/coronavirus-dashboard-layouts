@@ -82,6 +82,22 @@ colours:
 
 
 changeLog:
+- type: *dataIssue
+    date: "2021-04-16"
+    displayBanner: true
+    relativeUrl: "/details/cases?areaType=nation&areaName=Scotland"
+    headline: Addition of historical cases in Scotland
+    body: > 
+     The cumulative case total for Scotland on 16 April includes an additional 160 cases.  
+     These cases were identified through the Office of National Statistics (ONS) COVID-19 Infection Survey and are for positive tests from the period 31 October to 1 December 2020. 
+     They have also been added to the cumulative total for the UK.
+    details: |
+      Note as listed on [gov.scot:](https://www.gov.scot/publications/coronavirus-covid-19-daily-data-for-scotland/) 
+
+      "Please note that the cumulative totals for today include an additional 160 cases corresponding to 384 positive tests from the period October 31- December 1, 2020. 
+      These cases were identified through the Office of National Statistics (ONS) COVID-19 Infection Survey. 
+      While the historic ONS Survey cases are included in the figures for the first time today, these individuals were known to Test and Protect and all appropriate public health action was undertaken."
+      
   - type: *dataIssue
     date: "2021-04-14"
     displayBanner: false
