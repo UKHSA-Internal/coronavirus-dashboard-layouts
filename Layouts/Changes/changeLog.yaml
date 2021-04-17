@@ -88,8 +88,8 @@ changeLog:
     relativeUrl:
     headline: Data for Wales no longer reported on Saturdays
     body: > 
-     As of the week commencing 12 April 2021, Public Health Wales have moved to a six day reporting period for [COVID-19 surveillance]
-     (https://public.tableau.com/profile/public.health.wales.health.protection#!/vizhome/RapidCOVID-19virology-Public/Headlinesummary). 
+     As of the week commencing 12 April 2021, Public Health Wales have moved to a six day reporting period for 
+     [COVID-19 surveillance](https://public.tableau.com/profile/public.health.wales.health.protection#!/vizhome/RapidCOVID-19virology-Public/Headlinesummary). 
      This means that there will be no reporting of the daily figures for Wales on Saturdays, and UK numbers have therefore only been updated 
      with data from England, Northern Ireland and Scotland. 
     details: |     
