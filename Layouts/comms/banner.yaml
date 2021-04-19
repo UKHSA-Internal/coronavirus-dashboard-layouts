@@ -1,4 +1,11 @@
 
+- appearByUpdate: "2021-04-19"
+  disappearByUpdate: "2021-04-20"
+  date: "2021-04-19"
+  body: >
+    Figures reported by Wales for 48 hour period. [More](/details/whats-new)
+
+
 # {{ StartDevOnlyBlock }}
 
 - appearByUpdate: "2021-04-12"

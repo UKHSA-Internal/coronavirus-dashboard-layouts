@@ -83,6 +83,19 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-04-19"
+    displayBanner: false
+    relativeUrl:
+    headline: Figures reported by Wales for 48 hour period
+    body: > 
+     Public Health Wales has moved to a 6-day reporting period for [COVID-19 surveillance](https://public.tableau.com/profile/public.health.wales.health.protection#!/vizhome/RapidCOVID-19virology-Public/Headlinesummary). 
+     Figures reported on Mondays for Wales are for a 48-hour period and will probably be around double the usual 24-hour figure. 
+     The UK numbers will also include figures for a 48-hour period from Wales on Mondays.
+    details: |     
+     Data for Wales reported on Mondays will be for a 48 hour period up to 9am on Sunday. 
+     It is likely that the figures reported on Mondays will be around double the usual 24 hours figure. 
+
+  - type: *dataIssue
     date: "2021-04-17"
     displayBanner: true
     relativeUrl:
