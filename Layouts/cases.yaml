@@ -1156,6 +1156,10 @@ cards:
         requiredMetrics:
           - femaleCases
           - maleCases
+          - areaCode # {{ DevOnly }} 
+          - areaName # {{ DevOnly }}
+          - areaName # {{ DevOnly }}
+          - date # {{ DevOnly }}
 
         fields:
           - label: Females
@@ -1180,6 +1184,10 @@ cards:
         requiredMetrics:
           - femaleCases
           - maleCases
+          - areaCode  # {{ DevOnly }} 
+          - areaName  # {{ DevOnly }}
+          - areaName  # {{ DevOnly }}
+          - date  # {{ DevOnly }}
 
         fields:
           - label: Age
