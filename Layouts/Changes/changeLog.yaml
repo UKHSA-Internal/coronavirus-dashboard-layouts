@@ -83,6 +83,16 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-04-21"
+    displayBanner: true
+    relativeUrl: "/details/deaths?areaType=nation&areaName=Scotland"
+    headline: Removal of 2 historical deaths in Scotland
+    body: > 
+      Two previously reported, confirmed COVID-19 deaths have been removed. This was due to further investigation by Public Health Scotland 
+      into the length of time between the deaths and the positive COVID-19 test results. Because of this, the cumulative total number of confirmed 
+      COVID-19 deaths reported for Scotland is 7,643 instead of 7,645. The UK cumulative total has also been adjusted.
+
+  - type: *dataIssue
     date: "2021-04-19"
     displayBanner: false
     relativeUrl:
