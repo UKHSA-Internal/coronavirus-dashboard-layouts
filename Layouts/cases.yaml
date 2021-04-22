@@ -505,7 +505,7 @@ cards:
               type: numeric
               tooltip: Daily number of new people tested positive using a rapid lateral flow test with subsequent confirmatory PCR by specimen date
 
-            - label: LFD daily
+            - label: LFD only daily
               value: newCasesLFDOnlyBySpecimenDate
               type: numeric
               tooltip: Daily number of new people tested positive using a rapid lateral flow test by specimen date
@@ -525,7 +525,7 @@ cards:
               value: cumCasesLFDConfirmedPCRBySpecimenDate
               tooltip: Total number of new people tested positive using a rapid lateral flow test with subsequent confirmatory PCR by specimen date
 
-            - label: LFD total
+            - label: LFD only total
               type: numeric
               value: cumCasesLFDOnlyBySpecimenDate
               tooltip: Total number of new people tested positive using a rapid lateral flow test by specimen date
