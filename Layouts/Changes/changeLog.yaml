@@ -85,7 +85,8 @@ changeLog:
   - type: *dataIssue
     date: "2021-04-25"
     displayBanner: true
-    Heading: Headline data only for Scotland
+    relativeUrl: 
+    headline: Headline data only for Scotland
     body: > 
       Due to processing issues, no update is available for vaccinations in Scotland. The UK 
       total includes daily updates from England, Northern Ireland and Wales only. The 
@@ -107,6 +108,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-04-19"
     displayBanner: false
+    relativeUrl:
     headline: Figures reported by Wales for 48 hour period
     body: > 
      Public Health Wales has moved to a 6-day reporting period for [COVID-19 surveillance](https://public.tableau.com/profile/public.health.wales.health.protection#!/vizhome/RapidCOVID-19virology-Public/Headlinesummary). 
@@ -119,6 +121,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-04-17"
     displayBanner: true
+    relativeUrl:
     headline: Data for Wales no longer reported on Saturdays
     body: > 
      As of the week commencing 12 April 2021, Public Health Wales have moved to a six day reporting period for 
@@ -160,6 +163,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-04-13"
     displayBanner: true
+    relativeUrl: 
     headline: Headline figures only for Wales
     body: > 
      Due to an issue with data from Public Health Wales, figures are only available for cases and deaths for Wales by report date. 
@@ -204,6 +208,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-04-09"
     displayBanner: false
+    relativeUrl:
     headline: R number for the UK no longer to be produced
     body: > 
       UK estimates of the R number and growth rate will no longer be produced by SAGE, and therefore will not be available on the dashboard.
@@ -224,6 +229,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-04-06"
     displayBanner: true
+    relativeUrl:
     headline: Cases and deaths reported for Wales cover 48 hour period
     body: > 
       The UK numbers for cases and deaths contain a 48 hour reporting period for Wales, up to 9am Monday 5th April 2021
@@ -231,6 +237,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-04-05"
     displayBanner: true
+    relativeUrl:
     headline: Cases and deaths reported for Wales and Northern Ireland cover 48 hour periods
     body: > 
       The UK numbers for cases and deaths contain 48 hour reporting periods for Wales and Northern Ireland.
@@ -248,6 +255,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-04-04"
     displayBanner: true
+    relativeUrl:
     headline: No data reported for Wales, only vaccinations reported for Northern Ireland
     body: > 
       As previously announced, no data for cases and deaths have been reported for Wales and Northern Ireland. The UK numbers have therefore only been updated with data from 
@@ -258,6 +266,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-04-02"
     displayBanner: true
+    relativeUrl:
     headline: No data reported for Wales
     body: > 
       As previously announced, no data have been reported for Wales. The UK numbers have therefore only been updated with data from 
@@ -275,6 +284,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-04-02"
     displayBanner: false
+    relativeUrl:
     headline: No R number for the UK presented
     body: > 
       As no UK estimates for the R number and growth rate have been agreed by SAGE, no values are shown on the dashboard. Further details are 
@@ -471,6 +481,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-03-17"
     displayBanner: false
+    relativeUrl: 
     headline: Data by specimen date and date of death not updated for UK and Northern Ireland
     body: > 
       [The Northern Ireland dashboard](https://app.powerbi.com/view?r=eyJrIjoiZGYxNjYzNmUtOTlmZS00ODAxLWE1YTEtMjA0NjZhMzlmN2JmIiwidCI6IjljOWEzMGRlLWQ4ZDctNGFhNC05NjAwLTRiZTc2MjVmZjZjNSIsImMiOjh9) 
