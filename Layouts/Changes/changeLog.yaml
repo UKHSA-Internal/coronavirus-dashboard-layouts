@@ -86,11 +86,12 @@ changeLog:
     date: "2021-04-25"
     displayBanner: true
     relativeUrl: 
-    headline: Headline data only for Scotland
-    body: > 
+    headline: No vaccination and local cases/deaths data for Scotland
+    body: |
       Due to processing issues, no update is available for vaccinations in Scotland. The UK 
       total includes daily updates from England, Northern Ireland and Wales only. The 
       Scotland daily number is shown as zero and the total is unchanged from 24 April 2021. 
+
       In addition, cases and deaths data for Scotland are only available at national headline 
       level. No breakdowns or local authority level data are available. These will be 
       updated in the next release. 
