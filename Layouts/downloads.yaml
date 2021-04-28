@@ -56,15 +56,15 @@ downloads:
 
   - label: Equivalent downloads for legacy cases file
     links:
-      - text: Lower tier local authorities
+      - text: LTLA
         url: https://api.coronavirus.data.gov.uk/v2/data?areaType=ltla&metric=cumCasesBySpecimenDate&metric=newCasesBySpecimenDate&metric=cumCasesBySpecimenDateRate&format=csv
       
-      - text: Upper tier local authorities
+      - text: UTLA
         url: https://api.coronavirus.data.gov.uk/v2/data?areaType=utla&metric=cumCasesBySpecimenDate&metric=newCasesBySpecimenDate&metric=cumCasesBySpecimenDateRate&format=csv
 
-      - text: Regions
+      - text: Region
         url: https://api.coronavirus.data.gov.uk/v2/data?areaType=region&metric=cumCasesBySpecimenDate&metric=newCasesBySpecimenDate&metric=cumCasesBySpecimenDateRate&format=csv
 
-      - text: Nations
+      - text: Nation
         url: https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&metric=cumCasesBySpecimenDate&metric=newCasesBySpecimenDate&metric=cumCasesBySpecimenDateRate&format=csv
 
