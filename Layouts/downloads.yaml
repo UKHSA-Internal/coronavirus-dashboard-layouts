@@ -49,7 +49,22 @@ downloads:
       - text: CSV (stacked)
         url: /downloads/demographic/cases/publishDate_ageDemographic-stacked.csv
 
-  - label: Legacy download of cases from the previous version of the dashboard
+  - label: Legacy download of cases from the previous version of the dashboard [Unavailable]
+    links: []
+#     - text: CSV (stacked)
+#       url: /downloads/csv/coronavirus-cases_latest.csv
+
+  - label: Equivalent downloads for legacy cases file
     links:
-      - text: CSV (stacked)
-        url: /downloads/csv/coronavirus-cases_latest.csv
+      - text: Lower tier local authorities
+        url: https://api.coronavirus.data.gov.uk/v2/data?areaType=ltla&metric=cumCasesBySpecimenDate&metric=newCasesBySpecimenDate&metric=cumCasesBySpecimenDateRate&format=csv
+      
+      - text: Upper tier local authorities
+        url: https://api.coronavirus.data.gov.uk/v2/data?areaType=utla&metric=cumCasesBySpecimenDate&metric=newCasesBySpecimenDate&metric=cumCasesBySpecimenDateRate&format=csv
+
+      - text: Regions
+        url: https://api.coronavirus.data.gov.uk/v2/data?areaType=region&metric=cumCasesBySpecimenDate&metric=newCasesBySpecimenDate&metric=cumCasesBySpecimenDateRate&format=csv
+
+      - text: Nations
+        url: https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&metric=cumCasesBySpecimenDate&metric=newCasesBySpecimenDate&metric=cumCasesBySpecimenDateRate&format=csv
+
