@@ -83,6 +83,19 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-04-30"
+    displayBanner: true
+    relativeUrl: 
+    headline: Amendment to Northern Ireland vaccination numbers
+    body: |
+      Northern Ireland have switched to a new vaccinations management system (Northern Ireland Vaccinations Management System) 
+      which provides a greater level of detail about the vaccination programme. It replaces the previous manual system which relied on a 
+      variety of platforms with differing reporting mechanisms.
+      
+      In developing the system, some data may have been amended slightly upwards or downwards, however the overall figures are consistent. 
+      This includes re-classifying a small percentage of first doses as second doses, reflecting the improved data accuracy of the new system.
+
+  - type: *dataIssue
     date: "2021-04-25"
     displayBanner: true
     relativeUrl: 
