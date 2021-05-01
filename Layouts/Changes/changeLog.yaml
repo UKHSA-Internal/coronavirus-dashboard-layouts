@@ -89,7 +89,7 @@ changeLog:
     headline: Revision to vaccinations data for Northern Ireland
     body: |
       The vaccination figures for Northern Ireland from 30 April 2021 have been revised to match figures as published at 16:58 on the 
-      [NI Covid-19 Vaccinations Dashboard](https://covid-19.hscni.net/ni-covid-19-vaccinations-dashboard/). These figures were ammended after yesterday's release. 
+      [NI Covid-19 Vaccinations Dashboard](https://covid-19.hscni.net/ni-covid-19-vaccinations-dashboard/). These figures were amended after yesterday's release. 
   
   - type: *dataIssue
     date: "2021-04-30"
