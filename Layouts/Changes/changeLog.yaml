@@ -85,7 +85,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-05-01"
     displayBanner: false
-    relativeUrl: "https://coronavirus.data.gov.uk/details/vaccinations?areaType=nation&areaName=Northern%20Ireland"
+    relativeUrl: "/details/vaccinations?areaType=nation&areaName=Northern%20Ireland"
     headline: Revision to vaccinations data for Northern Ireland
     body: |
       The vaccination figures for Northern Ireland from 30 April 2021 have been revised to match figures as published at 16:58 on the 
