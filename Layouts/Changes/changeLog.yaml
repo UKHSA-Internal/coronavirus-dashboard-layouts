@@ -86,9 +86,10 @@ changeLog:
     date: "2021-05-03"
     displayBanner: false
     relativeUrl: 
-    headline: Deaths data unavailable below UK level.
+    headline: Latest deaths data not available below UK level.
     body: |
-      Due to an issue with processing of deaths data today, data other than the UK figure is unavailable. 
+      Due to an issue with processing of deaths data today, the latest data other than the UK figure is not available. 
+      This will be updated in the next release.
 
   - type: *dataIssue
     date: "2021-05-01"
