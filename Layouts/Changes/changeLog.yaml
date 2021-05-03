@@ -82,12 +82,11 @@ colours:
 
 
 changeLog:
-
   - type: *dataIssue
     date: "2021-05-03"
     displayBanner: false
     relativeUrl: 
-    headline: Deaths data unavaiable below UK level.
+    headline: Deaths data unavailable below UK level.
     body: |
       Due to an issue with processing of deaths data today, data other than the UK figure is unavailable. 
 
