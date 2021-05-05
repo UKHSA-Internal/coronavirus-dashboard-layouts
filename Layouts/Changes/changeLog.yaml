@@ -83,10 +83,26 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-05-05"
+    displayBanner: true
+    relativeUrl: 
+    headline: Figures reported by Wales for 48-hour period
+    body: |
+      Figures reported on 5 May for Wales are for the 48-hour period from 9am Sunday 2 May to 9am Tuesday 4 May. The UK figures will also include figures from a 48-hour period from Wales.
+
+  - type: *dataIssue
+    date: "2021-05-04"
+    displayBanner: false
+    relativeUrl: 
+    headline: Figures reported by Wales for 48-hour period
+    body: |
+      Figures reported on 4 May for Wales are for the 48-hour period from 9am Friday 30 April to 9am Sunday 2 May. The UK figures will also include figures from a 48-hour period from Wales.
+
+  - type: *dataIssue
     date: "2021-05-03"
     displayBanner: false
     relativeUrl: 
-    headline: Latest deaths data not available below UK level.
+    headline: Latest deaths data not available below UK level
     body: |
       Due to an issue with processing of deaths data today, the latest data other than the UK figure is not available. 
       This will be updated in the next release.
@@ -141,14 +157,14 @@ changeLog:
     date: "2021-04-19"
     displayBanner: false
     relativeUrl:
-    headline: Figures reported by Wales for 48 hour period
+    headline: Figures reported by Wales for 48-hour period
     body: > 
      Public Health Wales has moved to a 6-day reporting period for [COVID-19 surveillance](https://public.tableau.com/profile/public.health.wales.health.protection#!/vizhome/RapidCOVID-19virology-Public/Headlinesummary). 
      Figures reported on Mondays for Wales are for a 48-hour period and will probably be around double the usual 24-hour figure. 
      The UK numbers will also include figures for a 48-hour period from Wales on Mondays.
     details: |     
      Data for Wales reported on Mondays will be for a 48 hour period up to 9am on Sunday. 
-     It is likely that the figures reported on Mondays will be around double the usual 24 hours figure. 
+     It is likely that the figures reported on Mondays will be around double the usual 24-hours figure. 
 
   - type: *dataIssue
     date: "2021-04-17"
@@ -161,8 +177,8 @@ changeLog:
      This means that there will be no reporting of the daily figures for Wales on Saturdays, and UK numbers have therefore only been updated 
      with data from England, Northern Ireland and Scotland. 
     details: |     
-     Data for Wales reported on Sundays will be for the 24 hour period up to 9am on Friday, and data reported on Mondays will be for a 
-     48 hour period up to 9am on Sunday. It is likely that the figures reported on Mondays will be around double the usual 24 hours figure. 
+     Data for Wales reported on Sundays will be for the 24-hour period up to 9am on Friday, and data reported on Mondays will be for a 
+     48-hour period up to 9am on Sunday. It is likely that the figures reported on Mondays will be around double the usual 24-hours figure. 
 
   - type: *dataIssue
     date: "2021-04-16"

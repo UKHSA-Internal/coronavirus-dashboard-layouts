@@ -1,11 +1,11 @@
+
+
+# {{ StartDevOnlyBlock }}
 - appearByUpdate: "2021-05-03"
   disappearByUpdate: "2021-05-04"
   date: "2021-05-03"
   body: >
     Latest deaths data unavailable below UK level. [More](/details/whats-new)
-
-# {{ StartDevOnlyBlock }}
-
 
 - appearByUpdate: "2021-04-19"
   disappearByUpdate: "2021-04-20"
