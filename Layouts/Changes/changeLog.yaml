@@ -88,7 +88,7 @@ changeLog:
     relativeUrl: 
     headline: Addition of vaccination content to landing page
     body: |
-      The daily numbers of newly reported people vaccinated by dose have been addeed to the landing page. The percentage of the adult 
+      The daily numbers of newly reported people vaccinated by dose have been added to the landing page. The percentage of the adult 
       population who have received each dose is also displayed and visualised.
 
   - type: *dataIssue
