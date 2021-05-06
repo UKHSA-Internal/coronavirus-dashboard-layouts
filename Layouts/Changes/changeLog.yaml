@@ -83,6 +83,15 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-05-06"
+    displayBanner: false
+    relativeUrl: "/details/testing?areaType=nation&areaName=England"
+    headline: Revision to reported virus tests for England
+    body: |
+      Pillar 4 testing figures are reported for the UK as a whole. They were previously incorrectly included in figures for virus, PCR and antibody tests in England. 
+      All pillar 4 tests have now been removed from figures reported for England. Historical figures for England have been updated, UK figures are unaffected.
+  
+  - type: *dataIssue
     date: "2021-05-05"
     displayBanner: true
     relativeUrl: 
