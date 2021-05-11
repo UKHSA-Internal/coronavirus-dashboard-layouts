@@ -1,4 +1,8 @@
-
+- appearByUpdate: "2021-05-10"
+  disappearByUpdate: "2021-05-11"
+  date: "2021-04-11"
+  body: >
+    Because of a delay in receiving data from Public Health Scotland, today's update is delayed. The dashboard will not be updated before 5:30pm.
 
 # {{ StartDevOnlyBlock }}
 - appearByUpdate: "2021-05-03"
