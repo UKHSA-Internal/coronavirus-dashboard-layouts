@@ -82,7 +82,20 @@ colours:
 
 
 changeLog:
-  - type: *newContent
+  - type: *dataIssue
+    date: "2021-05-14"
+    displayBanner: true
+    relativeUrl: "/details/testing?areaType=nation&areaName=England"
+    headline: Change to reporting of pillar 2 PCR tests in England
+    body: |
+      The source of pillar 2 PCR tests conducted for England has changed. 
+      Previously, the number of tests conducted was collated daily from individual laboratories in England based on the day the test was processed. 
+      These data are now supplied by NHS Test and Trace digital management information systems, using the date that the test was taken (specimen date). 
+      This difference in the way the tests are being reported has resulted in a small revision to the total PCR virus tests conducted for the UK and England. 
+      This new source aligns with that used in the [weekly statistics for NHS Test and Trace](https://www.gov.uk/government/collections/nhs-test-and-trace-statistics-england-weekly-reports), 
+      and with that used for rapid lateral flow (LFD) tests.
+      
+    - type: *newContent
     date: "2021-05-06"
     displayBanner: false
     relativeUrl: 
