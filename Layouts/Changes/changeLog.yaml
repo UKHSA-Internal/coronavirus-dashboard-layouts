@@ -112,7 +112,7 @@ changeLog:
     relativeUrl: "/details/interactive-map"
     headline: Interactive map will only display latest data on mobile
     body: |
-      Historical data and the date slider are no longer available on mobile device. This is to improve performance and reliability for mobile users. 
+      Historical data and the date slider are no longer available on mobile devices. This is to improve performance and reliability for mobile users. 
       Desktop devices are unaffected.
 
   - type: *newContent
