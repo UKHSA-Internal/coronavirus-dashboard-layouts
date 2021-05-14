@@ -82,7 +82,7 @@ colours:
 
 
 changeLog:
-    - type: *dataIssue
+  - type: *dataIssue
     date: "2021-05-14"
     displayBanner: true
     relativeUrl: "/details/testing?areaType=nation&areaName=England"
@@ -95,7 +95,7 @@ changeLog:
       This new source aligns with that used in the [weekly statistics for NHS Test and Trace](https://www.gov.uk/government/collections/nhs-test-and-trace-statistics-england-weekly-reports), 
       and with that used for rapid lateral flow (LFD) tests.
       
-    - type: *newContent
+  - type: *newContent
     date: "2021-05-06"
     displayBanner: false
     relativeUrl: 
