@@ -1150,20 +1150,20 @@ cards:
               value: overview 
 
           fields:
+            - label: 2nd dose daily
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+              type: bar
+              colour: 3
+              rollingAverage: false   
+
             - label: 1st dose daily
               value: newPeopleVaccinatedFirstDoseByPublishDate
               tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false  
-
-            - label: 2nd dose daily
-              value: newPeopleVaccinatedSecondDoseByPublishDate
-              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
-              type: bar
-              colour: 3
-              rollingAverage: false                              
-          
+                        
         - heading: Cumulative
           tabType: chart
           params:
@@ -1187,13 +1187,6 @@ cards:
               value: overview 
 
           fields:
-            - label: 1st dose total
-              value: cumPeopleVaccinatedFirstDoseByPublishDate
-              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false  
-
             - label: 2nd dose total
               value: cumPeopleVaccinatedSecondDoseByPublishDate
               tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
@@ -1201,6 +1194,12 @@ cards:
               colour: 3
               rollingAverage: false 
 
+            - label: 1st dose total
+              value: cumPeopleVaccinatedFirstDoseByPublishDate
+              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false  
 
         - heading: Data
           tabType: table
@@ -1363,20 +1362,20 @@ cards:
         barType: stack
 
         fields:
-          - label: 1st dose daily
-            value: newPeopleVaccinatedFirstDoseByPublishDate
-            tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
-            type: bar
-            colour: 0
-            rollingAverage: false 
-                    
           - label: 2nd dose daily
             value: newPeopleVaccinatedSecondDoseByPublishDate
             tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
             type: bar
             colour: 3
-            rollingAverage: false  
+            rollingAverage: false 
 
+          - label: 1st dose daily
+            value: newPeopleVaccinatedFirstDoseByPublishDate
+            tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false              
+ 
       - heading: Cumulative
         tabType: chart
        
@@ -1393,18 +1392,18 @@ cards:
         barType: stack
 
         fields:
-          - label: 1st dose total
-            value: cumPeopleVaccinatedFirstDoseByPublishDate
-            tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
-            type: bar
-            colour: 0
-            rollingAverage: false  
-
           - label: 2nd dose total
             value: cumPeopleVaccinatedSecondDoseByPublishDate
             tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
             type: bar
             colour: 3
+            rollingAverage: false 
+
+          - label: 1st dose total
+            value: cumPeopleVaccinatedFirstDoseByPublishDate
+            tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
+            type: bar
+            colour: 0
             rollingAverage: false  
     
       - heading: Data
