@@ -82,7 +82,7 @@ colours:
 
 
 changeLog:
-  - type: *dataIssue
+    - type: *dataIssue
     date: "2021-05-14"
     displayBanner: true
     relativeUrl: "/details/testing?areaType=nation&areaName=England"
