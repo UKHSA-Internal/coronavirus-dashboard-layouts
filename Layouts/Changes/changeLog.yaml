@@ -96,6 +96,25 @@ changeLog:
       This new source aligns with that used in the [weekly statistics for NHS Test and Trace](https://www.gov.uk/government/collections/nhs-test-and-trace-statistics-england-weekly-reports), 
       and with that used for rapid lateral flow (LFD) tests.
       
+  - type: *dataIssue
+    date: "2021-05-14"
+    displayBanner: false
+    relativeUrl: "/details/cases?areaType=nation&areaName=Scotland"
+    headline: Issue affecting case reporting in Scotland
+    body: |
+      Public Health Scotland are aware of a potential data issue affecting the flow of tests from UK Government testing sites from 8pm on 13 May 2021 
+      until 9am on 14 May 2021 which has impacted on the numbers reported on 14 May 2021 being lower than expected. The missing data will be reported 
+      on 15 May 2021.
+
+  - type: *other
+    date: "2021-05-14"
+    displayBanner: false
+    relativeUrl: "/details/interactive-map"
+    headline: Interactive map will only display latest data on mobile
+    body: |
+      Historical data and the date slider are no longer available on mobile device. This is to improve performance and reliability for mobile users. 
+      Desktop devices are unaffected.
+
   - type: *newContent
     date: "2021-05-06"
     displayBanner: false
