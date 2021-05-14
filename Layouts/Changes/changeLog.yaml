@@ -86,7 +86,7 @@ changeLog:
     date: "2021-05-14"
     displayBanner: true
     relativeUrl: "/details/testing?areaType=nation&areaName=England"
-    headline: Change to reporting of pillar 2 PCR tests in England
+    headline: Change to source of pillar 2 PCR tests in England
     body: |
       The source of pillar 2 PCR tests conducted for England has changed. 
       Previously, the number of tests conducted was collated daily from individual laboratories in England based on the day the test was processed. 
