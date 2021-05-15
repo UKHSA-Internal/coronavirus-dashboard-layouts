@@ -1657,7 +1657,7 @@ cards:
                 tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
 
               - label: "total"
-                value: cumPeopleVaccinatedSecondDoseByPublishDate
+                value: cumPeopleVaccinatedSecondDoseByVaccinationDate
                 type: numeric
                 tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
  
@@ -1936,7 +1936,7 @@ cards:
                 tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
 
               - label: "total"
-                value: cumPeopleVaccinatedSecondDoseByPublishDate
+                value: cumPeopleVaccinatedSecondDoseByVaccinationDate
                 type: numeric
                 tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
  
