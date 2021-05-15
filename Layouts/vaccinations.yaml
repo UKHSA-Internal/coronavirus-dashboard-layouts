@@ -504,6 +504,8 @@ cards:
 
 ############################################################################################################################## 
 
+# UK only
+
   - heading: Latest reported vaccination uptake
     cardType: tabContentRaw
     locationAware:
@@ -569,363 +571,6 @@ cards:
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 ############################################################################################################################# 
-
-
-# Uk only (card with nation version below)
-# {{ StartDevOnlyBlock }}
-
-  # - heading: "[Deprecated] People who have received vaccinations, by vaccination date (weekly)"
-  #   cardType: multiAreaStatic
-  #   locationAware:
-  #     included: 
-  #       areaType:
-  #         - overview
-
-  #   fullWidth: true
-  #   abstract: >
-  #     Number of people who have received a vaccination for COVID-19, by week in which the vaccine was administered. Data are reported weekly, 
-  #     and include all vaccination events that are entered on the relevant system at the time of extract.
-    
-  #   download:
-  #     - weeklyPeopleVaccinatedFirstDoseByVaccinationDate
-  #     - cumPeopleVaccinatedFirstDoseByVaccinationDate
-  #     - weeklyPeopleVaccinatedSecondDoseByVaccinationDate
-  #     - cumPeopleVaccinatedSecondDoseByVaccinationDate
-
-
-  #   options:
-  #     type: radio
-  #     heading: null
-  #     choices:
-  #       - UK total
-  #       - By nation
-
-  #   UK total:
-    
-  #     tabs: 
-
-  #       - heading: 1st dose weekly
-  #         tabType: chart
-  #         barType: normal
-  #         params:
-  #           - key: areaType
-  #             sign: "="
-  #             value: overview
-
-  #         fields:
-  #           - label: number of people received 1st dose
-  #             value: weeklyPeopleVaccinatedFirstDoseByVaccinationDate
-  #             tooltip: Weekly number of people who received the first dose of COVID-19 vaccine
-  #             type: bar
-  #             colour: 0
-  #             rollingAverage: false
-
-  #       - heading: 2nd dose weekly
-  #         tabType: chart
-  #         barType: normal
-  #         params:
-  #           - key: areaType
-  #             sign: "="
-  #             value: overview
-
-  #         fields:
-  #           - label: number of people received 2nd dose
-  #             value: weeklyPeopleVaccinatedSecondDoseByVaccinationDate
-  #             tooltip: Weekly number of people who received the secind dose of COVID-19 vaccine
-  #             type: bar
-  #             colour: 0
-  #             rollingAverage: false
-
-  #       - heading: 1st dose cumulative
-  #         tabType: chart
-  #         params:
-  #           - key: areaType
-  #             sign: "="
-  #             value: overview
-  #         fields:
-  #           - label: number of people received 1st dose
-  #             value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-  #             tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
-  #             type: bar
-  #             colour: 0
-  #             rollingAverage: false
-          
-  #       - heading: 2nd dose cumulative
-  #         tabType: chart
-  #         params:
-  #           - key: areaType
-  #             sign: "="
-  #             value: overview
-  #         fields:
-  #           - label: number of people received 2nd dose
-  #             value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-  #             tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
-  #             type: bar
-  #             colour: 0
-  #             rollingAverage: false
-        
-  #       - heading: Data
-  #         tabType: table
-  #         params:
-  #           - key: areaType
-  #             sign: "="
-  #             value: overview
-
-  #         fields:
-  #           - label: Week ending date
-  #             value: date
-  #             type: date
-  #             tooltip: Week ending date
-
-  #           - label: "1st dose weekly"
-  #             value: weeklyPeopleVaccinatedFirstDoseByVaccinationDate
-  #             type: numeric
-  #             tooltip: Weekly number of people who received the first dose of COVID-19 vaccine 
-
-  #           - label: "2nd dose weekly"
-  #             value: weeklyPeopleVaccinatedSecondDoseByVaccinationDate
-  #             type: numeric
-  #             tooltip: Weekly number of people who received the second dose of COVID-19 vaccine              
-
-  #           - label: "1st dose total"
-  #             value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-  #             type: numeric
-  #             tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
-
-  #           - label: "2nd dose total"
-  #             value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-  #             type: numeric
-  #             tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
- 
-  #       - heading: About 
-  #         tabType: metadata
-  #         filename: cardMetadata/vaccinations/cardVaccinationsWeekly.md
-
-
-  #   By nation:
-
-  #     tabs:
-  #         - heading: 1st dose weekly
-  #           tabType: chart
-  #           barType: stack
-  #           colours: [0, 9, 3, 10] # areaNames in alphabetical order
-  #           params:
-  #             - key: areaType
-  #               sign: "="
-  #               value: nation
-
-  #           fields:
-  #             - label: "1st dose weekly"
-  #               value: weeklyPeopleVaccinatedFirstDoseByVaccinationDate
-  #               tooltip: Weekly number of people who received the first dose of COVID-19 vaccine in each nation
-  #               type: bar
-  #               rollingAverage: false
-
-  #         - heading: 2nd dose weekly
-  #           tabType: chart
-  #           barType: stack
-  #           colours: [0, 9, 3, 10] # areaNames in alphabetical order
-  #           params:
-  #             - key: areaType
-  #               sign: "="
-  #               value: nation
-
-  #           fields:
-  #             - label: "2nd dose weekly"
-  #               value: weeklyPeopleVaccinatedSecondDoseByVaccinationDate
-  #               tooltip: Weekly number of people who received the second dose of COVID-19 vaccine in each nation
-  #               type: bar
-  #               rollingAverage: false               
-
-  #         - heading: 1st dose cumulative
-  #           tabType: chart
-  #           barType: stack
-  #           colours: [0, 9, 3, 10] # areaNames in alphabetical order
-  #           params:
-  #             - key: areaType
-  #               sign: "="
-  #               value: nation
-
-  #           fields:
-  #             - label: "1st dose total"
-  #               value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-  #               tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine in each nation
-  #               type: bar
-  #               rollingAverage: false
-
-  #         - heading: 2nd dose cumulative
-  #           tabType: chart
-  #           barType: stack
-  #           colours: [0, 9, 3, 10] # areaNames in alphabetical order
-  #           params:
-  #             - key: areaType
-  #               sign: "="
-  #               value: nation
-
-  #           fields:
-  #             - label: "2nd dose total"
-  #               value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-  #               tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine in each nation
-  #               type: bar
-  #               rollingAverage: false
-
-  #         - heading: 1st dose data
-  #           tabType: table
-  #           params:
-  #             - key: areaType
-  #               sign: "="
-  #               value: nation
-        
-  #           fields:
-  #           - label: Week ending date
-  #             value: date
-  #             type: date
-  #             tooltip: Week ending date
-
-  #           - label: "1st dose weekly" 
-  #             value: weeklyPeopleVaccinatedFirstDoseByVaccinationDate
-  #             type: numeric
-  #             tooltip: Weekly number of people who received the first dose of COVID-19 vaccine 
-
-  #           - label: "1st dose total"
-  #             value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-  #             type: numeric
-  #             tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
-
-  #         - heading: 2nd dose data
-  #           tabType: table
-  #           params:
-  #             - key: areaType
-  #               sign: "="
-  #               value: nation
-        
-  #           fields:
-  #           - label: Week ending date
-  #             value: date
-  #             type: date
-  #             tooltip: Week ending date
-
-  #           - label: "2nd dose weekly" 
-  #             value: weeklyPeopleVaccinatedSecondDoseByVaccinationDate
-  #             type: numeric
-  #             tooltip: Weekly number of people who received the second dose of COVID-19 vaccine 
-
-  #           - label: "2nd dose total"
-  #             value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-  #             type: numeric
-  #             tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine         
-
-  #         - heading: About 
-  #           tabType: metadata
-  #           filename: cardMetadata/vaccinations/cardVaccinationsWeekly.md
-
-# {{ EndDevOnlyBlock }}
-
-############################################################################################################################## 
-
-# {{ StartDevOnlyBlock }}
-# nations only (UK version in card above)
-
-  # - heading: "[Deprecated] People who have received vaccinations, by vaccination date (weekly)"
-  #   cardType: multiAreaStatic
-  #   locationAware:
-  #     included: 
-  #       areaType:
-  #         - nation
-
-  #   fullWidth: true
-  #   abstract: >
-  #     Number of people who have received a vaccination for COVID-19, by week in which the vaccine was administered. Data are reported weekly, 
-  #     and include all vaccination events that are entered on the relevant system at the time of extract.
-    
-  #   download:
-  #     - weeklyPeopleVaccinatedFirstDoseByVaccinationDate
-  #     - cumPeopleVaccinatedFirstDoseByVaccinationDate
-  #     - weeklyPeopleVaccinatedSecondDoseByVaccinationDate
-  #     - cumPeopleVaccinatedSecondDoseByVaccinationDate
-    
-  #   tabs: 
-
-  #     - heading: 1st dose weekly
-  #       tabType: chart
-  #       barType: normal
-
-  #       fields:
-  #         - label: number of people received 1st dose
-  #           value: weeklyPeopleVaccinatedFirstDoseByVaccinationDate
-  #           tooltip: Weekly number of people who received the first dose of COVID-19 vaccine
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
-
-  #     - heading: 2nd dose weekly
-  #       tabType: chart
-  #       barType: normal
-
-  #       fields:
-  #         - label: number of people received 2nd dose
-  #           value: weeklyPeopleVaccinatedSecondDoseByVaccinationDate
-  #           tooltip: Weekly number of people who received the secind dose of COVID-19 vaccine
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
-
-  #     - heading: 1st dose cumulative
-  #       tabType: chart
-  #       fields:
-  #         - label: number of people received 1st dose
-  #           value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-  #           tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
-          
-  #     - heading: 2nd dose cumulative
-  #       tabType: chart
-  #       fields:
-  #         - label: number of people received 2nd dose
-  #           value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-  #           tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
-        
-  #     - heading: Data
-  #       tabType: table
-
-  #       fields:
-  #         - label: Week ending date
-  #           value: date
-  #           type: date
-  #           tooltip: Week ending date
-
-  #         - label: "1st dose weekly"
-  #           value: weeklyPeopleVaccinatedFirstDoseByVaccinationDate
-  #           type: numeric
-  #           tooltip: Weekly number of people who received the first dose of COVID-19 vaccine 
-
-  #         - label: "2nd dose weekly"
-  #           value: weeklyPeopleVaccinatedSecondDoseByVaccinationDate
-  #           type: numeric
-  #           tooltip: Weekly number of people who received the second dose of COVID-19 vaccine              
-
-  #         - label: "1st dose total"
-  #           value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-  #           type: numeric
-  #           tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
-
-  #         - label: "2nd dose total"
-  #           value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-  #           type: numeric
-  #           tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
- 
-  #     - heading: About 
-  #       tabType: metadata
-  #       filename: cardMetadata/vaccinations/cardVaccinationsWeekly.md
-
-# {{ EndDevOnlyBlock }}
-
-############################################################################################################################## 
 
 # UK only
 
@@ -1450,3 +1095,728 @@ cards:
         filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
 
 ############################################################################################################################# 
+
+# {{ StartDevOnlyBlock }}
+
+# nations
+
+# nations only
+
+  - heading: People who have received vaccinations, by report date
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - nation
+
+    fullWidth: true
+    abstract: >
+      The number of people who have received a first dose COVID-19 vaccination, shown by date reported. 
+      Daily figures include all vaccines that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
+    
+    download:
+      - newPeopleVaccinatedFirstDoseByPublishDate
+      - cumPeopleVaccinatedFirstDoseByPublishDate
+      - newPeopleVaccinatedSecondDoseByPublishDate
+      - cumPeopleVaccinatedSecondDoseByPublishDate
+
+    options:
+      type: radio
+      heading: null
+      choices:
+        - First dose
+        - Second dose
+
+    First dose:
+
+      tabs: 
+
+        - heading: Daily
+          tabType: chart
+          barType: normal
+
+          fields:
+            - label: daily
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: (7-day average)
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              tooltip: 7-day rolling average of the daily reported number of people who received the first dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 0 #no of days to exclude for incomplete data
+           
+        - heading: Cumulative
+          tabType: chart
+       
+          fields:
+            - label: total
+              value: cumPeopleVaccinatedFirstDoseByPublishDate
+              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+            
+         
+        - heading: Data
+          tabType: table
+        
+          fields:
+              - label: Report date
+                value: date
+                type: date
+                tooltip: Date
+
+              - label: "daily"
+                value: newPeopleVaccinatedFirstDoseByPublishDate
+                type: numeric
+                tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+
+              - label: "total"
+                value: cumPeopleVaccinatedFirstDoseByPublishDate
+                type: numeric
+                tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+ 
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
+
+    Second dose:
+
+      tabs: 
+
+        - heading: Daily
+          tabType: chart
+          barType: normal
+
+          fields:
+            - label: daily
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: (7-day average)
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              tooltip: 7-day rolling average of the daily reported number of people who received the second dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 0 #no of days to exclude for incomplete data
+           
+        - heading: Cumulative
+          tabType: chart
+       
+          fields:
+            - label: total
+              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+            
+         
+        - heading: Data
+          tabType: table
+        
+          fields:
+              - label: Report date
+                value: date
+                type: date
+                tooltip: Date
+
+              - label: "daily"
+                value: newPeopleVaccinatedSecondDoseByPublishDate
+                type: numeric
+                tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+
+              - label: "total"
+                value: cumPeopleVaccinatedSecondDoseByPublishDate
+                type: numeric
+                tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
+ 
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
+
+############################################################################################################################# 
+
+# nations only
+
+  - heading: Number of vaccines given, by report date
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - nation
+
+    fullWidth: true
+    abstract: >
+      The number of COVID-19 vaccinations given, shown by date reported. 
+      Daily figures include all vaccines (both first and second dose) that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
+    
+    download:
+      - newVaccinesGivenByPublishDate
+      - cumVaccinesGivenByPublishDate
+    
+    tabs: 
+
+      - heading: Daily
+        tabType: chart
+        barType: normal
+
+        fields:
+          - label: daily
+            value: newVaccinesGivenByPublishDate
+            tooltip: Daily reported number of COVID-19 vaccines given
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: (7-day average)
+            value: newVaccinesGivenByPublishDate
+            tooltip: 7-day rolling average of the daily reported number of COVID-19 vaccines given
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage:
+              window: 7
+              clipEnd: 0 #no of days to exclude for incomplete data
+           
+      - heading: Daily by dose
+        tabType: chart
+        barType: stack
+
+        fields:
+          - label: 2nd dose daily
+            value: newPeopleVaccinatedSecondDoseByPublishDate
+            tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+            type: bar
+            colour: 3
+            rollingAverage: false 
+
+          - label: 1st dose daily
+            value: newPeopleVaccinatedFirstDoseByPublishDate
+            tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false              
+ 
+      - heading: Cumulative
+        tabType: chart
+       
+        fields:
+          - label: total
+            value: cumVaccinesGivenByPublishDate
+            tooltip: Cumulative reported number of COVID-19 vaccines given
+            type: bar
+            colour: 0
+            rollingAverage: false
+            
+      - heading: Cumulative by dose
+        tabType: chart
+        barType: stack
+
+        fields:
+          - label: 2nd dose total
+            value: cumPeopleVaccinatedSecondDoseByPublishDate
+            tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
+            type: bar
+            colour: 3
+            rollingAverage: false 
+
+          - label: 1st dose total
+            value: cumPeopleVaccinatedFirstDoseByPublishDate
+            tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false  
+    
+      - heading: Data
+        tabType: table
+        
+        fields:
+            - label: Report date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "1st dose daily"
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+
+            - label: "2nd dose daily"
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+
+            - label: "daily total"
+              value: newVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Daily reported number of COVID-19 vaccines given
+
+            - label: "1st dose total"
+              value: cumPeopleVaccinatedFirstDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+            
+            - label: "2nd dose total"
+              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+
+            - label: "cumulative total"
+              value: cumVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Cumulative number of COVID-19 vaccines given
+ 
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
+
+############################################################################################################################# 
+
+# nations only
+
+  - heading: Latest reported vaccination uptake
+    cardType: tabContentRaw
+    locationAware:
+      included: 
+        areaType:
+          - nation
+
+    fullWidth: false
+    abstract: >
+      Total percentage of people aged 18 and over who have received a COVID-19 vaccination, 
+      by dose, up to the latest day on which vaccine data were reported.
+      Daily figures include all vaccines that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
+    
+    download:
+      - cumVaccinationFirstDoseUptakeByPublishDatePercentage
+      - cumVaccinationSecondDoseUptakeByPublishDatePercentage
+    
+    tabs: 
+      - heading: Uptake
+        tabType: percentageWaffle
+        params:
+          - key: areaType
+            sign: "="
+            value: overview
+
+        fields:
+          - label: 1st dose (%)
+            value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
+            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+            colour: 0
+          
+          - label: 2nd dose (%)
+            value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
+            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+            colour: 3
+          
+      - heading: Data
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: overview
+      
+        fields:
+          - label: Report date
+            value: date
+            type: date
+            tooltip: Date
+
+          - label: "1st dose (%)"
+            value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
+            type: numeric
+            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+
+          - label: "2nd dose (%)"
+            value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
+            type: numeric
+            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+############################################################################################################################# 
+
+# nation only
+
+  - heading: Vaccination uptake, by report date
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - nation
+
+    fullWidth: false
+    abstract: >
+      Total percentage of people aged 18 and over who have received a COVID-19 vaccination, 
+      shown by date reported.
+      Daily figures include all vaccines that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
+      Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
+    
+    download:
+      - cumVaccinationFirstDoseUptakeByPublishDatePercentage
+      - cumVaccinationSecondDoseUptakeByPublishDatePercentage
+  
+    tabs: 
+
+      - heading: Uptake
+        tabType: chart
+        params:
+           - key: areaType
+             sign: "="
+             value: overview         
+        fields:
+            - label: 1st dose
+              value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
+              tooltip: Cumulative reported percentage of people who received the first dose of COVID-19 vaccine
+              type: line
+              colour: 0
+              rollingAverage: false
+            - label: 2nd dose
+              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
+              tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              rollingAverage: false
+           
+      - heading: Data
+        tabType: table
+        params:
+            - key: areaType
+              sign: "="
+              value: overview
+        
+        fields:
+            - label: Report date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "1st dose (%)"
+              value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
+              type: numeric
+              tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+
+            - label: "2nd dose (%)"
+              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
+              type: numeric
+              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine             
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+############################################################################################################################## 
+
+# nations only
+
+  - heading: People who have received vaccinations, by vaccination date
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - nation
+
+    fullWidth: true
+    abstract: >
+      The number of people who have received a first dose COVID-19 vaccination, shown by vaccination date. 
+      Daily figures include all vaccines that were given on the date shown, 
+      and that were entered on the relevant system at the time of extract.
+    
+    download:
+      - newPeopleVaccinatedFirstDoseByVaccinationDate
+      - cumPeopleVaccinatedFirstDoseByVaccinationDate
+      - newPeopleVaccinatedSecondDoseByVaccinationDate
+      - cumPeopleVaccinatedSecondDoseByVaccinationDate
+
+    options:
+      type: radio
+      heading: null
+      choices:
+        - First dose
+        - Second dose
+
+    First dose:
+
+      tabs: 
+
+        - heading: Daily
+          tabType: chart
+          barType: normal
+
+          fields:
+            - label: daily
+              value: newPeopleVaccinatedFirstDoseByVaccinationDate
+              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: (7-day average)
+              value: newPeopleVaccinatedFirstDoseByVaccinationDate
+              tooltip: 7-day rolling average of the daily reported number of people who received the first dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 0 #no of days to exclude for incomplete data
+           
+        - heading: Cumulative
+          tabType: chart
+       
+          fields:
+            - label: total
+              value: cumPeopleVaccinatedFirstDoseByVaccinationDate
+              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+            
+         
+        - heading: Data
+          tabType: table
+        
+          fields:
+              - label: Vaccination date
+                value: date
+                type: date
+                tooltip: Date
+
+              - label: "daily"
+                value: newPeopleVaccinatedFirstDoseByVaccinationDate
+                type: numeric
+                tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+
+              - label: "total"
+                value: cumPeopleVaccinatedFirstDoseByVaccinationDate
+                type: numeric
+                tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+ 
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
+
+    Second dose:
+
+      tabs: 
+
+        - heading: Daily
+          tabType: chart
+          barType: normal
+
+          fields:
+            - label: daily
+              value: newPeopleVaccinatedSecondDoseByVaccinationDate
+              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: (7-day average)
+              value: newPeopleVaccinatedSecondDoseByVaccinationDate
+              tooltip: 7-day rolling average of the daily reported number of people who received the second dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 0 #no of days to exclude for incomplete data
+           
+        - heading: Cumulative
+          tabType: chart
+       
+          fields:
+            - label: total
+              value: cumPeopleVaccinatedSecondDoseByVaccinationDate
+              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+            
+         
+        - heading: Data
+          tabType: table
+        
+          fields:
+              - label: Vaccination date
+                value: date
+                type: date
+                tooltip: Date
+
+              - label: "daily"
+                value: newPeopleVaccinatedSecondDoseByVaccinationDate
+                type: numeric
+                tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+
+              - label: "total"
+                value: cumPeopleVaccinatedSecondDoseByPublishDate
+                type: numeric
+                tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
+ 
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
+
+############################################################################################################################## 
+
+# nations only
+
+  - heading: Latest vaccination uptake, by vaccination date
+    cardType: tabContentRaw
+    locationAware:
+      included: 
+        areaType:
+          - nation
+
+    fullWidth: false
+    abstract: >
+      Total percentage of people aged 18 and over who have received a COVID-19 vaccination, 
+      by dose, up to the latest day on which vaccine data were reported.
+      Daily figures include all vaccines that were given up to and including the date shown.
+    
+    download:
+      - cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
+      - cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
+    
+    tabs: 
+      - heading: Uptake
+        tabType: percentageWaffle
+        params:
+          - key: areaType
+            sign: "="
+            value: overview
+
+        fields:
+          - label: 1st dose (%)
+            value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
+            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+            colour: 0
+          
+          - label: 2nd dose (%)
+            value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
+            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+            colour: 3
+          
+      - heading: Data
+        tabType: table
+        params:
+          - key: areaType
+            sign: "="
+            value: overview
+      
+        fields:
+          - label: Vaccination date
+            value: date
+            type: date
+            tooltip: Date
+
+          - label: "1st dose (%)"
+            value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
+            type: numeric
+            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+
+          - label: "2nd dose (%)"
+            value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
+            type: numeric
+            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+############################################################################################################################# 
+
+# nation only
+
+  - heading: Vaccination uptake, by vaccination date
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - nation
+
+    fullWidth: false
+    abstract: >
+      Total percentage of people aged 18 and over who have received a COVID-19 vaccination, 
+      shown by vaccination date.
+      Daily figures include all vaccines that were given up to and including the date shown.
+      Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
+    
+    download:
+      - cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
+      - cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
+  
+    tabs: 
+
+      - heading: Uptake
+        tabType: chart
+        params:
+           - key: areaType
+             sign: "="
+             value: overview         
+        fields:
+            - label: 1st dose
+              value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
+              tooltip: Cumulative reported percentage of people who received the first dose of COVID-19 vaccine
+              type: line
+              colour: 0
+              rollingAverage: false
+            - label: 2nd dose
+              value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
+              tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              rollingAverage: false
+           
+      - heading: Data
+        tabType: table
+        params:
+            - key: areaType
+              sign: "="
+              value: overview
+        
+        fields:
+            - label: Vaccination date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "1st dose (%)"
+              value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
+              type: numeric
+              tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+
+            - label: "2nd dose (%)"
+              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
+              type: numeric
+              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine             
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+############################################################################################################################# 
+
+# {{ EndDevOnlyBlock }}
