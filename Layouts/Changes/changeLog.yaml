@@ -83,6 +83,17 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-05-15"
+    displayBanner: true
+    relativeUrl:
+    headline: No cases or deaths data for Northern Ireland
+    body: |
+      Due to technical issues, the Department of Health in Northern Ireland were unable to update the numbers of cases and deaths reported. Vaccinations
+      have been updated as expected. Therefore, the UK total reported numbers of cases and deaths include updates from England and Scotland only (Wales do not
+      report on Saturdays currently).
+
+    
+  - type: *dataIssue
     date: "2021-05-14"
     displayBanner: true
     relativeUrl: "/details/testing?areaType=nation&areaName=England"
