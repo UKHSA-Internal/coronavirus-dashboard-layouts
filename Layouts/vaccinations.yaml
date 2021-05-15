@@ -1412,10 +1412,6 @@ cards:
     tabs: 
       - heading: Uptake
         tabType: percentageWaffle
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
 
         fields:
           - label: 1st dose (%)
