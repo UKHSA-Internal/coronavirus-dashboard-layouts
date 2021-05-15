@@ -1474,10 +1474,7 @@ cards:
 
       - heading: Uptake
         tabType: chart
-        params:
-           - key: areaType
-             sign: "="
-             value: nation       
+    
         fields:
             - label: 1st dose
               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
@@ -1494,10 +1491,6 @@ cards:
            
       - heading: Data
         tabType: table
-        params:
-            - key: areaType
-              sign: "="
-              value: nation
         
         fields:
             - label: Report date
@@ -1695,10 +1688,6 @@ cards:
     tabs: 
       - heading: Uptake
         tabType: percentageWaffle
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
 
         fields:
           - label: 1st dose (%)
@@ -1713,10 +1702,6 @@ cards:
           
       - heading: Data
         tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
       
         fields:
           - label: Vaccination date
@@ -1764,10 +1749,7 @@ cards:
 
       - heading: Uptake
         tabType: chart
-        params:
-           - key: areaType
-             sign: "="
-             value: nation         
+       
         fields:
             - label: 1st dose
               value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
@@ -1784,10 +1766,6 @@ cards:
            
       - heading: Data
         tabType: table
-        params:
-            - key: areaType
-              sign: "="
-              value: nation
         
         fields:
             - label: Vaccination date
