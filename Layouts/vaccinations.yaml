@@ -1415,7 +1415,7 @@ cards:
         params:
           - key: areaType
             sign: "="
-            value: overview
+            value: nation
 
         fields:
           - label: 1st dose (%)
@@ -1433,7 +1433,7 @@ cards:
         params:
           - key: areaType
             sign: "="
-            value: overview
+            value: nation
       
         fields:
           - label: Report date
@@ -1485,7 +1485,7 @@ cards:
         params:
            - key: areaType
              sign: "="
-             value: overview         
+             value: nation       
         fields:
             - label: 1st dose
               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
@@ -1505,7 +1505,7 @@ cards:
         params:
             - key: areaType
               sign: "="
-              value: overview
+              value: nation
         
         fields:
             - label: Report date
@@ -1706,7 +1706,7 @@ cards:
         params:
           - key: areaType
             sign: "="
-            value: overview
+            value: nation
 
         fields:
           - label: 1st dose (%)
@@ -1724,7 +1724,7 @@ cards:
         params:
           - key: areaType
             sign: "="
-            value: overview
+            value: nation
       
         fields:
           - label: Vaccination date
@@ -1775,7 +1775,7 @@ cards:
         params:
            - key: areaType
              sign: "="
-             value: overview         
+             value: nation         
         fields:
             - label: 1st dose
               value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
@@ -1795,7 +1795,7 @@ cards:
         params:
             - key: areaType
               sign: "="
-              value: overview
+              value: nation
         
         fields:
             - label: Vaccination date
