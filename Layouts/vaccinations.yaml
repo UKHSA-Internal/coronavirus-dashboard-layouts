@@ -1460,7 +1460,7 @@ cards:
 # nation only
 
   - heading: Vaccination uptake, by report date
-    cardType: multiAreaStatic
+    cardType: chart
     locationAware:
       included: 
         areaType:
