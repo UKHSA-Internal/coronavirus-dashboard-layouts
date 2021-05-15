@@ -1532,7 +1532,7 @@ cards:
 # nations only
 
   - heading: People who have received vaccinations, by vaccination date
-    cardType: multiAreaStatic
+    cardType: chart
     locationAware:
       included: 
         areaType:
@@ -1751,7 +1751,7 @@ cards:
 # nation only
 
   - heading: Vaccination uptake, by vaccination date
-    cardType: multiAreaStatic
+    cardType: chart
     locationAware:
       included: 
         areaType:
