@@ -1426,10 +1426,6 @@ cards:
           
       - heading: Data
         tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
       
         fields:
           - label: Report date
