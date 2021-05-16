@@ -1681,8 +1681,9 @@ cards:
     cardType: tabContentRaw
     locationAware:
       included: 
-        areaType:
-          - nation
+        areaName:
+          - England
+          - Scotland
 
     fullWidth: false
     abstract: >
@@ -1745,8 +1746,9 @@ cards:
     cardType: chart
     locationAware:
       included: 
-        areaType:
-          - nation
+        areaName:
+          - England
+          - Scotland
 
     fullWidth: false
     abstract: >
