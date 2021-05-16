@@ -1482,13 +1482,13 @@ cards:
         tabType: chart
     
         fields:
-            - label: 1st dose
+            - label: 1st dose (%)
               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
               tooltip: Cumulative reported percentage of people who received the first dose of COVID-19 vaccine
               type: line
               colour: 0
               rollingAverage: false
-            - label: 2nd dose
+            - label: 2nd dose (%)
               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
               tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine
               type: line
@@ -1560,14 +1560,14 @@ cards:
           barType: normal
 
           fields:
-            - label: daily
+            - label: Number of vaccinations
               value: newPeopleVaccinatedFirstDoseByVaccinationDate
               tooltip: Daily number of people who received the first dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
 
-            - label: (7-day average)
+            - label: Vaccinations (7-day average)
               value: newPeopleVaccinatedFirstDoseByVaccinationDate
               tooltip: 7-day rolling average of the daily number of people who received the first dose of COVID-19 vaccine
               type: line
@@ -1581,7 +1581,7 @@ cards:
           tabType: chart
        
           fields:
-            - label: total
+            - label: Number of vaccinations
               value: cumPeopleVaccinatedFirstDoseByVaccinationDate
               tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
               type: bar
@@ -1598,12 +1598,12 @@ cards:
                 type: date
                 tooltip: Date
 
-              - label: "daily"
+              - label: "Daily"
                 value: newPeopleVaccinatedFirstDoseByVaccinationDate
                 type: numeric
                 tooltip: Daily number of people who received the first dose of COVID-19 vaccine
 
-              - label: "total"
+              - label: "Total"
                 value: cumPeopleVaccinatedFirstDoseByVaccinationDate
                 type: numeric
                 tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
@@ -1621,14 +1621,14 @@ cards:
           barType: normal
 
           fields:
-            - label: daily
+            - label: Number of vaccinations
               value: newPeopleVaccinatedSecondDoseByVaccinationDate
               tooltip: Daily number of people who received the second dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
 
-            - label: (7-day average)
+            - label: Vaccinations (7-day average)
               value: newPeopleVaccinatedSecondDoseByVaccinationDate
               tooltip: 7-day rolling average of the daily number of people who received the second dose of COVID-19 vaccine
               type: line
@@ -1642,7 +1642,7 @@ cards:
           tabType: chart
        
           fields:
-            - label: total
+            - label: Number of vaccinations
               value: cumPeopleVaccinatedSecondDoseByVaccinationDate
               tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
               type: bar
@@ -1659,12 +1659,12 @@ cards:
                 type: date
                 tooltip: Date
 
-              - label: "daily"
+              - label: "Daily"
                 value: newPeopleVaccinatedSecondDoseByVaccinationDate
                 type: numeric
                 tooltip: Daily number of people who received the second dose of COVID-19 vaccine
 
-              - label: "total"
+              - label: "Total"
                 value: cumPeopleVaccinatedSecondDoseByVaccinationDate
                 type: numeric
                 tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
@@ -1770,13 +1770,13 @@ cards:
         tabType: chart
        
         fields:
-            - label: 1st dose
+            - label: 1st dose (%)
               value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
               tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
               type: line
               colour: 0
               rollingAverage: false
-            - label: 2nd dose
+            - label: 2nd dose (%)
               value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
               tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
               type: line
@@ -1852,14 +1852,14 @@ cards:
           barType: normal
 
           fields:
-            - label: daily
+            - label: Number of vaccinations
               value: newPeopleVaccinatedFirstDoseByVaccinationDate
               tooltip: Daily number of people who received the first dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
 
-            - label: (7-day average)
+            - label: Vaccinations (7-day average)
               value: newPeopleVaccinatedFirstDoseByVaccinationDate
               tooltip: 7-day rolling average of the daily number of people who received the first dose of COVID-19 vaccine
               type: line
@@ -1873,7 +1873,7 @@ cards:
           tabType: chart
        
           fields:
-            - label: total
+            - label: Number of vaccinations
               value: cumPeopleVaccinatedFirstDoseByVaccinationDate
               tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
               type: bar
@@ -1890,12 +1890,12 @@ cards:
                 type: date
                 tooltip: Date
 
-              - label: "daily"
+              - label: "Daily"
                 value: newPeopleVaccinatedFirstDoseByVaccinationDate
                 type: numeric
                 tooltip: Daily number of people who received the first dose of COVID-19 vaccine
 
-              - label: "total"
+              - label: "Total"
                 value: cumPeopleVaccinatedFirstDoseByVaccinationDate
                 type: numeric
                 tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
@@ -1913,14 +1913,14 @@ cards:
           barType: normal
 
           fields:
-            - label: daily
+            - label: Number of vaccinations
               value: newPeopleVaccinatedSecondDoseByVaccinationDate
               tooltip: Daily number of people who received the second dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
 
-            - label: (7-day average)
+            - label: Vaccinations (7-day average)
               value: newPeopleVaccinatedSecondDoseByVaccinationDate
               tooltip: 7-day rolling average of the daily number of people who received the second dose of COVID-19 vaccine
               type: line
@@ -1934,7 +1934,7 @@ cards:
           tabType: chart
        
           fields:
-            - label: total
+            - label: Number of vaccinations
               value: cumPeopleVaccinatedSecondDoseByVaccinationDate
               tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
               type: bar
@@ -1951,12 +1951,12 @@ cards:
                 type: date
                 tooltip: Date
 
-              - label: "daily"
+              - label: "Daily"
                 value: newPeopleVaccinatedSecondDoseByVaccinationDate
                 type: numeric
                 tooltip: Daily number of people who received the second dose of COVID-19 vaccine
 
-              - label: "total"
+              - label: "Total"
                 value: cumPeopleVaccinatedSecondDoseByVaccinationDate
                 type: numeric
                 tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
@@ -2064,13 +2064,13 @@ cards:
         tabType: chart
        
         fields:
-            - label: 1st dose
+            - label: 1st dose (%)
               value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
               tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
               type: line
               colour: 0
               rollingAverage: false
-            - label: 2nd dose
+            - label: 2nd dose (%)
               value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
               tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
               type: line
