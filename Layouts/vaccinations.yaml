@@ -1536,7 +1536,7 @@ cards:
       Daily figures include all vaccines that were given on the date shown, 
       and that were entered on the relevant system at the time of extract.
       For England, only people aged 18 and over who have an NHS number and are currently alive are included. Therefore the total
-      numbers will not match the totals by report date.
+      numbers will not match the totals by report date. Data for the latest 2 days, marked in grey, are incomplete.
     
     download:
       - newPeopleVaccinatedFirstDoseByVaccinationDate
@@ -1850,7 +1850,7 @@ cards:
     abstract: >
       The number of people aged 18 or over who have received a first dose COVID-19 vaccination, shown by vaccination date. 
       Daily figures include all vaccines that were given on the date shown, and that were entered on the relevant system at the time of extract.
-      For English areas, only people who have an NHS number and are currently alive are included. 
+      For English areas, only people who have an NHS number and are currently alive are included. Data for the latest 2 days, marked in grey, are incomplete.
     
     download:
       - newPeopleVaccinatedFirstDoseByVaccinationDate
@@ -2147,11 +2147,11 @@ cards:
   - heading: Vaccination uptake by area
     cardType: simpleTableStatic
     locationAware:
-      excluded: 
-        areaName:
-        - Wales
-        - Northern Ireland
-        - United Kingdom
+      included: 
+        areaType:
+        - region
+        - utla
+        - ltla
 
     fullWidth: false
     abstract: >
