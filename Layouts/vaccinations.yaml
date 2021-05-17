@@ -2152,6 +2152,10 @@ cards:
         - region
         - utla
         - ltla
+        - nation
+        areaName:
+        - England
+        - Scotland
 
     fullWidth: false
     abstract: >
