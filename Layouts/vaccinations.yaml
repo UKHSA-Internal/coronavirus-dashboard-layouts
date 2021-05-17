@@ -1592,6 +1592,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+              highlight: 
+                from: -2
+                to: 0
+                colour: 6
+                label: "Most recent 2 days (incomplete)"
             
          
         - heading: Data
@@ -1632,6 +1637,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+              highlight: 
+                from: -2
+                to: 0
+                colour: 6
+                label: "Most recent 2 days (incomplete)"
 
             - label: Vaccinations (7-day average)
               value: newPeopleVaccinatedSecondDoseByVaccinationDate
@@ -1641,7 +1651,7 @@ cards:
               fill: false
               rollingAverage:
                 window: 7
-                clipEnd: 0 #no of days to exclude for incomplete data
+                clipEnd: 2 #no of days to exclude for incomplete data
            
         - heading: Cumulative
           tabType: chart
@@ -1653,6 +1663,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+              highlight: 
+                from: -2
+                to: 0
+                colour: 6
+                label: "Most recent 2 days (incomplete)"
             
          
         - heading: Data
@@ -1865,6 +1880,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+              highlight: 
+                from: -2
+                to: 0
+                colour: 6
+                label: "Most recent 2 days (incomplete)"              
 
             - label: Vaccinations (7-day average)
               value: newPeopleVaccinatedFirstDoseByVaccinationDate
@@ -1874,7 +1894,7 @@ cards:
               fill: false
               rollingAverage:
                 window: 7
-                clipEnd: 0 #no of days to exclude for incomplete data
+                clipEnd: 2 #no of days to exclude for incomplete data
            
         - heading: Cumulative
           tabType: chart
@@ -1886,7 +1906,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-            
+              highlight: 
+                from: -2
+                to: 0
+                colour: 6
+                label: "Most recent 2 days (incomplete)"            
          
         - heading: Data
           tabType: table
@@ -1926,6 +1950,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+              highlight: 
+                from: -2
+                to: 0
+                colour: 6
+                label: "Most recent 2 days (incomplete)"
 
             - label: Vaccinations (7-day average)
               value: newPeopleVaccinatedSecondDoseByVaccinationDate
@@ -1935,7 +1964,7 @@ cards:
               fill: false
               rollingAverage:
                 window: 7
-                clipEnd: 0 #no of days to exclude for incomplete data
+                clipEnd: 2 #no of days to exclude for incomplete data
            
         - heading: Cumulative
           tabType: chart
@@ -1947,7 +1976,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-            
+              highlight: 
+                from: -2
+                to: 0
+                colour: 6
+                label: "Most recent 2 days (incomplete)"            
          
         - heading: Data
           tabType: table
@@ -2118,8 +2151,7 @@ cards:
         areaName:
         - Wales
         - Northern Ireland
-        areaType:
-        - overview
+        - United Kingdom
 
     fullWidth: false
     abstract: >
