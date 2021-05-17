@@ -2160,41 +2160,41 @@ cards:
       #       type: numeric
       #       tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine up to {date}
 
-      - heading: Nation
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
+      # - heading: Nation
+      #   tabType: table
+      #   params:
+      #     - key: areaType
+      #       sign: "="
+      #       value: nation
 
-        latestBy: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-        sortBy: areaName
+      #   latestBy: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
+      #   sortBy: areaName
 
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
+      #   fields:
+      #     - label: Area
+      #       value: areaName
+      #       type: string
+      #       tooltip: ""
 
-          - label: 1st dose
-            value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-            type: numeric
-            tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine up to {date}
+      #     - label: 1st dose
+      #       value: cumPeopleVaccinatedFirstDoseByVaccinationDate
+      #       type: numeric
+      #       tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine up to {date}
 
-          - label: 1st dose (%)
-            value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine up to {date}
+      #     - label: 1st dose (%)
+      #       value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
+      #       type: numeric
+      #       tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine up to {date}
 
-          - label: 2nd dose
-            value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-            type: numeric
-            tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}            
+      #     - label: 2nd dose
+      #       value: cumPeopleVaccinatedSecondDoseByVaccinationDate
+      #       type: numeric
+      #       tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}            
 
-          - label: 2nd dose (%)
-            value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine up to {date}
+      #     - label: 2nd dose (%)
+      #       value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
+      #       type: numeric
+      #       tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine up to {date}
 
       - heading: Region
         tabType: table
