@@ -2152,7 +2152,6 @@ cards:
         - region
         - utla
         - ltla
-        - nation
         areaName:
         - England
         - Scotland
