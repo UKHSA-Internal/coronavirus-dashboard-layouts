@@ -604,6 +604,30 @@ cards:
     
       tabs: 
 
+# {{ StartDevOnlyBlock }}
+
+        - heading: Uptake
+          tabType: chart
+          params:
+            - key: areaType
+              sign: "="
+              value: overview         
+          fields:
+            - label: 1st dose (%)
+              value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
+              tooltip: Cumulative reported percentage of people who received the first dose of COVID-19 vaccine
+              type: line
+              colour: 0
+              rollingAverage: false
+            - label: 2nd dose (%)
+              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
+              tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              rollingAverage: false             
+
+# {{ EndDevOnlyBlock }}
+
         - heading: 1st dose
           tabType: chart
           params:
@@ -1254,6 +1278,135 @@ cards:
           filename: cardMetadata/vaccinations/cardVaccinationsDaily.md
 
 ############################################################################################################################# 
+############################################################################################################################# 
+
+# nations only
+
+  - heading: Latest reported vaccination uptake
+    cardType: tabContentRaw
+    locationAware:
+      included: 
+        areaType:
+          - nation
+
+    fullWidth: false
+    abstract: >
+      Total percentage of people aged 18 and over who have received a COVID-19 vaccination, 
+      by dose, up to the latest day on which vaccine data were reported.
+      Daily figures include all vaccines that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract. Vaccinations given to all age groups, including those under 18, are
+      included in the numerator, and the denominator is the 2019 mid-year population estimate for those aged 18 and over.
+    
+    download:
+      - cumVaccinationFirstDoseUptakeByPublishDatePercentage
+      - cumVaccinationSecondDoseUptakeByPublishDatePercentage
+    
+    tabs: 
+      - heading: Uptake
+        tabType: percentageWaffle
+
+        fields:
+          - label: 1st dose (%)
+            value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
+            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+            colour: 0
+          
+          - label: 2nd dose (%)
+            value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
+            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+            colour: 3
+          
+      - heading: Data
+        tabType: table
+      
+        fields:
+          - label: Report date
+            value: date
+            type: date
+            tooltip: Date
+
+          - label: "1st dose (%)"
+            value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
+            type: numeric
+            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+
+          - label: "2nd dose (%)"
+            value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
+            type: numeric
+            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+############################################################################################################################# 
+
+# nation only
+
+  - heading: Vaccination uptake, by report date
+    cardType: chart
+    locationAware:
+      included: 
+        areaType:
+          - nation
+
+    fullWidth: false
+    abstract: >
+      Total percentage of people aged 18 and over who have received a COVID-19 vaccination, 
+      shown by date reported.
+      Daily figures include all vaccines that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
+      Vaccinations given to all age groups, including those under 18, are
+      included in the numerator, and the denominator is the 2019 mid-year population estimate for those aged 18 and over.
+      Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
+    
+    download:
+      - cumVaccinationFirstDoseUptakeByPublishDatePercentage
+      - cumVaccinationSecondDoseUptakeByPublishDatePercentage
+  
+    tabs: 
+
+      - heading: Uptake
+        tabType: chart
+    
+        fields:
+            - label: 1st dose (%)
+              value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
+              tooltip: Cumulative reported percentage of people who received the first dose of COVID-19 vaccine
+              type: line
+              colour: 0
+              rollingAverage: false
+            - label: 2nd dose (%)
+              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
+              tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              rollingAverage: false
+           
+      - heading: Data
+        tabType: table
+        
+        fields:
+            - label: Report date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "1st dose (%)"
+              value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
+              type: numeric
+              tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+
+            - label: "2nd dose (%)"
+              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
+              type: numeric
+              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine             
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+############################################################################################################################# 
 
 # nations only
 
@@ -1389,134 +1542,6 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
-
-############################################################################################################################# 
-
-# nations only
-
-  - heading: Latest reported vaccination uptake
-    cardType: tabContentRaw
-    locationAware:
-      included: 
-        areaType:
-          - nation
-
-    fullWidth: false
-    abstract: >
-      Total percentage of people aged 18 and over who have received a COVID-19 vaccination, 
-      by dose, up to the latest day on which vaccine data were reported.
-      Daily figures include all vaccines that were given up to and including the date shown, 
-      and that were entered on the relevant system at the time of extract. Vaccinations given to all age groups, including those under 18, are
-      included in the numerator, and the denominator is the 2019 mid-year population estimate for those aged 18 and over.
-    
-    download:
-      - cumVaccinationFirstDoseUptakeByPublishDatePercentage
-      - cumVaccinationSecondDoseUptakeByPublishDatePercentage
-    
-    tabs: 
-      - heading: Uptake
-        tabType: percentageWaffle
-
-        fields:
-          - label: 1st dose (%)
-            value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
-            colour: 0
-          
-          - label: 2nd dose (%)
-            value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
-            colour: 3
-          
-      - heading: Data
-        tabType: table
-      
-        fields:
-          - label: Report date
-            value: date
-            type: date
-            tooltip: Date
-
-          - label: "1st dose (%)"
-            value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-            type: numeric
-            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
-
-          - label: "2nd dose (%)"
-            value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-            type: numeric
-            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-############################################################################################################################# 
-
-# nation only
-
-  - heading: Vaccination uptake, by report date
-    cardType: chart
-    locationAware:
-      included: 
-        areaType:
-          - nation
-
-    fullWidth: false
-    abstract: >
-      Total percentage of people aged 18 and over who have received a COVID-19 vaccination, 
-      shown by date reported.
-      Daily figures include all vaccines that were given up to and including the date shown, 
-      and that were entered on the relevant system at the time of extract.
-      Vaccinations given to all age groups, including those under 18, are
-      included in the numerator, and the denominator is the 2019 mid-year population estimate for those aged 18 and over.
-      Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
-    
-    download:
-      - cumVaccinationFirstDoseUptakeByPublishDatePercentage
-      - cumVaccinationSecondDoseUptakeByPublishDatePercentage
-  
-    tabs: 
-
-      - heading: Uptake
-        tabType: chart
-    
-        fields:
-            - label: 1st dose (%)
-              value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-              tooltip: Cumulative reported percentage of people who received the first dose of COVID-19 vaccine
-              type: line
-              colour: 0
-              rollingAverage: false
-            - label: 2nd dose (%)
-              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-              tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              rollingAverage: false
-           
-      - heading: Data
-        tabType: table
-        
-        fields:
-            - label: Report date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: "1st dose (%)"
-              value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-              type: numeric
-              tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
-
-            - label: "2nd dose (%)"
-              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-              type: numeric
-              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine             
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 ############################################################################################################################## 
 
@@ -1831,7 +1856,6 @@ cards:
 ############################################################################################################################# 
 ############################################################################################################################# 
 ############################################################################################################################# 
-
 
 # local authorities / regions
 
