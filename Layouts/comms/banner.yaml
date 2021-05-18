@@ -1,7 +1,7 @@
 # {{ StartDevOnlyBlock }}
 - appearByUpdate: "2021-05-17"
-  disappearByUpdate: "2021-04-19"
-  date: "2021-04-18"
+  disappearByUpdate: "2021-05-19"
+  date: "2021-05-18"
   body: >
     **Revision to historical case data in England.** 
     The introduction of a new system disrupted the removal of cases where a positive rapid lateral flow test was followed by all negative polymerase 
