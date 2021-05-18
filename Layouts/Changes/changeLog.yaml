@@ -82,6 +82,29 @@ colours:
 
 
 changeLog:
+  - type: *newMetric
+    date: "2021-05-18"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations"
+    headline: Local vaccinations added
+    body: > 
+     We are now reporting daily figures for first and second dose vaccinations at region, upper tier local authority and 
+     lower tier local authority level within England and Scotland.
+     
+    details: |   
+      API metrics added are as follows:
+     
+      - `newPeopleVaccinatedFirstDoseByVaccinationDate`
+      - `newPeopleVaccinatedSecondDoseByVaccinationDate`
+      - `newPeopleVaccinatedCompleteByVaccinationDate`
+      - `cumPeopleVaccinatedFirstDoseByVaccinationDate`
+      - `cumPeopleVaccinatedSecondDoseByVaccinationDate`
+      - `cumPeopleVaccinatedCompleteByVaccinationDate`
+      - `cumVaccinationFirstDoseUptakeByVaccinationDatePercentage`
+      - `cumVaccinationSecondDoseUptakeByVaccinationDatePercentage`
+      - `cumVaccinationCompleteCoverageByVaccinationDatePercentage`
+      - `VaccineRegisterPopulationByVaccinationDate`
+
   - type: *dataIssue
     date: "2021-05-18"
     displayBanner: false
