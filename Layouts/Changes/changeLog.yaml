@@ -83,6 +83,22 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-04-09"
+    displayBanner: false
+    relativeUrl: "/details/cases"
+    headline: Revision to historical case data in England
+    body: > 
+     The introduction of a new system disrupted the removal of cases where a positive rapid lateral flow test was followed by all negative 
+     polymerase chain reaction (PCR) tests taken within 3 days. These 4,776 cases have now been removed. Newly-reported cases for the UK and 
+     England were unaffected. Historical published date totals have not been changed.
+
+     Newly-reported cases at regional and local authority level within England are calculated as the daily change in the total number of cases. 
+     This means that for 18 May 2021, these show significantly lower numbers or zero, and do not reflect the actual number of new cases reported on 
+     that date. Details of the changes and numbers of newly reported cases for 18 May 2021 are available in 
+     [csv (wide format)](/downloads/miscellaneous/cases_reported_2021-05-18_unstacked.csv) and 
+     [csv (long format)](/downloads/miscellaneous/cases_reported_2021-05-18_stacked.csv).
+
+  - type: *dataIssue
     date: "2021-05-15"
     displayBanner: true
     relativeUrl:
