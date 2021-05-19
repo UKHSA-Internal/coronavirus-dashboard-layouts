@@ -1,11 +1,14 @@
-- appearByUpdate: "2021-05-17"
-  disappearByUpdate: "2021-05-19"
-  date: "2021-05-18"
+
+
+- appearByUpdate: "2021-05-19"
+  disappearByUpdate: "2021-05-20"
+  date: "2021-05-19"
   body: >
     **Revision to historical case data in England.** 
     The introduction of a new system disrupted the removal of cases where a positive rapid lateral flow test (LFD) was followed by all negative laboratory
-    (PCR) tests taken within 3 days. Therefore 4,776 additional cases have been removed today. Regions and local authorities do not 
+    (PCR) tests taken within 3 days, as reported yesterday. Therefore a further 561 cases have been removed today. Regions and local authorities do not 
     show the actual number of new cases reported. UK and England numbers of newly reported cases have been adjusted and correctly reflect new cases reported.
+    This issue will be ongoing over the next few days.
     [**More**](/details/whats-new)
 
 # {{ StartDevOnlyBlock }}
