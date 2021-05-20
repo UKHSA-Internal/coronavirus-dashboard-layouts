@@ -84,7 +84,7 @@ colours:
 changeLog:
   - type: *dataIssue
     date: "2021-05-20"
-    displayBanner: false
+    displayBanner: true
     relativeUrl: "/details/cases"
     headline: Revision to historical case data in England
     body: > 
