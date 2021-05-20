@@ -83,6 +83,17 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-05-20"
+    displayBanner: true
+    relativeUrl: "/details/cases"
+    headline: Revision to historical case data in England
+    body: > 
+     The introduction of a new system disrupted the removal of cases where a positive rapid lateral flow test (LFD) was followed by all negative laboratory (PCR) tests taken within 3 days, as reported earlier this week. 
+     Therefore a further 180 cases have been removed today. 
+     Regions and local authorities do not show the actual number of new cases reported. 
+     UK and England numbers of newly reported cases have been adjusted and correctly reflect new cases reported. This issue will be ongoing over the next few days.
+     
+  - type: *dataIssue
     date: "2021-05-19"
     displayBanner: false
     relativeUrl: "/details/cases"
