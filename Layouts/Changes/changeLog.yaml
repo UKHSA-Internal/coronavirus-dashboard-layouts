@@ -83,6 +83,23 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-05-21"
+    displayBanner: true
+    relativeUrl: "/details/cases"
+    headline: Change to reporting of daily new cases in England
+    body: > 
+      The way cases are reported in England has changed. Previously reported cases that have been identified through a positive rapid lateral flow 
+      test are now being removed on a daily basis for people who took Polymerase Chain Reaction (PCR) tests within 3 days that were all negative. 
+      This means that the difference between the cumulative reported number of cases on a particular day and the number reported on the previous day 
+      is not equivalent to the number of newly reported cases (by publish date) in an area. 
+      
+
+      The newly reported number of cases for England (and the UK) are adjusted to take this into account but the newly reported cases 
+      for regions and local authorities level within England are not. This means that at these geographical levels the number should not be
+      considered as the actual number of new cases reported on that date. For analysis of trends in cases within England, the data on new cases 
+      by specimen date should be used.
+
+  - type: *dataIssue
     date: "2021-05-20"
     displayBanner: true
     relativeUrl: "/details/cases"
