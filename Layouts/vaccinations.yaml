@@ -2189,7 +2189,7 @@ cards:
 
       tabs:
         - heading: Heatmap
-          tabType: heatmap
+          tabType: percentageHeatmap
           fields:
             - label: Age demographics
               value: vaccinationsAgeDemographics
@@ -2251,7 +2251,7 @@ cards:
 
       tabs:
         - heading: Heatmap
-          tabType: heatmap
+          tabType: percentageHeatmap
           fields:
             - label: Age demographics
               value: vaccinationsAgeDemographics
