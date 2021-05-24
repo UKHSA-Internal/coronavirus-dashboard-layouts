@@ -2189,8 +2189,8 @@ cards:
             metricLabel: Age group
             parameter: age
             metrics:
-            - label: 16 to 24
-              value: "16_24"
+            - label: 18 to 24
+              value: "18_24"
 
             - label: 25 to 29
               value: "25_29"
