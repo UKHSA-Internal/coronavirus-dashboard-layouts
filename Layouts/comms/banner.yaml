@@ -4,6 +4,12 @@
   body: >
     Because of a delay in processing of vaccination data for local authorities and regions in England, they will be updated on the dashboard later today.
 
+- appearByUpdate: "2021-05-24"
+  disappearByUpdate: "2021-05-25"
+  date: "2021-05-25"
+  body: >
+    Today's dashboard update is delayed. Please check [PHE Twitter](https://twitter.com/PHE_uk) for updates.
+
 # {{ StartDevOnlyBlock }}
 - appearByUpdate: "2021-05-19"
   disappearByUpdate: "2021-05-20"
