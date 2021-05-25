@@ -1,10 +1,13 @@
+
+
+# {{ StartDevOnlyBlock }}
+
 - appearByUpdate: "2021-05-25"
   disappearByUpdate: "2021-05-26"
   date: "2021-05-25"
   body: >
     Because of a delay in processing of vaccination data for local authorities and regions in England, they will be updated on the dashboard later today.
-
-# {{ StartDevOnlyBlock }}
+    
 - appearByUpdate: "2021-05-19"
   disappearByUpdate: "2021-05-20"
   date: "2021-05-19"
