@@ -2157,6 +2157,163 @@ cards:
 
 ############################################################################################################################# 
 
+# {{ StartDevOnlyBlock }}
+
+  - heading: Vaccination uptake, by vaccination date age demographics
+    cardType: chart
+    experimental: false
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      Total percentage of people by age group who have received a COVID-19 vaccination, 
+      shown by vaccination date.
+      Daily figures include all vaccines that were given up to and including the date shown.
+      Only people who have an NHS number and are currently alive are included. The denominator
+      used is the number of people on the National Immunisation Management Service (NIMS) database.
+    
+    download:
+      - vaccinationsAgeDemographics
+    
+    options:
+      type: radio
+      heading: null
+      choices:
+        - First dose
+        - Second dose
+
+    First dose:
+
+      tabs:
+        - heading: Heatmap
+          tabType: percentageHeatmap
+          fields:
+            - label: Age demographics
+              value: vaccinationsAgeDemographics
+              amplitude: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
+              amplitudeLabel: Percentage uptake
+              metricLabel: Age group
+              parameter: age
+              metrics:
+              - label: 18 to 24
+                value: "18_24"
+
+              - label: 25 to 29
+                value: "25_29"
+
+              - label: 30 to 34
+                value: "30_34"
+
+              - label: 35 to 39
+                value: "35_39"
+
+              - label: 40 to 44
+                value: "40_44"
+
+              - label: 45 to 49
+                value: "45_49"
+
+              - label: 50 to 54
+                value: "50_54"
+
+              - label: 55 to 59
+                value: "55_59"
+
+              - label: 60 to 64
+                value: "60_64"
+
+              - label: 65 to 69
+                value: "65_69"
+
+              - label: 70 to 74
+                value: "70_74"
+
+              - label: 75 to 79
+                value: "75_79"
+
+              - label: 80 to 84
+                value: "80_84"
+
+              - label: 85 to 89
+                value: "85_89"
+
+              - label: 90+
+                value: "90+"
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+    Second dose:
+
+      tabs:
+        - heading: Heatmap
+          tabType: percentageHeatmap
+          fields:
+            - label: Age demographics
+              value: vaccinationsAgeDemographics
+              amplitude: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
+              amplitudeLabel: Percentage uptake
+              metricLabel: Age group
+              parameter: age
+              metrics:
+              - label: 18 to 24
+                value: "18_24"
+
+              - label: 25 to 29
+                value: "25_29"
+
+              - label: 30 to 34
+                value: "30_34"
+
+              - label: 35 to 39
+                value: "35_39"
+
+              - label: 40 to 44
+                value: "40_44"
+
+              - label: 45 to 49
+                value: "45_49"
+
+              - label: 50 to 54
+                value: "50_54"
+
+              - label: 55 to 59
+                value: "55_59"
+
+              - label: 60 to 64
+                value: "60_64"
+
+              - label: 65 to 69
+                value: "65_69"
+
+              - label: 70 to 74
+                value: "70_74"
+
+              - label: 75 to 79
+                value: "75_79"
+
+              - label: 80 to 84
+                value: "80_84"
+
+              - label: 85 to 89
+                value: "85_89"
+
+              - label: 90+
+                value: "90+"
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+
+# {{ EndDevOnlyBlock }}
+
+############################################################################################################################# 
+
 # England, Scotland, regions, LAs only
 
   - heading: Vaccination uptake by area
