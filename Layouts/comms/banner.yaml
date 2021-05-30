@@ -1,5 +1,10 @@
 
-
+- appearByUpdate: "2021-05-29"
+  disappearByUpdate: "2021-05-30"
+  date: "2021-05-29"
+  body: >
+    Because of technical difficulties affecting reporting of vaccine data from Public Health Wales, today's update is delayed.
+    
 # {{ StartDevOnlyBlock }}
 
 - appearByUpdate: "2021-05-25"
