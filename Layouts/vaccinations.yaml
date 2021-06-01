@@ -2157,8 +2157,6 @@ cards:
 
 ############################################################################################################################# 
 
-# {{ StartDevOnlyBlock }}
-
   - heading: Vaccination uptake, by vaccination date age demographics
     cardType: chart
     experimental: false
@@ -2166,14 +2164,15 @@ cards:
       excluded:
         areaType:
           - overview
+          - nation
 
     fullWidth: true
     abstract: >
-      Total percentage of people by age group who have received a COVID-19 vaccination, 
-      shown by vaccination date.
+      Total percentage of people by age group who have received a COVID-19 vaccination, shown by vaccination date.
       Daily figures include all vaccines that were given up to and including the date shown.
-      Only people who have an NHS number and are currently alive are included. The denominator
-      used is the number of people on the National Immunisation Management Service (NIMS) database.
+      These are provided for population surveillance purposes, and only people who have an NHS number and are currently alive are included. The denominator
+      used is the number of people on the National Immunisation Management Service (NIMS) database. 
+      They will differ from NHS England daily outputs, which provide operational data for the management of the vaccination programme.
     
     download:
       - vaccinationsAgeDemographics
@@ -2308,9 +2307,6 @@ cards:
         - heading: About 
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-
-# {{ EndDevOnlyBlock }}
 
 ############################################################################################################################# 
 
