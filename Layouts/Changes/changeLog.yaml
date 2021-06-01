@@ -92,6 +92,15 @@ changeLog:
      lower tier local authority level within England.
 
   - type: *dataIssue
+    date: "2021-06-01"
+    displayBanner: false
+    relativeUrl: 
+    headline: Figures reported by Wales for 48-hour period
+    body: |
+      Figures reported on 1 June for Wales are for the 48-hour period from 9am Friday 28 May to 9am Sunday 30 May. The UK figures will also include 
+      figures from a 48-hour period from Wales.
+
+  - type: *dataIssue
     date: "2021-05-21"
     displayBanner: true
     relativeUrl: "/details/cases"
