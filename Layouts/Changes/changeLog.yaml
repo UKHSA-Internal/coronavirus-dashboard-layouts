@@ -82,6 +82,15 @@ colours:
 
 
 changeLog:
+  - type: *newContent
+    date: "2021-06-07"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations?areaType=nation&areaName=England"
+    headline: Vaccination uptake age demographics added for England
+    body: |
+      Vaccination uptake for England, shown by age group and for all adults, has been added. These are calculated for population surveillance purposes 
+      using the current living population on the NIMS system, and for comparison with uptake currently presented at region and local authority level.
+
   - type: *dataIssue
     date: "2021-06-02"
     displayBanner: false
