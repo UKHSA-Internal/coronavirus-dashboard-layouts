@@ -82,6 +82,30 @@ colours:
 
 
 changeLog:
+  - type: *dataIssue
+    date: "2021-06-11"
+    displayBanner: false
+    relativeUrl: 
+    headline: Delay in case reporting in Scotland
+    body: |
+      Because of a lab processing issue, reported case figures on 10 June for Scotland were missing around 150-200 positive cases. 
+      These have been added to the latest reported figures for Scotland and the UK.
+
+  - type: *newFeature
+    date: "2021-06-09"
+    displayBanner: false
+    relativeUrl: "details/download"
+    headline: New features and extended archives on the downloads page
+    body: |
+      **New features:**
+
+      - **Metric associations**: The _Metrics_ dropdown now only includes metrics for which we have data available in the database. 
+      - **Latest record date**: Date of the latest record available for the selected area type and / or area name is now displayed alongside each metric in the _Metrics_ dropdown.
+      
+      **Extended archives:**
+      We have now extended the archive coverage from 12 August 2020 further back to 27 June 2020, making available an additional 47,540,939 records published over 1.5 months. 
+      This will enable users to download data as they were published on a specific date.
+
   - type: *newContent
     date: "2021-06-07"
     displayBanner: false
