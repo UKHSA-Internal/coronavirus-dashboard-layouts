@@ -83,6 +83,14 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-06-14"
+    displayBanner: true
+    relativeUrl: "details/vaccinations?areaType=nation&areaName=Northern Ireland"
+    headline: UK vaccination figures do not include data from Northern Ireland
+    body: |
+      Because of a technical issue, Northern Ireland have been unable to update their vaccination dashboard today. Updated figures will be added in the next release.
+
+  - type: *dataIssue
     date: "2021-06-11"
     displayBanner: false
     relativeUrl: "details/cases?areaType=nation&areaName=Scotland"
