@@ -83,6 +83,15 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-06-15"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations?areaType=nation&areaName=Scotland"
+    headline: Issue affecting vaccine reporting in Scotland
+    body: |
+      Because of an IT issue, vaccination figures reported by Public Health Scotland on 15 June 2021 may be lower than the actual number. 
+      Missing figures will be added in the next release.
+    
+  - type: *dataIssue
     date: "2021-06-14"
     displayBanner: true
     relativeUrl: "/details/vaccinations?areaType=nation&areaName=Northern Ireland"
