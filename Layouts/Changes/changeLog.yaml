@@ -85,7 +85,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-06-14"
     displayBanner: true
-    relativeUrl: "details/vaccinations?areaType=nation&areaName=Northern Ireland"
+    relativeUrl: "/details/vaccinations?areaType=nation&areaName=Northern Ireland"
     headline: UK vaccination figures do not include data from Northern Ireland
     body: |
       Because of a technical issue, Northern Ireland have been unable to update their vaccination dashboard today. Updated figures will be added in the next release.
@@ -93,7 +93,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-06-11"
     displayBanner: false
-    relativeUrl: "details/cases?areaType=nation&areaName=Scotland"
+    relativeUrl: "/details/cases?areaType=nation&areaName=Scotland"
     headline: Delay in case reporting in Scotland
     body: |
       Because of a lab processing issue, reported case figures on 10 June for Scotland were missing around 150-200 positive cases. 
@@ -102,7 +102,7 @@ changeLog:
   - type: *newFeature
     date: "2021-06-09"
     displayBanner: false
-    relativeUrl: "details/download"
+    relativeUrl: "/details/download"
     headline: New features and extended archives on the downloads page
     body: |
       **New features:**
