@@ -97,8 +97,8 @@ changeLog:
       This will result in fewer changes to the geographical allocation of historical death counts in future.
       
       
-      Details of the changes in total number of deaths at local authority level for 16 June 2021 data are available in 
-      [change_in_death_allocations_in_England_2021-06-16.csv](/downloads/miscellaneous/change_in_death_allocations_in_England_2021-06-16.csv) 
+      Details of the changes in total number of deaths at local authority level for 16 June 2021 data are available to  
+      [download as CSV](/downloads/miscellaneous/change_in_death_allocations_in_England_2021-06-16.csv). 
   
   - type: *dataIssue
     date: "2021-06-16"
