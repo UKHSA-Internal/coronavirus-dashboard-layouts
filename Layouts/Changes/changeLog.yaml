@@ -92,13 +92,11 @@ changeLog:
       Total deaths for England are unaffected, but some local authorities and regions will show inaccurate daily reported numbers for 16 June 2021 because of this change. 
       The cumulative number of deaths in each affected local authority and region will also change.
       
-      
       This improvement means that when there are conflicting resident addresses, the address noted at death registration will take precedence.
       This will result in fewer changes to the geographical allocation of historical death counts in future.
       
-      
-      Details of the changes in total number of deaths at local authority level for 16 June 2021 data are available to  
-      [download as CSV](/downloads/miscellaneous/change_in_death_allocations_in_England_2021-06-16.csv). 
+      Details of the changes in total number of deaths at local authority level for 16 June 2021 data are available 
+      to [download as CSV](/downloads/miscellaneous/change_in_death_allocations_in_England_2021-06-16.csv). 
   
   - type: *dataIssue
     date: "2021-06-16"
