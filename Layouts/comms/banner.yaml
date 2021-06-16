@@ -1,5 +1,11 @@
 
-
+- appearByUpdate: "2021-06-16"
+  disappearByUpdate: "2021-06-17"
+  date: "2021-06-16"
+  body: >
+    **Improved local authority allocation for deaths in England.** Some deaths previously reported in England have been reallocated to different resident local authorities. 
+    Total deaths for England are unaffected, but some local authorities and regions will show inaccurate daily reported numbers because of this change.
+    [**More**](/details/whats-new)
     
 # {{ StartDevOnlyBlock }}
 - appearByUpdate: "2021-05-29"
