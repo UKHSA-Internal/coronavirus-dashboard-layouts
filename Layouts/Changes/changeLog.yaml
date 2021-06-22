@@ -88,11 +88,11 @@ changeLog:
     relativeUrl: "/details/vaccinations"
     headline: No update to England vaccinations
     body: |
-      Following an IT issue that was reported to the NHS on 21 June, it has not been possible to update vaccinations carried out in England. 
-      Therefore the UK totals only include updates from Northern Ireland, Scotland and Wales. 
+      Following an IT issue reported to the NHS on 21 June, it has not been possible to update vaccination figures for England. 
+      UK totals only include updates from Northern Ireland, Scotland and Wales. 
       
       
-      The issue is now resolved, and the daily vaccination statistics will be updated in the next release, while vaccinations are updated to the digital system. 
+      The issue is now resolved, and the daily vaccination statistics will be updated on 23 June, as vaccinations are added to the digital system. 
       There has been no impact on vaccinations taking place.
 
   - type: *dataIssue
