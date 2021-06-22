@@ -83,6 +83,19 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-06-22"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations"
+    headline: No update to England vaccinations
+    body: |
+      Following an IT issue that was reported to the NHS on 21 June, it has not been possible to update vaccinations carried out in England. 
+      Therefore the UK totals only include updates from Northern Ireland, Scotland and Wales. 
+      
+      
+      The issue is now resolved, and the daily vaccination statistics will be updated in the next release, while vaccinations are updated to the digital system. 
+      There has been no impact on vaccinations taking place.
+
+  - type: *dataIssue
     date: "2021-06-16"
     displayBanner: false
     relativeUrl: "/details/deaths?areaType=nation&areaName=England"

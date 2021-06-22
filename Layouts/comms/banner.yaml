@@ -1,4 +1,14 @@
 
+- appearByUpdate: "2021-06-22"
+  disappearByUpdate: "2021-06-23"
+  date: "2021-06-22"
+  body: >
+    **No update to England vaccinations.** Following an IT issue that was reported to the NHS on 21 June, it has not been possible to update vaccinations
+    carried out in England. Therefore the UK totals only include updates from Northern Ireland, Scotland and Wales. [**More**](/details/whats-new)
+
+
+# {{ StartDevOnlyBlock }}
+
 - appearByUpdate: "2021-06-16"
   disappearByUpdate: "2021-06-17"
   date: "2021-06-16"
@@ -7,7 +17,7 @@
     Total deaths for England are unaffected, but some local authorities and regions will show inaccurate daily reported numbers because of this change.
     [**More**](/details/whats-new)
     
-# {{ StartDevOnlyBlock }}
+
 - appearByUpdate: "2021-05-29"
   disappearByUpdate: "2021-05-30"
   date: "2021-05-30"
