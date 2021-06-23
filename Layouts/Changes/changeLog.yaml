@@ -83,6 +83,16 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-06-23"
+    displayBanner: true
+    relativeUrl: "/details/vaccinations"
+    headline: England vaccinations reported for 48 hour period
+    body: |
+      Vaccination figures reported for England cover a 48 hour period. 
+      This is following the IT issue reported to the NHS on 21 June.
+
+
+  - type: *dataIssue
     date: "2021-06-22"
     displayBanner: false
     relativeUrl: "/details/vaccinations"
