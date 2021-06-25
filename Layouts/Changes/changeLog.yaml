@@ -83,6 +83,28 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-06-25"
+    displayBanner: false
+    relativeUrl: "/details/cases"
+    headline: Potential under-reporting of cases in Scotland
+    body: |
+      Public Health Scotland (PHS) are investigating a potential delay in laboratory processing of specimens in Lighthouse laboratories. 
+      This resulted in case numbers reported on 25 June being lower than might otherwise been expected. 
+      Based on historical reporting patterns, PHS estimate 800-1,110 cases may have been delayed in being reported.
+
+  - type: *dataIssue
+    date: "2021-06-25"
+    displayBanner: false
+    relativeUrl: "/details/cases"
+    headline: Processing issue affecting case removal
+    body: |
+      Because of processing issues, it was not possible to identify positive rapid lateral flow tests that were followed by negative polymerase 
+      chain reaction (PCR) tests within 3 days in England for reporting on 24 June 2021. Because of this, no cases were removed from the cumulative total on 24 June.
+
+
+      The issue has been resolved and a larger number of these results have been removed from the cumulative number of cases on 25 June.
+
+  - type: *dataIssue
     date: "2021-06-23"
     displayBanner: true
     relativeUrl: "/details/vaccinations"
