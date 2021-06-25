@@ -89,7 +89,7 @@ changeLog:
     headline: Potential under-reporting of cases in Scotland
     body: |
       Public Health Scotland (PHS) are investigating a potential delay in laboratory processing of specimens in Lighthouse laboratories. 
-      This resulted in case numbers reported on 25 June being lower than might otherwise have been expected. 
+      This resulted in case numbers reported on 25 June being lower than would have been expected. 
       Based on historical reporting patterns, PHS estimate 800-1,110 cases may have been delayed in being reported.
 
   - type: *dataIssue
