@@ -84,7 +84,7 @@ colours:
 changeLog:
   - type: *dataIssue
     date: "2021-06-25"
-    displayBanner: false
+    displayBanner: true
     relativeUrl: "/details/cases"
     headline: Potential under-reporting of cases in Scotland
     body: |
