@@ -86,6 +86,16 @@ changeLog:
     date: "2021-06-25"
     displayBanner: true
     relativeUrl: "/details/cases"
+    headline: Delayed reporting of cases data in England
+    body: |
+      Because of a technical issue, there was a delay to the processing of a subset of cases 
+      data in England yesterday. This means that the reported number of cases would be lower 
+      than expected. Outstanding cases will be reported in the next update.
+
+  - type: *dataIssue
+    date: "2021-06-25"
+    displayBanner: true
+    relativeUrl: "/details/cases"
     headline: Potential under-reporting of cases in Scotland
     body: |
       Public Health Scotland (PHS) are investigating a potential delay in laboratory processing of specimens in Lighthouse laboratories. 
