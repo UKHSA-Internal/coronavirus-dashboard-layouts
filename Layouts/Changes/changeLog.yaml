@@ -83,7 +83,7 @@ colours:
 
 changeLog:
   - type: *dataIssue
-    date: "2021-06-25"
+    date: "2021-06-27"
     displayBanner: true
     relativeUrl: "/details/cases"
     headline: Delayed reporting of cases data in England
