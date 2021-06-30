@@ -85,10 +85,10 @@ changeLog:
   - type: *newContent
     date: "2021-06-30"
     displayBanner: true
-    relativeUrl: "/details/interactive-map"
+    relativeUrl: "/details/interactive-map/vaccinations"
     headline: Vaccinations map launched
     body: >
-      A map of vaccinations is now available under the **Interactive map** page. 
+      A map showing the percentage of adults vaccinated is now available under the **Interactive map** page. 
       The map visualises percentage uptake for dose 1 and dose 2 for upper and lower tier local authorities and Middle layer Super Output Areas (MSOAs).
 
 
@@ -98,12 +98,12 @@ changeLog:
     details: |  
       API metrics now available by MSOA are as follows:
  
-      - `cumPeopleVaccinatedFirstDoseByVaccinationDate`
       - `cumVaccinationFirstDoseUptakeByVaccinationDatePercentage`
-      - `cumVaccinationCompleteCoverageByVaccinationDatePercentage`
-      - `cumPeopleVaccinatedCompleteByVaccinationDate`
       - `cumVaccinationSecondDoseUptakeByVaccinationDatePercentage`
+      - `cumVaccinationCompleteCoverageByVaccinationDatePercentage`
+      - `cumPeopleVaccinatedFirstDoseByVaccinationDate`
       - `cumPeopleVaccinatedSecondDoseByVaccinationDate`
+      - `cumPeopleVaccinatedCompleteByVaccinationDate`
       - `VaccineRegisterPopulationByVaccinationDate`
  
   - type: *dataIssue
