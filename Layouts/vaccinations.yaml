@@ -2163,14 +2163,48 @@ cards:
 
 ############################################################################################################################# 
 
+# English areas only (Scotland below)
+
   - heading: Vaccination uptake, by vaccination date age demographics
     cardType: chart
     experimental: false
     locationAware:
       excluded:
-        areaType:
-          - overview
-          # - nation
+        areaCode:
+          - S12000005
+          - S12000006
+          - S12000008
+          - S12000010
+          - S12000011
+          - S12000013
+          - S12000014
+          - S12000017
+          - S12000018
+          - S12000019
+          - S12000020
+          - S12000021
+          - S12000023
+          - S12000026
+          - S12000027
+          - S12000028
+          - S12000029
+          - S12000030
+          - S12000033
+          - S12000034
+          - S12000035
+          - S12000036
+          - S12000038
+          - S12000039
+          - S12000040
+          - S12000041
+          - S12000042
+          - S12000045
+          - S12000047
+          - S12000048
+          - S12000049
+          - S12000050
+          - S92000003
+          
 
     fullWidth: true
     abstract: >
@@ -2315,6 +2349,165 @@ cards:
           filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 ############################################################################################################################# 
+
+# {{ StartDevOnlyBlock }}
+
+# Scottish areas only (Others above)
+
+  - heading: Vaccination uptake, by vaccination date age demographics
+    cardType: chart
+    experimental: false
+    locationAware:
+      included:
+        areaCode:
+          - S12000005
+          - S12000006
+          - S12000008
+          - S12000010
+          - S12000011
+          - S12000013
+          - S12000014
+          - S12000017
+          - S12000018
+          - S12000019
+          - S12000020
+          - S12000021
+          - S12000023
+          - S12000026
+          - S12000027
+          - S12000028
+          - S12000029
+          - S12000030
+          - S12000033
+          - S12000034
+          - S12000035
+          - S12000036
+          - S12000038
+          - S12000039
+          - S12000040
+          - S12000041
+          - S12000042
+          - S12000045
+          - S12000047
+          - S12000048
+          - S12000049
+          - S12000050
+          - S92000003
+          
+
+    fullWidth: true
+    abstract: >
+      Total percentage of people by age group who have received a COVID-19 vaccination, shown by vaccination date.
+      Daily figures include all vaccines that were given up to and including the date shown.
+      The denominators used are the mid-2019 population estimate, published by National Records of Scotland. 
+    
+    download:
+      - vaccinationsAgeDemographics
+    
+    options:
+      type: radio
+      heading: null
+      choices:
+        - First dose
+        - Second dose
+
+    First dose:
+
+      tabs:
+        - heading: Heatmap
+          tabType: percentageHeatmap
+          fields:
+            - label: Age demographics
+              value: vaccinationsAgeDemographics
+              amplitude: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
+              amplitudeLabel: Percentage uptake
+              metricLabel: Age group
+              parameter: age
+              metrics:
+              - label: 18 to 29
+                value: "18_29"
+
+              - label: 30 to 39
+                value: "30_39"
+
+              - label: 40 to 49
+                value: "40_49"
+
+              - label: 50 to 54
+                value: "50_54"
+
+              - label: 55 to 59
+                value: "55_59"
+
+              - label: 60 to 64
+                value: "60_64"
+
+              - label: 65 to 69
+                value: "65_69"
+
+              - label: 70 to 74
+                value: "70_74"
+
+              - label: 75 to 79
+                value: "75_79"
+
+              - label: 80+
+                value: "80+"
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+    Second dose:
+
+      tabs:
+        - heading: Heatmap
+          tabType: percentageHeatmap
+          fields:
+            - label: Age demographics
+              value: vaccinationsAgeDemographics
+              amplitude: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
+              amplitudeLabel: Percentage uptake
+              metricLabel: Age group
+              parameter: age
+              metrics:
+              - label: 18 to 29
+                value: "18_29"
+
+              - label: 30 to 39
+                value: "30_39"
+
+              - label: 40 to 49
+                value: "40_49"
+
+              - label: 50 to 54
+                value: "50_54"
+
+              - label: 55 to 59
+                value: "55_59"
+
+              - label: 60 to 64
+                value: "60_64"
+
+              - label: 65 to 69
+                value: "65_69"
+
+              - label: 70 to 74
+                value: "70_74"
+
+              - label: 75 to 79
+                value: "75_79"
+
+              - label: 80+
+                value: "80+"
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+# {{ EndDevOnlyBlock }}
+
+#############################################################################################################################
 
 # England, Scotland, regions, LAs only
 
