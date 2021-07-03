@@ -1,13 +1,18 @@
 
+- appearByUpdate: "2021-07-02"
+  disappearByUpdate: "2021-07-03"
+  date: "2021-07-03"
+  body: >
+    Because of a processing issue, today's update is delayed.
+
+
+# {{ StartDevOnlyBlock }}
 - appearByUpdate: "2021-06-22"
   disappearByUpdate: "2021-06-23"
   date: "2021-06-22"
   body: >
     **No update to England vaccinations.** Following an IT issue reported to the NHS on 21 June, it has not been possible to update vaccination figures
     for England. UK totals only include updates from Northern Ireland, Scotland and Wales. [**More**](/details/whats-new)
-
-
-# {{ StartDevOnlyBlock }}
 
 - appearByUpdate: "2021-06-16"
   disappearByUpdate: "2021-06-17"
