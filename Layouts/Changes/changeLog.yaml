@@ -82,6 +82,14 @@ colours:
 
 
 changeLog:
+  - type: *newMetric
+    date: "2021-07-05"
+    displayBanner: false
+    relativeUrl: "/details/vaccinations?areaType=nation&areaName=Scotland"
+    headline: Vaccination uptake by age group added for Scotland
+    body: |
+      Vaccination uptake by age group has been added for Scotland and local authorities in Scotland.
+
   - type: *newContent
     date: "2021-06-30"
     displayBanner: true
