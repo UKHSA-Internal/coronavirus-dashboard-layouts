@@ -85,7 +85,7 @@ cards:
       tabs:
         - heading: Daily
           tabType: chart
-          barType: stack
+          # barType: stack
           colours: [0] # areaNames in alphabetical order
           params:
             - key: areaType
@@ -573,7 +573,7 @@ cards:
       tabs:
         - heading: Daily
           tabType: chart
-          barType: stack
+          # barType: stack
           colours: [0] # areaNames in alphabetical order
           params:
             - key: areaType
