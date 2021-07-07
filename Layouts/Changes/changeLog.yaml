@@ -97,9 +97,9 @@ changeLog:
       The feature is only available on charts where a logarithmic scale is deemed useful. 
       This is determined as follows:
 
-      For each vector with more than 10 values:
-      - **mid**: `median( median ( vector ) )`
-      - **stdev**: `median( standard deviation ( vector ) )`
+      For each vector in the chart with more than 10 values:
+      - **mid**: `median(median(vector_[1..n]))`
+      - **stdev**: `median(standard deviation(vector_[1..n]))`
 
       The toggle option autmatically appears where `stdev` is greater than `mid`.
 
