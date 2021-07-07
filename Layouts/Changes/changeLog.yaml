@@ -82,6 +82,27 @@ colours:
 
 
 changeLog:
+  - type: *newFeature
+    date: "2021-07-07"
+    displayBanner: true
+    relativeUrl: 
+    headline: New option to see charts in logarithmic scale
+    body: |
+      Charts now feature an toggle that enables switching between linear and 
+      logarithmic (base 10) scales.
+
+      The option is not available on all charts.
+      
+    details: |
+      The feature is only available on charts where a logarithmic scale is deemed useful. 
+      This is determined as follows:
+
+      For each vector with more than 10 values:
+      - **mid**: `median( median ( vector ) )`
+      - **stdev**: `median( standard deviation ( vector ) )`
+
+      The toggle option autmatically appears where `stdev` is greater than `mid`.
+
   - type: *newMetric
     date: "2021-07-05"
     displayBanner: false
