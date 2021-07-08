@@ -95,8 +95,8 @@ changeLog:
       
     details: |
       The feature is only available on charts where a logarithmic scale is deemed useful. 
-      This means that heatmaps, choropleths, and waffle charts excluded. For all other charts, 
-      the usability is determined as follows:
+      This means that it is not enabled on heatmaps, choropleths, and waffle charts. For 
+      all other charts, the usability is determined as follows:
 
       For each vector in the chart with more than 10 values:
       - **mid**: `median(median(vector_[1..n]))`
