@@ -1019,7 +1019,7 @@ cards:
 
   - heading: Recent 7-day case rates by specimen date
     cardType: recentData
-    fullWidth: true
+    fullWidth: false
     abstract: >
       Rate of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) per 100,000 population
       in the rolling 7-day period ending on the dates shown. 
@@ -1034,16 +1034,7 @@ cards:
       - newCasesBySpecimenDateChange
       - newCasesBySpecimenDateChangePercentage
 
-    options:
-      type: radio
-      heading: null
-      choices:
-        - Rates
-        - Percentage change
-
-    Rates:
-
-      tabs:
+    tabs:
         - heading: 7-day periods
           tabType: chart
           barType: overlay
@@ -1082,9 +1073,26 @@ cards:
           tabType: metadata
           filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
 
-    Percentage change:
+##############################################################################################################################
 
-      tabs:
+  - heading: Percentage change in recent 7-day case rates by specimen date
+    cardType: recentData
+    fullWidth: false
+    abstract: >
+      Percentage change in rate of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) per 100,000 population
+      in the rolling 7-day period ending on the dates shown. 
+      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
+      Rates and percentage changes are presented for the most recent 
+      3 months, in order to provide transparency around decision making. Percentage changes are calculated by comparing 
+      to the previous non-overlapping 7-day period.
+
+    download:
+      - newCasesBySpecimenDateRollingSum
+      - newCasesBySpecimenDateRollingRate
+      - newCasesBySpecimenDateChange
+      - newCasesBySpecimenDateChangePercentage
+
+    tabs:
         - heading: 7-day periods
           tabType: chart
           barType: overlay
