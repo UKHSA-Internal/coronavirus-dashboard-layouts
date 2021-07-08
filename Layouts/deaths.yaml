@@ -100,6 +100,7 @@ cards:
               tooltip: 7 day rolling average of the daily number of deaths within 28 days of first positive test
               type: line
               colour: 3
+              fill: false
               rollingAverage:
                 window: 7
                 clipEnd: 4 #no of days to exclude for incomplete data
@@ -557,6 +558,7 @@ cards:
               tooltip: 7 day rolling average of the daily number of new deaths within 28 days of first positive test
               type: line
               colour: 3
+              fill: false
               rollingAverage: true
 
         - heading: Cumulative
@@ -791,6 +793,7 @@ cards:
               tooltip: 7 day rolling average of the daily number of deaths where COVID-19 is mentioned as a cause on the death certificate
               type: line
               colour: 3
+              fill: false
               rollingAverage:
                 window: 7
                 clipEnd: 11 #no of days to exclude for incomplete data
@@ -948,6 +951,7 @@ cards:
             tooltip: 7 day rolling average of the daily number of deaths where COVID-19 is mentioned as a cause on the death certificate
             type: line
             colour: 3
+            fill: false
             rollingAverage:
               window: 7
               clipEnd: 11 #no of days to exclude for incomplete data
