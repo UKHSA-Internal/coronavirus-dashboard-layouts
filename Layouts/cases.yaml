@@ -1078,6 +1078,7 @@ cards:
   - heading: Percentage change in recent 7-day case rates by specimen date
     cardType: recentData
     fullWidth: false
+    chartMode: percentage
     abstract: >
       Percentage change in rate of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) per 100,000 population
       in the rolling 7-day period ending on the dates shown. 
