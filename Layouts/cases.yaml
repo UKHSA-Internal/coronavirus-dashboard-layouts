@@ -1095,6 +1095,7 @@ cards:
     tabs:
         - heading: 7-day periods
           tabType: chart
+          chartMode: percentage
           barType: overlay
           fields:
             - label: Percentage change in 7-day case rate
