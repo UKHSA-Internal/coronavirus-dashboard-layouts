@@ -576,6 +576,7 @@ cards:
 
   - heading: Vaccination uptake, by report date
     cardType: multiAreaStatic
+    chartMode: percentage
     locationAware:
       included: 
         areaType:
@@ -2096,6 +2097,7 @@ cards:
 
   - heading: Vaccination uptake, by vaccination date
     cardType: chart
+    chartMode: percentage
     locationAware:
       included: 
         areaType:
@@ -2123,7 +2125,6 @@ cards:
 
       - heading: Uptake
         tabType: chart
-       
         fields:
             - label: 1st dose (%)
               value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
