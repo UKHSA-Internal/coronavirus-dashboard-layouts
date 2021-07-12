@@ -82,6 +82,16 @@ colours:
 
 
 changeLog:
+  - type: *dataIssue
+    date: "2021-07-12"
+    displayBanner: true
+    relativeUrl: 
+    headline: Headline figures only for Northern Ireland
+    body: |
+      Because of a public holiday in Northern Ireland, updated UK figures are only available for cases by report date. 
+      Vaccination figures have been updated as normal.
+      Testing figures for the UK have been updated with data from England, Scotland and Wales. Delayed data will be added on Wednesday 14 July. 
+
   - type: *newFeature
     date: "2021-07-08"
     displayBanner: true
