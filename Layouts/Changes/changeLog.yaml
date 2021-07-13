@@ -83,6 +83,28 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-07-13"
+    displayBanner: true
+    relativeUrl: 
+    headline: Headline figures only for Northern Ireland
+    body: |
+      Because of a public holiday in Northern Ireland, updated UK figures are only available for cases by report date. 
+      Healthcare figures from Northern Ireland are delayed, vaccination figures have been updated as normal.
+      Testing figures for the UK have been updated with data from England, Scotland and Wales. Delayed data will be added on Wednesday 14 July. 
+
+  - type: *dataIssue
+    date: "2021-07-13"
+    displayBanner: false
+    relativeUrl: "/details/testing"
+    headline: Historical antibody tests added to total figures
+    body: |
+      UK test totals (pillar 4) reported from 13 July 2021 include antibody serology testing data from the SIREN (Sarscov2 Immunity & REinfection EvaluatioN) study. 
+      Just over 73,000 historical tests have been added to the total figure.
+
+    details: |
+      SIREN is investigating whether healthcare workers who have previously been infected with COVID-19 and/or have been vaccinated are protected from the virus.
+
+  - type: *dataIssue
     date: "2021-07-12"
     displayBanner: true
     relativeUrl: 
