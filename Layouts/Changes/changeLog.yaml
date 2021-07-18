@@ -2,36 +2,36 @@
 # Documentations
 # ==============
 # The base (parent) attribute is `changeLog`. Contents must be itemised.
-# 
+#
 # Attributes
 # ----------
-# `type`: Type of content, which must be referenced from base `type`. 
-#  
+# `type`: Type of content, which must be referenced from base `type`.
+#
 # Example
 # .......
-# 
+#
 #     changeLog:
 #       - type: *newMetric
 #       ... other attributes
-# 
+#
 # `date`: REQUIRED. Date of which the change came into effect.
-# 
-# :ATTENTION: To show the banner, the date must be greater than or 
-#             equal to the date portion of the release timestamp. 
-# 
-# `displayBanner: OPTIONAL. Default: ``false``. Whether or not to display 
+#
+# :ATTENTION: To show the banner, the date must be greater than or
+#             equal to the date portion of the release timestamp.
+#
+# `displayBanner: OPTIONAL. Default: ``false``. Whether or not to display
 #                 the change headline as a banner on the frontpage.
-# 
+#
 # `relativeUrl`: OPTIONAL. URI to the page where the change has occurred.
-#                If missing, the URL will be omitted and the name will be 
+#                If missing, the URL will be omitted and the name will be
 #                displayed as simple text.
-# 
-# `headline`: REQUIRED. A single sentence that describes the change. Must 
+#
+# `headline`: REQUIRED. A single sentence that describes the change. Must
 #             not exceed 160 characters.
-# 
-# `body`: REQUIRED. Easy-read information on the change. Ideally should not 
+#
+# `body`: REQUIRED. Easy-read information on the change. Ideally should not
 #         exceed two paragraphs. Supports Markdown syntax.
-# 
+#
 # `details`: OPTIONAL. Additional details on the change.
 # =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
 
@@ -83,14 +83,32 @@ colours:
 
 changeLog:
   - type: *dataIssue
-    date: "2021-07-13"
+    date: "2021-07-18"
     displayBanner: true
-    relativeUrl: 
-    headline: Headline figures only for Northern Ireland
+    relativeUrl:
+    headline: Incorrect date of death data for Scotland and the UK
     body: |
-      Because of a public holiday in Northern Ireland, updated UK figures are only available for cases by report date. 
-      Healthcare figures from Northern Ireland are delayed, vaccination figures have been updated as normal.
-      Testing figures for the UK have been updated with data from England, Scotland and Wales. Delayed data will be added on Wednesday 14 July. 
+      Because of an error in the Scotland open data feed, deaths data within 28 days of
+      a positive test by date of death are incorrect for the UK and Scotland - including
+      Scottish local authorities. The issue affects the entire time series, and will be
+      resolved in the next update.
+
+      Data for deaths within 28 days of a positive test by publish date are unaffected.
+
+    details: |
+      Number of deaths by date of death for Scotland are incorrectly recorded as zero
+      for the entire time series. This means that the data for the UK only include
+      England, Northern Ireland, and Wales.
+
+
+      API metrics affected are as follows:
+
+      - `newDeaths28DaysByDeathDate`
+      - `cumDeaths28DaysByDeathDate`
+      - `cumDeaths28DaysByDeathDateRate`
+      - `newDeaths28DaysByDeathDateRate`
+      - `newDeaths28DaysByDeathDateRollingRate`
+      - `newDeaths28DaysByDeathDateRollingSum`
 
   - type: *dataIssue
     date: "2021-07-13"
@@ -98,7 +116,29 @@ changeLog:
     relativeUrl: "/details/testing"
     headline: Historical antibody tests added to total figures
     body: |
-      UK test totals (pillar 4) reported from 13 July 2021 include antibody serology testing data from the SIREN (Sarscov2 Immunity & REinfection EvaluatioN) study. 
+      UK test totals (pillar 4) reported from 13 July 2021 include antibody serology testing data from the SIREN (Sarscov2 Immunity & REinfection EvaluatioN) study.
+      Just over 73,000 historical tests have been added to the total figure.
+
+    details: |
+      SIREN is investigating whether healthcare workers who have previously been infected with COVID-19 and/or have been vaccinated are protected from the virus.
+
+  - type: *dataIssue
+    date: "2021-07-13"
+    displayBanner: true
+    relativeUrl:
+    headline: Headline figures only for Northern Ireland
+    body: |
+      Because of a public holiday in Northern Ireland, updated UK figures are only available for cases by report date.
+      Healthcare figures from Northern Ireland are delayed, vaccination figures have been updated as normal.
+      Testing figures for the UK have been updated with data from England, Scotland and Wales. Delayed data will be added on Wednesday 14 July.
+
+  - type: *dataIssue
+    date: "2021-07-13"
+    displayBanner: false
+    relativeUrl: "/details/testing"
+    headline: Historical antibody tests added to total figures
+    body: |
+      UK test totals (pillar 4) reported from 13 July 2021 include antibody serology testing data from the SIREN (Sarscov2 Immunity & REinfection EvaluatioN) study.
       Just over 73,000 historical tests have been added to the total figure.
 
     details: |
@@ -107,33 +147,33 @@ changeLog:
   - type: *dataIssue
     date: "2021-07-12"
     displayBanner: true
-    relativeUrl: 
+    relativeUrl:
     headline: Headline figures only for Northern Ireland
     body: |
-      Because of a public holiday in Northern Ireland, updated UK figures are only available for cases by report date. 
+      Because of a public holiday in Northern Ireland, updated UK figures are only available for cases by report date.
       Vaccination figures have been updated as normal.
-      Testing figures for the UK have been updated with data from England, Scotland and Wales. Delayed data will be added on Wednesday 14 July. 
+      Testing figures for the UK have been updated with data from England, Scotland and Wales. Delayed data will be added on Wednesday 14 July.
 
   - type: *newFeature
     date: "2021-07-08"
     displayBanner: true
-    relativeUrl: 
+    relativeUrl:
     headline: New option to see charts in logarithmic scale
     body: |
-      Charts now feature a toggle that enables switching between linear and 
+      Charts now feature a toggle that enables switching between linear and
       logarithmic (base 10) scales.
 
       The option is not available on all charts.
-      
+
     details: |
-      The feature is only available on charts where a logarithmic scale is deemed useful. 
+      The feature is only available on charts where a logarithmic scale is deemed useful.
       This means that it is not enabled on:
       - heatmaps
       - choropleths
-      - waffle charts 
+      - waffle charts
       - stacked bar charts
       - percentage charts
-      
+
       For all other charts, the usability is determined as follows:
 
       For each vector in the chart with more than 10 values:
@@ -156,16 +196,16 @@ changeLog:
     relativeUrl: "/details/interactive-map/vaccinations"
     headline: Vaccinations map launched
     body: >
-      A map showing the percentage of adults vaccinated is now available under the **Interactive map** page. 
+      A map showing the percentage of adults vaccinated is now available under the **Interactive map** page.
       The map visualises percentage uptake for dose 1 and dose 2 for upper and lower tier local authorities and Middle layer Super Output Areas (MSOAs).
 
 
-      The map currently includes English and Scottish areas only. 
+      The map currently includes English and Scottish areas only.
       Uptake is shown for local authorities in England and Scotland, and for Middle layer Super Output Areas in England.
 
-    details: |  
+    details: |
       API metrics now available by MSOA are as follows:
- 
+
       - `cumVaccinationFirstDoseUptakeByVaccinationDatePercentage`
       - `cumVaccinationSecondDoseUptakeByVaccinationDatePercentage`
       - `cumVaccinationCompleteCoverageByVaccinationDatePercentage`
@@ -173,15 +213,15 @@ changeLog:
       - `cumPeopleVaccinatedSecondDoseByVaccinationDate`
       - `cumPeopleVaccinatedCompleteByVaccinationDate`
       - `VaccineRegisterPopulationByVaccinationDate`
- 
+
   - type: *dataIssue
     date: "2021-06-27"
     displayBanner: true
     relativeUrl: "/details/cases"
     headline: Delayed reporting of cases data in England
     body: |
-      Because of a technical issue, there was a delay to the processing of a subset of cases 
-      data in England yesterday. This means that the reported number of cases would be lower 
+      Because of a technical issue, there was a delay to the processing of a subset of cases
+      data in England yesterday. This means that the reported number of cases would be lower
       than expected. Outstanding cases will be reported in the next update.
 
   - type: *dataIssue
@@ -190,8 +230,8 @@ changeLog:
     relativeUrl: "/details/cases"
     headline: Potential under-reporting of cases in Scotland
     body: |
-      Public Health Scotland (PHS) are investigating a potential delay in laboratory processing of specimens in Lighthouse laboratories. 
-      This resulted in case numbers reported on 25 June being lower than would have been expected. 
+      Public Health Scotland (PHS) are investigating a potential delay in laboratory processing of specimens in Lighthouse laboratories.
+      This resulted in case numbers reported on 25 June being lower than would have been expected.
       Based on historical reporting patterns, PHS estimate 800-1,110 cases may have been delayed in being reported.
 
   - type: *dataIssue
@@ -200,7 +240,7 @@ changeLog:
     relativeUrl: "/details/cases"
     headline: Processing issue affecting case removal
     body: |
-      Because of processing issues, it was not possible to identify positive rapid lateral flow tests that were followed by negative polymerase 
+      Because of processing issues, it was not possible to identify positive rapid lateral flow tests that were followed by negative polymerase
       chain reaction (PCR) tests within 3 days in England for reporting on 24 June 2021. Because of this, no cases were removed from the cumulative total on 24 June.
 
 
@@ -221,11 +261,11 @@ changeLog:
     relativeUrl: "/details/vaccinations"
     headline: No update to England vaccinations
     body: |
-      Following an IT issue reported to the NHS on 21 June, it has not been possible to update vaccination figures for England. 
-      UK totals only include updates from Northern Ireland, Scotland and Wales. 
-      
-      
-      The issue is now resolved, and the daily vaccination statistics will be updated on 23 June, as vaccinations are added to the digital system. 
+      Following an IT issue reported to the NHS on 21 June, it has not been possible to update vaccination figures for England.
+      UK totals only include updates from Northern Ireland, Scotland and Wales.
+
+
+      The issue is now resolved, and the daily vaccination statistics will be updated on 23 June, as vaccinations are added to the digital system.
       There has been no impact on vaccinations taking place.
 
   - type: *dataIssue
@@ -234,16 +274,16 @@ changeLog:
     relativeUrl: "/details/deaths?areaType=nation&areaName=England"
     headline: Improved local authority allocation for deaths in England
     body: |
-      Some deaths previously reported in England have been reallocated to different resident local authorities. 
-      Total deaths for England are unaffected, but some local authorities and regions will show inaccurate daily reported numbers for 16 June 2021 because of this change. 
+      Some deaths previously reported in England have been reallocated to different resident local authorities.
+      Total deaths for England are unaffected, but some local authorities and regions will show inaccurate daily reported numbers for 16 June 2021 because of this change.
       The cumulative number of deaths in each affected local authority and region will also change.
-      
+
       This improvement means that when there are conflicting resident addresses, the address noted at death registration will take precedence.
       This will result in fewer changes to the geographical allocation of historical death counts in future.
-      
-      Details of the changes in total number of deaths at local authority level for 16 June 2021 data are available 
-      to [download as CSV](/downloads/miscellaneous/change_in_death_allocations_in_England_2021-06-16.csv). 
-  
+
+      Details of the changes in total number of deaths at local authority level for 16 June 2021 data are available
+      to [download as CSV](/downloads/miscellaneous/change_in_death_allocations_in_England_2021-06-16.csv).
+
   - type: *dataIssue
     date: "2021-06-16"
     displayBanner: false
@@ -259,9 +299,9 @@ changeLog:
     relativeUrl: "/details/vaccinations?areaType=nation&areaName=Scotland"
     headline: Issue affecting vaccine reporting in Scotland
     body: |
-      Because of an IT issue, vaccination figures reported by Public Health Scotland on 15 June 2021 may be lower than the actual number. 
+      Because of an IT issue, vaccination figures reported by Public Health Scotland on 15 June 2021 may be lower than the actual number.
       Missing figures will be added in the next release.
-    
+
   - type: *dataIssue
     date: "2021-06-14"
     displayBanner: true
@@ -276,7 +316,7 @@ changeLog:
     relativeUrl: "/details/cases?areaType=nation&areaName=Scotland"
     headline: Delay in case reporting in Scotland
     body: |
-      Because of a lab processing issue, reported case figures on 10 June for Scotland were missing around 150-200 positive cases. 
+      Because of a lab processing issue, reported case figures on 10 June for Scotland were missing around 150-200 positive cases.
       These have been added to the latest reported figures for Scotland and the UK.
 
   - type: *newFeature
@@ -287,11 +327,11 @@ changeLog:
     body: |
       **New features:**
 
-      - **Metric associations**: The _Metrics_ dropdown now only includes metrics for which we have data available in the database. 
+      - **Metric associations**: The _Metrics_ dropdown now only includes metrics for which we have data available in the database.
       - **Latest record date**: Date of the latest record available for the selected area type and / or area name is now displayed alongside each metric in the _Metrics_ dropdown.
-      
+
       **Extended archives:**
-      We have now extended the archive coverage from 12 August 2020 further back to 27 June 2020, making available an additional 47,540,939 records published over 1.5 months. 
+      We have now extended the archive coverage from 12 August 2020 further back to 27 June 2020, making available an additional 47,540,939 records published over 1.5 months.
       This will enable users to download data as they were published on a specific date.
 
   - type: *newContent
@@ -300,16 +340,16 @@ changeLog:
     relativeUrl: "/details/vaccinations?areaType=nation&areaName=England"
     headline: Vaccination uptake age demographics added for England
     body: |
-      Vaccination uptake for England, shown by age group and for all adults, has been added. These are calculated for population surveillance purposes 
+      Vaccination uptake for England, shown by age group and for all adults, has been added. These are calculated for population surveillance purposes
       using the current living population on the NIMS system, and for comparison with uptake currently presented at region and local authority level.
 
   - type: *dataIssue
     date: "2021-06-02"
     displayBanner: false
-    relativeUrl: 
+    relativeUrl:
     headline: Figures reported by Wales for 48-hour period
     body: |
-      Figures reported on 1 June for Wales are for the 48-hour period from 9am Sunday 30 May to 9am Tuesday 1 June. The UK figures will also include 
+      Figures reported on 1 June for Wales are for the 48-hour period from 9am Sunday 30 May to 9am Tuesday 1 June. The UK figures will also include
       figures from a 48-hour period from Wales.
 
   - type: *newMetric
@@ -317,17 +357,17 @@ changeLog:
     displayBanner: false
     relativeUrl: "/details/vaccinations"
     headline: Local vaccination age breakdowns added
-    body: > 
-     We are now reporting daily figures for first and second dose vaccinations by age group at region, upper tier local authority and 
+    body: >
+     We are now reporting daily figures for first and second dose vaccinations by age group at region, upper tier local authority and
      lower tier local authority level within England.
 
   - type: *dataIssue
     date: "2021-06-01"
     displayBanner: false
-    relativeUrl: 
+    relativeUrl:
     headline: Figures reported by Wales for 48-hour period
     body: |
-      Figures reported on 1 June for Wales are for the 48-hour period from 9am Friday 28 May to 9am Sunday 30 May. The UK figures will also include 
+      Figures reported on 1 June for Wales are for the 48-hour period from 9am Friday 28 May to 9am Sunday 30 May. The UK figures will also include
       figures from a 48-hour period from Wales.
 
   - type: *dataIssue
@@ -335,16 +375,16 @@ changeLog:
     displayBanner: true
     relativeUrl: "/details/cases"
     headline: Change to reporting of daily new cases in England
-    body: > 
-      The way cases are reported in England has changed. Reported cases are sometimes removed if subsequent tests are negative. This happens when 
-      cases identified through a positive rapid lateral flow test are followed by polymerase chain reaction (PCR) tests within 3 days that are all 
+    body: >
+      The way cases are reported in England has changed. Reported cases are sometimes removed if subsequent tests are negative. This happens when
+      cases identified through a positive rapid lateral flow test are followed by polymerase chain reaction (PCR) tests within 3 days that are all
       negative. These cases are now being removed daily.
 
 
-      Because of this, the number of newly-reported cases may not be the same as the difference between the total number of reported cases from 
-      one day to the next. The number of newly-reported cases in England and the UK is adjusted to take this into account, but the numbers for 
-      regions and local authorities are not adjusted. This means that for regions and local authorities, this figure does not show the actual 
-      number of new cases reported on that date. For analysis of trends in cases within England, use the data on new cases by specimen date 
+      Because of this, the number of newly-reported cases may not be the same as the difference between the total number of reported cases from
+      one day to the next. The number of newly-reported cases in England and the UK is adjusted to take this into account, but the numbers for
+      regions and local authorities are not adjusted. This means that for regions and local authorities, this figure does not show the actual
+      number of new cases reported on that date. For analysis of trends in cases within England, use the data on new cases by specimen date
       rather than report date. The new cases by specimen date are always adjusted for the whole time series to take account of any changes.
 
   - type: *dataIssue
@@ -352,39 +392,39 @@ changeLog:
     displayBanner: true
     relativeUrl: "/details/cases"
     headline: Revision to historical case data in England
-    body: > 
-     The introduction of a new system disrupted the removal of cases where a positive rapid lateral flow test (LFD) was followed by all negative laboratory (PCR) tests taken within 3 days, as reported earlier this week. 
-     Therefore a further 180 cases have been removed today. 
-     Regions and local authorities do not show the actual number of new cases reported. 
+    body: >
+     The introduction of a new system disrupted the removal of cases where a positive rapid lateral flow test (LFD) was followed by all negative laboratory (PCR) tests taken within 3 days, as reported earlier this week.
+     Therefore a further 180 cases have been removed today.
+     Regions and local authorities do not show the actual number of new cases reported.
      UK and England numbers of newly reported cases have been adjusted and correctly reflect new cases reported. This issue will be ongoing over the next few days.
-     
+
   - type: *dataIssue
     date: "2021-05-19"
     displayBanner: false
     relativeUrl: "/details/cases"
     headline: Revision to historical case data in England
-    body: > 
-     The introduction of a new system disrupted the removal of cases where a positive rapid lateral flow test was followed by all negative 
-     polymerase chain reaction (PCR) tests taken within 3 days, as reported on 18 May 2021. Therefore a further 561 cases have now been removed. 
+    body: >
+     The introduction of a new system disrupted the removal of cases where a positive rapid lateral flow test was followed by all negative
+     polymerase chain reaction (PCR) tests taken within 3 days, as reported on 18 May 2021. Therefore a further 561 cases have now been removed.
      Newly-reported cases for the UK and England were unaffected. Historical published date totals have not been changed.
 
 
-     Newly-reported cases at regional and local authority level within England are calculated as the daily change in the total number of cases. 
-     This means that for 19 May 2021, these show significantly lower numbers or zero, and do not reflect the actual number of new cases reported on 
-     that date. 
+     Newly-reported cases at regional and local authority level within England are calculated as the daily change in the total number of cases.
+     This means that for 19 May 2021, these show significantly lower numbers or zero, and do not reflect the actual number of new cases reported on
+     that date.
 
   - type: *newMetric
     date: "2021-05-18"
     displayBanner: false
     relativeUrl: "/details/vaccinations"
     headline: Local vaccinations added
-    body: > 
-     We are now reporting daily figures for first and second dose vaccinations at region, upper tier local authority and 
+    body: >
+     We are now reporting daily figures for first and second dose vaccinations at region, upper tier local authority and
      lower tier local authority level within England and Scotland.
-     
-    details: |   
+
+    details: |
       API metrics added are as follows:
-     
+
       - `newPeopleVaccinatedFirstDoseByVaccinationDate`
       - `newPeopleVaccinatedSecondDoseByVaccinationDate`
       - `newPeopleVaccinatedCompleteByVaccinationDate`
@@ -401,16 +441,16 @@ changeLog:
     displayBanner: false
     relativeUrl: "/details/cases"
     headline: Revision to historical case data in England
-    body: > 
-     The introduction of a new system disrupted the removal of cases where a positive rapid lateral flow test was followed by all negative 
-     polymerase chain reaction (PCR) tests taken within 3 days. These 4,776 cases have now been removed. Newly-reported cases for the UK and 
+    body: >
+     The introduction of a new system disrupted the removal of cases where a positive rapid lateral flow test was followed by all negative
+     polymerase chain reaction (PCR) tests taken within 3 days. These 4,776 cases have now been removed. Newly-reported cases for the UK and
      England were unaffected. Historical published date totals have not been changed.
 
 
-     Newly-reported cases at regional and local authority level within England are calculated as the daily change in the total number of cases. 
-     This means that for 18 May 2021, these show significantly lower numbers or zero, and do not reflect the actual number of new cases reported on 
-     that date. Details of the changes and numbers of newly reported cases for 18 May 2021 are available in 
-     [csv (wide format)](/downloads/miscellaneous/cases_reported_2021-05-18_unstacked.csv) and 
+     Newly-reported cases at regional and local authority level within England are calculated as the daily change in the total number of cases.
+     This means that for 18 May 2021, these show significantly lower numbers or zero, and do not reflect the actual number of new cases reported on
+     that date. Details of the changes and numbers of newly reported cases for 18 May 2021 are available in
+     [csv (wide format)](/downloads/miscellaneous/cases_reported_2021-05-18_unstacked.csv) and
      [csv (long format)](/downloads/miscellaneous/cases_reported_2021-05-18_stacked.csv).
 
   - type: *dataIssue
@@ -423,29 +463,29 @@ changeLog:
       have been updated as expected. Therefore, the UK total reported numbers of cases and deaths include updates from England and Scotland only (Wales do not
       report on Saturdays currently).
 
-    
+
   - type: *dataIssue
     date: "2021-05-14"
     displayBanner: true
     relativeUrl: "/details/testing?areaType=nation&areaName=England"
     headline: Change to source of pillar 2 PCR tests data in England
     body: |
-      The data source of pillar 2 PCR tests conducted for England has changed. 
-      Previously, the number of tests conducted was collated daily from individual laboratories in England based on the day the test was processed. 
-      These data are now supplied by NHS Test and Trace digital management information systems, using the date that the test was taken (specimen date). 
-      This difference in the way the tests are being reported has resulted in a small revision to the cumulative total PCR virus tests conducted for the UK and England. 
-      The historical daily series for England and the UK have not been revised. 
-      This new source aligns with that used in the [weekly statistics for NHS Test and Trace](https://www.gov.uk/government/collections/nhs-test-and-trace-statistics-england-weekly-reports), 
+      The data source of pillar 2 PCR tests conducted for England has changed.
+      Previously, the number of tests conducted was collated daily from individual laboratories in England based on the day the test was processed.
+      These data are now supplied by NHS Test and Trace digital management information systems, using the date that the test was taken (specimen date).
+      This difference in the way the tests are being reported has resulted in a small revision to the cumulative total PCR virus tests conducted for the UK and England.
+      The historical daily series for England and the UK have not been revised.
+      This new source aligns with that used in the [weekly statistics for NHS Test and Trace](https://www.gov.uk/government/collections/nhs-test-and-trace-statistics-england-weekly-reports),
       and with that used for rapid lateral flow (LFD) tests.
-      
+
   - type: *dataIssue
     date: "2021-05-14"
     displayBanner: false
     relativeUrl: "/details/cases?areaType=nation&areaName=Scotland"
     headline: Issue affecting case reporting in Scotland
     body: |
-      Public Health Scotland are aware of a potential data issue affecting the flow of tests from UK Government testing sites from 8pm on 13 May 2021 
-      until 9am on 14 May 2021 which has impacted on the numbers reported on 14 May 2021 being lower than expected. The missing data will be reported 
+      Public Health Scotland are aware of a potential data issue affecting the flow of tests from UK Government testing sites from 8pm on 13 May 2021
+      until 9am on 14 May 2021 which has impacted on the numbers reported on 14 May 2021 being lower than expected. The missing data will be reported
       on 15 May 2021.
 
   - type: *other
@@ -454,16 +494,16 @@ changeLog:
     relativeUrl: "/details/interactive-map"
     headline: Interactive map will only display latest data on mobile
     body: |
-      Historical data and the date slider are no longer available on mobile devices. This is to improve performance and reliability for mobile users. 
+      Historical data and the date slider are no longer available on mobile devices. This is to improve performance and reliability for mobile users.
       Desktop devices are unaffected.
 
   - type: *newContent
     date: "2021-05-06"
     displayBanner: false
-    relativeUrl: 
+    relativeUrl:
     headline: Addition of vaccination content to landing page
     body: |
-      The daily numbers of newly reported people vaccinated by dose have been added to the landing page. The percentage of the adult 
+      The daily numbers of newly reported people vaccinated by dose have been added to the landing page. The percentage of the adult
       population who have received each dose is also displayed and visualised.
 
   - type: *dataIssue
@@ -472,13 +512,13 @@ changeLog:
     relativeUrl: "/details/testing?areaType=nation&areaName=England"
     headline: Revision to reported virus tests for England
     body: |
-      Pillar 4 testing figures are reported for the UK as a whole. They were previously incorrectly included in figures for virus, PCR and antibody tests in England. 
+      Pillar 4 testing figures are reported for the UK as a whole. They were previously incorrectly included in figures for virus, PCR and antibody tests in England.
       All pillar 4 tests have now been removed from figures reported for England. Historical figures for England have been updated, UK figures are unaffected.
-  
+
   - type: *dataIssue
     date: "2021-05-05"
     displayBanner: true
-    relativeUrl: 
+    relativeUrl:
     headline: Figures reported by Wales for 48-hour period
     body: |
       Figures reported on 5 May for Wales are for the 48-hour period from 9am Sunday 2 May to 9am Tuesday 4 May. The UK figures will also include figures from a 48-hour period from Wales.
@@ -486,7 +526,7 @@ changeLog:
   - type: *dataIssue
     date: "2021-05-04"
     displayBanner: false
-    relativeUrl: 
+    relativeUrl:
     headline: Figures reported by Wales for 48-hour period
     body: |
       Figures reported on 4 May for Wales are for the 48-hour period from 9am Friday 30 April to 9am Sunday 2 May. The UK figures will also include figures from a 48-hour period from Wales.
@@ -494,10 +534,10 @@ changeLog:
   - type: *dataIssue
     date: "2021-05-03"
     displayBanner: false
-    relativeUrl: 
+    relativeUrl:
     headline: Latest deaths data not available below UK level
     body: |
-      Due to an issue with processing of deaths data today, the latest data other than the UK figure is not available. 
+      Due to an issue with processing of deaths data today, the latest data other than the UK figure is not available.
       This will be updated in the next release.
 
   - type: *dataIssue
@@ -506,44 +546,44 @@ changeLog:
     relativeUrl: "/details/vaccinations?areaType=nation&areaName=Northern%20Ireland"
     headline: Revision to vaccinations data for Northern Ireland
     body: |
-      The vaccination figures for Northern Ireland from 30 April 2021 have been revised to match figures as published at 16:58 on the 
-      [NI Covid-19 Vaccinations Dashboard](https://covid-19.hscni.net/ni-covid-19-vaccinations-dashboard/). These figures were amended after yesterday's release. 
-  
+      The vaccination figures for Northern Ireland from 30 April 2021 have been revised to match figures as published at 16:58 on the
+      [NI Covid-19 Vaccinations Dashboard](https://covid-19.hscni.net/ni-covid-19-vaccinations-dashboard/). These figures were amended after yesterday's release.
+
   - type: *dataIssue
     date: "2021-04-30"
     displayBanner: true
-    relativeUrl: 
+    relativeUrl:
     headline: Amendment to Northern Ireland vaccination numbers
     body: |
-      Northern Ireland have switched to a new vaccinations management system (Northern Ireland Vaccinations Management System) 
-      which provides a greater level of detail about the vaccination programme. It replaces the previous manual system which relied on a 
+      Northern Ireland have switched to a new vaccinations management system (Northern Ireland Vaccinations Management System)
+      which provides a greater level of detail about the vaccination programme. It replaces the previous manual system which relied on a
       variety of platforms with differing reporting mechanisms.
-      
-      In developing the system, some data have been amended, however the overall total is consistent. 
+
+      In developing the system, some data have been amended, however the overall total is consistent.
       This includes re-classifying a small percentage of first doses as second doses, reflecting the improved data accuracy of the new system.
 
   - type: *dataIssue
     date: "2021-04-25"
     displayBanner: true
-    relativeUrl: 
+    relativeUrl:
     headline: No vaccination and local cases/deaths data for Scotland
     body: |
-      Due to processing issues, no update is available for vaccinations in Scotland. The UK 
-      total includes daily updates from England, Northern Ireland and Wales only. The 
-      Scotland daily number is shown as zero and the total is unchanged from 24 April 2021. 
+      Due to processing issues, no update is available for vaccinations in Scotland. The UK
+      total includes daily updates from England, Northern Ireland and Wales only. The
+      Scotland daily number is shown as zero and the total is unchanged from 24 April 2021.
 
-      In addition, cases and deaths data for Scotland are only available at national headline 
-      level. No breakdowns or local authority level data are available. These will be 
-      updated in the next release. 
+      In addition, cases and deaths data for Scotland are only available at national headline
+      level. No breakdowns or local authority level data are available. These will be
+      updated in the next release.
 
   - type: *dataIssue
     date: "2021-04-21"
     displayBanner: true
     relativeUrl: "/details/deaths?areaType=nation&areaName=Scotland"
     headline: Removal of 2 historical deaths in Scotland
-    body: > 
-      Two previously reported, confirmed COVID-19 deaths have been removed. This was due to further investigation by Public Health Scotland 
-      into the length of time between the deaths and the positive COVID-19 test results. Because of this, the cumulative total number of confirmed 
+    body: >
+      Two previously reported, confirmed COVID-19 deaths have been removed. This was due to further investigation by Public Health Scotland
+      into the length of time between the deaths and the positive COVID-19 test results. Because of this, the cumulative total number of confirmed
       COVID-19 deaths reported for Scotland is 7,643 instead of 7,645. The UK cumulative total has also been adjusted.
 
   - type: *dataIssue
@@ -551,64 +591,64 @@ changeLog:
     displayBanner: false
     relativeUrl:
     headline: Figures reported by Wales for 48-hour period
-    body: > 
-     Public Health Wales has moved to a 6-day reporting period for [COVID-19 surveillance](https://public.tableau.com/profile/public.health.wales.health.protection#!/vizhome/RapidCOVID-19virology-Public/Headlinesummary). 
-     Figures reported on Mondays for Wales are for a 48-hour period and will probably be around double the usual 24-hour figure. 
+    body: >
+     Public Health Wales has moved to a 6-day reporting period for [COVID-19 surveillance](https://public.tableau.com/profile/public.health.wales.health.protection#!/vizhome/RapidCOVID-19virology-Public/Headlinesummary).
+     Figures reported on Mondays for Wales are for a 48-hour period and will probably be around double the usual 24-hour figure.
      The UK numbers will also include figures for a 48-hour period from Wales on Mondays.
-    details: |     
-     Data for Wales reported on Mondays will be for a 48 hour period up to 9am on Sunday. 
-     It is likely that the figures reported on Mondays will be around double the usual 24-hours figure. 
+    details: |
+     Data for Wales reported on Mondays will be for a 48 hour period up to 9am on Sunday.
+     It is likely that the figures reported on Mondays will be around double the usual 24-hours figure.
 
   - type: *dataIssue
     date: "2021-04-17"
     displayBanner: true
     relativeUrl:
     headline: Data for Wales no longer reported on Saturdays
-    body: > 
-     As of the week commencing 12 April 2021, Public Health Wales have moved to a six day reporting period for 
-     [COVID-19 surveillance](https://public.tableau.com/profile/public.health.wales.health.protection#!/vizhome/RapidCOVID-19virology-Public/Headlinesummary). 
-     This means that there will be no reporting of the daily figures for Wales on Saturdays, and UK numbers have therefore only been updated 
-     with data from England, Northern Ireland and Scotland. 
-    details: |     
-     Data for Wales reported on Sundays will be for the 24-hour period up to 9am on Friday, and data reported on Mondays will be for a 
-     48-hour period up to 9am on Sunday. It is likely that the figures reported on Mondays will be around double the usual 24-hours figure. 
+    body: >
+     As of the week commencing 12 April 2021, Public Health Wales have moved to a six day reporting period for
+     [COVID-19 surveillance](https://public.tableau.com/profile/public.health.wales.health.protection#!/vizhome/RapidCOVID-19virology-Public/Headlinesummary).
+     This means that there will be no reporting of the daily figures for Wales on Saturdays, and UK numbers have therefore only been updated
+     with data from England, Northern Ireland and Scotland.
+    details: |
+     Data for Wales reported on Sundays will be for the 24-hour period up to 9am on Friday, and data reported on Mondays will be for a
+     48-hour period up to 9am on Sunday. It is likely that the figures reported on Mondays will be around double the usual 24-hours figure.
 
   - type: *dataIssue
     date: "2021-04-16"
     displayBanner: true
     relativeUrl: "/details/cases?areaType=nation&areaName=Scotland"
     headline: Addition of historical cases in Scotland
-    body: > 
-     The cumulative case total for Scotland on 16 April includes an additional 160 cases.  
-     These cases were identified through the Office of National Statistics (ONS) COVID-19 Infection Survey and are for positive tests from the period 31 October to 1 December 2020. 
+    body: >
+     The cumulative case total for Scotland on 16 April includes an additional 160 cases.
+     These cases were identified through the Office of National Statistics (ONS) COVID-19 Infection Survey and are for positive tests from the period 31 October to 1 December 2020.
      They have also been added to the cumulative total for the UK.
     details: |
-      Note as listed on [gov.scot:](https://www.gov.scot/publications/coronavirus-covid-19-daily-data-for-scotland/) 
+      Note as listed on [gov.scot:](https://www.gov.scot/publications/coronavirus-covid-19-daily-data-for-scotland/)
 
-      "Please note that the cumulative totals for today include an additional 160 cases corresponding to 384 positive tests from the period October 31- December 1, 2020. 
-      These cases were identified through the Office of National Statistics (ONS) COVID-19 Infection Survey. 
+      "Please note that the cumulative totals for today include an additional 160 cases corresponding to 384 positive tests from the period October 31- December 1, 2020.
+      These cases were identified through the Office of National Statistics (ONS) COVID-19 Infection Survey.
       While the historic ONS Survey cases are included in the figures for the first time today, these individuals were known to Test and Protect and all appropriate public health action was undertaken."
-      
+
   - type: *dataIssue
     date: "2021-04-14"
     displayBanner: false
     relativeUrl: "/details/vaccinations?areaType=nation&areaName=Scotland"
     headline: Backlog of vaccination figures included for Scotland
-    body: > 
-     As noted on [gov.scot:](https://www.gov.scot/publications/coronavirus-covid-19-daily-data-for-scotland/) 
+    body: >
+     As noted on [gov.scot:](https://www.gov.scot/publications/coronavirus-covid-19-daily-data-for-scotland/)
 
-     Vaccination figures for Scotland on 14 April include a backlog of GP system data that was not included in yesterday's totals. 
+     Vaccination figures for Scotland on 14 April include a backlog of GP system data that was not included in yesterday's totals.
      This includes 886 vaccinations from 11 April and around 5,700 from the days prior to the 11th.
      This will also be included in vaccination figures for the UK.
 
   - type: *dataIssue
     date: "2021-04-13"
     displayBanner: true
-    relativeUrl: 
+    relativeUrl:
     headline: Headline figures only for Wales
-    body: > 
-     Due to an issue with data from Public Health Wales, figures are only available for cases and deaths for Wales by report date. 
-     The additional figures, including for local authorities in Wales, will be updated in the next release. 
+    body: >
+     Due to an issue with data from Public Health Wales, figures are only available for cases and deaths for Wales by report date.
+     The additional figures, including for local authorities in Wales, will be updated in the next release.
      Hospital and vaccination data for Wales have been updated as normal.
 
 
@@ -617,7 +657,7 @@ changeLog:
     displayBanner: false
     relativeUrl: "/details/vaccinations?areaType=nation&areaName=Scotland"
     headline: Incomplete vaccination figures in Scotland
-    body: > 
+    body: >
      Vaccination figures in Scotland exclude data from GP systems on Sunday 11 April.
 
   - type: *dataIssue
@@ -625,7 +665,7 @@ changeLog:
     displayBanner: false
     relativeUrl: "/details/cases"
     headline: Error in case reporting in England
-    body: > 
+    body: >
      Due to a processing error, 550 historical cases were removed from the England and UK figures. Affected cases were restored in the next release.
 
   - type: *dataIssue
@@ -633,17 +673,17 @@ changeLog:
     displayBanner: false
     relativeUrl: "/details/cases"
     headline: Change to case reporting in England
-    body: > 
-     The way cases are reported has changed. Cases that have been identified through a positive rapid lateral flow 
-     test will be removed for people who took Polymerase Chain Reaction (PCR) tests within 3 days that were all negative. Cases of this type that were 
-     previously reported were removed from the cumulative total, reducing the total by 8,010. Newly reported numbers of cases for the UK and England 
+    body: >
+     The way cases are reported has changed. Cases that have been identified through a positive rapid lateral flow
+     test will be removed for people who took Polymerase Chain Reaction (PCR) tests within 3 days that were all negative. Cases of this type that were
+     previously reported were removed from the cumulative total, reducing the total by 8,010. Newly reported numbers of cases for the UK and England
      were unaffected by the removal of these. Historical published date totals have not been changed.
 
 
-     Newly reported cases at regional and local authority level within England are calculated as the daily change in the total number of cases. 
-     This means that for 9 April 2021, these show significantly lower numbers or zero, and should not be considered as the actual number of new cases reported on that date. 
-     Details of the changes and numbers of newly reported cases for 9 April 2021 are available in 
-     [csv (wide format)](/downloads/miscellaneous/cases_reported_2021-04-09_unstacked.csv) and 
+     Newly reported cases at regional and local authority level within England are calculated as the daily change in the total number of cases.
+     This means that for 9 April 2021, these show significantly lower numbers or zero, and should not be considered as the actual number of new cases reported on that date.
+     Details of the changes and numbers of newly reported cases for 9 April 2021 are available in
+     [csv (wide format)](/downloads/miscellaneous/cases_reported_2021-04-09_unstacked.csv) and
      [csv (long format)](/downloads/miscellaneous/cases_reported_2021-04-09_stacked.csv).
 
   - type: *dataIssue
@@ -651,28 +691,28 @@ changeLog:
     displayBanner: false
     relativeUrl:
     headline: R number for the UK no longer to be produced
-    body: > 
+    body: >
       UK estimates of the R number and growth rate will no longer be produced by SAGE, and therefore will not be available on the dashboard.
       Further details are available on the [R number in the UK publication](https://www.gov.uk/guidance/the-r-number-in-the-uk).
 
-      The R value and growth rates for the 4 nations and NHS England regions are more robust and useful metrics than those for the whole UK, and 
-      will continue to available on the dashboard. The current ranges for relevant areas are displayed on the postcode search pages, and 
+      The R value and growth rates for the 4 nations and NHS England regions are more robust and useful metrics than those for the whole UK, and
+      will continue to available on the dashboard. The current ranges for relevant areas are displayed on the postcode search pages, and
       available to download for all areas from the download data page, along with historical data.
 
     details: |
       API metrics affected are as follows:
-      
+
       - `transmissionRateMin`
       - `transmissionRateMax`
       - `transmissionRateGrowthRateMin`
-      - `transmissionRateGrowthRateMax`     
+      - `transmissionRateGrowthRateMax`
 
   - type: *dataIssue
     date: "2021-04-06"
     displayBanner: true
     relativeUrl:
     headline: Cases and deaths reported for Wales cover 48 hour period
-    body: > 
+    body: >
       The UK numbers for cases and deaths contain a 48 hour reporting period for Wales, up to 9am Monday 5th April 2021
 
   - type: *dataIssue
@@ -680,9 +720,9 @@ changeLog:
     displayBanner: true
     relativeUrl:
     headline: Cases and deaths reported for Wales and Northern Ireland cover 48 hour periods
-    body: > 
+    body: >
       The UK numbers for cases and deaths contain 48 hour reporting periods for Wales and Northern Ireland.
-      Vaccination figures for all nations and the UK are for the usual 24 hour period. 
+      Vaccination figures for all nations and the UK are for the usual 24 hour period.
       Previously missing vaccination figures for Wales for 3 April have also been added.
     details: |
       Wales:
@@ -698,10 +738,10 @@ changeLog:
     displayBanner: true
     relativeUrl:
     headline: No data reported for Wales, only vaccinations reported for Northern Ireland
-    body: > 
-      As previously announced, no data for cases and deaths have been reported for Wales and Northern Ireland. The UK numbers have therefore only been updated with data from 
-      England and Scotland. 
-      
+    body: >
+      As previously announced, no data for cases and deaths have been reported for Wales and Northern Ireland. The UK numbers have therefore only been updated with data from
+      England and Scotland.
+
       The UK numbers for vaccinations have been updated with data from England, Northern Ireland and Scotland.
 
   - type: *dataIssue
@@ -709,8 +749,8 @@ changeLog:
     displayBanner: true
     relativeUrl:
     headline: No data reported for Wales
-    body: > 
-      As previously announced, no data have been reported for Wales. The UK numbers have therefore only been updated with data from 
+    body: >
+      As previously announced, no data have been reported for Wales. The UK numbers have therefore only been updated with data from
       England, Northern Ireland and Scotland.
 
   - type: *dataIssue
@@ -718,8 +758,8 @@ changeLog:
     displayBanner: false
     relativeUrl: "/details/vaccinations"
     headline: Revision to historical vaccination data in Scotland
-    body: > 
-      Due to a problem with data flowing from GP systems, vaccination data for Scotland was incomplete for vaccines reported 
+    body: >
+      Due to a problem with data flowing from GP systems, vaccination data for Scotland was incomplete for vaccines reported
       on 27 to 30 March 2021. Numbers for the affected days have been revised.
 
   - type: *dataIssue
@@ -727,8 +767,8 @@ changeLog:
     displayBanner: false
     relativeUrl:
     headline: No R number for the UK presented
-    body: > 
-      As no UK estimates for the R number and growth rate have been agreed by SAGE, no values are shown on the dashboard. Further details are 
+    body: >
+      As no UK estimates for the R number and growth rate have been agreed by SAGE, no values are shown on the dashboard. Further details are
       available on the [R number in the UK publication](https://www.gov.uk/guidance/the-r-number-in-the-uk).
 
       R number and daily infection growth rate ranges are still available for the four nations and NHS regions in England. These are displayed
@@ -736,7 +776,7 @@ changeLog:
 
     details: |
       API metrics affected are as follows:
-      
+
       - `transmissionRateMin`
       - `transmissionRateMax`
       - `transmissionRateGrowthRateMin`
@@ -749,17 +789,17 @@ changeLog:
     displayBanner: true
     relativeUrl: /details/testing
     headline: No update to testing data
-    body: > 
-      Due to testing data not being available for the whole of the UK, these metrics have not been updated. 
-      They will be updated in the next release. 
+    body: >
+      Due to testing data not being available for the whole of the UK, these metrics have not been updated.
+      They will be updated in the next release.
 
   - type: *dataIssue
     date: "2021-03-30"
     displayBanner: false
     relativeUrl: "/details/vaccinations"
     headline: Revision to Northern Ireland and UK historical vaccination counts
-    body: > 
-      In order to align data across nations, the vaccination data for Northern Ireland has been revised to be shown by date reported. 
+    body: >
+      In order to align data across nations, the vaccination data for Northern Ireland has been revised to be shown by date reported.
       Numbers of vaccinations given for 22 March 2021 and earlier have been revised for both Northern Ireland and the UK.
 
   # NOTE: Data updated at 8pm on 29 March 2021.
@@ -768,20 +808,20 @@ changeLog:
   #   displayBanner: true
   #   relativeUrl: /details/testing
   #   headline: No update to testing data
-  #   body: > 
-  #     Due to testing data not being available for the whole of the UK, these metrics have not been updated. 
-  #     They will be updated in the next release. 
+  #   body: >
+  #     Due to testing data not being available for the whole of the UK, these metrics have not been updated.
+  #     They will be updated in the next release.
 
   - type: *dataIssue
     date: "2021-03-27"
     displayBanner: true
     relativeUrl: "/details/cases"
     headline: Removal of cases incorrectly reported by laboratory
-    body: > 
-      On 27 March 2021, 850 historic cases were removed from the dashboard. Due to a laboratory 
-      processing error these tests were reported as positive when they should have been recorded 
-      as void. This affected specimen dates between 23 and 25 March in local authorities primarily 
-      in the North East and Yorkshire. The cumulative total number of people tested positive was 
+    body: >
+      On 27 March 2021, 850 historic cases were removed from the dashboard. Due to a laboratory
+      processing error these tests were reported as positive when they should have been recorded
+      as void. This affected specimen dates between 23 and 25 March in local authorities primarily
+      in the North East and Yorkshire. The cumulative total number of people tested positive was
       revised down on 27 March 2021. Historic published date totals have not been changed.
 
   - type: *dataIssue
@@ -789,13 +829,13 @@ changeLog:
     displayBanner: true
     relativeUrl: "/details/cases"
     headline: Cases by test type not presented in England
-    body: > 
-      Due to a processing issue, data for cases by test type in England is not presented. It 
+    body: >
+      Due to a processing issue, data for cases by test type in England is not presented. It
       will be included in the next update.
-      
+
     details: |
       API metrics affected are as follows:
-      
+
       - `newCasesPCROnlyBySpecimenDate`
       - `cumCasesPCROnlyBySpecimenDate`
       - `newCasesLFDOnlyBySpecimenDate`
@@ -808,8 +848,8 @@ changeLog:
     displayBanner: false
     relativeUrl: "/details/cases"
     headline: Addition of historical cases in Wales
-    body: > 
-      Due to a data flow issue which has now been resolved, data for Wales published on 25 March 2021 includes 33 cases 
+    body: >
+      Due to a data flow issue which has now been resolved, data for Wales published on 25 March 2021 includes 33 cases
       from tests carried out on 25 January 2021.
 
   - type: *dataIssue
@@ -817,9 +857,9 @@ changeLog:
     displayBanner: false
     relativeUrl: "/details/cases"
     headline: Exclusion of duplicate cases in Scotland total
-    body: > 
-      177 historical cases were identified as duplicates received from the NHS Lothian laboratory, and have been removed from the cumulative total number of 
-      cases on 25 March 2021. Therefore, the cumulative number of cases for Scotland and the UK are not equal to the cumulative 
+    body: >
+      177 historical cases were identified as duplicates received from the NHS Lothian laboratory, and have been removed from the cumulative total number of
+      cases on 25 March 2021. Therefore, the cumulative number of cases for Scotland and the UK are not equal to the cumulative
       cases from 24 March 2021 plus new cases reported on 25 March 2021.
 
   - type: *dataIssue
@@ -827,8 +867,8 @@ changeLog:
     displayBanner: false
     relativeUrl: "/details/vaccinations"
     headline: Revision to Northern Ireland and UK historical vaccination counts
-    body: > 
-      The Northern Ireland Department of Health has migrated to a single data management system for vaccinations, which has required 
+    body: >
+      The Northern Ireland Department of Health has migrated to a single data management system for vaccinations, which has required
       data reconciliation. Numbers of vaccinations given for 22 March 2021 and earlier have been revised for both Northern Ireland and the UK.
 
   - type: *dataIssue
@@ -836,8 +876,8 @@ changeLog:
     displayBanner: false
     relativeUrl: "/details/cases"
     headline: Addition of historical cases
-    body: > 
-      57 cases from 15 February to 4 March 2021 from the NHS Lothian laboratory are now included 
+    body: >
+      57 cases from 15 February to 4 March 2021 from the NHS Lothian laboratory are now included
       in the reported number of new cases for Scotland and the UK.
 
   - type: *dataIssue
@@ -845,10 +885,10 @@ changeLog:
     displayBanner: true
     relativeUrl: "/details/vaccinations"
     headline: No update to vaccinations data for Northern Ireland
-    body: > 
-      Due to processing issues, no update is available for vaccinations in Northern Ireland. 
+    body: >
+      Due to processing issues, no update is available for vaccinations in Northern Ireland.
       The UK total includes daily updates from England, Scotland and Wales only.
-      The Northern Ireland daily number is shown as zero and the total is unchanged from 
+      The Northern Ireland daily number is shown as zero and the total is unchanged from
       22 March 2021. These will be updated in the next release.
 
   - type: *newMetric
@@ -856,12 +896,12 @@ changeLog:
     displayBanner: false
     relativeUrl: "/details/vaccinations#card-number_of_vaccinations_given_by_report_date"
     headline: Total vaccinations (both doses combined) added
-    body: > 
-      The number of COVID-19 vaccinations given (both first and second doses combined) is now shown on the dashboard by report date. 
+    body: >
+      The number of COVID-19 vaccinations given (both first and second doses combined) is now shown on the dashboard by report date.
       You can view vaccinations for the UK and the 4 nations.
     details: |
       API metrics added are as follows:
-      
+
       - `newVaccinesGivenByPublishDate`
       - `cumVaccinesGivenByPublishDate`
 
@@ -870,23 +910,23 @@ changeLog:
     displayBanner: true
     relativeUrl: "/details/about-data#blogs"
     headline: "New blog: how we expanded the dashboard"
-    body: > 
-      Our latest blog, [Behind the scenes: Expanding the COVID-19 dashboard](https://publichealthmatters.blog.gov.uk/2021/03/22/behind-the-scenes-expanding-the-covid-19-dashboard/) is available on 
+    body: >
+      Our latest blog, [Behind the scenes: Expanding the COVID-19 dashboard](https://publichealthmatters.blog.gov.uk/2021/03/22/behind-the-scenes-expanding-the-covid-19-dashboard/) is available on
       [Public health matters](https://publichealthmatters.blog.gov.uk/), Public Health England’s official blog.
-    
+
   - type: *dataIssue
     date: "2021-03-21"
     displayBanner: true
     relativeUrl: "/details/vaccinations?areaType=nation&areaName=Scotland"
     headline: Revision to vaccinations reported in Scotland
-    body: > 
+    body: >
       As a result, the UK totals of 1st and 2nd dose vaccinations have also been revised.
 
       The revised figures affect the calculation of the number of vaccines administered.
     details: |
       Note from [gov.scot](https://www.gov.scot/publications/coronavirus-covid-19-daily-data-for-scotland/):
-      
-      Vaccinations reported yesterday (20/03/2021) have been revised today (21/03/2021) due to connectivity issues when extracting the information from the database on 20/03/2021, 
+
+      Vaccinations reported yesterday (20/03/2021) have been revised today (21/03/2021) due to connectivity issues when extracting the information from the database on 20/03/2021,
       which meant that lower vaccination figures were initially reported. No connectivity issues impact the reporting today (21/03/2021).
 
   - type: *newMetric
@@ -894,18 +934,18 @@ changeLog:
     displayBanner: true
     relativeUrl: /details/vaccinations
     headline: Vaccination uptake added
-    body: > 
-      The percentage of people aged 18 and over who have received a COVID-19 vaccination is now shown on the dashboard by report date. 
+    body: >
+      The percentage of people aged 18 and over who have received a COVID-19 vaccination is now shown on the dashboard by report date.
       You can view vaccinations for the UK and the 4 nations, split by 1st and 2nd dose.
     details: |
-      Percentage uptake by report date is calculated by dividing the total number of vaccinations given by the mid-year 2019 population estimate for people aged 18 and over, 
+      Percentage uptake by report date is calculated by dividing the total number of vaccinations given by the mid-year 2019 population estimate for people aged 18 and over,
       published by the Office for National Statistics.
-      
-      The percentage uptake published here for the nations of the UK may differ from those reported by the nations individually. In particular, 
+
+      The percentage uptake published here for the nations of the UK may differ from those reported by the nations individually. In particular,
       figures published by Public Health Wales use denominators of those registered with NHS Wales rather than mid-year population estimates.
-      
+
       API metrics added are as follows:
-      
+
       - `cumVaccinationFirstDoseUptakeByPublishDatePercentage`
       - `cumVaccinationSecondDoseUptakeByPublishDatePercentage`
       - `cumVaccinationCompleteCoverageByPublishDatePercentage`
@@ -915,55 +955,55 @@ changeLog:
     displayBanner: true
     relativeUrl: /details/testing
     headline: No update to testing data
-    body: > 
-      Due to testing data not being available for the whole of the UK, these metrics have not been updated. 
-      They will be updated in the next release. 
+    body: >
+      Due to testing data not being available for the whole of the UK, these metrics have not been updated.
+      They will be updated in the next release.
 
   - type: *dataIssue
     date: "2021-03-17"
     displayBanner: false
-    relativeUrl: 
+    relativeUrl:
     headline: Data by specimen date and date of death not updated for UK and Northern Ireland
-    body: > 
-      [The Northern Ireland dashboard](https://app.powerbi.com/view?r=eyJrIjoiZGYxNjYzNmUtOTlmZS00ODAxLWE1YTEtMjA0NjZhMzlmN2JmIiwidCI6IjljOWEzMGRlLWQ4ZDctNGFhNC05NjAwLTRiZTc2MjVmZjZjNSIsImMiOjh9) 
-      is not being updated today. Because of this only headline metrics (reported cases, deaths and vaccinations) are available. 
-      The additional metrics will be updated in the next release. 
+    body: >
+      [The Northern Ireland dashboard](https://app.powerbi.com/view?r=eyJrIjoiZGYxNjYzNmUtOTlmZS00ODAxLWE1YTEtMjA0NjZhMzlmN2JmIiwidCI6IjljOWEzMGRlLWQ4ZDctNGFhNC05NjAwLTRiZTc2MjVmZjZjNSIsImMiOjh9)
+      is not being updated today. Because of this only headline metrics (reported cases, deaths and vaccinations) are available.
+      The additional metrics will be updated in the next release.
 
   - type: *dataIssue
     date: "2021-03-16"
     displayBanner: false
     relativeUrl: "/details/deaths#card-weekly_deaths_with_covid-19_on_the_death_certificate_by_date_registered"
-    headline: Change to UK figure for weekly deaths with COVID-19 on the death certificate by date registered 
-    body: > 
-      The figure for weekly deaths with COVID-19 on the death certificate by date registered in the UK has increased by 946 deaths. 
-      This is due to the inclusion of deaths of non-residents for England and Wales during 2020. 
-      Figures for 2021 already include non-residents for England and Wales. 
+    headline: Change to UK figure for weekly deaths with COVID-19 on the death certificate by date registered
+    body: >
+      The figure for weekly deaths with COVID-19 on the death certificate by date registered in the UK has increased by 946 deaths.
+      This is due to the inclusion of deaths of non-residents for England and Wales during 2020.
+      Figures for 2021 already include non-residents for England and Wales.
     details: |
-      The Office for National Statistics (ONS) reports [deaths registered weekly.](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/weeklyprovisionalfiguresondeathsregisteredinenglandandwales) 
+      The Office for National Statistics (ONS) reports [deaths registered weekly.](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/datasets/weeklyprovisionalfiguresondeathsregisteredinenglandandwales)
       The "2020: up to week ending 1 January 2021" version of this release does not include deaths registered to non-residents in England and Wales in the UK figure, while the 2021 version does.
-      ONS produces a statistical bulletin to accompany each release which includes a section on [deaths registered in the UK.](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsregisteredweeklyinenglandandwalesprovisional/weekending5march2021#deaths-registered-in-the-uk) 
-      This includes deaths registered to non-residents in England and Wales in 2020 and 2021. For consistency, the dashboard has been updated to match this figure. 
+      ONS produces a statistical bulletin to accompany each release which includes a section on [deaths registered in the UK.](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/deathsregisteredweeklyinenglandandwalesprovisional/weekending5march2021#deaths-registered-in-the-uk)
+      This includes deaths registered to non-residents in England and Wales in 2020 and 2021. For consistency, the dashboard has been updated to match this figure.
 
   - type: *changedMetric
     date: "2021-03-15"
     displayBanner: true
     relativeUrl: /details/testing
-    headline: Change to reporting of daily figures for lab testing capacity 
-    body: > 
-      Northern Ireland Health and Social Care trusts have discontinued daily reporting of the Pillar 1 
-      capacity figure, moving to weekly reporting. This means that daily figures for UK PCR and Pillar 1 
-      capacity will be reported retrospectively once a week on Friday.  
+    headline: Change to reporting of daily figures for lab testing capacity
+    body: >
+      Northern Ireland Health and Social Care trusts have discontinued daily reporting of the Pillar 1
+      capacity figure, moving to weekly reporting. This means that daily figures for UK PCR and Pillar 1
+      capacity will be reported retrospectively once a week on Friday.
 
   - type: *dataIssue
     date: "2021-03-13"
     displayBanner: true
     relativeUrl: "/details/deaths?areaType=nation&areaName=England"
-    headline: England deaths within 28 days of positive test affected by delay 
-    body: > 
-      Daily counts of deaths in England rely on multiple data sources. On 13 March 2021 
-      there was a delay in receiving this information from one of these sources. This 
-      might have a small impact on the total number of deaths reported on that date. This 
-      delay will be reflected on the numbers published on 14 March 2021. 
+    headline: England deaths within 28 days of positive test affected by delay
+    body: >
+      Daily counts of deaths in England rely on multiple data sources. On 13 March 2021
+      there was a delay in receiving this information from one of these sources. This
+      might have a small impact on the total number of deaths reported on that date. This
+      delay will be reflected on the numbers published on 14 March 2021.
 
   - type: *changedMetric
     date: "2021-03-11"
@@ -971,10 +1011,10 @@ changeLog:
     headline: Deprecation of weekly vaccination data
     relativeUrl: /details/vaccinations
     body: >
-      Weekly data on people who have received vaccinations are no longer included on the dashboard. 
+      Weekly data on people who have received vaccinations are no longer included on the dashboard.
       Daily vaccinations data are still shown and are more timely.
     details: |
-      You can find more vaccinations information in the relevant publications for each nation: 
+      You can find more vaccinations information in the relevant publications for each nation:
 
       - [England](https://www.england.nhs.uk/statistics/statistical-work-areas/covid-19-vaccinations/)
       - [Northern Ireland](https://covid-19.hscni.net/ni-covid-19-vaccinations-dashboard/)
@@ -992,15 +1032,15 @@ changeLog:
     headline: Cases by test type in England added
     relativeUrl: "/details/cases?areaType=nation&areaName=England"
     body: >
-      The number of people with at least one positive COVID-19 test result in England is now shown by the type of test 
+      The number of people with at least one positive COVID-19 test result in England is now shown by the type of test
       used in their first positive test and by specimen date.
     details: |
-      The test types shown are: 
+      The test types shown are:
 
       - lab-based polymerase chain reaction (PCR)
-      - lateral flow device (LFD) confirmed (this means the LFD result has been verified with a positive PCR result taken within 3 days) 
+      - lateral flow device (LFD) confirmed (this means the LFD result has been verified with a positive PCR result taken within 3 days)
       - LFD unconfirmed (no positive PCR result taken within 3 days).
- 
+
   - type: *dataIssue
     date: "2021-03-04"
     displayBanner: true
@@ -1008,22 +1048,22 @@ changeLog:
     relativeUrl: /details/deaths
     body: >
       Following clinical validation work in Wales, three individuals previously
-      reported as having died within 28 days of a positive test result have been 
-      removed from the figures. Public Health Scotland identified an additional 
+      reported as having died within 28 days of a positive test result have been
+      removed from the figures. Public Health Scotland identified an additional
       3 recently registered deaths within 28 days of a positive test result.
-      The total number of deaths in Wales, Scotland and the United Kingdom 
+      The total number of deaths in Wales, Scotland and the United Kingdom
       have been adjusted accordingly.
-      
+
   - type: *dataIssue
     date: "2021-03-03"
     displayBanner: true
     headline: 172 deaths within 28 days of a positive test added to Scotland and UK totals
     relativeUrl: /details/deaths
     body: >
-      Public Health Scotland has improved its method for linking daily confirmed 
-      COVID-19 cases with deaths reported through the National Records of Scotland. 
-      As a result, an extra 172 deaths were identified as having occurred 
-      within 28 days of a first positive test result since the start of the outbreak. 
+      Public Health Scotland has improved its method for linking daily confirmed
+      COVID-19 cases with deaths reported through the National Records of Scotland.
+      As a result, an extra 172 deaths were identified as having occurred
+      within 28 days of a first positive test result since the start of the outbreak.
       These have now been added to the cumulative totals for Scotland and the UK.
 
   - type: *dataIssue
@@ -1032,14 +1072,14 @@ changeLog:
     headline: Addition of historical cases
     relativeUrl: /details/cases
     body: >
-      350 cases have been added to the UK and England totals due to a previous failure to report the cases at source. 
+      350 cases have been added to the UK and England totals due to a previous failure to report the cases at source.
       This increases newly reported cases in the South East of England mainly Tandridge, Reigate and Banstead, Crawley, Horsham, Mid Sussex and Mole Valley.
 
   - type: *dataIssue
     date: "2021-03-01"
     displayBanner: false
     relativeUrl:
-    headline: No update to Scotland cases by specimen date and deaths by date of death 
+    headline: No update to Scotland cases by specimen date and deaths by date of death
     body: >
       Cases and deaths data were not available for Scotland at time of processing for the dashboard. This will be updated in the next release.
 
@@ -1047,18 +1087,18 @@ changeLog:
     date: "2021-02-27"
     displayBanner: false
     relativeUrl:
-    headline: Issue with deaths following a positive test at local authority and region levels in England 
+    headline: Issue with deaths following a positive test at local authority and region levels in England
     body: >
-      Owing to a technical difficulty, it has not been possible to assign lower and upper tier local 
-      authorities and regions to 254 deaths within 28 days of a positive test and 457 deaths within 
+      Owing to a technical difficulty, it has not been possible to assign lower and upper tier local
+      authorities and regions to 254 deaths within 28 days of a positive test and 457 deaths within
       60 days of a positive test in England. This will be resolved in the next release.
 
   - type: *dataIssue
     date: "2021-02-25"
     displayBanner: false
     relativeUrl: "/details/deaths?areaType=ltla%26areaName=Bedford#card-weekly_deaths_with_covid-19_on_the_death_certificate_by_date_registered"
-    headline: Issue with weekly cumulative registered deaths 
-    body: > 
+    headline: Issue with weekly cumulative registered deaths
+    body: >
       Thank you to the users who notified us of a problem with the cumulative weekly numbers of deaths for local authorities in Great Britain.
       The issue is now fixed.
 
@@ -1066,21 +1106,21 @@ changeLog:
     date: "2021-02-25"
     displayBanner: false
     relativeUrl: "/details/vaccinations#card-people_who_have_received_vaccinations_by_vaccination_date_weekly"
-    headline: Re-scheduled release of weekly vaccination figures 
-    body: > 
-      Due to a change in schedule for the release of weekly vaccination figures 
+    headline: Re-scheduled release of weekly vaccination figures
+    body: >
+      Due to a change in schedule for the release of weekly vaccination figures
       from Scotland the weekly updates of the UK figures will also have to be re-scheduled.
-      We expect an update tomorrow. 
+      We expect an update tomorrow.
 
   - type: *dataIssue
     date: "2021-02-25"
     displayBanner: true
     relativeUrl: "/details/healthcare?areaType=nhstrust&areaName=Ashford%20and%20St%20Peter%27s%20Hospitals%20NHS%20Foundation%20Trust"
-    headline: No update to hospital data in England 
-    body: > 
-      Due to technical issues, NHS England were not able to produce an update to  data for 
-      individual hospitals for publication on the dashboard. Data will  be released in the 
-      next regular Thursday update at the latest. In the meantime, the data  are available 
+    headline: No update to hospital data in England
+    body: >
+      Due to technical issues, NHS England were not able to produce an update to  data for
+      individual hospitals for publication on the dashboard. Data will  be released in the
+      next regular Thursday update at the latest. In the meantime, the data  are available
       in spreadsheet format from [NHS England](https://www.england.nhs.uk/statistics/statistical-work-areas/covid-19-hospital-activity/).
 
 
@@ -1088,17 +1128,17 @@ changeLog:
     date: "2021-02-24"
     displayBanner: false
     relativeUrl: /details/healthcare?areaType=nation&areaName=England
-    headline: No update to England hospital data 
-    body: > 
-      Due to technical issues, NHS England were not able to produce an update to hospital 
+    headline: No update to England hospital data
+    body: >
+      Due to technical issues, NHS England were not able to produce an update to hospital
       data for publication on the dashboard. Data will be updated in the next release.
 
   - type: *dataIssue
     date: "2021-02-22"
     displayBanner: false
     relativeUrl: /details/vaccinations?areaType=nation&areaName=Northern%20Ireland
-    headline: Vaccination numbers for Northern Ireland corrected 
-    body: > 
+    headline: Vaccination numbers for Northern Ireland corrected
+    body: >
       We were notified of an error in the reported vaccination figure for second doses in Northern Ireland.
       This was corrected and results in a negative daily change on the following day.
 
@@ -1106,37 +1146,37 @@ changeLog:
     date: "2021-02-18"
     displayBanner: false
     relativeUrl: "/details/vaccinations?areaType=nation%26areaName=Scotland#card-people_who_have_received_vaccinations_by_report_date_daily"
-    headline: Vaccinations data added for 15 and 16 January for Scotland 
-    body: > 
-      These data were previously unavailable. 
+    headline: Vaccinations data added for 15 and 16 January for Scotland
+    body: >
+      These data were previously unavailable.
 
   - type: *dataIssue
     date: "2021-02-15"
     displayBanner: false
     relativeUrl: /details/healthcare
-    headline: No update to England hospital data 
-    body: > 
-      Due to technical issues, NHS England were not able to produce an 
-      update to hospital data for publication on the dashboard.  
-      Data will be updated in the next release. 
+    headline: No update to England hospital data
+    body: >
+      Due to technical issues, NHS England were not able to produce an
+      update to hospital data for publication on the dashboard.
+      Data will be updated in the next release.
 
   - type: *newFeature
     date: "2021-02-08"
     displayBanner: false
     relativeUrl: /
-    headline: Summary page graphs are now clickable 
-    body: > 
-      The graphs on the homepage only give a summary view of the changes over time. Click on them 
+    headline: Summary page graphs are now clickable
+    body: >
+      The graphs on the homepage only give a summary view of the changes over time. Click on them
       to open the related topics page for more details and insights.
 
   - type: *newFeature
     date: "2021-02-08"
     displayBanner: false
     relativeUrl: /details/whats-new
-    headline: What's new page launched 
-    body: > 
-      This page is a record of all important changes to the dashboard. 
-      It will show new features, such as new charts or data and 
+    headline: What's new page launched
+    body: >
+      This page is a record of all important changes to the dashboard.
+      It will show new features, such as new charts or data and
       changes to the data.
       This page highlights news that is important to most people. It is not a detailed log.
 
@@ -1144,101 +1184,101 @@ changeLog:
     date: "2021-02-08"
     displayBanner: false
     relativeUrl: /details/deaths?areaType=nation&areaName=England
-    headline: England deaths within 28 days of positive test affected by delay 
-    body: > 
-      Daily counts of deaths in England rely on multiple data sources. On 6 February 2021 
-      there was a delay in receiving this information from one of these sources. This 
-      might have a small impact on the total number of deaths reported on that date. This 
-      delay will be reflected on the numbers published on 9 February 2021. 
+    headline: England deaths within 28 days of positive test affected by delay
+    body: >
+      Daily counts of deaths in England rely on multiple data sources. On 6 February 2021
+      there was a delay in receiving this information from one of these sources. This
+      might have a small impact on the total number of deaths reported on that date. This
+      delay will be reflected on the numbers published on 9 February 2021.
 
   - type: *dataIssue
     date: "2021-02-07"
     displayBanner: false
     relativeUrl: /details/cases?areaType=nation&areaName=Scotland
     headline: Incomplete number of cases for Scotland
-    body: > 
-      An issue was identified with data submissions for cases in Scotland overnight which 
-      affected the completeness of the newly reported. Any backlog is reported in the next 
+    body: >
+      An issue was identified with data submissions for cases in Scotland overnight which
+      affected the completeness of the newly reported. Any backlog is reported in the next
       publication.
-      
+
   - type: *update
     date: "2021-02-03"
     displayBanner: false
     relativeUrl: "/details/deaths?areaType=nation%26areaName=England#card-deaths_within_28_days_of_positive_test_by_date_of_death_age_demographics"
     headline: England deaths within 28 days of a positive test for 0–4 year olds corrected
-    body: > 
+    body: >
       Until 1 February 2021, the numbers of deaths within 28 days of a positive test
       in the 0–4 age group in England were showing as higher than they
-      actually were because of a data error. This was corrected on 3 February 2021. 
+      actually were because of a data error. This was corrected on 3 February 2021.
     details: |
-      On 2 February 2021 the breakdown of deaths by age for England was not included 
-      on the website. 
-      
-      This issue only affected this single age group, the total number of 
+      On 2 February 2021 the breakdown of deaths by age for England was not included
+      on the website.
+
+      This issue only affected this single age group, the total number of
       deaths is unaffected.
-      
-    #  # Here starts the testing 
-    #  ## Heading 2 
+
+    #  # Here starts the testing
+    #  ## Heading 2
     #  ### Heading 3
     #  on the website.**On 2 February 2021**
-    #  1. On 2 February 2021 the breakdown of deaths by age for England was not included 
-    #  2. on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
-    #  3. on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
+    #  1. On 2 February 2021 the breakdown of deaths by age for England was not included
+    #  2. on the website.On 2 February 2021 the breakdown of deaths by age for England was not included
+    #  3. on the website.On 2 February 2021 the breakdown of deaths by age for England was not included
     #  ### Heading 3
-    #  on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
-    #  on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
+    #  on the website.On 2 February 2021 the breakdown of deaths by age for England was not included
+    #  on the website.On 2 February 2021 the breakdown of deaths by age for England was not included
     #  ### Heading 3
-    #  [link on the website](https://coronavirus.data.gov.uk/search?postcode=rg28+7bj).On 2 February 2021 the breakdown of deaths by age for England was not included 
-    #  
-    #  on the website.On 2 February 2021 the breakdown of deaths by age for England was not included 
-    #  on the website.On 2 February 2021 the breakdown of deaths by age for England was not included    
-   
-  
+    #  [link on the website](https://coronavirus.data.gov.uk/search?postcode=rg28+7bj).On 2 February 2021 the breakdown of deaths by age for England was not included
+    #
+    #  on the website.On 2 February 2021 the breakdown of deaths by age for England was not included
+    #  on the website.On 2 February 2021 the breakdown of deaths by age for England was not included
+
+
   - type: *newContent
     date: "2021-01-11"
     displayBanner: false
     relativeUrl: "/details/vaccinations#card-people_who_have_received_vaccinations_by_report_date_daily"
     headline: Daily vaccinations added
-    body: > 
-      We are now reporting daily figures for first and second dose vaccinations at 
-      UK and nation level as well as weekly figures. 
-       
+    body: >
+      We are now reporting daily figures for first and second dose vaccinations at
+      UK and nation level as well as weekly figures.
+
   - type: *newContent
     date: "2021-01-10"
     displayBanner: false
     relativeUrl: /details/vaccinations
     headline: Vaccinations page launched
-    body: > 
-      The vaccinations topic page is now live. 
+    body: >
+      The vaccinations topic page is now live.
       We have moved the available vaccinations data from the healthcare page
-      to a separate vaccinations page.  
+      to a separate vaccinations page.
 
   - type: *newFeature
     date: "2021-01-06"
     displayBanner: false
     relativeUrl: /easy_read
     headline: Easy-read summary reports
-    body: > 
-      We have made the easy-read summaries more accessible and reviewed the content. 
-      They are now in HTML format. PDF downloads are still available.  
+    body: >
+      We have made the easy-read summaries more accessible and reviewed the content.
+      They are now in HTML format. PDF downloads are still available.
 
   - type: *newContent
     date: "2020-12-24"
     displayBanner: false
     relativeUrl: "/details/vaccinations#card-people_who_have_received_vaccinations_by_vaccination_date_weekly"
-    headline: Weekly vaccination figures added 
-    body: > 
-      We are now reporting the number of first dose vaccinations given each week 
-      at UK and nation level. 
+    headline: Weekly vaccination figures added
+    body: >
+      We are now reporting the number of first dose vaccinations given each week
+      at UK and nation level.
 
   - type: *changedMetric
     date: "2020-12-22"
     displayBanner: true
     relativeUrl: "/details/deaths?areaType=nation%26areaName=England#card-deaths_within_28_days_of_positive_test_by_date_of_death_age_demographics"
     headline: Deaths by age group in England added
-    body: > 
-      We have added a heatmap of rates of new cases by five-year age group, 
-      for England and areas within England. Rates for those aged 
+    body: >
+      We have added a heatmap of rates of new cases by five-year age group,
+      for England and areas within England. Rates for those aged
       under 60 and 60 and over have also been added.
 
   - type: *changedMetric
@@ -1246,20 +1286,20 @@ changeLog:
     displayBanner: true
     relativeUrl: /details/healthcare?areaType=overview&areaName=United%20Kingdom
     headline: Addition of data at NHS Trust level in England
-    body: > 
-      The healthcare page now includes data for English NHS Trusts. 
-      Trust data will be updated every Thursday, with data for each 
-      of the previous seven days. 
+    body: >
+      The healthcare page now includes data for English NHS Trusts.
+      Trust data will be updated every Thursday, with data for each
+      of the previous seven days.
 
   - type: *changedMetric
     date: "2020-12-16"
     displayBanner: false
     relativeUrl: "/details/testing?areaType=nation%26areaName=England#card-weekly_number_of_people_receiving_a_pcr_test_and_positivity"
     headline: Addition of positivity data and people tested, for PCR tests in England
-    body: > 
-      We have added the number of people who received a PCR test in 
-      the previous 7 days, and the percentage of those who had at 
-      least one positive COVID-19 PCR test result in the same 7 days 
+    body: >
+      We have added the number of people who received a PCR test in
+      the previous 7 days, and the percentage of those who had at
+      least one positive COVID-19 PCR test result in the same 7 days
       for England and areas within England.
 
   - type: *changedMetric
@@ -1267,36 +1307,36 @@ changeLog:
     displayBanner: false
     relativeUrl: "/details/cases?areaType=nation%26areaName=England#card-cases_by_specimen_date_age_demographics"
     headline: Rate of new cases added for age groups in England
-    body: > 
-      We have added a heatmap of rates of new cases by five-year age group, 
-      for England and areas within England. Rates for those aged under 60 
-      and 60 and over have also been added.     
+    body: >
+      We have added a heatmap of rates of new cases by five-year age group,
+      for England and areas within England. Rates for those aged under 60
+      and 60 and over have also been added.
 
   - type: *changedMetric
     date: "2020-12-11"
     displayBanner: false
     relativeUrl: "/details/about-data#patients-in-hospital"
     headline: Patients in hospital figures aligned with NHS England
-    body: > 
-      We have updated the patients in hospital figures on this site to align 
-      them with NHS England publications and the other measures of healthcare 
-      on the dashboard. UK totals and historic data has been revised in line 
+    body: >
+      We have updated the patients in hospital figures on this site to align
+      them with NHS England publications and the other measures of healthcare
+      on the dashboard. UK totals and historic data has been revised in line
       with this change.
     details: |
-      Previously the number of patients in hospital had only included patients 
-      in acute trusts with a type 1 A&E department, this has now been extended 
-      to include all acute trusts, mental health trusts and independent sector 
+      Previously the number of patients in hospital had only included patients
+      in acute trusts with a type 1 A&E department, this has now been extended
+      to include all acute trusts, mental health trusts and independent sector
       providers.
 
-  
+
   - type: *changedMetric
     date: "2020-12-03"
     displayBanner: false
     relativeUrl: "/details/cases?areaType=overview%26areaName=United%20Kingdom#card-recent_7-day_case_rates_by_specimen_date"
     headline: Addition of case rates and percentage change in rates
-    body: > 
-      We have added rates of new cases in the previous seven days, 
-      along with the percentage change in rate compared to the previous 
-      non-overlapping seven-day period.     
+    body: >
+      We have added rates of new cases in the previous seven days,
+      along with the percentage change in rate compared to the previous
+      non-overlapping seven-day period.
 
 
