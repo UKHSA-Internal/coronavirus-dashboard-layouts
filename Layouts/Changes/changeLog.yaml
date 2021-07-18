@@ -88,9 +88,12 @@ changeLog:
     relativeUrl:
     headline: Incorrect date of death data for Scotland and the UK
     body: |
-      Because of an error in the Scotland open data feed, deaths data by date of death
-      are incorrect for the UK and Scotland. This affects the entire time series, and
-      will be resolved in the next update.
+      Because of an error in the Scotland open data feed, deaths data within 28 days of
+      a positive test by date of death are incorrect for the UK and Scotland - including
+      Scottish local authorities. The issue affects the entire time series, and will be
+      resolved in the next update.
+
+      Data for deaths within 28 days of a positive test by publish date are unaffected.
 
     details: |
       Number of deaths by date of death for Scotland are incorrectly recorded as zero
