@@ -83,6 +83,16 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-07-19"
+    displayBanner: true
+    relativeUrl:
+    headline: UK newly reported 1st dose vaccinations affected by reduction in Northern Ireland total
+    body: |
+      Because the total number of 1st dose vaccinations reported in Northern Ireland was lower than yesterday, the UK number is reduced by 16,162. 
+      The total reported for England, Scotland and Wales combined is 34,348.
+
+
+  - type: *dataIssue
     date: "2021-07-18"
     displayBanner: true
     relativeUrl:
