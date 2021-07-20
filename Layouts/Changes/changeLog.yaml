@@ -83,6 +83,15 @@ colours:
 
 changeLog:
   - type: *dataIssue
+    date: "2021-07-20"
+    displayBanner: false
+    relativeUrl: "/details/testing"
+    headline: Historical PCR tests added to total figures
+    body: |
+      PCR tests from pillar 1 in England and the UK reported from 20 July 2021 include tests carried out within NHS Trusts that host a PHE lab. 
+      28,214 historical test samples dating from November 2020 onwards have been added to the total figure.
+
+  - type: *dataIssue
     date: "2021-07-19"
     displayBanner: true
     relativeUrl:

@@ -1,4 +1,12 @@
 
+- appearByUpdate: "2021-07-20"
+  disappearByUpdate: "2021-07-22"
+  date: "2021-07-20"
+  body: >
+    On Thursday 22 July, vaccination uptake for the UK, nations and Scottish local authorities will be updated to use the mid-2020 population estimates.
+
+# {{ StartDevOnlyBlock }}
+
 - appearByUpdate: "2021-07-13"
   disappearByUpdate: "2021-07-14"
   date: "2021-07-14"
@@ -8,8 +16,6 @@
     UK figures for 14 July 2021:
     42,302 new cases | 49 new deaths within 28 days of a positive test | 46,037,090 people have now received the first dose of a vaccine | 35,155,767 have received a 2nd dose. 
 
-
-# {{ StartDevOnlyBlock }}
 
 - appearByUpdate: "2021-07-02"
   disappearByUpdate: "2021-07-03"
