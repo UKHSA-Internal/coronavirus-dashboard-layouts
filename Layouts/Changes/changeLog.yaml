@@ -85,6 +85,19 @@ changeLog:
   - type: *dataIssue
     date: "2021-07-20"
     displayBanner: false
+    relativeUrl: "/details/deaths"
+    headline: Northern Ireland deaths with COVID-19 on the death certificate not included in UK total
+    body: |
+      Due to a bank holiday in Northern Ireland on 12 July 2021, data for deaths with COVID-19 on the death 
+      certificate for the week ending 9 July 2021 in Northern Ireland are delayed. The UK weekly number for 
+      week ending 9 July presented on the dashboard is the number registered in England, Scotland and Wales only.
+      
+      Data for Northern Ireland will be added in the next update on Tuesday 27 July. The UK totals for week ending 
+      9 July will be updated at that time.
+
+  - type: *dataIssue
+    date: "2021-07-20"
+    displayBanner: false
     relativeUrl: "/details/testing"
     headline: Historical PCR tests added to total figures
     body: |
