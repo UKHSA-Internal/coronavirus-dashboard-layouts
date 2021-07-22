@@ -82,6 +82,27 @@ colours:
 
 
 changeLog:
+  - type: *update
+    date: "2021-07-22"
+    displayBanner: true
+    relativeUrl:
+    headline: Updated population estimates used for vaccination uptake
+    body: |
+      Vaccination uptake for the UK, nations and Scottish local authorities have been updated to use the latest population 
+      estimates for mid-2020, published by the Office for National Statistics. 
+      
+      The updated population has been applied to all dates throughout the vaccination programme.
+
+    details: |
+      API metrics affected are as follows:
+      - `cumVaccinationFirstDoseUptakeByPublishDatePercentage`
+      - `cumVaccinationSecondDoseUptakeByPublishDatePercentage`
+      - `cumVaccinationCompleteCoverageByPublishDatePercentage`
+      - `cumVaccinationFirstDoseUptakeByVaccinationDatePercentage` (Scottish areas only)
+      - `cumVaccinationSecondDoseUptakeByVaccinationDatePercentage` (Scottish areas only)
+      - `cumVaccinationCompleteCoverageByVaccinationDatePercentage` (Scottish areas only)
+
+
   - type: *dataIssue
     date: "2021-07-20"
     displayBanner: false
@@ -113,7 +134,6 @@ changeLog:
       The total number of 1st dose vaccinations reported in Northern Ireland was lower than the previous day. 
       This means that the number of new first doses given in the UK is reduced by 16,162. The number of new first doses
       reported for England, Scotland and Wales combined is 34,348.
-
 
   - type: *dataIssue
     date: "2021-07-18"
