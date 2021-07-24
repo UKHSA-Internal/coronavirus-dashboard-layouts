@@ -1,3 +1,8 @@
+- appearByUpdate: "2021-07-23"
+  disappearByUpdate: "2021-07-24"
+  date: "2021-07-24"
+  body: >
+    Because of technical difficulties in processing England deaths data, today's update is delayed.
 
 - appearByUpdate: "2021-07-20"
   disappearByUpdate: "2021-07-22"
@@ -14,7 +19,7 @@
     Because of a processing issue, today's update is delayed.
 
     UK figures for 14 July 2021:
-    42,302 new cases | 49 new deaths within 28 days of a positive test | 46,037,090 people have now received the first dose of a vaccine | 35,155,767 have received a 2nd dose. 
+    42,302 new cases | 49 new deaths within 28 days of a positive test | 46,037,090 people have now received the first dose of a vaccine | 35,155,767 have received a 2nd dose.
 
 
 - appearByUpdate: "2021-07-02"
@@ -34,10 +39,10 @@
   disappearByUpdate: "2021-06-17"
   date: "2021-06-16"
   body: >
-    **Improved local authority allocation for deaths in England.** Some deaths previously reported in England have been reallocated to different resident local authorities. 
+    **Improved local authority allocation for deaths in England.** Some deaths previously reported in England have been reallocated to different resident local authorities.
     Total deaths for England are unaffected, but some local authorities and regions will show inaccurate daily reported numbers because of this change.
     [**More**](/details/whats-new)
-    
+
 
 - appearByUpdate: "2021-05-29"
   disappearByUpdate: "2021-05-30"
@@ -46,20 +51,20 @@
     Because of technical difficulties affecting reporting of vaccine data from Public Health Wales, today's update is delayed.
     We will update the dashboard as soon as we are able to.
 
-    
+
 - appearByUpdate: "2021-05-25"
   disappearByUpdate: "2021-05-26"
   date: "2021-05-25"
   body: >
     Because of a delay in processing of vaccination data for local authorities and regions in England, they will be updated on the dashboard later today.
-    
+
 - appearByUpdate: "2021-05-19"
   disappearByUpdate: "2021-05-20"
   date: "2021-05-19"
   body: >
-    **Revision to historical case data in England.** 
+    **Revision to historical case data in England.**
     The introduction of a new system disrupted the removal of cases where a positive rapid lateral flow test (LFD) was followed by all negative laboratory
-    (PCR) tests taken within 3 days, as reported yesterday. Therefore a further 561 cases have been removed today. Regions and local authorities do not 
+    (PCR) tests taken within 3 days, as reported yesterday. Therefore a further 561 cases have been removed today. Regions and local authorities do not
     show the actual number of new cases reported. UK and England numbers of newly reported cases have been adjusted and correctly reflect new cases reported.
     This issue will be ongoing over the next few days.
     [**More**](/details/whats-new)
@@ -88,43 +93,43 @@
   date: "2021-04-13"
   body: >
     Due to a delay in receiving data from Public Health Wales, today's update is delayed.
-    
+
 - appearByUpdate: "2021-04-07"
   disappearByUpdate: "2021-04-10"
   date: "2021-04-09"
   body: >
     **Change to case reporting and revision to historical case data in England.**
-    The way cases are reported has changed. This has resulted in the removal of a number of previously reported cases in England. 
-    This affects newly reported cases on 9 April 2021. Regions and local authorities do not show the actual number of new cases reported. 
+    The way cases are reported has changed. This has resulted in the removal of a number of previously reported cases in England.
+    This affects newly reported cases on 9 April 2021. Regions and local authorities do not show the actual number of new cases reported.
     UK and England numbers of newly reported cases have been adjusted and correctly reflect new cases reported. [**More**](/details/whats-new)
 
 - appearByUpdate: "2021-03-30"
   disappearByUpdate: "2021-04-07"
   date: "2021-03-31"
   body: >
-    During the Easter period, the COVID-19 Dashboard will be updated every day, but the amount of data being updated will vary. 
+    During the Easter period, the COVID-19 Dashboard will be updated every day, but the amount of data being updated will vary.
     See full details in the [About the Data](/details/about-data#easter-2021-schedule) page.
 
 - appearByUpdate: "2021-03-26"
   disappearByUpdate: "2021-03-27"
   date: "2021-03-27"
   body: >
-    Owing to a delay in receiving data from Northern Ireland, today's update is delayed. 
+    Owing to a delay in receiving data from Northern Ireland, today's update is delayed.
 
 
 - appearByUpdate: "2021-03-07"
   disappearByUpdate: "2021-03-08"
   body: >
-    Owing to processing issues for deaths in England, the numbers of deaths 
-    throughout the UK will be updated later. In the meantime, the number of 
-    newly reported deaths for 7 March 2021 may incorrectly show as zero. 
+    Owing to processing issues for deaths in England, the numbers of deaths
+    throughout the UK will be updated later. In the meantime, the number of
+    newly reported deaths for 7 March 2021 may incorrectly show as zero.
 
 
 - appearByUpdate: "2021-03-04"
   disappearByUpdate: "2021-03-05"
   date: "2021-03-05"
   body: >
-    Owing to a delay in the submission of cases data for England to PHE, today's 
+    Owing to a delay in the submission of cases data for England to PHE, today's
     update is delayed.
 
 
@@ -138,19 +143,19 @@
   disappearByUpdate: "2021-02-09"
   body: >
     Complete our [quick survey](https://docs.google.com/forms/d/e/1FAIpQLSc4GnaNWayFyBJxnoGHOnL1Igwo6KsOtDBAQYBN6uxWCDvH7Q/viewform) to help us improve this website.
-    
+
 
 - appearByUpdate: "2021-02-05"
-  disappearByUpdate: "2021-02-06"  
-  displayUri: 
+  disappearByUpdate: "2021-02-06"
+  displayUri:
     - /
     - /details/healthcare
   body: >
-    Due to an issue with the processing of healthcare data for England, the most 
-    recent figures are incorrect. We are working to fix the issue and will publish 
+    Due to an issue with the processing of healthcare data for England, the most
+    recent figures are incorrect. We are working to fix the issue and will publish
     corrected figures as soon as possible.
 
-    
+
 - appearByUpdate: "2021-01-29"
   disappearByUpdate: "2021-01-30"
   body: >
@@ -165,19 +170,19 @@
 
 - appearByUpdate: "2021-01-11"
   disappearByUpdate: "2021-01-12"
-  displayUri: 
+  displayUri:
     - /details/deaths
   body: >
-    Owing to issues with Public Health Scotland Open Data API service, deaths by date of death for 
-    Scotland are missing, and the UK totals therefore exclude Scotland. 
+    Owing to issues with Public Health Scotland Open Data API service, deaths by date of death for
+    Scotland are missing, and the UK totals therefore exclude Scotland.
 
 
 
 - appearByUpdate: "2020-12-23"
   disappearByUpdate: "2021-01-05"
   body: >
-    During the holiday period, the COVID-19 Dashboard will be updated every day, but the 
-    amount of data being updated will vary. See full details in 
+    During the holiday period, the COVID-19 Dashboard will be updated every day, but the
+    amount of data being updated will vary. See full details in
     the [About the Data](/details/about-data#new-year-2021-schedule) page.
 
 - appearByUpdate: "2020-12-26"
