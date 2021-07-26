@@ -643,7 +643,7 @@ cards:
             type: numeric
             tooltip: Number of people who received a PCR test in the period
 
-          - label: 7-day PCR postivity (%)
+          - label: 7-day PCR positivity (%)
             value: uniqueCasePositivityBySpecimenDateRollingSum
             type: numeric
             tooltip: 7-day positivity by specimen date
