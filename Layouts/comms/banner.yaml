@@ -4,6 +4,10 @@
   body: >
     Because of technical difficulties in processing England deaths data, today's update is delayed.
 
+    UK figures for 26 July 2021:
+    24,950 new cases | 46,589,211 people have now received the first dose of a vaccine | 37,287,384 have received a 2nd dose.
+   
+
 - appearByUpdate: "2021-07-24"
   disappearByUpdate: "2021-07-25"
   date: "2021-07-25"
