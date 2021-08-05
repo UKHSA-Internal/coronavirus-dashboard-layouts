@@ -2,34 +2,39 @@
 # Documentations
 # --------------
 # Attributes:
-# 
-# `linkText`: The text on which the user clicks to get the document. 
-# 
+#
+# `linkText`: The text on which the user clicks to get the document.
+#
 # Should ideally:
-# - be around 100 characters 
+# - be around 100 characters
 # - not end with a full stop
-# 
-# `linkUrl`: Use the URI for contents hosted on the website, or absolute, 
+#
+# `linkUrl`: Use the URI for contents hosted on the website, or absolute,
 #            fully qualified URL with protocol for external contents.
 
 #  If no link required, use links: []
-# 
+#
 # Example
 # -------
-# 
+#
 #     downloads:
 #       - label: Age demographic of cases by specimen date
 #         links:
 #           - text: CSV (stacked)
 #             url: /downloads/demographic/cases/specimenDate_ageDemographic-stacked.csv
-# 
+#
 #           - text: CSV (unstacked)
 #             url: /downloads/demographic/cases/specimenDate_ageDemographic-unstacked.csv
-# 
+#
 # =~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
 
 
 downloads:
+  - label: Population dataset &ndash; excluding MSOAs
+    links:
+      - text: Latest ONS estimates
+      - url: "/downloads/supplements/ONS-population_2021-08-05.csv"
+
   - label: Weekly cases by specimen date at MSOA level - Select MSOA from "Area type"
     links: []
 
@@ -45,7 +50,7 @@ downloads:
     links:
       - text: LTLA
         url: https://api.coronavirus.data.gov.uk/v2/data?areaType=ltla&metric=newCasesBySpecimenDateAgeDemographics&format=csv
-      
+
       - text: UTLA
         url: https://api.coronavirus.data.gov.uk/v2/data?areaType=utla&metric=newCasesBySpecimenDateAgeDemographics&format=csv
 
@@ -54,7 +59,7 @@ downloads:
 
       - text: England
         url: https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&areaCode=E92000001&metric=newCasesBySpecimenDateAgeDemographics&format=csv
-        
+
   - label: Age demographic of cases by reporting date [Deprecated - files not updated after 23 December 2020]
     links:
       - text: CSV (unstacked)
@@ -72,7 +77,7 @@ downloads:
     links:
       - text: LTLA
         url: https://api.coronavirus.data.gov.uk/v2/data?areaType=ltla&metric=cumCasesBySpecimenDate&metric=newCasesBySpecimenDate&metric=cumCasesBySpecimenDateRate&format=csv
-      
+
       - text: UTLA
         url: https://api.coronavirus.data.gov.uk/v2/data?areaType=utla&metric=cumCasesBySpecimenDate&metric=newCasesBySpecimenDate&metric=cumCasesBySpecimenDateRate&format=csv
 
