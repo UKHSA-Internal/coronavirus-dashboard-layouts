@@ -30,10 +30,10 @@
 
 
 downloads:
-  - label: Population dataset &ndash; excluding MSOAs
+  - label: Population dataset - excluding MSOAs
     links:
       - text: Latest ONS estimates
-      - url: "/downloads/supplements/ONS-population_2021-08-05.csv"
+        url: "/downloads/supplements/ONS-population_2021-08-05.csv"
 
   - label: Weekly cases by specimen date at MSOA level - Select MSOA from "Area type"
     links: []
