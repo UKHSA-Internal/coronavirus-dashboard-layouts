@@ -1039,6 +1039,10 @@ cards:
 
   - heading: R number and growth rate
     cardType: chart
+    locationAware:
+      excluded: 
+        areaType:
+          - overview
     fullWidth: true
     abstract: >
       The estimated R number (transmission rate) and daily infection growth rate. The R number, or reproduction number, 
