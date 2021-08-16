@@ -1039,14 +1039,16 @@ cards:
 
   - heading: R number and growth rate
     cardType: chart
+    locationAware:
+      excluded: 
+        areaType:
+          - overview
     fullWidth: true
     abstract: >
       The estimated R number (transmission rate) and daily infection growth rate. The R number, or reproduction number, 
       is the average number of secondary infections produced by a single infected person. The infection growth rate is an
       approximation of the percentage change in the number of infections each day and indicates how quickly the number of 
       infections is changing. Both estimates are presented as ranges, and the minimum and maximum values of these ranges are shown.
-      Values greater than or equal to 1 for R number and 0% for the growth rate are shown as red triangles pointing upwards. Values
-      less than 1 for R number and 0% for the growth rate are shown as green triangles pointing downwards.
 
     download:
       - transmissionRateMin
