@@ -32,7 +32,7 @@ headlineNumbers:
         value: hospitalCases
         tooltip: Number of COVID-19 patients currently in hospital, reported on {date}
 
-  - caption: Patients on ventilation
+  - caption: Patients in ventilation beds
     valueItems:
       - label: Latest available
         value: covidOccupiedMVBeds
