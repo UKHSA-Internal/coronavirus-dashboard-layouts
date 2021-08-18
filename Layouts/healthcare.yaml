@@ -1037,7 +1037,7 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 
-  - heading: R number and growth rate
+  - heading: Reproduction number (R) and growth rate
     cardType: chart
     locationAware:
       excluded: 
@@ -1045,7 +1045,7 @@ cards:
           - overview
     fullWidth: true
     abstract: >
-      The estimated R number (transmission rate) and daily infection growth rate. The R number, or reproduction number, 
+      The estimated R value (transmission rate) and daily infection growth rate. The reproduction number (R), 
       is the average number of secondary infections produced by a single infected person. The infection growth rate is an
       approximation of the percentage change in the number of infections each day and indicates how quickly the number of 
       infections is changing. Both estimates are presented as ranges, and the minimum and maximum values of these ranges are shown.
@@ -1058,7 +1058,7 @@ cards:
 
     tabs:
       # {{ StartDevOnlyBlock }}
-      - heading: R number
+      - heading: R value
         tabType: twoWayLollipop
         threshold: 1
         markerColourBelowThreshold: 11
@@ -1069,14 +1069,14 @@ cards:
         fields:
           - label: Maximum
             value: transmissionRateMax
-            tooltip: The maximum value in the estimated range of R number
+            tooltip: The maximum value in the estimated range of R
 
           - label: Minimum
             value: transmissionRateMin
-            tooltip: The minimum value in the estimated range of R number
+            tooltip: The minimum value in the estimated range of R
       # {{ EndDevOnlyBlock }}
 
-      - heading: R number data
+      - heading: R value data
         tabType: table
         fields:
           - label: Date
@@ -1087,12 +1087,12 @@ cards:
           - label: Minimum
             value: transmissionRateMin
             type: numeric
-            tooltip: The minimum value in the estimated range of R number
+            tooltip: The minimum value in the estimated range of R
 
           - label: Maximum
             value: transmissionRateMax
             type: numeric
-            tooltip: The maximum value in the estimated range of R number 
+            tooltip: The maximum value in the estimated range of R 
 
       # {{ StartDevOnlyBlock }}
       - heading: Growth rate
