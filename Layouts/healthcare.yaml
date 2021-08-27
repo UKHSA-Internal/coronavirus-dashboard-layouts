@@ -1034,9 +1034,6 @@ cards:
 
 ##############################################################################################################################
 
-
-# {{ StartDevOnlyBlock }}
-
   - heading: Reproduction number (R) and growth rate
     cardType: chart
     locationAware:
@@ -1057,7 +1054,6 @@ cards:
       - transmissionRateGrowthRateMax
 
     tabs:
-      # {{ StartDevOnlyBlock }}
       - heading: R value
         tabType: twoWayLollipop
         threshold: 1
@@ -1074,7 +1070,6 @@ cards:
           - label: Minimum
             value: transmissionRateMin
             tooltip: The minimum value in the estimated range of R
-      # {{ EndDevOnlyBlock }}
 
       - heading: R value data
         tabType: table
@@ -1094,7 +1089,6 @@ cards:
             type: numeric
             tooltip: The maximum value in the estimated range of R 
 
-      # {{ StartDevOnlyBlock }}
       - heading: Growth rate
         tabType: twoWayLollipop
         threshold: 0
@@ -1111,7 +1105,6 @@ cards:
           - label: Minimum (%)
             value: transmissionRateGrowthRateMin
             tooltip: The minimum percentage value in the estimated range of daily infection growth rate
-      # {{ EndDevOnlyBlock }}
 
       - heading: Growth rate data
         tabType: table
@@ -1135,7 +1128,6 @@ cards:
         tabType: metadata
         filename: cardMetadata/healthcare/cardrNumberRate.md  
 
-# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
