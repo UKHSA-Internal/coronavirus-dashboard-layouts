@@ -165,5 +165,3 @@ summary:
           - label: Total
             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
             value: cumOnsDeathsByRegistrationDate
-
-
