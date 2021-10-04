@@ -516,10 +516,10 @@ cards:
     fullWidth: false
     abstract: >
       The number of people of all ages who have received a COVID-19 vaccination, expressed as a percentage of the population
-      aged 16 and over, by dose, up to the latest day on which vaccine data were reported.
+      aged 12 and over, by dose, up to the latest day on which vaccine data were reported.
       Daily figures include all vaccines that were given up to and including the date shown, 
       and that were entered on the relevant system at the time of extract. 
-      The denominator is the 2020 mid-year population estimate for those aged 16 and over.
+      The denominator is the 2020 mid-year population estimate for those aged 12 and over.
     
     download:
       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
@@ -586,10 +586,10 @@ cards:
     fullWidth: false
     abstract: >
       The number of people of all ages who have received a COVID-19 vaccination, expressed as a percentage of the population
-      aged 16 and over, by dose, shown by date reported.
+      aged 12 and over, by dose, shown by date reported.
       Daily figures include all vaccines that were given up to and including the date shown, 
       and that were entered on the relevant system at the time of extract. 
-      The denominator is the 2020 mid-year population estimate for those aged 16 and over.
+      The denominator is the 2020 mid-year population estimate for those aged 12 and over.
       Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
     
     download:
@@ -1286,10 +1286,10 @@ cards:
     fullWidth: false
     abstract: >
       The number of people of all ages who have received a COVID-19 vaccination, expressed as a percentage of the population
-      aged 16 and over, by dose, up to the latest day on which vaccine data were reported.
+      aged 12 and over, by dose, up to the latest day on which vaccine data were reported.
       Daily figures include all vaccines that were given up to and including the date shown, 
       and that were entered on the relevant system at the time of extract. 
-      The denominator is the 2020 mid-year population estimate for those aged 16 and over.
+      The denominator is the 2020 mid-year population estimate for those aged 12 and over.
     
     download:
       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
@@ -1347,10 +1347,10 @@ cards:
     fullWidth: false
     abstract: >
       The number of people of all ages who have received a COVID-19 vaccination, expressed as a percentage of the population
-      aged 16 and over, by dose, shown by date reported.
+      aged 12 and over, by dose, shown by date reported.
       Daily figures include all vaccines that were given up to and including the date shown, 
       and that were entered on the relevant system at the time of extract.
-      The denominator is the 2020 mid-year population estimate for those aged 16 and over.
+      The denominator is the 2020 mid-year population estimate for those aged 12 and over.
       Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
     
     download:
