@@ -458,9 +458,9 @@ cards:
         tabType: chart
         barType: stack
         fields:
-          - label: Pillar 1 (NHS and, in England, PHE)
+          - label: Pillar 1 (NHS and, in England, UKHSA)
             value: newPillarOneTestsByPublishDate
-            tooltip: Daily number of lab-based COVID-19 tests conducted by NHS (and, in England, PHE) labs on {date}
+            tooltip: Daily number of lab-based COVID-19 tests conducted by NHS (and, in England, UKHSA) labs on {date}
             type: bar
             colour: 0
             rollingAverage: false
@@ -490,9 +490,9 @@ cards:
         tabType: chart
         barType: stack
         fields:
-          - label: Pillar 1 (NHS and, in England, PHE)
+          - label: Pillar 1 (NHS and, in England, UKHSA)
             value: cumPillarOneTestsByPublishDate
-            tooltip: Cumulative total number of lab-based COVID-19 tests conducted by NHS (and, in England, PHE) laboratories up to {date}
+            tooltip: Cumulative total number of lab-based COVID-19 tests conducted by NHS (and, in England, UKHSA) laboratories up to {date}
             type: bar
             colour: 0
             rollingAverage: false
@@ -529,7 +529,7 @@ cards:
           - label: Pillar 1
             value: newPillarOneTestsByPublishDate
             type: numeric
-            tooltip: Daily number of lab-based COVID-19 tests conducted by NHS (and, in England, PHE) laboratories on {date}
+            tooltip: Daily number of lab-based COVID-19 tests conducted by NHS (and, in England, UKHSA) laboratories on {date}
 
           - label: Pillar 2
             value: newPillarTwoTestsByPublishDate
@@ -562,7 +562,7 @@ cards:
           - label: Pillar 1
             value: cumPillarOneTestsByPublishDate
             type: numeric
-            tooltip: Cumulative total number of lab-based COVID-19 tests conducted by NHS (and, in England, PHE) laboratories up to {date}
+            tooltip: Cumulative total number of lab-based COVID-19 tests conducted by NHS (and, in England, UKHSA) laboratories up to {date}
 
           - label: Pillar 2
             value: cumPillarTwoTestsByPublishDate
@@ -732,5 +732,3 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/testing/cardLFDTesting.md
-
-

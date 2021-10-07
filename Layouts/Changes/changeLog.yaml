@@ -122,7 +122,7 @@ changeLog:
     relativeUrl: "/details/testing"
     headline: Historical PCR tests added to total figures
     body: |
-      PCR tests from pillar 1 in England and the UK reported from 20 July 2021 include tests carried out within NHS Trusts that host a PHE lab. 
+      PCR tests from pillar 1 in England and the UK reported from 20 July 2021 include tests carried out within NHS Trusts that host a UKHSA lab. 
       28,214 historical test samples dating from November 2020 onwards have been added to the total figure.
 
   - type: *dataIssue
@@ -965,7 +965,7 @@ changeLog:
     headline: "New blog: how we expanded the dashboard"
     body: >
       Our latest blog, [Behind the scenes: Expanding the COVID-19 dashboard](https://publichealthmatters.blog.gov.uk/2021/03/22/behind-the-scenes-expanding-the-covid-19-dashboard/) is available on
-      [Public health matters](https://publichealthmatters.blog.gov.uk/), Public Health England’s official blog.
+      [Public health matters](https://publichealthmatters.blog.gov.uk/), UK Health Security Agency’s official blog.
 
   - type: *dataIssue
     date: "2021-03-21"
@@ -1391,5 +1391,3 @@ changeLog:
       We have added rates of new cases in the previous seven days,
       along with the percentage change in rate compared to the previous
       non-overlapping seven-day period.
-
-

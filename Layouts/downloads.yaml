@@ -86,4 +86,3 @@ downloads:
 
       - text: Nation
         url: https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&metric=cumCasesBySpecimenDate&metric=newCasesBySpecimenDate&metric=cumCasesBySpecimenDateRate&format=csv
-
