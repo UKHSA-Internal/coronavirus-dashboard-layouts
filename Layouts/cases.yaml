@@ -63,11 +63,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people with at least one positive COVID-19 test result, either lab-reported or rapid lateral flow test (England only), by specimen date.
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      People tested positive more than once are only counted once, on the date of 
-      their first positive test. Data for the period ending 5 days before the date when the website was last updated with data for 
-      the selected area, highlighted in grey, are incomplete.
+      Number of cases (people who have had at least one positive COVID-19 test result), by specimen date. 
+      Data for the period ending 5 days before the date when the website was last updated with data for the selected area, 
+      highlighted in grey, are incomplete. 
 
     download:
       - newCasesBySpecimenDate
