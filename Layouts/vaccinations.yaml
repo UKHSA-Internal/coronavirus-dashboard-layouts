@@ -29,9 +29,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      The number of people of all ages who have received a first dose COVID-19 vaccination, shown by date reported. 
-      Daily figures include all vaccines that were given up to and including the date shown, 
-      and that were entered on the relevant system at the time of extract.
+      The number of people of all ages who have received a first dose COVID-19 vaccination and 7-day rolling average. 
     
     download:
       - newPeopleVaccinatedFirstDoseByPublishDate
@@ -272,9 +270,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      The number of people of all ages who have received a second dose COVID-19 vaccination, shown by date reported. 
-      Daily figures include all vaccines that were given up to and including the date shown, 
-      and that were entered on the relevant system at the time of extract.
+      The number of people of all ages who have received a second dose COVID-19 vaccination and 7-day rolling average.
     
     download:
       - newPeopleVaccinatedSecondDoseByPublishDate
@@ -681,11 +677,10 @@ cards:
 
     fullWidth: false
     abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, expressed as a percentage of the population
-      aged 12 and over, by dose, up to the latest day on which vaccine data were reported.
-      Daily figures include all vaccines that were given up to and including the date shown, 
-      and that were entered on the relevant system at the time of extract. 
-      The denominator is the 2020 mid-year population estimate for those aged 12 and over.
+      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population 
+      aged 12 and over. First and second doses are shown. The denominator is the 2020 mid-year population estimate for those 
+      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so 
+      these cannot be compared.
     
     download:
       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
@@ -751,11 +746,10 @@ cards:
 
     fullWidth: false
     abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, expressed as a percentage of the population
-      aged 12 and over, by dose, shown by date reported.
-      Daily figures include all vaccines that were given up to and including the date shown, 
-      and that were entered on the relevant system at the time of extract. 
-      The denominator is the 2020 mid-year population estimate for those aged 12 and over.
+      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population 
+      aged 12 and over. First and second doses are shown. The denominator is the 2020 mid-year population estimate for those 
+      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so 
+      these cannot be compared.
       Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
     
     download:
@@ -926,9 +920,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      The number of COVID-19 vaccinations given to people of all ages, shown by date reported. 
-      Daily figures include all vaccines (both first and second dose) that were given up to and including the date shown, 
-      and that were entered on the relevant system at the time of extract.
+      The number of COVID-19 vaccinations (all doses) given to people of all ages.
     
     download:
       - newVaccinesGivenByPublishDate
@@ -1299,9 +1291,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      The number of people of all ages who have received a first dose COVID-19 vaccination, shown by date reported. 
-      Daily figures include all vaccines that were given up to and including the date shown, 
-      and that were entered on the relevant system at the time of extract.
+      The number of people of all ages who have received a first dose COVID-19 vaccination. 
     
     download:
       - newPeopleVaccinatedFirstDoseByPublishDate
@@ -1669,11 +1659,10 @@ cards:
 
     fullWidth: false
     abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, expressed as a percentage of the population
-      aged 12 and over, by dose, up to the latest day on which vaccine data were reported.
-      Daily figures include all vaccines that were given up to and including the date shown, 
-      and that were entered on the relevant system at the time of extract. 
-      The denominator is the 2020 mid-year population estimate for those aged 12 and over.
+      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population 
+      aged 12 and over. First and second doses are shown. The denominator is the 2020 mid-year population estimate for those 
+      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so 
+      these cannot be compared.
     
     download:
       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
@@ -1730,11 +1719,10 @@ cards:
 
     fullWidth: false
     abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, expressed as a percentage of the population
-      aged 12 and over, by dose, shown by date reported.
-      Daily figures include all vaccines that were given up to and including the date shown, 
-      and that were entered on the relevant system at the time of extract.
-      The denominator is the 2020 mid-year population estimate for those aged 12 and over.
+      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population 
+      aged 12 and over. First and second doses are shown. The denominator is the 2020 mid-year population estimate for those 
+      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so 
+      these cannot be compared.
       Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
     
     download:
@@ -1796,9 +1784,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      The number of COVID-19 vaccinations given to people of all ages, shown by date reported. 
-      Daily figures include all vaccines (both first and second dose) that were given up to and including the date shown, 
-      and that were entered on the relevant system at the time of extract.
+      The number of COVID-19 vaccinations (all doses) given to people of all ages.
     
     download:
       - newVaccinesGivenByPublishDate
@@ -1934,13 +1920,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      The number of people aged 12 and over who have received a first dose COVID-19 vaccination, shown by vaccination date. 
-      Daily figures include all vaccines that were given on the date shown, 
-      and that were entered on the relevant system at the time of extract.
-      For England, these are provided for population surveillance purposes, and only people who are aged 12 and over, 
-      have an NHS number and are currently alive are included. 
-      Therefore the total numbers will not match the totals by report date. 
-      They will differ from NHS England daily outputs, which provide operational data for the management of the vaccination programme.
+      The number of people aged 12 and over who have received a first dose COVID-19 vaccination. 
       Data for the latest 2 days, marked in grey, are incomplete.
     
     download:
@@ -2252,11 +2232,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      The number of people aged 12 or over who have received a first dose COVID-19 vaccination, shown by vaccination date. 
-      Daily figures include all vaccines that were given on the date shown, and that were entered on the relevant system at the time of extract.
-      For English areas, these are provided for population surveillance purposes, and only people who are aged 12 and over,
-      have an NHS number and are currently alive are included. 
-      They will differ from NHS England daily outputs, which provide operational data for the management of the vaccination programme. 
+      The number of people aged 12 and over who have received a first dose or second dose COVID-19 vaccination. 
       Data for the latest 2 days, marked in grey, are incomplete.
     
     download:
@@ -2427,15 +2403,13 @@ cards:
 
     fullWidth: false
     abstract: >
-      Total percentage of people aged 12 and over who have received a COVID-19 vaccination, 
-      by dose, up to the latest day on which vaccine data were reported.
-      Daily figures include all vaccines that were given up to and including the date shown.
-      For English areas, these are provided for population surveillance purposes, and only people who are aged 12 and over, 
-      have an NHS number and are currently alive are included. 
-      The denominator used is the number of people aged 12 and over on the National Immunisation Management Service (NIMS) database. 
-      They will differ from NHS England daily outputs, which provide operational data for the management of the vaccination programme.
-      For Scottish areas, the denominator used is the mid-2020 population estimate,
-      published by National Records of Scotland. For this reason, comparisons should be made with caution.
+      Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose. 
+      For English areas, the denominator is the number of people aged 12 and over on the National Immunisation Management 
+      Service (NIMS) database. For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12 
+      and over. This means comparisons between local areas in different nations should be made with caution. England local 
+      area uptake is also not comparable to England national uptake by report date as that uses a different denominator – see 
+      the About tab for more information. England and Scotland totals by vaccination date are shown for comparison purposes 
+      calculated on the same basis as their constituent regions and local authorities.
     
     download:
       - cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
@@ -2495,15 +2469,13 @@ cards:
 
     fullWidth: false
     abstract: >
-      Total percentage of people aged 12 and over who have received a COVID-19 vaccination, 
-      shown by vaccination date.
-      Daily figures include all vaccines that were given up to and including the date shown.
-      For English areas, these are provided for population surveillance purposes, and only people who are aged 12 and over,
-      have an NHS number and are currently alive are included. 
-      The denominator used is the number of people aged 12 and over on the National Immunisation Management Service (NIMS) database. 
-      They will differ from NHS England daily outputs, which provide operational data for the management of the vaccination programme.
-      For Scottish areas, the denominator used is the mid-2020 population estimate,
-      published by National Records of Scotland. For this reason, comparisons should be made with caution.
+      Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose. 
+      For English areas, the denominator is the number of people aged 12 and over on the National Immunisation Management 
+      Service (NIMS) database. For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12 
+      and over. This means comparisons between local areas in different nations should be made with caution. England local 
+      area uptake is also not comparable to England national uptake by report date as that uses a different denominator – see 
+      the About tab for more information. England and Scotland totals by vaccination date are shown for comparison purposes 
+      calculated on the same basis as their constituent regions and local authorities.
       Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
     
     download:
@@ -2559,13 +2531,13 @@ cards:
 
     fullWidth: true
     abstract: >
-      Total percentage of people by age group who have received a COVID-19 vaccination, shown by vaccination date.
-      Daily figures include all vaccines that were given up to and including the date shown.
-      For English areas, these are provided for population surveillance purposes, and only people who have an NHS number and are currently alive are included. 
-      The denominator used is the number of people on the National Immunisation Management Service (NIMS) database. 
-      They will differ from NHS England daily outputs, which provide operational data for the management of the vaccination programme.
-      For Scottish areas, the denominator used is the mid-2020 population estimate, published by National Records of Scotland. 
-      For this reason, comparisons should be made with caution. 
+      Total percentage of people who have received a COVID-19 vaccination, by age group. 
+      For English areas, the denominator is the number of people aged 12 and over on the National Immunisation Management 
+      Service (NIMS) database. For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12 
+      and over. This means comparisons between local areas in different nations should be made with caution. England local 
+      area uptake is also not comparable to England national uptake by report date as that uses a different denominator – see 
+      the About tab for more information.
+
 
     download:
       - vaccinationsAgeDemographics
@@ -2794,14 +2766,13 @@ cards:
 
     fullWidth: false
     abstract: >
-      Total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose, up to the latest day on which vaccine data were reported.
-      For English areas, these are provided for population surveillance purposes, and only people who ared aged 12 and over,
-      have an NHS number and are currently alive are included. 
-      The denominator used is the number of people aged 12 and over on the National Immunisation Management Service (NIMS) database. 
-      They will differ from NHS England daily outputs, which provide operational data for the management of the vaccination programme.
-      For Scottish areas, the denominator used is the mid-2020 population estimate, published by National Records of Scotland. 
-      For this reason, comparisons should be made with caution. 
-      Nations are calculated on the same basis as their constituent regions and local authorities, and shown for comparison purposes.
+      Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose. For English areas, 
+      the denominator is the number of people aged 12 and over on the National Immunisation Management Service (NIMS) database. 
+      For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12 and over. This means comparisons 
+      between local areas in different nations should be made with caution. England local area uptake is also not comparable to 
+      England national uptake by report date as that uses a different denominator - see the About tab for more information. 
+      England and Scotland totals by vaccination date are shown for comparison purposes calculated on the same basis as their 
+      constituent regions and local authorities.
 
     download:
       - cumPeopleVaccinatedFirstDoseByVaccinationDate

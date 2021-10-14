@@ -56,10 +56,9 @@ cards:
     fullWidth: true
 
     abstract: >
-      Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
-      of the first positive test. Data from the four nations are not directly comparable as methodologies
-      and inclusion criteria vary. Data for the period ending 5 days before the date when the website was
-      last updated with data for the selected area, highlighted in grey, is incomplete.
+      Number of people who died within 28 days of their first positive test for COVID-19. 
+      Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared. 
+      Data for the last 5 days, highlighted in grey, are incomplete. 
 
     download:
       - newDeaths28DaysByDeathDate
@@ -223,10 +222,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
-      of the first positive test. Data from the four nations are not directly comparable as methodologies
-      and inclusion criteria vary. Data for the period ending 5 days before the date when the website was
-      last updated with data for the selected area, highlighted in grey, is incomplete.
+      Number of people who died within 28 days of their first positive test for COVID-19. 
+      Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared. 
+      Data for the last 5 days, highlighted in grey, are incomplete.
 
     download:
       - newDeaths28DaysByDeathDate
@@ -310,8 +308,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Rate of deaths of people who had at least one positive test result for COVID-19 and died within 28 days of the first
-      positive test per 100,000 population in the rolling 7-day period ending on the dates shown, by age.
+      Age breakdown of the rate of deaths of people who died within 28 days of their first positive test for COVID-19 by date of death. 
+      The rate is shown per 100,000 people in the rolling 7-day period ending on the dates shown.   
 
     download:
       - newDeaths28DaysByDeathDateAgeDemographics
@@ -399,8 +397,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of deaths of people who had at least one positive test result for COVID-19 and died within 28 days of the first
-      positive test by age and date of death. Rates are presented as rates per 100,000 population in the rolling 7-day period ending on the dates shown.
+      Number of people above and below 60 who died within 28 days of their first positive test for COVID-19 by date of death. 
+      Rates are shown per 100,000 people in the rolling 7-day period ending on the dates shown.
 
     download:
       - newDeaths28DaysByDeathDateAgeDemographics
@@ -520,9 +518,8 @@ cards:
     fullWidth: true
 
     abstract: >
-      Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
-      of the first positive test. Data from the four nations are not directly comparable as methodologies
-      and inclusion criteria vary.
+      Number people who died within 28 days of their first positive test for COVID-19. 
+      Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared. 
 
     download:
       - newDeaths28DaysByPublishDate
@@ -677,9 +674,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of deaths of people who had had a positive test result for COVID-19 and died within 28 days
-      of the first positive test. Data from the four nations are not directly comparable as methodologies
-      and inclusion criteria vary.
+      Number people who died within 28 days of their first positive test for COVID-19. 
+      Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared.  
 
     download:
       - newDeaths28DaysByPublishDate
@@ -749,9 +745,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of
-      at least 11 days because the data are based on death registrations.
+      Daily numbers of deaths of people whose death certificate mentioned COVID-19 as one of the causes, 
+      and 7-day rolling average. There is a lag in reporting of at least 11 days because the data are based on death registrations. 
+
 
     download:
       - newDailyNsoDeathsByDeathDate
@@ -921,9 +917,10 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of
-      at least 11 days because the data are based on death registrations.
+      Daily numbers of deaths of people whose death certificate mentioned COVID-19 as one of the causes, 
+      and 7-day rolling average. There is a lag in reporting of at least 11 days because the data are based on death registrations. 
+      Data are shown by date of death. 
+
 
     download:
       - newDailyNsoDeathsByDeathDate
@@ -995,9 +992,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of deaths of people whose death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of
-      at least 11 days because the data are based on death registrations.
+      Weekly number of deaths of people whose death certificate mentioned COVID-19 as one of the causes. 
+      The data are published weekly. There is a lag in reporting of at least 11 days because the data are based on death registrations. 
+      Data are shown by the date the death was registered. 
 
     download:
       - newWeeklyNsoDeathsByRegDate
@@ -1131,7 +1128,9 @@ cards:
 
     fullWidth: false
     abstract: >
-      Total number of deaths within 28 days of first positive test since the start of the pandemic, by age and sex.
+      Age and sex breakdown of the total number of people who died within 28 days of their first positive 
+      test for COVID-19 since the start of the pandemic. 
+      
 
     download:
       - femaleDeaths28Days
@@ -1213,8 +1212,9 @@ cards:
     cardType: ageSexBreakdown
     fullWidth: false
     abstract: >
-      Total death within 28 days of first positive test rates by age and sex. There are fewer people in the
-      oldest age groups so the rates show the relative impact on different age groups.
+      Age and sex breakdown of the rate per 100,000 people of the total number of people who died within 28 days 
+      of their first positive COVID-19 test. 
+      There are fewer people in the oldest age groups, so the rates show the relative impact on different age groups. 
 
     download:
       - femaleDeaths28Days
@@ -1293,10 +1293,8 @@ cards:
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
-      Total number of deaths since the start of the pandemic of people who had had a positive test result
-      for COVID-19 and died within 28 days of the first positive test. Data from the four nations are not
-      directly comparable as methodologies and inclusion criteria vary. Only data available for the latest
-      reported date are shown.
+      Total number of people who died within 28 days of their first positive test for COVID-19 since the start of the pandemic. 
+      Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared.
 
     download:
       - cumDeaths28DaysByPublishDate
@@ -1442,10 +1440,8 @@ cards:
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
-      Total number of deaths since the start of the pandemic of people whose death certificate mentioned
-      COVID-19 as one of the causes. The data are published weekly by the ONS, NRS and NISRA and there is
-      a lag in reporting of at least 11 days because the data are based on death registrations. Only data
-      available for the latest reported date are shown.
+      Total number of people whose death certificate mentioned COVID-19 as one of the causes since the start of the pandemic. 
+      The data are published weekly. There is a lag in reporting of at least 11 days because the data are based on death registrations.
 
     download:
       - cumOnsDeathsByRegistrationDate
@@ -1589,10 +1585,8 @@ cards:
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
-      Total number of deaths since the start of the pandemic of people whose death certificate mentioned
-      COVID-19 as one of the causes. The data are published weekly by the ONS, NRS and NISRA and there is
-      a lag in reporting of at least 11 days because the data are based on death registrations. Only data
-      available for the latest reported date are shown.
+      Total number of people whose death certificate mentioned COVID-19 as one of the causes since the start of the pandemic. 
+      The data are published weekly. There is a lag in reporting of at least 11 days because the data are based on death registrations. 
 
     download:
       - cumWeeklyNsoDeathsByRegDate
@@ -1748,10 +1742,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of deaths of people who had had a positive test result for COVID-19 and either died within
-      60 days of the first positive test or have COVID-19 mentioned on their death certificate. Data for the
-      period ending 5 days before the date when the website was last updated with data for the selected area,
-      highlighted in grey, is incomplete.
+      Number of people who had a positive test result for COVID-19 and either died within 60 days of the 
+      first positive test or have COVID-19 mentioned on their death certificate. 
+      Data for the last 5 days, highlighted in grey, are incomplete.
 
     download:
       - newDeaths60DaysByDeathDate
@@ -1907,10 +1900,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of deaths of people who had had a positive test result for COVID-19 and either died within
-      60 days of the first positive test or have COVID-19 mentioned on their death certificate. Data for the
-      period ending 5 days before the date when the website was last updated with data for the selected area,
-      highlighted in grey, is incomplete.
+      Number of people who had a positive test result for COVID-19 and either died within 60 days of the 
+      first positive test or have COVID-19 mentioned on their death certificate. 
+      Data for the last 5 days, highlighted in grey, are incomplete.
 
     download:
       - newDeaths60DaysByDeathDate
