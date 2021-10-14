@@ -34,12 +34,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void COVID-19 virus test results.  
-      This is a count of test results and may include multiple tests for an individual person.  
-      Virus tests test for the presence of SARS-CoV-2 virus and include all pillar 1 and 2 tests and 
-      any virus tests undertaken in pillar 4. Virus tests include PCR tests conducted in 
-      laboratories and rapid lateral flow tests that give results in less than an hour, without 
-      needing to go to a laboratory.
+      Number of confirmed positive, negative or void COVID-19 virus test results. 
+      This is a count of test results and may include more than one test per person.
 
     download:
       - newVirusTests
@@ -207,12 +203,14 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void COVID-19 lab-based test results, by test type.  
-      This is a count of test results and may include multiple tests for an individual person.  PCR tests test for 
-      the presence of SARS-CoV-2 virus and include all lab-based pillar 1 and 2 tests and any PCR tests undertaken 
-      in pillar 4. Antibody serology tests test for COVID-19 antibodies and include pillar 3 tests and any antibody 
-      serology tests undertaken in pillar 4. Testing capacity is a projection based on reports from labs on how 
-      many lab-based tests they have capacity to carry out each day based on availability of staff and resources.
+      Number of confirmed positive, negative or void COVID-19 lab-based test results and projected testing capacity. 
+      This is a count of test results and may include more than one test per person.
+
+      The government's mass testing programme provides testing through 4 routes known as pillars. More information about the pillars can be found in the About tab. 
+      
+      Separate charts are shown for virus tests and antibody tests: 
+       - virus tests test for the SARS-CoV-2 virus and include all lab-based pillar 1 and 2 polymerase chain reaction (PCR), loop-mediated isothermal amplification (LAMP) and Lampore tests and any PCR tests undertaken in pillar 4 
+       - antibody serology tests test for COVID-19 antibodies and include pillar 3 tests and any antibody serology tests undertaken in pillar 4
 
     download:
       - plannedPCRCapacityByPublishDate
@@ -382,8 +380,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Testing capacity is a projection based on reports from labs on how many lab-based tests they have capacity 
-      to carry out each day based on availability of staff and resources.
+      Projection reported by labs of how many lab-based tests they have capacity to carry out each day based on availability of staff and resources. 
+      The government's mass testing programme provides testing through 4 routes known as pillars. Capacity for each pillar is shown. 
+      More information about the pillars can be found in the About tab. 
 
     download:
       - plannedCapacityByPublishDate
@@ -437,9 +436,12 @@ cards:
     cardType: chart
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void COVID-19 test results, by pillar. 
-      This is a count of test results and may include multiple tests for an individual person. 
-      Data for surveillance testing (pillar 4) are only available for the UK as a whole.
+      Number of confirmed positive, negative or void COVID-19 test results, by testing pillar. 
+      This is a count of test results and may include more than one test per person. Data for 
+      surveillance testing (pillar 4) are only available for the UK as a whole. 
+      
+      The government's mass testing programme provides testing through 4 routes known as pillars. 
+      Capacity for each pillar is shown. More information about the pillars can be found in the About tab.
 
     download:
       - newPillarOneTestsByPublishDate
@@ -600,10 +602,10 @@ cards:
 
     fullWidth: true
     abstract: >
-      The number of people who received a PCR test in the previous 7 days, and the percentage of those who had at least 
-      one positive COVID-19 PCR test result in the same 7 days, by specimen date.
-      Individuals tested more than once in the period are only counted once in the denominator, 
-      and those with more than one positive test result in the period are only included once in the numerator.
+      The number of people who received a polymerase chain reaction (PCR) test in the previous 7 days, and the percentage 
+      of those who had at least one positive COVID-19 PCR test result in the same 7 days. Data is shown by specimen date 
+      (the date the sample was collected from the person). People tested more than once in the period are only counted once 
+      in the denominator. People with more than one positive test result in the period are only included once in the numerator.
 
     download:
       - uniqueCasePositivityBySpecimenDateRollingSum
@@ -671,10 +673,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void rapid lateral flow test results. 
-      This is a count of test results and may include multiple tests for an individual person. 
-      Rapid lateral flow tests test for the presence of SARS-CoV-2 virus and are swab tests that give 
-      results in less than an hour, without needing to go to a laboratory.
+      Number of confirmed positive, negative or void rapid lateral flow (LFD) test results, 
+      and rolling 7-day average. This is a count of test results and may include more than one test per person.  
      
     download:
       - newLFDTests
