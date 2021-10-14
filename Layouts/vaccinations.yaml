@@ -8,6 +8,12 @@ headlineNumbers:
       - label: Second dose total
         value: cumPeopleVaccinatedSecondDoseByPublishDate
         tooltip: Total number of people who have received the second dose of COVID-19 vaccine, reported up to {date}
+
+# {{ StartDevOnlyBlock }}
+      - label: Booster or third dose total (Dev only)
+        value: cumPeopleVaccinatedThirdInjectionByPublishDate
+        tooltip: Total number of people who have received a booster or third dose of COVID-19 vaccine, reported up to {date}
+# {{ EndDevOnlyBlock }}
   
   - caption: Vaccinations given
     valueItems: 
@@ -1140,6 +1146,266 @@ cards:
 
 ############################################################################################################################## 
 
+# {{ StartDevOnlyBlock }}
+# UK only (nation version in separate card below)
+
+  - heading: Number of vaccinations given, by report date (DEV)
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      The number of COVID-19 vaccinations (all doses) given to people of all ages.
+    
+    download:
+      - newVaccinesGivenByPublishDate
+      - cumVaccinesGivenByPublishDate
+      - newPeopleVaccinatedFirstDoseByPublishDate
+      - cumPeopleVaccinatedFirstDoseByPublishDate
+      - newPeopleVaccinatedSecondDoseByPublishDate
+      - cumPeopleVaccinatedSecondDoseByPublishDate
+      - newPeopleVaccinatedThirdInjectionByPublishDate
+      - cumPeopleVaccinatedThirdInjectionByPublishDate
+
+    options:
+      type: radio
+      heading: null
+      choices:
+        - UK total
+        - By nation
+
+    UK total:
+    
+      tabs: 
+
+        - heading: Daily
+          tabType: chart
+          barType: normal
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+
+          fields:
+            - label: daily
+              value: newVaccinesGivenByPublishDate
+              tooltip: Daily reported number of COVID-19 vaccines given
+              type: bar
+              colour: 0
+              rollingAverage: false
+           
+            - label: (7-day average)
+              value: newVaccinesGivenByPublishDate
+              tooltip: 7-day rolling average of the daily reported number of COVID-19 vaccines given
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 0 #no of days to exclude for incomplete data
+
+        - heading: Daily by dose
+          tabType: chart
+          barType: stack
+          params:
+            - key: areaType
+              sign: "="
+              value: overview 
+
+          fields:
+            - label: Booster or third dose daily
+              value: newPeopleVaccinatedThirdInjectionByPublishDate
+              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
+              type: bar
+              colour: 9
+              rollingAverage: false
+
+            - label: 2nd dose daily
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+              type: bar
+              colour: 3
+              rollingAverage: false   
+
+            - label: 1st dose daily
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false  
+                        
+        - heading: Cumulative
+          tabType: chart
+          params:
+            - key: areaType
+              sign: "="
+              value: overview         
+          fields:
+            - label: total
+              value: cumVaccinesGivenByPublishDate
+              tooltip: Cumulative reported number of COVID-19 vaccines given
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+        - heading: Cumulative by dose
+          tabType: chart
+          barType: stack
+          params:
+            - key: areaType
+              sign: "="
+              value: overview 
+
+          fields:
+            - label: Booster or third dose total
+              value: cumPeopleVaccinatedThirdInjectionByPublishDate
+              tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine
+              type: bar
+              colour: 9
+              rollingAverage: false 
+
+            - label: 2nd dose total
+              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+              type: bar
+              colour: 3
+              rollingAverage: false 
+
+            - label: 1st dose total
+              value: cumPeopleVaccinatedFirstDoseByPublishDate
+              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false  
+
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+        
+          fields:
+            - label: Report date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "1st dose daily"
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+
+            - label: "2nd dose daily"
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+
+            - label: "Booster or 3rd dose daily"
+              value: newPeopleVaccinatedThirdInjectionByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
+
+            - label: "daily total"
+              value: newVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Daily reported number of COVID-19 vaccines given
+
+            - label: "1st dose total"
+              value: cumPeopleVaccinatedFirstDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+            
+            - label: "2nd dose total"
+              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+
+            - label: "Booster or 3rd dose total"
+              value: cumPeopleVaccinatedThirdInjectionByPublishDate
+              type: numeric
+              tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine
+            
+            - label: "cumulative total"
+              value: cumVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Cumulative number of COVID-19 vaccines given
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
+
+
+    By nation:
+
+      tabs:
+
+          - heading: Daily
+            tabType: chart
+            barType: stack
+            colours: [0, 9, 3, 10] # areaNames in alphabetical order
+            params:
+              - key: areaType
+                sign: "="
+                value: nation
+
+            fields:
+              - label: "daily"
+                value: newVaccinesGivenByPublishDate
+                tooltip: Daily reported number of COVID-19 vaccines given in each nation
+                type: bar
+                rollingAverage: false
+
+          - heading: Cumulative
+            tabType: chart
+            barType: stack
+            colours: [0, 9, 3, 10] # areaNames in alphabetical order
+            params:
+              - key: areaType
+                sign: "="
+                value: nation
+
+            fields:
+              - label: "total"
+                value: cumVaccinesGivenByPublishDate
+                tooltip: Cumulative reported number COVID-19 vaccines given in each nation
+                type: bar
+                rollingAverage: false
+
+          - heading: Data
+            tabType: table
+            params:
+              - key: areaType
+                sign: "="
+                value: nation
+        
+            fields:
+            - label: Report date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "daily"
+              value: newVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Daily reported number of COVID-19 vaccines given
+
+            - label: "total"
+              value: cumVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Cumulative number of COVID-19 vaccines given
+
+          - heading: About 
+            tabType: metadata
+            filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
+
+############################################################################################################################## 
+# {{ EndDevOnlyBlock }}
+
+
 # # nations only (uk version in card above) 
 
 #   - heading: Number of vaccines given, by report date
@@ -1772,6 +2038,171 @@ cards:
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 ############################################################################################################################# 
+# {{ StartDevOnlyBlock }}
+# nations only
+
+  - heading: Number of vaccines given, by report date (DEV)
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - nation
+
+    fullWidth: true
+    abstract: >
+      The number of COVID-19 vaccinations (all doses) given to people of all ages.
+    
+    download:
+      - newVaccinesGivenByPublishDate
+      - cumVaccinesGivenByPublishDate
+      - newPeopleVaccinatedFirstDoseByPublishDate
+      - cumPeopleVaccinatedFirstDoseByPublishDate
+      - newPeopleVaccinatedSecondDoseByPublishDate
+      - cumPeopleVaccinatedSecondDoseByPublishDate
+      - newPeopleVaccinatedThirdInjectionByPublishDate
+      - cumPeopleVaccinatedThirdInjectionByPublishDate
+    
+    tabs: 
+
+      - heading: Daily
+        tabType: chart
+        barType: normal
+
+        fields:
+          - label: daily
+            value: newVaccinesGivenByPublishDate
+            tooltip: Daily reported number of COVID-19 vaccines given
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: (7-day average)
+            value: newVaccinesGivenByPublishDate
+            tooltip: 7-day rolling average of the daily reported number of COVID-19 vaccines given
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage:
+              window: 7
+              clipEnd: 0 #no of days to exclude for incomplete data
+           
+      - heading: Daily by dose
+        tabType: chart
+        barType: stack
+
+        fields:
+          - label: Booster or third dose daily
+            value: newPeopleVaccinatedThirdInjectionByPublishDate
+            tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
+            type: bar
+            colour: 9
+            rollingAverage: false 
+            
+          - label: 2nd dose daily
+            value: newPeopleVaccinatedSecondDoseByPublishDate
+            tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+            type: bar
+            colour: 3
+            rollingAverage: false 
+
+          - label: 1st dose daily
+            value: newPeopleVaccinatedFirstDoseByPublishDate
+            tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false              
+ 
+      - heading: Cumulative
+        tabType: chart
+       
+        fields:
+          - label: total
+            value: cumVaccinesGivenByPublishDate
+            tooltip: Cumulative reported number of COVID-19 vaccines given
+            type: bar
+            colour: 0
+            rollingAverage: false
+            
+      - heading: Cumulative by dose
+        tabType: chart
+        barType: stack
+
+        fields:
+          - label: Booster or third dose total
+            value: cumPeopleVaccinatedThirdInjectionByPublishDate
+            tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine
+            type: bar
+            colour: 9
+            rollingAverage: false
+
+          - label: 2nd dose total
+            value: cumPeopleVaccinatedSecondDoseByPublishDate
+            tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
+            type: bar
+            colour: 3
+            rollingAverage: false 
+
+          - label: 1st dose total
+            value: cumPeopleVaccinatedFirstDoseByPublishDate
+            tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false  
+    
+      - heading: Data
+        tabType: table
+        
+        fields:
+            - label: Report date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "1st dose daily"
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+
+            - label: "2nd dose daily"
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+
+            - label: "Booster or third dose daily"
+              value: newPeopleVaccinatedThirdInjectionByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
+
+            - label: "daily total"
+              value: newVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Daily reported number of COVID-19 vaccines given
+
+            - label: "1st dose total"
+              value: cumPeopleVaccinatedFirstDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+            
+            - label: "2nd dose total"
+              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              type: numeric
+              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+
+            - label: "Booster or third dose total"
+              value: cumPeopleVaccinatedThirdInjectionByPublishDate
+              type: numeric
+              tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine
+
+            - label: "cumulative total"
+              value: cumVaccinesGivenByPublishDate
+              type: numeric
+              tooltip: Cumulative number of COVID-19 vaccines given
+ 
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
+# {{ EndDevOnlyBlock }}
+############################################################################################################################## 
 
 # nations only
 
@@ -1788,7 +2219,7 @@ cards:
     
     download:
       - newVaccinesGivenByPublishDate
-      - cumVaccinesGivenByPublishDate
+      - cumVaccinesGivenByPublishDate      
     
     tabs: 
 
