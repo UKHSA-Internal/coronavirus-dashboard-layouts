@@ -503,6 +503,172 @@ cards:
 #         filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
 ############################################################################################################################## 
+# {{ StartDevOnlyBlock }}
+
+# UK only (nation version in separate card below)
+
+  - heading: People who have received booster or 3rd dose vaccinations, by report date (DEV)
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      The number of people of all ages who have received either a booster or third dose COVID-19 vaccination, shown by date reported. 
+      Daily figures include all vaccines that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
+    
+    download:
+      - newPeopleVaccinatedThirdInjectionByPublishDate
+      - cumPeopleVaccinatedThirdInjectionByPublishDate
+
+    options:
+      type: radio
+      heading: null
+      choices:
+        - UK total
+        - By nation
+
+    UK total:
+    
+      tabs: 
+
+        - heading: Daily
+          tabType: chart
+          barType: normal
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+
+          fields:
+            - label: daily
+              value: newPeopleVaccinatedThirdInjectionByPublishDate
+              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+           
+            - label: (7-day average)
+              value: newPeopleVaccinatedThirdInjectionByPublishDate
+              tooltip: 7-day rolling average of the daily reported number of people who received a booster or third dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 0 #no of days to exclude for incomplete data
+          
+        - heading: Cumulative
+          tabType: chart
+          params:
+            - key: areaType
+              sign: "="
+              value: overview         
+          fields:
+            - label: total
+              value: cumPeopleVaccinatedThirdInjectionByPublishDate
+              tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+            
+        - heading: Data
+          tabType: table
+          params:
+            - key: areaType
+              sign: "="
+              value: overview
+        
+          fields:
+            - label: Report date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "daily"
+              value: newPeopleVaccinatedThirdInjectionByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
+
+            - label: "total"
+              value: cumPeopleVaccinatedThirdInjectionByPublishDate
+              type: numeric
+              tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
+
+
+    By nation:
+
+      tabs:
+
+          - heading: Daily
+            tabType: chart
+            barType: stack
+            colours: [0, 9, 3, 10] # areaNames in alphabetical order
+            params:
+              - key: areaType
+                sign: "="
+                value: nation
+
+            fields:
+              - label: "daily"
+                value: newPeopleVaccinatedThirdInjectionByPublishDate
+                tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine in each nation
+                type: bar
+                rollingAverage: false
+
+          - heading: Cumulative
+            tabType: chart
+            barType: stack
+            colours: [0, 9, 3, 10] # areaNames in alphabetical order
+            params:
+              - key: areaType
+                sign: "="
+                value: nation
+
+            fields:
+              - label: "total"
+                value: cumPeopleVaccinatedThirdInjectionByPublishDate
+                tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine in each nation
+                type: bar
+                rollingAverage: false
+
+          - heading: Data
+            tabType: table
+            params:
+              - key: areaType
+                sign: "="
+                value: nation
+        
+            fields:
+            - label: Report date
+              value: date
+              type: date
+              tooltip: Date
+
+            - label: "daily"
+              value: newPeopleVaccinatedThirdInjectionByPublishDate
+              type: numeric
+              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
+
+            - label: "total"
+              value: cumPeopleVaccinatedThirdInjectionByPublishDate
+              type: numeric
+              tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine
+
+          - heading: About 
+            tabType: metadata
+            filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
+
+# {{ EndDevOnlyBlock }}
+
+##############################################################################################################################
 
 # UK only
 
@@ -1142,7 +1308,7 @@ cards:
       - cumPeopleVaccinatedFirstDoseByPublishDate
       - newPeopleVaccinatedSecondDoseByPublishDate
       - cumPeopleVaccinatedSecondDoseByPublishDate
-
+      
     options:
       type: radio
       heading: null
@@ -1271,6 +1437,224 @@ cards:
         - heading: About 
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
+
+# {{ StartDevOnlyBlock }}
+
+# nations only
+
+  - heading: People who have received vaccinations, by report date (DEV)
+    cardType: multiAreaStatic
+    locationAware:
+      included: 
+        areaType:
+          - nation
+
+    fullWidth: true
+    abstract: >
+      The number of people of all ages who have received a dose COVID-19 vaccination, shown by date reported. 
+      Daily figures include all vaccines that were given up to and including the date shown, 
+      and that were entered on the relevant system at the time of extract.
+    
+    download:
+      - newPeopleVaccinatedFirstDoseByPublishDate
+      - cumPeopleVaccinatedFirstDoseByPublishDate
+      - newPeopleVaccinatedSecondDoseByPublishDate
+      - cumPeopleVaccinatedSecondDoseByPublishDate
+      - newPeopleVaccinatedThirdInjectionByPublishDate
+      - cumPeopleVaccinatedThirdInjectionByPublishDate
+      
+    options:
+      type: radio
+      heading: null
+      choices:
+        - First dose
+        - Second dose
+        - Booster or third dose
+
+    First dose:
+
+      tabs: 
+
+        - heading: Daily
+          tabType: chart
+          barType: normal
+
+          fields:
+            - label: daily
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: (7-day average)
+              value: newPeopleVaccinatedFirstDoseByPublishDate
+              tooltip: 7-day rolling average of the daily reported number of people who received the first dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 0 #no of days to exclude for incomplete data
+           
+        - heading: Cumulative
+          tabType: chart
+       
+          fields:
+            - label: total
+              value: cumPeopleVaccinatedFirstDoseByPublishDate
+              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+            
+         
+        - heading: Data
+          tabType: table
+        
+          fields:
+              - label: Report date
+                value: date
+                type: date
+                tooltip: Date
+
+              - label: "daily"
+                value: newPeopleVaccinatedFirstDoseByPublishDate
+                type: numeric
+                tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
+
+              - label: "total"
+                value: cumPeopleVaccinatedFirstDoseByPublishDate
+                type: numeric
+                tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+ 
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
+
+    Second dose:
+
+      tabs: 
+
+        - heading: Daily
+          tabType: chart
+          barType: normal
+
+          fields:
+            - label: daily
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: (7-day average)
+              value: newPeopleVaccinatedSecondDoseByPublishDate
+              tooltip: 7-day rolling average of the daily reported number of people who received the second dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 0 #no of days to exclude for incomplete data
+           
+        - heading: Cumulative
+          tabType: chart
+       
+          fields:
+            - label: total
+              value: cumPeopleVaccinatedSecondDoseByPublishDate
+              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+            
+         
+        - heading: Data
+          tabType: table
+        
+          fields:
+              - label: Report date
+                value: date
+                type: date
+                tooltip: Date
+
+              - label: "daily"
+                value: newPeopleVaccinatedSecondDoseByPublishDate
+                type: numeric
+                tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
+
+              - label: "total"
+                value: cumPeopleVaccinatedSecondDoseByPublishDate
+                type: numeric
+                tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
+ 
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
+
+    Booster or third dose:
+
+      tabs: 
+
+        - heading: Daily
+          tabType: chart
+          barType: normal
+
+          fields:
+            - label: daily
+              value: newPeopleVaccinatedThirdInjectionByPublishDate
+              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: (7-day average)
+              value: newPeopleVaccinatedThirdInjectionByPublishDate
+              tooltip: 7-day rolling average of the daily reported number of people who received a booster or third dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              fill: false
+              rollingAverage:
+                window: 7
+                clipEnd: 0 #no of days to exclude for incomplete data
+           
+        - heading: Cumulative
+          tabType: chart
+       
+          fields:
+            - label: total
+              value: cumPeopleVaccinatedThirdInjectionByPublishDate
+              tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+            
+         
+        - heading: Data
+          tabType: table
+        
+          fields:
+              - label: Report date
+                value: date
+                type: date
+                tooltip: Date
+
+              - label: "daily"
+                value: newPeopleVaccinatedThirdInjectionByPublishDate
+                type: numeric
+                tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
+
+              - label: "total"
+                value: cumPeopleVaccinatedThirdInjectionByPublishDate
+                type: numeric
+                tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine
+ 
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
+
+# {{ EndDevOnlyBlock }}          
 
 ############################################################################################################################# 
 
