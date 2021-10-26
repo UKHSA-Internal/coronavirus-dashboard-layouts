@@ -2779,7 +2779,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      The number of people aged 12 and over who have received a first dose COVID-19 vaccination.
+      The number of people aged 12 and over who have received a COVID-19 vaccination, broken down by dose.
       Data for the latest 2 days, marked in grey, are incomplete.
 
     download:
