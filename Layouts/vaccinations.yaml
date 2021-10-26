@@ -1,6 +1,6 @@
 headlineNumbers:
   - caption: People vaccinated
-    valueItems: 
+    valueItems:
       - label: First dose total
         value: cumPeopleVaccinatedFirstDoseByPublishDate
         tooltip: Total number of people who have received the first dose of COVID-19 vaccine, reported up to {date}
@@ -12,14 +12,14 @@ headlineNumbers:
       - label: Booster or third dose total
         value: cumPeopleVaccinatedThirdInjectionByPublishDate
         tooltip: Total number of people who have received a booster or third dose of COVID-19 vaccine, reported up to {date}
-  
+
   - caption: Vaccinations given
-    valueItems: 
+    valueItems:
       - label: Total
         value: cumVaccinesGivenByPublishDate
         tooltip: Total number of COVID-19 vaccines given, reported up to {date}
 
-############################################################################################################################## 
+##############################################################################################################################
 
 cards:
 # UK only (nation version in separate card below)
@@ -27,14 +27,14 @@ cards:
   - heading: People who have received 1st dose vaccinations, by report date
     cardType: multiAreaStatic
     locationAware:
-      included: 
+      included:
         areaType:
           - overview
 
     fullWidth: true
     abstract: >
-      The number of people of all ages who have received a first dose COVID-19 vaccination and 7-day rolling average. 
-    
+      The number of people of all ages who have received a first dose COVID-19 vaccination and 7-day rolling average.
+
     download:
       - newPeopleVaccinatedFirstDoseByPublishDate
       - cumPeopleVaccinatedFirstDoseByPublishDate
@@ -47,8 +47,8 @@ cards:
         - By nation
 
     UK total:
-    
-      tabs: 
+
+      tabs:
 
         - heading: Daily
           tabType: chart
@@ -65,7 +65,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-           
+
             - label: (7-day average)
               value: newPeopleVaccinatedFirstDoseByPublishDate
               tooltip: 7-day rolling average of the daily reported number of people who received the first dose of COVID-19 vaccine
@@ -75,13 +75,13 @@ cards:
               rollingAverage:
                 window: 7
                 clipEnd: 0 #no of days to exclude for incomplete data
-          
+
         - heading: Cumulative
           tabType: chart
           params:
             - key: areaType
               sign: "="
-              value: overview         
+              value: overview
           fields:
             - label: total
               value: cumPeopleVaccinatedFirstDoseByPublishDate
@@ -89,14 +89,14 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-            
+
         - heading: Data
           tabType: table
           params:
             - key: areaType
               sign: "="
               value: overview
-        
+
           fields:
             - label: Report date
               value: date
@@ -113,7 +113,7 @@ cards:
               type: numeric
               tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
@@ -160,7 +160,7 @@ cards:
               - key: areaType
                 sign: "="
                 value: nation
-        
+
             fields:
             - label: Report date
               value: date
@@ -177,32 +177,32 @@ cards:
               type: numeric
               tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
 
-          - heading: About 
+          - heading: About
             tabType: metadata
             filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
-############################################################################################################################## 
+##############################################################################################################################
 
-# # nations only (uk version in card above) 
+# # nations only (uk version in card above)
 
 #   - heading: People who have received 1st dose vaccinations, by report date
 #     cardType: multiAreaStatic
 #     locationAware:
-#       included: 
+#       included:
 #         areaType:
 #           - nation
 
 #     fullWidth: true
 #     abstract: >
-#       The number of people who have received a first dose COVID-19 vaccination, shown by date reported. 
-#       Daily figures include all vaccines that were given up to and including the date shown, 
+#       The number of people who have received a first dose COVID-19 vaccination, shown by date reported.
+#       Daily figures include all vaccines that were given up to and including the date shown,
 #       and that were entered on the relevant system at the time of extract.
-    
+
 #     download:
 #       - newPeopleVaccinatedFirstDoseByPublishDate
 #       - cumPeopleVaccinatedFirstDoseByPublishDate
-    
-#     tabs: 
+
+#     tabs:
 
 #       - heading: Daily
 #         tabType: chart
@@ -225,10 +225,10 @@ cards:
 #             rollingAverage:
 #               window: 7
 #               clipEnd: 0 #no of days to exclude for incomplete data
-           
+
 #       - heading: Cumulative
 #         tabType: chart
-       
+
 #         fields:
 #           - label: total
 #             value: cumPeopleVaccinatedFirstDoseByPublishDate
@@ -236,11 +236,11 @@ cards:
 #             type: bar
 #             colour: 0
 #             rollingAverage: false
-            
-         
+
+
 #       - heading: Data
 #         tabType: table
-        
+
 #         fields:
 #             - label: Report date
 #               value: date
@@ -256,26 +256,26 @@ cards:
 #               value: cumPeopleVaccinatedFirstDoseByPublishDate
 #               type: numeric
 #               tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
- 
-#       - heading: About 
+
+#       - heading: About
 #         tabType: metadata
 #         filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
-############################################################################################################################# 
+#############################################################################################################################
 
 # UK only (nation version in separate card below)
 
   - heading: People who have received 2nd dose vaccinations, by report date
     cardType: multiAreaStatic
     locationAware:
-      included: 
+      included:
         areaType:
           - overview
 
     fullWidth: true
     abstract: >
       The number of people of all ages who have received a second dose COVID-19 vaccination and 7-day rolling average.
-    
+
     download:
       - newPeopleVaccinatedSecondDoseByPublishDate
       - cumPeopleVaccinatedSecondDoseByPublishDate
@@ -288,8 +288,8 @@ cards:
         - By nation
 
     UK total:
-    
-      tabs: 
+
+      tabs:
 
         - heading: Daily
           tabType: chart
@@ -306,7 +306,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-           
+
             - label: (7-day average)
               value: newPeopleVaccinatedSecondDoseByPublishDate
               tooltip: 7-day rolling average of the daily reported number of people who received the second dose of COVID-19 vaccine
@@ -316,13 +316,13 @@ cards:
               rollingAverage:
                 window: 7
                 clipEnd: 0 #no of days to exclude for incomplete data
-          
+
         - heading: Cumulative
           tabType: chart
           params:
             - key: areaType
               sign: "="
-              value: overview         
+              value: overview
           fields:
             - label: total
               value: cumPeopleVaccinatedSecondDoseByPublishDate
@@ -330,14 +330,14 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-            
+
         - heading: Data
           tabType: table
           params:
             - key: areaType
               sign: "="
               value: overview
-        
+
           fields:
             - label: Report date
               value: date
@@ -354,7 +354,7 @@ cards:
               type: numeric
               tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
@@ -401,7 +401,7 @@ cards:
               - key: areaType
                 sign: "="
                 value: nation
-        
+
             fields:
             - label: Report date
               value: date
@@ -418,32 +418,32 @@ cards:
               type: numeric
               tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
 
-          - heading: About 
+          - heading: About
             tabType: metadata
             filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
-############################################################################################################################## 
+##############################################################################################################################
 
-# # nations only (uk version in card above) 
+# # nations only (uk version in card above)
 
 #   - heading: People who have received 2nd dose vaccinations, by report date
 #     cardType: multiAreaStatic
 #     locationAware:
-#       included: 
+#       included:
 #         areaType:
 #           - nation
 
 #     fullWidth: true
 #     abstract: >
-#       The number of people who have received a second dose COVID-19 vaccination, shown by date reported. 
-#       Daily figures include all vaccines that were given up to and including the date shown, 
+#       The number of people who have received a second dose COVID-19 vaccination, shown by date reported.
+#       Daily figures include all vaccines that were given up to and including the date shown,
 #       and that were entered on the relevant system at the time of extract.
-    
+
 #     download:
 #       - newPeopleVaccinatedSecondDoseByPublishDate
 #       - cumPeopleVaccinatedSecondDoseByPublishDate
-    
-#     tabs: 
+
+#     tabs:
 
 #       - heading: Daily
 #         tabType: chart
@@ -466,10 +466,10 @@ cards:
 #             rollingAverage:
 #               window: 7
 #               clipEnd: 0 #no of days to exclude for incomplete data
-           
+
 #       - heading: Cumulative
 #         tabType: chart
-       
+
 #         fields:
 #           - label: total
 #             value: cumPeopleVaccinatedSecondDoseByPublishDate
@@ -477,11 +477,11 @@ cards:
 #             type: bar
 #             colour: 0
 #             rollingAverage: false
-            
-         
+
+
 #       - heading: Data
 #         tabType: table
-        
+
 #         fields:
 #             - label: Report date
 #               value: date
@@ -497,12 +497,12 @@ cards:
 #               value: cumPeopleVaccinatedSecondDoseByPublishDate
 #               type: numeric
 #               tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
- 
-#       - heading: About 
+
+#       - heading: About
 #         tabType: metadata
 #         filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
-############################################################################################################################## 
+##############################################################################################################################
 # {{ StartDevOnlyBlock }}
 
 # UK only (nation version in separate card below)
@@ -510,14 +510,14 @@ cards:
   - heading: People who have received booster or 3rd dose vaccinations, by report date (DEV)
     cardType: multiAreaStatic
     locationAware:
-      included: 
+      included:
         areaType:
           - overview
 
     fullWidth: true
     abstract: >
       The number of people of all ages who have received a booster or third dose COVID-19 vaccination and 7-day rolling average.
-          
+
     download:
       - newPeopleVaccinatedThirdInjectionByPublishDate
       - cumPeopleVaccinatedThirdInjectionByPublishDate
@@ -530,8 +530,8 @@ cards:
         - By nation
 
     UK total:
-    
-      tabs: 
+
+      tabs:
 
         - heading: Daily
           tabType: chart
@@ -548,7 +548,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-           
+
             - label: (7-day average)
               value: newPeopleVaccinatedThirdInjectionByPublishDate
               tooltip: 7-day rolling average of the daily reported number of people who received a booster or third dose of COVID-19 vaccine
@@ -558,13 +558,13 @@ cards:
               rollingAverage:
                 window: 7
                 clipEnd: 0 #no of days to exclude for incomplete data
-          
+
         - heading: Cumulative
           tabType: chart
           params:
             - key: areaType
               sign: "="
-              value: overview         
+              value: overview
           fields:
             - label: total
               value: cumPeopleVaccinatedThirdInjectionByPublishDate
@@ -572,14 +572,14 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-            
+
         - heading: Data
           tabType: table
           params:
             - key: areaType
               sign: "="
               value: overview
-        
+
           fields:
             - label: Report date
               value: date
@@ -596,7 +596,7 @@ cards:
               type: numeric
               tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
@@ -643,7 +643,7 @@ cards:
               - key: areaType
                 sign: "="
                 value: nation
-        
+
             fields:
             - label: Report date
               value: date
@@ -660,7 +660,7 @@ cards:
               type: numeric
               tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine
 
-          - heading: About 
+          - heading: About
             tabType: metadata
             filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
@@ -673,22 +673,22 @@ cards:
   #  - heading: Latest reported vaccination uptake
   #   cardType: tabContentRaw
   #   locationAware:
-  #     included: 
+  #     included:
   #       areaType:
   #         - overview
 
   #   fullWidth: false
   #   abstract: >
-  #     The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population 
-  #     aged 12 and over. First and second doses are shown. The denominator is the 2020 mid-year population estimate for those 
-  #     aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so 
+  #     The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population
+  #     aged 12 and over. First and second doses are shown. The denominator is the 2020 mid-year population estimate for those
+  #     aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so
   #     these cannot be compared.
-    
+
   #   download:
   #     - cumVaccinationFirstDoseUptakeByPublishDatePercentage
   #     - cumVaccinationSecondDoseUptakeByPublishDatePercentage
-    
-  #   tabs: 
+
+  #   tabs:
   #     - heading: Uptake
   #       tabType: percentageWaffle
   #       params:
@@ -701,19 +701,19 @@ cards:
   #           value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
   #           tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
   #           colour: 0
-          
+
   #         - label: 2nd dose (%)
   #           value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
   #           tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
   #           colour: 3
-          
+
   #     - heading: Data
   #       tabType: table
   #       params:
   #         - key: areaType
   #           sign: "="
   #           value: overview
-      
+
   #       fields:
   #         - label: Report date
   #           value: date
@@ -730,11 +730,11 @@ cards:
   #           type: numeric
   #           tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
 
-  #     - heading: About 
+  #     - heading: About
   #       tabType: metadata
   #       filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
-############################################################################################################################# 
+#############################################################################################################################
 
 # {{ StartDevOnlyBlock }}
 # UK only
@@ -742,23 +742,23 @@ cards:
   - heading: Latest reported vaccination uptake (DEV)
     cardType: tabContentRaw
     locationAware:
-      included: 
+      included:
         areaType:
           - overview
 
     fullWidth: false
     abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population 
-      aged 12 and over. First, second and booster or third doses are shown. The denominator is the 2020 mid-year population estimate for those 
-      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so 
+      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population
+      aged 12 and over. First, second and booster or third doses are shown. The denominator is the 2020 mid-year population estimate for those
+      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so
       these cannot be compared.
-    
+
     download:
       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
       - cumVaccinationSecondDoseUptakeByPublishDatePercentage
       - cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-    
-    tabs: 
+
+    tabs:
       - heading: Uptake
         tabType: percentageWaffle
         params:
@@ -771,7 +771,7 @@ cards:
             value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
             tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
             colour: 1
-          
+
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
             tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
@@ -781,14 +781,14 @@ cards:
             value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
             tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
             colour: 3
-          
+
       - heading: Data
         tabType: table
         params:
           - key: areaType
             sign: "="
             value: overview
-      
+
         fields:
           - label: Report date
             value: date
@@ -810,13 +810,13 @@ cards:
             type: numeric
             tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 # {{ EndDevOnlyBlock }}
 
-############################################################################################################################# 
+#############################################################################################################################
 
 # # UK only (commented to go live with dev)
 
@@ -824,18 +824,18 @@ cards:
 #     cardType: multiAreaStatic
 #     chartMode: percentage
 #     locationAware:
-#       included: 
+#       included:
 #         areaType:
 #           - overview
 
 #     fullWidth: false
 #     abstract: >
-#       The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population 
-#       aged 12 and over. First and second doses are shown. The denominator is the 2020 mid-year population estimate for those 
-#       aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so 
+#       The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population
+#       aged 12 and over. First and second doses are shown. The denominator is the 2020 mid-year population estimate for those
+#       aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so
 #       these cannot be compared.
 #       Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
-    
+
 #     download:
 #       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
 #       - cumVaccinationSecondDoseUptakeByPublishDatePercentage
@@ -848,15 +848,15 @@ cards:
 #         - By nation
 
 #     UK total:
-    
-#       tabs: 
+
+#       tabs:
 
 #         - heading: Uptake
 #           tabType: chart
 #           params:
 #             - key: areaType
 #               sign: "="
-#               value: overview         
+#               value: overview
 #           fields:
 #             - label: 1st dose (%)
 #               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
@@ -869,14 +869,14 @@ cards:
 #               tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine
 #               type: line
 #               colour: 3
-#               rollingAverage: false             
+#               rollingAverage: false
 
 #         # - heading: 1st dose
 #         #   tabType: chart
 #         #   params:
 #         #     - key: areaType
 #         #       sign: "="
-#         #       value: overview         
+#         #       value: overview
 #         #   fields:
 #         #     - label: percentage
 #         #       value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
@@ -890,7 +890,7 @@ cards:
 #         #   params:
 #         #     - key: areaType
 #         #       sign: "="
-#         #       value: overview         
+#         #       value: overview
 #         #   fields:
 #         #     - label: percentage
 #         #       value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
@@ -898,14 +898,14 @@ cards:
 #         #       type: line
 #         #       colour: 0
 #         #       rollingAverage: false
-           
+
 #         - heading: Data
 #           tabType: table
 #           params:
 #             - key: areaType
 #               sign: "="
 #               value: overview
-        
+
 #           fields:
 #             - label: Report date
 #               value: date
@@ -920,9 +920,9 @@ cards:
 #             - label: "2nd dose (%)"
 #               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
 #               type: numeric
-#               tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine             
+#               tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
 
-#         - heading: About 
+#         - heading: About
 #           tabType: metadata
 #           filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
@@ -962,7 +962,7 @@ cards:
 #                 type: line
 #                 rollingAverage: false
 #                 fill: false
-          
+
 
 #           - heading: Data
 #             tabType: table
@@ -970,7 +970,7 @@ cards:
 #               - key: areaType
 #                 sign: "="
 #                 value: nation
-        
+
 #             fields:
 #             - label: Report date
 #               value: date
@@ -985,13 +985,13 @@ cards:
 #             - label: "2nd dose (%)"
 #               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
 #               type: numeric
-#               tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine      
+#               tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
 
-#           - heading: About 
+#           - heading: About
 #             tabType: metadata
 #             filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
-############################################################################################################################## 
+##############################################################################################################################
 
 
 # {{ StartDevOnlyBlock }}
@@ -1001,18 +1001,18 @@ cards:
     cardType: multiAreaStatic
     chartMode: percentage
     locationAware:
-      included: 
+      included:
         areaType:
           - overview
 
     fullWidth: false
     abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population 
-      aged 12 and over. First, second and booster or third doses are shown. The denominator is the 2020 mid-year population estimate for those 
-      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so 
+      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population
+      aged 12 and over. First, second and booster or third doses are shown. The denominator is the 2020 mid-year population estimate for those
+      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so
       these cannot be compared.
       Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
-    
+
     download:
       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
       - cumVaccinationSecondDoseUptakeByPublishDatePercentage
@@ -1026,15 +1026,15 @@ cards:
         - By nation
 
     UK total:
-    
-      tabs: 
+
+      tabs:
 
         - heading: Uptake
           tabType: chart
           params:
             - key: areaType
               sign: "="
-              value: overview         
+              value: overview
           fields:
             - label: 1st dose (%)
               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
@@ -1047,20 +1047,20 @@ cards:
               tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine
               type: line
               colour: 0
-              rollingAverage: false    
+              rollingAverage: false
             - label: Booser or 3rd dose (%)
               value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
               tooltip: Cumulative reported percentage of people who received a booster or third dose of COVID-19 vaccine
               type: line
               colour: 3
-              rollingAverage: false         
+              rollingAverage: false
 
         # - heading: 1st dose
         #   tabType: chart
         #   params:
         #     - key: areaType
         #       sign: "="
-        #       value: overview         
+        #       value: overview
         #   fields:
         #     - label: percentage
         #       value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
@@ -1074,7 +1074,7 @@ cards:
         #   params:
         #     - key: areaType
         #       sign: "="
-        #       value: overview         
+        #       value: overview
         #   fields:
         #     - label: percentage
         #       value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
@@ -1082,14 +1082,14 @@ cards:
         #       type: line
         #       colour: 0
         #       rollingAverage: false
-           
+
         - heading: Data
           tabType: table
           params:
             - key: areaType
               sign: "="
               value: overview
-        
+
           fields:
             - label: Report date
               value: date
@@ -1104,14 +1104,14 @@ cards:
             - label: "2nd dose (%)"
               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine   
+              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
 
             - label: "Booster or 3rd dose (%)"
               value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine           
+              tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
@@ -1151,7 +1151,7 @@ cards:
                 type: line
                 rollingAverage: false
                 fill: false
-          
+
           - heading: Booster or 3rd dose
             tabType: chart
             colours: [0, 9, 3, 10] # areaNames in alphabetical order
@@ -1174,7 +1174,7 @@ cards:
               - key: areaType
                 sign: "="
                 value: nation
-        
+
             fields:
             - label: Report date
               value: date
@@ -1189,33 +1189,33 @@ cards:
             - label: "2nd dose (%)"
               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine  
+              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
 
             - label: "Booster or 3rd dose (%)"
               value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine     
+              tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
 
-          - heading: About 
+          - heading: About
             tabType: metadata
             filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 # {{ EndDevOnlyBlock }}
 
-############################################################################################################################# 
+#############################################################################################################################
 
 # # UK only (nation version in separate card below) (commented to go live with dev)
 
 #   - heading: Number of vaccinations given, by report date
 #     cardType: multiAreaStatic
 #     locationAware:
-#       included: 
+#       included:
 #         areaType:
 #           - overview
 
 #     fullWidth: true
 #     abstract: >
 #       The number of COVID-19 vaccinations (all doses) given to people of all ages.
-    
+
 #     download:
 #       - newVaccinesGivenByPublishDate
 #       - cumVaccinesGivenByPublishDate
@@ -1232,8 +1232,8 @@ cards:
 #         - By nation
 
 #     UK total:
-    
-#       tabs: 
+
+#       tabs:
 
 #         - heading: Daily
 #           tabType: chart
@@ -1250,7 +1250,7 @@ cards:
 #               type: bar
 #               colour: 0
 #               rollingAverage: false
-           
+
 #             - label: (7-day average)
 #               value: newVaccinesGivenByPublishDate
 #               tooltip: 7-day rolling average of the daily reported number of COVID-19 vaccines given
@@ -1267,7 +1267,7 @@ cards:
 #           params:
 #             - key: areaType
 #               sign: "="
-#               value: overview 
+#               value: overview
 
 #           fields:
 #             - label: 2nd dose daily
@@ -1275,21 +1275,21 @@ cards:
 #               tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
 #               type: bar
 #               colour: 3
-#               rollingAverage: false   
+#               rollingAverage: false
 
 #             - label: 1st dose daily
 #               value: newPeopleVaccinatedFirstDoseByPublishDate
 #               tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
 #               type: bar
 #               colour: 0
-#               rollingAverage: false  
-                        
+#               rollingAverage: false
+
 #         - heading: Cumulative
 #           tabType: chart
 #           params:
 #             - key: areaType
 #               sign: "="
-#               value: overview         
+#               value: overview
 #           fields:
 #             - label: total
 #               value: cumVaccinesGivenByPublishDate
@@ -1304,7 +1304,7 @@ cards:
 #           params:
 #             - key: areaType
 #               sign: "="
-#               value: overview 
+#               value: overview
 
 #           fields:
 #             - label: 2nd dose total
@@ -1312,14 +1312,14 @@ cards:
 #               tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
 #               type: bar
 #               colour: 3
-#               rollingAverage: false 
+#               rollingAverage: false
 
 #             - label: 1st dose total
 #               value: cumPeopleVaccinatedFirstDoseByPublishDate
 #               tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
 #               type: bar
 #               colour: 0
-#               rollingAverage: false  
+#               rollingAverage: false
 
 #         - heading: Data
 #           tabType: table
@@ -1327,7 +1327,7 @@ cards:
 #             - key: areaType
 #               sign: "="
 #               value: overview
-        
+
 #           fields:
 #             - label: Report date
 #               value: date
@@ -1353,7 +1353,7 @@ cards:
 #               value: cumPeopleVaccinatedFirstDoseByPublishDate
 #               type: numeric
 #               tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
-            
+
 #             - label: "2nd dose total"
 #               value: cumPeopleVaccinatedSecondDoseByPublishDate
 #               type: numeric
@@ -1364,7 +1364,7 @@ cards:
 #               type: numeric
 #               tooltip: Cumulative number of COVID-19 vaccines given
 
-#         - heading: About 
+#         - heading: About
 #           tabType: metadata
 #           filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
 
@@ -1411,7 +1411,7 @@ cards:
 #               - key: areaType
 #                 sign: "="
 #                 value: nation
-        
+
 #             fields:
 #             - label: Report date
 #               value: date
@@ -1428,11 +1428,11 @@ cards:
 #               type: numeric
 #               tooltip: Cumulative number of COVID-19 vaccines given
 
-#           - heading: About 
+#           - heading: About
 #             tabType: metadata
 #             filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
 
-############################################################################################################################## 
+##############################################################################################################################
 
 # {{ StartDevOnlyBlock }}
 # UK only (nation version in separate card below)
@@ -1440,14 +1440,14 @@ cards:
   - heading: Number of vaccinations given, by report date (DEV)
     cardType: multiAreaStatic
     locationAware:
-      included: 
+      included:
         areaType:
           - overview
 
     fullWidth: true
     abstract: >
       The number of COVID-19 vaccinations (all doses) given to people of all ages.
-    
+
     download:
       - newVaccinesGivenByPublishDate
       - cumVaccinesGivenByPublishDate
@@ -1466,8 +1466,8 @@ cards:
         - By nation
 
     UK total:
-    
-      tabs: 
+
+      tabs:
 
         - heading: Daily
           tabType: chart
@@ -1484,7 +1484,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-           
+
             - label: (7-day average)
               value: newVaccinesGivenByPublishDate
               tooltip: 7-day rolling average of the daily reported number of COVID-19 vaccines given
@@ -1501,7 +1501,7 @@ cards:
           params:
             - key: areaType
               sign: "="
-              value: overview 
+              value: overview
 
           fields:
             - label: Booster or third dose daily
@@ -1516,21 +1516,21 @@ cards:
               tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
               type: bar
               colour: 0
-              rollingAverage: false   
+              rollingAverage: false
 
             - label: 1st dose daily
               value: newPeopleVaccinatedFirstDoseByPublishDate
               tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
               type: bar
               colour: 1
-              rollingAverage: false  
-                        
+              rollingAverage: false
+
         - heading: Cumulative
           tabType: chart
           params:
             - key: areaType
               sign: "="
-              value: overview         
+              value: overview
           fields:
             - label: total
               value: cumVaccinesGivenByPublishDate
@@ -1545,7 +1545,7 @@ cards:
           params:
             - key: areaType
               sign: "="
-              value: overview 
+              value: overview
 
           fields:
             - label: Booster or third dose total
@@ -1553,21 +1553,21 @@ cards:
               tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine
               type: bar
               colour: 3
-              rollingAverage: false 
+              rollingAverage: false
 
             - label: 2nd dose total
               value: cumPeopleVaccinatedSecondDoseByPublishDate
               tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
               type: bar
               colour: 0
-              rollingAverage: false 
+              rollingAverage: false
 
             - label: 1st dose total
               value: cumPeopleVaccinatedFirstDoseByPublishDate
               tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
               type: bar
               colour: 1
-              rollingAverage: false  
+              rollingAverage: false
 
         - heading: Data
           tabType: table
@@ -1575,7 +1575,7 @@ cards:
             - key: areaType
               sign: "="
               value: overview
-        
+
           fields:
             - label: Report date
               value: date
@@ -1606,7 +1606,7 @@ cards:
               value: cumPeopleVaccinatedFirstDoseByPublishDate
               type: numeric
               tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
-            
+
             - label: "2nd dose total"
               value: cumPeopleVaccinatedSecondDoseByPublishDate
               type: numeric
@@ -1616,13 +1616,13 @@ cards:
               value: cumPeopleVaccinatedThirdInjectionByPublishDate
               type: numeric
               tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine
-            
+
             - label: "cumulative total"
               value: cumVaccinesGivenByPublishDate
               type: numeric
               tooltip: Cumulative number of COVID-19 vaccines given
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
 
@@ -1669,7 +1669,7 @@ cards:
               - key: areaType
                 sign: "="
                 value: nation
-        
+
             fields:
             - label: Report date
               value: date
@@ -1686,34 +1686,34 @@ cards:
               type: numeric
               tooltip: Cumulative number of COVID-19 vaccines given
 
-          - heading: About 
+          - heading: About
             tabType: metadata
             filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
 
-############################################################################################################################## 
+##############################################################################################################################
 # {{ EndDevOnlyBlock }}
 
 
-# # nations only (uk version in card above) 
+# # nations only (uk version in card above)
 
 #   - heading: Number of vaccines given, by report date
 #     cardType: multiAreaStatic
 #     locationAware:
-#       included: 
+#       included:
 #         areaType:
 #           - nation
 
 #     fullWidth: true
 #     abstract: >
-#       The number of COVID-19 vaccinations given, shown by date reported. 
-#       Daily figures include all vaccines (both first and second dose) that were given up to and including the date shown, 
+#       The number of COVID-19 vaccinations given, shown by date reported.
+#       Daily figures include all vaccines (both first and second dose) that were given up to and including the date shown,
 #       and that were entered on the relevant system at the time of extract.
-    
+
 #     download:
 #       - newVaccinesGivenByPublishDate
 #       - cumVaccinesGivenByPublishDate
-    
-#     tabs: 
+
+#     tabs:
 
 #       - heading: Daily
 #         tabType: chart
@@ -1736,7 +1736,7 @@ cards:
 #             rollingAverage:
 #               window: 7
 #               clipEnd: 0 #no of days to exclude for incomplete data
-           
+
 #       - heading: Daily by dose
 #         tabType: chart
 #         barType: stack
@@ -1747,18 +1747,18 @@ cards:
 #             tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
 #             type: bar
 #             colour: 3
-#             rollingAverage: false 
+#             rollingAverage: false
 
 #           - label: 1st dose daily
 #             value: newPeopleVaccinatedFirstDoseByPublishDate
 #             tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
 #             type: bar
 #             colour: 0
-#             rollingAverage: false              
- 
+#             rollingAverage: false
+
 #       - heading: Cumulative
 #         tabType: chart
-       
+
 #         fields:
 #           - label: total
 #             value: cumVaccinesGivenByPublishDate
@@ -1766,7 +1766,7 @@ cards:
 #             type: bar
 #             colour: 0
 #             rollingAverage: false
-            
+
 #       - heading: Cumulative by dose
 #         tabType: chart
 #         barType: stack
@@ -1777,18 +1777,18 @@ cards:
 #             tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
 #             type: bar
 #             colour: 3
-#             rollingAverage: false 
+#             rollingAverage: false
 
 #           - label: 1st dose total
 #             value: cumPeopleVaccinatedFirstDoseByPublishDate
 #             tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
 #             type: bar
 #             colour: 0
-#             rollingAverage: false  
-    
+#             rollingAverage: false
+
 #       - heading: Data
 #         tabType: table
-        
+
 #         fields:
 #             - label: Report date
 #               value: date
@@ -1814,7 +1814,7 @@ cards:
 #               value: cumPeopleVaccinatedFirstDoseByPublishDate
 #               type: numeric
 #               tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
-            
+
 #             - label: "2nd dose total"
 #               value: cumPeopleVaccinatedSecondDoseByPublishDate
 #               type: numeric
@@ -1824,35 +1824,35 @@ cards:
 #               value: cumVaccinesGivenByPublishDate
 #               type: numeric
 #               tooltip: Cumulative number of COVID-19 vaccines given
- 
-#       - heading: About 
+
+#       - heading: About
 #         tabType: metadata
 #         filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
 
-############################################################################################################################# 
-############################################################################################################################# 
-############################################################################################################################# 
-############################################################################################################################# 
+#############################################################################################################################
+#############################################################################################################################
+#############################################################################################################################
+#############################################################################################################################
 
 # # nations only (commented to go live with dev)
 
 #   - heading: People who have received vaccinations, by report date
 #     cardType: multiAreaStatic
 #     locationAware:
-#       included: 
+#       included:
 #         areaType:
 #           - nation
 
 #     fullWidth: true
 #     abstract: >
-#       The number of people of all ages who have received a first dose COVID-19 vaccination. 
-    
+#       The number of people of all ages who have received a first dose COVID-19 vaccination.
+
 #     download:
 #       - newPeopleVaccinatedFirstDoseByPublishDate
 #       - cumPeopleVaccinatedFirstDoseByPublishDate
 #       - newPeopleVaccinatedSecondDoseByPublishDate
 #       - cumPeopleVaccinatedSecondDoseByPublishDate
-      
+
 #     options:
 #       type: radio
 #       heading: null
@@ -1862,7 +1862,7 @@ cards:
 
 #     First dose:
 
-#       tabs: 
+#       tabs:
 
 #         - heading: Daily
 #           tabType: chart
@@ -1885,10 +1885,10 @@ cards:
 #               rollingAverage:
 #                 window: 7
 #                 clipEnd: 0 #no of days to exclude for incomplete data
-           
+
 #         - heading: Cumulative
 #           tabType: chart
-       
+
 #           fields:
 #             - label: total
 #               value: cumPeopleVaccinatedFirstDoseByPublishDate
@@ -1896,11 +1896,11 @@ cards:
 #               type: bar
 #               colour: 0
 #               rollingAverage: false
-            
-         
+
+
 #         - heading: Data
 #           tabType: table
-        
+
 #           fields:
 #               - label: Report date
 #                 value: date
@@ -1916,14 +1916,14 @@ cards:
 #                 value: cumPeopleVaccinatedFirstDoseByPublishDate
 #                 type: numeric
 #                 tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
- 
-#         - heading: About 
+
+#         - heading: About
 #           tabType: metadata
 #           filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
 #     Second dose:
 
-#       tabs: 
+#       tabs:
 
 #         - heading: Daily
 #           tabType: chart
@@ -1946,10 +1946,10 @@ cards:
 #               rollingAverage:
 #                 window: 7
 #                 clipEnd: 0 #no of days to exclude for incomplete data
-           
+
 #         - heading: Cumulative
 #           tabType: chart
-       
+
 #           fields:
 #             - label: total
 #               value: cumPeopleVaccinatedSecondDoseByPublishDate
@@ -1957,11 +1957,11 @@ cards:
 #               type: bar
 #               colour: 0
 #               rollingAverage: false
-            
-         
+
+
 #         - heading: Data
 #           tabType: table
-        
+
 #           fields:
 #               - label: Report date
 #                 value: date
@@ -1977,8 +1977,8 @@ cards:
 #                 value: cumPeopleVaccinatedSecondDoseByPublishDate
 #                 type: numeric
 #                 tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
- 
-#         - heading: About 
+
+#         - heading: About
 #           tabType: metadata
 #           filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
@@ -1989,14 +1989,14 @@ cards:
   - heading: People who have received vaccinations, by report date (DEV)
     cardType: multiAreaStatic
     locationAware:
-      included: 
+      included:
         areaType:
           - nation
 
     fullWidth: true
     abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, broken down by dose. 
-          
+      The number of people of all ages who have received a COVID-19 vaccination, broken down by dose.
+
     download:
       - newPeopleVaccinatedFirstDoseByPublishDate
       - cumPeopleVaccinatedFirstDoseByPublishDate
@@ -2004,7 +2004,7 @@ cards:
       - cumPeopleVaccinatedSecondDoseByPublishDate
       - newPeopleVaccinatedThirdInjectionByPublishDate
       - cumPeopleVaccinatedThirdInjectionByPublishDate
-      
+
     options:
       type: radio
       heading: null
@@ -2015,7 +2015,7 @@ cards:
 
     First dose:
 
-      tabs: 
+      tabs:
 
         - heading: Daily
           tabType: chart
@@ -2038,10 +2038,10 @@ cards:
               rollingAverage:
                 window: 7
                 clipEnd: 0 #no of days to exclude for incomplete data
-           
+
         - heading: Cumulative
           tabType: chart
-       
+
           fields:
             - label: total
               value: cumPeopleVaccinatedFirstDoseByPublishDate
@@ -2049,11 +2049,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-            
-         
+
+
         - heading: Data
           tabType: table
-        
+
           fields:
               - label: Report date
                 value: date
@@ -2069,14 +2069,14 @@ cards:
                 value: cumPeopleVaccinatedFirstDoseByPublishDate
                 type: numeric
                 tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
- 
-        - heading: About 
+
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
     Second dose:
 
-      tabs: 
+      tabs:
 
         - heading: Daily
           tabType: chart
@@ -2099,10 +2099,10 @@ cards:
               rollingAverage:
                 window: 7
                 clipEnd: 0 #no of days to exclude for incomplete data
-           
+
         - heading: Cumulative
           tabType: chart
-       
+
           fields:
             - label: total
               value: cumPeopleVaccinatedSecondDoseByPublishDate
@@ -2110,11 +2110,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-            
-         
+
+
         - heading: Data
           tabType: table
-        
+
           fields:
               - label: Report date
                 value: date
@@ -2130,14 +2130,14 @@ cards:
                 value: cumPeopleVaccinatedSecondDoseByPublishDate
                 type: numeric
                 tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
- 
-        - heading: About 
+
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
     Booster or third dose:
 
-      tabs: 
+      tabs:
 
         - heading: Daily
           tabType: chart
@@ -2160,10 +2160,10 @@ cards:
               rollingAverage:
                 window: 7
                 clipEnd: 0 #no of days to exclude for incomplete data
-           
+
         - heading: Cumulative
           tabType: chart
-       
+
           fields:
             - label: total
               value: cumPeopleVaccinatedThirdInjectionByPublishDate
@@ -2171,11 +2171,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-            
-         
+
+
         - heading: Data
           tabType: table
-        
+
           fields:
               - label: Report date
                 value: date
@@ -2191,36 +2191,36 @@ cards:
                 value: cumPeopleVaccinatedThirdInjectionByPublishDate
                 type: numeric
                 tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine
- 
-        - heading: About 
+
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
-# {{ EndDevOnlyBlock }}          
+# {{ EndDevOnlyBlock }}
 
-############################################################################################################################# 
+#############################################################################################################################
 
 # # nations only (commented to go live with dev)
 
 #   - heading: Latest reported vaccination uptake
 #     cardType: tabContentRaw
 #     locationAware:
-#       included: 
+#       included:
 #         areaType:
 #           - nation
 
 #     fullWidth: false
 #     abstract: >
-#       The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population 
-#       aged 12 and over. First and second doses are shown. The denominator is the 2020 mid-year population estimate for those 
-#       aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so 
+#       The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population
+#       aged 12 and over. First and second doses are shown. The denominator is the 2020 mid-year population estimate for those
+#       aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so
 #       these cannot be compared.
-    
+
 #     download:
 #       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
 #       - cumVaccinationSecondDoseUptakeByPublishDatePercentage
-    
-#     tabs: 
+
+#     tabs:
 #       - heading: Uptake
 #         tabType: percentageWaffle
 
@@ -2229,15 +2229,15 @@ cards:
 #             value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
 #             tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
 #             colour: 0
-          
+
 #           - label: 2nd dose (%)
 #             value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
 #             tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
 #             colour: 3
-          
+
 #       - heading: Data
 #         tabType: table
-      
+
 #         fields:
 #           - label: Report date
 #             value: date
@@ -2254,38 +2254,38 @@ cards:
 #             type: numeric
 #             tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
 
-#       - heading: About 
+#       - heading: About
 #         tabType: metadata
 #         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
-############################################################################################################################# 
+#############################################################################################################################
 
 # # nation only (commented to go live with dev)
 
 #   - heading: Vaccination uptake, by report date
 #     cardType: chart
 #     locationAware:
-#       included: 
+#       included:
 #         areaType:
 #           - nation
 
 #     fullWidth: false
 #     abstract: >
-#       The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population 
-#       aged 12 and over. First and second doses are shown. The denominator is the 2020 mid-year population estimate for those 
-#       aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so 
+#       The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population
+#       aged 12 and over. First and second doses are shown. The denominator is the 2020 mid-year population estimate for those
+#       aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so
 #       these cannot be compared.
 #       Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
-    
+
 #     download:
 #       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
 #       - cumVaccinationSecondDoseUptakeByPublishDatePercentage
-  
-#     tabs: 
+
+#     tabs:
 
 #       - heading: Uptake
 #         tabType: chart
-    
+
 #         fields:
 #             - label: 1st dose (%)
 #               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
@@ -2299,10 +2299,10 @@ cards:
 #               type: line
 #               colour: 3
 #               rollingAverage: false
-           
+
 #       - heading: Data
 #         tabType: table
-        
+
 #         fields:
 #             - label: Report date
 #               value: date
@@ -2317,13 +2317,13 @@ cards:
 #             - label: "2nd dose (%)"
 #               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
 #               type: numeric
-#               tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine             
+#               tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
 
-#       - heading: About 
+#       - heading: About
 #         tabType: metadata
 #         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
-############################################################################################################################# 
+#############################################################################################################################
 # {{ StartDevOnlyBlock }}
 
 # nations only
@@ -2331,23 +2331,23 @@ cards:
   - heading: Latest reported vaccination uptake (DEV)
     cardType: tabContentRaw
     locationAware:
-      included: 
+      included:
         areaType:
           - nation
 
     fullWidth: false
     abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population 
-      aged 12 and over. First, second and booster or third doses are shown. The denominator is the 2020 mid-year population estimate for those 
-      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so 
+      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population
+      aged 12 and over. First, second and booster or third doses are shown. The denominator is the 2020 mid-year population estimate for those
+      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so
       these cannot be compared.
-    
+
     download:
       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
       - cumVaccinationSecondDoseUptakeByPublishDatePercentage
       - cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-    
-    tabs: 
+
+    tabs:
       - heading: Uptake
         tabType: percentageWaffle
 
@@ -2356,7 +2356,7 @@ cards:
             value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
             tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
             colour: 1
-          
+
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
             tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
@@ -2366,10 +2366,10 @@ cards:
             value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
             tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
             colour: 3
-          
+
       - heading: Data
         tabType: table
-      
+
         fields:
           - label: Report date
             value: date
@@ -2391,12 +2391,12 @@ cards:
             type: numeric
             tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 # {{ EndDevOnlyBlock }}
 
-############################################################################################################################# 
+#############################################################################################################################
 
 # {{ StartDevOnlyBlock }}
 # nation only
@@ -2404,28 +2404,28 @@ cards:
   - heading: Vaccination uptake, by report date (DEV)
     cardType: chart
     locationAware:
-      included: 
+      included:
         areaType:
           - nation
 
     fullWidth: false
     abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population 
-      aged 12 and over. First, second and booster or third doses are shown. The denominator is the 2020 mid-year population estimate for those 
-      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so 
+      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population
+      aged 12 and over. First, second and booster or third doses are shown. The denominator is the 2020 mid-year population estimate for those
+      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so
       these cannot be compared.
       Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
-    
+
     download:
       - cumVaccinationFirstDoseUptakeByPublishDatePercentage
       - cumVaccinationSecondDoseUptakeByPublishDatePercentage
       - cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-  
-    tabs: 
+
+    tabs:
 
       - heading: Uptake
         tabType: chart
-    
+
         fields:
             - label: 1st dose (%)
               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
@@ -2439,7 +2439,7 @@ cards:
               type: line
               colour: 0
               rollingAverage: false
-           - label: Booster or 3rd dose (%)
+            - label: Booster or 3rd dose (%)
               value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
               tooltip: Cumulative reported percentage of people who received a booster or third dose of COVID-19 vaccine
               type: line
@@ -2448,7 +2448,7 @@ cards:
 
       - heading: Data
         tabType: table
-        
+
         fields:
             - label: Report date
               value: date
@@ -2463,33 +2463,33 @@ cards:
             - label: "2nd dose (%)"
               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine             
-            
+              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+
             - label: "Booster or 3rd dose (%)"
               value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine             
+              tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
 
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 # {{ EndDevOnlyBlock }}
-############################################################################################################################# 
+#############################################################################################################################
 # {{ StartDevOnlyBlock }}
 # nations only
 
   - heading: Number of vaccines given, by report date (DEV)
     cardType: multiAreaStatic
     locationAware:
-      included: 
+      included:
         areaType:
           - nation
 
     fullWidth: true
     abstract: >
       The number of COVID-19 vaccinations (all doses) given to people of all ages.
-    
+
     download:
       - newVaccinesGivenByPublishDate
       - cumVaccinesGivenByPublishDate
@@ -2499,8 +2499,8 @@ cards:
       - cumPeopleVaccinatedSecondDoseByPublishDate
       - newPeopleVaccinatedThirdInjectionByPublishDate
       - cumPeopleVaccinatedThirdInjectionByPublishDate
-    
-    tabs: 
+
+    tabs:
 
       - heading: Daily
         tabType: chart
@@ -2523,7 +2523,7 @@ cards:
             rollingAverage:
               window: 7
               clipEnd: 0 #no of days to exclude for incomplete data
-           
+
       - heading: Daily by dose
         tabType: chart
         barType: stack
@@ -2534,25 +2534,25 @@ cards:
             tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
             type: bar
             colour: 3
-            rollingAverage: false 
-            
+            rollingAverage: false
+
           - label: 2nd dose daily
             value: newPeopleVaccinatedSecondDoseByPublishDate
             tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
             type: bar
             colour: 0
-            rollingAverage: false 
+            rollingAverage: false
 
           - label: 1st dose daily
             value: newPeopleVaccinatedFirstDoseByPublishDate
             tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
             type: bar
             colour: 1
-            rollingAverage: false              
- 
+            rollingAverage: false
+
       - heading: Cumulative
         tabType: chart
-       
+
         fields:
           - label: total
             value: cumVaccinesGivenByPublishDate
@@ -2560,7 +2560,7 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
-            
+
       - heading: Cumulative by dose
         tabType: chart
         barType: stack
@@ -2578,18 +2578,18 @@ cards:
             tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
             type: bar
             colour: 0
-            rollingAverage: false 
+            rollingAverage: false
 
           - label: 1st dose total
             value: cumPeopleVaccinatedFirstDoseByPublishDate
             tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
             type: bar
             colour: 1
-            rollingAverage: false  
-    
+            rollingAverage: false
+
       - heading: Data
         tabType: table
-        
+
         fields:
             - label: Report date
               value: date
@@ -2620,7 +2620,7 @@ cards:
               value: cumPeopleVaccinatedFirstDoseByPublishDate
               type: numeric
               tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
-            
+
             - label: "2nd dose total"
               value: cumPeopleVaccinatedSecondDoseByPublishDate
               type: numeric
@@ -2635,31 +2635,31 @@ cards:
               value: cumVaccinesGivenByPublishDate
               type: numeric
               tooltip: Cumulative number of COVID-19 vaccines given
- 
-      - heading: About 
+
+      - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
 # {{ EndDevOnlyBlock }}
-############################################################################################################################## 
+##############################################################################################################################
 
 # # nations only (commented to go live with dev)
 
 #   - heading: Number of vaccines given, by report date
 #     cardType: multiAreaStatic
 #     locationAware:
-#       included: 
+#       included:
 #         areaType:
 #           - nation
 
 #     fullWidth: true
 #     abstract: >
 #       The number of COVID-19 vaccinations (all doses) given to people of all ages.
-    
+
 #     download:
 #       - newVaccinesGivenByPublishDate
-#       - cumVaccinesGivenByPublishDate      
-    
-#     tabs: 
+#       - cumVaccinesGivenByPublishDate
+
+#     tabs:
 
 #       - heading: Daily
 #         tabType: chart
@@ -2682,7 +2682,7 @@ cards:
 #             rollingAverage:
 #               window: 7
 #               clipEnd: 0 #no of days to exclude for incomplete data
-           
+
 #       - heading: Daily by dose
 #         tabType: chart
 #         barType: stack
@@ -2693,18 +2693,18 @@ cards:
 #             tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
 #             type: bar
 #             colour: 3
-#             rollingAverage: false 
+#             rollingAverage: false
 
 #           - label: 1st dose daily
 #             value: newPeopleVaccinatedFirstDoseByPublishDate
 #             tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
 #             type: bar
 #             colour: 0
-#             rollingAverage: false              
- 
+#             rollingAverage: false
+
 #       - heading: Cumulative
 #         tabType: chart
-       
+
 #         fields:
 #           - label: total
 #             value: cumVaccinesGivenByPublishDate
@@ -2712,7 +2712,7 @@ cards:
 #             type: bar
 #             colour: 0
 #             rollingAverage: false
-            
+
 #       - heading: Cumulative by dose
 #         tabType: chart
 #         barType: stack
@@ -2723,18 +2723,18 @@ cards:
 #             tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
 #             type: bar
 #             colour: 3
-#             rollingAverage: false 
+#             rollingAverage: false
 
 #           - label: 1st dose total
 #             value: cumPeopleVaccinatedFirstDoseByPublishDate
 #             tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
 #             type: bar
 #             colour: 0
-#             rollingAverage: false  
-    
+#             rollingAverage: false
+
 #       - heading: Data
 #         tabType: table
-        
+
 #         fields:
 #             - label: Report date
 #               value: date
@@ -2760,7 +2760,7 @@ cards:
 #               value: cumPeopleVaccinatedFirstDoseByPublishDate
 #               type: numeric
 #               tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
-            
+
 #             - label: "2nd dose total"
 #               value: cumPeopleVaccinatedSecondDoseByPublishDate
 #               type: numeric
@@ -2770,28 +2770,28 @@ cards:
 #               value: cumVaccinesGivenByPublishDate
 #               type: numeric
 #               tooltip: Cumulative number of COVID-19 vaccines given
- 
-#       - heading: About 
+
+#       - heading: About
 #         tabType: metadata
 #         filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
 
-############################################################################################################################## 
+##############################################################################################################################
 
 # nations only
 
   - heading: People aged 12 and over who have received vaccinations, by vaccination date
     cardType: chart
     locationAware:
-      included: 
+      included:
         areaName:
           - England
           - Scotland
 
     fullWidth: true
     abstract: >
-      The number of people aged 12 and over who have received a first dose COVID-19 vaccination. 
+      The number of people aged 12 and over who have received a first dose COVID-19 vaccination.
       Data for the latest 2 days, marked in grey, are incomplete.
-    
+
     download:
       - newPeopleVaccinatedFirstDoseByVaccinationDate
       - cumPeopleVaccinatedFirstDoseByVaccinationDate
@@ -2807,7 +2807,7 @@ cards:
 
     First dose:
 
-      tabs: 
+      tabs:
 
         - heading: Daily
           tabType: chart
@@ -2820,7 +2820,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -2
                 to: 0
                 colour: 6
@@ -2835,10 +2835,10 @@ cards:
               rollingAverage:
                 window: 7
                 clipEnd: 2 #no of days to exclude for incomplete data
-           
+
         - heading: Cumulative
           tabType: chart
-       
+
           fields:
             - label: Number of vaccinations
               value: cumPeopleVaccinatedFirstDoseByVaccinationDate
@@ -2846,16 +2846,16 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -2
                 to: 0
                 colour: 6
                 label: "Most recent 2 days (incomplete)"
-            
-         
+
+
         - heading: Data
           tabType: table
-        
+
           fields:
               - label: Vaccination date
                 value: date
@@ -2871,14 +2871,14 @@ cards:
                 value: cumPeopleVaccinatedFirstDoseByVaccinationDate
                 type: numeric
                 tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
- 
-        - heading: About 
+
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyVaccinationDate.md
 
     Second dose:
 
-      tabs: 
+      tabs:
 
         - heading: Daily
           tabType: chart
@@ -2891,7 +2891,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -2
                 to: 0
                 colour: 6
@@ -2906,10 +2906,10 @@ cards:
               rollingAverage:
                 window: 7
                 clipEnd: 2 #no of days to exclude for incomplete data
-           
+
         - heading: Cumulative
           tabType: chart
-       
+
           fields:
             - label: Number of vaccinations
               value: cumPeopleVaccinatedSecondDoseByVaccinationDate
@@ -2917,16 +2917,16 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -2
                 to: 0
                 colour: 6
                 label: "Most recent 2 days (incomplete)"
-            
-         
+
+
         - heading: Data
           tabType: table
-        
+
           fields:
               - label: Vaccination date
                 value: date
@@ -2942,39 +2942,39 @@ cards:
                 value: cumPeopleVaccinatedSecondDoseByVaccinationDate
                 type: numeric
                 tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
- 
-        - heading: About 
+
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyVaccinationDate.md
 
-############################################################################################################################## 
+##############################################################################################################################
 
 # # nations only
 
 #   - heading: Latest vaccination uptake, by vaccination date
 #     cardType: tabContentRaw
 #     locationAware:
-#       included: 
+#       included:
 #         areaName:
 #           - England
 #           - Scotland
 
 #     fullWidth: false
 #     abstract: >
-#       Total percentage of people aged 12 and over who have received a COVID-19 vaccination, 
+#       Total percentage of people aged 12 and over who have received a COVID-19 vaccination,
 #       by dose, up to the latest day on which vaccine data were reported.
 #       Daily figures include all vaccines that were given up to and including the date shown.
-#       For England, only people aged 12 and over who have an NHS number and are currently alive are included. 
+#       For England, only people aged 12 and over who have an NHS number and are currently alive are included.
 #       The denominator used is the number of people on the National Immunisation Management Service (NIMS) database.
 #       For Scotland, the denominator used is the mid-2020 population estimate,
 #       published by National Records of Scotland. For this reason, comparisons should be made with caution.
 #       Therefore the percentages will not match the uptake by report date.
-    
+
 #     download:
 #       - cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
 #       - cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-    
-#     tabs: 
+
+#     tabs:
 #       - heading: Uptake
 #         tabType: percentageWaffle
 
@@ -2983,15 +2983,15 @@ cards:
 #             value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
 #             tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
 #             colour: 0
-          
+
 #           - label: 2nd dose (%)
 #             value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
 #             tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
 #             colour: 3
-          
+
 #       - heading: Data
 #         tabType: table
-      
+
 #         fields:
 #           - label: Vaccination date
 #             value: date
@@ -3008,43 +3008,43 @@ cards:
 #             type: numeric
 #             tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
 
-#       - heading: About 
+#       - heading: About
 #         tabType: metadata
 #         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
-# ############################################################################################################################# 
+# #############################################################################################################################
 
 # # nation only
 
 #   - heading: Vaccination uptake, by vaccination date
 #     cardType: chart
 #     locationAware:
-#       included: 
+#       included:
 #         areaName:
 #           - England
 #           - Scotland
 
 #     fullWidth: false
 #     abstract: >
-#       Total percentage of people aged 12 and over who have received a COVID-19 vaccination, 
+#       Total percentage of people aged 12 and over who have received a COVID-19 vaccination,
 #       shown by vaccination date.
 #       Daily figures include all vaccines that were given up to and including the date shown.
-#       For England, only people aged 12 and over who have an NHS number and are currently alive are included. 
+#       For England, only people aged 12 and over who have an NHS number and are currently alive are included.
 #       The denominator used is the number of people on the National Immunisation Management Service (NIMS) database.
 #       For Scotland, the denominator used is the mid-2020 population estimate,
 #       published by National Records of Scotland. For this reason, comparisons should be made with caution.
 #       Therefore the percentages will not match the uptake by report date.
 #       Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
-    
+
 #     download:
 #       - cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
 #       - cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-  
-#     tabs: 
+
+#     tabs:
 
 #       - heading: Uptake
 #         tabType: chart
-       
+
 #         fields:
 #             - label: 1st dose (%)
 #               value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
@@ -3058,10 +3058,10 @@ cards:
 #               type: line
 #               colour: 3
 #               rollingAverage: false
-           
+
 #       - heading: Data
 #         tabType: table
-        
+
 #         fields:
 #             - label: Vaccination date
 #               value: date
@@ -3076,15 +3076,15 @@ cards:
 #             - label: "2nd dose (%)"
 #               value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
 #               type: numeric
-#               tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine             
+#               tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
 
-#       - heading: About 
+#       - heading: About
 #         tabType: metadata
 #         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
-############################################################################################################################# 
-############################################################################################################################# 
-############################################################################################################################# 
+#############################################################################################################################
+#############################################################################################################################
+#############################################################################################################################
 
 # local authorities / regions
 
@@ -3093,7 +3093,7 @@ cards:
   - heading: People aged 12 and over who have received vaccinations, by vaccination date
     cardType: chart
     locationAware:
-      included: 
+      included:
         areaType:
           - region
           - utla
@@ -3101,9 +3101,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      The number of people aged 12 and over who have received a first dose or second dose COVID-19 vaccination. 
+      The number of people aged 12 and over who have received a first dose or second dose COVID-19 vaccination.
       Data for the latest 2 days, marked in grey, are incomplete.
-    
+
     download:
       - newPeopleVaccinatedFirstDoseByVaccinationDate
       - cumPeopleVaccinatedFirstDoseByVaccinationDate
@@ -3119,7 +3119,7 @@ cards:
 
     First dose:
 
-      tabs: 
+      tabs:
 
         - heading: Daily
           tabType: chart
@@ -3132,11 +3132,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -2
                 to: 0
                 colour: 6
-                label: "Most recent 2 days (incomplete)"              
+                label: "Most recent 2 days (incomplete)"
 
             - label: Vaccinations (7-day average)
               value: newPeopleVaccinatedFirstDoseByVaccinationDate
@@ -3147,10 +3147,10 @@ cards:
               rollingAverage:
                 window: 7
                 clipEnd: 2 #no of days to exclude for incomplete data
-           
+
         - heading: Cumulative
           tabType: chart
-       
+
           fields:
             - label: Number of vaccinations
               value: cumPeopleVaccinatedFirstDoseByVaccinationDate
@@ -3158,15 +3158,15 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -2
                 to: 0
                 colour: 6
-                label: "Most recent 2 days (incomplete)"            
-         
+                label: "Most recent 2 days (incomplete)"
+
         - heading: Data
           tabType: table
-        
+
           fields:
               - label: Vaccination date
                 value: date
@@ -3182,14 +3182,14 @@ cards:
                 value: cumPeopleVaccinatedFirstDoseByVaccinationDate
                 type: numeric
                 tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
- 
-        - heading: About 
+
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyVaccinationDate.md
 
     Second dose:
 
-      tabs: 
+      tabs:
 
         - heading: Daily
           tabType: chart
@@ -3202,7 +3202,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -2
                 to: 0
                 colour: 6
@@ -3217,10 +3217,10 @@ cards:
               rollingAverage:
                 window: 7
                 clipEnd: 2 #no of days to exclude for incomplete data
-           
+
         - heading: Cumulative
           tabType: chart
-       
+
           fields:
             - label: Number of vaccinations
               value: cumPeopleVaccinatedSecondDoseByVaccinationDate
@@ -3228,15 +3228,15 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -2
                 to: 0
                 colour: 6
-                label: "Most recent 2 days (incomplete)"            
-         
+                label: "Most recent 2 days (incomplete)"
+
         - heading: Data
           tabType: table
-        
+
           fields:
               - label: Vaccination date
                 value: date
@@ -3252,19 +3252,19 @@ cards:
                 value: cumPeopleVaccinatedSecondDoseByVaccinationDate
                 type: numeric
                 tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
- 
-        - heading: About 
+
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyVaccinationDate.md
 
-############################################################################################################################## 
+##############################################################################################################################
 
 # region / La only
 
   - heading: Latest vaccination uptake (12+), by vaccination date
     cardType: tabContentRaw
     locationAware:
-      included: 
+      included:
         areaType:
           - region
           - utla
@@ -3272,19 +3272,19 @@ cards:
 
     fullWidth: false
     abstract: >
-      Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose. 
-      For English areas, the denominator is the number of people aged 12 and over on the National Immunisation Management 
-      Service (NIMS) database. For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12 
-      and over. This means comparisons between local areas in different nations should be made with caution. England local 
-      area uptake is also not comparable to England national uptake by report date as that uses a different denominator – see 
-      the About tab for more information. England and Scotland totals by vaccination date are shown for comparison purposes 
+      Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose.
+      For English areas, the denominator is the number of people aged 12 and over on the National Immunisation Management
+      Service (NIMS) database. For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12
+      and over. This means comparisons between local areas in different nations should be made with caution. England local
+      area uptake is also not comparable to England national uptake by report date as that uses a different denominator – see
+      the About tab for more information. England and Scotland totals by vaccination date are shown for comparison purposes
       calculated on the same basis as their constituent regions and local authorities.
-    
+
     download:
       - cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
       - cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-    
-    tabs: 
+
+    tabs:
       - heading: Uptake
         tabType: percentageWaffle
 
@@ -3293,15 +3293,15 @@ cards:
             value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
             tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
             colour: 0
-          
+
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
             tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
             colour: 3
-          
+
       - heading: Data
         tabType: table
-      
+
         fields:
           - label: Vaccination date
             value: date
@@ -3318,11 +3318,11 @@ cards:
             type: numeric
             tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
-############################################################################################################################# 
+#############################################################################################################################
 
 # region / la  only
 
@@ -3330,7 +3330,7 @@ cards:
     cardType: chart
     chartMode: percentage
     locationAware:
-      included: 
+      included:
         areaType:
           - region
           - utla
@@ -3338,20 +3338,20 @@ cards:
 
     fullWidth: false
     abstract: >
-      Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose. 
-      For English areas, the denominator is the number of people aged 12 and over on the National Immunisation Management 
-      Service (NIMS) database. For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12 
-      and over. This means comparisons between local areas in different nations should be made with caution. England local 
-      area uptake is also not comparable to England national uptake by report date as that uses a different denominator – see 
-      the About tab for more information. England and Scotland totals by vaccination date are shown for comparison purposes 
+      Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose.
+      For English areas, the denominator is the number of people aged 12 and over on the National Immunisation Management
+      Service (NIMS) database. For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12
+      and over. This means comparisons between local areas in different nations should be made with caution. England local
+      area uptake is also not comparable to England national uptake by report date as that uses a different denominator – see
+      the About tab for more information. England and Scotland totals by vaccination date are shown for comparison purposes
       calculated on the same basis as their constituent regions and local authorities.
       Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
-    
+
     download:
       - cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
       - cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-  
-    tabs: 
+
+    tabs:
 
       - heading: Uptake
         tabType: chart
@@ -3368,10 +3368,10 @@ cards:
               type: line
               colour: 3
               rollingAverage: false
-           
+
       - heading: Data
         tabType: table
-        
+
         fields:
             - label: Vaccination date
               value: date
@@ -3386,31 +3386,31 @@ cards:
             - label: "2nd dose (%)"
               value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine             
+              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
-############################################################################################################################# 
+#############################################################################################################################
 
   - heading: Vaccination uptake, by vaccination date age demographics
     cardType: chart
-    experimental: false      
+    experimental: false
 
     fullWidth: true
     abstract: >
-      Total percentage of people who have received a COVID-19 vaccination, by age group. 
-      For English areas, the denominator is the number of people aged 12 and over on the National Immunisation Management 
-      Service (NIMS) database. For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12 
-      and over. This means comparisons between local areas in different nations should be made with caution. England local 
-      area uptake is also not comparable to England national uptake by report date as that uses a different denominator – see 
+      Total percentage of people who have received a COVID-19 vaccination, by age group.
+      For English areas, the denominator is the number of people aged 12 and over on the National Immunisation Management
+      Service (NIMS) database. For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12
+      and over. This means comparisons between local areas in different nations should be made with caution. England local
+      area uptake is also not comparable to England national uptake by report date as that uses a different denominator – see
       the About tab for more information.
 
 
     download:
       - vaccinationsAgeDemographics
-    
+
     options:
       type: radio
       heading: null
@@ -3499,7 +3499,7 @@ cards:
               - label: 75 to 79
                 value: "75_79"
 
-              #Eng only 
+              #Eng only
               - label: 80 to 84
                 value: "80_84"
 
@@ -3515,7 +3515,7 @@ cards:
               - label: 90+
                 value: "90+"
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
@@ -3600,7 +3600,7 @@ cards:
               - label: 75 to 79
                 value: "75_79"
 
-              #Eng only 
+              #Eng only
               - label: 80 to 84
                 value: "80_84"
 
@@ -3616,18 +3616,18 @@ cards:
               - label: 90+
                 value: "90+"
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
-############################################################################################################################# 
+#############################################################################################################################
 
 # England, Scotland, regions, LAs only
 
   - heading: Vaccination uptake (12+) by area
     cardType: simpleTableStatic
     locationAware:
-      included: 
+      included:
         areaType:
         - region
         - utla
@@ -3635,12 +3635,12 @@ cards:
 
     fullWidth: false
     abstract: >
-      Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose. For English areas, 
-      the denominator is the number of people aged 12 and over on the National Immunisation Management Service (NIMS) database. 
-      For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12 and over. This means comparisons 
-      between local areas in different nations should be made with caution. England local area uptake is also not comparable to 
-      England national uptake by report date as that uses a different denominator - see the About tab for more information. 
-      England and Scotland totals by vaccination date are shown for comparison purposes calculated on the same basis as their 
+      Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose. For English areas,
+      the denominator is the number of people aged 12 and over on the National Immunisation Management Service (NIMS) database.
+      For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12 and over. This means comparisons
+      between local areas in different nations should be made with caution. England local area uptake is also not comparable to
+      England national uptake by report date as that uses a different denominator - see the About tab for more information.
+      England and Scotland totals by vaccination date are shown for comparison purposes calculated on the same basis as their
       constituent regions and local authorities.
 
     download:
@@ -3679,7 +3679,7 @@ cards:
       #     - label: 2nd dose
       #       value: cumPeopleVaccinatedSecondDoseByVaccinationDate
       #       type: numeric
-      #       tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}            
+      #       tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}
 
       #     - label: 2nd dose (%)
       #       value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
@@ -3715,7 +3715,7 @@ cards:
           - label: 2nd dose
             value: cumPeopleVaccinatedSecondDoseByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}            
+            tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}
 
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
@@ -3751,7 +3751,7 @@ cards:
           - label: 2nd dose
             value: cumPeopleVaccinatedSecondDoseByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}            
+            tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}
 
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
@@ -3788,7 +3788,7 @@ cards:
           - label: 2nd dose
             value: cumPeopleVaccinatedSecondDoseByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}            
+            tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}
 
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
@@ -3825,7 +3825,7 @@ cards:
           - label: 2nd dose
             value: cumPeopleVaccinatedSecondDoseByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}            
+            tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}
 
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
