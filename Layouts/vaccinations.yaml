@@ -503,11 +503,11 @@ cards:
 #         filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
 ##############################################################################################################################
-# {{ StartDevOnlyBlock }}
+
 
 # UK only (nation version in separate card below)
 
-  - heading: People who have received booster or 3rd dose vaccinations, by report date (DEV)
+  - heading: People who have received booster or 3rd dose vaccinations, by report date
     cardType: multiAreaStatic
     locationAware:
       included:
@@ -664,7 +664,6 @@ cards:
             tabType: metadata
             filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
-# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
@@ -736,10 +735,9 @@ cards:
 
 #############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
 # UK only
 
-  - heading: Latest reported vaccination uptake (DEV)
+  - heading: Latest reported vaccination uptake
     cardType: tabContentRaw
     locationAware:
       included:
@@ -814,7 +812,6 @@ cards:
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
-# {{ EndDevOnlyBlock }}
 
 #############################################################################################################################
 
@@ -993,11 +990,9 @@ cards:
 
 ##############################################################################################################################
 
-
-# {{ StartDevOnlyBlock }}
 # UK only
 
-  - heading: Vaccination uptake, by report date (DEV)
+  - heading: Vaccination uptake, by report date
     cardType: multiAreaStatic
     chartMode: percentage
     locationAware:
@@ -1199,7 +1194,6 @@ cards:
           - heading: About
             tabType: metadata
             filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-# {{ EndDevOnlyBlock }}
 
 #############################################################################################################################
 
@@ -1434,10 +1428,9 @@ cards:
 
 ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
 # UK only (nation version in separate card below)
 
-  - heading: Number of vaccinations given, by report date (DEV)
+  - heading: Number of vaccinations given, by report date
     cardType: multiAreaStatic
     locationAware:
       included:
@@ -1691,8 +1684,6 @@ cards:
             filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
 
 ##############################################################################################################################
-# {{ EndDevOnlyBlock }}
-
 
 # # nations only (uk version in card above)
 
@@ -1982,11 +1973,11 @@ cards:
 #           tabType: metadata
 #           filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
-# {{ StartDevOnlyBlock }}
+##############################################################################################################################
 
 # nations only
 
-  - heading: People who have received vaccinations, by report date (DEV)
+  - heading: People who have received vaccinations, by report date
     cardType: multiAreaStatic
     locationAware:
       included:
@@ -2196,7 +2187,6 @@ cards:
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
 
-# {{ EndDevOnlyBlock }}
 
 #############################################################################################################################
 
@@ -2324,11 +2314,11 @@ cards:
 #         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 #############################################################################################################################
-# {{ StartDevOnlyBlock }}
+
 
 # nations only
 
-  - heading: Latest reported vaccination uptake (DEV)
+  - heading: Latest reported vaccination uptake
     cardType: tabContentRaw
     locationAware:
       included:
@@ -2394,14 +2384,14 @@ cards:
       - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-# {{ EndDevOnlyBlock }}
+
 
 #############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
+
 # nation only
 
-  - heading: Vaccination uptake, by report date (DEV)
+  - heading: Vaccination uptake, by report date
     cardType: chart
     locationAware:
       included:
@@ -2474,12 +2464,12 @@ cards:
       - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-# {{ EndDevOnlyBlock }}
+
 #############################################################################################################################
-# {{ StartDevOnlyBlock }}
+
 # nations only
 
-  - heading: Number of vaccines given, by report date (DEV)
+  - heading: Number of vaccines given, by report date
     cardType: multiAreaStatic
     locationAware:
       included:
@@ -2639,7 +2629,7 @@ cards:
       - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
-# {{ EndDevOnlyBlock }}
+
 ##############################################################################################################################
 
 # # nations only (commented to go live with dev)
