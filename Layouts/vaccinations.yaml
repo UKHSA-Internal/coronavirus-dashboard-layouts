@@ -9,11 +9,9 @@ headlineNumbers:
         value: cumPeopleVaccinatedSecondDoseByPublishDate
         tooltip: Total number of people who have received the second dose of COVID-19 vaccine, reported up to {date}
 
-# {{ StartDevOnlyBlock }}
-      - label: Booster or third dose total (Dev only)
+      - label: Booster or third dose total
         value: cumPeopleVaccinatedThirdInjectionByPublishDate
         tooltip: Total number of people who have received a booster or third dose of COVID-19 vaccine, reported up to {date}
-# {{ EndDevOnlyBlock }}
   
   - caption: Vaccinations given
     valueItems: 
