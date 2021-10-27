@@ -1043,7 +1043,7 @@ cards:
               type: line
               colour: 0
               rollingAverage: false
-            - label: Booser or 3rd dose (%)
+            - label: Booster or 3rd dose (%)
               value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
               tooltip: Cumulative reported percentage of people who received a booster or third dose of COVID-19 vaccine
               type: line
