@@ -732,3 +732,165 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/testing/cardLFDTesting.md
+
+
+##############################################################################################################################
+# {{ StartDevOnlyBlock }}
+
+# Only shown for and within England
+
+  - heading: Virus tests conducted by specimen date [DEV]
+    cardType: chart
+    locationAware:
+      included: 
+
+        areaType:
+          - utla
+          - ltla
+          - region
+
+        areaName:
+          - England
+
+    fullWidth: true
+    abstract: >
+      Number of confirmed positive, negative or void COVID-19 virus test results (PCR and LFD tests), 
+      and rolling 7-day average. This is a count of test results and may include more than one test per person.  
+     
+    download:
+      - newVirusTestsBySpecimenDate
+      - cumVirusTestsBySpecimenDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Virus tests conducted
+            value: newVirusTestsBySpecimenDate
+            tooltip: Daily number of virus tests conducted
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Virus tests conducted (7-day average)
+            value: newVirusTestsBySpecimenDate
+            tooltip: 7 day rolling average of the daily number of virus tests conducted on {date}
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
+
+      - heading: Cumulative
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Virus tests conducted
+            value: cumVirusTestsBySpecimenDate
+            tooltip: Cumulative number of virus tests conducted
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date
+            value: date
+            type: date
+            tooltip: Date
+
+          - label: Daily virus tests conducted
+            value: newVirusTestsBySpecimenDate
+            type: numeric
+            tooltip: Daily number of virus conducted up to {date}
+
+          - label: Total virus tests conducted
+            value: cumVirusTestsBySpecimenDate
+            type: numeric
+            tooltip: Total number of virus tests conducted up to {date}
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/testing/cardLFDTesting.md #metadata to be created
+
+##############################################################################################################################
+
+# Only shown for and within England
+
+  - heading: Lab-based virus tests conducted by specimen date [DEV]
+    cardType: chart
+    locationAware:
+      included: 
+
+        areaType:
+          - utla
+          - ltla
+          - region
+
+        areaName:
+          - England
+
+    fullWidth: true
+    abstract: >
+      Number of confirmed positive, negative or void COVID-19 lab-based virus test results (excludes LFD and antibody tests), 
+      and rolling 7-day average. This is a count of test results and may include more than one test per person.  
+     
+    download:
+      - newPCRTestsBySpecimenDate
+      - cumPCRTestsBySpecimenDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Lab-based virus tests conducted
+            value: newPCRTestsBySpecimenDate
+            tooltip: Daily number of lab-based virus tests conducted
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Lab-based virus tests conducted (7-day average)
+            value: newPCRTestsBySpecimenDate
+            tooltip: 7 day rolling average of the daily number of lab-based virus tests conducted on {date}
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
+
+      - heading: Cumulative
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Lab-based virus tests conducted
+            value: cumPCRTestsBySpecimenDate
+            tooltip: Cumulative number of lab-based virus tests conducted
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date
+            value: date
+            type: date
+            tooltip: Date
+
+          - label: Daily lab-based virus tests conducted
+            value: newPCRTestsBySpecimenDate
+            type: numeric
+            tooltip: Daily number of lab-based virus conducted up to {date}
+
+          - label: Total lab-based virus tests conducted
+            value: cumPCRTestsBySpecimenDate
+            type: numeric
+            tooltip: Total number of lab-based virus tests conducted up to {date}
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/testing/cardLFDTesting.md  #metadata to be created
+
+# {{ EndDevOnlyBlock }}
