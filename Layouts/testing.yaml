@@ -210,7 +210,7 @@ cards:
       
       Separate charts are shown for polymerase chain reaction (PCR) tests (this chart includes all lab-based virus tests) and antibody tests. 
       Lab-based virus tests test for the SARS-CoV-2 virus and include all lab-based pillar 1 and 2 PCR, loop-mediated isothermal amplification (LAMP) and Lampore tests and any PCR tests undertaken in pillar 4. 
-      Antibody serology tests test for COVID-19 antibodies and include pillar 3 tests and any antibody serology tests undertaken in pillar 4
+      Antibody serology tests test for COVID-19 antibodies and include pillar 3 tests and any antibody serology tests undertaken in pillar 4.
 
     download:
       - plannedPCRCapacityByPublishDate
@@ -812,7 +812,7 @@ cards:
 
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/testing/cardLFDTesting.md #metadata to be created
+        filename: cardMetadata/testing/cardVirusTestsBySpecimenDate.md
 
 ##############################################################################################################################
 
@@ -891,6 +891,6 @@ cards:
 
       - heading: About 
         tabType: metadata
-        filename: cardMetadata/testing/cardLFDTesting.md  #metadata to be created
+        filename: cardMetadata/testing/cardPCRTestsBySpecimenDate.md
 
 # {{ EndDevOnlyBlock }}
