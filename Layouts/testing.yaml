@@ -206,11 +206,11 @@ cards:
       Number of confirmed positive, negative or void COVID-19 lab-based test results and projected testing capacity. 
       This is a count of test results and may include more than one test per person.
 
-      The government's mass testing programme provides testing through 4 routes known as pillars. More information about the pillars can be found in the About tab. 
+      The government provides testing through 4 routes known as pillars. More information about the pillars can be found in the About tab. 
       
-      Separate charts are shown for virus tests and antibody tests: 
-       - virus tests test for the SARS-CoV-2 virus and include all lab-based pillar 1 and 2 polymerase chain reaction (PCR), loop-mediated isothermal amplification (LAMP) and Lampore tests and any PCR tests undertaken in pillar 4 
-       - antibody serology tests test for COVID-19 antibodies and include pillar 3 tests and any antibody serology tests undertaken in pillar 4
+      Separate charts are shown for polymerase chain reaction (PCR) tests (this chart includes all lab-based virus tests) and antibody tests. 
+      Lab-based virus tests test for the SARS-CoV-2 virus and include all lab-based pillar 1 and 2 PCR, loop-mediated isothermal amplification (LAMP) and Lampore tests and any PCR tests undertaken in pillar 4. 
+      Antibody serology tests test for COVID-19 antibodies and include pillar 3 tests and any antibody serology tests undertaken in pillar 4
 
     download:
       - plannedPCRCapacityByPublishDate
@@ -381,7 +381,7 @@ cards:
     fullWidth: true
     abstract: >
       Projection reported by labs of how many lab-based tests they have capacity to carry out each day based on availability of staff and resources. 
-      The government's mass testing programme provides testing through 4 routes known as pillars. Capacity for each pillar is shown. 
+      The government provides testing through 4 routes known as pillars. Capacity for each pillar is shown. 
       More information about the pillars can be found in the About tab. 
 
     download:
@@ -440,7 +440,7 @@ cards:
       This is a count of test results and may include more than one test per person. Data for 
       surveillance testing (pillar 4) are only available for the UK as a whole. 
       
-      The government's mass testing programme provides testing through 4 routes known as pillars. 
+      The government provides testing through 4 routes known as pillars. 
       Capacity for each pillar is shown. More information about the pillars can be found in the About tab.
 
     download:
