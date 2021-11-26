@@ -517,7 +517,7 @@ cards:
     abstract: >
       Number of confirmed positive, negative or void COVID-19 virus test results (PCR and LFD tests), 
       and rolling 7-day average. This is a count of test results and may include more than one test per person. 
-      Data are shown by the date the sample was taken from the person being tested.
+      Data are shown by the date the sample was taken from the person being tested. Data for the last 5 days, highlighted in grey, are incomplete.
 
     download:
       - newVirusTestsBySpecimenDate
@@ -547,6 +547,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 6
+                label: "Most recent 5 days (incomplete)"
 
             - label: Virus tests conducted (7-day average)
               value: newVirusTestsBySpecimenDate
@@ -554,9 +559,9 @@ cards:
               type: line
               colour: 3
               fill: false
-              rollingAverage: true
-                #window: 7
-                #clipEnd: 3
+              rollingAverage: 
+                window: 7
+                clipEnd: 4 #no of days to exclude for incomplete data
           
         - heading: Cumulative
           tabType: chart
@@ -568,6 +573,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 6
+                label: "Most recent 5 days (incomplete)"
 
         - heading: Data
           tabType: table
@@ -674,81 +684,81 @@ cards:
 
 # Only shown for and within England
 
-  - heading: Virus tests conducted [DEV]
-    cardType: chart
-    locationAware:
-      included: 
+  # - heading: Virus tests conducted [DEV]
+  #   cardType: chart
+  #   locationAware:
+  #     included: 
 
-        areaType:
-          - utla
-          - ltla
-          - region
+  #       areaType:
+  #         - utla
+  #         - ltla
+  #         - region
 
-        areaName:
-          - England
+  #       areaName:
+  #         - England
 
-    fullWidth: true
-    abstract: >
-      Number of confirmed positive, negative or void COVID-19 virus test results (PCR and LFD tests), 
-      and rolling 7-day average. This is a count of test results and may include more than one test per person. 
-      Data are shown by the date the sample was taken from the person being tested.
+  #   fullWidth: true
+  #   abstract: >
+  #     Number of confirmed positive, negative or void COVID-19 virus test results (PCR and LFD tests), 
+  #     and rolling 7-day average. This is a count of test results and may include more than one test per person. 
+  #     Data are shown by the date the sample was taken from the person being tested.
      
-    download:
-      - newVirusTestsBySpecimenDate
-      - cumVirusTestsBySpecimenDate
+  #   download:
+  #     - newVirusTestsBySpecimenDate
+  #     - cumVirusTestsBySpecimenDate
 
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Virus tests conducted
-            value: newVirusTestsBySpecimenDate
-            tooltip: Daily number of virus tests conducted
-            type: bar
-            colour: 0
-            rollingAverage: false
+  #   tabs:
+  #     - heading: Daily
+  #       tabType: chart
+  #       barType: normal
+  #       fields:
+  #         - label: Virus tests conducted
+  #           value: newVirusTestsBySpecimenDate
+  #           tooltip: Daily number of virus tests conducted
+  #           type: bar
+  #           colour: 0
+  #           rollingAverage: false
 
-          - label: Virus tests conducted (7-day average)
-            value: newVirusTestsBySpecimenDate
-            tooltip: 7 day rolling average of the daily number of virus tests conducted on {date}
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage: true
+  #         - label: Virus tests conducted (7-day average)
+  #           value: newVirusTestsBySpecimenDate
+  #           tooltip: 7 day rolling average of the daily number of virus tests conducted on {date}
+  #           type: line
+  #           colour: 3
+  #           fill: false
+  #           rollingAverage: true
 
-      - heading: Cumulative
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Virus tests conducted
-            value: cumVirusTestsBySpecimenDate
-            tooltip: Cumulative number of virus tests conducted
-            type: bar
-            colour: 0
-            rollingAverage: false
+  #     - heading: Cumulative
+  #       tabType: chart
+  #       barType: normal
+  #       fields:
+  #         - label: Virus tests conducted
+  #           value: cumVirusTestsBySpecimenDate
+  #           tooltip: Cumulative number of virus tests conducted
+  #           type: bar
+  #           colour: 0
+  #           rollingAverage: false
 
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Date
-            value: date
-            type: date
-            tooltip: Date
+  #     - heading: Data
+  #       tabType: table
+  #       fields:
+  #         - label: Date
+  #           value: date
+  #           type: date
+  #           tooltip: Date
 
-          - label: Daily virus tests conducted
-            value: newVirusTestsBySpecimenDate
-            type: numeric
-            tooltip: Daily number of virus conducted up to {date}
+  #         - label: Daily virus tests conducted
+  #           value: newVirusTestsBySpecimenDate
+  #           type: numeric
+  #           tooltip: Daily number of virus conducted up to {date}
 
-          - label: Total virus tests conducted
-            value: cumVirusTestsBySpecimenDate
-            type: numeric
-            tooltip: Total number of virus tests conducted up to {date}
+  #         - label: Total virus tests conducted
+  #           value: cumVirusTestsBySpecimenDate
+  #           type: numeric
+  #           tooltip: Total number of virus tests conducted up to {date}
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/testing/cardVirusTestsBySpecimenDate.md
+  #     - heading: About 
+  #       tabType: metadata
+  #       filename: cardMetadata/testing/cardVirusTestsBySpecimenDate.md
 
 ##############################################################################################################################
 
@@ -771,7 +781,7 @@ cards:
     abstract: >
       Number of confirmed positive, negative or void COVID-19 lab-based virus test results (excludes LFD and antibody tests), 
       and rolling 7-day average. This is a count of test results and may include more than one test per person.  
-      Data are shown by the date the sample was taken from the person being tested.
+      Data are shown by the date the sample was taken from the person being tested. Data for the last 5 days, highlighted in grey, are incomplete.
      
     download:
       - newPCRTestsBySpecimenDate
@@ -788,6 +798,11 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
+            highlight: 
+                from: -4
+                to: 0
+                colour: 6
+                label: "Most recent 5 days (incomplete)"
 
           - label: Lab-based virus tests conducted (7-day average)
             value: newPCRTestsBySpecimenDate
@@ -795,7 +810,9 @@ cards:
             type: line
             colour: 3
             fill: false
-            rollingAverage: true
+            rollingAverage: 
+              window: 7
+              clipEnd: 4 #no of days to exclude for incomplete data
 
       - heading: Cumulative
         tabType: chart
@@ -807,6 +824,11 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
+            highlight: 
+                from: -4
+                to: 0
+                colour: 6
+                label: "Most recent 5 days (incomplete)"
 
       - heading: Data
         tabType: table
