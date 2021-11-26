@@ -548,10 +548,10 @@ cards:
               colour: 0
               rollingAverage: false
               highlight: 
-                from: -4
+                from: -2
                 to: 0
                 colour: 6
-                label: "Most recent 5 days (incomplete)"
+                label: "Most recent days (incomplete)"
 
             - label: Virus tests conducted (7-day average)
               value: newVirusTestsBySpecimenDate
@@ -561,7 +561,7 @@ cards:
               fill: false
               rollingAverage: 
                 window: 7
-                clipEnd: 4 #no of days to exclude for incomplete data
+                clipEnd: 2 #no of days to exclude for incomplete data
           
         - heading: Cumulative
           tabType: chart
@@ -574,10 +574,10 @@ cards:
               colour: 0
               rollingAverage: false
               highlight: 
-                from: -4
+                from: -2
                 to: 0
                 colour: 6
-                label: "Most recent 5 days (incomplete)"
+                label: "Most recent days (incomplete)"
 
         - heading: Data
           tabType: table
@@ -615,10 +615,10 @@ cards:
               colour: 0
               rollingAverage: false
               highlight: 
-                from: -4
+                from: -2
                 to: 0
                 colour: 6
-                label: "Most recent 5 days (incomplete)"
+                label: "Most recent days (lab-based, incomplete)"
 
             - label: Rapid lateral flow tests conducted
               value: newLFDTests
@@ -626,11 +626,7 @@ cards:
               type: bar
               colour: 3
               rollingAverage: false
-              highlight: 
-                from: -4
-                to: 0
-                colour: 7
-                label: "Most recent 5 days (incomplete)"
+              
 
             
         - heading: Cumulative
@@ -644,10 +640,10 @@ cards:
               colour: 0
               rollingAverage: false
               highlight: 
-                from: -4
+                from: -2
                 to: 0
                 colour: 6
-                label: "Most recent 5 days (incomplete)"
+                label: "Most recent days (lab-based, incomplete)"
 
             - label: Rapid lateral flow tests conducted
               value: cumLFDTests
@@ -655,11 +651,7 @@ cards:
               type: bar
               colour: 3
               rollingAverage: false
-              highlight: 
-                from: -4
-                to: 0
-                colour: 7
-                label: "Most recent 5 days (incomplete)"
+              
 
             
         - heading: Daily data
@@ -819,10 +811,10 @@ cards:
             colour: 0
             rollingAverage: false
             highlight: 
-                from: -4
+                from: -2
                 to: 0
                 colour: 6
-                label: "Most recent 5 days (incomplete)"
+                label: "Most recent days (incomplete)"
 
           - label: Lab-based virus tests conducted (7-day average)
             value: newPCRTestsBySpecimenDate
@@ -832,7 +824,7 @@ cards:
             fill: false
             rollingAverage: 
               window: 7
-              clipEnd: 4 #no of days to exclude for incomplete data
+              clipEnd: 2 #no of days to exclude for incomplete data
 
       - heading: Cumulative
         tabType: chart
@@ -845,10 +837,10 @@ cards:
             colour: 0
             rollingAverage: false
             highlight: 
-                from: -4
+                from: -2
                 to: 0
                 colour: 6
-                label: "Most recent 5 days (incomplete)"
+                label: "Most recent days (incomplete)"
 
       - heading: Data
         tabType: table
