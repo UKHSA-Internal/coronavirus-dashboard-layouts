@@ -593,83 +593,84 @@ cards:
 
     By test type:
       
-      - heading: Daily
-        tabType: chart
-        barType: stack
-        fields:
-          - label: Lab-based virus tests conducted
-            value: newPCRTestsBySpecimenDate
-            tooltip: Daily number of lab-based virus tests conducted
-            type: bar
-            colour: 0
-            rollingAverage: false
+      tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+          fields:
+            - label: Lab-based virus tests conducted
+              value: newPCRTestsBySpecimenDate
+              tooltip: Daily number of lab-based virus tests conducted
+              type: bar
+              colour: 0
+              rollingAverage: false
 
-          - label: Rapid lateral flow tests conducted
-            value: newLFDTests
-            tooltip: Daily number of lateral flow tests conducted
-            type: bar
-            colour: 3
-            rollingAverage: false
+            - label: Rapid lateral flow tests conducted
+              value: newLFDTests
+              tooltip: Daily number of lateral flow tests conducted
+              type: bar
+              colour: 3
+              rollingAverage: false
 
-          
-      - heading: Cumulative
-        tabType: chart
-        barType: stack
-        fields:
-          - label: Lab-based virus tests conducted
-            value: cumPCRTestsBySpecimenDate
-            tooltip: Cumulative number of lab-based virus tests conducted
-            type: bar
-            colour: 0
-            rollingAverage: false
+            
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+          fields:
+            - label: Lab-based virus tests conducted
+              value: cumPCRTestsBySpecimenDate
+              tooltip: Cumulative number of lab-based virus tests conducted
+              type: bar
+              colour: 0
+              rollingAverage: false
 
-          - label: Rapid lateral flow tests conducted
-            value: cumLFDTests
-            tooltip: Cumulative number of rapid lateral flow tests conducted
-            type: bar
-            colour: 3
-            rollingAverage: false
+            - label: Rapid lateral flow tests conducted
+              value: cumLFDTests
+              tooltip: Cumulative number of rapid lateral flow tests conducted
+              type: bar
+              colour: 3
+              rollingAverage: false
 
-          
-      - heading: Daily data
-        tabType: table
-        fields:
-          - label: Date
-            value: date
-            type: date
-            tooltip: Date
+            
+        - heading: Daily data
+          tabType: table
+          fields:
+            - label: Date
+              value: date
+              type: date
+              tooltip: Date
 
-          - label: Lab-based virus tests conducted
-            value: newPCRTestsBySpecimenDate
-            type: numeric
-            tooltip: Daily number of lab-based virus conducted up to {date}
+            - label: Lab-based virus tests conducted
+              value: newPCRTestsBySpecimenDate
+              type: numeric
+              tooltip: Daily number of lab-based virus conducted up to {date}
 
-          - label: Daily lateral flow tests conducted
-            value: newLFDTests
-            type: numeric
-            tooltip: Daily number of lateral flow tests conducted up to {date}
+            - label: Daily lateral flow tests conducted
+              value: newLFDTests
+              type: numeric
+              tooltip: Daily number of lateral flow tests conducted up to {date}
 
-      - heading: Cumulative data
-        tabType: table
-        fields:
-          - label: Date
-            value: date
-            type: date
-            tooltip: Date
+        - heading: Cumulative data
+          tabType: table
+          fields:
+            - label: Date
+              value: date
+              type: date
+              tooltip: Date
 
-          - label: Lab-based virus tests conducted
-            value: cumPCRTestsBySpecimenDate
-            type: numeric
-            tooltip: Total number of lab-based virus tests conducted up to {date}
+            - label: Lab-based virus tests conducted
+              value: cumPCRTestsBySpecimenDate
+              type: numeric
+              tooltip: Total number of lab-based virus tests conducted up to {date}
 
-          - label: Rapid lateral flow tests conducted
-            value: cumLFDTests
-            type: numeric
-            tooltip: Total number of lateral flow tests conducted up to {date}
-          
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/testing/cardPCRTestsBySpecimenDate.md
+            - label: Rapid lateral flow tests conducted
+              value: cumLFDTests
+              type: numeric
+              tooltip: Total number of lateral flow tests conducted up to {date}
+            
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/testing/cardPCRTestsBySpecimenDate.md
 
 # Only shown for and within England
 
