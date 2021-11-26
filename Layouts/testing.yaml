@@ -614,6 +614,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 6
+                label: "Most recent 5 days (incomplete)"
 
             - label: Rapid lateral flow tests conducted
               value: newLFDTests
@@ -621,6 +626,11 @@ cards:
               type: bar
               colour: 3
               rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 7
+                label: "Most recent 5 days (incomplete)"
 
             
         - heading: Cumulative
@@ -633,6 +643,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 6
+                label: "Most recent 5 days (incomplete)"
 
             - label: Rapid lateral flow tests conducted
               value: cumLFDTests
@@ -640,6 +655,11 @@ cards:
               type: bar
               colour: 3
               rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 7
+                label: "Most recent 5 days (incomplete)"
 
             
         - heading: Daily data
