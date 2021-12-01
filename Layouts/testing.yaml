@@ -4,11 +4,11 @@ headlineNumbers:
     valueItems:
 
       - label: Daily
-        value: newVirusTests
+        value: newVirusTestsByPublishDate
         tooltip: Daily number of new virus tests conducted on {date}
 
       - label: Total
-        value: cumVirusTests
+        value: cumVirusTestsByPublishDate
         tooltip: Cumulative total number of virus tests conducted up to {date}
 
   - caption: PCR testing capacity
@@ -38,8 +38,8 @@ cards:
       This is a count of test results and may include more than one test per person.
 
     download:
-      - newVirusTests
-      - cumVirusTests
+      - newVirusTestsByPublishDate
+      - cumVirusTestsByPublishDate
 #      - newPCRTestsByPublishDate
 #      - cumPCRTestsByPublishDate
 #      - newLFDTestsByPublishDate
@@ -60,14 +60,14 @@ cards:
         barType: normal
         fields:
           - label: Virus tests conducted
-            value: newVirusTests
+            value: newVirusTestsByPublishDate
             tooltip: Daily number of virus tests conducted on {date}
             type: bar
             colour: 0
             rollingAverage: false
 
           - label: Virus tests conducted (7-day average)
-            value: newVirusTests
+            value: newVirusTestsByPublishDate
             tooltip: 7 day rolling average of the daily number of virus tests conducted on {date}
             type: line
             colour: 3
@@ -81,7 +81,7 @@ cards:
         barType: normal
         fields:
           - label: Virus tests conducted
-            value: cumVirusTests
+            value: cumVirusTestsByPublishDate
             tooltip: Cumulative number of virus tests conducted up to {date}
             type: bar
             colour: 0
@@ -96,12 +96,12 @@ cards:
             tooltip: Date
 
           - label: Daily virus tests conducted
-            value: newVirusTests
+            value: newVirusTestsByPublishDate
             type: numeric
             tooltip: Daily number of virus tests conducted on {date}
 
           - label: Cumulative virus tests conducted
-            value: cumVirusTests
+            value: cumVirusTestsByPublishDate
             type: numeric
             tooltip: Cumulative number of virus tests conducted up to {date}
 
@@ -524,8 +524,8 @@ cards:
       - cumVirusTestsBySpecimenDate
       - newPCRTestsBySpecimenDate
       - cumPCRTestsBySpecimenDate
-      - newLFDTests
-      - cumLFDTests
+      - newLFDTestsBySpecimenDate
+      - cumLFDTestsBySpecimenDate
 
     options:
       type: radio
@@ -621,7 +621,7 @@ cards:
                 label: "Most recent days (lab-based, incomplete)"
 
             - label: Rapid lateral flow tests conducted
-              value: newLFDTests
+              value: newLFDTestsBySpecimenDate
               tooltip: Daily number of lateral flow tests conducted
               type: bar
               colour: 3
@@ -646,7 +646,7 @@ cards:
                 label: "Most recent days (lab-based, incomplete)"
 
             - label: Rapid lateral flow tests conducted
-              value: cumLFDTests
+              value: cumLFDTestsBySpecimenDate
               tooltip: Cumulative number of rapid lateral flow tests conducted
               type: bar
               colour: 3
@@ -668,7 +668,7 @@ cards:
               tooltip: Daily number of lab-based virus conducted up to {date}
 
             - label: Daily lateral flow tests conducted
-              value: newLFDTests
+              value: newLFDTestsBySpecimenDate
               type: numeric
               tooltip: Daily number of lateral flow tests conducted up to {date}
 
@@ -686,7 +686,7 @@ cards:
               tooltip: Total number of lab-based virus tests conducted up to {date}
 
             - label: Rapid lateral flow tests conducted
-              value: cumLFDTests
+              value: cumLFDTestsBySpecimenDate
               type: numeric
               tooltip: Total number of lateral flow tests conducted up to {date}
             
@@ -890,8 +890,8 @@ cards:
       Data are shown by the date the sample was taken from the person being tested.
      
     download:
-      - newLFDTests
-      - cumLFDTests
+      - newLFDTestsBySpecimenDate
+      - cumLFDTestsBySpecimenDate
 
     tabs:
       - heading: Daily
@@ -899,14 +899,14 @@ cards:
         barType: normal
         fields:
           - label: Rapid lateral flow tests conducted
-            value: newLFDTests
+            value: newLFDTestsBySpecimenDate
             tooltip: Daily number of lateral flow tests conducted
             type: bar
             colour: 0
             rollingAverage: false
 
           - label: Rapid lateral flow tests conducted (7-day average)
-            value: newLFDTests
+            value: newLFDTestsBySpecimenDate
             tooltip: 7 day rolling average of the daily number of rapid lateral flow tests conducted on {date}
             type: line
             colour: 3
@@ -918,7 +918,7 @@ cards:
         barType: normal
         fields:
           - label: Rapid lateral flow tests conducted
-            value: cumLFDTests
+            value: cumLFDTestsBySpecimenDate
             tooltip: Cumulative number of rapid lateral flow tests conducted
             type: bar
             colour: 0
@@ -933,12 +933,12 @@ cards:
             tooltip: Date
 
           - label: Daily lateral flow tests conducted
-            value: newLFDTests
+            value: newLFDTestsBySpecimenDate
             type: numeric
             tooltip: Daily number of lateral flow tests conducted up to {date}
 
           - label: Total lateral flow tests conducted
-            value: cumLFDTests
+            value: cumLFDTestsBySpecimenDate
             type: numeric
             tooltip: Total number of lateral flow tests conducted up to {date}
 
