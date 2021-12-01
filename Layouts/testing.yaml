@@ -36,6 +36,7 @@ cards:
     abstract: >
       Number of confirmed positive, negative or void COVID-19 virus test results. 
       This is a count of test results and may include more than one test per person.
+      Data are shown by the date the figures appeared in the published totals.
 
     download:
       - newVirusTestsByPublishDate
@@ -875,7 +876,7 @@ cards:
     abstract: >
       Number of confirmed positive, negative or void COVID-19 test results, by testing pillar. 
       This is a count of test results and may include more than one test per person. Data for 
-      surveillance testing (pillar 4) are only available for the UK as a whole. 
+      surveillance testing (pillar 4) are only available for the UK as a whole. Data are shown by the date the figures appeared in the published totals.
       
       The government provides testing through 4 routes known as pillars. 
       Capacity for each pillar is shown. More information about the pillars can be found in the About tab.
