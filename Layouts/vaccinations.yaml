@@ -2205,7 +2205,7 @@ cards:
               value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
               tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
               type: line
-              colour: 0
+              colour: 3
               rollingAverage: false
 
       - heading: Data
