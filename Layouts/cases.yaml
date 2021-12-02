@@ -63,11 +63,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people with at least one positive COVID-19 test result, either lab-reported or rapid lateral flow test (England only), by specimen date.
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      People tested positive more than once are only counted once, on the date of 
-      their first positive test. Data for the period ending 5 days before the date when the website was last updated with data for 
-      the selected area, highlighted in grey, are incomplete.
+      Number of cases (people who have had at least one positive COVID-19 test result), by specimen date. 
+      Data for the last 5 days, highlighted in grey, are incomplete. 
 
     download:
       - newCasesBySpecimenDate
@@ -237,11 +234,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people with at least one positive COVID-19 test result, either lab-reported or rapid lateral flow test (England only), by specimen date.
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      People tested positive more than once are only counted once, on the date of their first
-      positive test. Data for the period ending 5 days before the date when the website was last updated with data for the 
-      selected area, highlighted in grey, are incomplete.
+      Number of cases (people who have had at least one positive COVID-19 test result), by specimen date. 
+      Data for the last 5 days, highlighted in grey, are incomplete. 
 
     download:
       - newCasesBySpecimenDate
@@ -323,11 +317,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Rate of people with at least one positive COVID-19 test result, either lab-reported or rapid lateral flow test (England only) 
-      per 100,000 population in the rolling 7-day period ending on the dates shown, by age. 
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      People tested positive more than once are only counted once, on the date of their first
-      positive test.
+      Rate of cases (people who have had at least one positive COVID-19 test result) per 100,000 people in the rolling 7-day period 
+      ending on the dates shown, by age.  
     
     download:
       - newCasesBySpecimenDateAgeDemographics
@@ -416,12 +407,12 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people with at least one positive COVID-19 test result. Cases are shown by type of test used in their first positive test and by specimen date.
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      The test types shown are lab-based polymerase chain reaction (PCR), rapid lateral flow test (LFD) with positive PCR (this means the result has been verified
-      with a positive PCR result taken within 3 days) and LFD only (no PCR taken within 3 days).
-      People tested positive more than once are only counted once, on the date of their first positive test. Data for the period ending 5 days before 
-      the date when the website was last updated with data for the selected area are incomplete. Some LFD results may change or be removed as more PCR results are reported.
+      Number of cases (people who have had at least one positive COVID-19 test result). Cases are shown by type of test used in their first positive test and by specimen date. 
+      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases. 
+      The test types shown are lab-based polymerase chain reaction (PCR), rapid lateral flow test (LFD) with positive PCR (this means the result has been verified with a 
+      positive PCR result taken within 3 days) and LFD only (no PCR taken within 3 days). People tested positive more than once are only counted once, on the date of their 
+      first positive test. Data for the last 5 days are incomplete. Some LFD results 
+      may change or be removed as more PCR results are reported. 
 
     download:
       - newCasesPCROnlyBySpecimenDate
@@ -553,9 +544,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people who have had at least one positive COVID-19 test result either lab-reported or lateral flow device (England only),
-      by date reported. Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      People tested positive more than once are only counted once.
+      Number of cases (people who have had at least one positive COVID-19 test result) by date reported.  
 
     download:
       - newCasesByPublishDate
@@ -714,12 +703,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people who have had at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only),
-      by date reported. 
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      People tested positive more than once are only counted once. Initially only pillar 1 tests (NHS and, in England, UKHSA labs) were included
-      but commercial tests have been included from varying dates between 15th June 2020 and 14th July 2020 for
-      each nation, leading to step increases in the numbers of cases reported at different times.
+      Number of cases (people who have had at least one positive COVID-19 test result) by date reported.  
 
     download:
       - newCasesByPublishDate
@@ -789,11 +773,9 @@ cards:
           - region
 
     abstract: >
-      Number of people with at least one positive COVID-19 virus test result broken down to show the number of these cases 
-      that have been previously reported and the latest daily change. 
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      The daily change includes newly reported cases, plus 
-      adjustments to previously reported cases which may be negative.  
+      Daily number of new cases (people who have had at least one positive COVID-19 test result), broken down to show 
+      the number of these cases that have been previously reported and the latest daily change, and the 7-day average. 
+      The daily change includes newly reported cases, plus adjustments to previously reported cases, which may be negative. 
 
     download:
       - newCasesBySpecimenDate
@@ -1021,12 +1003,8 @@ cards:
     cardType: recentData
     fullWidth: false
     abstract: >
-      Rate of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) per 100,000 population
-      in the rolling 7-day period ending on the dates shown. 
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      Rates and percentage changes are presented for the most recent 
-      3 months, in order to provide transparency around decision making. Percentage changes are calculated by comparing 
-      to the previous non-overlapping 7-day period.
+      Rate of cases (people who have had at least one positive COVID-19 test result) 
+      per 100,000 people in the rolling 7-day period ending on the dates shown.  
 
     download:
       - newCasesBySpecimenDateRollingSum
@@ -1080,12 +1058,8 @@ cards:
     fullWidth: false
     chartMode: percentage
     abstract: >
-      Percentage change in rate of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) per 100,000 population
-      in the rolling 7-day period ending on the dates shown. 
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      Rates and percentage changes are presented for the most recent 
-      3 months, in order to provide transparency around decision making. Percentage changes are calculated by comparing 
-      to the previous non-overlapping 7-day period.
+      Percentage change in rate of cases (people who have had at least one positive COVID-19 test result) per 100,000 people in the rolling 7-day period ending on the dates shown. 
+      Percentage changes are calculated by comparing to the previous non-overlapping 7-day period. 
 
     download:
       - newCasesBySpecimenDateRollingSum
@@ -1145,9 +1119,8 @@ cards:
 
     fullWidth: false
     abstract: > 
-      Number of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) since the
-      start of the pandemic, by age and sex. 
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
+      Total number of cases (people who have had at least one positive COVID-19 test result) 
+      since the start of the pandemic, by age and sex.  
 
     download:
       - femaleCases 
@@ -1233,8 +1206,8 @@ cards:
 
     fullWidth: false
     abstract: >
-      Total case rates by age and sex.  There are fewer people in the oldest age groups so the
-      rates show the relative impact on different age groups.
+      Rate per 100,000 people of the total number of cases (people who have had at least one positive COVID-19 test result) 
+      since the start of the pandemic, by age and sex.
 
     download:
       - femaleCases 
@@ -1520,11 +1493,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only), 
-      by age and specimen date.
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      People tested positive more than once are only counted once, on the date of their first
-      positive test. Rates are presented as rates per 100,000 population in the rolling 7-day period ending on the dates shown.
+      Daily numbers of new cases (people who have had at least one positive COVID-19 test result), by age (0-59 or 60+), 
+      and rate per 100,000 people of the number of new cases in the rolling 7-day period ending on the dates shown. 
+      Data are shown by the date the sample was taken from the person being tested. 
 
     download:
       - newCasesBySpecimenDateAgeDemographics
@@ -1635,14 +1606,9 @@ cards:
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
-      Total number of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) in the most 
-      recent 7-day period. 
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      The rates per 100,000 resident population give a fairer comparison of 
-      the number of cases in each area but they do not take account of the different rates of testing 
-      or differences in the age and sex of the local populations. Data shown are cases by specimen date 
-      and because these are incomplete for the most recent dates, the period represented is the 7 
-      days ending 5 days before the date when the website was last updated.
+        Total number of cases (people who have had at least one positive COVID-19 test result) in the most recent 7-day period and rate per 100,000 people. 
+        Data are shown by specimen date (the date the sample was taken from the person being tested). Because data by specimen date are incomplete for the most recent dates, 
+        the figures shown are for the 7 days ending 5 days before the date when the website was last updated.
 
     download:
       - newCasesBySpecimenDateRollingSum
@@ -1791,13 +1757,8 @@ cards:
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
-      Total number of people with at least one positive COVID-19 test result, either lab-reported or lateral flow device (England only) since the start
-      of the pandemic in each area. 
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      The rates per 100,000 resident population give a fairer comparison of
-      the number of cases in each area but they do not take account of the different rates of testing or
-      differences in the age and sex of the local populations. Only data available for the latest reported
-      date are shown. 
+       Total number of cases (people who have had at least one positive COVID-19 test result) since the start of the pandemic, 
+       and rate per 100,000 people. 
 
     download:
       - cumCasesByPublishDate
@@ -1940,4 +1901,4 @@ cards:
         tabType: metadata
         filename: cardMetadata/cases/cardCasesAndRatesByArea.md
 
-##############################################################################################################################
+###############################################################################################################################

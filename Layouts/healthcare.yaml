@@ -57,10 +57,9 @@ cards:
       
     fullWidth: true
     abstract: >
-      Daily and cumulative numbers of COVID-19 patients admitted to hospital. Data are not
-      updated every day by all four nations and the figures for Wales are not comparable to those
-      for other nations as Wales include suspected COVID-19 patients while the other nations include 
-      only confirmed cases.
+      Daily and cumulative numbers of COVID-19 patients admitted to hospital. 
+      Data are not updated every day by all 4 nations (England, Northern Ireland, Wales and Scotland). 
+      Figures are not comparable as Wales includes suspected COVID-19 patients while the other nations include only confirmed cases.
       
     download:
       - newAdmissions
@@ -133,10 +132,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Daily and cumulative numbers of COVID-19 patients admitted to hospital. Data are not
-      updated every day by all four nations and the figures are not comparable as Wales
-      include suspected COVID-19 patients while the other nations include only confirmed
-      cases.
+      Daily and cumulative numbers of COVID-19 patients admitted to hospital. 
+      Data are not updated every day by all 4 nations (England, Northern Ireland, Wales and Scotland). 
+      Figures are not comparable as Wales includes suspected COVID-19 patients while the other nations include only confirmed cases.
 
     download:
       - newAdmissions
@@ -349,9 +347,9 @@ cards:
     cardType: ageSexBreakdown
     fullWidth: false
     abstract: >
-      Total numbers of COVID-19 patients admitted to hospital since the start of the pandemic, by
-      age. Data are not updated every day. Some admission records have missing age, so the sum of
-      the subgroups does not equal the total admissions for the area.
+      Age breakdown of the number of COVID-19 patients admitted to hospital since the start of the pandemic. 
+      Data are not updated every day. Some admission records have age missing, 
+      so the sum of the subgroups does not equal the total admissions for the area.
       
     download:
       - cumAdmissionsByAge
@@ -412,8 +410,8 @@ cards:
     cardType: ageSexBreakdown
     fullWidth: false
     abstract: >
-      Total admission rates since the start of the pandemic, by age.  There are fewer people in the oldest age group so the
-      rates show the relative impact on different age groups.
+      Age breakdown of people admitted to hospital, shown as the rate per 100,000 people, since the start of the pandemic. 
+      There are fewer people in the oldest age group so the rates show the relative impact on different age groups.
       
     download:
       - cumAdmissionsByAge
@@ -539,11 +537,10 @@ cards:
 
     fullWidth: true
     abstract: >
-      Daily count of confirmed COVID-19 patients in hospital at 8am.
-      Data from the four nations may not be directly comparable as data about COVID-19
-      patients in hospitals are collected differently. Data are not reported by each nation
-      every day. The UK figure is the sum of the four nations' figures and can only be
-      calculated when all nations' data are available.
+      Daily count of confirmed COVID-19 patients in hospital at 8am, and 7-day rolling average. 
+      Data from England, Northern Ireland, Wales and Scotland may not be directly comparable as 
+      data about COVID-19 patients in hospitals are collected differently. Data are not reported by each nation every day. 
+      The UK figure is the sum of the 4 nations' figures and can only be calculated when all nations' data are available. 
 
     download:
       - hospitalCases
@@ -719,8 +716,8 @@ cards:
           - overview
       
     abstract: >
-      Daily count of COVID-19 patients in mechanical ventilation beds. Data are not updated
-      every day.
+      Daily count of COVID-19 patients in mechanical ventilation beds, and 7-day rolling average. 
+      Data are not updated every day.
 
     download:
       - covidOccupiedMVBeds
@@ -829,11 +826,11 @@ cards:
           - overview
 
     abstract: >
-      COVID-19 patients in mechanical ventilation beds. Data from the four nations may not be
-      directly comparable as data about COVID-19 patients in hospitals are collected differently. Data
-      are not reported by each nation every day and England data are not available before 2 April 2020. The
-      UK figure is the sum of the four nations' figures and can only be calculated when all nations'
-      data are available.
+      Daily count of COVID-19 patients in mechanical ventilation beds, and 7-day rolling average. 
+      Data from England, Northern Ireland, Wales and Scotland may not be directly comparable as data 
+      about COVID-19 patients in hospitals are collected differently. Data are not reported by each nation every day 
+      and England data are not available before 2 April 2020. The UK figure is the sum of the 4 nations' figures and 
+      can only be calculated when all nations' data are available.
 
     download:
       - covidOccupiedMVBeds
@@ -1042,10 +1039,10 @@ cards:
           - overview
     fullWidth: true
     abstract: >
-      The estimated R value (transmission rate) and daily infection growth rate. The reproduction number (R)
-      is the average number of secondary infections produced by a single infected person. The infection growth rate is an
-      approximation of the percentage change in the number of infections each day and indicates how quickly the number of 
-      infections is changing. Both estimates are presented as ranges, and the minimum and maximum values of these ranges are shown.
+      The estimated R value (transmission rate) and daily infection growth rate. The reproduction number (R) 
+      is the average number of secondary infections produced by a single infected person. The infection growth rate 
+      is an approximation of the percentage change in the number of infections each day and indicates how quickly 
+      the number of infections is changing. Both estimates are shown as ranges, from minimum to maximum. 
 
     download:
       - transmissionRateMin
