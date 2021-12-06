@@ -1091,6 +1091,10 @@ cards:
         - heading: Daily
           tabType: chart
           barType: normal
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
 
           fields:
             - label: daily
@@ -1152,6 +1156,10 @@ cards:
         - heading: Daily
           tabType: chart
           barType: normal
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
 
           fields:
             - label: daily
@@ -1213,6 +1221,10 @@ cards:
         - heading: Daily
           tabType: chart
           barType: normal
+          params:
+            - key: areaType
+              sign: "="
+              value: nation
 
           fields:
             - label: daily
