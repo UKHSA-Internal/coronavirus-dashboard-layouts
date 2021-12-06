@@ -1058,7 +1058,7 @@ cards:
 # nations only
 
   - heading: People who have received vaccinations, by report date
-    cardType: multiAreaStatic
+    cardType: chart
     locationAware:
       included:
         areaType:
@@ -1091,10 +1091,6 @@ cards:
         - heading: Daily
           tabType: chart
           barType: normal
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
 
           fields:
             - label: daily
@@ -1156,10 +1152,6 @@ cards:
         - heading: Daily
           tabType: chart
           barType: normal
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
 
           fields:
             - label: daily
@@ -1221,10 +1213,6 @@ cards:
         - heading: Daily
           tabType: chart
           barType: normal
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
 
           fields:
             - label: daily
