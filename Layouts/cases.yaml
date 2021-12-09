@@ -1000,8 +1000,8 @@ cards:
 ##############################################################################################################################
 
   - heading: Recent 7-day case rates by specimen date
-    cardType: recentData
-    fullWidth: false
+    cardType: chart
+    fullWidth: true
     abstract: >
       Rate of cases (people who have had at least one positive COVID-19 test result) 
       per 100,000 people in the rolling 7-day period ending on the dates shown.  
@@ -1054,8 +1054,8 @@ cards:
 ##############################################################################################################################
 
   - heading: Percentage change in recent 7-day case rates by specimen date
-    cardType: recentData
-    fullWidth: false
+    cardType: chart
+    fullWidth: true
     chartMode: percentage
     abstract: >
       Percentage change in rate of cases (people who have had at least one positive COVID-19 test result) per 100,000 people in the rolling 7-day period ending on the dates shown. 
