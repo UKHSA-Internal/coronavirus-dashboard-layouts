@@ -999,8 +999,8 @@ cards:
 
 ##############################################################################################################################
 
-  - heading: Recent 7-day case rates by specimen date
-    cardType: chart
+  - heading: 7-day case rates by specimen date
+    cardType: recentData
     fullWidth: false
     abstract: >
       Rate of cases (people who have had at least one positive COVID-19 test result) 
@@ -1053,8 +1053,8 @@ cards:
 
 ##############################################################################################################################
 
-  - heading: Percentage change in recent 7-day case rates by specimen date
-    cardType: chart
+  - heading: Percentage change in 7-day case rates by specimen date
+    cardType: recentData
     fullWidth: false
     chartMode: percentage
     abstract: >
