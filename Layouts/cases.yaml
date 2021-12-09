@@ -999,7 +999,7 @@ cards:
 
 ##############################################################################################################################
 
-  - heading: Recent 7-day case rates by specimen date
+  - heading: 7-day case rates by specimen date
     cardType: recentData
     fullWidth: false
     abstract: >
@@ -1021,7 +1021,7 @@ cards:
               value: newCasesBySpecimenDateRollingRate
               tooltip: Rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population 
               colour: 0
-              type: bar
+              type: line
               rollingAverage: false
 
         - heading: Data
@@ -1053,7 +1053,7 @@ cards:
 
 ##############################################################################################################################
 
-  - heading: Percentage change in recent 7-day case rates by specimen date
+  - heading: Percentage change in 7-day case rates by specimen date
     cardType: recentData
     fullWidth: false
     chartMode: percentage
@@ -1075,7 +1075,7 @@ cards:
             - label: Percentage change in 7-day case rate
               value: newCasesBySpecimenDateChangePercentage
               tooltip: Percentage change in rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken 
-              type: bar
+              type: line
               colour: 0
               rollingAverage: false
 
