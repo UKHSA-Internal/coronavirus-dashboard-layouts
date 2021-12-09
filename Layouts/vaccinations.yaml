@@ -1058,7 +1058,7 @@ cards:
 # nations only
 
   - heading: People who have received vaccinations, by report date
-    cardType: multiAreaStatic
+    cardType: chart
     locationAware:
       included:
         areaType:
