@@ -1424,7 +1424,7 @@ cards:
 # nations only
 
   - heading: Number of vaccines given, by report date
-    cardType: multiAreaStatic
+    cardType: chart
     locationAware:
       included:
         areaType:
