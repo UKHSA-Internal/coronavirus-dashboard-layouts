@@ -812,15 +812,15 @@ cards:
             colour: 9
             rollingAverage: false
 
-          - label: Total cases (7-day average)
-            value: newCasesBySpecimenDate
-            tooltip: 7-day rolling average of the daily number of people tested positive by specimen date
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 3 #no of days to exclude for incomplete data
+#          - label: Total cases (7-day average)
+#            value: newCasesBySpecimenDate
+#            tooltip: 7-day rolling average of the daily number of people tested positive by specimen date
+#            type: line
+#            colour: 3
+#            fill: false
+#            rollingAverage:
+#              window: 7
+#              clipEnd: 3 #no of days to exclude for incomplete data
  
       - heading: Data
         tabType: table
