@@ -404,6 +404,13 @@ cards:
       included:
         areaName:
           - England
+# {{ StartDevOnlyBlock }}
+        areaType:
+          - region
+          - utla
+          - ltla
+# {{ EndDevOnlyBlock }}
+
 
     fullWidth: true
     abstract: >
@@ -771,6 +778,10 @@ cards:
           - England
         areaType:
           - region
+# {{ StartDevOnlyBlock }}
+          - utla
+          - ltla
+# {{ EndDevOnlyBlock }}
 
     abstract: >
       Daily number of new cases (people who have had at least one positive COVID-19 test result), broken down to show 
