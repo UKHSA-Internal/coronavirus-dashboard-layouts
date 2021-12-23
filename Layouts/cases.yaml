@@ -404,6 +404,12 @@ cards:
       included:
         areaName:
           - England
+        areaType:
+          - region
+          - utla
+          - ltla
+
+
 
     fullWidth: true
     abstract: >
@@ -771,6 +777,8 @@ cards:
           - England
         areaType:
           - region
+          - utla
+          - ltla
 
     abstract: >
       Daily number of new cases (people who have had at least one positive COVID-19 test result), broken down to show 
@@ -801,15 +809,15 @@ cards:
             colour: 9
             rollingAverage: false
 
-          - label: Total cases (7-day average)
-            value: newCasesBySpecimenDate
-            tooltip: 7-day rolling average of the daily number of people tested positive by specimen date
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 3 #no of days to exclude for incomplete data
+#          - label: Total cases (7-day average)
+#            value: newCasesBySpecimenDate
+#            tooltip: 7-day rolling average of the daily number of people tested positive by specimen date
+#            type: line
+#            colour: 3
+#            fill: false
+#            rollingAverage:
+#              window: 7
+#              clipEnd: 3 #no of days to exclude for incomplete data
  
       - heading: Data
         tabType: table
