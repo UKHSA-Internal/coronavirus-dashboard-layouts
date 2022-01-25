@@ -531,6 +531,107 @@ cards:
 
 ##############################################################################################################################
 
+# Cases by episode number
+ 
+  - heading: Cases by episode of infection and specimen date
+    cardType: chart
+
+    fullWidth: true
+    abstract: >
+      Number of cases (people who have had at least one positive COVID-19 test result), by episode of infection and specimen date. 
+      Data for the last 5 days are incomplete. 
+
+    download:
+      - newCasesBySpecimenDate
+      - cumCasesBySpecimenDate
+      - newFirstEpisodesBySpecimenDate
+      - cumFirstEpisodesBySpecimenDate
+      - newReinfectionsBySpecimenDate
+      - cumReinfectionsBySpecimenDate
+
+    tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+
+          fields:
+            - label: Number of first episodes
+              value: newFirstEpisodesBySpecimenDate
+              tooltip: Daily number of new people tested positive for their first episode by specimen date
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: Number of possible reinfections
+              value: newReinfectionsBySpecimenDate
+              tooltip: Daily number of new people tested positive for their second or subsequent episode by specimen date
+              type: bar
+              colour: 3
+              rollingAverage: false
+
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+
+          fields:
+            - label: Number of first episodes
+              value: cumFirstEpisodesBySpecimenDate
+              tooltip: Cumulative total number of new people tested positive for their first episode by specimen date
+              type: bar
+              colour: 0
+              rollingAverage: false
+
+            - label: Number of possible reinfections
+              value: cumReinfectionsBySpecimenDate
+              tooltip: Cumulative total number of new people tested positive for their second or subsequent episode by specimen date
+              type: bar
+              colour: 3
+              rollingAverage: false
+
+        - heading: Data
+          tabType: table
+          fields:
+            - label: Specimen date
+              value: date
+              type: date
+              tooltip: Date the sample was taken from the person
+
+            - label: Daily first episodes
+              value: newFirstEpisodesBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people tested positive for their first episode by date the sample was taken from the person
+
+            - label: Daily possible reinfections
+              value: newReinfectionsBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+
+            - label: Daily cases
+              value: newCasesBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people tested positive by date the sample was taken from the person
+
+            - label: Cumulative first episodes
+              value: cumFirstEpisodesBySpecimenDate
+              type: numeric
+              tooltip: Cumulative total number of new people tested positive for their first episode by date the sample was taken from the person              
+
+            - label: Cumulative possible reinfections
+              value: cumReinfectionsBySpecimenDate
+              type: numeric
+              tooltip: Cumulative total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+
+            - label: Cumulative cases
+              value: cumCasesBySpecimenDate
+              type: numeric
+              tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+##############################################################################################################################
+
   - heading: Cases by specimen date age demographics
     cardType: chart
     experimental: false
