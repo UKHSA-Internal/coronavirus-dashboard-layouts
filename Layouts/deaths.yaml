@@ -518,7 +518,7 @@ cards:
     fullWidth: true
 
     abstract: >
-      Number people who died within 28 days of their first positive test for COVID-19. 
+      Number of people who died within 28 days of their first positive test for COVID-19. 
       Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared. 
 
     download:
@@ -674,7 +674,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number people who died within 28 days of their first positive test for COVID-19. 
+      Number of people who died within 28 days of their first positive test for COVID-19. 
       Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared.  
 
     download:
