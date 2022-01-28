@@ -1941,7 +1941,7 @@ cards:
     abstract: >
         Total number of cases (people who have had at least one positive COVID-19 test result) in the most recent 7-day period and rate per 100,000 people. 
         Data are shown by specimen date (the date the sample was taken from the person being tested). Because data by specimen date are incomplete for the most recent dates, 
-        the figures shown are for the 7 days ending 5 days before the date when the website was last updated. Definitions of cases vary by nation so comparisons should be made with caution.
+        the figures shown are for the 7 days ending 5 days before the date when the website was last updated. Definitions of cases vary by nation. For example, not all nations include lateral flow testing in their case counts.
 
     download:
       - newCasesBySpecimenDateRollingSum
@@ -2091,7 +2091,7 @@ cards:
     fullWidth: false
     abstract: >
        Total number of cases (people who have had at least one positive COVID-19 test result) since the start of the pandemic, 
-       and rate per 100,000 people. Definitions of cases vary by nation so comparisons should be made with caution.
+       and rate per 100,000 people. Definitions of cases vary by nation. For example, not all nations include lateral flow testing in their case counts.
 
     download:
       - cumCasesByPublishDate
