@@ -3,11 +3,11 @@ headlineNumbers:
     valueItems:
       - label: Daily
         value: newCasesByPublishDate
-        tooltip: Daily number of new people tested positive reported on {date}
+        tooltip: Daily number of new cases reported on {date}
 
       - label: Total
         value: cumCasesByPublishDate
-        tooltip: Cumulative total number of people tested positive reported up to {date}
+        tooltip: Cumulative total number of cases reported up to {date}
         
 # {{ StartDevOnlyBlock }}
 # People tested not currently being published
@@ -63,7 +63,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of cases (people who have had at least one positive COVID-19 test result), by specimen date. 
+      Number of cases, by specimen date. 
       Data for the last 5 days, highlighted in grey, are incomplete. 
 
     download:
@@ -234,7 +234,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of cases (people who have had at least one positive COVID-19 test result), by specimen date. 
+      Number of cases, by specimen date. 
       Data for the last 5 days, highlighted in grey, are incomplete. 
 
     download:
@@ -458,7 +458,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of cases (people who have had at least one positive COVID-19 test result), by specimen date. 
+      Number of cases, by specimen date. 
       Data for the last 5 days, highlighted in grey, are incomplete. 
 
     download:
@@ -538,7 +538,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of cases (people who have had at least one positive COVID-19 test result), by episode of infection and specimen date. 
+      Number of cases, by episode of infection and specimen date. 
       Data for the last 5 days are incomplete. 
 
     download:
@@ -642,7 +642,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Rate of cases (people who have had at least one positive COVID-19 test result) per 100,000 people in the rolling 7-day period 
+      Rate of cases per 100,000 people in the rolling 7-day period 
       ending on the dates shown, by age.  
     
     download:
@@ -738,11 +738,10 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of cases (people who have had at least one positive COVID-19 test result). Cases are shown by type of test used in their first positive test and by specimen date. 
+      Number of cases. Cases are shown by type of test used in their first positive test and by specimen date. 
       Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases. 
       The test types shown are lab-based polymerase chain reaction (PCR), rapid lateral flow test (LFD) with positive PCR (this means the result has been verified with a 
-      positive PCR result taken within 3 days) and LFD only (no PCR taken within 3 days). People tested positive more than once are only counted once, on the date of their 
-      first positive test. Data for the last 5 days are incomplete. Some LFD results 
+      positive PCR result taken within 3 days) and LFD only (no PCR taken within 3 days). Data for the last 5 days are incomplete. Some LFD results 
       may change or be removed as more PCR results are reported. 
 
     download:
@@ -875,7 +874,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of cases (people who have had at least one positive COVID-19 test result) by date reported.  
+      Number of cases by date reported.  
 
     download:
       - newCasesByPublishDate
@@ -1034,7 +1033,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of cases (people who have had at least one positive COVID-19 test result) by date reported.  
+      Number of cases by date reported.  
 
     download:
       - newCasesByPublishDate
@@ -1106,7 +1105,7 @@ cards:
           - ltla
 
     abstract: >
-      Daily number of new cases (people who have had at least one positive COVID-19 test result), broken down to show 
+      Daily number of new cases, broken down to show 
       the number of these cases that have been previously reported and the latest daily change, and the 7-day average. 
       The daily change includes newly reported cases, plus adjustments to previously reported cases, which may be negative. 
 
@@ -1336,8 +1335,7 @@ cards:
     cardType: recentData
     fullWidth: false
     abstract: >
-      Rate of cases (people who have had at least one positive COVID-19 test result) 
-      per 100,000 people in the rolling 7-day period ending on the dates shown.  
+      Rate of cases per 100,000 people in the rolling 7-day period ending on the dates shown.  
 
     download:
       - newCasesBySpecimenDateRollingSum
@@ -1391,7 +1389,7 @@ cards:
     fullWidth: false
     chartMode: percentage
     abstract: >
-      Percentage change in rate of cases (people who have had at least one positive COVID-19 test result) per 100,000 people in the rolling 7-day period ending on the dates shown. 
+      Percentage change in rate of cases per 100,000 people in the rolling 7-day period ending on the dates shown. 
       Percentage changes are calculated by comparing to the previous non-overlapping 7-day period. 
 
     download:
@@ -1452,8 +1450,7 @@ cards:
 
     fullWidth: false
     abstract: > 
-      Total number of cases (people who have had at least one positive COVID-19 test result) 
-      since the start of the pandemic, by age and sex.  
+      Total number of cases since the start of the pandemic, by age and sex.  
 
     download:
       - femaleCases 
@@ -1539,8 +1536,7 @@ cards:
 
     fullWidth: false
     abstract: >
-      Rate per 100,000 people of the total number of cases (people who have had at least one positive COVID-19 test result) 
-      since the start of the pandemic, by age and sex.
+      Rate per 100,000 people of the total number of cases since the start of the pandemic, by age and sex.
 
     download:
       - femaleCases 
@@ -1826,8 +1822,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Daily numbers of new cases (people who have had at least one positive COVID-19 test result), by age (0-59 or 60+), 
-      and rate per 100,000 people of the number of new cases in the rolling 7-day period ending on the dates shown. 
+      Daily numbers of new cases, by age (0-59 or 60+), and rate per 100,000 people of the number of new cases in the rolling 7-day period ending on the dates shown. 
       Data are shown by the date the sample was taken from the person being tested. 
 
     download:
@@ -1939,7 +1934,7 @@ cards:
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
-        Total number of cases (people who have had at least one positive COVID-19 test result) in the most recent 7-day period and rate per 100,000 people. 
+        Total number of cases in the most recent 7-day period and rate per 100,000 people. 
         Data are shown by specimen date (the date the sample was taken from the person being tested). Because data by specimen date are incomplete for the most recent dates, 
         the figures shown are for the 7 days ending 5 days before the date when the website was last updated. Definitions of cases vary by nation. For example, not all nations include lateral flow testing in their case counts.
 
@@ -2090,8 +2085,8 @@ cards:
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
-       Total number of cases (people who have had at least one positive COVID-19 test result) since the start of the pandemic, 
-       and rate per 100,000 people. Definitions of cases vary by nation. For example, not all nations include lateral flow testing in their case counts.
+       Total number of cases since the start of the pandemic, and rate per 100,000 people. Definitions of cases vary by nation. 
+       For example, not all nations include lateral flow testing in their case counts.
 
     download:
       - cumCasesByPublishDate
