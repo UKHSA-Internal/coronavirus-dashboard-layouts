@@ -225,223 +225,223 @@ cards:
 
 # England only
 
-  - heading: Cases by specimen date
-    cardType: chart
-    locationAware:
-      included:
-        areaName:
-          - England
+  # - heading: Cases by specimen date
+  #   cardType: chart
+  #   locationAware:
+  #     included:
+  #       areaName:
+  #         - England
 
-    fullWidth: true
-    abstract: >
-      Number of cases, by specimen date. 
-      Data for the last 5 days, highlighted in grey, are incomplete. 
+  #   fullWidth: true
+  #   abstract: >
+  #     Number of cases, by specimen date. 
+  #     Data for the last 5 days, highlighted in grey, are incomplete. 
 
-    download:
-      - newCasesBySpecimenDate
-      - cumCasesBySpecimenDate
-      - newFirstEpisodesBySpecimenDate
-      - cumFirstEpisodesBySpecimenDate
-      - newReinfectionsBySpecimenDate
-      - cumReinfectionsBySpecimenDate
+  #   download:
+  #     - newCasesBySpecimenDate
+  #     - cumCasesBySpecimenDate
+  #     - newFirstEpisodesBySpecimenDate
+  #     - cumFirstEpisodesBySpecimenDate
+  #     - newReinfectionsBySpecimenDate
+  #     - cumReinfectionsBySpecimenDate
 
-    All:
+  #   All:
 
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of cases
-              value: newCasesBySpecimenDate
-              tooltip: Daily number of new people tested positive by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight: 
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days (incomplete)"
+  #     tabs:
+  #       - heading: Daily
+  #         tabType: chart
+  #         barType: overlay
+  #         fields:
+  #           - label: Number of cases
+  #             value: newCasesBySpecimenDate
+  #             tooltip: Daily number of new people tested positive by date the sample was taken from the person
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
+  #             highlight: 
+  #               from: -4
+  #               to: 0
+  #               colour: 6
+  #               label: "Most recent 5 days (incomplete)"
 
-            - label: Cases (7-day average)
-              value: newCasesBySpecimenDate
-              tooltip: 7-day rolling average of the daily number of people tested positive by specimen date
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 4 #no of days to exclude for incomplete data
+  #           - label: Cases (7-day average)
+  #             value: newCasesBySpecimenDate
+  #             tooltip: 7-day rolling average of the daily number of people tested positive by specimen date
+  #             type: line
+  #             colour: 3
+  #             fill: false
+  #             rollingAverage:
+  #               window: 7
+  #               clipEnd: 4 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
-          tabType: chart
-          fields:
-            - label: Number of cases
-              value: cumCasesBySpecimenDate
-              tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight: 
-               from: -4
-               to: 0
-               colour: 6
-               label: "Most recent 5 days (incomplete)"
+  #       - heading: Cumulative
+  #         tabType: chart
+  #         fields:
+  #           - label: Number of cases
+  #             value: cumCasesBySpecimenDate
+  #             tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
+  #             highlight: 
+  #              from: -4
+  #              to: 0
+  #              colour: 6
+  #              label: "Most recent 5 days (incomplete)"
 
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Specimen date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
+  #       - heading: Data
+  #         tabType: table
+  #         fields:
+  #           - label: Specimen date
+  #             value: date
+  #             type: date
+  #             tooltip: Date the sample was taken from the person
 
-            - label: Daily cases
-              value: newCasesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive by date the sample was taken from the person
+  #           - label: Daily cases
+  #             value: newCasesBySpecimenDate
+  #             type: numeric
+  #             tooltip: Daily number of new people tested positive by date the sample was taken from the person
 
-            - label: Cumulative cases
-              value: cumCasesBySpecimenDate
-              type: numeric
-              tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
+  #           - label: Cumulative cases
+  #             value: cumCasesBySpecimenDate
+  #             type: numeric
+  #             tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesTimeSeries.md
+  #       - heading: About 
+  #         tabType: metadata
+  #         filename: cardMetadata/cases/cardCasesTimeSeries.md
 
-    First episodes:
+  #   First episodes:
 
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of first episodes
-              value: newFirstEpisodesBySpecimenDate
-              tooltip: Daily number of new people tested positive for their first episode by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight: 
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days (incomplete)"
+  #     tabs:
+  #       - heading: Daily
+  #         tabType: chart
+  #         barType: overlay
+  #         fields:
+  #           - label: Number of first episodes
+  #             value: newFirstEpisodesBySpecimenDate
+  #             tooltip: Daily number of new people tested positive for their first episode by date the sample was taken from the person
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
+  #             highlight: 
+  #               from: -4
+  #               to: 0
+  #               colour: 6
+  #               label: "Most recent 5 days (incomplete)"
 
-            - label: First episodes (7-day average)
-              value: newFirstEpisodesBySpecimenDate
-              tooltip: 7-day rolling average of the daily number of people tested positive for their first episode by specimen date
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 4 #no of days to exclude for incomplete data
+  #           - label: First episodes (7-day average)
+  #             value: newFirstEpisodesBySpecimenDate
+  #             tooltip: 7-day rolling average of the daily number of people tested positive for their first episode by specimen date
+  #             type: line
+  #             colour: 3
+  #             fill: false
+  #             rollingAverage:
+  #               window: 7
+  #               clipEnd: 4 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
-          tabType: chart
-          fields:
-            - label: Number of first episodes
-              value: cumFirstEpisodesBySpecimenDate
-              tooltip: Cumulative total number of new people tested positive for their first episode by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight: 
-               from: -4
-               to: 0
-               colour: 6
-               label: "Most recent 5 days (incomplete)"
+  #       - heading: Cumulative
+  #         tabType: chart
+  #         fields:
+  #           - label: Number of first episodes
+  #             value: cumFirstEpisodesBySpecimenDate
+  #             tooltip: Cumulative total number of new people tested positive for their first episode by date the sample was taken from the person
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
+  #             highlight: 
+  #              from: -4
+  #              to: 0
+  #              colour: 6
+  #              label: "Most recent 5 days (incomplete)"
 
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Specimen date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
+  #       - heading: Data
+  #         tabType: table
+  #         fields:
+  #           - label: Specimen date
+  #             value: date
+  #             type: date
+  #             tooltip: Date the sample was taken from the person
 
-            - label: Daily first episodes
-              value: newFirstEpisodesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive for their first episode by date the sample was taken from the person
+  #           - label: Daily first episodes
+  #             value: newFirstEpisodesBySpecimenDate
+  #             type: numeric
+  #             tooltip: Daily number of new people tested positive for their first episode by date the sample was taken from the person
 
-            - label: Cumulative first episodes
-              value: cumFirstEpisodesBySpecimenDate
-              type: numeric
-              tooltip: Cumulative total number of new people tested positive for their first episode by date the sample was taken from the person
+  #           - label: Cumulative first episodes
+  #             value: cumFirstEpisodesBySpecimenDate
+  #             type: numeric
+  #             tooltip: Cumulative total number of new people tested positive for their first episode by date the sample was taken from the person
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesTimeSeries.md
+  #       - heading: About 
+  #         tabType: metadata
+  #         filename: cardMetadata/cases/cardCasesTimeSeries.md
 
-    Reinfections:
+  #   Reinfections:
 
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of possible reinfections
-              value: newReinfectionsBySpecimenDate
-              tooltip: Daily number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight: 
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days (incomplete)"
+  #     tabs:
+  #       - heading: Daily
+  #         tabType: chart
+  #         barType: overlay
+  #         fields:
+  #           - label: Number of possible reinfections
+  #             value: newReinfectionsBySpecimenDate
+  #             tooltip: Daily number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
+  #             highlight: 
+  #               from: -4
+  #               to: 0
+  #               colour: 6
+  #               label: "Most recent 5 days (incomplete)"
 
-            - label: Possible reinfections (7-day average)
-              value: newReinfectionsBySpecimenDate
-              tooltip: 7-day rolling average of the daily number of people tested positive for their second or subsequent episode by specimen date
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 4 #no of days to exclude for incomplete data
+  #           - label: Possible reinfections (7-day average)
+  #             value: newReinfectionsBySpecimenDate
+  #             tooltip: 7-day rolling average of the daily number of people tested positive for their second or subsequent episode by specimen date
+  #             type: line
+  #             colour: 3
+  #             fill: false
+  #             rollingAverage:
+  #               window: 7
+  #               clipEnd: 4 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
-          tabType: chart
-          fields:
-            - label: Number of possible reinfections
-              value: cumReinfectionsBySpecimenDate
-              tooltip: Cumulative total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight: 
-               from: -4
-               to: 0
-               colour: 6
-               label: "Most recent 5 days (incomplete)"
+  #       - heading: Cumulative
+  #         tabType: chart
+  #         fields:
+  #           - label: Number of possible reinfections
+  #             value: cumReinfectionsBySpecimenDate
+  #             tooltip: Cumulative total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
+  #             highlight: 
+  #               from: -4
+  #               to: 0
+  #               colour: 6
+  #               label: "Most recent 5 days (incomplete)"
 
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Specimen date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
+  #       - heading: Data
+  #         tabType: table
+  #         fields:
+  #           - label: Specimen date
+  #             value: date
+  #             type: date
+  #             tooltip: Date the sample was taken from the person
 
-            - label: Daily possible reinfections
-              value: newReinfectionsBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+  #           - label: Daily possible reinfections
+  #             value: newReinfectionsBySpecimenDate
+  #             type: numeric
+  #             tooltip: Daily number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
 
-            - label: Cumulative possible reinfections
-              value: cumReinfectionsBySpecimenDate
-              type: numeric
-              tooltip: Cumulative total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+  #           - label: Cumulative possible reinfections
+  #             value: cumReinfectionsBySpecimenDate
+  #             type: numeric
+  #             tooltip: Cumulative total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesTimeSeries.md
+  #       - heading: About 
+  #         tabType: metadata
+  #         filename: cardMetadata/cases/cardCasesTimeSeries.md
 
 ##############################################################################################################################
 
@@ -453,8 +453,8 @@ cards:
       excluded:
         areaType:
           - overview
-        areaName:
-          - England
+        #areaName:
+        #  - England
 
     fullWidth: true
     abstract: >
