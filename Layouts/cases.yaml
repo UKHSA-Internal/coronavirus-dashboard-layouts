@@ -671,7 +671,7 @@ cards:
               highlight: 
                 from: -4
                 to: 0
-                colour: 8
+                colour: 7
                 label: "Most recent 5 days possible reinfections (incomplete)"
 
         - heading: Cumulative
@@ -700,7 +700,7 @@ cards:
               highlight: 
                 from: -4
                 to: 0
-                colour: 8
+                colour: 7
                 label: "Most recent 5 days possible reinfections (incomplete)"
 
         - heading: Data
