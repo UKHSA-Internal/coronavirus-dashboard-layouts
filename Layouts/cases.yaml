@@ -223,7 +223,7 @@ cards:
 
 ##############################################################################################################################
 
-# England only
+# England and regions only
 
   - heading: Cases by specimen date
     cardType: chart
@@ -231,6 +231,8 @@ cards:
       included:
         areaName:
           - England
+        areaType:
+          - region
 
     fullWidth: true
     abstract: >
@@ -546,7 +548,6 @@ cards:
     locationAware:
       included:
         areaType:
-          - region
           - utla
           - ltla
 
