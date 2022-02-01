@@ -520,7 +520,7 @@ cards:
             type: numeric
             tooltip: Daily number of new people tested positive by date the sample was taken from the person
 
-          - label: Cumulative cases
+          - label: Total cases
             value: cumCasesBySpecimenDate
             type: numeric
             tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
@@ -611,17 +611,17 @@ cards:
               type: numeric
               tooltip: Daily number of new people tested positive by date the sample was taken from the person
 
-            - label: Cumulative first episodes
+            - label: Total first episodes
               value: cumFirstEpisodesBySpecimenDate
               type: numeric
               tooltip: Cumulative total number of new people tested positive for their first episode by date the sample was taken from the person              
 
-            - label: Cumulative possible reinfections
+            - label: Total possible reinfections
               value: cumReinfectionsBySpecimenDate
               type: numeric
               tooltip: Cumulative total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
 
-            - label: Cumulative cases
+            - label: Total cases
               value: cumCasesBySpecimenDate
               type: numeric
               tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
@@ -1081,7 +1081,7 @@ cards:
             type: numeric
             tooltip: Daily number of new people tested positive by date reported
 
-          - label: Cumulative cases
+          - label: Total cases
             value: cumCasesByPublishDate
             type: numeric
             tooltip: Cumulative total number of people tested positive by date reported
@@ -1308,7 +1308,7 @@ cards:
               type: numeric
               tooltip: Daily number of new people tested positive by date reported
 
-            - label: Cumulative cases
+            - label: Total cases
               value: cumCasesByPublishDate
               type: numeric
               tooltip: Cumulative total number of people tested positive by date reported
@@ -1318,7 +1318,7 @@ cards:
               type: numeric
               tooltip: Daily number of new people tested by date reported
 
-            - label: Cumulative people tested
+            - label: Total people tested
               value: cumPeopleTestedByPublishDate
               type: numeric
               tooltip: Cumulative total number of people tested by date reported
