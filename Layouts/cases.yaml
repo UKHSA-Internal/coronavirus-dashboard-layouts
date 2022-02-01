@@ -541,7 +541,7 @@ cards:
 
 ##############################################################################################################################
 
-# not shown for UK and nations (have separate cards)
+# not shown for UK and nations and regions (have separate cards)
 
   - heading: Cases by specimen date
     cardType: chart
@@ -634,7 +634,7 @@ cards:
     fullWidth: true
     abstract: >
       Number of cases, by episode of infection and specimen date. 
-      Data for the last 5 days are incomplete. 
+      Data for the last 5 days, highlighted in grey, are incomplete. 
 
     download:
       - newCasesBySpecimenDate
@@ -656,6 +656,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 6
+                label: "Most recent 5 days first episodes (incomplete)"
 
             - label: Number of possible reinfections
               value: newReinfectionsBySpecimenDate
@@ -663,6 +668,11 @@ cards:
               type: bar
               colour: 3
               rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 8
+                label: "Most recent 5 days possible reinfections (incomplete)"
 
         - heading: Cumulative
           tabType: chart
@@ -675,6 +685,11 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 6
+                label: "Most recent 5 days first episodes (incomplete)"
 
             - label: Number of possible reinfections
               value: cumReinfectionsBySpecimenDate
@@ -682,6 +697,11 @@ cards:
               type: bar
               colour: 3
               rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 8
+                label: "Most recent 5 days possible reinfections (incomplete)"
 
         - heading: Data
           tabType: table
