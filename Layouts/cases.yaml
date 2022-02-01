@@ -659,7 +659,7 @@ cards:
               highlight: 
                 from: -4
                 to: 0
-                colour: 6
+                colour: 7
                 label: "Most recent 5 days first episodes (incomplete)"
 
             - label: Number of possible reinfections
@@ -671,7 +671,7 @@ cards:
               highlight: 
                 from: -4
                 to: 0
-                colour: 7
+                colour: 6
                 label: "Most recent 5 days possible reinfections (incomplete)"
 
         - heading: Cumulative
@@ -688,7 +688,7 @@ cards:
               highlight: 
                 from: -4
                 to: 0
-                colour: 6
+                colour: 7
                 label: "Most recent 5 days first episodes (incomplete)"
 
             - label: Number of possible reinfections
@@ -700,7 +700,7 @@ cards:
               highlight: 
                 from: -4
                 to: 0
-                colour: 7
+                colour: 6
                 label: "Most recent 5 days possible reinfections (incomplete)"
 
         - heading: Data
