@@ -5,11 +5,11 @@ headlineNumbers:
 
       - label: Daily
         value: newVirusTestsByPublishDate
-        tooltip: Daily number of new virus tests conducted on {date}
+        tooltip: Daily number of new virus tests reported on {date}
 
       - label: Total
         value: cumVirusTestsByPublishDate
-        tooltip: Cumulative total number of virus tests conducted up to {date}
+        tooltip: Cumulative total number of virus tests reported up to {date}
 
   - caption: PCR testing capacity
     valueItems:
@@ -25,7 +25,7 @@ cards:
 
 # Only shown for UK
 
-  - heading: Virus tests conducted
+  - heading: Virus tests reported
     cardType: chart
     locationAware:
       included: 
@@ -60,16 +60,16 @@ cards:
         tabType: chart
         barType: normal
         fields:
-          - label: Virus tests conducted
+          - label: Virus tests reported
             value: newVirusTestsByPublishDate
-            tooltip: Daily number of virus tests conducted on {date}
+            tooltip: Daily number of virus tests reported on {date}
             type: bar
             colour: 0
             rollingAverage: false
 
-          - label: Virus tests conducted (7-day average)
+          - label: Virus tests reported (7-day average)
             value: newVirusTestsByPublishDate
-            tooltip: 7 day rolling average of the daily number of virus tests conducted on {date}
+            tooltip: 7 day rolling average of the daily number of virus tests reported on {date}
             type: line
             colour: 3
             fill: false
@@ -81,9 +81,9 @@ cards:
         tabType: chart
         barType: normal
         fields:
-          - label: Virus tests conducted
+          - label: Virus tests reported
             value: cumVirusTestsByPublishDate
-            tooltip: Cumulative number of virus tests conducted up to {date}
+            tooltip: Cumulative number of virus tests reported up to {date}
             type: bar
             colour: 0
             rollingAverage: false
@@ -96,15 +96,15 @@ cards:
             type: date
             tooltip: Date
 
-          - label: Daily virus tests conducted
+          - label: Daily virus tests reported
             value: newVirusTestsByPublishDate
             type: numeric
-            tooltip: Daily number of virus tests conducted on {date}
+            tooltip: Daily number of virus tests reported on {date}
 
-          - label: Cumulative virus tests conducted
+          - label: Cumulative virus tests reported
             value: cumVirusTestsByPublishDate
             type: numeric
-            tooltip: Cumulative number of virus tests conducted up to {date}
+            tooltip: Cumulative number of virus tests reported up to {date}
 
       - heading: About 
         tabType: metadata
@@ -500,7 +500,7 @@ cards:
 
   # Only shown for and within England
 
-  - heading: Virus tests conducted
+  - heading: Virus tests reported
     cardType: chart
     locationAware:
       included: 
@@ -541,9 +541,9 @@ cards:
           tabType: chart
           barType: normal
           fields:
-            - label: Virus tests conducted
+            - label: Virus tests reported
               value: newVirusTestsBySpecimenDate
-              tooltip: Daily number of virus tests conducted
+              tooltip: Daily number of virus tests reported
               type: bar
               colour: 0
               rollingAverage: false
@@ -553,9 +553,9 @@ cards:
                 colour: 6
                 label: "Most recent days (incomplete)"
 
-            - label: Virus tests conducted (7-day average)
+            - label: Virus tests reported (7-day average)
               value: newVirusTestsBySpecimenDate
-              tooltip: 7 day rolling average of the daily number of virus tests conducted on {date}
+              tooltip: 7 day rolling average of the daily number of virus tests reported on {date}
               type: line
               colour: 3
               fill: false
@@ -567,9 +567,9 @@ cards:
           tabType: chart
           barType: normal
           fields:
-            - label: Virus tests conducted
+            - label: Virus tests reported
               value: cumVirusTestsBySpecimenDate
-              tooltip: Cumulative number of virus tests conducted
+              tooltip: Cumulative number of virus tests reported
               type: bar
               colour: 0
               rollingAverage: false
@@ -587,15 +587,15 @@ cards:
               type: date
               tooltip: Date
 
-            - label: Daily virus tests conducted
+            - label: Daily virus tests reported
               value: newVirusTestsBySpecimenDate
               type: numeric
-              tooltip: Daily number of virus conducted up to {date}
+              tooltip: Daily number of virus reported up to {date}
 
-            - label: Total virus tests conducted
+            - label: Total virus tests reported
               value: cumVirusTestsBySpecimenDate
               type: numeric
-              tooltip: Total number of virus tests conducted up to {date}
+              tooltip: Total number of virus tests reported up to {date}
            
         - heading: About 
           tabType: metadata
@@ -620,9 +620,9 @@ cards:
                 colour: 6
                 label: "Most recent days (lab-based, incomplete)"
 
-            - label: Rapid lateral flow tests conducted
+            - label: Rapid lateral flow tests reported
               value: newLFDTestsBySpecimenDate
-              tooltip: Daily number of lateral flow tests conducted
+              tooltip: Daily number of lateral flow tests reported
               type: bar
               colour: 3
               rollingAverage: false
@@ -645,9 +645,9 @@ cards:
                 colour: 6
                 label: "Most recent days (lab-based, incomplete)"
 
-            - label: Rapid lateral flow tests conducted
+            - label: Rapid lateral flow tests reported
               value: cumLFDTestsBySpecimenDate
-              tooltip: Cumulative number of rapid lateral flow tests conducted
+              tooltip: Cumulative number of rapid lateral flow tests reported
               type: bar
               colour: 3
               rollingAverage: false
@@ -667,10 +667,10 @@ cards:
               type: numeric
               tooltip: Daily number of lab-based virus conducted up to {date}
 
-            - label: Daily lateral flow tests conducted
+            - label: Daily lateral flow tests reported
               value: newLFDTestsBySpecimenDate
               type: numeric
-              tooltip: Daily number of lateral flow tests conducted up to {date}
+              tooltip: Daily number of lateral flow tests reported up to {date}
 
         - heading: Cumulative data
           tabType: table
@@ -685,10 +685,10 @@ cards:
               type: numeric
               tooltip: Total number of lab-based virus tests conducted up to {date}
 
-            - label: Rapid lateral flow tests conducted
+            - label: Rapid lateral flow tests reported
               value: cumLFDTestsBySpecimenDate
               type: numeric
-              tooltip: Total number of lateral flow tests conducted up to {date}
+              tooltip: Total number of lateral flow tests reported up to {date}
             
         - heading: About 
           tabType: metadata
@@ -792,7 +792,7 @@ cards:
 
 # Only shown for England
 
-  - heading: Rapid lateral flow tests conducted
+  - heading: Rapid lateral flow tests reported
     cardType: chart
     locationAware:
       included: 
@@ -820,16 +820,16 @@ cards:
         tabType: chart
         barType: normal
         fields:
-          - label: Rapid lateral flow tests conducted
+          - label: Rapid lateral flow tests reported
             value: newLFDTestsBySpecimenDate
-            tooltip: Daily number of lateral flow tests conducted
+            tooltip: Daily number of lateral flow tests reported
             type: bar
             colour: 0
             rollingAverage: false
 
-          - label: Rapid lateral flow tests conducted (7-day average)
+          - label: Rapid lateral flow tests reported (7-day average)
             value: newLFDTestsBySpecimenDate
-            tooltip: 7 day rolling average of the daily number of rapid lateral flow tests conducted on {date}
+            tooltip: 7 day rolling average of the daily number of rapid lateral flow tests reported on {date}
             type: line
             colour: 3
             fill: false
@@ -839,9 +839,9 @@ cards:
         tabType: chart
         barType: normal
         fields:
-          - label: Rapid lateral flow tests conducted
+          - label: Rapid lateral flow tests reported
             value: cumLFDTestsBySpecimenDate
-            tooltip: Cumulative number of rapid lateral flow tests conducted
+            tooltip: Cumulative number of rapid lateral flow tests reported
             type: bar
             colour: 0
             rollingAverage: false
@@ -854,15 +854,15 @@ cards:
             type: date
             tooltip: Date
 
-          - label: Daily lateral flow tests conducted
+          - label: Daily lateral flow tests reported
             value: newLFDTestsBySpecimenDate
             type: numeric
-            tooltip: Daily number of lateral flow tests conducted up to {date}
+            tooltip: Daily number of lateral flow tests reported up to {date}
 
-          - label: Total lateral flow tests conducted
+          - label: Total lateral flow tests reported
             value: cumLFDTestsBySpecimenDate
             type: numeric
-            tooltip: Total number of lateral flow tests conducted up to {date}
+            tooltip: Total number of lateral flow tests reported up to {date}
 
       - heading: About 
         tabType: metadata
@@ -870,7 +870,7 @@ cards:
 
 ##############################################################################################################################
 
-  - heading: Tests conducted by Pillar
+  - heading: Tests reported by Pillar
     cardType: chart
     fullWidth: true
     abstract: >
@@ -907,7 +907,7 @@ cards:
 
           - label: Pillar 2 (UK Government testing programme)
             value: newPillarTwoTestsByPublishDate
-            tooltip: Daily number of COVID-19 tests conducted by the UK Government testing programme on {date}
+            tooltip: Daily number of COVID-19 tests reported by the UK Government testing programme on {date}
             type: bar
             colour: 3
             rollingAverage: false
@@ -939,7 +939,7 @@ cards:
 
           - label: Pillar 2 (UK Government testing programme)
             value: cumPillarTwoTestsByPublishDate
-            tooltip: Cumulative total number of COVID-19 tests conducted by the UK Government testing programme up to {date}
+            tooltip: Cumulative total number of COVID-19 tests reported by the UK Government testing programme up to {date}
             type: bar
             colour: 3
             rollingAverage: false
@@ -974,7 +974,7 @@ cards:
           - label: Pillar 2
             value: newPillarTwoTestsByPublishDate
             type: numeric
-            tooltip: Daily number of COVID-19 tests conducted by the UK Government testing programme on {date}
+            tooltip: Daily number of COVID-19 tests reported by the UK Government testing programme on {date}
 
           - label: Pillar 3
             value: newPillarThreeTestsByPublishDate
@@ -1007,7 +1007,7 @@ cards:
           - label: Pillar 2
             value: cumPillarTwoTestsByPublishDate
             type: numeric
-            tooltip: Cumulative total number of COVID-19 tests conducted by the UK Government testing programme up to {date}
+            tooltip: Cumulative total number of COVID-19 tests reported by the UK Government testing programme up to {date}
 
           - label: Pillar 3
             value: cumPillarThreeTestsByPublishDate
