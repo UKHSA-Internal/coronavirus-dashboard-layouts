@@ -223,7 +223,7 @@ cards:
 
 ##############################################################################################################################
 
-# England and regions only
+# England, Northern Ireland and regions only
 
   - heading: Cases by specimen date
     cardType: chart
@@ -231,6 +231,7 @@ cards:
       included:
         areaName:
           - England
+          - Northern Ireland
         areaType:
           - region
 
@@ -455,7 +456,7 @@ cards:
 
 ##############################################################################################################################
 
-# not shown for UK, England and lower geographies (have separate cards)
+# not shown for UK, England, Northern Ireland and lower geographies (have separate cards)
 
   - heading: Cases by specimen date
     cardType: chart
@@ -463,8 +464,7 @@ cards:
       included:
         areaName:
         - Scotland
-        - Wales
-        - Northern Ireland
+        - Wales        
 
     fullWidth: true
     abstract: >
