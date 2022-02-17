@@ -837,13 +837,14 @@ cards:
 
 ##############################################################################################################################
 
-  # Only shown for England
+  # Shown for England & Scotland
   - heading: Cases by test type and specimen date
     cardType: chart
     locationAware:
       included:
         areaName:
           - England
+          - Scotland
         areaType:
           - region
           - utla
