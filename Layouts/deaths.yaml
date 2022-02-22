@@ -1885,7 +1885,7 @@ cards:
 
 # NOTE: similar chart for England defined as separate card above - was previously used as has report date radio button
 
-  - heading: Deaths within 60 days of positive test
+  - heading: Deaths within 60 days of positive test by date of death
     cardType: chart
     locationAware:
       included:
