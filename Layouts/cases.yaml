@@ -1,9 +1,9 @@
 headlineNumbers:
   - caption: People tested positive
     valueItems:
-      - label: Daily
-        value: newCasesByPublishDate
-        tooltip: Daily number of new cases reported on {date}
+      - label: Last 7 days
+        value: newCasesByPublishDateRollingSum
+        tooltip: Number of new cases reported in the 7 days up to {date}
 
       - label: Total
         value: cumCasesByPublishDate
