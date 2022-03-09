@@ -1,9 +1,9 @@
 headlineNumbers:
   - caption: People tested positive
     valueItems:
-      - label: Last 7 days
-        value: newCasesByPublishDateRollingSum
-        tooltip: Number of new cases reported in the 7 days up to {date}
+      - label: Daily
+        value: newCasesByPublishDate
+        tooltip: Daily number of new cases reported on {date}
 
       - label: Total
         value: cumCasesByPublishDate
@@ -224,6 +224,7 @@ cards:
 ##############################################################################################################################
 
 # England, Northern Ireland and regions only
+# scotland added 9 Mar 2022
 
   - heading: Cases by specimen date
     cardType: chart
@@ -232,6 +233,7 @@ cards:
         areaName:
           - England
           - Northern Ireland
+          - Scotland
         areaType:
           - region
 
@@ -456,14 +458,13 @@ cards:
 
 ##############################################################################################################################
 
-# not shown for UK, England, Northern Ireland and lower geographies (have separate cards)
+# not shown for UK, England, Northern Ireland, Scotland (9 Mar) and lower geographies (have separate cards)
 
   - heading: Cases by specimen date
     cardType: chart
     locationAware:
       included:
         areaName:
-        - Scotland
         - Wales        
 
     fullWidth: true
