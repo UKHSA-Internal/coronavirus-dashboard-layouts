@@ -724,7 +724,7 @@ cards:
           - label: Daily deaths
             value: newDeaths28DaysByPublishDate
             type: numeric
-            tooltip: Daily number of deaths within 28 days of first positive testby date reported
+            tooltip: Daily number of deaths within 28 days of first positive test by date reported
 
           - label: Cumulative deaths
             value: cumDeaths28DaysByPublishDate
@@ -734,6 +734,78 @@ cards:
       - heading: About
         tabType: metadata
         filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
+##############################################################################################################################
+
+# {{ StartDevOnlyBlock }}
+
+  - heading: Daily change in reported deaths with 28 days of positive test by specimen date
+    cardType: chart
+    fullWidth: true
+    locationAware:
+      included:
+        areaName:
+          - England
+        areaType:
+          - region
+
+    abstract: >
+      Daily number of new deaths within 28 days of positive test, broken down to show 
+      the number of these that have been previously reported and the latest daily change, and the 7-day average. 
+      The daily change includes newly reported deaths, plus adjustments to previously reported deaths, which may be negative. 
+
+    download:
+      - newDeaths28DaysByDeathDate
+      - changeInNewDeaths28DaysByDeathDate
+      - previouslyReportedNewDeaths28DaysByDeathDate
+
+    tabs: 
+      - heading: Chart
+        tabType: chart
+        barType: stack
+        fields:
+          - label: Previously reported
+            value: previouslyReportedNewDeaths28DaysByDeathDate
+            tooltip: Number of deaths within 28 days of first positive test as reported on {date-1} by the date the death occurred
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+          - label: Change in reported deaths
+            value: changeInNewDeaths28DaysByDeathDate
+            tooltip: Change in the number of deaths within 28 days of first positive test between {date} and {date-1} by the date the death occurred
+            type: bar
+            colour: 9
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date of death
+            value: date
+            type: date
+            tooltip: Date the death occurred
+
+          - label: Previously reported deaths
+            value: previouslyReportedNewDeaths28DaysByDeathDate
+            type: numeric
+            tooltip: Number of deaths within 28 days of first positive test as reported on {date-1} by the date the death occurred
+
+          - label: Change in reported deaths
+            value: changeInNewDeaths28DaysByDeathDate
+            type: numeric
+            tooltip: Change in the number of deaths within 28 days of first positive test between {date} and {date-1} by the by the date the death occurred
+
+          - label: Total daily deaths
+            value: newDeaths28DaysByDeathDate
+            type: numeric
+            tooltip: Number of deaths within 28 days of first positive test as reported on {date} by the date the death occurred
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/cases/cardChangeInCasesTimeSeries.md
+
+# {{ EndDevOnlyBlock }}
+
 ##############################################################################################################################
 
 # only shown for UK
