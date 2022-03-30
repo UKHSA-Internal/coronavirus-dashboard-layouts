@@ -738,7 +738,7 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 
-  - heading: Daily change in reported deaths with 28 days of positive test by specimen date
+  - heading: Daily change in reported deaths with 28 days of positive test by date of death
     cardType: chart
     fullWidth: true
     locationAware:
