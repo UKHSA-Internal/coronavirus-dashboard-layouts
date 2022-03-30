@@ -736,8 +736,6 @@ cards:
         filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
-
   - heading: Daily change in reported deaths with 28 days of positive test by date of death
     cardType: chart
     fullWidth: true
@@ -803,8 +801,6 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/cases/cardChangeInCasesTimeSeries.md
-
-# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
