@@ -763,6 +763,8 @@ cards:
     
     download:
       - newCasesBySpecimenDateAgeDemographics
+      - newFirstEpisodesBySpecimenDateAgeDemographics
+      - newReinfectionsBySpecimenDateAgeDemographics
 
     options:
       type: radio
