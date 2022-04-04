@@ -763,78 +763,238 @@ cards:
     
     download:
       - newCasesBySpecimenDateAgeDemographics
+      - newFirstEpisodesBySpecimenDateAgeDemographics
+      - newReinfectionsBySpecimenDateAgeDemographics
+
+    options:
+      type: radio
+      heading: null
+      choices:
+        - All
+        - First episodes
+        - Reinfections
+
+    All:
     
-    tabs:
-      - heading: Heatmap
-        tabType: heatmap
-        fields:
-          - label: Age demographics
-            value: newCasesBySpecimenDateAgeDemographics
-            amplitude: rollingRate
-            amplitudeLabel: Rolling rate
-            metricLabel: Age group
-            parameter: age
-            metrics:
-            - label: 0 to 4
-              value: "00_04"
+      tabs:
+        - heading: Heatmap
+          tabType: heatmap
+          fields:
+            - label: Age demographics
+              value: newCasesBySpecimenDateAgeDemographics
+              amplitude: rollingRate
+              amplitudeLabel: Rolling rate
+              metricLabel: Age group
+              parameter: age
+              metrics:
+              - label: 0 to 4
+                value: "00_04"
 
-            - label: 5 to 9
-              value: "05_09"
+              - label: 5 to 9
+                value: "05_09"
               
-            - label: 10 to 14
-              value: "10_14"
+              - label: 10 to 14
+                value: "10_14"
 
-            - label: 15 to 19
-              value: "15_19"
+              - label: 15 to 19
+                value: "15_19"
 
-            - label: 20 to 24
-              value: "20_24"
+              - label: 20 to 24
+                value: "20_24"
 
-            - label: 25 to 29
-              value: "25_29"
+              - label: 25 to 29
+                value: "25_29"
 
-            - label: 30 to 34
-              value: "30_34"
+              - label: 30 to 34
+                value: "30_34"
 
-            - label: 35 to 39
-              value: "35_39"
+              - label: 35 to 39
+                value: "35_39"
 
-            - label: 40 to 44
-              value: "40_44"
+              - label: 40 to 44
+                value: "40_44"
 
-            - label: 45 to 49
-              value: "45_49"
+              - label: 45 to 49
+                value: "45_49"
 
-            - label: 50 to 54
-              value: "50_54"
+              - label: 50 to 54
+                value: "50_54"
 
-            - label: 55 to 59
-              value: "55_59"
+              - label: 55 to 59
+                value: "55_59"
 
-            - label: 60 to 64
-              value: "60_64"
+              - label: 60 to 64
+                value: "60_64"
 
-            - label: 65 to 69
-              value: "65_69"
+              - label: 65 to 69
+                value: "65_69"
 
-            - label: 70 to 74
-              value: "70_74"
+              - label: 70 to 74
+                value: "70_74"
 
-            - label: 75 to 79
-              value: "75_79"
+              - label: 75 to 79
+                value: "75_79"
 
-            - label: 80 to 84
-              value: "80_84"
+              - label: 80 to 84
+                value: "80_84"
 
-            - label: 85 to 89
-              value: "85_89"
+              - label: 85 to 89
+                value: "85_89"
 
-            - label: 90+
-              value: "90+"
+              - label: 90+
+                value: "90+"
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/cases/cardRatesByFiveYearAge.md
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardRatesByFiveYearAge.md
+
+    First episodes:
+    
+      tabs:
+        - heading: Heatmap
+          tabType: heatmap
+          fields:
+            - label: Age demographics
+              value: newFirstEpisodesBySpecimenDateAgeDemographics
+              amplitude: rollingRate
+              amplitudeLabel: Rolling rate
+              metricLabel: Age group
+              parameter: age
+              metrics:
+              - label: 0 to 4
+                value: "00_04"
+
+              - label: 5 to 9
+                value: "05_09"
+              
+              - label: 10 to 14
+                value: "10_14"
+
+              - label: 15 to 19
+                value: "15_19"
+
+              - label: 20 to 24
+                value: "20_24"
+
+              - label: 25 to 29
+                value: "25_29"
+
+              - label: 30 to 34
+                value: "30_34"
+
+              - label: 35 to 39
+                value: "35_39"
+
+              - label: 40 to 44
+                value: "40_44"
+
+              - label: 45 to 49
+                value: "45_49"
+
+              - label: 50 to 54
+                value: "50_54"
+
+              - label: 55 to 59
+                value: "55_59"
+
+              - label: 60 to 64
+                value: "60_64"
+
+              - label: 65 to 69
+                value: "65_69"
+
+              - label: 70 to 74
+                value: "70_74"
+
+              - label: 75 to 79
+                value: "75_79"
+
+              - label: 80 to 84
+                value: "80_84"
+
+              - label: 85 to 89
+                value: "85_89"
+
+              - label: 90+
+                value: "90+"
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardRatesByFiveYearAge.md
+
+    Reinfections:
+    
+      tabs:
+        - heading: Heatmap
+          tabType: heatmap
+          fields:
+            - label: Age demographics
+              value: newReinfectionsBySpecimenDateAgeDemographics
+              amplitude: rollingRate
+              amplitudeLabel: Rolling rate
+              metricLabel: Age group
+              parameter: age
+              metrics:
+              - label: 0 to 4
+                value: "00_04"
+
+              - label: 5 to 9
+                value: "05_09"
+              
+              - label: 10 to 14
+                value: "10_14"
+
+              - label: 15 to 19
+                value: "15_19"
+
+              - label: 20 to 24
+                value: "20_24"
+
+              - label: 25 to 29
+                value: "25_29"
+
+              - label: 30 to 34
+                value: "30_34"
+
+              - label: 35 to 39
+                value: "35_39"
+
+              - label: 40 to 44
+                value: "40_44"
+
+              - label: 45 to 49
+                value: "45_49"
+
+              - label: 50 to 54
+                value: "50_54"
+
+              - label: 55 to 59
+                value: "55_59"
+
+              - label: 60 to 64
+                value: "60_64"
+
+              - label: 65 to 69
+                value: "65_69"
+
+              - label: 70 to 74
+                value: "70_74"
+
+              - label: 75 to 79
+                value: "75_79"
+
+              - label: 80 to 84
+                value: "80_84"
+
+              - label: 85 to 89
+                value: "85_89"
+
+              - label: 90+
+                value: "90+"
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardRatesByFiveYearAge.md          
 
 ##############################################################################################################################
 
