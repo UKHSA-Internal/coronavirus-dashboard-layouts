@@ -2277,6 +2277,10 @@ cards:
               parameter: age
               metrics:
               #Both Eng and Scot
+              - label: 5 to 11
+                value: "05_11"
+
+              #Both Eng and Scot
               - label: 12 to 15
                 value: "12_15"
 
@@ -2378,6 +2382,10 @@ cards:
               parameter: age
               metrics:
               #Both Eng and Scot
+              - label: 5 to 11
+                value: "05_11"
+
+              #Both Eng and Scot
               - label: 12 to 15
                 value: "12_15"
 
@@ -2478,6 +2486,10 @@ cards:
               metricLabel: Age group
               parameter: age
               metrics:
+              #Both Eng and Scot
+              - label: 5 to 11
+                value: "05_11"
+
               #Both Eng and Scot
               - label: 12 to 15
                 value: "12_15"
