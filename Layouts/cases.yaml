@@ -1007,7 +1007,7 @@ cards:
     abstract: >
       Number of cases. Cases are shown by testing programme and by specimen date. 
       The government provides testing through different programmes, also known as pillars.
-      The prgrammes shown are NHS/UKHSA testing (mainly Pillar 1) and mass community testing (Pillar 2). 
+      The programmes shown are NHS/UKHSA testing (mainly Pillar 1) and mass community testing (Pillar 2). 
       Data for the last 5 days, highlighted in grey, are incomplete. 
 
     download:
