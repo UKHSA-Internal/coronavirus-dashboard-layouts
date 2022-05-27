@@ -2,9 +2,9 @@ headlineNumbers:
 
   - caption: Deaths within 28 days of positive test
     valueItems:
-      - label: Last 7 days
-        value: newDeaths28DaysByPublishDateRollingSum
-        tooltip: Number of deaths within 28 days of being identified as a COVID-19 case by a positive test, reported in the 7 days up to {date}
+      #- label: Last 7 days
+      #  value: newDeaths28DaysByPublishDateRollingSum
+      #  tooltip: Number of deaths within 28 days of being identified as a COVID-19 case by a positive test, reported in the 7 days up to {date}
 
       - label: Total
         value: cumDeaths28DaysByPublishDate

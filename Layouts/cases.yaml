@@ -1,9 +1,9 @@
 headlineNumbers:
   - caption: People tested positive
     valueItems:
-      - label: Last 7 days
-        value: newCasesByPublishDateRollingSum
-        tooltip: Number of new cases reported in the 7 days up to {date}
+      #- label: Last 7 days
+      #  value: newCasesByPublishDateRollingSum
+      #  tooltip: Number of new cases reported in the 7 days up to {date}
 
       - label: Total
         value: cumCasesByPublishDate
@@ -223,19 +223,18 @@ cards:
 
 ##############################################################################################################################
 
-# England, Northern Ireland and regions only
+# nations and regions, LAs only
 # scotland added 9 Mar 2022
 
   - heading: Cases by specimen date
     cardType: chart
     locationAware:
       included:
-        areaName:
-          - England
-          - Northern Ireland
-          - Scotland
         areaType:
+          - nation
           - region
+          - utla
+          - ltla
 
     fullWidth: true
     abstract: >
@@ -455,175 +454,6 @@ cards:
         - heading: About 
           tabType: metadata
           filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-##############################################################################################################################
-
-# not shown for UK, England, Northern Ireland, Scotland (9 Mar) and lower geographies (have separate cards)
-
-  - heading: Cases by specimen date
-    cardType: chart
-    locationAware:
-      included:
-        areaName:
-        - Wales        
-
-    fullWidth: true
-    abstract: >
-      Number of cases, by specimen date. 
-      Data for the last 5 days, highlighted in grey, are incomplete. 
-
-    download:
-      - newCasesBySpecimenDate
-      - cumCasesBySpecimenDate
-
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: overlay
-        fields:
-          - label: Number of cases
-            value: newCasesBySpecimenDate
-            tooltip: Daily number of new people tested positive by date the sample was taken from the person
-            type: bar
-            colour: 0
-            rollingAverage: false
-            highlight: 
-              from: -4
-              to: 0
-              colour: 6
-              label: "Most recent 5 days (incomplete)"
-
-          - label: Cases (7-day average)
-            value: newCasesBySpecimenDate
-            tooltip: 7-day rolling average of the daily number of people tested positive by specimen date
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 4 #no of days to exclude for incomplete data
-
-      - heading: Cumulative
-        tabType: chart
-        fields:
-          - label: Number of cases
-            value: cumCasesBySpecimenDate
-            tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
-            type: bar
-            colour: 0
-            rollingAverage: false
-            highlight: 
-              from: -4
-              to: 0
-              colour: 6
-              label: "Most recent 5 days (incomplete)"
-
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Specimen date
-            value: date
-            type: date
-            tooltip: Date the sample was taken from the person
-
-          - label: Daily cases
-            value: newCasesBySpecimenDate
-            type: numeric
-            tooltip: Daily number of new people tested positive by date the sample was taken from the person
-
-          - label: Total cases
-            value: cumCasesBySpecimenDate
-            type: numeric
-            tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-##############################################################################################################################
-
-# not shown for UK and nations and regions (have separate cards)
-
-  - heading: Cases by specimen date
-    cardType: chart
-    locationAware:
-      included:
-        areaType:
-          - utla
-          - ltla
-
-    fullWidth: true
-    abstract: >
-      Number of cases, by specimen date. 
-      Data for the last 5 days, highlighted in grey, are incomplete. 
-
-    download:
-      - newCasesBySpecimenDate
-      - cumCasesBySpecimenDate
-
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: overlay
-        fields:
-          - label: Number of cases
-            value: newCasesBySpecimenDate
-            tooltip: Daily number of new people tested positive by date the sample was taken from the person
-            type: bar
-            colour: 0
-            rollingAverage: false
-            highlight: 
-              from: -4
-              to: 0
-              colour: 6
-              label: "Most recent 5 days (incomplete)"
-
-          - label: Cases (7-day average)
-            value: newCasesBySpecimenDate
-            tooltip: 7-day rolling average of the daily number of people tested positive by specimen date
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 4 #no of days to exclude for incomplete data
-
-      - heading: Cumulative
-        tabType: chart
-        fields:
-          - label: Number of cases
-            value: cumCasesBySpecimenDate
-            tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
-            type: bar
-            colour: 0
-            rollingAverage: false
-            highlight: 
-              from: -4
-              to: 0
-              colour: 6
-              label: "Most recent 5 days (incomplete)"
-
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Specimen date
-            value: date
-            type: date
-            tooltip: Date the sample was taken from the person
-
-          - label: Daily cases
-            value: newCasesBySpecimenDate
-            type: numeric
-            tooltip: Daily number of new people tested positive by date the sample was taken from the person
-
-          - label: Total cases
-            value: cumCasesBySpecimenDate
-            type: numeric
-            tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesTimeSeries.md
 
 ##############################################################################################################################
 
@@ -998,6 +828,130 @@ cards:
 
 ##############################################################################################################################
 
+# Cases by testing programme
+ 
+  - heading: Cases by testing programme and specimen date
+    cardType: chart
+
+    fullWidth: true
+    abstract: >
+      Number of cases. Cases are shown by testing programme and by specimen date. 
+      The government provides testing through different programmes, also known as pillars.
+      The programmes shown are NHS/UKHSA testing (mainly Pillar 1) and mass community testing (Pillar 2). 
+      Data for the last 5 days, highlighted in grey, are incomplete. 
+
+    download:
+      - newCasesPillarOneBySpecimenDate
+      - cumCasesPillarOneBySpecimenDate
+      - newCasesPillarTwoBySpecimenDate
+      - cumCasesPillarTwoBySpecimenDate
+      - newCasesBySpecimenDate
+      - cumCasesBySpecimenDate
+
+    tabs:
+        - heading: Daily
+          tabType: chart
+          barType: stack
+
+          fields:
+            - label: Number of cases from NHS/UKHSA testing
+              value: newCasesPillarOneBySpecimenDate
+              tooltip: Daily number of new people tested positive via NHS/UKHSA testing by specimen date
+              type: bar
+              colour: 0
+              rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 7
+                label: "Most recent 5 days NHS/UKHSA testing (incomplete)"
+
+            - label: Number of cases from mass community testing
+              value: newCasesPillarTwoBySpecimenDate
+              tooltip: Daily number of new people tested positive via mass community testing by specimen date
+              type: bar
+              colour: 3
+              rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 6
+                label: "Most recent 5 days mass community testing (incomplete)"
+
+        - heading: Cumulative
+          tabType: chart
+          barType: stack
+
+          fields:
+            - label: Number of cases from NHS/UKHSA testing
+              value: cumCasesPillarOneBySpecimenDate
+              tooltip: Cumulative total number of new people tested positive via NHS/UKHSA testing by specimen date
+              type: bar
+              colour: 0
+              rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 7
+                label: "Most recent 5 days NHS/UKHSA testing (incomplete)"
+
+            - label: Number of cases from mass community testing
+              value: cumCasesPillarTwoBySpecimenDate
+              tooltip: Cumulative total number of new people tested positive via mass community testing by specimen date
+              type: bar
+              colour: 3
+              rollingAverage: false
+              highlight: 
+                from: -4
+                to: 0
+                colour: 6
+                label: "Most recent 5 days mass community testing (incomplete)"
+
+        - heading: Data
+          tabType: table
+          fields:
+            - label: Specimen date
+              value: date
+              type: date
+              tooltip: Date the sample was taken from the person
+
+            - label: Daily cases from NHS/UKHSA testing
+              value: newCasesPillarOneBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people tested positive via NHS/UKHSA testing by specimen date
+
+            - label: Daily cases from mass community testing
+              value: newCasesPillarTwoBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people tested positive via mass community testing by specimen date
+
+            - label: Daily cases
+              value: newCasesBySpecimenDate
+              type: numeric
+              tooltip: Daily number of new people tested positive by date the sample was taken from the person
+
+            - label: Total cases from NHS/UKHSA testing
+              value: cumCasesPillarOneBySpecimenDate
+              type: numeric
+              tooltip: Cumulative total number of new people tested positive via NHS/UKHSA testing by specimen date             
+
+            - label: Total cases from mass community testing
+              value: cumCasesPillarTwoBySpecimenDate
+              type: numeric
+              tooltip: Cumulative total number of new people tested positive via mass community testing by specimen date
+
+            - label: Total cases
+              value: cumCasesBySpecimenDate
+              type: numeric
+              tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
+
+        - heading: About 
+          tabType: metadata
+          filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+############################################################################################################################## 
+
+
   # Shown for England & Scotland
   - heading: Cases by test type and specimen date
     cardType: chart
@@ -1299,76 +1253,6 @@ cards:
 
 ##############################################################################################################################
 
-# Not shown for UK (has separate date reported card for UK with different abstract) or sub-national (no data)
-
-  - heading: Cases by date reported
-    cardType: chart
-    locationAware:
-      included:
-        areaType:
-          - nation
-
-    fullWidth: true
-    abstract: >
-      Number of cases by date reported.  
-
-    download:
-      - newCasesByPublishDate
-      - cumCasesByPublishDate
-
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: overlay
-        fields:
-          - label: Number of cases
-            value: newCasesByPublishDate
-            tooltip: Daily number of new people tested positive by date reported
-            type: bar
-            colour: 0
-
-          - label: Cases (7-day average)
-            value: newCasesByPublishDate
-            tooltip: 7-day rolling average of the daily number of new people tested positive reported
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage: true
-
-      - heading: Cumulative
-        tabType: chart
-        fields:
-          - label: Number of cases
-            value: cumCasesByPublishDate
-            tooltip: Cumulative total number of people tested positive by date reported
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-      - heading: Data
-        tabType: table
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported on coronavirus.data.gov.uk
-
-          - label: Daily cases
-            value: newCasesByPublishDate
-            type: numeric
-            tooltip: Daily number of new people tested positive by date reported
-
-          - label: Total cases
-            value: cumCasesByPublishDate
-            type: numeric
-            tooltip: Cumulative total number of people tested positive by date reported
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesByReportDateTimeSeries.md
-
-##############################################################################################################################
-
   - heading: Daily change in reported cases by specimen date
     cardType: chart
     fullWidth: true
@@ -1446,6 +1330,76 @@ cards:
       - heading: About 
         tabType: metadata
         filename: cardMetadata/cases/cardChangeInCasesTimeSeries.md
+
+##############################################################################################################################
+
+# Not shown for UK (has separate date reported card for UK with different abstract) or sub-national (no data)
+
+  - heading: Cases by date reported
+    cardType: chart
+    locationAware:
+      included:
+        areaType:
+          - nation
+
+    fullWidth: true
+    abstract: >
+      Number of cases by date reported.  
+
+    download:
+      - newCasesByPublishDate
+      - cumCasesByPublishDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: overlay
+        fields:
+          - label: Number of cases
+            value: newCasesByPublishDate
+            tooltip: Daily number of new people tested positive by date reported
+            type: bar
+            colour: 0
+
+          - label: Cases (7-day average)
+            value: newCasesByPublishDate
+            tooltip: 7-day rolling average of the daily number of new people tested positive reported
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage: true
+
+      - heading: Cumulative
+        tabType: chart
+        fields:
+          - label: Number of cases
+            value: cumCasesByPublishDate
+            tooltip: Cumulative total number of people tested positive by date reported
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+      - heading: Data
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported on coronavirus.data.gov.uk
+
+          - label: Daily cases
+            value: newCasesByPublishDate
+            type: numeric
+            tooltip: Daily number of new people tested positive by date reported
+
+          - label: Total cases
+            value: cumCasesByPublishDate
+            type: numeric
+            tooltip: Cumulative total number of people tested positive by date reported
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/cases/cardCasesByReportDateTimeSeries.md
 
 ##############################################################################################################################
 
