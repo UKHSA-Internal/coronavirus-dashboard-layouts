@@ -235,6 +235,7 @@ cards:
           - region
           - utla
           - ltla
+          - overview
 
     fullWidth: true
     abstract: >
