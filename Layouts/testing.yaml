@@ -548,7 +548,7 @@ cards:
               colour: 0
               rollingAverage: false
               highlight: 
-                from: -4
+                from: -11
                 to: 0
                 colour: 6
                 label: "Most recent days (incomplete)"
@@ -561,7 +561,7 @@ cards:
               fill: false
               rollingAverage: 
                 window: 7
-                clipEnd: 4 #no of days to exclude for incomplete data
+                clipEnd: 11 #no of days to exclude for incomplete data
           
         - heading: Cumulative
           tabType: chart
@@ -574,7 +574,7 @@ cards:
               colour: 0
               rollingAverage: false
               highlight: 
-                from: -4
+                from: -11
                 to: 0
                 colour: 6
                 label: "Most recent days (incomplete)"
@@ -615,7 +615,7 @@ cards:
               colour: 0
               rollingAverage: false
               highlight: 
-                from: -4
+                from: -11
                 to: 0
                 colour: 6
                 label: "Most recent days (lab-based, incomplete)"
@@ -640,7 +640,7 @@ cards:
               colour: 0
               rollingAverage: false
               highlight: 
-                from: -4
+                from: -11
                 to: 0
                 colour: 6
                 label: "Most recent days (lab-based, incomplete)"
@@ -734,7 +734,7 @@ cards:
             colour: 0
             rollingAverage: false
             highlight: 
-                from: -4
+                from: -11
                 to: 0
                 colour: 6
                 label: "Most recent days (incomplete)"
@@ -747,7 +747,7 @@ cards:
             fill: false
             rollingAverage: 
               window: 7
-              clipEnd: 4 #no of days to exclude for incomplete data
+              clipEnd: 11 #no of days to exclude for incomplete data
 
       - heading: Cumulative
         tabType: chart
@@ -760,7 +760,7 @@ cards:
             colour: 0
             rollingAverage: false
             highlight: 
-                from: -4
+                from: -11
                 to: 0
                 colour: 6
                 label: "Most recent days (incomplete)"
