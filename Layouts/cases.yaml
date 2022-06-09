@@ -10,11 +10,11 @@ headlineNumbers:
         tooltip: Cumulative total number of cases reported up to {date}
 
       - label: First Episodes
-        value: cumFirstEpisodesByPublishDate
+        value: cumFirstEpisodesBySpecimenDate
         tooltip: Cumulative total number of first episodes reported up to {date}    
 
       - label: Reinfections
-        value: cumReinfectionsByPublishDate
+        value: cumReinfectionsBySpecimenDate
         tooltip: Cumulative total number of possible reinfections reported up to {date}
        
 # {{ StartDevOnlyBlock }}
