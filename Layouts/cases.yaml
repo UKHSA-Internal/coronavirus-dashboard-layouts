@@ -1,5 +1,5 @@
 headlineNumbers:
-  - caption: People tested positive
+  - caption: Cases
     valueItems:
       #- label: Last 7 days
       #  value: newCasesByPublishDateRollingSum
@@ -8,7 +8,15 @@ headlineNumbers:
       - label: Total
         value: cumCasesByPublishDate
         tooltip: Cumulative total number of cases reported up to {date}
-        
+
+      - label: First Episodes
+        value: cumFirstEpisodesByPublishDate
+        tooltip: Cumulative total number of first episodes reported up to {date}    
+
+      - label: Reinfections
+        value: cumReinfectionsByPublishDate
+        tooltip: Cumulative total number of possible reinfections reported up to {date}
+       
 # {{ StartDevOnlyBlock }}
 # People tested not currently being published
 
@@ -51,6 +59,8 @@ specimenDateDemographics60+: &specimenDateDemographics60Plus
 cards:
 
 ##############################################################################################################################
+
+# {{ StartDevOnlyBlock }}
 
 # Only shown for UK
 
@@ -220,6 +230,8 @@ cards:
         - heading: About 
           tabType: metadata
           filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
