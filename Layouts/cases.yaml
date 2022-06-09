@@ -6,16 +6,16 @@ headlineNumbers:
       #  tooltip: Number of new cases reported in the 7 days up to {date}
 
       - label: Total
-        value: cumCasesByPublishDate
-        tooltip: Cumulative total number of cases reported up to {date}
+        value: cumCasesBySpecimenDate
+        tooltip: Cumulative total number of cases with specimen taken up to {date}
 
       - label: First Episodes
         value: cumFirstEpisodesBySpecimenDate
-        tooltip: Cumulative total number of first episodes reported up to {date}    
+        tooltip: Cumulative total number of first episodes with specimen taken up to {date}    
 
       - label: Reinfections
         value: cumReinfectionsBySpecimenDate
-        tooltip: Cumulative total number of possible reinfections reported up to {date}
+        tooltip: Cumulative total number of possible reinfections with specimen taken up to {date}
        
 # {{ StartDevOnlyBlock }}
 # People tested not currently being published
