@@ -20,15 +20,15 @@ headlineNumbers:
 # {{ StartDevOnlyBlock }}
 # People tested not currently being published
 
-  - caption: All people tested (Dev Only)
-    valueItems:
-      - label: Daily
-        value: newPeopleTestedByPublishDate
-        tooltip: Daily number of new people tested reported on {date}
+  # - caption: All people tested (Dev Only)
+  #   valueItems:
+  #     - label: Daily
+  #       value: newPeopleTestedByPublishDate
+  #       tooltip: Daily number of new people tested reported on {date}
 
-      - label: Total
-        value: cumPeopleTestedByPublishDate
-        tooltip: Cumulative total number of people tested reported up to {date}
+  #     - label: Total
+  #       value: cumPeopleTestedByPublishDate
+  #       tooltip: Cumulative total number of people tested reported up to {date}
 
 # {{ EndDevOnlyBlock }}
 
@@ -64,7 +64,7 @@ cards:
 
 # Only shown for UK
 
-  - heading: Cases by specimen date
+  - heading: Cases by specimen date - [DEV ONLY]
     cardType: multiAreaStatic
     locationAware:
       included: 
@@ -1420,156 +1420,156 @@ cards:
 # not live
 # People tested not currently being published
 
-  - heading: People tested (Dev Only)
-    cardType: chart
-    fullWidth: true
-    # Why is this on the Cases page and repeated on the Tested page - just to show cases and tests side by side?  If so maybe card needs different title?
+  # - heading: People tested (Dev Only)
+  #   cardType: chart
+  #   fullWidth: true
+  #   # Why is this on the Cases page and repeated on the Tested page - just to show cases and tests side by side?  If so maybe card needs different title?
 
-    abstract: >
-      Number of people with at least one positive, negative or void COVID-19 test result, either lab-reported or lateral flow device (England only). 
-      Initially only NHS and, in England, UKHSA tests were included but commercial tests have been included from   
-      different dates between 15th June 2020 and 14th July 2020 for each nation.  National data are not directly comparable.
+  #   abstract: >
+  #     Number of people with at least one positive, negative or void COVID-19 test result, either lab-reported or lateral flow device (England only). 
+  #     Initially only NHS and, in England, UKHSA tests were included but commercial tests have been included from   
+  #     different dates between 15th June 2020 and 14th July 2020 for each nation.  National data are not directly comparable.
 
-    download:
-      - newCasesBySpecimenDate
-      - cumCasesBySpecimenDate
-      - newPeopleTestedBySpecimenDate
-      - cumPeopleTestedBySpecimenDate
+  #   download:
+  #     - newCasesBySpecimenDate
+  #     - cumCasesBySpecimenDate
+  #     - newPeopleTestedBySpecimenDate
+  #     - cumPeopleTestedBySpecimenDate
 
-    options:
-      type: radio
-      heading: null
-      choices:
-        - Specimen date
-        - Reporting date
+  #   options:
+  #     type: radio
+  #     heading: null
+  #     choices:
+  #       - Specimen date
+  #       - Reporting date
 
-    Specimen date:
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of people tested
-              value: newPeopleTestedBySpecimenDate
-              tooltip: Daily number of people tested by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
+  #   Specimen date:
+  #     tabs:
+  #       - heading: Daily
+  #         tabType: chart
+  #         barType: overlay
+  #         fields:
+  #           - label: Number of people tested
+  #             value: newPeopleTestedBySpecimenDate
+  #             tooltip: Daily number of people tested by date the sample was taken from the person
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
 
-            - label: People tested (7-day average)
-              value: newPeopleTestedBySpecimenDate
-              tooltip: 7-day rolling average of the daily number of people tested by specimen date
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 3 #no of days to exclude for incomplete data
+  #           - label: People tested (7-day average)
+  #             value: newPeopleTestedBySpecimenDate
+  #             tooltip: 7-day rolling average of the daily number of people tested by specimen date
+  #             type: line
+  #             colour: 3
+  #             fill: false
+  #             rollingAverage:
+  #               window: 7
+  #               clipEnd: 3 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
-          tabType: chart
-          fields:
-            - label: Number of people tested
-              value: cumPeopleTestedBySpecimenDate
-              tooltip: Cumulative total number of people tested by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
+  #       - heading: Cumulative
+  #         tabType: chart
+  #         fields:
+  #           - label: Number of people tested
+  #             value: cumPeopleTestedBySpecimenDate
+  #             tooltip: Cumulative total number of people tested by date the sample was taken from the person
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
 
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Specimen date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
+  #       - heading: Data
+  #         tabType: table
+  #         fields:
+  #           - label: Specimen date
+  #             value: date
+  #             type: date
+  #             tooltip: Date the sample was taken from the person
 
-            - label: Daily cases
-              value: newCasesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive by date the sample was taken from the person
+  #           - label: Daily cases
+  #             value: newCasesBySpecimenDate
+  #             type: numeric
+  #             tooltip: Daily number of new people tested positive by date the sample was taken from the person
 
-            - label: Cumulative cases
-              value: cumCasesBySpecimenDate
-              type: numeric
-              tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
+  #           - label: Cumulative cases
+  #             value: cumCasesBySpecimenDate
+  #             type: numeric
+  #             tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
 
-            - label: Daily people tested
-              value: newPeopleTestedBySpecimenDate
-              type: numeric
-              tooltip: Daily number of people tested by date the sample was taken from the person
+  #           - label: Daily people tested
+  #             value: newPeopleTestedBySpecimenDate
+  #             type: numeric
+  #             tooltip: Daily number of people tested by date the sample was taken from the person
 
-            - label: Cumulative people tested
-              value: cumPeopleTestedBySpecimenDate
-              type: numeric
-              tooltip: Cumulative total number of people tested by date the sample was taken from the person
+  #           - label: Cumulative people tested
+  #             value: cumPeopleTestedBySpecimenDate
+  #             type: numeric
+  #             tooltip: Cumulative total number of people tested by date the sample was taken from the person
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/testing/cardPeopleTested.md
+  #       - heading: About 
+  #         tabType: metadata
+  #         filename: cardMetadata/testing/cardPeopleTested.md
 
-    Reporting date:
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of people tested
-              value: newPeopleTestedByPublishDate
-              tooltip: Daily number of new people tested by date reported
-              type: bar
-              colour: 0
-              rollingAverage: false
+  #   Reporting date:
+  #     tabs:
+  #       - heading: Daily
+  #         tabType: chart
+  #         barType: overlay
+  #         fields:
+  #           - label: Number of people tested
+  #             value: newPeopleTestedByPublishDate
+  #             tooltip: Daily number of new people tested by date reported
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
 
-            - label: People tested (7-day average)
-              value: newPeopleTestedByPublishDate
-              tooltip: 7-day rolling average of the number of new people tested by date reported
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage: true
+  #           - label: People tested (7-day average)
+  #             value: newPeopleTestedByPublishDate
+  #             tooltip: 7-day rolling average of the number of new people tested by date reported
+  #             type: line
+  #             colour: 3
+  #             fill: false
+  #             rollingAverage: true
 
-        - heading: Cumulative
-          tabType: chart
-          fields:                
-            - label: Number of people tested
-              value: cumPeopleTestedByPublishDate
-              tooltip: Cumulative total number of people tested by date reported
-              type: bar
-              colour: 0
-              rollingAverage: false
+  #       - heading: Cumulative
+  #         tabType: chart
+  #         fields:                
+  #           - label: Number of people tested
+  #             value: cumPeopleTestedByPublishDate
+  #             tooltip: Cumulative total number of people tested by date reported
+  #             type: bar
+  #             colour: 0
+  #             rollingAverage: false
 
-        - heading: Data
-          tabType: table
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
+  #       - heading: Data
+  #         tabType: table
+  #         fields:
+  #           - label: Date reported
+  #             value: date
+  #             type: date
+  #             tooltip: Date reported on coronavirus.data.gov.uk
 
-            - label: Daily cases
-              value: newCasesByPublishDate
-              type: numeric
-              tooltip: Daily number of new people tested positive by date reported
+  #           - label: Daily cases
+  #             value: newCasesByPublishDate
+  #             type: numeric
+  #             tooltip: Daily number of new people tested positive by date reported
 
-            - label: Total cases
-              value: cumCasesByPublishDate
-              type: numeric
-              tooltip: Cumulative total number of people tested positive by date reported
+  #           - label: Total cases
+  #             value: cumCasesByPublishDate
+  #             type: numeric
+  #             tooltip: Cumulative total number of people tested positive by date reported
 
-            - label: Daily people tested
-              value: newPeopleTestedByPublishDate
-              type: numeric
-              tooltip: Daily number of new people tested by date reported
+  #           - label: Daily people tested
+  #             value: newPeopleTestedByPublishDate
+  #             type: numeric
+  #             tooltip: Daily number of new people tested by date reported
 
-            - label: Total people tested
-              value: cumPeopleTestedByPublishDate
-              type: numeric
-              tooltip: Cumulative total number of people tested by date reported
+  #           - label: Total people tested
+  #             value: cumPeopleTestedByPublishDate
+  #             type: numeric
+  #             tooltip: Cumulative total number of people tested by date reported
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/testing/cardPeopleTested.md
+  #       - heading: About 
+  #         tabType: metadata
+  #         filename: cardMetadata/testing/cardPeopleTested.md
 
 # {{ EndDevOnlyBlock }}
 
