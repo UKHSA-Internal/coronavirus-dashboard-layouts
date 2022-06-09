@@ -44,9 +44,11 @@ cards:
 
 ##############################################################################################################################
 
+# {{ StartDevOnlyBlock }}
+
 # Only shown for UK
 
-  - heading: Deaths within 28 days of positive test by date of death
+  - heading: Deaths within 28 days of positive test by date of death - [DEV ONLY]
     cardType: multiAreaStatic
     locationAware:
       included:
@@ -209,16 +211,16 @@ cards:
           tabType: metadata
           filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
-##############################################################################################################################
+# {{ EndDevOnlyBlock }}
 
-# not shown for UK
+##############################################################################################################################
 
   - heading: Deaths within 28 days of positive test by date of death
     cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
+    # locationAware:
+    #   excluded:
+    #     areaType:
+    #       - overview
 
     fullWidth: true
     abstract: >
@@ -506,9 +508,11 @@ cards:
 
 ##############################################################################################################################
 
+# {{ StartDevOnlyBlock }}
+
 # Only shown for UK
 
-  - heading: Deaths within 28 days of positive test by date reported
+  - heading: Deaths within 28 days of positive test by date reported - [DEV ONLY]
     cardType: multiAreaStatic
     locationAware:
       included:
@@ -659,16 +663,17 @@ cards:
           tabType: metadata
           filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
+# {{ EndDevOnlyBlock }}
+
 ##############################################################################################################################
 
-# Not shown for UK or Regions
+# Not shown for Regions or LAs
 
   - heading: Deaths within 28 days of positive test by date reported
     cardType: chart
     locationAware:
       excluded:
         areaType:
-          - overview
           - region
           - ltla
           - utla
