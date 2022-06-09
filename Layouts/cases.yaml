@@ -1107,9 +1107,11 @@ cards:
 
 ##############################################################################################################################
 
+# {{ StartDevOnlyBlock }}
+
 # Only shown for UK
 
-  - heading: Cases by date reported
+  - heading: Cases by date reported - [DEV ONLY]
     cardType: multiAreaStatic
     locationAware:
       included: 
@@ -1263,6 +1265,7 @@ cards:
           tabType: metadata
           filename: cardMetadata/cases/cardCasesByReportDateTimeSeries.md
 
+# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
@@ -1346,7 +1349,7 @@ cards:
 
 ##############################################################################################################################
 
-# Not shown for UK (has separate date reported card for UK with different abstract) or sub-national (no data)
+# Not shown for sub-national (no data)
 
   - heading: Cases by date reported
     cardType: chart
@@ -1354,6 +1357,7 @@ cards:
       included:
         areaType:
           - nation
+          - overview
 
     fullWidth: true
     abstract: >
