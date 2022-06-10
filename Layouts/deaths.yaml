@@ -809,9 +809,11 @@ cards:
 
 ##############################################################################################################################
 
+# {{ StartDevOnlyBlock }}
+
 # only shown for UK
 
-  - heading: Daily deaths with COVID-19 on the death certificate by date of death
+  - heading: Daily deaths with COVID-19 on the death certificate by date of death - [DEV ONLY]
     cardType: multiAreaStatic
     locationAware:
       included:
@@ -978,16 +980,18 @@ cards:
           tabType: metadata
           filename: cardMetadata/deaths/cardNsoDailyDeathsTimeSeries.md
 
+# {{ EndDevOnlyBlock }}
+
 ##############################################################################################################################
 
 # not shown for UK
 
   - heading: Daily deaths with COVID-19 on the death certificate by date of death
     cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
+    # locationAware:
+    #   excluded:
+    #     areaType:
+    #       - overview
 
     fullWidth: true
     abstract: >
