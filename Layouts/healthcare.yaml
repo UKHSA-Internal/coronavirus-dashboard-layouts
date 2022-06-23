@@ -7,7 +7,7 @@ headlineNumbers:
     
       - label: Total
         value: cumAdmissions
-        tooltip: Cumulative total number of COVID-19 patients admitted to hospital, reported up to {date}
+        tooltip: Total number of COVID-19 patients admitted to hospital, reported up to {date}
 
 # {{ StartDevOnlyBlock }}
 # # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
@@ -57,7 +57,7 @@ cards:
       
     fullWidth: true
     abstract: >
-      Daily and cumulative numbers of COVID-19 patients admitted to hospital. 
+      Daily and total numbers of COVID-19 patients admitted to hospital. 
       Data are not updated every day by all 4 nations (England, Northern Ireland, Wales and Scotland). 
       Figures are not comparable as Wales includes suspected COVID-19 patients while the other nations include only confirmed cases.
       
@@ -87,17 +87,17 @@ cards:
               window: 7
               clipEnd: 0 #no of days to exclude for incomplete data
 
-      - heading: Cumulative
+      - heading: Total
         tabType: chart
         fields:
           - label: Admissions
             value: cumAdmissions
-            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+            tooltip: Total number of COVID-19 patients admitted to hospital
             type: bar
             colour: 0
             rollingAverage: false
 
-      - heading: Data
+      - heading: Data table
         tabType: table
         fields:
           - label: Date reported
@@ -113,7 +113,7 @@ cards:
           - label: Total admissions
             value: cumAdmissions
             type: numeric
-            tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+            tooltip: Total number of COVID-19 patients admitted to hospital
 
       - heading: About 
         tabType: metadata
@@ -132,7 +132,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Daily and cumulative numbers of COVID-19 patients admitted to hospital. 
+      Daily and total numbers of COVID-19 patients admitted to hospital. 
       Data are not updated every day by all 4 nations (England, Northern Ireland, Wales and Scotland). 
       Figures are not comparable as Wales includes suspected COVID-19 patients while the other nations include only confirmed cases.
 
@@ -176,7 +176,7 @@ cards:
                 window: 7
                 clipEnd: 0 
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           barType: stack
           colours: [0] # areaNames in alphabetical order
@@ -188,11 +188,11 @@ cards:
           fields:
             - label: ""
               value: cumAdmissions
-              tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+              tooltip: Total number of COVID-19 patients admitted to hospital
               type: bar
               rollingAverage: false
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -213,7 +213,7 @@ cards:
             - label: total
               value: cumAdmissions
               type: numeric
-              tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+              tooltip: Total number of COVID-19 patients admitted to hospital
 
         - heading: About 
           tabType: metadata
@@ -238,7 +238,7 @@ cards:
               type: bar
               rollingAverage: false
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           barType: stack
           colours: [0, 9, 3, 10] # areaNames in alphabetical order
@@ -250,11 +250,11 @@ cards:
           fields:
             - label: ""
               value: cumAdmissions
-              tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+              tooltip: Total number of COVID-19 patients admitted to hospital
               type: bar
               rollingAverage: false
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -275,7 +275,7 @@ cards:
             - label: total
               value: cumAdmissions
               type: numeric
-              tooltip: Cumulative total number of COVID-19 patients admitted to hospital
+              tooltip: Total number of COVID-19 patients admitted to hospital
 
         - heading: About 
           tabType: metadata
@@ -316,7 +316,7 @@ cards:
             type: bar
             rollingAverage: false
 
-      - heading: Data
+      - heading: Data table
         tabType: table
         fields:
           - label: 7-day period ending
@@ -373,7 +373,7 @@ cards:
             type: bar
             colour: 0
       
-      - heading: Data
+      - heading: Data table
         tabType: table
         groupKey: age
         groupValues: 
@@ -435,7 +435,7 @@ cards:
             type: bar
             colour: 0
       
-      - heading: Data
+      - heading: Data table
         tabType: table
         groupKey: age
         groupValues: 
@@ -507,7 +507,7 @@ cards:
               clipEnd: 0 #no of days to exclude for incomplete data
 
 
-      - heading: Data
+      - heading: Data table
         tabType: table
         fields:
           - label: Date reported
@@ -581,7 +581,7 @@ cards:
                 window: 7
                 clipEnd: 0
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -622,7 +622,7 @@ cards:
               type: bar
               rollingAverage: false
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -772,7 +772,7 @@ cards:
 
           # {{ EndDevOnlyBlock }}
 
-      - heading: Data
+      - heading: Data table
         tabType: table
         fields:
           - label: Date reported
@@ -873,7 +873,7 @@ cards:
                 window: 7
                 clipEnd: 0
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -914,7 +914,7 @@ cards:
               type: bar
               rollingAverage: false
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -990,7 +990,7 @@ cards:
             colour: 0
             rollingAverage: false
 
-      - heading: Data
+      - heading: Data table
         tabType: table
         fields:
           - label: Date
@@ -1068,7 +1068,7 @@ cards:
             value: transmissionRateMin
             tooltip: The minimum value in the estimated range of R
 
-      - heading: R value data
+      - heading: R value data table
         tabType: table
         fields:
           - label: Date
@@ -1103,7 +1103,7 @@ cards:
             value: transmissionRateGrowthRateMin
             tooltip: The minimum percentage value in the estimated range of daily infection growth rate
 
-      - heading: Growth rate data
+      - heading: Growth rate data table
         tabType: table
         fields:
           - label: Date
