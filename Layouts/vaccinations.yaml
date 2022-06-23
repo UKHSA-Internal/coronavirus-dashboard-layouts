@@ -76,7 +76,7 @@ cards:
                 window: 7
                 clipEnd: 0 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           params:
             - key: areaType
@@ -85,12 +85,12 @@ cards:
           fields:
             - label: total
               value: cumPeopleVaccinatedFirstDoseByPublishDate
-              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -111,7 +111,7 @@ cards:
             - label: "total"
               value: cumPeopleVaccinatedFirstDoseByPublishDate
               type: numeric
-              tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+              tooltip: Total number of people who received the first dose of COVID-19 vaccine
 
         - heading: About
           tabType: metadata
@@ -138,7 +138,7 @@ cards:
                 type: bar
                 rollingAverage: false
 
-          - heading: Cumulative
+          - heading: Total
             tabType: chart
             barType: stack
             colours: [0, 9, 3, 10] # areaNames in alphabetical order
@@ -150,11 +150,11 @@ cards:
             fields:
               - label: "total"
                 value: cumPeopleVaccinatedFirstDoseByPublishDate
-                tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine in each nation
+                tooltip: Total reported number of people who received the first dose of COVID-19 vaccine in each nation
                 type: bar
                 rollingAverage: false
 
-          - heading: Data
+          - heading: Data table
             tabType: table
             params:
               - key: areaType
@@ -175,7 +175,7 @@ cards:
             - label: "total"
               value: cumPeopleVaccinatedFirstDoseByPublishDate
               type: numeric
-              tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+              tooltip: Total number of people who received the first dose of COVID-19 vaccine
 
           - heading: About
             tabType: metadata
@@ -237,7 +237,7 @@ cards:
                 window: 7
                 clipEnd: 0 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           params:
             - key: areaType
@@ -246,12 +246,12 @@ cards:
           fields:
             - label: total
               value: cumPeopleVaccinatedSecondDoseByPublishDate
-              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -272,7 +272,7 @@ cards:
             - label: "total"
               value: cumPeopleVaccinatedSecondDoseByPublishDate
               type: numeric
-              tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
+              tooltip: Total number of people who received the second dose of COVID-19 vaccine
 
         - heading: About
           tabType: metadata
@@ -299,7 +299,7 @@ cards:
                 type: bar
                 rollingAverage: false
 
-          - heading: Cumulative
+          - heading: Total
             tabType: chart
             barType: stack
             colours: [0, 9, 3, 10] # areaNames in alphabetical order
@@ -311,11 +311,11 @@ cards:
             fields:
               - label: "total"
                 value: cumPeopleVaccinatedSecondDoseByPublishDate
-                tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine in each nation
+                tooltip: Total reported number of people who received the second dose of COVID-19 vaccine in each nation
                 type: bar
                 rollingAverage: false
 
-          - heading: Data
+          - heading: Data table
             tabType: table
             params:
               - key: areaType
@@ -336,7 +336,7 @@ cards:
             - label: "total"
               value: cumPeopleVaccinatedSecondDoseByPublishDate
               type: numeric
-              tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
+              tooltip: Total number of people who received the second dose of COVID-19 vaccine
 
           - heading: About
             tabType: metadata
@@ -400,7 +400,7 @@ cards:
                 window: 7
                 clipEnd: 0 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           params:
             - key: areaType
@@ -409,12 +409,12 @@ cards:
           fields:
             - label: total
               value: cumPeopleVaccinatedThirdInjectionByPublishDate
-              tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -435,7 +435,7 @@ cards:
             - label: "total"
               value: cumPeopleVaccinatedThirdInjectionByPublishDate
               type: numeric
-              tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
 
         - heading: About
           tabType: metadata
@@ -462,7 +462,7 @@ cards:
                 type: bar
                 rollingAverage: false
 
-          - heading: Cumulative
+          - heading: Total
             tabType: chart
             barType: stack
             colours: [0, 9, 3, 10] # areaNames in alphabetical order
@@ -474,11 +474,11 @@ cards:
             fields:
               - label: "total"
                 value: cumPeopleVaccinatedThirdInjectionByPublishDate
-                tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine in each nation
+                tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine in each nation
                 type: bar
                 rollingAverage: false
 
-          - heading: Data
+          - heading: Data table
             tabType: table
             params:
               - key: areaType
@@ -499,7 +499,7 @@ cards:
             - label: "total"
               value: cumPeopleVaccinatedThirdInjectionByPublishDate
               type: numeric
-              tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
 
           - heading: About
             tabType: metadata
@@ -530,7 +530,7 @@ cards:
       - cumVaccinationThirdInjectionUptakeByPublishDatePercentage
 
     tabs:
-      - heading: Uptake
+      - heading: Chart
         tabType: percentageWaffle
         params:
           - key: areaType
@@ -540,20 +540,20 @@ cards:
         fields:
           - label: 1st dose (%)
             value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
             colour: 1
 
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
             colour: 0
 
           - label: Booster or 3rd dose (%)
             value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-            tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
             colour: 3
 
-      - heading: Data
+      - heading: Data table
         tabType: table
         params:
           - key: areaType
@@ -569,17 +569,17 @@ cards:
           - label: "1st dose (%)"
             value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
 
           - label: "2nd dose (%)"
             value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
 
           - label: "Booster or 3rd dose (%)"
             value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
 
       - heading: About
         tabType: metadata
@@ -622,7 +622,7 @@ cards:
 
       tabs:
 
-        - heading: Uptake
+        - heading: Chart
           tabType: chart
           params:
             - key: areaType
@@ -631,19 +631,19 @@ cards:
           fields:
             - label: 1st dose (%)
               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-              tooltip: Cumulative reported percentage of people who received the first dose of COVID-19 vaccine
+              tooltip: Total reported percentage of people who received the first dose of COVID-19 vaccine
               type: line
               colour: 1
               rollingAverage: false
             - label: 2nd dose (%)
               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-              tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine
+              tooltip: Total reported percentage of people who received the second dose of COVID-19 vaccine
               type: line
               colour: 0
               rollingAverage: false
             - label: Booster or 3rd dose (%)
               value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-              tooltip: Cumulative reported percentage of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total reported percentage of people who received a booster or third dose of COVID-19 vaccine
               type: line
               colour: 3
               rollingAverage: false
@@ -676,7 +676,7 @@ cards:
         #       colour: 0
         #       rollingAverage: false
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -692,17 +692,17 @@ cards:
             - label: "1st dose (%)"
               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
 
             - label: "2nd dose (%)"
               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
 
             - label: "Booster or 3rd dose (%)"
               value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
 
         - heading: About
           tabType: metadata
@@ -724,7 +724,7 @@ cards:
             fields:
               - label: "percentage"
                 value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-                tooltip: Cumulative reported percentage of people who received the first dose of COVID-19 vaccine in each nation
+                tooltip: Total reported percentage of people who received the first dose of COVID-19 vaccine in each nation
                 type: line
                 rollingAverage: false
                 fill: false
@@ -740,7 +740,7 @@ cards:
             fields:
               - label: "percentage"
                 value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-                tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine in each nation
+                tooltip: Total reported percentage of people who received the second dose of COVID-19 vaccine in each nation
                 type: line
                 rollingAverage: false
                 fill: false
@@ -756,12 +756,12 @@ cards:
             fields:
               - label: "percentage"
                 value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-                tooltip: Cumulative reported percentage of people who received a booster or third dose of COVID-19 vaccine in each nation
+                tooltip: Total reported percentage of people who received a booster or third dose of COVID-19 vaccine in each nation
                 type: line
                 rollingAverage: false
                 fill: false
 
-          - heading: Data
+          - heading: Data table
             tabType: table
             params:
               - key: areaType
@@ -777,17 +777,17 @@ cards:
             - label: "1st dose (%)"
               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
 
             - label: "2nd dose (%)"
               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
 
             - label: "Booster or 3rd dose (%)"
               value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
 
           - heading: About
             tabType: metadata
@@ -887,7 +887,7 @@ cards:
               colour: 1
               rollingAverage: false
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           params:
             - key: areaType
@@ -896,12 +896,12 @@ cards:
           fields:
             - label: total
               value: cumVaccinesGivenByPublishDate
-              tooltip: Cumulative reported number of COVID-19 vaccines given
+              tooltip: Total reported number of COVID-19 vaccines given
               type: bar
               colour: 0
               rollingAverage: false
 
-        - heading: Cumulative by dose
+        - heading: Total by dose
           tabType: chart
           barType: stack
           params:
@@ -912,26 +912,26 @@ cards:
           fields:
             - label: Booster or third dose total
               value: cumPeopleVaccinatedThirdInjectionByPublishDate
-              tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine
               type: bar
               colour: 3
               rollingAverage: false
 
             - label: 2nd dose total
               value: cumPeopleVaccinatedSecondDoseByPublishDate
-              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
 
             - label: 1st dose total
               value: cumPeopleVaccinatedFirstDoseByPublishDate
-              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
               type: bar
               colour: 1
               rollingAverage: false
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -967,22 +967,22 @@ cards:
             - label: "1st dose total"
               value: cumPeopleVaccinatedFirstDoseByPublishDate
               type: numeric
-              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
 
             - label: "2nd dose total"
               value: cumPeopleVaccinatedSecondDoseByPublishDate
               type: numeric
-              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
 
             - label: "Booster or 3rd dose total"
               value: cumPeopleVaccinatedThirdInjectionByPublishDate
               type: numeric
-              tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine
 
-            - label: "cumulative total"
+            - label: "Total"
               value: cumVaccinesGivenByPublishDate
               type: numeric
-              tooltip: Cumulative number of COVID-19 vaccines given
+              tooltip: Total number of COVID-19 vaccines given
 
         - heading: About
           tabType: metadata
@@ -1009,7 +1009,7 @@ cards:
                 type: bar
                 rollingAverage: false
 
-          - heading: Cumulative
+          - heading: Total
             tabType: chart
             barType: stack
             colours: [0, 9, 3, 10] # areaNames in alphabetical order
@@ -1021,11 +1021,11 @@ cards:
             fields:
               - label: "total"
                 value: cumVaccinesGivenByPublishDate
-                tooltip: Cumulative reported number COVID-19 vaccines given in each nation
+                tooltip: Total reported number COVID-19 vaccines given in each nation
                 type: bar
                 rollingAverage: false
 
-          - heading: Data
+          - heading: Data table
             tabType: table
             params:
               - key: areaType
@@ -1046,7 +1046,7 @@ cards:
             - label: "total"
               value: cumVaccinesGivenByPublishDate
               type: numeric
-              tooltip: Cumulative number of COVID-19 vaccines given
+              tooltip: Total number of COVID-19 vaccines given
 
           - heading: About
             tabType: metadata
@@ -1110,19 +1110,19 @@ cards:
                 window: 7
                 clipEnd: 0 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
 
           fields:
             - label: total
               value: cumPeopleVaccinatedFirstDoseByPublishDate
-              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
 
 
-        - heading: Data
+        - heading: Data table
           tabType: table
 
           fields:
@@ -1139,7 +1139,7 @@ cards:
               - label: "total"
                 value: cumPeopleVaccinatedFirstDoseByPublishDate
                 type: numeric
-                tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+                tooltip: Total number of people who received the first dose of COVID-19 vaccine
 
         - heading: About
           tabType: metadata
@@ -1171,19 +1171,19 @@ cards:
                 window: 7
                 clipEnd: 0 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
 
           fields:
             - label: total
               value: cumPeopleVaccinatedSecondDoseByPublishDate
-              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
 
 
-        - heading: Data
+        - heading: Data table
           tabType: table
 
           fields:
@@ -1200,7 +1200,7 @@ cards:
               - label: "total"
                 value: cumPeopleVaccinatedSecondDoseByPublishDate
                 type: numeric
-                tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
+                tooltip: Total number of people who received the second dose of COVID-19 vaccine
 
         - heading: About
           tabType: metadata
@@ -1232,19 +1232,19 @@ cards:
                 window: 7
                 clipEnd: 0 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
 
           fields:
             - label: total
               value: cumPeopleVaccinatedThirdInjectionByPublishDate
-              tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
 
 
-        - heading: Data
+        - heading: Data table
           tabType: table
 
           fields:
@@ -1261,7 +1261,7 @@ cards:
               - label: "total"
                 value: cumPeopleVaccinatedThirdInjectionByPublishDate
                 type: numeric
-                tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine
+                tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
 
         - heading: About
           tabType: metadata
@@ -1292,26 +1292,26 @@ cards:
       - cumVaccinationThirdInjectionUptakeByPublishDatePercentage
 
     tabs:
-      - heading: Uptake
+      - heading: Chart
         tabType: percentageWaffle
 
         fields:
           - label: 1st dose (%)
             value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
             colour: 1
 
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
             colour: 0
 
           - label: Booster or 3rd dose (%)
             value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-            tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
             colour: 3
 
-      - heading: Data
+      - heading: Data table
         tabType: table
 
         fields:
@@ -1323,17 +1323,17 @@ cards:
           - label: "1st dose (%)"
             value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
 
           - label: "2nd dose (%)"
             value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
 
           - label: "Booster or 3rd dose (%)"
             value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
 
       - heading: About
         tabType: metadata
@@ -1367,30 +1367,30 @@ cards:
 
     tabs:
 
-      - heading: Uptake
+      - heading: Chart
         tabType: chart
 
         fields:
             - label: 1st dose (%)
               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-              tooltip: Cumulative reported percentage of people who received the first dose of COVID-19 vaccine
+              tooltip: Total reported percentage of people who received the first dose of COVID-19 vaccine
               type: line
               colour: 1
               rollingAverage: false
             - label: 2nd dose (%)
               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-              tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine
+              tooltip: Total reported percentage of people who received the second dose of COVID-19 vaccine
               type: line
               colour: 0
               rollingAverage: false
             - label: Booster or 3rd dose (%)
               value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-              tooltip: Cumulative reported percentage of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total reported percentage of people who received a booster or third dose of COVID-19 vaccine
               type: line
               colour: 3
               rollingAverage: false
 
-      - heading: Data
+      - heading: Data table
         tabType: table
 
         fields:
@@ -1402,17 +1402,17 @@ cards:
             - label: "1st dose (%)"
               value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
 
             - label: "2nd dose (%)"
               value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
 
             - label: "Booster or 3rd dose (%)"
               value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
 
 
       - heading: About
@@ -1494,18 +1494,18 @@ cards:
             colour: 1
             rollingAverage: false
 
-      - heading: Cumulative
+      - heading: Total
         tabType: chart
 
         fields:
           - label: total
             value: cumVaccinesGivenByPublishDate
-            tooltip: Cumulative reported number of COVID-19 vaccines given
+            tooltip: Total reported number of COVID-19 vaccines given
             type: bar
             colour: 0
             rollingAverage: false
 
-      - heading: Cumulative by dose
+      - heading: Total by dose
         tabType: chart
         barType: stack
 
@@ -1531,7 +1531,7 @@ cards:
             colour: 1
             rollingAverage: false
 
-      - heading: Data
+      - heading: Data table
         tabType: table
 
         fields:
@@ -1563,22 +1563,22 @@ cards:
             - label: "1st dose total"
               value: cumPeopleVaccinatedFirstDoseByPublishDate
               type: numeric
-              tooltip: Cumulative reported number of people who received the first dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
 
             - label: "2nd dose total"
               value: cumPeopleVaccinatedSecondDoseByPublishDate
               type: numeric
-              tooltip: Cumulative reported number of people who received the second dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
 
             - label: "Booster or third dose total"
               value: cumPeopleVaccinatedThirdInjectionByPublishDate
               type: numeric
-              tooltip: Cumulative reported number of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine
 
-            - label: "cumulative total"
+            - label: "total"
               value: cumVaccinesGivenByPublishDate
               type: numeric
-              tooltip: Cumulative number of COVID-19 vaccines given
+              tooltip: Total number of COVID-19 vaccines given
 
       - heading: About
         tabType: metadata
@@ -1649,13 +1649,13 @@ cards:
                 window: 7
                 clipEnd: 2 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
 
           fields:
             - label: Number of vaccinations
               value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-              tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+              tooltip: Total number of people who received the first dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
@@ -1666,7 +1666,7 @@ cards:
                 label: "Most recent 2 days (incomplete)"
 
 
-        - heading: Data
+        - heading: Data table
           tabType: table
 
           fields:
@@ -1683,7 +1683,7 @@ cards:
               - label: "Total"
                 value: cumPeopleVaccinatedFirstDoseByVaccinationDate
                 type: numeric
-                tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+                tooltip: Total number of people who received the first dose of COVID-19 vaccine
 
         - heading: About
           tabType: metadata
@@ -1720,13 +1720,13 @@ cards:
                 window: 7
                 clipEnd: 2 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
 
           fields:
             - label: Number of vaccinations
               value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-              tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
+              tooltip: Total number of people who received the second dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
@@ -1737,7 +1737,7 @@ cards:
                 label: "Most recent 2 days (incomplete)"
 
 
-        - heading: Data
+        - heading: Data table
           tabType: table
 
           fields:
@@ -1754,7 +1754,7 @@ cards:
               - label: "Total"
                 value: cumPeopleVaccinatedSecondDoseByVaccinationDate
                 type: numeric
-                tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
+                tooltip: Total number of people who received the second dose of COVID-19 vaccine
 
         - heading: About
           tabType: metadata
@@ -1791,13 +1791,13 @@ cards:
                 window: 7
                 clipEnd: 2 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
 
           fields:
             - label: Number of vaccinations
               value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
-              tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
@@ -1808,7 +1808,7 @@ cards:
                 label: "Most recent 2 days (incomplete)"
 
 
-        - heading: Data
+        - heading: Data table
           tabType: table
 
           fields:
@@ -1825,7 +1825,7 @@ cards:
               - label: "Total"
                 value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
                 type: numeric
-                tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine
+                tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
 
         - heading: About
           tabType: metadata
@@ -1899,13 +1899,13 @@ cards:
                 window: 7
                 clipEnd: 2 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
 
           fields:
             - label: Number of vaccinations
               value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-              tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+              tooltip: Total number of people who received the first dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
@@ -1915,7 +1915,7 @@ cards:
                 colour: 6
                 label: "Most recent 2 days (incomplete)"
 
-        - heading: Data
+        - heading: Data table
           tabType: table
 
           fields:
@@ -1932,7 +1932,7 @@ cards:
               - label: "Total"
                 value: cumPeopleVaccinatedFirstDoseByVaccinationDate
                 type: numeric
-                tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine
+                tooltip: Total number of people who received the first dose of COVID-19 vaccine
 
         - heading: About
           tabType: metadata
@@ -1969,13 +1969,13 @@ cards:
                 window: 7
                 clipEnd: 2 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
 
           fields:
             - label: Number of vaccinations
               value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-              tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
+              tooltip: Total number of people who received the second dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
@@ -1985,7 +1985,7 @@ cards:
                 colour: 6
                 label: "Most recent 2 days (incomplete)"
 
-        - heading: Data
+        - heading: Data table
           tabType: table
 
           fields:
@@ -2002,7 +2002,7 @@ cards:
               - label: "Total"
                 value: cumPeopleVaccinatedSecondDoseByVaccinationDate
                 type: numeric
-                tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine
+                tooltip: Total number of people who received the second dose of COVID-19 vaccine
 
         - heading: About
           tabType: metadata
@@ -2039,13 +2039,13 @@ cards:
                 window: 7
                 clipEnd: 2 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
 
           fields:
             - label: Number of vaccinations
               value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
-              tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
               type: bar
               colour: 0
               rollingAverage: false
@@ -2055,7 +2055,7 @@ cards:
                 colour: 6
                 label: "Most recent 2 days (incomplete)"
 
-        - heading: Data
+        - heading: Data table
           tabType: table
 
           fields:
@@ -2072,7 +2072,7 @@ cards:
               - label: "Total"
                 value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
                 type: numeric
-                tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine
+                tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
 
         - heading: About
           tabType: metadata
@@ -2107,26 +2107,26 @@ cards:
       - cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
 
     tabs:
-      - heading: Uptake
+      - heading: Chart
         tabType: percentageWaffle
 
         fields:
           - label: 1st dose (%)
             value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
             colour: 1
 
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
             colour: 0
 
           - label: Booster or 3rd dose (%)
             value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-            tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
             colour: 3
      
-      - heading: Data
+      - heading: Data table
         tabType: table
 
         fields:
@@ -2138,17 +2138,17 @@ cards:
           - label: "1st dose (%)"
             value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
 
           - label: "2nd dose (%)"
             value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
 
           - label: "Booster or third dose (%)"
             value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine            
+            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine            
 
       - heading: About
         tabType: metadata
@@ -2186,29 +2186,29 @@ cards:
 
     tabs:
 
-      - heading: Uptake
+      - heading: Chart
         tabType: chart
         fields:
             - label: 1st dose (%)
               value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-              tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
               type: line
               colour: 1
               rollingAverage: false
             - label: 2nd dose (%)
               value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
               type: line
               colour: 0
               rollingAverage: false
             - label: Booster or 3rd dose (%)
               value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-              tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
               type: line
               colour: 3
               rollingAverage: false
 
-      - heading: Data
+      - heading: Data table
         tabType: table
 
         fields:
@@ -2220,17 +2220,17 @@ cards:
             - label: "1st dose (%)"
               value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
 
             - label: "2nd dose (%)"
               value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
 
             - label: "Booster or 3rd dose (%)"
               value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
               type: numeric
-              tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine
+              tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
 
       - heading: About
         tabType: metadata
@@ -2666,32 +2666,32 @@ cards:
           - label: 1st dose
             value: cumPeopleVaccinatedFirstDoseByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine up to {date}
+            tooltip: Total number of people who received the first dose of COVID-19 vaccine up to {date}
 
           - label: 1st dose (%)
             value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine up to {date}
+            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine up to {date}
 
           - label: 2nd dose
             value: cumPeopleVaccinatedSecondDoseByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}
+            tooltip: Total number of people who received the second dose of COVID-19 vaccine up to {date}
 
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine up to {date}
+            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine up to {date}
 
           - label: Booster or 3rd dose
             value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine up to {date}
+            tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine up to {date}
 
           - label: Booster or 3rd dose (%)
             value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}
+            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}
 
       - heading: Region
         tabType: table
@@ -2712,32 +2712,32 @@ cards:
           - label: 1st dose
             value: cumPeopleVaccinatedFirstDoseByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine up to {date}
+            tooltip: Total number of people who received the first dose of COVID-19 vaccine up to {date}
 
           - label: 1st dose (%)
             value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine up to {date}
+            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine up to {date}
 
           - label: 2nd dose
             value: cumPeopleVaccinatedSecondDoseByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}
+            tooltip: Total number of people who received the second dose of COVID-19 vaccine up to {date}
 
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine up to {date}
+            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine up to {date}
 
           - label: Booster or 3rd dose
             value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine up to {date}
+            tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine up to {date}
 
           - label: Booster or 3rd dose (%)
             value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}           
+            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}           
 
       - heading: Upper tier LA
         tabType: table
@@ -2759,32 +2759,32 @@ cards:
           - label: 1st dose
             value: cumPeopleVaccinatedFirstDoseByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine up to {date}
+            tooltip: Total number of people who received the first dose of COVID-19 vaccine up to {date}
 
           - label: 1st dose (%)
             value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine up to {date}
+            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine up to {date}
 
           - label: 2nd dose
             value: cumPeopleVaccinatedSecondDoseByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}
+            tooltip: Total number of people who received the second dose of COVID-19 vaccine up to {date}
 
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine up to {date}
+            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine up to {date}
 
           - label: Booster or 3rd dose
             value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine up to {date}
+            tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine up to {date}
 
           - label: Booster or 3rd dose (%)
             value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}            
+            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}            
 
       - heading: Lower tier LA
         tabType: table
@@ -2806,32 +2806,32 @@ cards:
           - label: 1st dose
             value: cumPeopleVaccinatedFirstDoseByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine up to {date}
+            tooltip: Total number of people who received the first dose of COVID-19 vaccine up to {date}
 
           - label: 1st dose (%)
             value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine up to {date}
+            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine up to {date}
 
           - label: 2nd dose
             value: cumPeopleVaccinatedSecondDoseByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}
+            tooltip: Total number of people who received the second dose of COVID-19 vaccine up to {date}
 
           - label: 2nd dose (%)
             value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine up to {date}
+            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine up to {date}
 
           - label: Booster or 3rd dose
             value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
             type: numeric
-            tooltip: Cumulative number of people who received a booster or third dose of COVID-19 vaccine up to {date}
+            tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine up to {date}
 
           - label: Booster or 3rd dose (%)
             value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Cumulative percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}
+            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}
 
       - heading: About
         tabType: metadata
