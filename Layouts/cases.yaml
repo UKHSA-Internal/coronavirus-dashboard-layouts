@@ -7,15 +7,15 @@ headlineNumbers:
 
       - label: Total
         value: cumCasesBySpecimenDate
-        tooltip: Cumulative total number of cases with specimen taken up to {date}
+        tooltip: Total number of cases with specimen taken up to {date}
 
       - label: First Episodes
         value: cumFirstEpisodesBySpecimenDate
-        tooltip: Cumulative total number of first episodes with specimen taken up to {date}    
+        tooltip: Total number of first episodes with specimen taken up to {date}    
 
       - label: Reinfections
         value: cumReinfectionsBySpecimenDate
-        tooltip: Cumulative total number of possible reinfections with specimen taken up to {date}
+        tooltip: Total number of possible reinfections with specimen taken up to {date}
        
 # {{ StartDevOnlyBlock }}
 # People tested not currently being published
@@ -121,7 +121,7 @@ cards:
                 window: 7
                 clipEnd: 4 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           barType: stack
           colours: [0] # areaNames in alphabetical order
@@ -133,7 +133,7 @@ cards:
           fields:
             - label: "Number of cases"
               value: cumCasesBySpecimenDate
-              tooltip: Cumulative total number of people tested positive, by specimen date
+              tooltip: Total number of people tested positive, by specimen date
               type: bar
               rollingAverage: false
               highlight: 
@@ -142,7 +142,7 @@ cards:
                 colour: 6
                 label: "Most recent 5 days (incomplete)"
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -163,7 +163,7 @@ cards:
             - label: total
               value: cumCasesBySpecimenDate
               type: numeric
-              tooltip: Cumulative total number of people tested positive, by specimen date
+              tooltip: Total number of people tested positive, by specimen date
 
         - heading: About 
           tabType: metadata
@@ -188,7 +188,7 @@ cards:
               type: bar
               rollingAverage: false
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           barType: stack
           colours: [0, 9, 3, 10] # areaNames in alphabetical order
@@ -200,11 +200,11 @@ cards:
           fields:
             - label: "Number of cases"
               value: cumCasesBySpecimenDate
-              tooltip: Cumulative total number of people tested positive, resident in each nation, by specimen date
+              tooltip: Total number of people tested positive, resident in each nation, by specimen date
               type: bar
               rollingAverage: false
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -225,7 +225,7 @@ cards:
             - label: total
               value: cumCasesBySpecimenDate
               type: numeric
-              tooltip: Cumulative total number of people tested positive, resident in each nation, by specimen date
+              tooltip: Total number of people tested positive, resident in each nation, by specimen date
 
         - heading: About 
           tabType: metadata
@@ -299,12 +299,12 @@ cards:
                 window: 7
                 clipEnd: 4 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           fields:
             - label: Number of cases
               value: cumCasesBySpecimenDate
-              tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
+              tooltip: Total number of new people tested positive by date the sample was taken from the person
               type: bar
               colour: 0
               rollingAverage: false
@@ -314,7 +314,7 @@ cards:
                colour: 6
                label: "Most recent 5 days (incomplete)"
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           fields:
             - label: Specimen date
@@ -330,7 +330,7 @@ cards:
             - label: Total cases
               value: cumCasesBySpecimenDate
               type: numeric
-              tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
+              tooltip: Total number of new people tested positive by date the sample was taken from the person
 
         - heading: About 
           tabType: metadata
@@ -365,12 +365,12 @@ cards:
                 window: 7
                 clipEnd: 4 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           fields:
             - label: Number of first episodes
               value: cumFirstEpisodesBySpecimenDate
-              tooltip: Cumulative total number of new people tested positive for their first episode by date the sample was taken from the person
+              tooltip: Total number of new people tested positive for their first episode by date the sample was taken from the person
               type: bar
               colour: 0
               rollingAverage: false
@@ -380,7 +380,7 @@ cards:
                colour: 6
                label: "Most recent 5 days (incomplete)"
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           fields:
             - label: Specimen date
@@ -396,7 +396,7 @@ cards:
             - label: Total first episodes
               value: cumFirstEpisodesBySpecimenDate
               type: numeric
-              tooltip: Cumulative total number of new people tested positive for their first episode by date the sample was taken from the person
+              tooltip: Total number of new people tested positive for their first episode by date the sample was taken from the person
 
         - heading: About 
           tabType: metadata
@@ -431,12 +431,12 @@ cards:
                 window: 7
                 clipEnd: 4 #no of days to exclude for incomplete data
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           fields:
             - label: Number of possible reinfections
               value: cumReinfectionsBySpecimenDate
-              tooltip: Cumulative total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+              tooltip: Total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
               type: bar
               colour: 0
               rollingAverage: false
@@ -446,7 +446,7 @@ cards:
                 colour: 6
                 label: "Most recent 5 days (incomplete)"
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           fields:
             - label: Specimen date
@@ -462,7 +462,7 @@ cards:
             - label: Total possible reinfections
               value: cumReinfectionsBySpecimenDate
               type: numeric
-              tooltip: Cumulative total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+              tooltip: Total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
 
         - heading: About 
           tabType: metadata
@@ -518,14 +518,14 @@ cards:
                 colour: 6
                 label: "Most recent 5 days possible reinfections (incomplete)"
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           barType: stack
 
           fields:
             - label: Number of first episodes
               value: cumFirstEpisodesBySpecimenDate
-              tooltip: Cumulative total number of new people tested positive for their first episode by specimen date
+              tooltip: Total number of new people tested positive for their first episode by specimen date
               type: bar
               colour: 0
               rollingAverage: false
@@ -537,7 +537,7 @@ cards:
 
             - label: Number of possible reinfections
               value: cumReinfectionsBySpecimenDate
-              tooltip: Cumulative total number of new people tested positive for their second or subsequent episode by specimen date
+              tooltip: Total number of new people tested positive for their second or subsequent episode by specimen date
               type: bar
               colour: 3
               rollingAverage: false
@@ -547,7 +547,7 @@ cards:
                 colour: 6
                 label: "Most recent 5 days possible reinfections (incomplete)"
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           fields:
             - label: Specimen date
@@ -573,17 +573,17 @@ cards:
             - label: Total first episodes
               value: cumFirstEpisodesBySpecimenDate
               type: numeric
-              tooltip: Cumulative total number of new people tested positive for their first episode by date the sample was taken from the person              
+              tooltip: Total number of new people tested positive for their first episode by date the sample was taken from the person              
 
             - label: Total possible reinfections
               value: cumReinfectionsBySpecimenDate
               type: numeric
-              tooltip: Cumulative total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+              tooltip: Total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
 
             - label: Total cases
               value: cumCasesBySpecimenDate
               type: numeric
-              tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
+              tooltip: Total number of new people tested positive by date the sample was taken from the person
 
         - heading: About 
           tabType: metadata
@@ -891,14 +891,14 @@ cards:
                 colour: 6
                 label: "Most recent 5 days mass community testing (incomplete)"
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           barType: stack
 
           fields:
             - label: Number of cases from NHS/UKHSA testing
               value: cumCasesPillarOneBySpecimenDate
-              tooltip: Cumulative total number of new people tested positive via NHS/UKHSA testing by specimen date
+              tooltip: Total number of new people tested positive via NHS/UKHSA testing by specimen date
               type: bar
               colour: 0
               rollingAverage: false
@@ -910,7 +910,7 @@ cards:
 
             - label: Number of cases from mass community testing
               value: cumCasesPillarTwoBySpecimenDate
-              tooltip: Cumulative total number of new people tested positive via mass community testing by specimen date
+              tooltip: Total number of new people tested positive via mass community testing by specimen date
               type: bar
               colour: 3
               rollingAverage: false
@@ -920,7 +920,7 @@ cards:
                 colour: 6
                 label: "Most recent 5 days mass community testing (incomplete)"
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           fields:
             - label: Specimen date
@@ -946,17 +946,17 @@ cards:
             - label: Total cases from NHS/UKHSA testing
               value: cumCasesPillarOneBySpecimenDate
               type: numeric
-              tooltip: Cumulative total number of new people tested positive via NHS/UKHSA testing by specimen date             
+              tooltip: Total number of new people tested positive via NHS/UKHSA testing by specimen date             
 
             - label: Total cases from mass community testing
               value: cumCasesPillarTwoBySpecimenDate
               type: numeric
-              tooltip: Cumulative total number of new people tested positive via mass community testing by specimen date
+              tooltip: Total number of new people tested positive via mass community testing by specimen date
 
             - label: Total cases
               value: cumCasesBySpecimenDate
               type: numeric
-              tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
+              tooltip: Total number of new people tested positive by date the sample was taken from the person
 
         - heading: About 
           tabType: metadata
@@ -1025,7 +1025,7 @@ cards:
               colour: 3
               rollingAverage: false
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           barType: stack
 
@@ -1051,7 +1051,7 @@ cards:
               colour: 3
               rollingAverage: false
  
-        - heading: Data
+        - heading: Data table
           tabType: table
         
           fields:
@@ -1160,7 +1160,7 @@ cards:
               fill: false
               rollingAverage: true
                 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           barType: stack
           colours: [0] # areaNames in alphabetical order
@@ -1172,11 +1172,11 @@ cards:
           fields:
             - label: "Number of cases"
               value: cumCasesByPublishDate
-              tooltip: Cumulative total number of people tested positive, by date reported
+              tooltip: Total number of people tested positive, by date reported
               type: bar
               rollingAverage: false
              
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -1197,7 +1197,7 @@ cards:
             - label: total
               value: cumCasesByPublishDate
               type: numeric
-              tooltip: Cumulative total number of people tested positive, by date reported
+              tooltip: Total number of people tested positive, by date reported
 
         - heading: About 
           tabType: metadata
@@ -1222,7 +1222,7 @@ cards:
               type: bar
               rollingAverage: false
 
-        - heading: Cumulative
+        - heading: Total
           tabType: chart
           barType: stack
           colours: [0, 9, 3, 10] # areaNames in alphabetical order
@@ -1234,11 +1234,11 @@ cards:
           fields:
             - label: ""
               value: cumCasesByPublishDate
-              tooltip: Cumulative total number of people tested positive, resident in each nation, by date reported
+              tooltip: Total number of people tested positive, resident in each nation, by date reported
               type: bar
               rollingAverage: false
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           params:
             - key: areaType
@@ -1259,7 +1259,7 @@ cards:
             - label: total
               value: cumCasesByPublishDate
               type: numeric
-              tooltip: Cumulative total number of people tested positive, resident in each nation, by date reported
+              tooltip: Total number of people tested positive, resident in each nation, by date reported
 
         - heading: About 
           tabType: metadata
@@ -1320,7 +1320,7 @@ cards:
 #              window: 7
 #              clipEnd: 3 #no of days to exclude for incomplete data
  
-      - heading: Data
+      - heading: Data table
         tabType: table
         fields:
           - label: Specimen date
@@ -1386,17 +1386,17 @@ cards:
             fill: false
             rollingAverage: true
 
-      - heading: Cumulative
+      - heading: Total
         tabType: chart
         fields:
           - label: Number of cases
             value: cumCasesByPublishDate
-            tooltip: Cumulative total number of people tested positive by date reported
+            tooltip: Total number of people tested positive by date reported
             type: bar
             colour: 0
             rollingAverage: false
 
-      - heading: Data
+      - heading: Data table
         tabType: table
         fields:
           - label: Date reported
@@ -1412,7 +1412,7 @@ cards:
           - label: Total cases
             value: cumCasesByPublishDate
             type: numeric
-            tooltip: Cumulative total number of people tested positive by date reported
+            tooltip: Total number of people tested positive by date reported
 
       - heading: About 
         tabType: metadata
@@ -1603,7 +1603,7 @@ cards:
               type: line
               rollingAverage: false
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           fields:
             - label: 7-day period ending
@@ -1658,7 +1658,7 @@ cards:
               colour: 0
               rollingAverage: false
 
-        - heading: Data
+        - heading: Data table
           tabType: table
           fields:
             - label: 7-day period ending
@@ -1730,7 +1730,7 @@ cards:
             type: bar
             colour: 0
       
-      - heading: Data
+      - heading: Data table
         tabType: table
         groupKey: age
         groupValues: 
@@ -1816,7 +1816,7 @@ cards:
             type: bar
             colour: 0
       
-      - heading: Data
+      - heading: Data table
         tabType: table
         groupKey: age
         groupValues: 
@@ -2118,7 +2118,7 @@ cards:
             metric: cases
             rollingAverage: false
               
-      - heading: Data
+      - heading: Data table
         tabType: nestedTable
         fields:
           - label: Date
@@ -2360,7 +2360,7 @@ cards:
           - label: Cases
             value: cumCasesByPublishDate
             type: numeric
-            tooltip: Cumulative total number of people tested positive up to {date}
+            tooltip: Total number of people tested positive up to {date}
 
           - label: Rate per 100,000 population
             value: cumCasesByPublishDateRate
@@ -2386,7 +2386,7 @@ cards:
           - label: Cases
             value: cumCasesByPublishDate
             type: numeric
-            tooltip: Cumulative total number of people tested positive up to {date}
+            tooltip: Total number of people tested positive up to {date}
 
           - label: Rate per 100,000 population
             value: cumCasesByPublishDateRate
@@ -2412,7 +2412,7 @@ cards:
           - label: Cases
             value: cumCasesByPublishDate
             type: numeric
-            tooltip: Cumulative total number of people tested positive up to {date}
+            tooltip: Total number of people tested positive up to {date}
 
           - label: Rate per 100,000 population
             value: cumCasesByPublishDateRate
@@ -2439,7 +2439,7 @@ cards:
           - label: Cases
             value: cumCasesByPublishDate
             type: numeric
-            tooltip: Cumulative total number of people tested positive up to {date}
+            tooltip: Total number of people tested positive up to {date}
 
           - label: Rate per 100,000 population
             value: cumCasesByPublishDateRate
@@ -2466,7 +2466,7 @@ cards:
           - label: Cases
             value: cumCasesByPublishDate
             type: numeric
-            tooltip: Cumulative total number of people tested positive up to {date}
+            tooltip: Total number of people tested positive up to {date}
 
           - label: Rate per 100,000 population
             value: cumCasesByPublishDateRate
