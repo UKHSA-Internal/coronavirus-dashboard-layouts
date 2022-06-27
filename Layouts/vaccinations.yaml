@@ -13,11 +13,33 @@ headlineNumbers:
         value: cumPeopleVaccinatedThirdInjectionByPublishDate
         tooltip: Total number of people who have received a booster or third dose of COVID-19 vaccine, reported up to {date}
 
+# {{ StartDevOnlyBlock }}
+
+      - label: Spring booster total
+        << : *cumPeopleVaccinatedSpring22ByVaccinationDate75Plus
+        tooltip: Total number of people who have received a spring booster dose of COVID-19 vaccine, reported up to {date}
+
+# {{ EndDevOnlyBlock }}
+
   - caption: Vaccinations given
     valueItems:
       - label: Total
         value: cumVaccinesGivenByPublishDate
         tooltip: Total number of COVID-19 vaccines given, reported up to {date}
+
+
+basevaccinationsAgeDemographics: &basevaccinationsAgeDemographics
+  value: cumPeopleVaccinatedSpring22ByVaccinationDate
+  isArray: true
+
+
+vaccinationsAgeDemographics75+: &cumPeopleVaccinatedSpring22ByVaccinationDate75Plus
+  << : *basevaccinationsAgeDemographics
+  filters:
+    parameter: age
+    value: 75+
+
+    
 
 ##############################################################################################################################
 
