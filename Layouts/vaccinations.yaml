@@ -32,8 +32,8 @@ headlineNumbers:
         value: vaccinationsAgeDemographics
         metric: cumPeopleVaccinatedSpring22ByVaccinationDate
         filters:
-              parameter: age
-              value: 75+
+          parameter: age
+          value: 75+
         tooltip: Total number of people who have received a spring booster dose of COVID-19 vaccine, reported up to {date}
 
 # {{ EndDevOnlyBlock }}
