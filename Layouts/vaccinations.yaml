@@ -9,6 +9,17 @@ vaccinationsAgeDemographics75+: &cumPeopleVaccinatedSpring22ByVaccinationDate75P
     parameter: age
     value: 75+
 
+basetwovaccinationsAgeDemographics: &basetwovaccinationsAgeDemographics
+  value: newPeopleVaccinatedSpring22ByVaccinationDate
+  isArray: true
+
+
+vaccinationsAgeDemographics75+: &newPeopleVaccinatedSpring22ByVaccinationDate75Plus
+  << : *basetwovaccinationsAgeDemographics
+  filters:
+    parameter: age
+    value: 75+
+
 headlineNumbers:
   - caption: People vaccinated
     valueItems:
@@ -2910,6 +2921,83 @@ cards:
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
             
+##############################################################################################################################
+
+  - heading: People aged 75 and over who have received spring booster vaccinations, by vaccination date [DEV]
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      The number of people aged 75 and over who have received a spring booster COVID-19 vaccination. Data for the latest 2 days, marked in grey, are incomplete. 
+      Data are shown by date of vaccination.
+
+    download:
+      - newPeopleVaccinatedSpring22ByVaccinationDate
+      - cumPeopleVaccinatedSpring22ByVaccinationDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        fields:
+          - label: Number of vaccinations
+            << : *newPeopleVaccinatedSpring22ByVaccinationDate75Plus
+            tooltip: Daily number of people who received a spring booster of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false
+              highlight:
+                from: -2
+                to: 0
+                colour: 6
+                label: "Most recent 2 days (incomplete)"
+
+      - heading: Total
+          tabType: chart
+
+          fields:
+            - label: Number of vaccinations
+              << : *cumPeopleVaccinatedSpring22ByVaccinationDate75Plus
+              tooltip: Toal number of people who received a spring booster of COVID-19 vaccine
+              type: bar
+              colour: 0
+              rollingAverage: false
+              highlight:
+                from: -2
+                to: 0
+                colour: 6
+                label: "Most recent 2 days (incomplete)"
+        
+      - heading: Data table
+        tabType: nestedTable
+        fields:
+          - label: Date
+            value: date
+            type: date
+
+          - label: "Daily vaccinations: 75+"
+            metric: vaccinations
+            value: newPeopleVaccinatedSpring22ByVaccinationDate
+            type: numeric
+            filters:
+              parameter: age
+              value: 75+
+
+          - label: "Total vaccinations: 75+"
+            metric: vaccinations
+            value: cumPeopleVaccinatedSpring22ByVaccinationDate
+            type: numeric
+            filters:
+              parameter: age
+              value: 75+
+       
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
+
 ##############################################################################################################################
 
 # {{ EndDevOnlyBlock }}
