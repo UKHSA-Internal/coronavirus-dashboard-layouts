@@ -29,11 +29,8 @@ headlineNumbers:
 # {{ StartDevOnlyBlock }}
 
       - label: Spring booster total
-        value: vaccinationsAgeDemographics
+        << : *vaccinationsAgeDemographics75Plus
         metric: cumPeopleVaccinatedSpring22ByVaccinationDate
-        filters:
-          parameter: age
-          value: 75+
         tooltip: Total number of people who have received a spring booster dose of COVID-19 vaccine, reported up to {date}
 
 # {{ EndDevOnlyBlock }}
@@ -2939,15 +2936,12 @@ cards:
         tabType: chart
         fields:
           - label: Number of vaccinations
-            value: vaccinationsAgeDemographics
+            << : *vaccinationsAgeDemographics75Plus
             tooltip: Daily number of people who received a spring booster of COVID-19 vaccine
             type: bar
             colour: 0
             rollingAverage: false
             metric: newPeopleVaccinatedSpring22ByVaccinationDate
-            filters:
-              parameter: age
-              value: 75+
               highlight:
                 from: -2
                 to: 0
@@ -2958,15 +2952,12 @@ cards:
         tabType: chart
         fields:
           - label: Number of vaccinations
-            value: vaccinationsAgeDemographics
-            tooltip: Total number of people who received a spring booster of COVID-19 vaccine
+            << : *vaccinationsAgeDemographics75Plus
+            tooltip: Toal number of people who received a spring booster of COVID-19 vaccine
             type: bar
             colour: 0
             rollingAverage: false
             metric: cumPeopleVaccinatedSpring22ByVaccinationDate
-            filters:
-              parameter: age
-              value: 75+
               highlight:
                 from: -2
                 to: 0
