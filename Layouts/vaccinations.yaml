@@ -1,3 +1,14 @@
+basevaccinationsAgeDemographics: &basevaccinationsAgeDemographics
+  value: cumPeopleVaccinatedSpring22ByVaccinationDate
+  isArray: true
+
+
+vaccinationsAgeDemographics75+: &cumPeopleVaccinatedSpring22ByVaccinationDate75Plus
+  << : *basevaccinationsAgeDemographics
+  filters:
+    parameter: age
+    value: 75+
+
 headlineNumbers:
   - caption: People vaccinated
     valueItems:
@@ -28,16 +39,7 @@ headlineNumbers:
         tooltip: Total number of COVID-19 vaccines given, reported up to {date}
 
 
-basevaccinationsAgeDemographics: &basevaccinationsAgeDemographics
-  value: cumPeopleVaccinatedSpring22ByVaccinationDate
-  isArray: true
 
-
-vaccinationsAgeDemographics75+: &cumPeopleVaccinatedSpring22ByVaccinationDate75Plus
-  << : *basevaccinationsAgeDemographics
-  filters:
-    parameter: age
-    value: 75+
 
     
 
