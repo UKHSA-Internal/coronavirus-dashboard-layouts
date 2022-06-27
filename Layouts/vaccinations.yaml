@@ -29,8 +29,11 @@ headlineNumbers:
 # {{ StartDevOnlyBlock }}
 
       - label: Spring booster total
-        << : *vaccinationsAgeDemographics75Plus
+        value: vaccinationsAgeDemographics
         metric: cumPeopleVaccinatedSpring22ByVaccinationDate
+        filters:
+              parameter: age
+              value: 75+
         tooltip: Total number of people who have received a spring booster dose of COVID-19 vaccine, reported up to {date}
 
 # {{ EndDevOnlyBlock }}
@@ -2936,12 +2939,15 @@ cards:
         tabType: chart
         fields:
           - label: Number of vaccinations
-            << : *vaccinationsAgeDemographics75Plus
+            value: vaccinationsAgeDemographics
             tooltip: Daily number of people who received a spring booster of COVID-19 vaccine
             type: bar
             colour: 0
             rollingAverage: false
             metric: newPeopleVaccinatedSpring22ByVaccinationDate
+            filters:
+              parameter: age
+              value: 75+
               highlight:
                 from: -2
                 to: 0
@@ -2952,12 +2958,15 @@ cards:
         tabType: chart
         fields:
           - label: Number of vaccinations
-            << : *vaccinationsAgeDemographics75Plus
-            tooltip: Toal number of people who received a spring booster of COVID-19 vaccine
+            value: vaccinationsAgeDemographics
+            tooltip: Total number of people who received a spring booster of COVID-19 vaccine
             type: bar
             colour: 0
             rollingAverage: false
             metric: cumPeopleVaccinatedSpring22ByVaccinationDate
+            filters:
+              parameter: age
+              value: 75+
               highlight:
                 from: -2
                 to: 0
@@ -2972,16 +2981,16 @@ cards:
      #       type: date
 
      #     - label: "Daily vaccinations: 75+"
-     #       metric: vaccinations
-     #       value: newPeopleVaccinatedSpring22ByVaccinationDate
+     #       metric: newPeopleVaccinatedSpring22ByVaccinationDate
+     #       value: vaccinationsAgeDemographics
      #       type: numeric
      #       filters:
      #         parameter: age
      #         value: 75+
 
      #     - label: "Total vaccinations: 75+"
-     #       metric: vaccinations
-     #       value: cumPeopleVaccinatedSpring22ByVaccinationDate
+     #       metric: cumPeopleVaccinatedSpring22ByVaccinationDate
+     #       value: vaccinationsAgeDemographics
      #       type: numeric
      #       filters:
      #         parameter: age
