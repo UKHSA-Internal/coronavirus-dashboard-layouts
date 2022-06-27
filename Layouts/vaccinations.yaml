@@ -2928,8 +2928,8 @@ cards:
       Data are shown by date of vaccination.
 
     download:
-      - newPeopleVaccinatedSpring22ByVaccinationDate
-      - cumPeopleVaccinatedSpring22ByVaccinationDate
+      - vaccinationsAgeDemographics
+      
 
     tabs:
       - heading: Daily
