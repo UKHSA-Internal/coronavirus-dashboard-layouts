@@ -2961,40 +2961,4 @@ cards:
 
 ##############################################################################################################################
 
-  - heading: People aged 75 and over who have received spring booster vaccinations, by vaccination date [DEV TEST 2]
-    cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      Number of people above and below 60 who died within 28 days of being identified as a COVID-19 case by a positive test. 
-      Rates are shown per 100,000 people in the rolling 7-day period ending on the dates shown. Data are shown by date of death.
-
-    download:
-      - vaccinationsAgeDemographics
-
-    tabs:
-      
-      - heading: Daily vaccinations
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Number of deaths aged 0 to 59
-            << : *vaccinationAgeDemographics75Plus
-            tooltip: Daily number of deaths of people aged 0-59 by date of death
-            type: bar
-            colour: 0
-            rollingAverage: false
-            metric: newPeopleVaccinatedSpring22ByVaccinationDate
-
-      
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
-
-##############################################################################################################################
-
 # {{ EndDevOnlyBlock }}
