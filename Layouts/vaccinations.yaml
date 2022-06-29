@@ -2144,7 +2144,7 @@ cards:
             value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
             tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
             colour: 3
-     
+
       - heading: Data table
         tabType: table
 
@@ -2167,7 +2167,7 @@ cards:
           - label: "Booster or third dose (%)"
             value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine            
+            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
 
       - heading: About
         tabType: metadata
@@ -2756,7 +2756,7 @@ cards:
           - label: Booster or 3rd dose (%)
             value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}           
+            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}
 
       - heading: Upper tier LA
         tabType: table
@@ -2803,7 +2803,7 @@ cards:
           - label: Booster or 3rd dose (%)
             value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
             type: numeric
-            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}            
+            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}
 
       - heading: Lower tier LA
         tabType: table
@@ -2863,13 +2863,13 @@ cards:
   - heading: Spring booster vaccination uptake, by vaccination date age demographics [DEV]
     cardType: chart
     experimental: false
-    
+
     fullWidth: true
     abstract: >
       Total percentage of people who have received a spring booster COVID-19 vaccination, by age group.
       The denominator is the number of people aged 75 and over on the National Immunisation Management
-      Service (NIMS) database. 
- 
+      Service (NIMS) database.
+
     download:
       - vaccinationsAgeDemographics
 
@@ -2883,7 +2883,7 @@ cards:
             amplitudeLabel: Percentage uptake
             metricLabel: Age group
             parameter: age
-                  
+
             metrics:
             #Both Eng and Scot
             - label: 75 to 79
@@ -2904,7 +2904,7 @@ cards:
       - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-            
+
 ##############################################################################################################################
 
   - heading: People aged 75 and over who have received spring booster vaccinations, by vaccination date [DEV]
@@ -2916,7 +2916,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      The number of people aged 75 and over who have received a spring booster COVID-19 vaccination. Data for the latest 2 days, marked in grey, are incomplete. 
+      The number of people aged 75 and over who have received a spring booster COVID-19 vaccination. Data for the latest 2 days, marked in grey, are incomplete.
       Data are shown by date of vaccination.
 
     download:
@@ -2933,11 +2933,11 @@ cards:
             colour: 0
             rollingAverage: false
             metric: newPeopleVaccinatedThirdInjectionByVaccinationDate
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
+            highlight:
+              from: -2
+              to: 0
+              colour: 6
+              label: "Most recent 2 days (incomplete)"
 
       - heading: Total
         tabType: chart
@@ -2949,11 +2949,11 @@ cards:
             colour: 0
             rollingAverage: false
             metric: cumPeopleVaccinatedThirdInjectionByVaccinationDate
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
+            highlight:
+              from: -2
+              to: 0
+              colour: 6
+              label: "Most recent 2 days (incomplete)"
 
       - heading: About
         tabType: metadata
