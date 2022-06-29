@@ -2986,55 +2986,55 @@ cards:
 
 # Spring booster waffle chart
 
-  - heading: Latest spring booster vaccintion uptake (75+), by vaccination date
-    cardType: tabContentRaw
-    locationAware:
-      excluded:
-        areaType:
-          - overview
+  # - heading: Latest spring booster vaccintion uptake (75+), by vaccination date
+  #   cardType: tabContentRaw
+  #   locationAware:
+  #     excluded:
+  #       areaType:
+  #         - overview
 
-    fullWidth: false
-    abstract: > 
-      Latest total percentage of people aged 75 and over who have received a spring booster COVID-19 vaccination.
-      The denominator is the number of people aged 75 and over on the National Immunisation Management
-      Service (NIMS) database.
+  #   fullWidth: false
+  #   abstract: > 
+  #     Latest total percentage of people aged 75 and over who have received a spring booster COVID-19 vaccination.
+  #     The denominator is the number of people aged 75 and over on the National Immunisation Management
+  #     Service (NIMS) database.
 
-    download:
-      - vaccinationsAgeDemographics
+  #   download:
+  #     - vaccinationsAgeDemographics
 
-    tabs:
-      - heading: Chart
-        tabType: percentageWaffle
+  #   tabs:
+  #     - heading: Chart
+  #       tabType: percentageWaffle
 
-        fields:
-          label: Spring booster dose (%)
-          value: vaccinationsAgeDemographics
-          tooltip: Total percentage of people who received a spring booster dose of COVID-19 vaccine
-          colour: 1
-          metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-          filters:
-            parameter: age
-            value: 75+
+  #       fields:
+  #         label: Spring booster dose (%)
+  #         value: vaccinationsAgeDemographics
+  #         tooltip: Total percentage of people who received a spring booster dose of COVID-19 vaccine
+  #         colour: 1
+  #         metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+  #         filters:
+  #           parameter: age
+  #           value: 75+
 
           
-      - heading: Data table
-        tabType: nestedTable
-        fields:
-          - label: Vaccination date
-            value: date
-            type: date
+  #     - heading: Data table
+  #       tabType: nestedTable
+  #       fields:
+  #         - label: Vaccination date
+  #           value: date
+  #           type: date
 
-          - label: "Spring booster dose (%)"
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 75+
+  #         - label: "Spring booster dose (%)"
+  #           metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+  #           value: vaccinationsAgeDemographics
+  #           type: numeric
+  #           filters:
+  #             parameter: age
+  #             value: 75+
 
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
+  #     - heading: About
+  #       tabType: metadata
+  #       filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
 
 ##############################################################################################################################
 
