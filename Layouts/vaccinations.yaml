@@ -2987,7 +2987,7 @@ cards:
 # Spring booster waffle chart
 
   - heading: Latest spring booster vaccintion uptake (75+), by vaccination date
-    cardType: tabContentRaw
+    cardType: chart
     locationAware:
       excluded:
         areaType:
