@@ -56,6 +56,245 @@ vaccinationAgeDemographics90+: &vaccinationAgeDemographics90Plus
 ##############################################################################################################################
 
 cards:
+
+# {{ StartDevOnlyBlock }}
+
+# daily and total spring booster vaccinations
+
+  - heading: People aged 75 and over who have received spring booster vaccinations, by vaccination date [DEV]
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      The number of people aged 75 and over who have received a spring booster COVID-19 vaccination. Data for the latest 2 days, marked in grey, are incomplete.
+      Data are shown by date of vaccination.
+
+    download:
+      - vaccinationsAgeDemographics
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        fields:
+          - label: Number of vaccinations
+            << : *vaccinationAgeDemographics75Plus
+            tooltip: Daily number of people who received a spring booster of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false
+            metric: newPeopleVaccinatedSpring22ByVaccinationDate
+            highlight:
+              from: -2
+              to: 0
+              colour: 6
+              label: "Most recent 2 days (incomplete)"
+
+      - heading: Total
+        tabType: chart
+        fields:
+          - label: Number of vaccinations
+            << : *vaccinationAgeDemographics75Plus
+            tooltip: Total number of people who received a spring booster of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false
+            metric: cumPeopleVaccinatedSpring22ByVaccinationDate
+            highlight:
+              from: -2
+              to: 0
+              colour: 6
+              label: "Most recent 2 days (incomplete)"
+
+      - heading: Data table
+        tabType: nestedTable
+        fields:
+          - label: Date
+            value: date
+            type: date
+
+          - label: "Daily vaccinations: 75+"
+            metric: newPeopleVaccinatedSpring22ByVaccinationDate
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 75+
+
+          - label: "Total vaccinations: 75+"
+            metric: cumPeopleVaccinatedSpring22ByVaccinationDate
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 75+
+
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
+
+##############################################################################################################################
+
+# Spring booster uptake line chart
+
+  - heading: Spring booster vaccination uptake (75+), by vaccination date [DEV]
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: false
+    abstract: >
+      The percentage of people aged 75 and over who have received a spring booster COVID-19 vaccination.
+      The denominator is the number of people aged 75 and over on the National Immunisation Management
+      Service (NIMS) database.
+    
+    download:
+      - vaccinationsAgeDemographics
+    
+    tabs:
+      - heading: Chart
+        tabType: chart
+
+        fields:
+          - label: Spring booster dose (%)
+            << : *vaccinationAgeDemographics75Plus
+            tooltip: Percentage of people who received a spring booster dose of COVID-19 vaccine
+            type: line
+            colour: 0
+            rollingAverage: false
+            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+      
+      - heading: Data table
+        tabType: nestedTable
+        fields:
+          - label: "Vaccination date"
+            value: date
+            type: date
+          
+          - label: "Spring booster dose 75+ (%)"
+            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 75+
+      
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+##############################################################################################################################
+
+
+
+
+# Spring booster demographics line chart
+
+  - heading: Spring booster vaccination uptake, by vaccination date age demographics [DEV]
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: false
+    abstract: >
+      Percentage of people who have received a spring booster COVID-19 vaccination, by age group.
+      The denominator is the number of people on the National Immunisation Management
+      Service (NIMS) database, within the relevent age group.
+    
+    download:
+      - vaccinationsAgeDemographics
+    
+    tabs:
+      - heading: Chart
+        tabType: chart
+
+        fields:
+          - label: 75 to 79 (%)
+            << : *vaccinationAgeDemographics75_79
+            tooltip: Percentage of people aged 75 to 79 who received a spring booster dose of COVID-19 vaccine
+            type: line
+            colour: 0
+            rollingAverage: false
+            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+
+          - label: 80 to 84 (%)
+            << : *vaccinationAgeDemographics80_84
+            tooltip: Percentage of people aged 80 to 84 who received a spring booster dose of COVID-19 vaccine
+            type: line
+            colour: 9
+            rollingAverage: false
+            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+
+          - label: 85 to 89 (%)
+            << : *vaccinationAgeDemographics85_89
+            tooltip: Percentage of people aged 85 to 89 who received a spring booster dose of COVID-19 vaccine
+            type: line
+            colour: 3
+            rollingAverage: false
+            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+
+          - label: 90+ (%)
+            << : *vaccinationAgeDemographics90Plus
+            tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
+            type: line
+            colour: 10
+            rollingAverage: false
+            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+      
+      - heading: Data table
+        tabType: nestedTable
+        fields:
+          - label: "Vaccination date"
+            value: date
+            type: date
+          
+          - label: "Uptake 75 to 79 (%)"
+            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: "75_79"
+          
+          - label: "Uptake 80 to 84 (%)"
+            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: "80_84"
+          
+          - label: "Uptake 85 to 89 (%)"
+            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: "85_89"
+          
+          - label: "Uptake 90+ (%)"
+            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 90+
+      
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+##############################################################################################################################
+
+# {{ EndDevOnlyBlock }}
+
 # UK only (nation version in separate card below)
 
   - heading: People who have received 1st dose vaccinations, by report date
@@ -2922,82 +3161,6 @@ cards:
 
 ##############################################################################################################################
 
-  - heading: People aged 75 and over who have received spring booster vaccinations, by vaccination date [DEV]
-    cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      The number of people aged 75 and over who have received a spring booster COVID-19 vaccination. Data for the latest 2 days, marked in grey, are incomplete.
-      Data are shown by date of vaccination.
-
-    download:
-      - vaccinationsAgeDemographics
-
-    tabs:
-      - heading: Daily
-        tabType: chart
-        fields:
-          - label: Number of vaccinations
-            << : *vaccinationAgeDemographics75Plus
-            tooltip: Daily number of people who received a spring booster of COVID-19 vaccine
-            type: bar
-            colour: 0
-            rollingAverage: false
-            metric: newPeopleVaccinatedSpring22ByVaccinationDate
-            highlight:
-              from: -2
-              to: 0
-              colour: 6
-              label: "Most recent 2 days (incomplete)"
-
-      - heading: Total
-        tabType: chart
-        fields:
-          - label: Number of vaccinations
-            << : *vaccinationAgeDemographics75Plus
-            tooltip: Total number of people who received a spring booster of COVID-19 vaccine
-            type: bar
-            colour: 0
-            rollingAverage: false
-            metric: cumPeopleVaccinatedSpring22ByVaccinationDate
-            highlight:
-              from: -2
-              to: 0
-              colour: 6
-              label: "Most recent 2 days (incomplete)"
-
-      - heading: Data table
-        tabType: nestedTable
-        fields:
-          - label: Date
-            value: date
-            type: date
-
-          - label: "Daily vaccinations: 75+"
-            metric: newPeopleVaccinatedSpring22ByVaccinationDate
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 75+
-
-          - label: "Total vaccinations: 75+"
-            metric: cumPeopleVaccinatedSpring22ByVaccinationDate
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 75+
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
-
-##############################################################################################################################
 
 # Spring booster waffle chart
 
@@ -3050,161 +3213,6 @@ cards:
   #     - heading: About
   #       tabType: metadata
   #       filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
-
-##############################################################################################################################
-
-# Spring booster uptake line chart
-
-  - heading: Spring booster vaccination uptake (75+), by vaccination date [DEV]
-    cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: false
-    abstract: >
-      The percentage of people aged 75 and over who have received a spring booster COVID-19 vaccination.
-      The denominator is the number of people aged 75 and over on the National Immunisation Management
-      Service (NIMS) database.
-    
-    download:
-      - vaccinationsAgeDemographics
-    
-    tabs:
-      - heading: Chart
-        tabType: chart
-
-        fields:
-          - label: Spring booster dose (%)
-            << : *vaccinationAgeDemographics75Plus
-            tooltip: Percentage of people who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 0
-            rollingAverage: false
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-      
-      - heading: Data table
-        tabType: nestedTable
-        fields:
-          - label: "Vaccination date"
-            value: date
-            type: date
-          
-          - label: "Spring booster dose 75+ (%)"
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 75+
-      
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-##############################################################################################################################
-
-
-
-
-# Spring booster demographics line chart
-
-  - heading: Spring booster vaccination uptake, by vaccination date age demographics [DEV]
-    cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: false
-    abstract: >
-      Percentage of people who have received a spring booster COVID-19 vaccination, by age group.
-      The denominator is the number of people on the National Immunisation Management
-      Service (NIMS) database, within the relevent age group.
-    
-    download:
-      - vaccinationsAgeDemographics
-    
-    tabs:
-      - heading: Chart
-        tabType: chart
-
-        fields:
-          - label: 75 to 79 (%)
-            << : *vaccinationAgeDemographics75_79
-            tooltip: Percentage of people aged 75 to 79 who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 0
-            rollingAverage: false
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-
-          - label: 80 to 84 (%)
-            << : *vaccinationAgeDemographics80_84
-            tooltip: Percentage of people aged 80 to 84 who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 1
-            rollingAverage: false
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-
-          - label: 85 to 89 (%)
-            << : *vaccinationAgeDemographics85_89
-            tooltip: Percentage of people aged 85 to 89 who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 2
-            rollingAverage: false
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-
-          - label: 90+ (%)
-            << : *vaccinationAgeDemographics90Plus
-            tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 3
-            rollingAverage: false
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-      
-      - heading: Data table
-        tabType: nestedTable
-        fields:
-          - label: "Vaccination date"
-            value: date
-            type: date
-          
-          - label: "Uptake 75 to 79 (%)"
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: "75_79"
-          
-          - label: "Uptake 80 to 84 (%)"
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: "80_84"
-          
-          - label: "Uptake 85 to 89 (%)"
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: "85_89"
-          
-          - label: "Uptake 90+ (%)"
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 90+
-      
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 ##############################################################################################################################
 
