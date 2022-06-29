@@ -2987,7 +2987,7 @@ cards:
 # Spring booster waffle chart
 
   - heading: Latest spring booster vaccintion uptake (75+), by vaccination date
-    cardType: chart
+    cardType: tabContentRaw
     locationAware:
       excluded:
         areaType:
@@ -3004,16 +3004,16 @@ cards:
 
     tabs:
       - heading: Chart
-        tabType: chart
+        tabType: percentageWaffle
+        
         fields:
           label: Spring booster dose (%)
           << : *vaccinationAgeDemographics75Plus
           tooltip: Total percentage of people who received a spring booster dose of COVID-19 vaccine
-          type: percentageWaffle
           colour: 1
+          type: percentageWaffle
           metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
           
-
       - heading: Data table
         tabType: nestedTable
         fields:
