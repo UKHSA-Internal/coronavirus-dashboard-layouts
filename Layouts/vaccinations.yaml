@@ -2948,12 +2948,35 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
-            metric: cumPeopleVaccinatedThirdInjectionByVaccinationDate
+            metric: cumPeopleVaccinatedSpring22ByVaccinationDate
             highlight:
               from: -2
               to: 0
               colour: 6
               label: "Most recent 2 days (incomplete)"
+
+      - heading: Data table
+        tabType: nestedTable
+        fields:
+          - label: Date
+            value: date
+            type: date
+
+          - label: "Daily vaccinations: 75+"
+            metric: newPeopleVaccinatedSpring22ByVaccinationDate
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 75+
+
+          - label: "Total vaccinations: 75+"
+            metric: cumPeopleVaccinatedSpring22ByVaccinationDate
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 75+
 
       - heading: About
         tabType: metadata
