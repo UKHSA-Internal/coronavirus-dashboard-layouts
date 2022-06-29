@@ -2875,50 +2875,50 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 
-  - heading: Spring booster vaccination uptake, by vaccination date age demographics [DEV]
-    cardType: chart
-    experimental: false
+  # - heading: Spring booster vaccination uptake, by vaccination date age demographics [DEV]
+  #   cardType: chart
+  #   experimental: false
 
-    fullWidth: true
-    abstract: >
-      Total percentage of people who have received a spring booster COVID-19 vaccination, by age group.
-      The denominator is the number of people aged 75 and over on the National Immunisation Management
-      Service (NIMS) database.
+  #   fullWidth: true
+  #   abstract: >
+  #     Total percentage of people who have received a spring booster COVID-19 vaccination, by age group.
+  #     The denominator is the number of people aged 75 and over on the National Immunisation Management
+  #     Service (NIMS) database.
 
-    download:
-      - vaccinationsAgeDemographics
+  #   download:
+  #     - vaccinationsAgeDemographics
 
-    tabs:
-      - heading: Heatmap
-        tabType: percentageHeatmap
-        fields:
-          - label: Age demographics
-            value: vaccinationsAgeDemographics
-            amplitude: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            amplitudeLabel: Percentage uptake
-            metricLabel: Age group
-            parameter: age
+  #   tabs:
+  #     - heading: Heatmap
+  #       tabType: percentageHeatmap
+  #       fields:
+  #         - label: Age demographics
+  #           value: vaccinationsAgeDemographics
+  #           amplitude: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+  #           amplitudeLabel: Percentage uptake
+  #           metricLabel: Age group
+  #           parameter: age
 
-            metrics:
-            #Both Eng and Scot
-            - label: 75 to 79
-              value: "75_79"
+  #           metrics:
+  #           #Both Eng and Scot
+  #           - label: 75 to 79
+  #             value: "75_79"
 
-            #Eng only
-            - label: 80 to 84
-              value: "80_84"
+  #           #Eng only
+  #           - label: 80 to 84
+  #             value: "80_84"
 
-            #Eng only
-            - label: 85 to 89
-              value: "85_89"
+  #           #Eng only
+  #           - label: 85 to 89
+  #             value: "85_89"
 
-            #Eng only
-            - label: 90+
-              value: "90+"
+  #           #Eng only
+  #           - label: 90+
+  #             value: "90+"
 
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+  #     - heading: About
+  #       tabType: metadata
+  #       filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 ##############################################################################################################################
 
@@ -3105,6 +3105,9 @@ cards:
 
 ##############################################################################################################################
 
+
+
+
 # Spring booster demographics line chart
 
   - heading: Spring booster vaccination uptake, by vaccination date age demographics [DEV]
@@ -3167,7 +3170,7 @@ cards:
             value: date
             type: date
           
-          - label: "Spring booster dose 75 to 79 (%)"
+          - label: "Uptake 75 to 79 (%)"
             metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
             type: numeric
@@ -3175,7 +3178,7 @@ cards:
               parameter: age
               value: "75_79"
           
-          - label: "Spring booster dose 80 to 84 (%)"
+          - label: "Uptake 80 to 84 (%)"
             metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
             type: numeric
@@ -3183,7 +3186,7 @@ cards:
               parameter: age
               value: "80_84"
           
-          - label: "Spring booster dose 85 to 89 (%)"
+          - label: "Uptake 85 to 89 (%)"
             metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
             type: numeric
@@ -3191,7 +3194,7 @@ cards:
               parameter: age
               value: "85_89"
           
-          - label: "Spring booster dose 90+ (%)"
+          - label: "Uptake 90+ (%)"
             metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
             type: numeric
@@ -3203,5 +3206,6 @@ cards:
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
+##############################################################################################################################
 
 # {{ EndDevOnlyBlock }}
