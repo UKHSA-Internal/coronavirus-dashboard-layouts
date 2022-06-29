@@ -3011,7 +3011,7 @@ cards:
           tooltip: Total percentage of people who received a spring booster dose of COVID-19 vaccine
           type: percentageWaffle
           colour: 1
-          metric: cumPeopleVaccinatedSpring22ByVaccinationDate
+          metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
           
 
       - heading: Data table
