@@ -3029,4 +3029,53 @@ cards:
 
 ##############################################################################################################################
 
+# Spring booster uptake line chart
+
+  - heading: Spring booster vaccination uptake (75+), by vaccination date
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
+
+    fullWidth: false
+    abstract: >
+      The percentage of people aged 75 and over who have received a spring booster COVID-19 vaccination.
+      The denominator is the number of people aged 75 and over on the National Immunisation Management
+      Service (NIMS) database.
+    
+    download:
+      - vaccinationsAgeDemographics
+    
+    tabs:
+      - heading: Chart
+        tabType: chart
+
+        fields:
+          - label: Spring booster dose (%)
+            << : *vaccinationAgeDemographics75Plus
+            tooltip: Percentage of people who received a spring booster dose of COVID-19 vaccine
+            type: line
+            colour: 0
+            rollingAverage: false
+            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+      
+      - heading: Data table
+        tabType: nestedTable
+        fields:
+          - label: Vaccination date
+            value: date
+            type: date
+          
+          - label: "Spring booster dose (%)"
+            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+      
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+##############################################################################################################################
+
 # {{ EndDevOnlyBlock }}
