@@ -3004,14 +3004,15 @@ cards:
 
     tabs:
       - heading: Chart
-        tabType: percentageWaffle
-
+        tabType: chart
         fields:
           label: Spring booster dose (%)
           << : *vaccinationAgeDemographics75Plus
           tooltip: Total percentage of people who received a spring booster dose of COVID-19 vaccine
+          type: percentageWaffle
           colour: 1
           metric: cumPeopleVaccinatedSpring22ByVaccinationDate
+          
 
       - heading: Data table
         tabType: nestedTable
