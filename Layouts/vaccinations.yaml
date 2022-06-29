@@ -3063,14 +3063,17 @@ cards:
       - heading: Data table
         tabType: nestedTable
         fields:
-          - label: Vaccination date
+          - label: "Vaccination date"
             value: date
             type: date
           
-          - label: "Spring booster dose (%)"
+          - label: "Spring booster dose 75+ (%)"
             metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
             type: numeric
+            filters:
+              parameter: age
+              value: 75+
       
       - heading: About
         tabType: metadata
