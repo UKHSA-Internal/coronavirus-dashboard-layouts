@@ -57,8 +57,6 @@ vaccinationAgeDemographics90+: &vaccinationAgeDemographics90Plus
 
 cards:
 
-# {{ StartDevOnlyBlock }}
-
 # daily and total spring booster vaccinations
 
   - heading: People aged 75 and over who have received spring booster vaccinations, by vaccination date [DEV]
@@ -297,7 +295,6 @@ cards:
 
 ##############################################################################################################################
 
-# {{ EndDevOnlyBlock }}
 
 # UK only (nation version in separate card below)
 
