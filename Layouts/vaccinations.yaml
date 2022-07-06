@@ -206,7 +206,7 @@ cards:
     abstract: >
       Percentage of people who have received a spring booster COVID-19 vaccination, by age group.
       The denominator is the number of people on the National Immunisation Management
-      Service (NIMS) database, within the relevent age group.
+      Service (NIMS) database, within the relevant age group.
     
     download:
       - vaccinationsAgeDemographics
@@ -223,6 +223,7 @@ cards:
             colour: 0
             rollingAverage: false
             metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+            fill: false
 
           - label: 80 to 84 (%)
             << : *vaccinationAgeDemographics80_84
@@ -231,6 +232,7 @@ cards:
             colour: 9
             rollingAverage: false
             metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+            fill: false
 
           - label: 85 to 89 (%)
             << : *vaccinationAgeDemographics85_89
@@ -239,6 +241,7 @@ cards:
             colour: 3
             rollingAverage: false
             metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+            fill: false
 
           - label: 90+ (%)
             << : *vaccinationAgeDemographics90Plus
@@ -247,6 +250,7 @@ cards:
             colour: 10
             rollingAverage: false
             metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+            fill: false
       
       - heading: Data table
         tabType: nestedTable
