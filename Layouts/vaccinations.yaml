@@ -59,7 +59,7 @@ cards:
 
 # daily and total spring booster vaccinations
 
-  - heading: People aged 75 and over who have received spring booster vaccinations, by vaccination date [DEV]
+  - heading: People aged 75 and over who have received spring booster vaccinations, by vaccination date
     cardType: chart
     locationAware:
       excluded:
@@ -138,7 +138,7 @@ cards:
 
 # Spring booster uptake line chart
 
-  - heading: Spring booster vaccination uptake (75+), by vaccination date [DEV]
+  - heading: Spring booster vaccination uptake (75+), by vaccination date
     cardType: chart
     locationAware:
       excluded:
@@ -193,7 +193,7 @@ cards:
 
 # Spring booster demographics line chart
 
-  - heading: Spring booster vaccination uptake, by vaccination date age demographics [DEV]
+  - heading: Spring booster vaccination uptake, by vaccination date age demographics
     cardType: chart
     locationAware:
       excluded:
