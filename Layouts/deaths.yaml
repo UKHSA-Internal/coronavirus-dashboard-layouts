@@ -1373,30 +1373,30 @@ cards:
       - cumDeaths28DaysByPublishDateRate
 
     tabs:
-      - heading: UK
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: overview
+      # - heading: UK
+      #   tabType: table
+      #   params:
+      #     - key: areaType
+      #       sign: "="
+      #       value: overview
 
-        latestBy: cumDeaths28DaysByPublishDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
+      #   latestBy: cumDeaths28DaysByPublishDate
+      #   sortBy: areaName
+      #   fields:
+      #     - label: Area
+      #       value: areaName
+      #       type: string
+      #       tooltip: ""
 
-          - label: Deaths
-            value: cumDeaths28DaysByPublishDate
-            type: numeric
-            tooltip: Total number of deaths within 28 days of first positive test of people resident in each area up to {date}
+      #     - label: Deaths
+      #       value: cumDeaths28DaysByPublishDate
+      #       type: numeric
+      #       tooltip: Total number of deaths within 28 days of first positive test of people resident in each area up to {date}
 
-          - label: Rate per 100,000 population
-            value: cumDeaths28DaysByPublishDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
+      #     - label: Rate per 100,000 population
+      #       value: cumDeaths28DaysByPublishDateRate
+      #       type: numeric
+      #       tooltip: Death rate per 100,000 resident population
 
 
       - heading: Nation
