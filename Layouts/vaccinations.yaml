@@ -63,10 +63,7 @@ cards:
     cardType: chart
     locationAware:
       excluded:
-        areaType:
-          - overview
-        areaName:
-          - Scotland
+        
         areaCode:
           - S12000005
           - S12000006
@@ -100,6 +97,7 @@ cards:
           - S12000048
           - S12000049
           - S12000050
+          - S92000003
 
     fullWidth: true
     abstract: >
@@ -177,10 +175,7 @@ cards:
     cardType: chart
     locationAware:
       excluded:
-        areaType:
-          - overview
-        areaName:
-          - Scotland
+        
         areaCode:
           - S12000005
           - S12000006
@@ -214,6 +209,7 @@ cards:
           - S12000048
           - S12000049
           - S12000050
+          - S92000003
 
     fullWidth: false
     abstract: >
@@ -267,10 +263,7 @@ cards:
     cardType: chart
     locationAware:
       excluded:
-        areaType:
-          - overview
-        areaName:
-          - Scotland
+        
         areaCode:
           - S12000005
           - S12000006
@@ -304,6 +297,7 @@ cards:
           - S12000048
           - S12000049
           - S12000050
+          - S92000003
 
     fullWidth: false
     abstract: >
