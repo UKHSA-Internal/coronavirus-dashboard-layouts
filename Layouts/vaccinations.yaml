@@ -380,9 +380,33 @@ cards:
           - Wyre
           - Wyre Forest
           - York
+          - Cumbria
+          - Derbyshire
+          - Devon
+          - East Sussex
+          - Essex
+          - Gloucestershire
+          - Hampshire
+          - Hertfordshire
+          - Kent
+          - Lancashire
+          - Leicestershire
+          - Lincolnshire
+          - Norfolk
+          - North Yorkshire
+          - Northamptonshire
+          - Nottinghamshire
+          - Oxfordshire
+          - Somerset
+          - Staffordshire
+          - Suffolk
+          - Surrey
+          - Warwickshire
+          - West Sussex
+          - Worcestershire
         areaType:
           - region
-          - utla
+
 
     fullWidth: true
     abstract: >
@@ -777,9 +801,32 @@ cards:
           - Wyre
           - Wyre Forest
           - York
+          - Cumbria
+          - Derbyshire
+          - Devon
+          - East Sussex
+          - Essex
+          - Gloucestershire
+          - Hampshire
+          - Hertfordshire
+          - Kent
+          - Lancashire
+          - Leicestershire
+          - Lincolnshire
+          - Norfolk
+          - North Yorkshire
+          - Northamptonshire
+          - Nottinghamshire
+          - Oxfordshire
+          - Somerset
+          - Staffordshire
+          - Suffolk
+          - Surrey
+          - Warwickshire
+          - West Sussex
+          - Worcestershire
         areaType:
           - region
-          - utla
 
     fullWidth: false
     abstract: >
@@ -1150,9 +1197,32 @@ cards:
           - Wyre
           - Wyre Forest
           - York
+          - Cumbria
+          - Derbyshire
+          - Devon
+          - East Sussex
+          - Essex
+          - Gloucestershire
+          - Hampshire
+          - Hertfordshire
+          - Kent
+          - Lancashire
+          - Leicestershire
+          - Lincolnshire
+          - Norfolk
+          - North Yorkshire
+          - Northamptonshire
+          - Nottinghamshire
+          - Oxfordshire
+          - Somerset
+          - Staffordshire
+          - Suffolk
+          - Surrey
+          - Warwickshire
+          - West Sussex
+          - Worcestershire         
         areaType:
           - region
-          - utla
 
     fullWidth: false
     abstract: >
