@@ -2334,7 +2334,7 @@ cards:
     fullWidth: false
     abstract: >
        Total number of first episodes of infection since the start of the pandemic, and rate per 100,000 people. This represents the total number of people
-       who have tested positive during the pandemic. Definitions of cases vary by nation. 
+       who have ever tested positive during the pandemic. Definitions of cases vary by nation. 
        For example, not all nations include lateral flow testing in their case counts.
 
     download:
