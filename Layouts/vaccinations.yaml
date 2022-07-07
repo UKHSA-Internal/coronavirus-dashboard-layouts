@@ -62,9 +62,13 @@ cards:
   - heading: People aged 75 and over who have received spring booster vaccinations, by vaccination date
     cardType: chart
     locationAware:
-      excluded:
-        areaCode:
-          - S92000003
+      included:
+        areaName:
+          - England
+        areaType:
+          - region
+          - utla
+          - ltla
 
     fullWidth: true
     abstract: >
@@ -292,6 +296,7 @@ cards:
       - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
 
 ##############################################################################################################################
 
