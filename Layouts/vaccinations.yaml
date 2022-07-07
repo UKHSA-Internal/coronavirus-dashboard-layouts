@@ -66,6 +66,128 @@ cards:
         areaName:
           - England
           - Barking and Dagenham
+          - Barnet
+          - Barnsley
+          - Bath and North East Somerset
+          - Bedford
+          - Bexley
+          - Birmingham
+          - Blackburn with Darwen
+          - Blackpool
+          - Bolton
+          - Bournemouth, Christchurch and Poole
+          - Bracknell Forest
+          - Bradford
+          - Brent
+          - Brighton and Hove
+          - Bristol, City of
+          - Bromley
+          - Bury
+          - Calderdale
+          - Camden
+          - Central Bedfordshire
+          - Cheshire East
+          - Cheshire West and Chester
+          - Cornwall and Isles of Scilly
+          - County Durham
+          - Coventry
+          - Croydon
+          - Darlington
+          - Derby
+          - Doncaster
+          - Dorset
+          - Dudley
+          - Ealing
+          - East Riding of Yorkshire
+          - Enfield
+          - Gateshead
+          - Greenwich
+          - Hackney and City of London
+          - Halton
+          - Hammersmith and Fulham
+          - Haringey
+          - Harrow
+          - Hartlepool
+          - Havering
+          - Herefordshire, County of
+          - Hillingdon
+          - Hounslow
+          - Isle of Wight
+          - Islington
+          - Kensington and Chelsea
+          - Kingston upon Hull, City of
+          - Kingston upon Thames
+          - Kirklees
+          - Knowsley
+          - Lambeth
+          - Leeds
+          - Leicester
+          - Lewisham
+          - Liverpool
+          - Luton
+          - Manchester
+          - Medway
+          - Merton
+          - Middlesbrough
+          - Milton Keynes
+          - Newcastle upon Tyne
+          - Newham
+          - North East Lincolnshire
+          - North Lincolnshire
+          - North Somerset
+          - North Tyneside
+          - Northumberland
+          - Nottingham
+          - Oldham
+          - Peterborough
+          - Plymouth
+          - Portsmouth
+          - Reading
+          - Redbridge
+          - Redcar and Cleveland
+          - Richmond upon Thames
+          - Rochdale
+          - Rotherham
+          - Rutland
+          - Salford
+          - Sandwell
+          - Sefton
+          - Sheffield
+          - Shropshire
+          - Slough
+          - Solihull
+          - South Gloucestershire
+          - South Tyneside
+          - Southampton
+          - Southend-on-Sea
+          - Southwark
+          - St. Helens
+          - Stockport
+          - Stockton-on-Tees
+          - Stoke-on-Trent
+          - Sunderland
+          - Sutton
+          - Swindon
+          - Tameside
+          - Telford and Wrekin
+          - Thurrock
+          - Torbay
+          - Tower Hamlets
+          - Trafford
+          - Wakefield
+          - Walsall
+          - Waltham Forest
+          - Wandsworth
+          - Warrington
+          - West Berkshire
+          - Westminster
+          - Wigan
+          - Wiltshire
+          - Windsor and Maidenhead
+          - Wirral
+          - Wokingham
+          - Wolverhampton
+          - York
         areaType:
           - region
           - utla
