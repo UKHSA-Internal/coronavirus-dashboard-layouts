@@ -63,8 +63,8 @@ cards:
     cardType: chart
     locationAware:
       excluded:
-        areaName:
-          - Scotland
+        areaCode:
+          - S92000003
 
     fullWidth: true
     abstract: >
