@@ -68,7 +68,6 @@ cards:
         areaType:
           - region
           - utla
-          - ltla
 
     fullWidth: true
     abstract: >
