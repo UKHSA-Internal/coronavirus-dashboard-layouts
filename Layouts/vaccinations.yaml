@@ -65,6 +65,7 @@ cards:
       included:
         areaName:
           - England
+          - Barking and Dagenham
         areaType:
           - region
           - utla
