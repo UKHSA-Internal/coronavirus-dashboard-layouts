@@ -2329,16 +2329,17 @@ cards:
 
 ##############################################################################################################################
 
-  - heading: Cases by area (whole pandemic)
+  - heading: People tested positive by area (whole pandemic)
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
-       Total number of cases since the start of the pandemic, and rate per 100,000 people. Definitions of cases vary by nation. 
+       Total number of first episodes of infection since the start of the pandemic, and rate per 100,000 people. This represents the total number of people
+       who have tested positive during the pandemic. Definitions of cases vary by nation. 
        For example, not all nations include lateral flow testing in their case counts.
 
     download:
-      - cumCasesByPublishDate
-      - cumCasesByPublishDateRate
+      - cumFirstEpisodesBySpecimenDate
+      - cumFirstEpisodesBySpecimenDateRate
 
     tabs:
       # - heading: UK
@@ -2348,7 +2349,7 @@ cards:
       #       sign: "="
       #       value: overview
 
-      #   latestBy: cumCasesByPublishDate
+      #   latestBy: cumFirstEpisodesBySpecimenDate
       #   sortBy: areaName
 
       #   fields:
@@ -2357,15 +2358,15 @@ cards:
       #       type: string
       #       tooltip: ""
 
-      #     - label: Cases
-      #       value: cumCasesByPublishDate
+      #     - label: First episodes
+      #       value: cumFirstEpisodesBySpecimenDate
       #       type: numeric
-      #       tooltip: Total number of people tested positive up to {date}
+      #       tooltip: Total number of first episodes up to {date}
 
       #     - label: Rate per 100,000 population
-      #       value: cumCasesByPublishDateRate
+      #       value: cumFirstEpisodesBySpecimenDateRate
       #       type: numeric
-      #       tooltip: Rate of total confirmed people tested positive per 100,000 resident population
+      #       tooltip: Rate of total confirmed first episodes per 100,000 resident population
 
       - heading: Nation
         tabType: table
@@ -2374,7 +2375,7 @@ cards:
             sign: "="
             value: nation
 
-        latestBy: cumCasesByPublishDate
+        latestBy: cumFirstEpisodesBySpecimenDate
         sortBy: areaName
 
         fields:
@@ -2383,15 +2384,15 @@ cards:
             type: string
             tooltip: ""
 
-          - label: Cases
-            value: cumCasesByPublishDate
+          - label: First Episodes
+            value: cumFirstEpisodesBySpecimenDate
             type: numeric
-            tooltip: Total number of people tested positive up to {date}
+            tooltip: Total number of first episodes up to {date}
 
           - label: Rate per 100,000 population
-            value: cumCasesByPublishDateRate
+            value: cumFirstEpisodesBySpecimenDateRate
             type: numeric
-            tooltip: Rate of total confirmed people tested positive per 100,000 resident population
+            tooltip: Rate of total confirmed first episodes per 100,000 resident population
 
       - heading: Region
         tabType: table
@@ -2400,7 +2401,7 @@ cards:
             sign: "="
             value: region
 
-        latestBy: cumCasesByPublishDate
+        latestBy: cumFirstEpisodesBySpecimenDate
         sortBy: areaName
 
         fields:
@@ -2409,15 +2410,15 @@ cards:
             type: string
             tooltip: ""
 
-          - label: Cases
-            value: cumCasesByPublishDate
+          - label: First episodes
+            value: cumFirstEpisodesBySpecimenDate
             type: numeric
-            tooltip: Total number of people tested positive up to {date}
+            tooltip: Total number of first episodes up to {date}
 
           - label: Rate per 100,000 population
-            value: cumCasesByPublishDateRate
+            value: cumFirstEpisodesBySpecimenDateRate
             type: numeric
-            tooltip: Rate of total confirmed people tested positive per 100,000 resident population
+            tooltip: Rate of total confirmed first episodes per 100,000 resident population
 
       - heading: Upper tier LA
         tabType: table
@@ -2426,7 +2427,7 @@ cards:
             sign: "="
             value: utla
 
-        latestBy: cumCasesByPublishDate
+        latestBy: cumFirstEpisodesBySpecimenDate
         sortBy: areaName
         searchBy: areaName
 
@@ -2436,15 +2437,15 @@ cards:
             type: string
             tooltip: ""
 
-          - label: Cases
-            value: cumCasesByPublishDate
+          - label: First episodes
+            value: cumFirstEpisodesBySpecimenDate
             type: numeric
-            tooltip: Total number of people tested positive up to {date}
+            tooltip: Total number of first episodes up to {date}
 
           - label: Rate per 100,000 population
-            value: cumCasesByPublishDateRate
+            value: cumFirstEpisodesBySpecimenDateRate
             type: numeric
-            tooltip: Rate of total confirmed people tested positive per 100,000 resident population
+            tooltip: Rate of total confirmed first episodes per 100,000 resident population
 
       - heading: Lower tier LA
         tabType: table
@@ -2453,7 +2454,7 @@ cards:
             sign: "="
             value: ltla
 
-        latestBy: cumCasesByPublishDate
+        latestBy: cumFirstEpisodesBySpecimenDate
         sortBy: areaName
         searchBy: areaName
 
@@ -2463,15 +2464,15 @@ cards:
             type: string
             tooltip: ""
 
-          - label: Cases
-            value: cumCasesByPublishDate
+          - label: First episodes
+            value: cumFirstEpisodesBySpecimenDate
             type: numeric
-            tooltip: Total number of people tested positive up to {date}
+            tooltip: Total number of first episodes up to {date}
 
           - label: Rate per 100,000 population
-            value: cumCasesByPublishDateRate
+            value: cumFirstEpisodesBySpecimenDateRate
             type: numeric
-            tooltip: Rate of total confirmed people tested positive per 100,000 resident population
+            tooltip: Rate of total confirmed first episodes per 100,000 resident population
 
       - heading: About
         tabType: metadata
