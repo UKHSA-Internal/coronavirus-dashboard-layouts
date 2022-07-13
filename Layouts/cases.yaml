@@ -1351,72 +1351,72 @@ cards:
 
 # Not shown for sub-national (no data)
 
-  - heading: Cases by date reported
-    cardType: chart
-    locationAware:
-      included:
-        areaType:
-          - nation
-          - overview
+  # - heading: Cases by date reported
+  #   cardType: chart
+  #   locationAware:
+  #     included:
+  #       areaType:
+  #         - nation
+  #         - overview
 
-    fullWidth: true
-    abstract: >
-      Number of cases by date reported.  
+  #   fullWidth: true
+  #   abstract: >
+  #     Number of cases by date reported.  
 
-    download:
-      - newCasesByPublishDate
-      - cumCasesByPublishDate
+  #   download:
+  #     - newCasesByPublishDate
+  #     - cumCasesByPublishDate
 
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: overlay
-        fields:
-          - label: Number of cases
-            value: newCasesByPublishDate
-            tooltip: Daily number of new people tested positive by date reported
-            type: bar
-            colour: 0
+  #   tabs:
+  #     - heading: Daily
+  #       tabType: chart
+  #       barType: overlay
+  #       fields:
+  #         - label: Number of cases
+  #           value: newCasesByPublishDate
+  #           tooltip: Daily number of new people tested positive by date reported
+  #           type: bar
+  #           colour: 0
 
-          - label: Cases (7-day average)
-            value: newCasesByPublishDate
-            tooltip: 7-day rolling average of the daily number of new people tested positive reported
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage: true
+  #         - label: Cases (7-day average)
+  #           value: newCasesByPublishDate
+  #           tooltip: 7-day rolling average of the daily number of new people tested positive reported
+  #           type: line
+  #           colour: 3
+  #           fill: false
+  #           rollingAverage: true
 
-      - heading: Total
-        tabType: chart
-        fields:
-          - label: Number of cases
-            value: cumCasesByPublishDate
-            tooltip: Total number of people tested positive by date reported
-            type: bar
-            colour: 0
-            rollingAverage: false
+  #     - heading: Total
+  #       tabType: chart
+  #       fields:
+  #         - label: Number of cases
+  #           value: cumCasesByPublishDate
+  #           tooltip: Total number of people tested positive by date reported
+  #           type: bar
+  #           colour: 0
+  #           rollingAverage: false
 
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported on coronavirus.data.gov.uk
+  #     - heading: Data table
+  #       tabType: table
+  #       fields:
+  #         - label: Date reported
+  #           value: date
+  #           type: date
+  #           tooltip: Date reported on coronavirus.data.gov.uk
 
-          - label: Daily cases
-            value: newCasesByPublishDate
-            type: numeric
-            tooltip: Daily number of new people tested positive by date reported
+  #         - label: Daily cases
+  #           value: newCasesByPublishDate
+  #           type: numeric
+  #           tooltip: Daily number of new people tested positive by date reported
 
-          - label: Total cases
-            value: cumCasesByPublishDate
-            type: numeric
-            tooltip: Total number of people tested positive by date reported
+  #         - label: Total cases
+  #           value: cumCasesByPublishDate
+  #           type: numeric
+  #           tooltip: Total number of people tested positive by date reported
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesByReportDateTimeSeries.md
+  #     - heading: About 
+  #       tabType: metadata
+  #       filename: cardMetadata/cases/cardCasesByReportDateTimeSeries.md
 
 ##############################################################################################################################
 
