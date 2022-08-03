@@ -25,13 +25,17 @@ headlineNumbers:
         value: cumCasesBySpecimenDate
         tooltip: Total number of cases with specimen taken up to {date}
 
-      - label: Last 7 days
+      - label: Latest 7 days
         value: newCasesBySpecimenDateRollingSum
         tooltip: Number of new cases reported in the 7 days up to {date}
 
       - label: Change from previous 7 days
         value: newCasesBySpecimenDateChange
         tooltip: Change in number of new cases reported in the 7 days up to {date} compared with the previous 7 day period.
+
+      - label: Percentage change
+        value: newCasesBySpecimenDateChangePercentage
+        tooltip: Percentage change in number of new cases reported in the 7 days up to {date} compared with the previous 7 day period.
 
   - caption: First Episodes
     valueItems: 
