@@ -25,7 +25,7 @@ headlineNumbers:
 
       - label: Change from previous 7 days
         value: newCasesBySpecimenDateChange
-        tooltip: Change in number of new cases reported in the 7 days up to {date} compared with the 7 days up to {date-7}
+        tooltip: Change in number of new cases reported in the 7 days up to {date} compared with the 7 days up to {{date}-7}
 
 # {{ EndDevOnlyBlock }}
 
