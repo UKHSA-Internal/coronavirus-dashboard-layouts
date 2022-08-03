@@ -18,6 +18,16 @@ headlineNumbers:
         tooltip: Total number of possible reinfections with specimen taken up to {date}
        
 # {{ StartDevOnlyBlock }}
+
+      - label: Last 7 days
+        value: newCasesBySpecimenDateRollingSum
+        tooltip: Number of new cases reported in the 7 days up to {date}
+
+      - label: Change from previous 7 days
+        value: newCasesBySpecimenDateChange
+
+# {{ EndDevOnlyBlock }}
+
 # People tested not currently being published
 
   # - caption: All people tested (Dev Only)
