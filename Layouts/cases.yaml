@@ -18,6 +18,12 @@ headlineNumbers:
         tooltip: Total number of possible reinfections with specimen taken up to {date}
        
 # {{ StartDevOnlyBlock }}
+  - caption: Cases
+    valueItems:
+
+      - label: Total
+        value: cumCasesBySpecimenDate
+        tooltip: Total number of cases with specimen taken up to {date}
 
       - label: Last 7 days
         value: newCasesBySpecimenDateRollingSum
@@ -25,7 +31,19 @@ headlineNumbers:
 
       - label: Change from previous 7 days
         value: newCasesBySpecimenDateChange
-        tooltip: Change in number of new cases reported in the 7 days up to {date} compared with the 7 days up to {{date}-7}
+        tooltip: Change in number of new cases reported in the 7 days up to {date} compared with the previous 7 day period.
+
+  - caption: First Episodes
+    valueItems: 
+      - label: Total
+        value: cumFirstEpisodesBySpecimenDate
+        tooltip: Total number of first episodes with specimen taken up to {date}    
+
+  - caption: Reinfections
+    valueItems: 
+      - label: Total
+        value: cumReinfectionsBySpecimenDate
+        tooltip: Total number of possible reinfections with specimen taken up to {date}
 
 # {{ EndDevOnlyBlock }}
 
