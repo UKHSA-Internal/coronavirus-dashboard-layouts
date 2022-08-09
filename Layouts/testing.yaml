@@ -11,6 +11,21 @@ headlineNumbers:
         value: cumVirusTestsByPublishDate
         tooltip: Total number of virus tests reported up to {date}
 
+# {{ StartDevOnlyBlock }}
+
+  - caption: Change from previous 7 days
+    valueItems:
+
+      - label: Number
+        value: newVirusTestsByPublishDateChange
+        tooltip: Change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
+
+      - label: Percentage
+        value: newVirusTestsByPublishDateChangePercentage
+        tooltip: Percentage change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
+
+# {{ EndDevOnlyBlock }}
+
   - caption: PCR testing capacity
     valueItems:
 
