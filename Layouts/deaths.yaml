@@ -10,7 +10,7 @@ headlineNumbers:
 
 # {{ StartDevOnlyBlock }}
 
-      - label: Last 7 days
+      - label: Latest 7 days
         value: newDeaths28DaysByDeathDateRollingSum
         tooltip: Number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date}
 

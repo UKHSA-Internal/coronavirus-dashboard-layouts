@@ -10,6 +10,22 @@ headlineNumbers:
         tooltip: Total number of COVID-19 patients admitted to hospital, reported up to {date}
 
 # {{ StartDevOnlyBlock }}
+
+  - caption: Change from previous 7 days
+    valueItems:
+
+      - label: Number
+        value: newAdmissionsChange
+        tooltip: Change in number of COVID-19 patients admitted to hospital, in the 7 days up to {date} compared with the previous 7 day period.
+
+      - label: Percentage
+        value: newAdmissionsChangePercentage
+        tooltip: Percentage change in the number of COVID-19 patients admitted to hospital, in the 7 days up to {date} compared with the previous 7 day period.
+
+# {{ EndDevOnlyBlock }}
+
+
+# {{ StartDevOnlyBlock }}
 # # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
 # # We don't currently pull in the data from the DAs on this - they did agree to provide it when
 # # asked by the No 10 Press data team, but we have never finalised it
