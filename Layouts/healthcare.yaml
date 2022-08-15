@@ -1,14 +1,15 @@
 headlineNumbers:
   - caption: Patients admitted
     valueItems:
-      - label: Latest 7 days
-        value: newAdmissionsRollingSum
-        tooltip: Number of COVID-19 patients admitted to hospital, in the 7 days up to {date}
-    
+
       - label: Total
         value: cumAdmissions
         tooltip: Total number of COVID-19 patients admitted to hospital, reported up to {date}
 
+      - label: Latest 7 days
+        value: newAdmissionsRollingSum
+        tooltip: Number of COVID-19 patients admitted to hospital, in the 7 days up to {date}
+    
 # {{ StartDevOnlyBlock }}
 
   - caption: Change from previous 7 days

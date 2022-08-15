@@ -3,13 +3,13 @@ headlineNumbers:
   - caption: Virus tests reported
     valueItems:
 
-      - label: Last 7 days
-        value: newVirusTestsByPublishDateRollingSum
-        tooltip: Number of new virus tests reported in the 7 days up to {date}
-
       - label: Total
         value: cumVirusTestsByPublishDate
         tooltip: Total number of virus tests reported up to {date}
+
+      - label: Last 7 days
+        value: newVirusTestsByPublishDateRollingSum
+        tooltip: Number of new virus tests reported in the 7 days up to {date}
 
 # {{ StartDevOnlyBlock }}
 
