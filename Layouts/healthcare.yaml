@@ -1,13 +1,26 @@
 headlineNumbers:
   - caption: Patients admitted
     valueItems:
+
+      - label: Total
+        value: cumAdmissions
+        tooltip: Total number of COVID-19 patients admitted to hospital, reported up to {date}
+
       - label: Latest 7 days
         value: newAdmissionsRollingSum
         tooltip: Number of COVID-19 patients admitted to hospital, in the 7 days up to {date}
     
-      - label: Total
-        value: cumAdmissions
-        tooltip: Total number of COVID-19 patients admitted to hospital, reported up to {date}
+  - caption: Change from previous 7 days
+    valueItems:
+
+      - label: Number
+        value: newAdmissionsChange
+        tooltip: Change in number of COVID-19 patients admitted to hospital, in the 7 days up to {date} compared with the previous 7 day period.
+
+      - label: Percentage
+        value: newAdmissionsChangePercentage
+        tooltip: Percentage change in the number of COVID-19 patients admitted to hospital, in the 7 days up to {date} compared with the previous 7 day period.
+
 
 # {{ StartDevOnlyBlock }}
 # # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
