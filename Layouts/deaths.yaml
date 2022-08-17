@@ -2,13 +2,26 @@ headlineNumbers:
 
   - caption: Deaths within 28 days of positive test
     valueItems:
-      #- label: Last 7 days
-      #  value: newDeaths28DaysByPublishDateRollingSum
-      #  tooltip: Number of deaths within 28 days of being identified as a COVID-19 case by a positive test, reported in the 7 days up to {date}
+
 
       - label: Total
         value: cumDeaths28DaysByPublishDate
         tooltip: Total number of deaths within 28 days of being identified as a COVID-19 case by a positive test, reported up to {date}
+
+      - label: Latest 7 days
+        value: newDeaths28DaysByDeathDateRollingSum
+        tooltip: Number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date}
+
+  - caption: Change from previous 7 days
+    valueItems:
+
+      - label: Number
+        value: newDeaths28DaysByDeathDateChange
+        tooltip: Change in number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date} compared with the previous 7 day period.
+
+      - label: Percentage
+        value: newDeaths28DaysByDeathDateChangePercentage
+        tooltip: Percentage change in number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date} compared with the previous 7 day period.
 
   - caption: Deaths with COVID-19 on the death certificate
     valueItems:

@@ -1,23 +1,56 @@
 headlineNumbers:
+  # - caption: Cases
+  #   valueItems:
+  #     #- label: Last 7 days
+  #     #  value: newCasesByPublishDateRollingSum
+  #     #  tooltip: Number of new cases reported in the 7 days up to {date}
+
+  #     - label: Total
+  #       value: cumCasesBySpecimenDate
+  #       tooltip: Total number of cases with specimen taken up to {date}
+
+  #     - label: First Episodes
+  #       value: cumFirstEpisodesBySpecimenDate
+  #       tooltip: Total number of first episodes with specimen taken up to {date}    
+
+  #     - label: Reinfections
+  #       value: cumReinfectionsBySpecimenDate
+  #       tooltip: Total number of possible reinfections with specimen taken up to {date}
+       
   - caption: Cases
     valueItems:
-      #- label: Last 7 days
-      #  value: newCasesByPublishDateRollingSum
-      #  tooltip: Number of new cases reported in the 7 days up to {date}
 
       - label: Total
         value: cumCasesBySpecimenDate
         tooltip: Total number of cases with specimen taken up to {date}
 
-      - label: First Episodes
+      - label: Latest 7 days
+        value: newCasesBySpecimenDateRollingSum
+        tooltip: Number of new cases with specimen taken in the 7 days up to {date}
+
+  - caption: Change from previous 7 days
+    valueItems:
+
+      - label: Number
+        value: newCasesBySpecimenDateChange
+        tooltip: Change in number of new cases with specimen taken in the 7 days up to {date} compared with the previous 7 day period.
+
+      - label: Percentage
+        value: newCasesBySpecimenDateChangePercentage
+        tooltip: Percentage change in number of new cases with specimen taken in the 7 days up to {date} compared with the previous 7 day period.
+
+  - caption: First Episodes
+    valueItems: 
+      - label: Total
         value: cumFirstEpisodesBySpecimenDate
         tooltip: Total number of first episodes with specimen taken up to {date}    
 
-      - label: Reinfections
+  - caption: Reinfections
+    valueItems: 
+      - label: Total
         value: cumReinfectionsBySpecimenDate
         tooltip: Total number of possible reinfections with specimen taken up to {date}
-       
-# {{ StartDevOnlyBlock }}
+
 # People tested not currently being published
 
   # - caption: All people tested (Dev Only)
