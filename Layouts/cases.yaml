@@ -63,8 +63,6 @@ headlineNumbers:
   #       value: cumPeopleTestedByPublishDate
   #       tooltip: Cumulative total number of people tested reported up to {date}
 
-# {{ EndDevOnlyBlock }}
-
 
 baseSpecimenDateDemogrphics: &baseSpecimenDateDemographics
   value: newCasesBySpecimenDateAgeDemographics
