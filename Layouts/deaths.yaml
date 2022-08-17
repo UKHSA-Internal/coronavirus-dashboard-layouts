@@ -8,8 +8,6 @@ headlineNumbers:
         value: cumDeaths28DaysByPublishDate
         tooltip: Total number of deaths within 28 days of being identified as a COVID-19 case by a positive test, reported up to {date}
 
-# {{ StartDevOnlyBlock }}
-
       - label: Latest 7 days
         value: newDeaths28DaysByDeathDateRollingSum
         tooltip: Number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date}
@@ -24,9 +22,6 @@ headlineNumbers:
       - label: Percentage
         value: newDeaths28DaysByDeathDateChangePercentage
         tooltip: Percentage change in number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date} compared with the previous 7 day period.
-
-# {{ EndDevOnlyBlock }}
-
 
   - caption: Deaths with COVID-19 on the death certificate
     valueItems:

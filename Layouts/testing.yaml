@@ -11,8 +11,6 @@ headlineNumbers:
         value: newVirusTestsByPublishDateRollingSum
         tooltip: Number of new virus tests reported in the 7 days up to {date}
 
-# {{ StartDevOnlyBlock }}
-
   - caption: Change from previous 7 days
     valueItems:
 
@@ -23,8 +21,6 @@ headlineNumbers:
       - label: Percentage
         value: newVirusTestsByPublishDateChangePercentage
         tooltip: Percentage change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
-
-# {{ EndDevOnlyBlock }}
 
   - caption: PCR testing capacity
     valueItems:

@@ -1,23 +1,22 @@
 headlineNumbers:
-  - caption: Cases
-    valueItems:
-      #- label: Last 7 days
-      #  value: newCasesByPublishDateRollingSum
-      #  tooltip: Number of new cases reported in the 7 days up to {date}
+  # - caption: Cases
+  #   valueItems:
+  #     #- label: Last 7 days
+  #     #  value: newCasesByPublishDateRollingSum
+  #     #  tooltip: Number of new cases reported in the 7 days up to {date}
 
-      - label: Total
-        value: cumCasesBySpecimenDate
-        tooltip: Total number of cases with specimen taken up to {date}
+  #     - label: Total
+  #       value: cumCasesBySpecimenDate
+  #       tooltip: Total number of cases with specimen taken up to {date}
 
-      - label: First Episodes
-        value: cumFirstEpisodesBySpecimenDate
-        tooltip: Total number of first episodes with specimen taken up to {date}    
+  #     - label: First Episodes
+  #       value: cumFirstEpisodesBySpecimenDate
+  #       tooltip: Total number of first episodes with specimen taken up to {date}    
 
-      - label: Reinfections
-        value: cumReinfectionsBySpecimenDate
-        tooltip: Total number of possible reinfections with specimen taken up to {date}
+  #     - label: Reinfections
+  #       value: cumReinfectionsBySpecimenDate
+  #       tooltip: Total number of possible reinfections with specimen taken up to {date}
        
-# {{ StartDevOnlyBlock }}
   - caption: Cases
     valueItems:
 
@@ -51,8 +50,6 @@ headlineNumbers:
       - label: Total
         value: cumReinfectionsBySpecimenDate
         tooltip: Total number of possible reinfections with specimen taken up to {date}
-
-# {{ EndDevOnlyBlock }}
 
 # People tested not currently being published
 

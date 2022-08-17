@@ -10,8 +10,6 @@ headlineNumbers:
         value: newAdmissionsRollingSum
         tooltip: Number of COVID-19 patients admitted to hospital, in the 7 days up to {date}
     
-# {{ StartDevOnlyBlock }}
-
   - caption: Change from previous 7 days
     valueItems:
 
@@ -22,8 +20,6 @@ headlineNumbers:
       - label: Percentage
         value: newAdmissionsChangePercentage
         tooltip: Percentage change in the number of COVID-19 patients admitted to hospital, in the 7 days up to {date} compared with the previous 7 day period.
-
-# {{ EndDevOnlyBlock }}
 
 
 # {{ StartDevOnlyBlock }}
