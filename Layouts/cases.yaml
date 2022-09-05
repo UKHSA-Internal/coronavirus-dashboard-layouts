@@ -2510,3 +2510,76 @@ cards:
         filename: cardMetadata/cases/cardCasesAndRatesByArea.md
 
 ###############################################################################################################################
+
+# {{ StartDevOnlyBlock }}
+
+  - heading: Variant percentage of available sequenced episodes, by week [DEV]
+    cardType: chart
+    experimental: false
+    locationAware:
+      excluded: 
+        areaType:
+          - overview
+
+    fullWidth: true
+    abstract: >
+      The percentage of important UKHSA-designated variants from sequenced episodes by week from 1 February 2021.
+      Variant episodes are assigned to weeks based on specimen date. Variants are displayed using UKHSA name with World
+      Health Organization (WHO) name and sub-lineage in brackets.
+
+    download:
+      - variants
+
+    # options:
+    #   type: radio
+    #   heading: null
+    #   choices:
+    #     - First dose
+    #     - Second dose
+    #     - Booster or third dose
+
+    # First dose:
+
+    tabs:
+      - heading: Heatmap
+        tabType: percentageHeatmap
+        fields:
+          - label: Variant percentage
+            value: variants
+            amplitude: newWeeklyPercentage
+            amplitudeLabel: Weekly percentage
+            metricLabel: Variant name
+            parameter: variant
+            metrics:
+            
+            - label: V-20DEC-01 (Alpha)
+              value: "V-20DEC-01 (Alpha)"
+            
+            - label: V-21APR-02 (Delta B.1.617.2)
+              value: "V-21APR-02 (Delta B.1.617.2)"
+
+            - label: V-21OCT-01 (Delta AY 4.2)
+              value: "V-21OCT-01 (Delta AY 4.2)"
+            
+            - label: VOC-21NOV-01 (Omicron BA.1)
+              value: "VOC-21NOV-01 (Omicron BA.1)"
+            
+            - label: VOC-22JAN-01 (Omicron BA.2)
+              value: "VOC-22JAN-01 (Omicron BA.2)"
+            
+            - label: VOC-22APR-03 (Omicron BA.4)
+              value: "VOC-22APR-03 (Omicron BA.4)"
+            
+            - label: VOC-22APR-04 (Omicron BA.5)
+              value: "VOC-22APR-04 (Omicron BA.5)"
+            
+            - label: Other
+              value: "Other"
+
+          
+
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+# {{ EndDevOnlyBlock }}
