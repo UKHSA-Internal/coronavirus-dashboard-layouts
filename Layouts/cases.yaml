@@ -2564,6 +2564,65 @@ cards:
 
 # {{ StartDevOnlyBlock }}
 
+# variants cumulative bar chart
+
+  - heading: Total sequenced episodes, by week [DEV]
+    cardType: chart
+    locationAware:
+      included:
+        areaName:
+          - England
+          
+        areaType:
+          - region
+
+
+    fullWidth: true
+    abstract: >
+      Number of episodes sequenced by week from 1 February 2021.
+      Episodes are assigned to weeks based on specimen date and include all confirmed sequencing results.
+
+    download:
+      - variants
+
+    tabs:
+      - heading: Total
+        tabType: chart
+        fields:
+          - label: Total sequenced episodes
+            << : *variantOther
+            tooltip: Total number of sequenced COVID-19 episodes
+            type: bar
+            colour: 0
+            rollingAverage: false
+            metric: cumWeeklySequenced
+            # highlight:
+            #   from: -2
+            #   to: 0
+            #   colour: 6
+            #   label: "Most recent 2 days (incomplete)"
+
+      - heading: Data table
+        tabType: nestedTable
+        fields:
+          - label: Week starting date
+            value: date
+            type: date
+
+          - label: "Total sequenced episodes"
+            metric: cumWeeklySequenced
+            value: variants
+            type: numeric
+            filters:
+              parameter: variant
+              value: Other
+
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
+
+##############################################################################################################################
+
 # Variants heatmap 
   - heading: Variant percentage of available sequenced episodes, by week [DEV]
     cardType: chart
@@ -2623,6 +2682,7 @@ cards:
 
 ###############################################################################################################################
 
+
 # Variants line chart
 
   - heading: Variant percentage of available sequenced episodes, by week [DEV]
@@ -2653,7 +2713,7 @@ cards:
             << : *variantAlpha
             tooltip: Percentage of people aged 75 to 79 who received a spring booster dose of COVID-19 vaccine
             type: line
-            colour: 6
+            colour: 11
             rollingAverage: false
             metric: newWeeklyPercentage
             fill: true
@@ -2662,7 +2722,7 @@ cards:
             << : *variantDeltaB
             tooltip: Percentage of people aged 80 to 84 who received a spring booster dose of COVID-19 vaccine
             type: line
-            colour: 7
+            colour: 6
             rollingAverage: false
             metric: newWeeklyPercentage
             fill: true
@@ -2671,7 +2731,7 @@ cards:
             << : *variantDeltaAY
             tooltip: Percentage of people aged 85 to 89 who received a spring booster dose of COVID-19 vaccine
             type: line
-            colour: 8
+            colour: 7
             rollingAverage: false
             metric: newWeeklyPercentage
             fill: true
@@ -2716,7 +2776,7 @@ cards:
             << : *variantOther
             tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
             type: line
-            colour: 10
+            colour: 9
             rollingAverage: false
             metric: newWeeklyPercentage
             fill: true
