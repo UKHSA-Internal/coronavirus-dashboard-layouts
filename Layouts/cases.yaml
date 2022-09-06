@@ -2716,7 +2716,7 @@ cards:
             colour: 11
             rollingAverage: false
             metric: newWeeklyPercentage
-            fill: true
+            fill: false
 
           - label: V-21APR-02 (Delta B.1.617.2)
             << : *variantDeltaB
@@ -2725,7 +2725,7 @@ cards:
             colour: 6
             rollingAverage: false
             metric: newWeeklyPercentage
-            fill: true
+            fill: false
 
           - label: V-21OCT-01 (Delta AY 4.2)
             << : *variantDeltaAY
@@ -2734,7 +2734,7 @@ cards:
             colour: 7
             rollingAverage: false
             metric: newWeeklyPercentage
-            fill: true
+            fill: false
 
           - label: VOC-21NOV-01 (Omicron BA.1)
             << : *variantOmicronBA1
@@ -2743,7 +2743,7 @@ cards:
             colour: 0
             rollingAverage: false
             metric: newWeeklyPercentage
-            fill: true
+            fill: false
 
           - label: VOC-22JAN-01 (Omicron BA.2)
             << : *variantOmicronBA2
@@ -2752,7 +2752,7 @@ cards:
             colour: 1
             rollingAverage: false
             metric: newWeeklyPercentage
-            fill: true
+            fill: false
 
           - label: VOC-22APR-03 (Omicron BA.4)
             << : *variantOmicronBA4
@@ -2761,7 +2761,7 @@ cards:
             colour: 2
             rollingAverage: false
             metric: newWeeklyPercentage
-            fill: true
+            fill: false
 
           - label: VOC-22APR-04 (Omicron BA.5)
             << : *variantOmicronBA5
@@ -2770,7 +2770,7 @@ cards:
             colour: 3
             rollingAverage: false
             metric: newWeeklyPercentage
-            fill: true
+            fill: false
           
           - label: Other
             << : *variantOther
@@ -2779,7 +2779,7 @@ cards:
             colour: 9
             rollingAverage: false
             metric: newWeeklyPercentage
-            fill: true
+            fill: false
       
       - heading: Data table
         tabType: nestedTable
