@@ -2566,7 +2566,7 @@ cards:
 
 # variants cumulative bar chart
 
-  - heading: Total sequenced episodes, by week [DEV]
+  - heading: Cumulative sequenced episodes [DEV]
     cardType: chart
     locationAware:
       included:
@@ -2579,19 +2579,19 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of episodes sequenced by week from 1 February 2021.
+      Cumulative episodes sequenced by week from 31 January 2021.
       Episodes are assigned to weeks based on specimen date and include all confirmed sequencing results.
 
     download:
       - variants
 
     tabs:
-      - heading: Total
+      - heading: Cumulative total
         tabType: chart
         fields:
-          - label: Total sequenced episodes
+          - label: Cumulative sequenced episodes
             << : *variantOther
-            tooltip: Total number of sequenced COVID-19 episodes
+            tooltip: Cumulative number of sequenced COVID-19 episodes
             type: bar
             colour: 0
             rollingAverage: false
@@ -2609,7 +2609,7 @@ cards:
             value: date
             type: date
 
-          - label: "Total sequenced episodes"
+          - label: "Cumulative sequenced episodes"
             metric: cumWeeklySequenced
             value: variants
             type: numeric
