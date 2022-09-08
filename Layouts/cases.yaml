@@ -2621,10 +2621,12 @@ cards:
         tabType: metadata
         filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
 
+# {{ EndDevOnlyBlock }}
+
 ##############################################################################################################################
 
 # Variants heatmap
-  - heading: Variant percentage of available sequenced episodes, by week [DEV]
+  - heading: Variant percentage of available sequenced episodes, by week
     cardType: chart
     experimental: true
     locationAware:
@@ -2680,9 +2682,11 @@ cards:
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
+
+
 ###############################################################################################################################
 
-
+# {{ StartDevOnlyBlock }}
 # Variants line chart
 
   - heading: Variant percentage of available sequenced episodes, by week [DEV]
