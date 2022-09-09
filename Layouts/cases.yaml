@@ -2687,10 +2687,10 @@ cards:
 ###############################################################################################################################
 
 # {{ StartDevOnlyBlock }}
-# Variants line chart
+# Variants heat map & line chart via radio
 
   - heading: Variant percentage of available sequenced episodes, by week [DEV]
-    cardType: chart
+    cardType: multiAreaStatic
     locationAware:
       included:
         areaName:
@@ -2699,7 +2699,7 @@ cards:
         areaType:
           - region
 
-    fullWidth: false
+    fullWidth: true
     abstract: >
       The percentage of important UKHSA-designated variants from sequenced episodes by week from 1 February 2021.
       Variant episodes are assigned to weeks based on specimen date. Variants are displayed using UKHSA name with World
@@ -2708,156 +2708,206 @@ cards:
     download:
       - variants
 
-    tabs:
-      - heading: Chart
-        tabType: chart
+    options:
+      type: radio
+      heading: null
+      choices:
+        - Heatmap
+        - Line chart
 
-        fields:
-          - label: V-20DEC-01 (Alpha)
-            << : *variantAlpha
-            tooltip: Percentage of people aged 75 to 79 who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 11
-            rollingAverage: false
-            metric: newWeeklyPercentage
-            fill: false
+    Heatmap:       
 
-          - label: V-21APR-02 (Delta B.1.617.2)
-            << : *variantDeltaB
-            tooltip: Percentage of people aged 80 to 84 who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 6
-            rollingAverage: false
-            metric: newWeeklyPercentage
-            fill: false
-
-          - label: V-21OCT-01 (Delta AY 4.2)
-            << : *variantDeltaAY
-            tooltip: Percentage of people aged 85 to 89 who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 7
-            rollingAverage: false
-            metric: newWeeklyPercentage
-            fill: false
-
-          - label: VOC-21NOV-01 (Omicron BA.1)
-            << : *variantOmicronBA1
-            tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 0
-            rollingAverage: false
-            metric: newWeeklyPercentage
-            fill: false
-
-          - label: VOC-22JAN-01 (Omicron BA.2)
-            << : *variantOmicronBA2
-            tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 1
-            rollingAverage: false
-            metric: newWeeklyPercentage
-            fill: false
-
-          - label: VOC-22APR-03 (Omicron BA.4)
-            << : *variantOmicronBA4
-            tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 2
-            rollingAverage: false
-            metric: newWeeklyPercentage
-            fill: false
-
-          - label: VOC-22APR-04 (Omicron BA.5)
-            << : *variantOmicronBA5
-            tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 3
-            rollingAverage: false
-            metric: newWeeklyPercentage
-            fill: false
-
-          - label: Other
-            << : *variantOther
-            tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 9
-            rollingAverage: false
-            metric: newWeeklyPercentage
-            fill: false
-
-      - heading: Data table
-        tabType: nestedTable
-        fields:
-          - label: "Week starting date"
-            value: date
-            type: date
-
-          - label: "V-20DEC-01 (Alpha) %"
-            metric: newWeeklyPercentage
-            value: variants
-            type: numeric
-            filters:
+      tabs:
+        - heading: Heatmap
+          tabType: GenericHeatmap
+          fields:
+            - label: Variant percentage
+              value: variants
+              amplitude: newWeeklyPercentage
+              amplitudeLabel: Weekly percentage
+              metricLabel: Variant name
               parameter: variant
-              value: "V-20DEC-01 (Alpha)"
+              metrics:
+              - label: Other
+                value: "Other"
 
-          - label: "V-21APR-02 (Delta B.1.617.2) %"
-            metric: newWeeklyPercentage
-            value: variants
-            type: numeric
-            filters:
-              parameter: variant
-              value: "V-21APR-02 (Delta B.1.617.2)"
+              - label: VOC-22APR-04 (Omicron BA.5)
+                value: "VOC-22APR-04 (Omicron BA.5)"
 
-          - label: "V-21OCT-01 (Delta AY 4.2) %"
-            metric: newWeeklyPercentage
-            value: variants
-            type: numeric
-            filters:
-              parameter: variant
-              value: "V-21OCT-01 (Delta AY 4.2)"
+              - label: VOC-22APR-03 (Omicron BA.4)
+                value: "VOC-22APR-03 (Omicron BA.4)"
 
-          - label: "VOC-21NOV-01 (Omicron BA.1) %"
-            metric: newWeeklyPercentage
-            value: variants
-            type: numeric
-            filters:
-              parameter: variant
-              value: "VOC-21NOV-01 (Omicron BA.1)"
+              - label: VOC-22JAN-01 (Omicron BA.2)
+                value: "VOC-22JAN-01 (Omicron BA.2)"
 
-          - label: "VOC-22JAN-01 (Omicron BA.2) %"
-            metric: newWeeklyPercentage
-            value: variants
-            type: numeric
-            filters:
-              parameter: variant
-              value: "VOC-22JAN-01 (Omicron BA.2)"
+              - label: VOC-21NOV-01 (Omicron BA.1)
+                value: "VOC-21NOV-01 (Omicron BA.1)"
 
-          - label: "VOC-22APR-03 (Omicron BA.4) %"
-            metric: newWeeklyPercentage
-            value: variants
-            type: numeric
-            filters:
-              parameter: variant
-              value: "VOC-22APR-03 (Omicron BA.4)"
+              - label: V-21OCT-01 (Delta AY 4.2)
+                value: "V-21OCT-01 (Delta AY 4.2)"
 
-          - label: "VOC-22APR-04 (Omicron BA.5) %"
-            metric: newWeeklyPercentage
-            value: variants
-            type: numeric
-            filters:
-              parameter: variant
-              value: "VOC-22APR-04 (Omicron BA.5)"
+              - label: V-21APR-02 (Delta B.1.617.2)
+                value: "V-21APR-02 (Delta B.1.617.2)"
 
-          - label: "Other %"
-            metric: newWeeklyPercentage
-            value: variants
-            type: numeric
-            filters:
-              parameter: variant
-              value: "Other"
+              - label: V-20DEC-01 (Alpha)
+                value: "V-20DEC-01 (Alpha)"
 
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+        - heading: About
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md 
+
+    Line chart:       
+
+      tabs:
+        - heading: Chart
+          tabType: chart
+
+          fields:
+            - label: V-20DEC-01 (Alpha)
+              << : *variantAlpha
+              tooltip: Percentage of people aged 75 to 79 who received a spring booster dose of COVID-19 vaccine
+              type: line
+              colour: 11
+              rollingAverage: false
+              metric: newWeeklyPercentage
+              fill: false
+
+            - label: V-21APR-02 (Delta B.1.617.2)
+              << : *variantDeltaB
+              tooltip: Percentage of people aged 80 to 84 who received a spring booster dose of COVID-19 vaccine
+              type: line
+              colour: 6
+              rollingAverage: false
+              metric: newWeeklyPercentage
+              fill: false
+
+            - label: V-21OCT-01 (Delta AY 4.2)
+              << : *variantDeltaAY
+              tooltip: Percentage of people aged 85 to 89 who received a spring booster dose of COVID-19 vaccine
+              type: line
+              colour: 7
+              rollingAverage: false
+              metric: newWeeklyPercentage
+              fill: false
+
+            - label: VOC-21NOV-01 (Omicron BA.1)
+              << : *variantOmicronBA1
+              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
+              type: line
+              colour: 0
+              rollingAverage: false
+              metric: newWeeklyPercentage
+              fill: false
+
+            - label: VOC-22JAN-01 (Omicron BA.2)
+              << : *variantOmicronBA2
+              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
+              type: line
+              colour: 1
+              rollingAverage: false
+              metric: newWeeklyPercentage
+              fill: false
+
+            - label: VOC-22APR-03 (Omicron BA.4)
+              << : *variantOmicronBA4
+              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
+              type: line
+              colour: 2
+              rollingAverage: false
+              metric: newWeeklyPercentage
+              fill: false
+
+            - label: VOC-22APR-04 (Omicron BA.5)
+              << : *variantOmicronBA5
+              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
+              type: line
+              colour: 3
+              rollingAverage: false
+              metric: newWeeklyPercentage
+              fill: false
+
+            - label: Other
+              << : *variantOther
+              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
+              type: line
+              colour: 9
+              rollingAverage: false
+              metric: newWeeklyPercentage
+              fill: false
+
+        - heading: Data table
+          tabType: nestedTable
+          fields:
+            - label: "Week starting date"
+              value: date
+              type: date
+
+            - label: "V-20DEC-01 (Alpha) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "V-20DEC-01 (Alpha)"
+
+            - label: "V-21APR-02 (Delta B.1.617.2) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "V-21APR-02 (Delta B.1.617.2)"
+
+            - label: "V-21OCT-01 (Delta AY 4.2) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "V-21OCT-01 (Delta AY 4.2)"
+
+            - label: "VOC-21NOV-01 (Omicron BA.1) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "VOC-21NOV-01 (Omicron BA.1)"
+
+            - label: "VOC-22JAN-01 (Omicron BA.2) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "VOC-22JAN-01 (Omicron BA.2)"
+
+            - label: "VOC-22APR-03 (Omicron BA.4) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "VOC-22APR-03 (Omicron BA.4)"
+
+            - label: "VOC-22APR-04 (Omicron BA.5) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "VOC-22APR-04 (Omicron BA.5)"
+
+            - label: "Other %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "Other"
+
+        - heading: About
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 # {{ EndDevOnlyBlock }}
