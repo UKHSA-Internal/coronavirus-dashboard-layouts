@@ -2690,7 +2690,7 @@ cards:
 # Variants heat map & line chart via radio
 
   - heading: Variant percentage of available sequenced episodes, by week [DEV]
-    cardType: multiAreaStatic
+    cardType: chart
     locationAware:
       included:
         areaName:
