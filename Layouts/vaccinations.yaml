@@ -1317,6 +1317,54 @@ cards:
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
+#############################################################################################################################
+
+# {{ StartDevOnlyBlock }}
+
+  - heading: Spring booster uptake, by vaccination date age demographics
+    cardType: chart
+    experimental: false
+
+    fullWidth: true
+    abstract: >
+      Percentage of people who have received a spring booster COVID-19 vaccination, by age group.
+      The denominator is the number of people on the National Immunisation Management
+      Service (NIMS) database, within the relevant age group. 
+
+    download:
+      - vaccinationsAgeDemographics
+
+    tabs:
+      - heading: Heatmap
+        tabType: percentageHeatmap
+        fields:
+          - label: Age demographics
+            value: vaccinationsAgeDemographics
+            amplitude: cumVaccinationSpring22UptakeByVaccinationDatePercentage
+            amplitudeLabel: Percentage uptake
+            metricLabel: Age group
+            parameter: age
+            metrics:
+            - label: 75 to 79
+              value: "75_79"
+
+            - label: 80 to 84
+              value: "80_84"
+
+            - label: 80+
+              value: "80+"
+
+            - label: 85 to 89
+              value: "85_89"
+
+            - label: 90+
+              value: "90+"
+
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
