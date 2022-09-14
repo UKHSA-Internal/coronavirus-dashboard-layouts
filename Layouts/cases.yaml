@@ -2702,8 +2702,8 @@ cards:
     fullWidth: true
     abstract: >
       The percentage of important UKHSA-designated variants from sequenced episodes by week from 1 February 2021.
-      Variant episodes are assigned to weeks based on specimen date. Variants are displayed using UKHSA name with World
-      Health Organization (WHO) name and sub-lineage in brackets.
+      Variant episodes are assigned to weeks based on specimen date. Variants are displayed using UKHSA name (e.g. VOC-22APR-04) with World
+      Health Organization (WHO) name (e.g. Omicron) and sub-lineage (e.g. BA.5).
 
     download:
       - variants
