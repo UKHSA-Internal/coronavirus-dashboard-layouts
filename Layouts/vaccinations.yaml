@@ -63,8 +63,6 @@ vaccinationAgeDemographics90+: &vaccinationAgeDemographics90Plus
 
 cards:
 
-# {{ StartDevOnlyBlock }}
-
 # daily and total autumn booster vaccinations
 
   - heading: People aged 50 and over who have received autumn booster vaccinations, by vaccination date
@@ -1325,7 +1323,6 @@ cards:
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
-# {{ EndDevOnlyBlock }}
 
 #############################################################################################################################
 
