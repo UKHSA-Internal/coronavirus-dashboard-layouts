@@ -2691,6 +2691,7 @@ cards:
 
   - heading: Variant percentage of available sequenced episodes, by week
     cardType: chart
+    experimental: true
     locationAware:
       included:
         areaName:
