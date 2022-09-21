@@ -35,6 +35,18 @@ vaccinationAgeDemographics75+: &vaccinationAgeDemographics75Plus
     parameter: age
     value: 75+
 
+vaccinationAgeDemographics6569: &vaccinationAgeDemographics65_69
+  << : *baseVaccinationAgeDemographics
+  filters:
+    parameter: age
+    value: "65_69"
+
+vaccinationAgeDemographics7074: &vaccinationAgeDemographics70_74
+  << : *baseVaccinationAgeDemographics
+  filters:
+    parameter: age
+    value: "70_74"  
+
 vaccinationAgeDemographics7579: &vaccinationAgeDemographics75_79
   << : *baseVaccinationAgeDemographics
   filters:
@@ -62,6 +74,7 @@ vaccinationAgeDemographics90+: &vaccinationAgeDemographics90Plus
 ##############################################################################################################################
 
 cards:
+
 
 # daily and total autumn booster vaccinations
 
@@ -882,7 +895,7 @@ cards:
 
 # Autumn booster demographics line chart
 
-  - heading: Autumn booster vaccination uptake, by vaccination date age demographics (75 and over)
+  - heading: Autumn booster vaccination uptake, by vaccination date age demographics (65 and over)
     cardType: chart
     locationAware:
       included:
@@ -1244,6 +1257,24 @@ cards:
         tabType: chart
 
         fields:
+          - label: 65 to 69 (%)
+            << : *vaccinationAgeDemographics65_69
+            tooltip: Percentage of people aged 65 to 69 who received an autumn booster dose of COVID-19 vaccine
+            type: line
+            colour: 11
+            rollingAverage: false
+            metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
+            fill: false
+
+          - label: 70 to 74 (%)
+            << : *vaccinationAgeDemographics70_74
+            tooltip: Percentage of people aged 70 to 74 who received an autumn booster dose of COVID-19 vaccine
+            type: line
+            colour: 7
+            rollingAverage: false
+            metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
+            fill: false
+
           - label: 75 to 79 (%)
             << : *vaccinationAgeDemographics75_79
             tooltip: Percentage of people aged 75 to 79 who received an autumn booster dose of COVID-19 vaccine
@@ -1286,7 +1317,23 @@ cards:
           - label: "Vaccination date"
             value: date
             type: date
+
+          - label: "Uptake 65 to 69 (%)"
+            metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: "65_69"
           
+          - label: "Uptake 70 to 74 (%)"
+            metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: "70_74"
+
           - label: "Uptake 75 to 79 (%)"
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
@@ -1322,6 +1369,7 @@ cards:
       - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
 
 
 #############################################################################################################################
