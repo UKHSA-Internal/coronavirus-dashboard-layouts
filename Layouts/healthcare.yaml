@@ -1044,6 +1044,8 @@ cards:
 
 ##############################################################################################################################
 
+# {{ StartDevOnlyBlock }}
+
   - heading: Reproduction number (R) and growth rate
     cardType: chart
     locationAware:
@@ -1138,6 +1140,7 @@ cards:
         tabType: metadata
         filename: cardMetadata/healthcare/cardrNumberRate.md  
 
+# {{ EndDevOnlyBlock }}
 
 ##############################################################################################################################
 
