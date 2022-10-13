@@ -296,64 +296,6 @@ cards:
 
 ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
-
-  - heading: 7-day rate of patients admitted to hospital
-    cardType: chart
-    locationAware:
-      excluded: 
-        areaType:
-          - nhsTrust
-
-    fullWidth: true
-    abstract: >
-      Rate of COVID-19 patients admitted to hospital in the rolling 7-day period ending
-      on the dates shown. Data are not
-      updated every day by all four nations and the figures are not comparable as Wales
-      include suspected COVID-19 patients while the other nations include only confirmed
-      cases.
-
-    download:
-      - newAdmissionsRollingSum
-      - newAdmissionsRollingRate
-
-    tabs:
-      - heading: 7-day periods
-        tabType: chart
-        barType: overlay
-        fields:
-          - label: Rate of patients admitted per 100,000 population in 7-day period
-            value: newAdmissionsRollingRate
-            tooltip: Rate of patients admitted in the 7-day period ending on the date shown per 100,000 population 
-            colour: 0
-            type: bar
-            rollingAverage: false
-
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: 7-day period ending
-            value: date
-            type: date
-            tooltip: End date for the 7-day period
-
-          - label: Count of admissions
-            value: newAdmissionsRollingSum
-            type: numeric
-            tooltip: Number of patients admitted in the 7-day period ending on the date shown
-
-          - label: Rate per 100,000 population
-            value: newAdmissionsRollingRate
-            type: numeric
-            tooltip: Rate of patients admitted in the 7-day period ending on the date shown per 100,000 population
-            
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
 
   - heading: Patients admitted to hospital, by age
     caption: Counts
@@ -951,100 +893,7 @@ cards:
 
 ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
-
-  - heading: Mechanical ventilation bed occupancy (dev only)
-    cardType: chart
-    fullWidth: true
-    abstract: >
-      Mechanical ventilation bed occupany by occupant type. Data from the four nations may not be
-      directly comparable as data about COVID-19 patients in hospitals are collected differently. Data
-      are not reported by each nation every day and England data are not available before 2 April 2020. The
-      UK figure is the sum of the four nations' figures and can only be calculated when all nations'
-      data are available.
-
-    download:
-      - covidOccupiedMVBeds
-      - suspectedCovidOccupiedMVBeds
-      - nonCovidOccupiedMVBeds
-      - unoccupiedMVBeds
-      - totalMVBeds
-
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: stack
-        fields:
-          - label: Covid occupied MV Beds
-            value: covidOccupiedMVBeds
-            tooltip: Number of mechanical ventilation beds occupied by confirmed COVID-19 patients
-            type: bar
-            colour: 3
-            rollingAverage: false
-
-          - label: Suspected-covid occupied MV beds
-            value: suspectedCovidOccupiedMVBeds
-            tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
-            type: bar
-            colour: 1
-            rollingAverage: false
-
-          - label: Non-covid occupied MV beds
-            value: nonCovidOccupiedMVBeds
-            tooltip: Number of mechanical ventilation beds occupied by non-COVID-19 patients 
-            type: bar
-            colour: 4
-            rollingAverage: false
-
-          - label: Unoccupied MV beds
-            value: unoccupiedMVBeds
-            tooltip: Number of unoccupied mechanical ventilation beds
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Date
-            value: date
-            type: date
-            tooltip: Date
-
-          - label: Covid occupied MV beds
-            value: covidOccupiedMVBeds
-            type: numeric
-            tooltip: Number of mechanical ventilation beds occupied by COVID-19 patients
-
-          - label: Suspected-covid occupied MV beds
-            value: suspectedCovidOccupiedMVBeds
-            type: numeric
-            tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
-
-          - label: Non-covid occupied MV beds
-            value: nonCovidOccupiedMVBeds
-            type: numeric
-            tooltip: Number of mechanical ventilation beds occupied by non-COVID-19 patients 
-
-          - label: Unoccupied MV beds
-            value: unoccupiedMVBeds
-            type: numeric
-            tooltip: Number of unoccupied mechanical ventilation beds
-
-          - label: Total MV beds
-            value: totalMVBeds
-            type: numeric
-            tooltip: Total number of mechanical ventilation beds
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/healthcare/cardMVBedOccupancy.md  
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
+# Reproduction number chart
 
   - heading: Reproduction number (R) and growth rate
     cardType: chart
@@ -1140,7 +989,7 @@ cards:
         tabType: metadata
         filename: cardMetadata/healthcare/cardrNumberRate.md  
 
-# {{ EndDevOnlyBlock }}
+
 
 ##############################################################################################################################
 

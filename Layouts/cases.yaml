@@ -2622,66 +2622,6 @@ cards:
         filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
 
 
-
-##############################################################################################################################
-
-# Variants heatmap
-  - heading: Variant percentage of available sequenced episodes, by week [DEV]
-    cardType: chart
-    experimental: true
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      The percentage of important UKHSA-designated variants from sequenced episodes by week from 1 February 2021.
-      Variant episodes are assigned to weeks based on specimen date. Variants are displayed using UKHSA name (e.g. VOC-22APR-04) with World
-      Health Organization (WHO) name (e.g. Omicron) and sub-lineage (e.g. BA.5).
-
-    download:
-      - variants
-
-    tabs:
-      - heading: Heatmap
-        tabType: GenericHeatmap
-        fields:
-          - label: Variant percentage
-            value: variants
-            amplitude: newWeeklyPercentage
-            amplitudeLabel: Weekly percentage
-            metricLabel: Variant name
-            parameter: variant
-            metrics:
-            - label: Other
-              value: "Other"
-
-            - label: VOC-22APR-04 (Omicron BA.5)
-              value: "VOC-22APR-04 (Omicron BA.5)"
-
-            - label: VOC-22APR-03 (Omicron BA.4)
-              value: "VOC-22APR-03 (Omicron BA.4)"
-
-            - label: VOC-22JAN-01 (Omicron BA.2)
-              value: "VOC-22JAN-01 (Omicron BA.2)"
-
-            - label: VOC-21NOV-01 (Omicron BA.1)
-              value: "VOC-21NOV-01 (Omicron BA.1)"
-
-            - label: V-21OCT-01 (Delta AY 4.2)
-              value: "V-21OCT-01 (Delta AY 4.2)"
-
-            - label: V-21APR-02 (Delta B.1.617.2)
-              value: "V-21APR-02 (Delta B.1.617.2)"
-
-            - label: V-20DEC-01 (Alpha)
-              value: "V-20DEC-01 (Alpha)"
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
 # {{ EndDevOnlyBlock }}
 
 ###############################################################################################################################
@@ -2713,120 +2653,8 @@ cards:
       type: radio
       heading: null
       choices:
-        - Heatmap
         - Line chart
-
-    Heatmap:       
-
-      tabs:
-        - heading: Heatmap
-          tabType: GenericHeatmap
-          fields:
-            - label: Variant percentage
-              value: variants
-              amplitude: newWeeklyPercentage
-              amplitudeLabel: Weekly percentage
-              metricLabel: Variant name
-              parameter: variant
-              metrics:
-              - label: Other
-                value: "Other"
-
-              - label: VOC-22APR-04 (Omicron BA.5)
-                value: "VOC-22APR-04 (Omicron BA.5)"
-
-              - label: VOC-22APR-03 (Omicron BA.4)
-                value: "VOC-22APR-03 (Omicron BA.4)"
-
-              - label: VOC-22JAN-01 (Omicron BA.2)
-                value: "VOC-22JAN-01 (Omicron BA.2)"
-
-              - label: VOC-21NOV-01 (Omicron BA.1)
-                value: "VOC-21NOV-01 (Omicron BA.1)"
-
-              - label: V-21OCT-01 (Delta AY 4.2)
-                value: "V-21OCT-01 (Delta AY 4.2)"
-
-              - label: V-21APR-02 (Delta B.1.617.2)
-                value: "V-21APR-02 (Delta B.1.617.2)"
-
-              - label: V-20DEC-01 (Alpha)
-                value: "V-20DEC-01 (Alpha)"
-        
-        - heading: Data table
-          tabType: nestedTable
-          fields:
-            - label: "Week starting date"
-              value: date
-              type: date
-
-            - label: "V-20DEC-01 (Alpha) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "V-20DEC-01 (Alpha)"
-
-            - label: "V-21APR-02 (Delta B.1.617.2) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "V-21APR-02 (Delta B.1.617.2)"
-
-            - label: "V-21OCT-01 (Delta AY 4.2) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "V-21OCT-01 (Delta AY 4.2)"
-
-            - label: "VOC-21NOV-01 (Omicron BA.1) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "VOC-21NOV-01 (Omicron BA.1)"
-
-            - label: "VOC-22JAN-01 (Omicron BA.2) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "VOC-22JAN-01 (Omicron BA.2)"
-
-            - label: "VOC-22APR-03 (Omicron BA.4) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "VOC-22APR-03 (Omicron BA.4)"
-
-            - label: "VOC-22APR-04 (Omicron BA.5) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "VOC-22APR-04 (Omicron BA.5)"
-
-            - label: "Other %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "Other"
-        
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md 
+        - Heatmap  
 
     Line chart:       
 
@@ -2977,6 +2805,118 @@ cards:
               filters:
                 parameter: variant
                 value: "Other"
+
+    Heatmap:       
+
+      tabs:
+        - heading: Heatmap
+          tabType: GenericHeatmap
+          fields:
+            - label: Variant percentage
+              value: variants
+              amplitude: newWeeklyPercentage
+              amplitudeLabel: Weekly percentage
+              metricLabel: Variant name
+              parameter: variant
+              metrics:
+              - label: Other
+                value: "Other"
+
+              - label: VOC-22APR-04 (Omicron BA.5)
+                value: "VOC-22APR-04 (Omicron BA.5)"
+
+              - label: VOC-22APR-03 (Omicron BA.4)
+                value: "VOC-22APR-03 (Omicron BA.4)"
+
+              - label: VOC-22JAN-01 (Omicron BA.2)
+                value: "VOC-22JAN-01 (Omicron BA.2)"
+
+              - label: VOC-21NOV-01 (Omicron BA.1)
+                value: "VOC-21NOV-01 (Omicron BA.1)"
+
+              - label: V-21OCT-01 (Delta AY 4.2)
+                value: "V-21OCT-01 (Delta AY 4.2)"
+
+              - label: V-21APR-02 (Delta B.1.617.2)
+                value: "V-21APR-02 (Delta B.1.617.2)"
+
+              - label: V-20DEC-01 (Alpha)
+                value: "V-20DEC-01 (Alpha)"
+        
+        - heading: Data table
+          tabType: nestedTable
+          fields:
+            - label: "Week starting date"
+              value: date
+              type: date
+
+            - label: "V-20DEC-01 (Alpha) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "V-20DEC-01 (Alpha)"
+
+            - label: "V-21APR-02 (Delta B.1.617.2) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "V-21APR-02 (Delta B.1.617.2)"
+
+            - label: "V-21OCT-01 (Delta AY 4.2) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "V-21OCT-01 (Delta AY 4.2)"
+
+            - label: "VOC-21NOV-01 (Omicron BA.1) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "VOC-21NOV-01 (Omicron BA.1)"
+
+            - label: "VOC-22JAN-01 (Omicron BA.2) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "VOC-22JAN-01 (Omicron BA.2)"
+
+            - label: "VOC-22APR-03 (Omicron BA.4) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "VOC-22APR-03 (Omicron BA.4)"
+
+            - label: "VOC-22APR-04 (Omicron BA.5) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "VOC-22APR-04 (Omicron BA.5)"
+
+            - label: "Other %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "Other"
+        
+        - heading: About
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md 
 
         - heading: About
           tabType: metadata
