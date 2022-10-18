@@ -1,1142 +1,1142 @@
-headlineNumbers:
-  - caption: Patients admitted
-    valueItems:
-
-      - label: Total
-        value: cumAdmissions
-        tooltip: Total number of COVID-19 patients admitted to hospital, reported up to {date}
-
-      - label: Latest 7 days
-        value: newAdmissionsRollingSum
-        tooltip: Number of COVID-19 patients admitted to hospital, in the 7 days up to {date}
-    
-  - caption: Change from previous 7 days
-    valueItems:
-
-      - label: Number
-        value: newAdmissionsChange
-        tooltip: Change in number of COVID-19 patients admitted to hospital, in the 7 days up to {date} compared with the previous 7 day period.
-
-      - label: Percentage
-        value: newAdmissionsChangePercentage
-        tooltip: Percentage change in the number of COVID-19 patients admitted to hospital, in the 7 days up to {date} compared with the previous 7 day period.
-
-
-# {{ StartDevOnlyBlock }}
-# # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
-# # We don't currently pull in the data from the DAs on this - they did agree to provide it when
-# # asked by the No 10 Press data team, but we have never finalised it
-
-#   - caption: Patients discharged
+# headlineNumbers:
+#   - caption: Patients admitted
 #     valueItems:
-#       - label: Daily
-#         value: newDischarges
-#         tooltip: Daily number of COVID-19 patients discharged home from hospital, reported on {date}
 
 #       - label: Total
-#         value: cumDischarges
-#         tooltip: Cumulative total number of COVID-19 discharged home from to hospital, reported on {date}
+#         value: cumAdmissions
+#         tooltip: Total number of COVID-19 patients admitted to hospital, reported up to {date}
 
-# {{ EndDevOnlyBlock }}
+#       - label: Latest 7 days
+#         value: newAdmissionsRollingSum
+#         tooltip: Number of COVID-19 patients admitted to hospital, in the 7 days up to {date}
+    
+#   - caption: Change from previous 7 days
+#     valueItems:
 
-  - caption: Patients in hospital
-    valueItems:
-      - label: Latest available
-        value: hospitalCases
-        tooltip: Number of COVID-19 patients currently in hospital, reported on {date}
+#       - label: Number
+#         value: newAdmissionsChange
+#         tooltip: Change in number of COVID-19 patients admitted to hospital, in the 7 days up to {date} compared with the previous 7 day period.
 
-  - caption: Patients in ventilation beds
-    valueItems:
-      - label: Latest available
-        value: covidOccupiedMVBeds
-        tooltip: Number of COVID-19 patients currently in mechanical ventilation beds, reported on {date}
+#       - label: Percentage
+#         value: newAdmissionsChangePercentage
+#         tooltip: Percentage change in the number of COVID-19 patients admitted to hospital, in the 7 days up to {date} compared with the previous 7 day period.
+
+
+# # {{ StartDevOnlyBlock }}
+# # # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
+# # # We don't currently pull in the data from the DAs on this - they did agree to provide it when
+# # # asked by the No 10 Press data team, but we have never finalised it
+
+# #   - caption: Patients discharged
+# #     valueItems:
+# #       - label: Daily
+# #         value: newDischarges
+# #         tooltip: Daily number of COVID-19 patients discharged home from hospital, reported on {date}
+
+# #       - label: Total
+# #         value: cumDischarges
+# #         tooltip: Cumulative total number of COVID-19 discharged home from to hospital, reported on {date}
+
+# # {{ EndDevOnlyBlock }}
+
+#   - caption: Patients in hospital
+#     valueItems:
+#       - label: Latest available
+#         value: hospitalCases
+#         tooltip: Number of COVID-19 patients currently in hospital, reported on {date}
+
+#   - caption: Patients in ventilation beds
+#     valueItems:
+#       - label: Latest available
+#         value: covidOccupiedMVBeds
+#         tooltip: Number of COVID-19 patients currently in mechanical ventilation beds, reported on {date}
 
     
-##############################################################################################################################
+# ##############################################################################################################################
 
-cards:
-  - heading: Patients admitted to hospital
-    cardType: chart
+# cards:
+#   - heading: Patients admitted to hospital
+#     cardType: chart
 
-    # example of locationAware for including or excluding specific area types or area names
-    # syntax set out in full below, but don't need to include empty lists
+#     # example of locationAware for including or excluding specific area types or area names
+#     # syntax set out in full below, but don't need to include empty lists
 
-    # Not shown for UK
+#     # Not shown for UK
 
-    locationAware:
-      excluded: 
-        areaType:
-          - overview
+#     locationAware:
+#       excluded: 
+#         areaType:
+#           - overview
       
-    fullWidth: true
-    abstract: >
-      Daily and total numbers of COVID-19 patients admitted to hospital. 
-      Data are not updated every day by all 4 nations (England, Northern Ireland, Wales and Scotland). 
-      Figures are not comparable as Wales includes suspected COVID-19 patients while the other nations include only confirmed cases.
+#     fullWidth: true
+#     abstract: >
+#       Daily and total numbers of COVID-19 patients admitted to hospital. 
+#       Data are not updated every day by all 4 nations (England, Northern Ireland, Wales and Scotland). 
+#       Figures are not comparable as Wales includes suspected COVID-19 patients while the other nations include only confirmed cases.
       
-    download:
-      - newAdmissions
-      - cumAdmissions
+#     download:
+#       - newAdmissions
+#       - cumAdmissions
 
-    tabs: 
-      - heading: Daily
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Admissions
-            value: newAdmissions
-            tooltip: Daily number of COVID-19 patients admitted to hospital
-            type: bar
-            colour: 0
-            rollingAverage: false
+#     tabs: 
+#       - heading: Daily
+#         tabType: chart
+#         barType: normal
+#         fields:
+#           - label: Admissions
+#             value: newAdmissions
+#             tooltip: Daily number of COVID-19 patients admitted to hospital
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
 
-          - label: Admissions (7-day average)
-            value: newAdmissions
-            tooltip: 7 day rolling average of the daily number of admissions
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 0 #no of days to exclude for incomplete data
+#           - label: Admissions (7-day average)
+#             value: newAdmissions
+#             tooltip: 7 day rolling average of the daily number of admissions
+#             type: line
+#             colour: 3
+#             fill: false
+#             rollingAverage:
+#               window: 7
+#               clipEnd: 0 #no of days to exclude for incomplete data
 
-      - heading: Total
-        tabType: chart
-        fields:
-          - label: Admissions
-            value: cumAdmissions
-            tooltip: Total number of COVID-19 patients admitted to hospital
-            type: bar
-            colour: 0
-            rollingAverage: false
+#       - heading: Total
+#         tabType: chart
+#         fields:
+#           - label: Admissions
+#             value: cumAdmissions
+#             tooltip: Total number of COVID-19 patients admitted to hospital
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
 
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported by healthcare providers
+#       - heading: Data table
+#         tabType: table
+#         fields:
+#           - label: Date reported
+#             value: date
+#             type: date
+#             tooltip: Date reported by healthcare providers
 
-          - label: Daily admissions
-            value: newAdmissions
-            type: numeric
-            tooltip: Daily number of COVID-19 patients admitted to hospital
+#           - label: Daily admissions
+#             value: newAdmissions
+#             type: numeric
+#             tooltip: Daily number of COVID-19 patients admitted to hospital
 
-          - label: Total admissions
-            value: cumAdmissions
-            type: numeric
-            tooltip: Total number of COVID-19 patients admitted to hospital
+#           - label: Total admissions
+#             value: cumAdmissions
+#             type: numeric
+#             tooltip: Total number of COVID-19 patients admitted to hospital
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalWithRollingAverages.md
+#       - heading: About 
+#         tabType: metadata
+#         filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalWithRollingAverages.md
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-# Only shown for UK
+# # Only shown for UK
 
-  - heading: Patients admitted to hospital
-    cardType: multiAreaStatic
-    locationAware:
-      included: 
-        areaType:
-          - overview
+#   - heading: Patients admitted to hospital
+#     cardType: multiAreaStatic
+#     locationAware:
+#       included: 
+#         areaType:
+#           - overview
 
-    fullWidth: true
-    abstract: >
-      Daily and total numbers of COVID-19 patients admitted to hospital. 
-      Data are not updated every day by all 4 nations (England, Northern Ireland, Wales and Scotland). 
-      Figures are not comparable as Wales includes suspected COVID-19 patients while the other nations include only confirmed cases.
+#     fullWidth: true
+#     abstract: >
+#       Daily and total numbers of COVID-19 patients admitted to hospital. 
+#       Data are not updated every day by all 4 nations (England, Northern Ireland, Wales and Scotland). 
+#       Figures are not comparable as Wales includes suspected COVID-19 patients while the other nations include only confirmed cases.
 
-    download:
-      - newAdmissions
-      - cumAdmissions
+#     download:
+#       - newAdmissions
+#       - cumAdmissions
 
-    options:
-      type: radio
-      heading: null
-      choices:
-        - UK total
-        - By nation
+#     options:
+#       type: radio
+#       heading: null
+#       choices:
+#         - UK total
+#         - By nation
     
-    UK total:
+#     UK total:
 
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: normal
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
 
-          fields:
-            - label: Patients admitted to hospital
-              value: newAdmissions
-              tooltip: Daily number of COVID-19 patients admitted to hospital
-              type: bar
-              colour: 0
-              rollingAverage: false
+#           fields:
+#             - label: Patients admitted to hospital
+#               value: newAdmissions
+#               tooltip: Daily number of COVID-19 patients admitted to hospital
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
 
-            - label: Patients admitted to hospital (7-day average)
-              value: newAdmissions
-              tooltip: Daily number of COVID-19 patients admitted to hospital (7-day average)
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage: 
-                window: 7
-                clipEnd: 0 
+#             - label: Patients admitted to hospital (7-day average)
+#               value: newAdmissions
+#               tooltip: Daily number of COVID-19 patients admitted to hospital (7-day average)
+#               type: line
+#               colour: 3
+#               fill: false
+#               rollingAverage: 
+#                 window: 7
+#                 clipEnd: 0 
 
-        - heading: Total
-          tabType: chart
-          barType: stack
-          colours: [0] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
+#         - heading: Total
+#           tabType: chart
+#           barType: stack
+#           colours: [0] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
 
-          fields:
-            - label: ""
-              value: cumAdmissions
-              tooltip: Total number of COVID-19 patients admitted to hospital
-              type: bar
-              rollingAverage: false
+#           fields:
+#             - label: ""
+#               value: cumAdmissions
+#               tooltip: Total number of COVID-19 patients admitted to hospital
+#               type: bar
+#               rollingAverage: false
 
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
 
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported by healthcare providers
+#           fields:
+#             - label: Date reported
+#               value: date
+#               type: date
+#               tooltip: Date reported by healthcare providers
 
-            - label: daily
-              value: newAdmissions
-              type: numeric
-              tooltip: Daily number of COVID-19 patients admitted to hospital
+#             - label: daily
+#               value: newAdmissions
+#               type: numeric
+#               tooltip: Daily number of COVID-19 patients admitted to hospital
 
-            - label: total
-              value: cumAdmissions
-              type: numeric
-              tooltip: Total number of COVID-19 patients admitted to hospital
+#             - label: total
+#               value: cumAdmissions
+#               type: numeric
+#               tooltip: Total number of COVID-19 patients admitted to hospital
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
+#         - heading: About 
+#           tabType: metadata
+#           filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
 
-    By nation:
+#     By nation:
 
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: stack
+#           colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
 
-          fields:
-            - label: ""
-              value: newAdmissions
-              tooltip: Daily number of COVID-19 patients admitted to hospital
-              type: bar
-              rollingAverage: false
+#           fields:
+#             - label: ""
+#               value: newAdmissions
+#               tooltip: Daily number of COVID-19 patients admitted to hospital
+#               type: bar
+#               rollingAverage: false
 
-        - heading: Total
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
+#         - heading: Total
+#           tabType: chart
+#           barType: stack
+#           colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
 
-          fields:
-            - label: ""
-              value: cumAdmissions
-              tooltip: Total number of COVID-19 patients admitted to hospital
-              type: bar
-              rollingAverage: false
+#           fields:
+#             - label: ""
+#               value: cumAdmissions
+#               tooltip: Total number of COVID-19 patients admitted to hospital
+#               type: bar
+#               rollingAverage: false
 
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
 
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported by healthcare providers
+#           fields:
+#             - label: Date reported
+#               value: date
+#               type: date
+#               tooltip: Date reported by healthcare providers
 
-            - label: daily
-              value: newAdmissions
-              type: numeric
-              tooltip: Daily number of COVID-19 patients admitted to hospital
+#             - label: daily
+#               value: newAdmissions
+#               type: numeric
+#               tooltip: Daily number of COVID-19 patients admitted to hospital
 
-            - label: total
-              value: cumAdmissions
-              type: numeric
-              tooltip: Total number of COVID-19 patients admitted to hospital
+#             - label: total
+#               value: cumAdmissions
+#               type: numeric
+#               tooltip: Total number of COVID-19 patients admitted to hospital
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
+#         - heading: About 
+#           tabType: metadata
+#           filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
+# # {{ StartDevOnlyBlock }}
 
-  - heading: 7-day rate of patients admitted to hospital
-    cardType: chart
-    locationAware:
-      excluded: 
-        areaType:
-          - nhsTrust
+#   - heading: 7-day rate of patients admitted to hospital
+#     cardType: chart
+#     locationAware:
+#       excluded: 
+#         areaType:
+#           - nhsTrust
 
-    fullWidth: true
-    abstract: >
-      Rate of COVID-19 patients admitted to hospital in the rolling 7-day period ending
-      on the dates shown. Data are not
-      updated every day by all four nations and the figures are not comparable as Wales
-      include suspected COVID-19 patients while the other nations include only confirmed
-      cases.
+#     fullWidth: true
+#     abstract: >
+#       Rate of COVID-19 patients admitted to hospital in the rolling 7-day period ending
+#       on the dates shown. Data are not
+#       updated every day by all four nations and the figures are not comparable as Wales
+#       include suspected COVID-19 patients while the other nations include only confirmed
+#       cases.
 
-    download:
-      - newAdmissionsRollingSum
-      - newAdmissionsRollingRate
+#     download:
+#       - newAdmissionsRollingSum
+#       - newAdmissionsRollingRate
 
-    tabs:
-      - heading: 7-day periods
-        tabType: chart
-        barType: overlay
-        fields:
-          - label: Rate of patients admitted per 100,000 population in 7-day period
-            value: newAdmissionsRollingRate
-            tooltip: Rate of patients admitted in the 7-day period ending on the date shown per 100,000 population 
-            colour: 0
-            type: bar
-            rollingAverage: false
+#     tabs:
+#       - heading: 7-day periods
+#         tabType: chart
+#         barType: overlay
+#         fields:
+#           - label: Rate of patients admitted per 100,000 population in 7-day period
+#             value: newAdmissionsRollingRate
+#             tooltip: Rate of patients admitted in the 7-day period ending on the date shown per 100,000 population 
+#             colour: 0
+#             type: bar
+#             rollingAverage: false
 
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: 7-day period ending
-            value: date
-            type: date
-            tooltip: End date for the 7-day period
+#       - heading: Data table
+#         tabType: table
+#         fields:
+#           - label: 7-day period ending
+#             value: date
+#             type: date
+#             tooltip: End date for the 7-day period
 
-          - label: Count of admissions
-            value: newAdmissionsRollingSum
-            type: numeric
-            tooltip: Number of patients admitted in the 7-day period ending on the date shown
+#           - label: Count of admissions
+#             value: newAdmissionsRollingSum
+#             type: numeric
+#             tooltip: Number of patients admitted in the 7-day period ending on the date shown
 
-          - label: Rate per 100,000 population
-            value: newAdmissionsRollingRate
-            type: numeric
-            tooltip: Rate of patients admitted in the 7-day period ending on the date shown per 100,000 population
+#           - label: Rate per 100,000 population
+#             value: newAdmissionsRollingRate
+#             type: numeric
+#             tooltip: Rate of patients admitted in the 7-day period ending on the date shown per 100,000 population
             
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
+#       - heading: About 
+#         tabType: metadata
+#         filename: cardMetadata/healthcare/cardPatientsAdmittedToHospital.md
 
-# {{ EndDevOnlyBlock }}
+# # {{ EndDevOnlyBlock }}
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-  - heading: Patients admitted to hospital, by age
-    caption: Counts
-    cardType: ageSexBreakdown
-    fullWidth: false
-    abstract: >
-      Age breakdown of the number of COVID-19 patients admitted to hospital since the start of the pandemic. 
-      Data are not updated every day. Some admission records have age missing, 
-      so the sum of the subgroups does not equal the total admissions for the area.
+#   - heading: Patients admitted to hospital, by age
+#     caption: Counts
+#     cardType: ageSexBreakdown
+#     fullWidth: false
+#     abstract: >
+#       Age breakdown of the number of COVID-19 patients admitted to hospital since the start of the pandemic. 
+#       Data are not updated every day. Some admission records have age missing, 
+#       so the sum of the subgroups does not equal the total admissions for the area.
       
-    download:
-      - cumAdmissionsByAge
+#     download:
+#       - cumAdmissionsByAge
 
-    tabs: 
-      - heading: Chart
-        tabType: chart
-        barType: group
-        groupKey: age
-        groupValues: 
-          - value
-          - rate
+#     tabs: 
+#       - heading: Chart
+#         tabType: chart
+#         barType: group
+#         groupKey: age
+#         groupValues: 
+#           - value
+#           - rate
 
-        requiredMetrics:
-          - cumAdmissionsByAge
+#         requiredMetrics:
+#           - cumAdmissionsByAge
 
-        fields:
-          - label: Admissions
-            value: cumAdmissionsByAgeValue
-            tooltip: Total number of COVID-19 patients admitted to hospital
-            type: bar
-            colour: 0
+#         fields:
+#           - label: Admissions
+#             value: cumAdmissionsByAgeValue
+#             tooltip: Total number of COVID-19 patients admitted to hospital
+#             type: bar
+#             colour: 0
       
-      - heading: Data table
-        tabType: table
-        groupKey: age
-        groupValues: 
-          - value
-          - rate
+#       - heading: Data table
+#         tabType: table
+#         groupKey: age
+#         groupValues: 
+#           - value
+#           - rate
 
-        requiredMetrics:
-          - cumAdmissionsByAge
+#         requiredMetrics:
+#           - cumAdmissionsByAge
 
-        fields:
-          - label: Age
-            value: age
-            type: string
-            tooltip: Age group
+#         fields:
+#           - label: Age
+#             value: age
+#             type: string
+#             tooltip: Age group
 
-          - label: Admissions
-            value: cumAdmissionsByAgeValue
-            type: numeric
-            tooltip: Total number of COVID-19 patients admitted to hospital
+#           - label: Admissions
+#             value: cumAdmissionsByAgeValue
+#             type: numeric
+#             tooltip: Total number of COVID-19 patients admitted to hospital
 
-          - label: Admission rate
-            value: cumAdmissionsByAgeRate
-            type: numeric
-            tooltip: COVID-19 admissions per 100,000 resident population
+#           - label: Admission rate
+#             value: cumAdmissionsByAgeRate
+#             type: numeric
+#             tooltip: COVID-19 admissions per 100,000 resident population
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalByAge.md
+#       - heading: About 
+#         tabType: metadata
+#         filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalByAge.md
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-  - heading: Admission rates by age
-    caption: Rates per 100,000 resident population
-    cardType: ageSexBreakdown
-    fullWidth: false
-    abstract: >
-      Age breakdown of people admitted to hospital, shown as the rate per 100,000 people, since the start of the pandemic. 
-      There are fewer people in the oldest age group so the rates show the relative impact on different age groups.
+#   - heading: Admission rates by age
+#     caption: Rates per 100,000 resident population
+#     cardType: ageSexBreakdown
+#     fullWidth: false
+#     abstract: >
+#       Age breakdown of people admitted to hospital, shown as the rate per 100,000 people, since the start of the pandemic. 
+#       There are fewer people in the oldest age group so the rates show the relative impact on different age groups.
       
-    download:
-      - cumAdmissionsByAge
+#     download:
+#       - cumAdmissionsByAge
 
-    tabs: 
-      - heading: Chart
-        tabType: chart
-        barType: group
-        groupKey: age
-        groupValues: 
-          - value
-          - rate
+#     tabs: 
+#       - heading: Chart
+#         tabType: chart
+#         barType: group
+#         groupKey: age
+#         groupValues: 
+#           - value
+#           - rate
 
-        requiredMetrics:
-          - cumAdmissionsByAge
+#         requiredMetrics:
+#           - cumAdmissionsByAge
 
-        fields:
-          - label: Admission rate
-            value: cumAdmissionsByAgeRate
-            tooltip: COVID-19 admissions per 100,000 resident population
-            type: bar
-            colour: 0
+#         fields:
+#           - label: Admission rate
+#             value: cumAdmissionsByAgeRate
+#             tooltip: COVID-19 admissions per 100,000 resident population
+#             type: bar
+#             colour: 0
       
-      - heading: Data table
-        tabType: table
-        groupKey: age
-        groupValues: 
-          - value
-          - rate
+#       - heading: Data table
+#         tabType: table
+#         groupKey: age
+#         groupValues: 
+#           - value
+#           - rate
 
-        requiredMetrics:
-          - cumAdmissionsByAge
+#         requiredMetrics:
+#           - cumAdmissionsByAge
 
-        fields:
-          - label: Age
-            value: age
-            type: string
-            tooltip: Age group
+#         fields:
+#           - label: Age
+#             value: age
+#             type: string
+#             tooltip: Age group
 
-          - label: Admissions
-            value: cumAdmissionsByAgeValue
-            type: numeric
-            tooltip: Total number of COVID-19 patients admitted to hospital
+#           - label: Admissions
+#             value: cumAdmissionsByAgeValue
+#             type: numeric
+#             tooltip: Total number of COVID-19 patients admitted to hospital
 
-          - label: Admission rate
-            value: cumAdmissionsByAgeRate
-            type: numeric
-            tooltip: COVID-19 admissions per 100,000 resident population
+#           - label: Admission rate
+#             value: cumAdmissionsByAgeRate
+#             type: numeric
+#             tooltip: COVID-19 admissions per 100,000 resident population
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalByAge.md
+#       - heading: About 
+#         tabType: metadata
+#         filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalByAge.md
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-# Not shown for UK
+# # Not shown for UK
 
-  - heading: Patients in hospital
-    cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
+#   - heading: Patients in hospital
+#     cardType: chart
+#     locationAware:
+#       excluded:
+#         areaType:
+#           - overview
       
-    fullWidth: true
-    abstract: >
-      Daily count of confirmed COVID-19 patients in hospital at 8am. Data are not updated every day.
+#     fullWidth: true
+#     abstract: >
+#       Daily count of confirmed COVID-19 patients in hospital at 8am. Data are not updated every day.
      
-    download:
-      - hospitalCases
+#     download:
+#       - hospitalCases
 
-    tabs: 
+#     tabs: 
 
-      - heading: Daily
-        tabType: chart
-        barType: normal
-        fields:
-          - label: COVID-19 patients
-            value: hospitalCases
-            tooltip: Number of COVID-19 patients currently in hospital
-            type: bar
-            colour: 0
-            rollingAverage: false
+#       - heading: Daily
+#         tabType: chart
+#         barType: normal
+#         fields:
+#           - label: COVID-19 patients
+#             value: hospitalCases
+#             tooltip: Number of COVID-19 patients currently in hospital
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
 
-          - label: COVID-19 patients (7-day average)
-            value: hospitalCases
-            tooltip: 7 day rolling average of the number of COVID-19 patients currently in hospital
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 0 #no of days to exclude for incomplete data
+#           - label: COVID-19 patients (7-day average)
+#             value: hospitalCases
+#             tooltip: 7 day rolling average of the number of COVID-19 patients currently in hospital
+#             type: line
+#             colour: 3
+#             fill: false
+#             rollingAverage:
+#               window: 7
+#               clipEnd: 0 #no of days to exclude for incomplete data
 
 
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported by healthcare providers
+#       - heading: Data table
+#         tabType: table
+#         fields:
+#           - label: Date reported
+#             value: date
+#             type: date
+#             tooltip: Date reported by healthcare providers
 
-          - label: COVID-19 patients
-            value: hospitalCases
-            type: numeric
-            tooltip: Number of COVID-19 patients currently in hospital
+#           - label: COVID-19 patients
+#             value: hospitalCases
+#             type: numeric
+#             tooltip: Number of COVID-19 patients currently in hospital
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/healthcare/cardPatientsInHospital.md
+#       - heading: About 
+#         tabType: metadata
+#         filename: cardMetadata/healthcare/cardPatientsInHospital.md
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-# Only shown for UK
+# # Only shown for UK
 
-  - heading: Patients in hospital
-    cardType: multiAreaStatic
-    locationAware:
-      included: 
-        areaType:
-          - overview
+#   - heading: Patients in hospital
+#     cardType: multiAreaStatic
+#     locationAware:
+#       included: 
+#         areaType:
+#           - overview
 
-    fullWidth: true
-    abstract: >
-      Daily count of confirmed COVID-19 patients in hospital at 8am, and 7-day rolling average. 
-      Data from England, Northern Ireland, Wales and Scotland may not be directly comparable as 
-      data about COVID-19 patients in hospitals are collected differently. Data are not reported by each nation every day. 
-      The UK figure is the sum of the 4 nations' figures and can only be calculated when all nations' data are available. 
+#     fullWidth: true
+#     abstract: >
+#       Daily count of confirmed COVID-19 patients in hospital at 8am, and 7-day rolling average. 
+#       Data from England, Northern Ireland, Wales and Scotland may not be directly comparable as 
+#       data about COVID-19 patients in hospitals are collected differently. Data are not reported by each nation every day. 
+#       The UK figure is the sum of the 4 nations' figures and can only be calculated when all nations' data are available. 
 
-    download:
-      - hospitalCases
+#     download:
+#       - hospitalCases
 
-    options:
-      type: radio
-      heading: null
-      choices:
-        - UK total
-        - By nation
+#     options:
+#       type: radio
+#       heading: null
+#       choices:
+#         - UK total
+#         - By nation
     
-    UK total:
+#     UK total:
 
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: normal
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
 
-          fields:
-            - label: Patients in hospital
-              value: hospitalCases
-              tooltip: Number of COVID-19 patients currently in hospital
-              type: bar
-              colour: 0
-              rollingAverage: false
+#           fields:
+#             - label: Patients in hospital
+#               value: hospitalCases
+#               tooltip: Number of COVID-19 patients currently in hospital
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
 
-            - label: Patients in hospital (7-day average)
-              value: hospitalCases
-              tooltip: Number of COVID-19 patients currently in hospital (7-day average)
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage: 
-                window: 7
-                clipEnd: 0
+#             - label: Patients in hospital (7-day average)
+#               value: hospitalCases
+#               tooltip: Number of COVID-19 patients currently in hospital (7-day average)
+#               type: line
+#               colour: 3
+#               fill: false
+#               rollingAverage: 
+#                 window: 7
+#                 clipEnd: 0
 
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
 
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported by healthcare providers
+#           fields:
+#             - label: Date reported
+#               value: date
+#               type: date
+#               tooltip: Date reported by healthcare providers
 
-            - label: daily
-              value: hospitalCases
-              type: numeric
-              tooltip: Number of COVID-19 patients currently in hospital
+#             - label: daily
+#               value: hospitalCases
+#               type: numeric
+#               tooltip: Number of COVID-19 patients currently in hospital
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/healthcare/cardPatientsInHospital.md
+#         - heading: About 
+#           tabType: metadata
+#           filename: cardMetadata/healthcare/cardPatientsInHospital.md
 
-    By nation:
+#     By nation:
 
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: stack
+#           colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
 
-          fields:
-            - label: ""
-              value: hospitalCases
-              tooltip: Number of COVID-19 patients currently in hospital
-              type: bar
-              rollingAverage: false
+#           fields:
+#             - label: ""
+#               value: hospitalCases
+#               tooltip: Number of COVID-19 patients currently in hospital
+#               type: bar
+#               rollingAverage: false
 
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
 
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported by healthcare providers
+#           fields:
+#             - label: Date reported
+#               value: date
+#               type: date
+#               tooltip: Date reported by healthcare providers
 
-            - label: daily
-              value: hospitalCases
-              type: numeric
-              tooltip: Number of COVID-19 patients currently in hospital
+#             - label: daily
+#               value: hospitalCases
+#               type: numeric
+#               tooltip: Number of COVID-19 patients currently in hospital
 
-        - heading: About 
-          tabType: metadata
-          filename: hospitalCases.md
+#         - heading: About 
+#           tabType: metadata
+#           filename: hospitalCases.md
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-# Only shown for England
-# removed as exceeds 1000 row API call limit so Southest incomplete and South West missing (unless reduce time period...)
+# # Only shown for England
+# # removed as exceeds 1000 row API call limit so Southest incomplete and South West missing (unless reduce time period...)
 
-  # - heading: Patients in hospital, by NHS region
-  #   cardType: multiAreaStatic
-  #   locationAware:
-  #     included: 
-  #       areaName:
-  #         - England
+#   # - heading: Patients in hospital, by NHS region
+#   #   cardType: multiAreaStatic
+#   #   locationAware:
+#   #     included: 
+#   #       areaName:
+#   #         - England
 
-  #   fullWidth: true
-  #   abstract: >
-  #     Daily count of confirmed COVID-19 patients in hospital at midnight the preceding
-  #     night in each NHS region. Data are not updated every day.
+#   #   fullWidth: true
+#   #   abstract: >
+#   #     Daily count of confirmed COVID-19 patients in hospital at midnight the preceding
+#   #     night in each NHS region. Data are not updated every day.
 
-  #   download:
-  #     - hospitalCases
+#   #   download:
+#   #     - hospitalCases
     
-  #   tabs:
-  #     - heading: Daily
-  #       tabType: chart
-  #       barType: stack
-  #       colours: [0, 9, 3, 10, 6, 1, 4] # areaNames in alphabetical order
-  #       params:
-  #         - key: areaType
-  #           sign: "="
-  #           value: nhsRegion
+#   #   tabs:
+#   #     - heading: Daily
+#   #       tabType: chart
+#   #       barType: stack
+#   #       colours: [0, 9, 3, 10, 6, 1, 4] # areaNames in alphabetical order
+#   #       params:
+#   #         - key: areaType
+#   #           sign: "="
+#   #           value: nhsRegion
 
-  #       fields:
-  #         - label: ""
-  #           value: hospitalCases
-  #           tooltip: Number of COVID-19 patients currently in hospital
-  #           type: bar
-  #           rollingAverage: false
+#   #       fields:
+#   #         - label: ""
+#   #           value: hospitalCases
+#   #           tooltip: Number of COVID-19 patients currently in hospital
+#   #           type: bar
+#   #           rollingAverage: false
 
-  #     - heading: Data
-  #       tabType: table
-  #       params:
-  #         - key: areaType
-  #           sign: "="
-  #           value: nhsRegion
+#   #     - heading: Data
+#   #       tabType: table
+#   #       params:
+#   #         - key: areaType
+#   #           sign: "="
+#   #           value: nhsRegion
 
-  #       fields:
-  #         - label: Date reported
-  #           value: date
-  #           type: date
-  #           tooltip: Date reported by healthcare providers
+#   #       fields:
+#   #         - label: Date reported
+#   #           value: date
+#   #           type: date
+#   #           tooltip: Date reported by healthcare providers
 
-  #         - label: daily
-  #           value: hospitalCases
-  #           type: numeric
-  #           tooltip: Number of COVID-19 patients currently in hospital
+#   #         - label: daily
+#   #           value: hospitalCases
+#   #           type: numeric
+#   #           tooltip: Number of COVID-19 patients currently in hospital
 
-  #     - heading: About 
-  #       tabType: metadata
-  #       filename: cardMetadata/healthcare/cardPatientsInHospital.md
+#   #     - heading: About 
+#   #       tabType: metadata
+#   #       filename: cardMetadata/healthcare/cardPatientsInHospital.md
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-# Not shown for UK
+# # Not shown for UK
 
-  - heading: Patients in mechanical ventilation beds
-    cardType: chart
-    fullWidth: true
-    locationAware:
-      excluded:
-        areaType:
-          - overview
+#   - heading: Patients in mechanical ventilation beds
+#     cardType: chart
+#     fullWidth: true
+#     locationAware:
+#       excluded:
+#         areaType:
+#           - overview
       
-    abstract: >
-      Daily count of COVID-19 patients in mechanical ventilation beds, and 7-day rolling average. 
-      Data are not updated every day.
+#     abstract: >
+#       Daily count of COVID-19 patients in mechanical ventilation beds, and 7-day rolling average. 
+#       Data are not updated every day.
 
-    download:
-      - covidOccupiedMVBeds
-      # - suspectedCovidOccupiedMVBeds # {{ DevOnly }}
-      # - nonCovidOccupiedMVBeds # {{ DevOnly }}
-      # - unoccupiedMVBeds # {{ DevOnly }}
+#     download:
+#       - covidOccupiedMVBeds
+#       # - suspectedCovidOccupiedMVBeds # {{ DevOnly }}
+#       # - nonCovidOccupiedMVBeds # {{ DevOnly }}
+#       # - unoccupiedMVBeds # {{ DevOnly }}
 
-    tabs: 
-      - heading: Daily
-        tabType: chart
-        barType: normal
-        fields:
-          - label: COVID-19 patients
-            value: covidOccupiedMVBeds
-            tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
-            type: bar
-            colour: 0
-            rollingAverage: false
+#     tabs: 
+#       - heading: Daily
+#         tabType: chart
+#         barType: normal
+#         fields:
+#           - label: COVID-19 patients
+#             value: covidOccupiedMVBeds
+#             tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
 
-          - label: COVID-19 patients (7-day average)
-            value: covidOccupiedMVBeds
-            tooltip: 7 day rolling average of the number of COVID-19 patients currently in mechanical ventilation beds
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 0 #no of days to exclude for incomplete data
+#           - label: COVID-19 patients (7-day average)
+#             value: covidOccupiedMVBeds
+#             tooltip: 7 day rolling average of the number of COVID-19 patients currently in mechanical ventilation beds
+#             type: line
+#             colour: 3
+#             fill: false
+#             rollingAverage:
+#               window: 7
+#               clipEnd: 0 #no of days to exclude for incomplete data
 
-          # {{ StartDevOnlyBlock }}
+#           # {{ StartDevOnlyBlock }}
 
-          # - label: Suspected COVID-19 patients
-          #   value: suspectedCovidOccupiedMVBeds
-          #   tooltip: Daily number of patients suspected to be COVID-19 (but not tested positive) currently in mechanical ventilation beds (England only)
-          #   type: bar
-          #   colour: 3
-          #   rollingAverage: false
+#           # - label: Suspected COVID-19 patients
+#           #   value: suspectedCovidOccupiedMVBeds
+#           #   tooltip: Daily number of patients suspected to be COVID-19 (but not tested positive) currently in mechanical ventilation beds (England only)
+#           #   type: bar
+#           #   colour: 3
+#           #   rollingAverage: false
 
-          # - label: Other patients
-          #   value: nonCovidOccupiedMVBeds
-          #   tooltip: Daily number of non-COVID-19 patients currently in mechanical ventilation beds
-          #   type: bar
-          #   colour: 6
-          #   rollingAverage: false
+#           # - label: Other patients
+#           #   value: nonCovidOccupiedMVBeds
+#           #   tooltip: Daily number of non-COVID-19 patients currently in mechanical ventilation beds
+#           #   type: bar
+#           #   colour: 6
+#           #   rollingAverage: false
 
-          # - label: Unoccupied beds
-          #   value: unoccupiedMVBeds
-          #   tooltip: Daily number of currently unoccupied mechanical ventilation beds
-          #   type: bar
-          #   colour: 7
-          #   rollingAverage: false
+#           # - label: Unoccupied beds
+#           #   value: unoccupiedMVBeds
+#           #   tooltip: Daily number of currently unoccupied mechanical ventilation beds
+#           #   type: bar
+#           #   colour: 7
+#           #   rollingAverage: false
 
-          # {{ EndDevOnlyBlock }}
+#           # {{ EndDevOnlyBlock }}
 
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported by healthcare providers
+#       - heading: Data table
+#         tabType: table
+#         fields:
+#           - label: Date reported
+#             value: date
+#             type: date
+#             tooltip: Date reported by healthcare providers
 
-          - label: COVID-19 patients
-            value: covidOccupiedMVBeds
-            type: numeric
-            tooltip: Daily number of COVID-19 patients in mechanical ventilation beds
+#           - label: COVID-19 patients
+#             value: covidOccupiedMVBeds
+#             type: numeric
+#             tooltip: Daily number of COVID-19 patients in mechanical ventilation beds
 
-          # {{ StartDevOnlyBlock }}
+#           # {{ StartDevOnlyBlock }}
 
-          # - label: Suspected COVID-19 patients
-          #   value: suspectedCovidOccupiedMVBeds
-          #   type: numeric
-          #   tooltip: Daily number of patients suspected to be COVID-19 (but not tested positive) in mechanical ventilation beds (England only)
+#           # - label: Suspected COVID-19 patients
+#           #   value: suspectedCovidOccupiedMVBeds
+#           #   type: numeric
+#           #   tooltip: Daily number of patients suspected to be COVID-19 (but not tested positive) in mechanical ventilation beds (England only)
             
-          # - label: Other patients
-          #   value: nonCovidOccupiedMVBeds
-          #   type: numeric
-          #   tooltip: Daily number of non-COVID-19 patients in mechanical ventilation beds
+#           # - label: Other patients
+#           #   value: nonCovidOccupiedMVBeds
+#           #   type: numeric
+#           #   tooltip: Daily number of non-COVID-19 patients in mechanical ventilation beds
             
-          # - label: Unoccupied beds
-          #   value: unoccupiedMVBeds
-          #   type: numeric
-          #   tooltip: Daily number of unoccupied mechanical ventilation beds
+#           # - label: Unoccupied beds
+#           #   value: unoccupiedMVBeds
+#           #   type: numeric
+#           #   tooltip: Daily number of unoccupied mechanical ventilation beds
 
-          # - label: Total beds
-          #   value: totalMVBeds
-          #   type: numeric
-          #   tooltip: Total number of mechanical ventilation beds
+#           # - label: Total beds
+#           #   value: totalMVBeds
+#           #   type: numeric
+#           #   tooltip: Total number of mechanical ventilation beds
 
-          # {{ EndDevOnlyBlock }}
+#           # {{ EndDevOnlyBlock }}
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/healthcare/cardPatientsInMVBeds.md
+#       - heading: About 
+#         tabType: metadata
+#         filename: cardMetadata/healthcare/cardPatientsInMVBeds.md
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-# Only shown for UK
+# # Only shown for UK
 
-  - heading: Patients in mechanical ventilation beds
-    cardType: multiAreaStatic
-    fullWidth: true
-    locationAware:
-      included: 
-        areaType:
-          - overview
+#   - heading: Patients in mechanical ventilation beds
+#     cardType: multiAreaStatic
+#     fullWidth: true
+#     locationAware:
+#       included: 
+#         areaType:
+#           - overview
 
-    abstract: >
-      Daily count of COVID-19 patients in mechanical ventilation beds, and 7-day rolling average. 
-      Data from England, Northern Ireland, Wales and Scotland may not be directly comparable as data 
-      about COVID-19 patients in hospitals are collected differently. Data are not reported by each nation every day 
-      and England data are not available before 2 April 2020. The UK figure is the sum of the 4 nations' figures and 
-      can only be calculated when all nations' data are available.
+#     abstract: >
+#       Daily count of COVID-19 patients in mechanical ventilation beds, and 7-day rolling average. 
+#       Data from England, Northern Ireland, Wales and Scotland may not be directly comparable as data 
+#       about COVID-19 patients in hospitals are collected differently. Data are not reported by each nation every day 
+#       and England data are not available before 2 April 2020. The UK figure is the sum of the 4 nations' figures and 
+#       can only be calculated when all nations' data are available.
 
-    download:
-      - covidOccupiedMVBeds
+#     download:
+#       - covidOccupiedMVBeds
    
-    options:
-      type: radio
-      heading: null
-      choices:
-        - UK total
-        - By nation
+#     options:
+#       type: radio
+#       heading: null
+#       choices:
+#         - UK total
+#         - By nation
     
-    UK total:    
-      download:
-        - covidOccupiedMVBeds
+#     UK total:    
+#       download:
+#         - covidOccupiedMVBeds
 
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: normal
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
 
-          fields:
-            - label: Patients in MV beds
-              value: covidOccupiedMVBeds
-              tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
-              type: bar
-              colour: 0
-              rollingAverage: false
+#           fields:
+#             - label: Patients in MV beds
+#               value: covidOccupiedMVBeds
+#               tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
 
-            - label: Patients in MV beds (7-day average)
-              value: covidOccupiedMVBeds
-              tooltip: Number of COVID-19 patients currently in mechanical ventilation beds (7-day average)
-              type: line
-              fill: false
-              colour: 3
-              rollingAverage: 
-                window: 7
-                clipEnd: 0
+#             - label: Patients in MV beds (7-day average)
+#               value: covidOccupiedMVBeds
+#               tooltip: Number of COVID-19 patients currently in mechanical ventilation beds (7-day average)
+#               type: line
+#               fill: false
+#               colour: 3
+#               rollingAverage: 
+#                 window: 7
+#                 clipEnd: 0
 
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
 
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported by healthcare providers
+#           fields:
+#             - label: Date reported
+#               value: date
+#               type: date
+#               tooltip: Date reported by healthcare providers
 
-            - label: daily
-              value: covidOccupiedMVBeds
-              type: numeric
-              tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
+#             - label: daily
+#               value: covidOccupiedMVBeds
+#               type: numeric
+#               tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/healthcare/cardPatientsInMVBeds.md
+#         - heading: About 
+#           tabType: metadata
+#           filename: cardMetadata/healthcare/cardPatientsInMVBeds.md
 
-    By nation:    
+#     By nation:    
 
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: stack
+#           colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
 
-          fields:
-            - label: ""
-              value: covidOccupiedMVBeds
-              tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
-              type: bar
-              rollingAverage: false
+#           fields:
+#             - label: ""
+#               value: covidOccupiedMVBeds
+#               tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
+#               type: bar
+#               rollingAverage: false
 
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
 
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported by healthcare providers
+#           fields:
+#             - label: Date reported
+#               value: date
+#               type: date
+#               tooltip: Date reported by healthcare providers
 
-            - label: daily
-              value: covidOccupiedMVBeds
-              type: numeric
-              tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
+#             - label: daily
+#               value: covidOccupiedMVBeds
+#               type: numeric
+#               tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
 
-        - heading: About 
-          tabType: metadata
-          filename: cardMetadata/healthcare/cardPatientsInMVBeds.md
+#         - heading: About 
+#           tabType: metadata
+#           filename: cardMetadata/healthcare/cardPatientsInMVBeds.md
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
+# # {{ StartDevOnlyBlock }}
 
-  - heading: Mechanical ventilation bed occupancy (dev only)
-    cardType: chart
-    fullWidth: true
-    abstract: >
-      Mechanical ventilation bed occupany by occupant type. Data from the four nations may not be
-      directly comparable as data about COVID-19 patients in hospitals are collected differently. Data
-      are not reported by each nation every day and England data are not available before 2 April 2020. The
-      UK figure is the sum of the four nations' figures and can only be calculated when all nations'
-      data are available.
+#   - heading: Mechanical ventilation bed occupancy (dev only)
+#     cardType: chart
+#     fullWidth: true
+#     abstract: >
+#       Mechanical ventilation bed occupany by occupant type. Data from the four nations may not be
+#       directly comparable as data about COVID-19 patients in hospitals are collected differently. Data
+#       are not reported by each nation every day and England data are not available before 2 April 2020. The
+#       UK figure is the sum of the four nations' figures and can only be calculated when all nations'
+#       data are available.
 
-    download:
-      - covidOccupiedMVBeds
-      - suspectedCovidOccupiedMVBeds
-      - nonCovidOccupiedMVBeds
-      - unoccupiedMVBeds
-      - totalMVBeds
+#     download:
+#       - covidOccupiedMVBeds
+#       - suspectedCovidOccupiedMVBeds
+#       - nonCovidOccupiedMVBeds
+#       - unoccupiedMVBeds
+#       - totalMVBeds
 
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: stack
-        fields:
-          - label: Covid occupied MV Beds
-            value: covidOccupiedMVBeds
-            tooltip: Number of mechanical ventilation beds occupied by confirmed COVID-19 patients
-            type: bar
-            colour: 3
-            rollingAverage: false
+#     tabs:
+#       - heading: Daily
+#         tabType: chart
+#         barType: stack
+#         fields:
+#           - label: Covid occupied MV Beds
+#             value: covidOccupiedMVBeds
+#             tooltip: Number of mechanical ventilation beds occupied by confirmed COVID-19 patients
+#             type: bar
+#             colour: 3
+#             rollingAverage: false
 
-          - label: Suspected-covid occupied MV beds
-            value: suspectedCovidOccupiedMVBeds
-            tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
-            type: bar
-            colour: 1
-            rollingAverage: false
+#           - label: Suspected-covid occupied MV beds
+#             value: suspectedCovidOccupiedMVBeds
+#             tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
+#             type: bar
+#             colour: 1
+#             rollingAverage: false
 
-          - label: Non-covid occupied MV beds
-            value: nonCovidOccupiedMVBeds
-            tooltip: Number of mechanical ventilation beds occupied by non-COVID-19 patients 
-            type: bar
-            colour: 4
-            rollingAverage: false
+#           - label: Non-covid occupied MV beds
+#             value: nonCovidOccupiedMVBeds
+#             tooltip: Number of mechanical ventilation beds occupied by non-COVID-19 patients 
+#             type: bar
+#             colour: 4
+#             rollingAverage: false
 
-          - label: Unoccupied MV beds
-            value: unoccupiedMVBeds
-            tooltip: Number of unoccupied mechanical ventilation beds
-            type: bar
-            colour: 0
-            rollingAverage: false
+#           - label: Unoccupied MV beds
+#             value: unoccupiedMVBeds
+#             tooltip: Number of unoccupied mechanical ventilation beds
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
 
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Date
-            value: date
-            type: date
-            tooltip: Date
+#       - heading: Data table
+#         tabType: table
+#         fields:
+#           - label: Date
+#             value: date
+#             type: date
+#             tooltip: Date
 
-          - label: Covid occupied MV beds
-            value: covidOccupiedMVBeds
-            type: numeric
-            tooltip: Number of mechanical ventilation beds occupied by COVID-19 patients
+#           - label: Covid occupied MV beds
+#             value: covidOccupiedMVBeds
+#             type: numeric
+#             tooltip: Number of mechanical ventilation beds occupied by COVID-19 patients
 
-          - label: Suspected-covid occupied MV beds
-            value: suspectedCovidOccupiedMVBeds
-            type: numeric
-            tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
+#           - label: Suspected-covid occupied MV beds
+#             value: suspectedCovidOccupiedMVBeds
+#             type: numeric
+#             tooltip: Number of mechanical ventilation beds occupied by suspected COVID-19 patients 
 
-          - label: Non-covid occupied MV beds
-            value: nonCovidOccupiedMVBeds
-            type: numeric
-            tooltip: Number of mechanical ventilation beds occupied by non-COVID-19 patients 
+#           - label: Non-covid occupied MV beds
+#             value: nonCovidOccupiedMVBeds
+#             type: numeric
+#             tooltip: Number of mechanical ventilation beds occupied by non-COVID-19 patients 
 
-          - label: Unoccupied MV beds
-            value: unoccupiedMVBeds
-            type: numeric
-            tooltip: Number of unoccupied mechanical ventilation beds
+#           - label: Unoccupied MV beds
+#             value: unoccupiedMVBeds
+#             type: numeric
+#             tooltip: Number of unoccupied mechanical ventilation beds
 
-          - label: Total MV beds
-            value: totalMVBeds
-            type: numeric
-            tooltip: Total number of mechanical ventilation beds
+#           - label: Total MV beds
+#             value: totalMVBeds
+#             type: numeric
+#             tooltip: Total number of mechanical ventilation beds
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/healthcare/cardMVBedOccupancy.md  
+#       - heading: About 
+#         tabType: metadata
+#         filename: cardMetadata/healthcare/cardMVBedOccupancy.md  
 
-# {{ EndDevOnlyBlock }}
+# # {{ EndDevOnlyBlock }}
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-  - heading: Reproduction number (R) and growth rate
-    cardType: chart
-    locationAware:
-      excluded: 
-        areaType:
-          - overview
-    fullWidth: true
-    abstract: >
-      The estimated R value (transmission rate) and daily infection growth rate. The reproduction number (R) 
-      is the average number of secondary infections produced by a single infected person. The infection growth rate 
-      is an approximation of the percentage change in the number of infections each day and indicates how quickly 
-      the number of infections is changing. Both estimates are shown as ranges, from minimum to maximum. 
+#   - heading: Reproduction number (R) and growth rate
+#     cardType: chart
+#     locationAware:
+#       excluded: 
+#         areaType:
+#           - overview
+#     fullWidth: true
+#     abstract: >
+#       The estimated R value (transmission rate) and daily infection growth rate. The reproduction number (R) 
+#       is the average number of secondary infections produced by a single infected person. The infection growth rate 
+#       is an approximation of the percentage change in the number of infections each day and indicates how quickly 
+#       the number of infections is changing. Both estimates are shown as ranges, from minimum to maximum. 
 
-    download:
-      - transmissionRateMin
-      - transmissionRateMax
-      - transmissionRateGrowthRateMin
-      - transmissionRateGrowthRateMax
+#     download:
+#       - transmissionRateMin
+#       - transmissionRateMax
+#       - transmissionRateGrowthRateMin
+#       - transmissionRateGrowthRateMax
 
-    tabs:
-      - heading: R value
-        tabType: twoWayLollipop
-        threshold: 1
-        markerColourBelowThreshold: 11
-        markerColourAboveThreshold: 10
-        symbolAboveThreshold: triangle-up
-        symbolBelowThreshold: triangle-down
-        lineColour: 3
-        fields:
-          - label: Maximum
-            value: transmissionRateMax
-            tooltip: The maximum value in the estimated range of R
+#     tabs:
+#       - heading: R value
+#         tabType: twoWayLollipop
+#         threshold: 1
+#         markerColourBelowThreshold: 11
+#         markerColourAboveThreshold: 10
+#         symbolAboveThreshold: triangle-up
+#         symbolBelowThreshold: triangle-down
+#         lineColour: 3
+#         fields:
+#           - label: Maximum
+#             value: transmissionRateMax
+#             tooltip: The maximum value in the estimated range of R
 
-          - label: Minimum
-            value: transmissionRateMin
-            tooltip: The minimum value in the estimated range of R
+#           - label: Minimum
+#             value: transmissionRateMin
+#             tooltip: The minimum value in the estimated range of R
 
-      - heading: R value data table
-        tabType: table
-        fields:
-          - label: Date
-            value: date
-            type: date
-            tooltip: Date
+#       - heading: R value data table
+#         tabType: table
+#         fields:
+#           - label: Date
+#             value: date
+#             type: date
+#             tooltip: Date
 
-          - label: Minimum
-            value: transmissionRateMin
-            type: numeric
-            tooltip: The minimum value in the estimated range of R
+#           - label: Minimum
+#             value: transmissionRateMin
+#             type: numeric
+#             tooltip: The minimum value in the estimated range of R
 
-          - label: Maximum
-            value: transmissionRateMax
-            type: numeric
-            tooltip: The maximum value in the estimated range of R 
+#           - label: Maximum
+#             value: transmissionRateMax
+#             type: numeric
+#             tooltip: The maximum value in the estimated range of R 
 
-      - heading: Growth rate
-        tabType: twoWayLollipop
-        threshold: 0
-        markerColourBelowThreshold: 11
-        markerColourAboveThreshold: 10
-        symbolAboveThreshold: triangle-up
-        symbolBelowThreshold: triangle-down
-        lineColour: 3
-        fields:
-          - label: Maximum (%)
-            value: transmissionRateGrowthRateMax
-            tooltip: The maximum percentage value in the estimated range of daily infection growth rate
+#       - heading: Growth rate
+#         tabType: twoWayLollipop
+#         threshold: 0
+#         markerColourBelowThreshold: 11
+#         markerColourAboveThreshold: 10
+#         symbolAboveThreshold: triangle-up
+#         symbolBelowThreshold: triangle-down
+#         lineColour: 3
+#         fields:
+#           - label: Maximum (%)
+#             value: transmissionRateGrowthRateMax
+#             tooltip: The maximum percentage value in the estimated range of daily infection growth rate
 
-          - label: Minimum (%)
-            value: transmissionRateGrowthRateMin
-            tooltip: The minimum percentage value in the estimated range of daily infection growth rate
+#           - label: Minimum (%)
+#             value: transmissionRateGrowthRateMin
+#             tooltip: The minimum percentage value in the estimated range of daily infection growth rate
 
-      - heading: Growth rate data table
-        tabType: table
-        fields:
-          - label: Date
-            value: date
-            type: date
-            tooltip: Date
+#       - heading: Growth rate data table
+#         tabType: table
+#         fields:
+#           - label: Date
+#             value: date
+#             type: date
+#             tooltip: Date
 
-          - label: Minimum (%)
-            value: transmissionRateGrowthRateMin
-            type: numeric
-            tooltip: The minimum percentage value in the estimated range of daily infection growth rate
+#           - label: Minimum (%)
+#             value: transmissionRateGrowthRateMin
+#             type: numeric
+#             tooltip: The minimum percentage value in the estimated range of daily infection growth rate
 
-          - label: Maximum (%)
-            value: transmissionRateGrowthRateMax
-            type: numeric
-            tooltip: The maximum percentage value in the estimated range of daily infection growth rate 
+#           - label: Maximum (%)
+#             value: transmissionRateGrowthRateMax
+#             type: numeric
+#             tooltip: The maximum percentage value in the estimated range of daily infection growth rate 
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/healthcare/cardrNumberRate.md  
+#       - heading: About 
+#         tabType: metadata
+#         filename: cardMetadata/healthcare/cardrNumberRate.md  
 
 
 ##############################################################################################################################

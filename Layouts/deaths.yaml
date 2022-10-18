@@ -1,2263 +1,2263 @@
-headlineNumbers:
+# headlineNumbers:
 
-  - caption: Deaths within 28 days of positive test
-    valueItems:
-
-
-      - label: Total
-        value: cumDeaths28DaysByPublishDate
-        tooltip: Total number of deaths within 28 days of being identified as a COVID-19 case by a positive test, reported up to {date}
-
-      - label: Latest 7 days
-        value: newDeaths28DaysByDeathDateRollingSum
-        tooltip: Number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date}
-
-  - caption: Change from previous 7 days
-    valueItems:
-
-      - label: Number
-        value: newDeaths28DaysByDeathDateChange
-        tooltip: Change in number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date} compared with the previous 7 day period.
-
-      - label: Percentage
-        value: newDeaths28DaysByDeathDateChangePercentage
-        tooltip: Percentage change in number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date} compared with the previous 7 day period.
-
-  - caption: Deaths with COVID-19 on the death certificate
-    valueItems:
-      - label: Weekly
-        value: newWeeklyNsoDeathsByRegDate
-        tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered during the week ending {date}
-
-      - label: Total
-        value: cumWeeklyNsoDeathsByRegDate
-        tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
-
-baseDeaths28DaysByDeathDateDemographics: &baseDeaths28DaysByDeathDateDemographics
-  value: newDeaths28DaysByDeathDateAgeDemographics
-  isArray: true
+#   - caption: Deaths within 28 days of positive test
+#     valueItems:
 
 
-Deaths28DaysByDeathDateDemographics0_59: &newDeaths28DaysByDeathDateAgeDemographics0_59
-  << : *baseDeaths28DaysByDeathDateDemographics
-  filters:
-    parameter: age
-    value: 00_59
+#       - label: Total
+#         value: cumDeaths28DaysByPublishDate
+#         tooltip: Total number of deaths within 28 days of being identified as a COVID-19 case by a positive test, reported up to {date}
+
+#       - label: Latest 7 days
+#         value: newDeaths28DaysByDeathDateRollingSum
+#         tooltip: Number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date}
+
+#   - caption: Change from previous 7 days
+#     valueItems:
+
+#       - label: Number
+#         value: newDeaths28DaysByDeathDateChange
+#         tooltip: Change in number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date} compared with the previous 7 day period.
+
+#       - label: Percentage
+#         value: newDeaths28DaysByDeathDateChangePercentage
+#         tooltip: Percentage change in number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date} compared with the previous 7 day period.
+
+#   - caption: Deaths with COVID-19 on the death certificate
+#     valueItems:
+#       - label: Weekly
+#         value: newWeeklyNsoDeathsByRegDate
+#         tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered during the week ending {date}
+
+#       - label: Total
+#         value: cumWeeklyNsoDeathsByRegDate
+#         tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
+
+# baseDeaths28DaysByDeathDateDemographics: &baseDeaths28DaysByDeathDateDemographics
+#   value: newDeaths28DaysByDeathDateAgeDemographics
+#   isArray: true
 
 
-Deaths28DaysByDeathDateDemographics60+: &newDeaths28DaysByDeathDateAgeDemographics60Plus
-  << : *baseDeaths28DaysByDeathDateDemographics
-  filters:
-    parameter: age
-    value: 60+
+# Deaths28DaysByDeathDateDemographics0_59: &newDeaths28DaysByDeathDateAgeDemographics0_59
+#   << : *baseDeaths28DaysByDeathDateDemographics
+#   filters:
+#     parameter: age
+#     value: 00_59
 
-##############################################################################################################################
 
-cards:
+# Deaths28DaysByDeathDateDemographics60+: &newDeaths28DaysByDeathDateAgeDemographics60Plus
+#   << : *baseDeaths28DaysByDeathDateDemographics
+#   filters:
+#     parameter: age
+#     value: 60+
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-# {{ StartDevOnlyBlock }}
+# cards:
 
-# Only shown for UK
+# ##############################################################################################################################
 
-  - heading: Deaths within 28 days of positive test by date of death - [DEV ONLY]
-    cardType: multiAreaStatic
-    locationAware:
-      included:
-        areaType:
-          - overview
+# # {{ StartDevOnlyBlock }}
 
-    fullWidth: true
+# # Only shown for UK
 
-    abstract: >
-      Number of people who died within 28 days of being identified as a COVID-19 case by a positive test. 
-      Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared. 
-      Data for the last 5 days, highlighted in grey, are incomplete. Data are shown by date of death. 
+#   - heading: Deaths within 28 days of positive test by date of death - [DEV ONLY]
+#     cardType: multiAreaStatic
+#     locationAware:
+#       included:
+#         areaType:
+#           - overview
 
-    download:
-      - newDeaths28DaysByDeathDate
-      - cumDeaths28DaysByDeathDate
+#     fullWidth: true
 
-    options:
-      type: radio
-      heading: null
-      choices:
-        - UK total
-        - By nation
+#     abstract: >
+#       Number of people who died within 28 days of being identified as a COVID-19 case by a positive test. 
+#       Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared. 
+#       Data for the last 5 days, highlighted in grey, are incomplete. Data are shown by date of death. 
 
-    UK total:
+#     download:
+#       - newDeaths28DaysByDeathDate
+#       - cumDeaths28DaysByDeathDate
 
-      tabs:
-        - heading: Daily
-          tabType: chart
-          # barType: stack
-          colours: [0] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-          fields:
-            - label: ""
-              value: newDeaths28DaysByDeathDate
-              tooltip: Daily number of deaths within 28 days of first positive test, by date of death
-              type: bar
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days (incomplete)"
+#     options:
+#       type: radio
+#       heading: null
+#       choices:
+#         - UK total
+#         - By nation
 
-            - label: (7-day average)
-              value: newDeaths28DaysByDeathDate
-              tooltip: 7 day rolling average of the daily number of deaths within 28 days of first positive test
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 4 #no of days to exclude for incomplete data
+#     UK total:
 
-        - heading: Total
-          tabType: chart
-          barType: stack
-          colours: [0] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-          fields:
-            - label: ""
-              value: cumDeaths28DaysByDeathDate
-              tooltip: Total number of deaths within 28 days of first positive test, by date of death
-              type: bar
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days (incomplete)"
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           # barType: stack
+#           colours: [0] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+#           fields:
+#             - label: ""
+#               value: newDeaths28DaysByDeathDate
+#               tooltip: Daily number of deaths within 28 days of first positive test, by date of death
+#               type: bar
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days (incomplete)"
 
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-          fields:
-            - label: Date of death
-              value: date
-              type: date
-              tooltip: Date on which the death occurred
+#             - label: (7-day average)
+#               value: newDeaths28DaysByDeathDate
+#               tooltip: 7 day rolling average of the daily number of deaths within 28 days of first positive test
+#               type: line
+#               colour: 3
+#               fill: false
+#               rollingAverage:
+#                 window: 7
+#                 clipEnd: 4 #no of days to exclude for incomplete data
 
-            - label: daily
-              value: newDeaths28DaysByDeathDate
-              type: numeric
-              tooltip: Daily number of deaths within 28 days of first positive test, by date of death
+#         - heading: Total
+#           tabType: chart
+#           barType: stack
+#           colours: [0] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+#           fields:
+#             - label: ""
+#               value: cumDeaths28DaysByDeathDate
+#               tooltip: Total number of deaths within 28 days of first positive test, by date of death
+#               type: bar
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days (incomplete)"
 
-            - label: total
-              value: cumDeaths28DaysByDeathDate
-              type: numeric
-              tooltip: Total number of deaths within 28 days of first positive test, by date of death
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+#           fields:
+#             - label: Date of death
+#               value: date
+#               type: date
+#               tooltip: Date on which the death occurred
 
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
+#             - label: daily
+#               value: newDeaths28DaysByDeathDate
+#               type: numeric
+#               tooltip: Daily number of deaths within 28 days of first positive test, by date of death
 
-    By nation:
+#             - label: total
+#               value: cumDeaths28DaysByDeathDate
+#               type: numeric
+#               tooltip: Total number of deaths within 28 days of first positive test, by date of death
 
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: ""
-              value: newDeaths28DaysByDeathDate
-              tooltip: Daily number of deaths within 28 days of first positive test of people resident in each nation, by date of death
-              type: bar
-              rollingAverage: false
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
-        - heading: Total
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: ""
-              value: cumDeaths28DaysByDeathDate
-              tooltip: Total number of deaths within 28 days of first positive test of people resident in each nation, by date of death
-              type: bar
-              rollingAverage: false
+#     By nation:
 
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: Date of death
-              value: date
-              type: date
-              tooltip: Date on which the death occurred
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: stack
+#           colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+#           fields:
+#             - label: ""
+#               value: newDeaths28DaysByDeathDate
+#               tooltip: Daily number of deaths within 28 days of first positive test of people resident in each nation, by date of death
+#               type: bar
+#               rollingAverage: false
 
-            - label: daily
-              value: newDeaths28DaysByDeathDate
-              type: numeric
-              tooltip: Daily number of deaths within 28 days of first positive test of people resident in each nation, by date of death
+#         - heading: Total
+#           tabType: chart
+#           barType: stack
+#           colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+#           fields:
+#             - label: ""
+#               value: cumDeaths28DaysByDeathDate
+#               tooltip: Total number of deaths within 28 days of first positive test of people resident in each nation, by date of death
+#               type: bar
+#               rollingAverage: false
 
-            - label: total
-              value: cumDeaths28DaysByDeathDate
-              type: numeric
-              tooltip: Total number of deaths within 28 days of first positive test of people resident in each nation, by date of death
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+#           fields:
+#             - label: Date of death
+#               value: date
+#               type: date
+#               tooltip: Date on which the death occurred
 
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
+#             - label: daily
+#               value: newDeaths28DaysByDeathDate
+#               type: numeric
+#               tooltip: Daily number of deaths within 28 days of first positive test of people resident in each nation, by date of death
 
-# {{ EndDevOnlyBlock }}
+#             - label: total
+#               value: cumDeaths28DaysByDeathDate
+#               type: numeric
+#               tooltip: Total number of deaths within 28 days of first positive test of people resident in each nation, by date of death
 
-##############################################################################################################################
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
-  - heading: Deaths within 28 days of positive test by date of death
-    cardType: chart
-    # locationAware:
-    #   excluded:
-    #     areaType:
-    #       - overview
+# # {{ EndDevOnlyBlock }}
 
-    fullWidth: true
-    abstract: >
-      Number of people who died within 28 days of being identified as a COVID-19 case by a positive test. 
-      Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared. 
-      Data for the last 5 days, highlighted in grey, are incomplete. Data are shown by date of death. 
+# ##############################################################################################################################
 
-    download:
-      - newDeaths28DaysByDeathDate
-      - cumDeaths28DaysByDeathDate
+#   - heading: Deaths within 28 days of positive test by date of death
+#     cardType: chart
+#     # locationAware:
+#     #   excluded:
+#     #     areaType:
+#     #       - overview
 
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Number of deaths
-            value: newDeaths28DaysByDeathDate
-            tooltip: Daily number of deaths within 28 days of first positive test by date of death
-            type: bar
-            colour: 0
-            rollingAverage: false
-            highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days (incomplete)"
+#     fullWidth: true
+#     abstract: >
+#       Number of people who died within 28 days of being identified as a COVID-19 case by a positive test. 
+#       Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared. 
+#       Data for the last 5 days, highlighted in grey, are incomplete. Data are shown by date of death. 
 
-          - label: Deaths (7-day average)
-            value: newDeaths28DaysByDeathDate
-            tooltip: 7 day rolling average of the daily number of deaths within 28 days of first positive test
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-                window: 7
-                clipEnd: 4 #no of days to exclude for incomplete data
+#     download:
+#       - newDeaths28DaysByDeathDate
+#       - cumDeaths28DaysByDeathDate
 
-      - heading: Total
-        tabType: chart
-        fields:
-          - label: Number of deaths
-            value: cumDeaths28DaysByDeathDate
-            tooltip: Total number of deaths within 28 days of first positive test by date of death
-            type: bar
-            colour: 0
-            rollingAverage: false
-            highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days (incomplete)"
+#     tabs:
+#       - heading: Daily
+#         tabType: chart
+#         barType: normal
+#         fields:
+#           - label: Number of deaths
+#             value: newDeaths28DaysByDeathDate
+#             tooltip: Daily number of deaths within 28 days of first positive test by date of death
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
+#             highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days (incomplete)"
 
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Date of death
-            value: date
-            type: date
-            tooltip: Date on which the death occurred
+#           - label: Deaths (7-day average)
+#             value: newDeaths28DaysByDeathDate
+#             tooltip: 7 day rolling average of the daily number of deaths within 28 days of first positive test
+#             type: line
+#             colour: 3
+#             fill: false
+#             rollingAverage:
+#                 window: 7
+#                 clipEnd: 4 #no of days to exclude for incomplete data
 
-          - label: Daily deaths
-            value: newDeaths28DaysByDeathDate
-            type: numeric
-            tooltip: Daily number of deaths within 28 days of first positive test by date of death
+#       - heading: Total
+#         tabType: chart
+#         fields:
+#           - label: Number of deaths
+#             value: cumDeaths28DaysByDeathDate
+#             tooltip: Total number of deaths within 28 days of first positive test by date of death
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
+#             highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days (incomplete)"
 
-          - label: Total deaths
-            value: cumDeaths28DaysByDeathDate
-            type: numeric
-            tooltip: Total number of deaths within 28 days of first positive test by date of death
+#       - heading: Data table
+#         tabType: table
+#         fields:
+#           - label: Date of death
+#             value: date
+#             type: date
+#             tooltip: Date on which the death occurred
 
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
+#           - label: Daily deaths
+#             value: newDeaths28DaysByDeathDate
+#             type: numeric
+#             tooltip: Daily number of deaths within 28 days of first positive test by date of death
 
-##############################################################################################################################
+#           - label: Total deaths
+#             value: cumDeaths28DaysByDeathDate
+#             type: numeric
+#             tooltip: Total number of deaths within 28 days of first positive test by date of death
 
-  - heading: Deaths within 28 days of positive test by date of death age demographics
-    cardType: chart
-    experimental: false
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-          - utla
-          - ltla
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
 
-    fullWidth: true
-    abstract: >
-      Age breakdown of the rate of deaths of people who died within 28 days of being identified as a COVID-19 case by a positive test. 
-      The rate is shown per 100,000 people in the rolling 7-day period ending on the dates shown. Data are shown by date of death.  
+# ##############################################################################################################################
+
+#   - heading: Deaths within 28 days of positive test by date of death age demographics
+#     cardType: chart
+#     experimental: false
+#     locationAware:
+#       excluded:
+#         areaType:
+#           - overview
+#           - utla
+#           - ltla
+
+#     fullWidth: true
+#     abstract: >
+#       Age breakdown of the rate of deaths of people who died within 28 days of being identified as a COVID-19 case by a positive test. 
+#       The rate is shown per 100,000 people in the rolling 7-day period ending on the dates shown. Data are shown by date of death.  
  
-    download:
-      - newDeaths28DaysByDeathDateAgeDemographics
-
-    tabs:
-      - heading: Heatmap
-        tabType: heatmap
-        fields:
-          - label: Age demographics
-            value: newDeaths28DaysByDeathDateAgeDemographics
-            amplitude: rollingRate
-            amplitudeLabel: Rolling rate
-            metricLabel: Age group
-            parameter: age
-            metrics:
-            - label: 0 to 4
-              value: "00_04"
-
-            - label: 5 to 9
-              value: "05_09"
-
-            - label: 10 to 14
-              value: "10_14"
-
-            - label: 15 to 19
-              value: "15_19"
-
-            - label: 20 to 24
-              value: "20_24"
-
-            - label: 25 to 29
-              value: "25_29"
-
-            - label: 30 to 34
-              value: "30_34"
-
-            - label: 35 to 39
-              value: "35_39"
-
-            - label: 40 to 44
-              value: "40_44"
-
-            - label: 45 to 49
-              value: "45_49"
-
-            - label: 50 to 54
-              value: "50_54"
-
-            - label: 55 to 59
-              value: "55_59"
-
-            - label: 60 to 64
-              value: "60_64"
-
-            - label: 65 to 69
-              value: "65_69"
-
-            - label: 70 to 74
-              value: "70_74"
-
-            - label: 75 to 79
-              value: "75_79"
-
-            - label: 80 to 84
-              value: "80_84"
-
-            - label: 85 to 89
-              value: "85_89"
-
-            - label: 90+
-              value: "90+"
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardRatesByFiveYearAge.md
-
-##############################################################################################################################
-
-  - heading: Deaths within 28 days of positive test by date of death age demographics - Above and below 60
-    cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      Number of people above and below 60 who died within 28 days of being identified as a COVID-19 case by a positive test. 
-      Rates are shown per 100,000 people in the rolling 7-day period ending on the dates shown. Data are shown by date of death.
-
-    download:
-      - newDeaths28DaysByDeathDateAgeDemographics
-
-    tabs:
-      - heading: Rolling rate
-        tabType: chart
-        fields:
-          - label: Rate of deaths aged 0 to 59
-            << : *newDeaths28DaysByDeathDateAgeDemographics0_59
-            tooltip: Rate of deaths of people aged 0-59 in the 7-day period ending on the date shown by date of death per 100,000 population
-            type: line
-            colour: 0
-            fill: false
-            rollingAverage: false
-            metric: rollingRate
-
-          - label: Rate of deaths aged 60+
-            << : *newDeaths28DaysByDeathDateAgeDemographics60Plus
-            tooltip: Rate of deaths of people aged 60+ in the 7-day period ending on the date shown by date of death per 100,000 population
-            type: line
-            colour: 3
-            fill: false
-            metric: rollingRate
-            rollingAverage: false
-
-      - heading: Daily deaths
-        tabType: chart
-        barType: stack
-        fields:
-          - label: Number of deaths aged 0 to 59
-            << : *newDeaths28DaysByDeathDateAgeDemographics0_59
-            tooltip: Daily number of deaths of people aged 0-59 by date of death
-            type: bar
-            colour: 0
-            rollingAverage: false
-            metric: deaths
-
-          - label: Number of deaths aged 60+
-            << : *newDeaths28DaysByDeathDateAgeDemographics60Plus
-            tooltip: Daily number of deaths of people aged 60+ by date of death
-            type: bar
-            colour: 3
-            metric: deaths
-            rollingAverage: false
-
-      - heading: Data table
-        tabType: nestedTable
-        fields:
-          - label: Date
-            value: date
-            type: date
-
-          - label: "Deaths: 0-59"
-            metric: deaths
-            value: newDeaths28DaysByDeathDateAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 00_59
-
-          - label: "Rolling sum: 0-59"
-            metric: rollingSum
-            value: newDeaths28DaysByDeathDateAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 00_59
-
-          - label: "Rolling rate: 0-59"
-            metric: rollingRate
-            value: newDeaths28DaysByDeathDateAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 00_59
-
-          - label: "Deaths: 60+"
-            metric: deaths
-            value: newDeaths28DaysByDeathDateAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 60+
-
-          - label: "Rolling sum: 60+"
-            metric: rollingSum
-            value: newDeaths28DaysByDeathDateAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 60+
-
-          - label: "Rolling rate: 60+"
-            metric: rollingRate
-            value: newDeaths28DaysByDeathDateAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 60+
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-
-# Only shown for UK
-
-  - heading: Deaths within 28 days of positive test by date reported - [DEV ONLY]
-    cardType: multiAreaStatic
-    locationAware:
-      included:
-        areaType:
-          - overview
-
-    fullWidth: true
-
-    abstract: >
-      Number people who died within 28 days of being identified as a COVID-19 case by a positive test. 
-      Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared. 
-      Data are shown by the date the figures appeared in the published totals.  
-
-    download:
-      - newDeaths28DaysByPublishDate
-      - cumDeaths28DaysByPublishDate
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - UK total
-        - By nation
-
-    UK total:
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          # barType: stack
-          colours: [0] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-          fields:
-            - label: ""
-              value: newDeaths28DaysByPublishDate
-              tooltip: Daily number of new deaths within 28 days of first positive test, by date reported
-              type: bar
-              rollingAverage: false
-
-            - label: (7-day average)
-              value: newDeaths28DaysByPublishDate
-              tooltip: 7 day rolling average of the daily number of new deaths within 28 days of first positive test
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage: true
-
-        - heading: Total
-          tabType: chart
-          barType: stack
-          colours: [0] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-          fields:
-            - label: ""
-              value: cumDeaths28DaysByPublishDate
-              tooltip: Total number of new deaths within 28 days of first positive test, by date reported
-              type: bar
-              rollingAverage: false
-
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
-
-            - label: daily
-              value: newDeaths28DaysByPublishDate
-              type: numeric
-              tooltip: Daily number of new deaths within 28 days of first positive test, by date reported
-
-            - label: total
-              value: cumDeaths28DaysByPublishDate
-              type: numeric
-              tooltip: Total number of new deaths within 28 days of first positive test, by date reported
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
-
-    By nation:
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: ""
-              value: newDeaths28DaysByPublishDate
-              tooltip: Daily number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
-              type: bar
-              rollingAverage: false
-
-        - heading: Total
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: ""
-              value: cumDeaths28DaysByPublishDate
-              tooltip: Total number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
-              type: bar
-              rollingAverage: false
-
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported on coronavirus.data.gov.uk/
-
-            - label: daily
-              value: newDeaths28DaysByPublishDate
-              type: numeric
-              tooltip: Daily number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
-
-            - label: total
-              value: cumDeaths28DaysByPublishDate
-              type: numeric
-              tooltip: Total number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-# Not shown for Regions or LAs
-
-  # - heading: Deaths within 28 days of positive test by date reported
-  #   cardType: chart
-  #   locationAware:
-  #     excluded:
-  #       areaType:
-  #         - region
-  #         - ltla
-  #         - utla
-
-  #   fullWidth: true
-  #   abstract: >
-  #     Number people who died within 28 days of being identified as a COVID-19 case by a positive test. 
-  #     Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared. 
-  #     Data are shown by the date the figures appeared in the published totals.  
-
-  #   download:
-  #     - newDeaths28DaysByPublishDate
-  #     - cumDeaths28DaysByPublishDate
-
-  #   tabs:
-  #     - heading: Daily
-  #       tabType: chart
-  #       barType: normal
-  #       fields:
-  #         - label: Number of deaths
-  #           value: newDeaths28DaysByPublishDate
-  #           tooltip: Daily number of deaths within 28 days of first positive test by date reported
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
-
-  #         - label: Deaths (7-day average)
-  #           value: newDeaths28DaysByPublishDate
-  #           tooltip: 7 day rolling average of the daily number of deaths within 28 days of first positive test
-  #           type: line
-  #           colour: 3
-  #           fill: false
-  #           rollingAverage: true
-
-  #     - heading: Total
-  #       tabType: chart
-  #       fields:
-  #         - label: Number of deaths
-  #           value: cumDeaths28DaysByPublishDate
-  #           tooltip: Total number of deaths within 28 days of first positive test by date reported
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
-
-  #     - heading: Data table
-  #       tabType: table
-  #       fields:
-  #         - label: Date reported
-  #           value: date
-  #           type: date
-  #           tooltip: Date reported on coronavirus.data.gov.uk
-
-  #         - label: Daily deaths
-  #           value: newDeaths28DaysByPublishDate
-  #           type: numeric
-  #           tooltip: Daily number of deaths within 28 days of first positive test by date reported
-
-  #         - label: Total deaths
-  #           value: cumDeaths28DaysByPublishDate
-  #           type: numeric
-  #           tooltip: Total number of deaths within 28 days of first positive test by date reported
-
-  #     - heading: About
-  #       tabType: metadata
-  #       filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
-##############################################################################################################################
-
-  - heading: Daily change in reported deaths with 28 days of positive test by date of death
-    cardType: chart
-    fullWidth: true
-    locationAware:
-      included:
-        areaName:
-          - England
-        areaType:
-          - region
-
-    abstract: >
-      Daily number of new deaths within 28 days of positive test, broken down to show 
-      the number of these that have been previously reported and the latest daily change, and the 7-day average. 
-      The daily change includes newly reported deaths, plus adjustments to previously reported deaths, which may be negative. 
-
-    download:
-      - newDeaths28DaysByDeathDate
-      - changeInNewDeaths28DaysByDeathDate
-      - previouslyReportedNewDeaths28DaysByDeathDate
-
-    tabs: 
-      - heading: Chart
-        tabType: chart
-        barType: stack
-        fields:
-          - label: Previously reported
-            value: previouslyReportedNewDeaths28DaysByDeathDate
-            tooltip: Number of deaths within 28 days of first positive test as reported on {date-1} by the date the death occurred
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-          - label: Change in reported deaths
-            value: changeInNewDeaths28DaysByDeathDate
-            tooltip: Change in the number of deaths within 28 days of first positive test between {date} and {date-1} by the date the death occurred
-            type: bar
-            colour: 9
-            rollingAverage: false
-
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Date of death
-            value: date
-            type: date
-            tooltip: Date the death occurred
-
-          - label: Previously reported deaths
-            value: previouslyReportedNewDeaths28DaysByDeathDate
-            type: numeric
-            tooltip: Number of deaths within 28 days of first positive test as reported on {date-1} by the date the death occurred
-
-          - label: Change in reported deaths
-            value: changeInNewDeaths28DaysByDeathDate
-            type: numeric
-            tooltip: Change in the number of deaths within 28 days of first positive test between {date} and {date-1} by the by the date the death occurred
-
-          - label: Total daily deaths
-            value: newDeaths28DaysByDeathDate
-            type: numeric
-            tooltip: Number of deaths within 28 days of first positive test as reported on {date} by the date the death occurred
-
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/cases/cardChangeInCasesTimeSeries.md
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-
-# only shown for UK
-
-  - heading: Daily deaths with COVID-19 on the death certificate by date of death - [DEV ONLY]
-    cardType: multiAreaStatic
-    locationAware:
-      included:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      Daily numbers of deaths of people whose death certificate mentioned COVID-19 as one of the causes, and 7-day rolling average. 
-      There is a lag in reporting of at least 11 days because the data are based on death registrations. Data are shown by date of death.  
-
-    download:
-      - newDailyNsoDeathsByDeathDate
-      - cumDailyNsoDeathsByDeathDate
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - UK total
-        - By nation
-
-    UK total:
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          # barType: stack
-          colours: [0] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-          fields:
-            - label: ""
-              value: newDailyNsoDeathsByDeathDate
-              tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -11
-                to: 0
-                colour: 6
-                label: "Most recent 11 days (incomplete)"
-
-            - label: (7-day average)
-              value: newDailyNsoDeathsByDeathDate
-              tooltip: 7 day rolling average of the daily number of deaths where COVID-19 is mentioned as a cause on the death certificate
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 11 #no of days to exclude for incomplete data
-
-      # - heading: Cumulative
-      #   tabType: chart
-      #   barType: stack
-      #   colours: [0] # areaNames in alphabetical order
-      #   params:
-      #     - key: areaType
-      #       sign: "="
-      #       value: overview
-      #   fields:
-      #     - label: ""
-      #       value: cumDailyNsoDeathsByDeathDate
-      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-      #       type: bar
-      #       colour: 0
-      #       rollingAverage: false
-      #       highlight:
-      #         from: -11
-      #         to: 0
-      #         colour: 6
-      #         label: "Most recent 11 days (incomplete)"
-
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-          fields:
-            - label: Date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: daily
-              value: newDailyNsoDeathsByDeathDate
-              type: numeric
-              tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-
-            - label: total
-              value: cumDailyNsoDeathsByDeathDate
-              type: numeric
-              tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/deaths/cardNsoDailyDeathsTimeSeries.md
-
-    By nation:
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: ""
-              value: newDailyNsoDeathsByDeathDate
-              tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-
-      # - heading: Cumulative
-      #   tabType: chart
-      #   barType: stack
-      #   colours: [0, 9, 3, 10] # areaNames in alphabetical order
-      #   params:
-      #     - key: areaType
-      #       sign: "="
-      #       value: nation
-      #   fields:
-      #     - label: ""
-      #       value: cumDailyNsoDeathsByDeathDate
-      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-      #       type: bar
-      #       colour: 0
-      #       rollingAverage: false
-
-
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-          fields:
-            - label: Date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: daily
-              value: newDailyNsoDeathsByDeathDate
-              type: numeric
-              tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-
-            - label: total
-              value: cumDailyNsoDeathsByDeathDate
-              type: numeric
-              tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/deaths/cardNsoDailyDeathsTimeSeries.md
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-# not shown for UK
-
-  - heading: Daily deaths with COVID-19 on the death certificate by date of death
-    cardType: chart
-    # locationAware:
-    #   excluded:
-    #     areaType:
-    #       - overview
-
-    fullWidth: true
-    abstract: >
-      Daily numbers of deaths of people whose death certificate mentioned COVID-19 as one of the causes, and 7-day rolling average. 
-      There is a lag in reporting of at least 11 days because the data are based on death registrations. Data are shown by date of death.  
-
-    download:
-      - newDailyNsoDeathsByDeathDate
-      - cumDailyNsoDeathsByDeathDate
-
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Number of deaths
-            value: newDailyNsoDeathsByDeathDate
-            tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-            type: bar
-            colour: 0
-            rollingAverage: false
-            highlight:
-                from: -11
-                to: 0
-                colour: 6
-                label: "Most recent 11 days (incomplete)"
-
-          - label: (7-day average)
-            value: newDailyNsoDeathsByDeathDate
-            tooltip: 7 day rolling average of the daily number of deaths where COVID-19 is mentioned as a cause on the death certificate
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 11 #no of days to exclude for incomplete data
-
-      # - heading: Cumulative
-      #   tabType: chart
-      #   fields:
-      #     - label: Number of deaths
-      #       value: cumDailyNsoDeathsByDeathDate
-      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-      #       type: bar
-      #       colour: 0
-      #       rollingAverage: false
-
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Date
-            value: date
-            type: date
-            tooltip: Date
-
-          - label: Daily deaths
-            value: newDailyNsoDeathsByDeathDate
-            type: numeric
-            tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-
-          - label: Total deaths
-            value: cumDailyNsoDeathsByDeathDate
-            type: numeric
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardNsoDailyDeathsTimeSeries.md
-
-##############################################################################################################################
-
-  - heading: Weekly deaths with COVID-19 on the death certificate by date registered
-    cardType: chart
-
-    fullWidth: true
-    abstract: >
-      Weekly number of deaths of people whose death certificate mentioned COVID-19 as one of the causes. The data are published weekly. 
-      Data are shown by the date the death was registered.  
-
-    download:
-      - newWeeklyNsoDeathsByRegDate
-      - cumWeeklyNsoDeathsByRegDate
-
-    tabs:
-      - heading: Weekly
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Number of deaths
-            value: newWeeklyNsoDeathsByRegDate
-            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-      # - heading: Cumulative
-      #   tabType: chart
-      #   fields:
-      #     - label: Number of deaths
-      #       value: cumWeeklyNsoDeathsByRegDate
-      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-      #       type: bar
-      #       colour: 0
-      #       rollingAverage: false
-
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Week ending date
-            value: date
-            type: date
-            tooltip: Week ending date
-
-          - label: Weekly registered deaths
-            value: newWeeklyNsoDeathsByRegDate
-            type: numeric
-            tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-
-          - label: Total registered deaths
-            value: cumWeeklyNsoDeathsByRegDate
-            type: numeric
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
-
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-
-  - heading: Weekly care home deaths with COVID-19 on the death certificate by date registered (dev only)
-    cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      Number of care home deaths where the death certificate mentioned COVID-19 as one of the causes.
-      The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of
-      at least 11 days because the data are based on death registrations.
-
-    download:
-      - newWeeklyNsoCareHomeDeathsByRegDate
-      - cumWeeklyNsoCareHomeDeathsByRegDate
-
-    tabs:
-      - heading: Weekly
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Number of care home deaths
-            value: newWeeklyNsoCareHomeDeathsByRegDate
-            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-      - heading: Total
-        tabType: chart
-        fields:
-          - label: Number of care home deaths
-            value: cumWeeklyNsoCareHomeDeathsByRegDate
-            tooltip: Total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Week ending date
-            value: date
-            type: date
-            tooltip: Week ending date
-
-          - label: Weekly registered care home deaths
-            value: newWeeklyNsoCareHomeDeathsByRegDate
-            type: numeric
-            tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-
-          - label: Total registered care home deaths
-            value: cumWeeklyNsoCareHomeDeathsByRegDate
-            type: numeric
-            tooltip: Total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
-
-#      - heading: About
-#        tabType: metadata
-#        filename: cardMetadata/deaths/cardOnsCareHomeDeathsTimeSeries.md
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-# Only available for England and regions
-
-  - heading: Deaths within 28 days of positive test by age and sex
-    caption: Counts
-    cardType: ageSexBreakdown
-    locationAware:
-      included:
-        areaType:
-          - region
-        areaName:
-          - England
-
-    fullWidth: false
-    abstract: >
-      Age and sex breakdown of the total number of people who died within 28 days of being identified as a COVID-19 case by a positive test since the start of the pandemic. 
+#     download:
+#       - newDeaths28DaysByDeathDateAgeDemographics
+
+#     tabs:
+#       - heading: Heatmap
+#         tabType: heatmap
+#         fields:
+#           - label: Age demographics
+#             value: newDeaths28DaysByDeathDateAgeDemographics
+#             amplitude: rollingRate
+#             amplitudeLabel: Rolling rate
+#             metricLabel: Age group
+#             parameter: age
+#             metrics:
+#             - label: 0 to 4
+#               value: "00_04"
+
+#             - label: 5 to 9
+#               value: "05_09"
+
+#             - label: 10 to 14
+#               value: "10_14"
+
+#             - label: 15 to 19
+#               value: "15_19"
+
+#             - label: 20 to 24
+#               value: "20_24"
+
+#             - label: 25 to 29
+#               value: "25_29"
+
+#             - label: 30 to 34
+#               value: "30_34"
+
+#             - label: 35 to 39
+#               value: "35_39"
+
+#             - label: 40 to 44
+#               value: "40_44"
+
+#             - label: 45 to 49
+#               value: "45_49"
+
+#             - label: 50 to 54
+#               value: "50_54"
+
+#             - label: 55 to 59
+#               value: "55_59"
+
+#             - label: 60 to 64
+#               value: "60_64"
+
+#             - label: 65 to 69
+#               value: "65_69"
+
+#             - label: 70 to 74
+#               value: "70_74"
+
+#             - label: 75 to 79
+#               value: "75_79"
+
+#             - label: 80 to 84
+#               value: "80_84"
+
+#             - label: 85 to 89
+#               value: "85_89"
+
+#             - label: 90+
+#               value: "90+"
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/deaths/cardRatesByFiveYearAge.md
+
+# ##############################################################################################################################
+
+#   - heading: Deaths within 28 days of positive test by date of death age demographics - Above and below 60
+#     cardType: chart
+#     locationAware:
+#       excluded:
+#         areaType:
+#           - overview
+
+#     fullWidth: true
+#     abstract: >
+#       Number of people above and below 60 who died within 28 days of being identified as a COVID-19 case by a positive test. 
+#       Rates are shown per 100,000 people in the rolling 7-day period ending on the dates shown. Data are shown by date of death.
+
+#     download:
+#       - newDeaths28DaysByDeathDateAgeDemographics
+
+#     tabs:
+#       - heading: Rolling rate
+#         tabType: chart
+#         fields:
+#           - label: Rate of deaths aged 0 to 59
+#             << : *newDeaths28DaysByDeathDateAgeDemographics0_59
+#             tooltip: Rate of deaths of people aged 0-59 in the 7-day period ending on the date shown by date of death per 100,000 population
+#             type: line
+#             colour: 0
+#             fill: false
+#             rollingAverage: false
+#             metric: rollingRate
+
+#           - label: Rate of deaths aged 60+
+#             << : *newDeaths28DaysByDeathDateAgeDemographics60Plus
+#             tooltip: Rate of deaths of people aged 60+ in the 7-day period ending on the date shown by date of death per 100,000 population
+#             type: line
+#             colour: 3
+#             fill: false
+#             metric: rollingRate
+#             rollingAverage: false
+
+#       - heading: Daily deaths
+#         tabType: chart
+#         barType: stack
+#         fields:
+#           - label: Number of deaths aged 0 to 59
+#             << : *newDeaths28DaysByDeathDateAgeDemographics0_59
+#             tooltip: Daily number of deaths of people aged 0-59 by date of death
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
+#             metric: deaths
+
+#           - label: Number of deaths aged 60+
+#             << : *newDeaths28DaysByDeathDateAgeDemographics60Plus
+#             tooltip: Daily number of deaths of people aged 60+ by date of death
+#             type: bar
+#             colour: 3
+#             metric: deaths
+#             rollingAverage: false
+
+#       - heading: Data table
+#         tabType: nestedTable
+#         fields:
+#           - label: Date
+#             value: date
+#             type: date
+
+#           - label: "Deaths: 0-59"
+#             metric: deaths
+#             value: newDeaths28DaysByDeathDateAgeDemographics
+#             type: numeric
+#             filters:
+#               parameter: age
+#               value: 00_59
+
+#           - label: "Rolling sum: 0-59"
+#             metric: rollingSum
+#             value: newDeaths28DaysByDeathDateAgeDemographics
+#             type: numeric
+#             filters:
+#               parameter: age
+#               value: 00_59
+
+#           - label: "Rolling rate: 0-59"
+#             metric: rollingRate
+#             value: newDeaths28DaysByDeathDateAgeDemographics
+#             type: numeric
+#             filters:
+#               parameter: age
+#               value: 00_59
+
+#           - label: "Deaths: 60+"
+#             metric: deaths
+#             value: newDeaths28DaysByDeathDateAgeDemographics
+#             type: numeric
+#             filters:
+#               parameter: age
+#               value: 60+
+
+#           - label: "Rolling sum: 60+"
+#             metric: rollingSum
+#             value: newDeaths28DaysByDeathDateAgeDemographics
+#             type: numeric
+#             filters:
+#               parameter: age
+#               value: 60+
+
+#           - label: "Rolling rate: 60+"
+#             metric: rollingRate
+#             value: newDeaths28DaysByDeathDateAgeDemographics
+#             type: numeric
+#             filters:
+#               parameter: age
+#               value: 60+
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
+
+# ##############################################################################################################################
+
+# # {{ StartDevOnlyBlock }}
+
+# # Only shown for UK
+
+#   - heading: Deaths within 28 days of positive test by date reported - [DEV ONLY]
+#     cardType: multiAreaStatic
+#     locationAware:
+#       included:
+#         areaType:
+#           - overview
+
+#     fullWidth: true
+
+#     abstract: >
+#       Number people who died within 28 days of being identified as a COVID-19 case by a positive test. 
+#       Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared. 
+#       Data are shown by the date the figures appeared in the published totals.  
+
+#     download:
+#       - newDeaths28DaysByPublishDate
+#       - cumDeaths28DaysByPublishDate
+
+#     options:
+#       type: radio
+#       heading: null
+#       choices:
+#         - UK total
+#         - By nation
+
+#     UK total:
+
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           # barType: stack
+#           colours: [0] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+#           fields:
+#             - label: ""
+#               value: newDeaths28DaysByPublishDate
+#               tooltip: Daily number of new deaths within 28 days of first positive test, by date reported
+#               type: bar
+#               rollingAverage: false
+
+#             - label: (7-day average)
+#               value: newDeaths28DaysByPublishDate
+#               tooltip: 7 day rolling average of the daily number of new deaths within 28 days of first positive test
+#               type: line
+#               colour: 3
+#               fill: false
+#               rollingAverage: true
+
+#         - heading: Total
+#           tabType: chart
+#           barType: stack
+#           colours: [0] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+#           fields:
+#             - label: ""
+#               value: cumDeaths28DaysByPublishDate
+#               tooltip: Total number of new deaths within 28 days of first positive test, by date reported
+#               type: bar
+#               rollingAverage: false
+
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+#           fields:
+#             - label: Date reported
+#               value: date
+#               type: date
+#               tooltip: Date reported on coronavirus.data.gov.uk
+
+#             - label: daily
+#               value: newDeaths28DaysByPublishDate
+#               type: numeric
+#               tooltip: Daily number of new deaths within 28 days of first positive test, by date reported
+
+#             - label: total
+#               value: cumDeaths28DaysByPublishDate
+#               type: numeric
+#               tooltip: Total number of new deaths within 28 days of first positive test, by date reported
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
+
+#     By nation:
+
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: stack
+#           colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+#           fields:
+#             - label: ""
+#               value: newDeaths28DaysByPublishDate
+#               tooltip: Daily number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
+#               type: bar
+#               rollingAverage: false
+
+#         - heading: Total
+#           tabType: chart
+#           barType: stack
+#           colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+#           fields:
+#             - label: ""
+#               value: cumDeaths28DaysByPublishDate
+#               tooltip: Total number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
+#               type: bar
+#               rollingAverage: false
+
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+#           fields:
+#             - label: Date reported
+#               value: date
+#               type: date
+#               tooltip: Date reported on coronavirus.data.gov.uk/
+
+#             - label: daily
+#               value: newDeaths28DaysByPublishDate
+#               type: numeric
+#               tooltip: Daily number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
+
+#             - label: total
+#               value: cumDeaths28DaysByPublishDate
+#               type: numeric
+#               tooltip: Total number of new deaths within 28 days of first positive test of people resident in each nation, by date reported
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
+
+# # {{ EndDevOnlyBlock }}
+
+# ##############################################################################################################################
+
+# # Not shown for Regions or LAs
+
+#   # - heading: Deaths within 28 days of positive test by date reported
+#   #   cardType: chart
+#   #   locationAware:
+#   #     excluded:
+#   #       areaType:
+#   #         - region
+#   #         - ltla
+#   #         - utla
+
+#   #   fullWidth: true
+#   #   abstract: >
+#   #     Number people who died within 28 days of being identified as a COVID-19 case by a positive test. 
+#   #     Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared. 
+#   #     Data are shown by the date the figures appeared in the published totals.  
+
+#   #   download:
+#   #     - newDeaths28DaysByPublishDate
+#   #     - cumDeaths28DaysByPublishDate
+
+#   #   tabs:
+#   #     - heading: Daily
+#   #       tabType: chart
+#   #       barType: normal
+#   #       fields:
+#   #         - label: Number of deaths
+#   #           value: newDeaths28DaysByPublishDate
+#   #           tooltip: Daily number of deaths within 28 days of first positive test by date reported
+#   #           type: bar
+#   #           colour: 0
+#   #           rollingAverage: false
+
+#   #         - label: Deaths (7-day average)
+#   #           value: newDeaths28DaysByPublishDate
+#   #           tooltip: 7 day rolling average of the daily number of deaths within 28 days of first positive test
+#   #           type: line
+#   #           colour: 3
+#   #           fill: false
+#   #           rollingAverage: true
+
+#   #     - heading: Total
+#   #       tabType: chart
+#   #       fields:
+#   #         - label: Number of deaths
+#   #           value: cumDeaths28DaysByPublishDate
+#   #           tooltip: Total number of deaths within 28 days of first positive test by date reported
+#   #           type: bar
+#   #           colour: 0
+#   #           rollingAverage: false
+
+#   #     - heading: Data table
+#   #       tabType: table
+#   #       fields:
+#   #         - label: Date reported
+#   #           value: date
+#   #           type: date
+#   #           tooltip: Date reported on coronavirus.data.gov.uk
+
+#   #         - label: Daily deaths
+#   #           value: newDeaths28DaysByPublishDate
+#   #           type: numeric
+#   #           tooltip: Daily number of deaths within 28 days of first positive test by date reported
+
+#   #         - label: Total deaths
+#   #           value: cumDeaths28DaysByPublishDate
+#   #           type: numeric
+#   #           tooltip: Total number of deaths within 28 days of first positive test by date reported
+
+#   #     - heading: About
+#   #       tabType: metadata
+#   #       filename: cardMetadata/deaths/cardDeaths28DaysTimeSeries.md
+# ##############################################################################################################################
+
+#   - heading: Daily change in reported deaths with 28 days of positive test by date of death
+#     cardType: chart
+#     fullWidth: true
+#     locationAware:
+#       included:
+#         areaName:
+#           - England
+#         areaType:
+#           - region
+
+#     abstract: >
+#       Daily number of new deaths within 28 days of positive test, broken down to show 
+#       the number of these that have been previously reported and the latest daily change, and the 7-day average. 
+#       The daily change includes newly reported deaths, plus adjustments to previously reported deaths, which may be negative. 
+
+#     download:
+#       - newDeaths28DaysByDeathDate
+#       - changeInNewDeaths28DaysByDeathDate
+#       - previouslyReportedNewDeaths28DaysByDeathDate
+
+#     tabs: 
+#       - heading: Chart
+#         tabType: chart
+#         barType: stack
+#         fields:
+#           - label: Previously reported
+#             value: previouslyReportedNewDeaths28DaysByDeathDate
+#             tooltip: Number of deaths within 28 days of first positive test as reported on {date-1} by the date the death occurred
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
+
+#           - label: Change in reported deaths
+#             value: changeInNewDeaths28DaysByDeathDate
+#             tooltip: Change in the number of deaths within 28 days of first positive test between {date} and {date-1} by the date the death occurred
+#             type: bar
+#             colour: 9
+#             rollingAverage: false
+
+#       - heading: Data table
+#         tabType: table
+#         fields:
+#           - label: Date of death
+#             value: date
+#             type: date
+#             tooltip: Date the death occurred
+
+#           - label: Previously reported deaths
+#             value: previouslyReportedNewDeaths28DaysByDeathDate
+#             type: numeric
+#             tooltip: Number of deaths within 28 days of first positive test as reported on {date-1} by the date the death occurred
+
+#           - label: Change in reported deaths
+#             value: changeInNewDeaths28DaysByDeathDate
+#             type: numeric
+#             tooltip: Change in the number of deaths within 28 days of first positive test between {date} and {date-1} by the by the date the death occurred
+
+#           - label: Total daily deaths
+#             value: newDeaths28DaysByDeathDate
+#             type: numeric
+#             tooltip: Number of deaths within 28 days of first positive test as reported on {date} by the date the death occurred
+
+#       - heading: About 
+#         tabType: metadata
+#         filename: cardMetadata/cases/cardChangeInCasesTimeSeries.md
+
+# ##############################################################################################################################
+
+# # {{ StartDevOnlyBlock }}
+
+# # only shown for UK
+
+#   - heading: Daily deaths with COVID-19 on the death certificate by date of death - [DEV ONLY]
+#     cardType: multiAreaStatic
+#     locationAware:
+#       included:
+#         areaType:
+#           - overview
+
+#     fullWidth: true
+#     abstract: >
+#       Daily numbers of deaths of people whose death certificate mentioned COVID-19 as one of the causes, and 7-day rolling average. 
+#       There is a lag in reporting of at least 11 days because the data are based on death registrations. Data are shown by date of death.  
+
+#     download:
+#       - newDailyNsoDeathsByDeathDate
+#       - cumDailyNsoDeathsByDeathDate
+
+#     options:
+#       type: radio
+#       heading: null
+#       choices:
+#         - UK total
+#         - By nation
+
+#     UK total:
+
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           # barType: stack
+#           colours: [0] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+#           fields:
+#             - label: ""
+#               value: newDailyNsoDeathsByDeathDate
+#               tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+#               highlight:
+#                 from: -11
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 11 days (incomplete)"
+
+#             - label: (7-day average)
+#               value: newDailyNsoDeathsByDeathDate
+#               tooltip: 7 day rolling average of the daily number of deaths where COVID-19 is mentioned as a cause on the death certificate
+#               type: line
+#               colour: 3
+#               fill: false
+#               rollingAverage:
+#                 window: 7
+#                 clipEnd: 11 #no of days to exclude for incomplete data
+
+#       # - heading: Cumulative
+#       #   tabType: chart
+#       #   barType: stack
+#       #   colours: [0] # areaNames in alphabetical order
+#       #   params:
+#       #     - key: areaType
+#       #       sign: "="
+#       #       value: overview
+#       #   fields:
+#       #     - label: ""
+#       #       value: cumDailyNsoDeathsByDeathDate
+#       #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+#       #       type: bar
+#       #       colour: 0
+#       #       rollingAverage: false
+#       #       highlight:
+#       #         from: -11
+#       #         to: 0
+#       #         colour: 6
+#       #         label: "Most recent 11 days (incomplete)"
+
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+#           fields:
+#             - label: Date
+#               value: date
+#               type: date
+#               tooltip: Date
+
+#             - label: daily
+#               value: newDailyNsoDeathsByDeathDate
+#               type: numeric
+#               tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+#             - label: total
+#               value: cumDailyNsoDeathsByDeathDate
+#               type: numeric
+#               tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/deaths/cardNsoDailyDeathsTimeSeries.md
+
+#     By nation:
+
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: stack
+#           colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+#           fields:
+#             - label: ""
+#               value: newDailyNsoDeathsByDeathDate
+#               tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+
+
+#       # - heading: Cumulative
+#       #   tabType: chart
+#       #   barType: stack
+#       #   colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#       #   params:
+#       #     - key: areaType
+#       #       sign: "="
+#       #       value: nation
+#       #   fields:
+#       #     - label: ""
+#       #       value: cumDailyNsoDeathsByDeathDate
+#       #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+#       #       type: bar
+#       #       colour: 0
+#       #       rollingAverage: false
+
+
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+#           fields:
+#             - label: Date
+#               value: date
+#               type: date
+#               tooltip: Date
+
+#             - label: daily
+#               value: newDailyNsoDeathsByDeathDate
+#               type: numeric
+#               tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+#             - label: total
+#               value: cumDailyNsoDeathsByDeathDate
+#               type: numeric
+#               tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/deaths/cardNsoDailyDeathsTimeSeries.md
+
+# # {{ EndDevOnlyBlock }}
+
+# ##############################################################################################################################
+
+# # not shown for UK
+
+#   - heading: Daily deaths with COVID-19 on the death certificate by date of death
+#     cardType: chart
+#     # locationAware:
+#     #   excluded:
+#     #     areaType:
+#     #       - overview
+
+#     fullWidth: true
+#     abstract: >
+#       Daily numbers of deaths of people whose death certificate mentioned COVID-19 as one of the causes, and 7-day rolling average. 
+#       There is a lag in reporting of at least 11 days because the data are based on death registrations. Data are shown by date of death.  
+
+#     download:
+#       - newDailyNsoDeathsByDeathDate
+#       - cumDailyNsoDeathsByDeathDate
+
+#     tabs:
+#       - heading: Daily
+#         tabType: chart
+#         barType: normal
+#         fields:
+#           - label: Number of deaths
+#             value: newDailyNsoDeathsByDeathDate
+#             tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
+#             highlight:
+#                 from: -11
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 11 days (incomplete)"
+
+#           - label: (7-day average)
+#             value: newDailyNsoDeathsByDeathDate
+#             tooltip: 7 day rolling average of the daily number of deaths where COVID-19 is mentioned as a cause on the death certificate
+#             type: line
+#             colour: 3
+#             fill: false
+#             rollingAverage:
+#               window: 7
+#               clipEnd: 11 #no of days to exclude for incomplete data
+
+#       # - heading: Cumulative
+#       #   tabType: chart
+#       #   fields:
+#       #     - label: Number of deaths
+#       #       value: cumDailyNsoDeathsByDeathDate
+#       #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+#       #       type: bar
+#       #       colour: 0
+#       #       rollingAverage: false
+
+#       - heading: Data table
+#         tabType: table
+#         fields:
+#           - label: Date
+#             value: date
+#             type: date
+#             tooltip: Date
+
+#           - label: Daily deaths
+#             value: newDailyNsoDeathsByDeathDate
+#             type: numeric
+#             tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+#           - label: Total deaths
+#             value: cumDailyNsoDeathsByDeathDate
+#             type: numeric
+#             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/deaths/cardNsoDailyDeathsTimeSeries.md
+
+# ##############################################################################################################################
+
+#   - heading: Weekly deaths with COVID-19 on the death certificate by date registered
+#     cardType: chart
+
+#     fullWidth: true
+#     abstract: >
+#       Weekly number of deaths of people whose death certificate mentioned COVID-19 as one of the causes. The data are published weekly. 
+#       Data are shown by the date the death was registered.  
+
+#     download:
+#       - newWeeklyNsoDeathsByRegDate
+#       - cumWeeklyNsoDeathsByRegDate
+
+#     tabs:
+#       - heading: Weekly
+#         tabType: chart
+#         barType: normal
+#         fields:
+#           - label: Number of deaths
+#             value: newWeeklyNsoDeathsByRegDate
+#             tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
+
+#       # - heading: Cumulative
+#       #   tabType: chart
+#       #   fields:
+#       #     - label: Number of deaths
+#       #       value: cumWeeklyNsoDeathsByRegDate
+#       #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
+#       #       type: bar
+#       #       colour: 0
+#       #       rollingAverage: false
+
+#       - heading: Data table
+#         tabType: table
+#         fields:
+#           - label: Week ending date
+#             value: date
+#             type: date
+#             tooltip: Week ending date
+
+#           - label: Weekly registered deaths
+#             value: newWeeklyNsoDeathsByRegDate
+#             type: numeric
+#             tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
+
+#           - label: Total registered deaths
+#             value: cumWeeklyNsoDeathsByRegDate
+#             type: numeric
+#             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/deaths/cardOnsDeathsTimeSeries.md
+
+
+# ##############################################################################################################################
+
+# # {{ StartDevOnlyBlock }}
+
+#   - heading: Weekly care home deaths with COVID-19 on the death certificate by date registered (dev only)
+#     cardType: chart
+#     locationAware:
+#       excluded:
+#         areaType:
+#           - overview
+
+#     fullWidth: true
+#     abstract: >
+#       Number of care home deaths where the death certificate mentioned COVID-19 as one of the causes.
+#       The data are published weekly by the ONS, NRS and NISRA and there is a lag in reporting of
+#       at least 11 days because the data are based on death registrations.
+
+#     download:
+#       - newWeeklyNsoCareHomeDeathsByRegDate
+#       - cumWeeklyNsoCareHomeDeathsByRegDate
+
+#     tabs:
+#       - heading: Weekly
+#         tabType: chart
+#         barType: normal
+#         fields:
+#           - label: Number of care home deaths
+#             value: newWeeklyNsoCareHomeDeathsByRegDate
+#             tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
+
+#       - heading: Total
+#         tabType: chart
+#         fields:
+#           - label: Number of care home deaths
+#             value: cumWeeklyNsoCareHomeDeathsByRegDate
+#             tooltip: Total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
+
+#       - heading: Data table
+#         tabType: table
+#         fields:
+#           - label: Week ending date
+#             value: date
+#             type: date
+#             tooltip: Week ending date
+
+#           - label: Weekly registered care home deaths
+#             value: newWeeklyNsoCareHomeDeathsByRegDate
+#             type: numeric
+#             tooltip: Weekly number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
+
+#           - label: Total registered care home deaths
+#             value: cumWeeklyNsoCareHomeDeathsByRegDate
+#             type: numeric
+#             tooltip: Total number of care home deaths where COVID-19 is mentioned as a cause on the death certificate by date registered
+
+# #      - heading: About
+# #        tabType: metadata
+# #        filename: cardMetadata/deaths/cardOnsCareHomeDeathsTimeSeries.md
+
+# # {{ EndDevOnlyBlock }}
+
+# ##############################################################################################################################
+
+# # Only available for England and regions
+
+#   - heading: Deaths within 28 days of positive test by age and sex
+#     caption: Counts
+#     cardType: ageSexBreakdown
+#     locationAware:
+#       included:
+#         areaType:
+#           - region
+#         areaName:
+#           - England
+
+#     fullWidth: false
+#     abstract: >
+#       Age and sex breakdown of the total number of people who died within 28 days of being identified as a COVID-19 case by a positive test since the start of the pandemic. 
   
-    download:
-      - femaleDeaths28Days
-      - maleDeaths28Days
-
-    tabs:
-      - heading: Chart
-        tabType: chart
-        barType: group
-        groupKey: age
-        groupValues:
-          - value
-          - rate
-
-        requiredMetrics:
-          - femaleDeaths28Days
-          - maleDeaths28Days
-
-        fields:
-          - label: Females
-            value: femaleDeaths28DaysValue
-            tooltip: Total number of female deaths within 28 days of first positive test
-            type: bar
-            colour: 3
-
-          - label: Males
-            value: maleDeaths28DaysValue
-            tooltip: Total number of male deaths within 28 days of first positive test
-            type: bar
-            colour: 0
-
-      - heading: Data table
-        tabType: table
-        groupKey: age
-        groupValues:
-          - value
-          - rate
-
-        requiredMetrics:
-          - femaleDeaths28Days
-          - maleDeaths28Days
-
-        fields:
-          - label: Age
-            value: age
-            type: string
-            tooltip: Age group
-
-          - label: Females
-            value: femaleDeaths28DaysValue
-            type: numeric
-            tooltip: Total number of female deaths within 28 days of first positive test
-
-          - label: Female rate
-            value: femaleDeaths28DaysRate
-            type: numeric
-            tooltip: Total number of female deaths within 28 days of first positive test per 100,000 resident population
-
-          - label: Males
-            value: maleDeaths28DaysValue
-            type: numeric
-            tooltip: Total number of male deaths within 28 days of first positive test
-
-          - label: Male rate
-            value: maleDeaths28DaysRate
-            type: numeric
-            tooltip: Total number of male deaths within 28 days of first positive test per 100,000 resident population
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeaths28DaysAndRatesByAgeAndSex.md
-
-##############################################################################################################################
-
-# Only available for England and regions
-
-  - heading: Death rates within 28 days of positive test by age and sex
-    caption: Rates per 100,000 resident population
-    cardType: ageSexBreakdown
-    fullWidth: false
-    abstract: >
-      Age and sex breakdown of the rate per 100,000 people of the total number of people who died within 28 days of being identified as a COVID-19 case by a positive test.  
-      There are fewer people in the oldest age groups, so the rates show the relative impact on different age groups. 
-
-    download:
-      - femaleDeaths28Days
-      - maleDeaths28Days
-
-    tabs:
-      - heading: Chart
-        tabType: chart
-        barType: group
-        groupKey: age
-        groupValues:
-          - value
-          - rate
-
-        requiredMetrics:
-          - femaleDeaths28Days
-          - maleDeaths28Days
-
-        fields:
-          - label: Females
-            value: femaleDeaths28DaysRate
-            tooltip: Total number of female deaths within 28 days of first positive test per 100,000 resident population
-            type: bar
-            colour: 3
-
-          - label: Males
-            value: maleDeaths28DaysRate
-            tooltip: Total number of male deaths within 28 days of first positive test per 100,000 resident population
-            type: bar
-            colour: 0
-
-      - heading: Data table
-        tabType: table
-        groupKey: age
-        groupValues:
-          - value
-          - rate
-
-        requiredMetrics:
-          - femaleDeaths28Days
-          - maleDeaths28Days
-
-        fields:
-          - label: Age
-            value: age
-            type: string
-            tooltip: Age group
-
-          - label: Female Deaths
-            value: femaleDeaths28DaysValue
-            type: numeric
-            tooltip: Total number of female deaths within 28 days of first positive test
-
-          - label: Female rate
-            value: femaleDeaths28DaysRate
-            type: numeric
-            tooltip: Total number of female deaths within 28 days of first positive test per 100,000 resident population
-
-          - label: Male Deaths
-            value: maleDeaths28DaysValue
-            type: numeric
-            tooltip: Total number of male deaths within 28 days of first positive test
-
-          - label: Male rate
-            value: maleDeaths28DaysRate
-            type: numeric
-            tooltip: Total number of male deaths within 28 days of first positive test per 100,000 resident population
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeaths28DaysAndRatesByAgeAndSex.md
-
-##############################################################################################################################
-
-  - heading: Deaths within 28 days of positive test by area
-    cardType: simpleTableStatic
-    fullWidth: false
-    abstract: >
-      Total number of people who died within 28 days of being identified as a COVID-19 case by a positive test since the start of the pandemic. 
-      Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared.  
-
-    download:
-      - cumDeaths28DaysByPublishDate
-      - cumDeaths28DaysByPublishDateRate
-
-    tabs:
-      # - heading: UK
-      #   tabType: table
-      #   params:
-      #     - key: areaType
-      #       sign: "="
-      #       value: overview
-
-      #   latestBy: cumDeaths28DaysByPublishDate
-      #   sortBy: areaName
-      #   fields:
-      #     - label: Area
-      #       value: areaName
-      #       type: string
-      #       tooltip: ""
-
-      #     - label: Deaths
-      #       value: cumDeaths28DaysByPublishDate
-      #       type: numeric
-      #       tooltip: Total number of deaths within 28 days of first positive test of people resident in each area up to {date}
-
-      #     - label: Rate per 100,000 population
-      #       value: cumDeaths28DaysByPublishDateRate
-      #       type: numeric
-      #       tooltip: Death rate per 100,000 resident population
-
-
-      - heading: Nation
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-
-        latestBy: cumDeaths28DaysByPublishDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumDeaths28DaysByPublishDate
-            type: numeric
-            tooltip: Total number of deaths within 28 days of first positive test of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumDeaths28DaysByPublishDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: Region
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: region
-
-        latestBy: cumDeaths28DaysByPublishDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumDeaths28DaysByPublishDate
-            type: numeric
-            tooltip: Total number of deaths within 28 days of first positive test of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumDeaths28DaysByPublishDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: Upper tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: utla
-
-        latestBy: cumDeaths28DaysByPublishDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumDeaths28DaysByPublishDate
-            type: numeric
-            tooltip: Total number of deaths within 28 days of first positive test of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumDeaths28DaysByPublishDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: Lower tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: ltla
-
-        latestBy: cumDeaths28DaysByPublishDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumDeaths28DaysByPublishDate
-            type: numeric
-            tooltip: Total number of deaths within 28 days of first positive test of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumDeaths28DaysByPublishDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeaths28DaysAndRatesByArea.md
-
-
-
-
-##############################################################################################################################
-
-  - heading: Deaths with COVID-19 on the death certificate by area
-    cardType: simpleTableStatic
-    fullWidth: false
-    abstract: >
-      Total number of people whose death certificate mentioned COVID-19 as one of the causes since the start of the pandemic. 
-      The data are published weekly. There is a lag in reporting of at least 11 days because the data are based on death registrations. 
-
-    download:
-      - cumOnsDeathsByRegistrationDate
-      - cumOnsDeathsByRegistrationDateRate
-
-    tabs:
-
-      - heading: UK
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: overview
-
-        latestBy: cumOnsDeathsByRegistrationDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumOnsDeathsByRegistrationDate
-            type: numeric
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumOnsDeathsByRegistrationDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: Nation
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-
-        latestBy: cumOnsDeathsByRegistrationDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumOnsDeathsByRegistrationDate
-            type: numeric
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumOnsDeathsByRegistrationDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: Region
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: region
-
-        latestBy: cumOnsDeathsByRegistrationDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumOnsDeathsByRegistrationDate
-            type: numeric
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumOnsDeathsByRegistrationDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: Upper tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: utla
-
-        latestBy: cumOnsDeathsByRegistrationDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumOnsDeathsByRegistrationDate
-            type: numeric
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumOnsDeathsByRegistrationDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: Lower tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: ltla
-
-        latestBy: cumOnsDeathsByRegistrationDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumOnsDeathsByRegistrationDate
-            type: numeric
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumOnsDeathsByRegistrationDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
-
-##############################################################################################################################
-# {{ StartDevOnlyBlock }}
-
-  - heading: Deaths with COVID-19 on the death certificate by area
-    cardType: simpleTableStatic
-    fullWidth: false
-    abstract: >
-      Total number of people whose death certificate mentioned COVID-19 as one of the causes since the start of the pandemic. The data are published weekly. 
-      There is a lag in reporting of at least 11 days because the data are based on death registrations. 
-
-    download:
-      - cumWeeklyNsoDeathsByRegDate
-      - cumWeeklyNsoDeathsByRegDateRate
-
-    tabs:
-      - heading: UK
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: overview
-
-        latestBy: cumWeeklyNsoDeathsByRegDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumWeeklyNsoDeathsByRegDate
-            type: numeric
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumWeeklyNsoDeathsByRegDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: Nation
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-
-        latestBy: cumWeeklyNsoDeathsByRegDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumWeeklyNsoDeathsByRegDate
-            type: numeric
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumWeeklyNsoDeathsByRegDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: Region
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: region
-
-        latestBy: cumWeeklyNsoDeathsByRegDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumWeeklyNsoDeathsByRegDate
-            type: numeric
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumWeeklyNsoDeathsByRegDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: Upper tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: utla
-
-        latestBy: cumWeeklyNsoDeathsByRegDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumWeeklyNsoDeathsByRegDate
-            type: numeric
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumWeeklyNsoDeathsByRegDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: Lower tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: ltla
-
-        latestBy: cumWeeklyNsoDeathsByRegDate
-        sortBy: areaName
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Deaths
-            value: cumWeeklyNsoDeathsByRegDate
-            type: numeric
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumWeeklyNsoDeathsByRegDateRate
-            type: numeric
-            tooltip: Death rate per 100,000 resident population
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-# NO LONGER USED - report date radio button no longer required so England added to chart below
-
-# England only 60 day chart, not shown for UK. NOTE: similar chart for regions and LAs defined as separate card below
-
-  # - heading: Deaths within 60 days of positive test
-  #   cardType: chart
-  #   locationAware:
-  #     included:
-  #       areaType:
-  #         - nation
-  #     excluded:
-  #       areaName:
-  #         - Northern Ireland
-  #         - Scotland
-  #         - Wales
-
-  #   fullWidth: true
-  #   abstract: >
-  #     Number of people who had either died within 60 days of being identified as a COVID-19 case, 
-  #     or died more than 60 days after being identified as a case and have COVID-19 mentioned on their death certificate. 
-  #     Data for the last 5 days, highlighted in grey, are incomplete. 
-
-  #   download:
-  #     - newDeaths60DaysByDeathDate
-  #     - cumDeaths60DaysByDeathDate
-  #     - newDeaths60DaysByPublishDate
-  #     - cumDeaths60DaysByPublishDate
-
-  #   options:
-  #     type: radio
-  #     heading: null
-  #     choices:
-  #       - By date of death
-  #       - By date reported
-
-  #   By date of death:
-
-  #     tabs:
-  #       - heading: Daily
-  #         tabType: chart
-  #         barType: normal
-  #         fields:
-  #           - label: Number of deaths
-  #             value: newDeaths60DaysByDeathDate
-  #             tooltip: Daily number of deaths within 60 days of first positive test by date of death
-  #             type: bar
-  #             colour: 0
-  #             rollingAverage: false
-  #             highlight:
-  #               from: -4
-  #               to: 0
-  #               colour: 6
-  #               label: "Most recent 5 days (incomplete)"
-
-  #           - label: Deaths (7-day average)
-  #             value: newDeaths60DaysByDeathDate
-  #             tooltip: 7 day rolling average of the daily number of deaths within 60 days of first positive test
-  #             type: line
-  #             colour: 3
-  #             fill: false
-  #             rollingAverage:
-  #               window: 7
-  #               clipEnd: 4
-
-  #       - heading: Cumulative
-  #         tabType: chart
-  #         fields:
-  #           - label: Number of deaths
-  #             value: cumDeaths60DaysByDeathDate
-  #             tooltip: Cumulative total number of deaths within 60 days of first positive test by date of death
-  #             type: bar
-  #             colour: 0
-  #             rollingAverage: false
-  #             highlight:
-  #               from: -4
-  #               to: 0
-  #               colour: 6
-  #               label: "Most recent 5 days (incomplete)"
-
-  #       - heading: Data
-  #         tabType: table
-  #         fields:
-  #           - label: Date of death
-  #             value: date
-  #             type: date
-  #             tooltip: Date on which the death occurred
-
-  #           - label: Daily deaths
-  #             value: newDeaths60DaysByDeathDate
-  #             type: numeric
-  #             tooltip: Daily number of deaths within 60 days of first positive test by date of death
-
-  #           - label: Cumulative deaths
-  #             value: cumDeaths60DaysByDeathDate
-  #             type: numeric
-  #             tooltip: Cumulative total number of deaths within 60 days of first positive test by date of death
-
-  #       - heading: About
-  #         tabType: metadata
-  #         filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
-
-  #   By date reported:
-
-  #     tabs:
-  #       - heading: Daily
-  #         tabType: chart
-  #         barType: normal
-  #         fields:
-  #           - label: Number of deaths
-  #             value: newDeaths60DaysByPublishDate
-  #             tooltip: Daily number of deaths within 60 days of first positive test by date reported
-  #             type: bar
-  #             colour: 0
-  #             rollingAverage: false
-
-  #           - label: Deaths (7-day average)
-  #             value: newDeaths60DaysByPublishDate
-  #             tooltip: 7 day rolling average of the daily number of deaths within 60 days of first positive test
-  #             type: line
-  #             colour: 3
-  #             fill: false
-  #             rollingAverage:
-  #               window: 7
-  #               clipEnd: 0
-
-  #       # cumulative chart not shown as time series only goes back to mid Aug when most deaths had already occurred
-  #       # - heading: Cumulative
-  #       #   tabType: chart
-  #       #   fields:
-  #       #     - label: Number of deaths
-  #       #       value: cumDeaths60DaysByPublishDate
-  #       #       tooltip: Cumulative total number of deaths within 60 days of positive test by date reported
-  #       #       type: bar
-  #       #       colour: 0
-  #       #       rollingAverage: false
-
-  #       - heading: Data
-  #         tabType: table
-  #         fields:
-  #           - label: Date of death
-  #             value: date
-  #             type: date
-  #             tooltip: Date on which the death occurred
-
-  #           - label: Daily deaths
-  #             value: newDeaths60DaysByPublishDate
-  #             type: numeric
-  #             tooltip: Daily number of deaths within 60 days of first positive test by date reported
-
-  #           - label: Cumulative deaths
-  #             value: cumDeaths60DaysByPublishDate
-  #             type: numeric
-  #             tooltip: Cumulative total number of deaths within 60 days of first positive test by date reported
-
-  #       - heading: About
-  #         tabType: metadata
-  #         filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
-
-##############################################################################################################################
-
-# 60 day chart for regions and LAs, now including England
-
-# NOTE: similar chart for England defined as separate card above - was previously used as has report date radio button
-
-  # - heading: Deaths within 60 days of positive test by date of death
-  #   cardType: chart
-  #   locationAware:
-  #     included:
-  #       areaType:
-  #         - nation
-  #         - region
-  #         - utla
-  #         - ltla
-
-  #   fullWidth: true
-  #   abstract: >
-  #     Number of people who had either died within 60 days of being identified as a COVID-19 case, 
-  #     or died more than 60 days after being identified as a case and have COVID-19 mentioned on their death certificate. 
-  #     Data for the last 5 days, highlighted in grey, are incomplete. Data are shown by date of death.
-
-  #   download:
-  #     - newDeaths60DaysByDeathDate
-  #     - cumDeaths60DaysByDeathDate
-  #     - newDeaths60DaysByPublishDate
-  #     - cumDeaths60DaysByPublishDate
-
-  #   tabs:
-  #     - heading: Daily
-  #       tabType: chart
-  #       barType: normal
-  #       fields:
-  #         - label: Number of deaths
-  #           value: newDeaths60DaysByDeathDate
-  #           tooltip: Daily number of deaths within 60 days of first positive test by date of death
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
-  #           highlight:
-  #             from: -4
-  #             to: 0
-  #             colour: 6
-  #             label: "Most recent 5 days (incomplete)"
-
-  #         - label: Deaths (7-day average)
-  #           value: newDeaths60DaysByDeathDate
-  #           tooltip: 7 day rolling average of the daily number of deaths within 60 days of first positive test
-  #           type: line
-  #           colour: 3
-  #           fill: false
-  #           rollingAverage:
-  #             window: 7
-  #             clipEnd: 4
-
-  #     - heading: Total
-  #       tabType: chart
-  #       fields:
-  #         - label: Number of deaths
-  #           value: cumDeaths60DaysByDeathDate
-  #           tooltip: Total number of deaths within 60 days of first positive test by date of death
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
-  #           highlight:
-  #             from: -4
-  #             to: 0
-  #             colour: 6
-  #             label: "Most recent 5 days (incomplete)"
-
-  #     - heading: Data table
-  #       tabType: table
-  #       fields:
-  #         - label: Date of death
-  #           value: date
-  #           type: date
-  #           tooltip: Date on which the death occurred
-
-  #         - label: Daily deaths
-  #           value: newDeaths60DaysByDeathDate
-  #           type: numeric
-  #           tooltip: Daily number of deaths within 60 days of first positive test by date of death
-
-  #         - label: Total deaths
-  #           value: cumDeaths60DaysByDeathDate
-  #           type: numeric
-  #           tooltip: Total number of deaths within 60 days of first positive test by date of death
-
-  #     - heading: About
-  #       tabType: metadata
-  #       filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock}}
-# Only available for England and regions
-
-  - heading: Deaths within 60 days of positive test by age and sex
-    caption: Counts
-    cardType: ageSexBreakdown
-    locationAware:
-      included:
-        areaType:
-          - region
-        areaName:
-          - England
-
-    fullWidth: false
-    abstract: >
-      Total deaths within 60 days of first positive test since the start of the pandemic, by age and sex.
-
-    download:
-      - femaleDeaths60Days
-      - maleDeaths60Days
-
-    tabs:
-      - heading: Chart
-        tabType: chart
-        barType: group
-        groupKey: age
-        groupValues:
-          - value
-          - rate
-
-        requiredMetrics:
-          - femaleDeaths60Days
-          - maleDeaths60Days
-
-        fields:
-          - label: Females
-            value: femaleDeaths60DaysValue
-            tooltip: Total number of female deaths within 60 days of first positive test
-            type: bar
-            colour: 3
-
-          - label: Males
-            value: maleDeaths60DaysValue
-            tooltip: Total number of male deaths within 60 days of first positive test
-            type: bar
-            colour: 0
-
-      - heading: Data table
-        tabType: table
-        groupKey: age
-        groupValues:
-          - value
-          - rate
-
-        requiredMetrics:
-          - femaleDeaths60Days
-          - maleDeaths60Days
-
-        fields:
-          - label: Age
-            value: age
-            type: string
-            tooltip: Age group
-
-          - label: Females
-            value: femaleDeaths60DaysValue
-            type: numeric
-            tooltip: Total number of female deaths within 60 days of first positive test
-
-          - label: Female rate
-            value: femaleDeaths60DaysRate
-            type: numeric
-            tooltip: Total number of female deaths within 60 days of first positive test per 100,000 resident population
-
-          - label: Males
-            value: maleDeaths60DaysValue
-            type: numeric
-            tooltip: Total number of male deaths within 60 days of first positive test
-
-          - label: Male rate
-            value: maleDeaths60DaysRate
-            type: numeric
-            tooltip: Total number of male deaths within 60 days of first positive test per 100,000 resident population
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeaths60DaysAndRatesByAgeAndSex.md
-
-# {{ EndDevOnlyBlock}}
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock}}
-
-# Only available for England and regions
-
-  - heading: Death rates within 60 days of positive test by age and sex
-    caption: Rates per 100,000 resident population
-    cardType: ageSexBreakdown
-    fullWidth: false
-    abstract: >
-      Total deaths within 60 days of first positive test rates by age and sex. There are fewer people in the oldest age
-      groups so the rates show the relative impact on different age groups.
-
-    download:
-      - femaleDeaths60Days
-      - maleDeaths60Days
-
-    tabs:
-      - heading: Chart
-        tabType: chart
-        barType: group
-        groupKey: age
-        groupValues:
-          - value
-          - rate
-
-        requiredMetrics:
-          - femaleDeaths60Days
-          - maleDeaths60Days
-
-        fields:
-          - label: Females
-            value: femaleDeaths60DaysRate
-            tooltip: Total number of female deaths within 60 days of first positive test per 100,000 resident population
-            type: bar
-            colour: 3
-
-          - label: Males
-            value: maleDeaths60DaysRate
-            tooltip: Total number of male deaths within 60 days of first positive test per 100,000 resident population
-            type: bar
-            colour: 0
-
-      - heading: Data table
-        tabType: table
-        groupKey: age
-        groupValues:
-          - value
-          - rate
-
-        requiredMetrics:
-          - femaleDeaths60Days
-          - maleDeaths60Days
-
-        fields:
-          - label: Age
-            value: age
-            type: string
-            tooltip: Age group
-
-          - label: Female Deaths
-            value: femaleDeaths60DaysValue
-            type: numeric
-            tooltip: Total number of female deaths within 60 days of first positive test
-
-          - label: Female rate
-            value: femaleDeaths60DaysRate
-            type: numeric
-            tooltip: Total number of female deaths within 60 days of first positive test per 100,000 resident population
-
-          - label: Male Deaths
-            value: maleDeaths60DaysValue
-            type: numeric
-            tooltip: Total number of male deaths within 60 days of first positive test
-
-          - label: Male rate
-            value: maleDeaths60DaysRate
-            type: numeric
-            tooltip: Total number of male deaths within 60 days of first positive test per 100,000 resident population
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeaths60DaysAndRatesByAgeAndSex.md
-
-# {{ EndDevOnlyBlock}}
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-
-# Scatter chart is not a valid card type yet.  Intention is to join this up with a map and the table of area data, as in old dashboard
-
-  # - heading: Deaths and cases rates
-  #   cardType: scatterChart
-  #   fullWidth: false
-  #   userOptions: areaType # linked to map and table below?
-  #   x-label: Cases per 100,000 population
-  #   x-value: CumCasesByPublishDateRate
-  #   x-tooltip: Cumulative total number of new people with a lab-confirmed positive test result per 100,000 resident population
-
-  #   y-label: Deaths per 100,000 population
-  #   y-value: CumDeathsByPublishDateRate
-  #   y-tooltip: Cumulative total number of deaths per 100,000 resident population
-
-# {{ EndDevOnlyBlock}}
-
-##############################################################################################################################
+#     download:
+#       - femaleDeaths28Days
+#       - maleDeaths28Days
+
+#     tabs:
+#       - heading: Chart
+#         tabType: chart
+#         barType: group
+#         groupKey: age
+#         groupValues:
+#           - value
+#           - rate
+
+#         requiredMetrics:
+#           - femaleDeaths28Days
+#           - maleDeaths28Days
+
+#         fields:
+#           - label: Females
+#             value: femaleDeaths28DaysValue
+#             tooltip: Total number of female deaths within 28 days of first positive test
+#             type: bar
+#             colour: 3
+
+#           - label: Males
+#             value: maleDeaths28DaysValue
+#             tooltip: Total number of male deaths within 28 days of first positive test
+#             type: bar
+#             colour: 0
+
+#       - heading: Data table
+#         tabType: table
+#         groupKey: age
+#         groupValues:
+#           - value
+#           - rate
+
+#         requiredMetrics:
+#           - femaleDeaths28Days
+#           - maleDeaths28Days
+
+#         fields:
+#           - label: Age
+#             value: age
+#             type: string
+#             tooltip: Age group
+
+#           - label: Females
+#             value: femaleDeaths28DaysValue
+#             type: numeric
+#             tooltip: Total number of female deaths within 28 days of first positive test
+
+#           - label: Female rate
+#             value: femaleDeaths28DaysRate
+#             type: numeric
+#             tooltip: Total number of female deaths within 28 days of first positive test per 100,000 resident population
+
+#           - label: Males
+#             value: maleDeaths28DaysValue
+#             type: numeric
+#             tooltip: Total number of male deaths within 28 days of first positive test
+
+#           - label: Male rate
+#             value: maleDeaths28DaysRate
+#             type: numeric
+#             tooltip: Total number of male deaths within 28 days of first positive test per 100,000 resident population
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/deaths/cardDeaths28DaysAndRatesByAgeAndSex.md
+
+# ##############################################################################################################################
+
+# # Only available for England and regions
+
+#   - heading: Death rates within 28 days of positive test by age and sex
+#     caption: Rates per 100,000 resident population
+#     cardType: ageSexBreakdown
+#     fullWidth: false
+#     abstract: >
+#       Age and sex breakdown of the rate per 100,000 people of the total number of people who died within 28 days of being identified as a COVID-19 case by a positive test.  
+#       There are fewer people in the oldest age groups, so the rates show the relative impact on different age groups. 
+
+#     download:
+#       - femaleDeaths28Days
+#       - maleDeaths28Days
+
+#     tabs:
+#       - heading: Chart
+#         tabType: chart
+#         barType: group
+#         groupKey: age
+#         groupValues:
+#           - value
+#           - rate
+
+#         requiredMetrics:
+#           - femaleDeaths28Days
+#           - maleDeaths28Days
+
+#         fields:
+#           - label: Females
+#             value: femaleDeaths28DaysRate
+#             tooltip: Total number of female deaths within 28 days of first positive test per 100,000 resident population
+#             type: bar
+#             colour: 3
+
+#           - label: Males
+#             value: maleDeaths28DaysRate
+#             tooltip: Total number of male deaths within 28 days of first positive test per 100,000 resident population
+#             type: bar
+#             colour: 0
+
+#       - heading: Data table
+#         tabType: table
+#         groupKey: age
+#         groupValues:
+#           - value
+#           - rate
+
+#         requiredMetrics:
+#           - femaleDeaths28Days
+#           - maleDeaths28Days
+
+#         fields:
+#           - label: Age
+#             value: age
+#             type: string
+#             tooltip: Age group
+
+#           - label: Female Deaths
+#             value: femaleDeaths28DaysValue
+#             type: numeric
+#             tooltip: Total number of female deaths within 28 days of first positive test
+
+#           - label: Female rate
+#             value: femaleDeaths28DaysRate
+#             type: numeric
+#             tooltip: Total number of female deaths within 28 days of first positive test per 100,000 resident population
+
+#           - label: Male Deaths
+#             value: maleDeaths28DaysValue
+#             type: numeric
+#             tooltip: Total number of male deaths within 28 days of first positive test
+
+#           - label: Male rate
+#             value: maleDeaths28DaysRate
+#             type: numeric
+#             tooltip: Total number of male deaths within 28 days of first positive test per 100,000 resident population
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/deaths/cardDeaths28DaysAndRatesByAgeAndSex.md
+
+# ##############################################################################################################################
+
+#   - heading: Deaths within 28 days of positive test by area
+#     cardType: simpleTableStatic
+#     fullWidth: false
+#     abstract: >
+#       Total number of people who died within 28 days of being identified as a COVID-19 case by a positive test since the start of the pandemic. 
+#       Data from England, Northern Ireland, Scotland and Wales use different methodologies, so can’t be directly compared.  
+
+#     download:
+#       - cumDeaths28DaysByPublishDate
+#       - cumDeaths28DaysByPublishDateRate
+
+#     tabs:
+#       # - heading: UK
+#       #   tabType: table
+#       #   params:
+#       #     - key: areaType
+#       #       sign: "="
+#       #       value: overview
+
+#       #   latestBy: cumDeaths28DaysByPublishDate
+#       #   sortBy: areaName
+#       #   fields:
+#       #     - label: Area
+#       #       value: areaName
+#       #       type: string
+#       #       tooltip: ""
+
+#       #     - label: Deaths
+#       #       value: cumDeaths28DaysByPublishDate
+#       #       type: numeric
+#       #       tooltip: Total number of deaths within 28 days of first positive test of people resident in each area up to {date}
+
+#       #     - label: Rate per 100,000 population
+#       #       value: cumDeaths28DaysByPublishDateRate
+#       #       type: numeric
+#       #       tooltip: Death rate per 100,000 resident population
+
+
+#       - heading: Nation
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: nation
+
+#         latestBy: cumDeaths28DaysByPublishDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumDeaths28DaysByPublishDate
+#             type: numeric
+#             tooltip: Total number of deaths within 28 days of first positive test of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumDeaths28DaysByPublishDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: Region
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: region
+
+#         latestBy: cumDeaths28DaysByPublishDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumDeaths28DaysByPublishDate
+#             type: numeric
+#             tooltip: Total number of deaths within 28 days of first positive test of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumDeaths28DaysByPublishDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: Upper tier LA
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: utla
+
+#         latestBy: cumDeaths28DaysByPublishDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumDeaths28DaysByPublishDate
+#             type: numeric
+#             tooltip: Total number of deaths within 28 days of first positive test of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumDeaths28DaysByPublishDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: Lower tier LA
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: ltla
+
+#         latestBy: cumDeaths28DaysByPublishDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumDeaths28DaysByPublishDate
+#             type: numeric
+#             tooltip: Total number of deaths within 28 days of first positive test of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumDeaths28DaysByPublishDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/deaths/cardDeaths28DaysAndRatesByArea.md
+
+
+
+
+# ##############################################################################################################################
+
+#   - heading: Deaths with COVID-19 on the death certificate by area
+#     cardType: simpleTableStatic
+#     fullWidth: false
+#     abstract: >
+#       Total number of people whose death certificate mentioned COVID-19 as one of the causes since the start of the pandemic. 
+#       The data are published weekly. There is a lag in reporting of at least 11 days because the data are based on death registrations. 
+
+#     download:
+#       - cumOnsDeathsByRegistrationDate
+#       - cumOnsDeathsByRegistrationDateRate
+
+#     tabs:
+
+#       - heading: UK
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: overview
+
+#         latestBy: cumOnsDeathsByRegistrationDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumOnsDeathsByRegistrationDate
+#             type: numeric
+#             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumOnsDeathsByRegistrationDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: Nation
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: nation
+
+#         latestBy: cumOnsDeathsByRegistrationDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumOnsDeathsByRegistrationDate
+#             type: numeric
+#             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumOnsDeathsByRegistrationDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: Region
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: region
+
+#         latestBy: cumOnsDeathsByRegistrationDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumOnsDeathsByRegistrationDate
+#             type: numeric
+#             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumOnsDeathsByRegistrationDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: Upper tier LA
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: utla
+
+#         latestBy: cumOnsDeathsByRegistrationDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumOnsDeathsByRegistrationDate
+#             type: numeric
+#             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumOnsDeathsByRegistrationDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: Lower tier LA
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: ltla
+
+#         latestBy: cumOnsDeathsByRegistrationDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumOnsDeathsByRegistrationDate
+#             type: numeric
+#             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumOnsDeathsByRegistrationDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
+
+# ##############################################################################################################################
+# # {{ StartDevOnlyBlock }}
+
+#   - heading: Deaths with COVID-19 on the death certificate by area
+#     cardType: simpleTableStatic
+#     fullWidth: false
+#     abstract: >
+#       Total number of people whose death certificate mentioned COVID-19 as one of the causes since the start of the pandemic. The data are published weekly. 
+#       There is a lag in reporting of at least 11 days because the data are based on death registrations. 
+
+#     download:
+#       - cumWeeklyNsoDeathsByRegDate
+#       - cumWeeklyNsoDeathsByRegDateRate
+
+#     tabs:
+#       - heading: UK
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: overview
+
+#         latestBy: cumWeeklyNsoDeathsByRegDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumWeeklyNsoDeathsByRegDate
+#             type: numeric
+#             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumWeeklyNsoDeathsByRegDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: Nation
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: nation
+
+#         latestBy: cumWeeklyNsoDeathsByRegDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumWeeklyNsoDeathsByRegDate
+#             type: numeric
+#             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumWeeklyNsoDeathsByRegDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: Region
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: region
+
+#         latestBy: cumWeeklyNsoDeathsByRegDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumWeeklyNsoDeathsByRegDate
+#             type: numeric
+#             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumWeeklyNsoDeathsByRegDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: Upper tier LA
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: utla
+
+#         latestBy: cumWeeklyNsoDeathsByRegDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumWeeklyNsoDeathsByRegDate
+#             type: numeric
+#             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumWeeklyNsoDeathsByRegDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: Lower tier LA
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: ltla
+
+#         latestBy: cumWeeklyNsoDeathsByRegDate
+#         sortBy: areaName
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Deaths
+#             value: cumWeeklyNsoDeathsByRegDate
+#             type: numeric
+#             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate of people resident in each area up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumWeeklyNsoDeathsByRegDateRate
+#             type: numeric
+#             tooltip: Death rate per 100,000 resident population
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/deaths/cardOnsDeathsAndRatesByArea.md
+
+# # {{ EndDevOnlyBlock }}
+
+# ##############################################################################################################################
+
+# # NO LONGER USED - report date radio button no longer required so England added to chart below
+
+# # England only 60 day chart, not shown for UK. NOTE: similar chart for regions and LAs defined as separate card below
+
+#   # - heading: Deaths within 60 days of positive test
+#   #   cardType: chart
+#   #   locationAware:
+#   #     included:
+#   #       areaType:
+#   #         - nation
+#   #     excluded:
+#   #       areaName:
+#   #         - Northern Ireland
+#   #         - Scotland
+#   #         - Wales
+
+#   #   fullWidth: true
+#   #   abstract: >
+#   #     Number of people who had either died within 60 days of being identified as a COVID-19 case, 
+#   #     or died more than 60 days after being identified as a case and have COVID-19 mentioned on their death certificate. 
+#   #     Data for the last 5 days, highlighted in grey, are incomplete. 
+
+#   #   download:
+#   #     - newDeaths60DaysByDeathDate
+#   #     - cumDeaths60DaysByDeathDate
+#   #     - newDeaths60DaysByPublishDate
+#   #     - cumDeaths60DaysByPublishDate
+
+#   #   options:
+#   #     type: radio
+#   #     heading: null
+#   #     choices:
+#   #       - By date of death
+#   #       - By date reported
+
+#   #   By date of death:
+
+#   #     tabs:
+#   #       - heading: Daily
+#   #         tabType: chart
+#   #         barType: normal
+#   #         fields:
+#   #           - label: Number of deaths
+#   #             value: newDeaths60DaysByDeathDate
+#   #             tooltip: Daily number of deaths within 60 days of first positive test by date of death
+#   #             type: bar
+#   #             colour: 0
+#   #             rollingAverage: false
+#   #             highlight:
+#   #               from: -4
+#   #               to: 0
+#   #               colour: 6
+#   #               label: "Most recent 5 days (incomplete)"
+
+#   #           - label: Deaths (7-day average)
+#   #             value: newDeaths60DaysByDeathDate
+#   #             tooltip: 7 day rolling average of the daily number of deaths within 60 days of first positive test
+#   #             type: line
+#   #             colour: 3
+#   #             fill: false
+#   #             rollingAverage:
+#   #               window: 7
+#   #               clipEnd: 4
+
+#   #       - heading: Cumulative
+#   #         tabType: chart
+#   #         fields:
+#   #           - label: Number of deaths
+#   #             value: cumDeaths60DaysByDeathDate
+#   #             tooltip: Cumulative total number of deaths within 60 days of first positive test by date of death
+#   #             type: bar
+#   #             colour: 0
+#   #             rollingAverage: false
+#   #             highlight:
+#   #               from: -4
+#   #               to: 0
+#   #               colour: 6
+#   #               label: "Most recent 5 days (incomplete)"
+
+#   #       - heading: Data
+#   #         tabType: table
+#   #         fields:
+#   #           - label: Date of death
+#   #             value: date
+#   #             type: date
+#   #             tooltip: Date on which the death occurred
+
+#   #           - label: Daily deaths
+#   #             value: newDeaths60DaysByDeathDate
+#   #             type: numeric
+#   #             tooltip: Daily number of deaths within 60 days of first positive test by date of death
+
+#   #           - label: Cumulative deaths
+#   #             value: cumDeaths60DaysByDeathDate
+#   #             type: numeric
+#   #             tooltip: Cumulative total number of deaths within 60 days of first positive test by date of death
+
+#   #       - heading: About
+#   #         tabType: metadata
+#   #         filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
+
+#   #   By date reported:
+
+#   #     tabs:
+#   #       - heading: Daily
+#   #         tabType: chart
+#   #         barType: normal
+#   #         fields:
+#   #           - label: Number of deaths
+#   #             value: newDeaths60DaysByPublishDate
+#   #             tooltip: Daily number of deaths within 60 days of first positive test by date reported
+#   #             type: bar
+#   #             colour: 0
+#   #             rollingAverage: false
+
+#   #           - label: Deaths (7-day average)
+#   #             value: newDeaths60DaysByPublishDate
+#   #             tooltip: 7 day rolling average of the daily number of deaths within 60 days of first positive test
+#   #             type: line
+#   #             colour: 3
+#   #             fill: false
+#   #             rollingAverage:
+#   #               window: 7
+#   #               clipEnd: 0
+
+#   #       # cumulative chart not shown as time series only goes back to mid Aug when most deaths had already occurred
+#   #       # - heading: Cumulative
+#   #       #   tabType: chart
+#   #       #   fields:
+#   #       #     - label: Number of deaths
+#   #       #       value: cumDeaths60DaysByPublishDate
+#   #       #       tooltip: Cumulative total number of deaths within 60 days of positive test by date reported
+#   #       #       type: bar
+#   #       #       colour: 0
+#   #       #       rollingAverage: false
+
+#   #       - heading: Data
+#   #         tabType: table
+#   #         fields:
+#   #           - label: Date of death
+#   #             value: date
+#   #             type: date
+#   #             tooltip: Date on which the death occurred
+
+#   #           - label: Daily deaths
+#   #             value: newDeaths60DaysByPublishDate
+#   #             type: numeric
+#   #             tooltip: Daily number of deaths within 60 days of first positive test by date reported
+
+#   #           - label: Cumulative deaths
+#   #             value: cumDeaths60DaysByPublishDate
+#   #             type: numeric
+#   #             tooltip: Cumulative total number of deaths within 60 days of first positive test by date reported
+
+#   #       - heading: About
+#   #         tabType: metadata
+#   #         filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
+
+# ##############################################################################################################################
+
+# # 60 day chart for regions and LAs, now including England
+
+# # NOTE: similar chart for England defined as separate card above - was previously used as has report date radio button
+
+#   # - heading: Deaths within 60 days of positive test by date of death
+#   #   cardType: chart
+#   #   locationAware:
+#   #     included:
+#   #       areaType:
+#   #         - nation
+#   #         - region
+#   #         - utla
+#   #         - ltla
+
+#   #   fullWidth: true
+#   #   abstract: >
+#   #     Number of people who had either died within 60 days of being identified as a COVID-19 case, 
+#   #     or died more than 60 days after being identified as a case and have COVID-19 mentioned on their death certificate. 
+#   #     Data for the last 5 days, highlighted in grey, are incomplete. Data are shown by date of death.
+
+#   #   download:
+#   #     - newDeaths60DaysByDeathDate
+#   #     - cumDeaths60DaysByDeathDate
+#   #     - newDeaths60DaysByPublishDate
+#   #     - cumDeaths60DaysByPublishDate
+
+#   #   tabs:
+#   #     - heading: Daily
+#   #       tabType: chart
+#   #       barType: normal
+#   #       fields:
+#   #         - label: Number of deaths
+#   #           value: newDeaths60DaysByDeathDate
+#   #           tooltip: Daily number of deaths within 60 days of first positive test by date of death
+#   #           type: bar
+#   #           colour: 0
+#   #           rollingAverage: false
+#   #           highlight:
+#   #             from: -4
+#   #             to: 0
+#   #             colour: 6
+#   #             label: "Most recent 5 days (incomplete)"
+
+#   #         - label: Deaths (7-day average)
+#   #           value: newDeaths60DaysByDeathDate
+#   #           tooltip: 7 day rolling average of the daily number of deaths within 60 days of first positive test
+#   #           type: line
+#   #           colour: 3
+#   #           fill: false
+#   #           rollingAverage:
+#   #             window: 7
+#   #             clipEnd: 4
+
+#   #     - heading: Total
+#   #       tabType: chart
+#   #       fields:
+#   #         - label: Number of deaths
+#   #           value: cumDeaths60DaysByDeathDate
+#   #           tooltip: Total number of deaths within 60 days of first positive test by date of death
+#   #           type: bar
+#   #           colour: 0
+#   #           rollingAverage: false
+#   #           highlight:
+#   #             from: -4
+#   #             to: 0
+#   #             colour: 6
+#   #             label: "Most recent 5 days (incomplete)"
+
+#   #     - heading: Data table
+#   #       tabType: table
+#   #       fields:
+#   #         - label: Date of death
+#   #           value: date
+#   #           type: date
+#   #           tooltip: Date on which the death occurred
+
+#   #         - label: Daily deaths
+#   #           value: newDeaths60DaysByDeathDate
+#   #           type: numeric
+#   #           tooltip: Daily number of deaths within 60 days of first positive test by date of death
+
+#   #         - label: Total deaths
+#   #           value: cumDeaths60DaysByDeathDate
+#   #           type: numeric
+#   #           tooltip: Total number of deaths within 60 days of first positive test by date of death
+
+#   #     - heading: About
+#   #       tabType: metadata
+#   #       filename: cardMetadata/deaths/cardDeaths60DaysTimeSeries.md
+
+# ##############################################################################################################################
+
+# # {{ StartDevOnlyBlock}}
+# # Only available for England and regions
+
+#   - heading: Deaths within 60 days of positive test by age and sex
+#     caption: Counts
+#     cardType: ageSexBreakdown
+#     locationAware:
+#       included:
+#         areaType:
+#           - region
+#         areaName:
+#           - England
+
+#     fullWidth: false
+#     abstract: >
+#       Total deaths within 60 days of first positive test since the start of the pandemic, by age and sex.
+
+#     download:
+#       - femaleDeaths60Days
+#       - maleDeaths60Days
+
+#     tabs:
+#       - heading: Chart
+#         tabType: chart
+#         barType: group
+#         groupKey: age
+#         groupValues:
+#           - value
+#           - rate
+
+#         requiredMetrics:
+#           - femaleDeaths60Days
+#           - maleDeaths60Days
+
+#         fields:
+#           - label: Females
+#             value: femaleDeaths60DaysValue
+#             tooltip: Total number of female deaths within 60 days of first positive test
+#             type: bar
+#             colour: 3
+
+#           - label: Males
+#             value: maleDeaths60DaysValue
+#             tooltip: Total number of male deaths within 60 days of first positive test
+#             type: bar
+#             colour: 0
+
+#       - heading: Data table
+#         tabType: table
+#         groupKey: age
+#         groupValues:
+#           - value
+#           - rate
+
+#         requiredMetrics:
+#           - femaleDeaths60Days
+#           - maleDeaths60Days
+
+#         fields:
+#           - label: Age
+#             value: age
+#             type: string
+#             tooltip: Age group
+
+#           - label: Females
+#             value: femaleDeaths60DaysValue
+#             type: numeric
+#             tooltip: Total number of female deaths within 60 days of first positive test
+
+#           - label: Female rate
+#             value: femaleDeaths60DaysRate
+#             type: numeric
+#             tooltip: Total number of female deaths within 60 days of first positive test per 100,000 resident population
+
+#           - label: Males
+#             value: maleDeaths60DaysValue
+#             type: numeric
+#             tooltip: Total number of male deaths within 60 days of first positive test
+
+#           - label: Male rate
+#             value: maleDeaths60DaysRate
+#             type: numeric
+#             tooltip: Total number of male deaths within 60 days of first positive test per 100,000 resident population
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/deaths/cardDeaths60DaysAndRatesByAgeAndSex.md
+
+# # {{ EndDevOnlyBlock}}
+
+# ##############################################################################################################################
+
+# # {{ StartDevOnlyBlock}}
+
+# # Only available for England and regions
+
+#   - heading: Death rates within 60 days of positive test by age and sex
+#     caption: Rates per 100,000 resident population
+#     cardType: ageSexBreakdown
+#     fullWidth: false
+#     abstract: >
+#       Total deaths within 60 days of first positive test rates by age and sex. There are fewer people in the oldest age
+#       groups so the rates show the relative impact on different age groups.
+
+#     download:
+#       - femaleDeaths60Days
+#       - maleDeaths60Days
+
+#     tabs:
+#       - heading: Chart
+#         tabType: chart
+#         barType: group
+#         groupKey: age
+#         groupValues:
+#           - value
+#           - rate
+
+#         requiredMetrics:
+#           - femaleDeaths60Days
+#           - maleDeaths60Days
+
+#         fields:
+#           - label: Females
+#             value: femaleDeaths60DaysRate
+#             tooltip: Total number of female deaths within 60 days of first positive test per 100,000 resident population
+#             type: bar
+#             colour: 3
+
+#           - label: Males
+#             value: maleDeaths60DaysRate
+#             tooltip: Total number of male deaths within 60 days of first positive test per 100,000 resident population
+#             type: bar
+#             colour: 0
+
+#       - heading: Data table
+#         tabType: table
+#         groupKey: age
+#         groupValues:
+#           - value
+#           - rate
+
+#         requiredMetrics:
+#           - femaleDeaths60Days
+#           - maleDeaths60Days
+
+#         fields:
+#           - label: Age
+#             value: age
+#             type: string
+#             tooltip: Age group
+
+#           - label: Female Deaths
+#             value: femaleDeaths60DaysValue
+#             type: numeric
+#             tooltip: Total number of female deaths within 60 days of first positive test
+
+#           - label: Female rate
+#             value: femaleDeaths60DaysRate
+#             type: numeric
+#             tooltip: Total number of female deaths within 60 days of first positive test per 100,000 resident population
+
+#           - label: Male Deaths
+#             value: maleDeaths60DaysValue
+#             type: numeric
+#             tooltip: Total number of male deaths within 60 days of first positive test
+
+#           - label: Male rate
+#             value: maleDeaths60DaysRate
+#             type: numeric
+#             tooltip: Total number of male deaths within 60 days of first positive test per 100,000 resident population
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/deaths/cardDeaths60DaysAndRatesByAgeAndSex.md
+
+# # {{ EndDevOnlyBlock}}
+
+# ##############################################################################################################################
+
+# # {{ StartDevOnlyBlock }}
+
+# # Scatter chart is not a valid card type yet.  Intention is to join this up with a map and the table of area data, as in old dashboard
+
+#   # - heading: Deaths and cases rates
+#   #   cardType: scatterChart
+#   #   fullWidth: false
+#   #   userOptions: areaType # linked to map and table below?
+#   #   x-label: Cases per 100,000 population
+#   #   x-value: CumCasesByPublishDateRate
+#   #   x-tooltip: Cumulative total number of new people with a lab-confirmed positive test result per 100,000 resident population
+
+#   #   y-label: Deaths per 100,000 population
+#   #   y-value: CumDeathsByPublishDateRate
+#   #   y-tooltip: Cumulative total number of deaths per 100,000 resident population
+
+# # {{ EndDevOnlyBlock}}
+
+# ##############################################################################################################################

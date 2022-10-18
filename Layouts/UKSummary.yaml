@@ -26,170 +26,170 @@
 ###################################################################################################################################
 
 
-summary:
-  - heading: Testing
-    fields:
+# summary:
+#   - heading: Testing
+#     fields:
 
-      - caption: Virus testing capacity
-        chart:
-          value: plannedPCRCapacityByPublishDate
-          type: line
-          colour: 6
-          fill: true
-          rollingAverage: false
-          display: true
+#       - caption: Virus testing capacity
+#         chart:
+#           value: plannedPCRCapacityByPublishDate
+#           type: line
+#           colour: 6
+#           fill: true
+#           rollingAverage: false
+#           display: true
         
-        valueItems: 
-          - value: plannedPCRCapacityByPublishDate
-            tooltip: Estimated virus testing capacity reported by laboratories for {date}
+#         valueItems: 
+#           - value: plannedPCRCapacityByPublishDate
+#             tooltip: Estimated virus testing capacity reported by laboratories for {date}
 
-      - caption: Virus tests processed
-        chart:
-          value: newPCRTestsByPublishDate
-          type: line
-          colour: 0
-          fill: true
-          rollingAverage: true
-          display: true
+#       - caption: Virus tests processed
+#         chart:
+#           value: newPCRTestsByPublishDate
+#           type: line
+#           colour: 0
+#           fill: true
+#           rollingAverage: true
+#           display: true
         
-        valueItems: 
-          - label: Daily
-            value: newPCRTestsByPublishDate
-            tooltip: Daily number of virus tests processed on {date} - chart shows 7-day rolling average
+#         valueItems: 
+#           - label: Daily
+#             value: newPCRTestsByPublishDate
+#             tooltip: Daily number of virus tests processed on {date} - chart shows 7-day rolling average
           
-          - label: Total
-            value: cumPCRTestsByPublishDate
-            tooltip: Cumulative total number of virus tests processed up to {date}
+#           - label: Total
+#             value: cumPCRTestsByPublishDate
+#             tooltip: Cumulative total number of virus tests processed up to {date}
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-  - heading: Cases
-    fields:
-      - caption: People tested positive
-        chart:
-          value: newCasesByPublishDate
-          type: line
-          colour: 0
-          fill: true
-          rollingAverage: true
-          display: true
+#   - heading: Cases
+#     fields:
+#       - caption: People tested positive
+#         chart:
+#           value: newCasesByPublishDate
+#           type: line
+#           colour: 0
+#           fill: true
+#           rollingAverage: true
+#           display: true
         
-        valueItems: 
-          - label: Daily
-            value: newCasesByPublishDate
-            tooltip: Daily number of new people tested positive reported on {date} - chart shows 7-day rolling average
+#         valueItems: 
+#           - label: Daily
+#             value: newCasesByPublishDate
+#             tooltip: Daily number of new people tested positive reported on {date} - chart shows 7-day rolling average
 
-          - label: Total
-            value: cumCasesByPublishDate
-            tooltip: Cumulative total number of people tested positive reported up to {date}
+#           - label: Total
+#             value: cumCasesByPublishDate
+#             tooltip: Cumulative total number of people tested positive reported up to {date}
 
-# {{ StartDevOnlyBlock }}
-# Not currently publishing people tested
+# # {{ StartDevOnlyBlock }}
+# # Not currently publishing people tested
 
-      - caption: All people tested
-        chart:
-          value: newPeopleTestedByPublishDate
-          type: line
-          colour: 6
-          fill: true
-          rollingAverage: true
-          display: true
+#       - caption: All people tested
+#         chart:
+#           value: newPeopleTestedByPublishDate
+#           type: line
+#           colour: 6
+#           fill: true
+#           rollingAverage: true
+#           display: true
         
-        valueItems: 
-          - label: Daily
-            value: newPeopleTestedByPublishDate
-            tooltip: Daily number of new people tested (positive, negative or void) reported on {date} - chart shows 7-day rolling average
+#         valueItems: 
+#           - label: Daily
+#             value: newPeopleTestedByPublishDate
+#             tooltip: Daily number of new people tested (positive, negative or void) reported on {date} - chart shows 7-day rolling average
 
-          - label: Total
-            value: cumPeopleTestedByPublishDate
-            tooltip: Cumulative total number of people tested (positive, negative or void) reported up to {date}
+#           - label: Total
+#             value: cumPeopleTestedByPublishDate
+#             tooltip: Cumulative total number of people tested (positive, negative or void) reported up to {date}
 
-# {{ EndDevOnlyBlock }}
+# # {{ EndDevOnlyBlock }}
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-  - heading: Healthcare
-    fields:
-      - caption: Patients in hospital
-        chart:
-          value: hospitalCases
-          type: line
-          colour: 6
-          fill: true
-          rollingAverage: false
-          display: true
+#   - heading: Healthcare
+#     fields:
+#       - caption: Patients in hospital
+#         chart:
+#           value: hospitalCases
+#           type: line
+#           colour: 6
+#           fill: true
+#           rollingAverage: false
+#           display: true
         
-        valueItems: 
-          - value: hospitalCases
-            tooltip: Number of COVID-19 patients currently in hospital reported on {date}
+#         valueItems: 
+#           - value: hospitalCases
+#             tooltip: Number of COVID-19 patients currently in hospital reported on {date}
 
-      - caption: Patients in ventilator beds
-        chart:
-          value: covidOccupiedMVBeds
-          type: line
-          colour: 0
-          fill: true
-          rollingAverage: false
-          display: true
+#       - caption: Patients in ventilator beds
+#         chart:
+#           value: covidOccupiedMVBeds
+#           type: line
+#           colour: 0
+#           fill: true
+#           rollingAverage: false
+#           display: true
         
-        valueItems: 
-          - value: covidOccupiedMVBeds
-            tooltip: Number of COVID-19 patients currently in mechanical ventilation beds reported on {date}
+#         valueItems: 
+#           - value: covidOccupiedMVBeds
+#             tooltip: Number of COVID-19 patients currently in mechanical ventilation beds reported on {date}
 
-      - caption: Patients admitted
-        chart:
-          value: newAdmissions
-          type: line
-          colour: 3
-          fill: true
-          rollingAverage: true
-          display: true
+#       - caption: Patients admitted
+#         chart:
+#           value: newAdmissions
+#           type: line
+#           colour: 3
+#           fill: true
+#           rollingAverage: true
+#           display: true
         
-        valueItems: 
-          - label: Daily
-            tooltip: Daily number of COVID-19 patients admitted to hospital reported on {date} - chart shows 7-day rolling average
-            value: newAdmissions
+#         valueItems: 
+#           - label: Daily
+#             tooltip: Daily number of COVID-19 patients admitted to hospital reported on {date} - chart shows 7-day rolling average
+#             value: newAdmissions
 
-          - label: Total
-            tooltip: Cumulative total number of COVID-19 patients admitted to hospital reported up to {date}
-            value: cumAdmissions
+#           - label: Total
+#             tooltip: Cumulative total number of COVID-19 patients admitted to hospital reported up to {date}
+#             value: cumAdmissions
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-  - heading: Deaths
-    fields:
-      - caption: Deaths within 28 days of positive test
-        chart:
-          value: newDeaths28DaysByPublishDate
-          type: line
-          colour: 0
-          fill: true
-          rollingAverage: true
-          display: true
+#   - heading: Deaths
+#     fields:
+#       - caption: Deaths within 28 days of positive test
+#         chart:
+#           value: newDeaths28DaysByPublishDate
+#           type: line
+#           colour: 0
+#           fill: true
+#           rollingAverage: true
+#           display: true
         
-        valueItems: 
-          - label: Daily
-            tooltip: Daily number of deaths within 28 days of first positive test, reported on {date} - chart shows 7-day rolling average
-            value: newDeaths28DaysByPublishDate
+#         valueItems: 
+#           - label: Daily
+#             tooltip: Daily number of deaths within 28 days of first positive test, reported on {date} - chart shows 7-day rolling average
+#             value: newDeaths28DaysByPublishDate
 
-          - label: Total
-            tooltip: Total number of deaths within 28 days of first positive test, reported up to {date}
-            value: cumDeaths28DaysByPublishDate
+#           - label: Total
+#             tooltip: Total number of deaths within 28 days of first positive test, reported up to {date}
+#             value: cumDeaths28DaysByPublishDate
 
-      - caption: Deaths with COVID-19 on the death certificate
-        # chart:   # Can't display weekly figures - different scale, Will need to wait until we have daily.
-        #   value: newOnsDeathsByRegistrationDate
-        #   type: line
-        #   colour: 6
-        #   fill: true
-        #   rollingAverage: false
-        #   display: true
+#       - caption: Deaths with COVID-19 on the death certificate
+#         # chart:   # Can't display weekly figures - different scale, Will need to wait until we have daily.
+#         #   value: newOnsDeathsByRegistrationDate
+#         #   type: line
+#         #   colour: 6
+#         #   fill: true
+#         #   rollingAverage: false
+#         #   display: true
         
-        valueItems: 
-          # - label: Weekly
-          #   tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered during the week ending {date} - chart shows 7-day rolling average
-          #   value: newOnsDeathsByRegistrationDate
+#         valueItems: 
+#           # - label: Weekly
+#           #   tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered during the week ending {date} - chart shows 7-day rolling average
+#           #   value: newOnsDeathsByRegistrationDate
 
-          - label: Total
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
-            value: cumOnsDeathsByRegistrationDate
+#           - label: Total
+#             tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
+#             value: cumOnsDeathsByRegistrationDate

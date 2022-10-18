@@ -1,1951 +1,1775 @@
-headlineNumbers:
-  # - caption: Cases
-  #   valueItems:
-  #     #- label: Last 7 days
-  #     #  value: newCasesByPublishDateRollingSum
-  #     #  tooltip: Number of new cases reported in the 7 days up to {date}
-
-  #     - label: Total
-  #       value: cumCasesBySpecimenDate
-  #       tooltip: Total number of cases with specimen taken up to {date}
-
-  #     - label: First Episodes
-  #       value: cumFirstEpisodesBySpecimenDate
-  #       tooltip: Total number of first episodes with specimen taken up to {date}
-
-  #     - label: Reinfections
-  #       value: cumReinfectionsBySpecimenDate
-  #       tooltip: Total number of possible reinfections with specimen taken up to {date}
-
-  - caption: Cases
-    valueItems:
-
-      - label: Total
-        value: cumCasesBySpecimenDate
-        tooltip: Total number of cases with specimen taken up to {date}
-
-      - label: Latest 7 days
-        value: newCasesBySpecimenDateRollingSum
-        tooltip: Number of new cases with specimen taken in the 7 days up to {date}
-
-  - caption: Change from previous 7 days
-    valueItems:
-
-      - label: Number
-        value: newCasesBySpecimenDateChange
-        tooltip: Change in number of new cases with specimen taken in the 7 days up to {date} compared with the previous 7 day period.
-
-      - label: Percentage
-        value: newCasesBySpecimenDateChangePercentage
-        tooltip: Percentage change in number of new cases with specimen taken in the 7 days up to {date} compared with the previous 7 day period.
-
-  - caption: First Episodes
-    valueItems:
-      - label: Total
-        value: cumFirstEpisodesBySpecimenDate
-        tooltip: Total number of first episodes with specimen taken up to {date}
-
-  - caption: Reinfections
-    valueItems:
-      - label: Total
-        value: cumReinfectionsBySpecimenDate
-        tooltip: Total number of possible reinfections with specimen taken up to {date}
-
-# People tested not currently being published
-
-  # - caption: All people tested (Dev Only)
-  #   valueItems:
-  #     - label: Daily
-  #       value: newPeopleTestedByPublishDate
-  #       tooltip: Daily number of new people tested reported on {date}
-
-  #     - label: Total
-  #       value: cumPeopleTestedByPublishDate
-  #       tooltip: Cumulative total number of people tested reported up to {date}
-
-
-baseSpecimenDateDemogrphics: &baseSpecimenDateDemographics
-  value: newCasesBySpecimenDateAgeDemographics
-  isArray: true
-
-
-specimenDateDemographics0_59: &specimenDateDemographics0_59
-  << : *baseSpecimenDateDemographics
-  filters:
-    parameter: age
-    value: 00_59
-
-
-specimenDateDemographics60+: &specimenDateDemographics60Plus
-  << : *baseSpecimenDateDemographics
-  filters:
-    parameter: age
-    value: 60+
-
-# variant data for line chart
-baseVariants: &baseVariants
-  value: variants
-  isArray: true
-
-variantAlpha: &variantAlpha
-  << : *baseVariants
-  filters:
-    parameter: variant
-    value: "V-20DEC-01 (Alpha)"
-
-variantDeltaB: &variantDeltaB
-  << : *baseVariants
-  filters:
-    parameter: variant
-    value: "V-21APR-02 (Delta B.1.617.2)"
-
-variantDeltaAY: &variantDeltaAY
-  << : *baseVariants
-  filters:
-    parameter: variant
-    value: "V-21OCT-01 (Delta AY 4.2)"
-
-variantOmicronBA1: &variantOmicronBA1
-  << : *baseVariants
-  filters:
-    parameter: variant
-    value: "VOC-21NOV-01 (Omicron BA.1)"
-
-variantOmicronBA2: &variantOmicronBA2
-  << : *baseVariants
-  filters:
-    parameter: variant
-    value: "VOC-22JAN-01 (Omicron BA.2)"
-
-variantOmicronBA4: &variantOmicronBA4
-  << : *baseVariants
-  filters:
-    parameter: variant
-    value: "VOC-22APR-03 (Omicron BA.4)"
-
-variantOmicronBA5: &variantOmicronBA5
-  << : *baseVariants
-  filters:
-    parameter: variant
-    value: "VOC-22APR-04 (Omicron BA.5)"
-
-variantOther: &variantOther
-  << : *baseVariants
-  filters:
-    parameter: variant
-    value: "Other"
-
-
-##############################################################################################################################
-
-cards:
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-
-# Only shown for UK
-
-  - heading: Cases by specimen date - [DEV ONLY]
-    cardType: multiAreaStatic
-    locationAware:
-      included:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      Number of cases, by specimen date.
-      Data for the last 5 days, highlighted in grey, are incomplete.
-
-    download:
-      - newCasesBySpecimenDate
-      - cumCasesBySpecimenDate
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - UK total
-        - By nation
-
-    UK total:
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          # barType: stack
-          colours: [0] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: "Number of cases"
-              value: newCasesBySpecimenDate
-              tooltip: Daily number of new people tested positive, by specimen date
-              type: bar
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days (incomplete)"
-
-            - label: Cases (7-day average)
-              value: newCasesBySpecimenDate
-              tooltip: 7-day rolling average of the daily number of cases by specimen date
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 4 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-          barType: stack
-          colours: [0] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: "Number of cases"
-              value: cumCasesBySpecimenDate
-              tooltip: Total number of people tested positive, by specimen date
-              type: bar
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days (incomplete)"
-
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: Specimen date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
-
-            - label: daily
-              value: newCasesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive, by specimen date
-
-            - label: total
-              value: cumCasesBySpecimenDate
-              type: numeric
-              tooltip: Total number of people tested positive, by specimen date
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-    By nation:
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-
-          fields:
-            - label: "Number of cases"
-              value: newCasesBySpecimenDate
-              tooltip: Daily number of new people tested positive, resident in each nation, by specimen date
-              type: bar
-              rollingAverage: false
-
-        - heading: Total
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-
-          fields:
-            - label: "Number of cases"
-              value: cumCasesBySpecimenDate
-              tooltip: Total number of people tested positive, resident in each nation, by specimen date
-              type: bar
-              rollingAverage: false
-
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-
-          fields:
-            - label: Specimen date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
-
-            - label: daily
-              value: newCasesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive, resident in each nation, by specimen date
-
-            - label: total
-              value: cumCasesBySpecimenDate
-              type: numeric
-              tooltip: Total number of people tested positive, resident in each nation, by specimen date
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-# nations and regions, LAs only
-# scotland added 9 Mar 2022
-
-  - heading: Cases by specimen date
-    cardType: chart
-    locationAware:
-      included:
-        areaType:
-          - nation
-          - region
-          - utla
-          - ltla
-          - overview
-
-    fullWidth: true
-    abstract: >
-      Number of cases, by specimen date.
-      Data for the last 5 days, highlighted in grey, are incomplete.
-
-    download:
-      - newCasesBySpecimenDate
-      - cumCasesBySpecimenDate
-      - newFirstEpisodesBySpecimenDate
-      - cumFirstEpisodesBySpecimenDate
-      - newReinfectionsBySpecimenDate
-      - cumReinfectionsBySpecimenDate
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - All
-        - First episodes
-        - Reinfections
-
-    All:
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of cases
-              value: newCasesBySpecimenDate
-              tooltip: Daily number of new people tested positive by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days (incomplete)"
-
-            - label: Cases (7-day average)
-              value: newCasesBySpecimenDate
-              tooltip: 7-day rolling average of the daily number of people tested positive by specimen date
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 4 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-          fields:
-            - label: Number of cases
-              value: cumCasesBySpecimenDate
-              tooltip: Total number of new people tested positive by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-               from: -4
-               to: 0
-               colour: 6
-               label: "Most recent 5 days (incomplete)"
-
-        - heading: Data table
-          tabType: table
-          fields:
-            - label: Specimen date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
-
-            - label: Daily cases
-              value: newCasesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive by date the sample was taken from the person
-
-            - label: Total cases
-              value: cumCasesBySpecimenDate
-              type: numeric
-              tooltip: Total number of new people tested positive by date the sample was taken from the person
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-    First episodes:
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of first episodes
-              value: newFirstEpisodesBySpecimenDate
-              tooltip: Daily number of new people tested positive for their first episode by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days (incomplete)"
-
-            - label: First episodes (7-day average)
-              value: newFirstEpisodesBySpecimenDate
-              tooltip: 7-day rolling average of the daily number of people tested positive for their first episode by specimen date
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 4 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-          fields:
-            - label: Number of first episodes
-              value: cumFirstEpisodesBySpecimenDate
-              tooltip: Total number of new people tested positive for their first episode by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-               from: -4
-               to: 0
-               colour: 6
-               label: "Most recent 5 days (incomplete)"
-
-        - heading: Data table
-          tabType: table
-          fields:
-            - label: Specimen date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
-
-            - label: Daily first episodes
-              value: newFirstEpisodesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive for their first episode by date the sample was taken from the person
-
-            - label: Total first episodes
-              value: cumFirstEpisodesBySpecimenDate
-              type: numeric
-              tooltip: Total number of new people tested positive for their first episode by date the sample was taken from the person
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-    Reinfections:
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Number of possible reinfections
-              value: newReinfectionsBySpecimenDate
-              tooltip: Daily number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days (incomplete)"
-
-            - label: Possible reinfections (7-day average)
-              value: newReinfectionsBySpecimenDate
-              tooltip: 7-day rolling average of the daily number of people tested positive for their second or subsequent episode by specimen date
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 4 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-          fields:
-            - label: Number of possible reinfections
-              value: cumReinfectionsBySpecimenDate
-              tooltip: Total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days (incomplete)"
-
-        - heading: Data table
-          tabType: table
-          fields:
-            - label: Specimen date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
-
-            - label: Daily possible reinfections
-              value: newReinfectionsBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
-
-            - label: Total possible reinfections
-              value: cumReinfectionsBySpecimenDate
-              type: numeric
-              tooltip: Total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-##############################################################################################################################
-
-# Cases by episode number
-
-  - heading: Cases by episode of infection and specimen date
-    cardType: chart
-
-    fullWidth: true
-    abstract: >
-      Number of cases, by episode of infection and specimen date.
-      Data for the last 5 days, highlighted in grey, are incomplete.
-
-    download:
-      - newCasesBySpecimenDate
-      - cumCasesBySpecimenDate
-      - newFirstEpisodesBySpecimenDate
-      - cumFirstEpisodesBySpecimenDate
-      - newReinfectionsBySpecimenDate
-      - cumReinfectionsBySpecimenDate
-
-    tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-
-          fields:
-            - label: Number of first episodes
-              value: newFirstEpisodesBySpecimenDate
-              tooltip: Daily number of new people tested positive for their first episode by specimen date
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 7
-                label: "Most recent 5 days first episodes (incomplete)"
-
-            - label: Number of possible reinfections
-              value: newReinfectionsBySpecimenDate
-              tooltip: Daily number of new people tested positive for their second or subsequent episode by specimen date
-              type: bar
-              colour: 3
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days possible reinfections (incomplete)"
-
-        - heading: Total
-          tabType: chart
-          barType: stack
-
-          fields:
-            - label: Number of first episodes
-              value: cumFirstEpisodesBySpecimenDate
-              tooltip: Total number of new people tested positive for their first episode by specimen date
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 7
-                label: "Most recent 5 days first episodes (incomplete)"
-
-            - label: Number of possible reinfections
-              value: cumReinfectionsBySpecimenDate
-              tooltip: Total number of new people tested positive for their second or subsequent episode by specimen date
-              type: bar
-              colour: 3
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days possible reinfections (incomplete)"
-
-        - heading: Data table
-          tabType: table
-          fields:
-            - label: Specimen date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
-
-            - label: Daily first episodes
-              value: newFirstEpisodesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive for their first episode by date the sample was taken from the person
-
-            - label: Daily possible reinfections
-              value: newReinfectionsBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
-
-            - label: Daily cases
-              value: newCasesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive by date the sample was taken from the person
-
-            - label: Total first episodes
-              value: cumFirstEpisodesBySpecimenDate
-              type: numeric
-              tooltip: Total number of new people tested positive for their first episode by date the sample was taken from the person
-
-            - label: Total possible reinfections
-              value: cumReinfectionsBySpecimenDate
-              type: numeric
-              tooltip: Total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
-
-            - label: Total cases
-              value: cumCasesBySpecimenDate
-              type: numeric
-              tooltip: Total number of new people tested positive by date the sample was taken from the person
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-##############################################################################################################################
-
-  - heading: Cases by specimen date age demographics
-    cardType: chart
-    experimental: false
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      Rate of cases per 100,000 people in the rolling 7-day period
-      ending on the dates shown, by age.
-
-    download:
-      - newCasesBySpecimenDateAgeDemographics
-      - newFirstEpisodesBySpecimenDateAgeDemographics
-      - newReinfectionsBySpecimenDateAgeDemographics
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - All
-        - First episodes
-        - Reinfections
-
-    All:
-
-      tabs:
-        - heading: Heatmap
-          tabType: heatmap
-          fields:
-            - label: Age demographics
-              value: newCasesBySpecimenDateAgeDemographics
-              amplitude: rollingRate
-              amplitudeLabel: Rolling rate
-              metricLabel: Age group
-              parameter: age
-              metrics:
-              - label: 0 to 4
-                value: "00_04"
-
-              - label: 5 to 9
-                value: "05_09"
-
-              - label: 10 to 14
-                value: "10_14"
-
-              - label: 15 to 19
-                value: "15_19"
-
-              - label: 20 to 24
-                value: "20_24"
-
-              - label: 25 to 29
-                value: "25_29"
-
-              - label: 30 to 34
-                value: "30_34"
-
-              - label: 35 to 39
-                value: "35_39"
-
-              - label: 40 to 44
-                value: "40_44"
-
-              - label: 45 to 49
-                value: "45_49"
-
-              - label: 50 to 54
-                value: "50_54"
-
-              - label: 55 to 59
-                value: "55_59"
-
-              - label: 60 to 64
-                value: "60_64"
-
-              - label: 65 to 69
-                value: "65_69"
-
-              - label: 70 to 74
-                value: "70_74"
-
-              - label: 75 to 79
-                value: "75_79"
-
-              - label: 80 to 84
-                value: "80_84"
-
-              - label: 85 to 89
-                value: "85_89"
-
-              - label: 90+
-                value: "90+"
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardRatesByFiveYearAge.md
-
-    First episodes:
-
-      tabs:
-        - heading: Heatmap
-          tabType: heatmap
-          fields:
-            - label: Age demographics
-              value: newFirstEpisodesBySpecimenDateAgeDemographics
-              amplitude: rollingRate
-              amplitudeLabel: Rolling rate
-              metricLabel: Age group
-              parameter: age
-              metrics:
-              - label: 0 to 4
-                value: "00_04"
-
-              - label: 5 to 9
-                value: "05_09"
-
-              - label: 10 to 14
-                value: "10_14"
-
-              - label: 15 to 19
-                value: "15_19"
-
-              - label: 20 to 24
-                value: "20_24"
-
-              - label: 25 to 29
-                value: "25_29"
-
-              - label: 30 to 34
-                value: "30_34"
-
-              - label: 35 to 39
-                value: "35_39"
-
-              - label: 40 to 44
-                value: "40_44"
-
-              - label: 45 to 49
-                value: "45_49"
-
-              - label: 50 to 54
-                value: "50_54"
-
-              - label: 55 to 59
-                value: "55_59"
-
-              - label: 60 to 64
-                value: "60_64"
-
-              - label: 65 to 69
-                value: "65_69"
-
-              - label: 70 to 74
-                value: "70_74"
-
-              - label: 75 to 79
-                value: "75_79"
-
-              - label: 80 to 84
-                value: "80_84"
-
-              - label: 85 to 89
-                value: "85_89"
-
-              - label: 90+
-                value: "90+"
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardRatesByFiveYearAge.md
-
-    Reinfections:
-
-      tabs:
-        - heading: Heatmap
-          tabType: heatmap
-          fields:
-            - label: Age demographics
-              value: newReinfectionsBySpecimenDateAgeDemographics
-              amplitude: rollingRate
-              amplitudeLabel: Rolling rate
-              metricLabel: Age group
-              parameter: age
-              metrics:
-              - label: 0 to 4
-                value: "00_04"
-
-              - label: 5 to 9
-                value: "05_09"
-
-              - label: 10 to 14
-                value: "10_14"
-
-              - label: 15 to 19
-                value: "15_19"
-
-              - label: 20 to 24
-                value: "20_24"
-
-              - label: 25 to 29
-                value: "25_29"
-
-              - label: 30 to 34
-                value: "30_34"
-
-              - label: 35 to 39
-                value: "35_39"
-
-              - label: 40 to 44
-                value: "40_44"
-
-              - label: 45 to 49
-                value: "45_49"
-
-              - label: 50 to 54
-                value: "50_54"
-
-              - label: 55 to 59
-                value: "55_59"
-
-              - label: 60 to 64
-                value: "60_64"
-
-              - label: 65 to 69
-                value: "65_69"
-
-              - label: 70 to 74
-                value: "70_74"
-
-              - label: 75 to 79
-                value: "75_79"
-
-              - label: 80 to 84
-                value: "80_84"
-
-              - label: 85 to 89
-                value: "85_89"
-
-              - label: 90+
-                value: "90+"
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardRatesByFiveYearAge.md
-
-##############################################################################################################################
-
-# Cases by testing programme
-
-  - heading: Cases by testing programme and specimen date
-    cardType: chart
-
-    fullWidth: true
-    abstract: >
-      Number of cases. Cases are shown by testing programme and by specimen date.
-      The government provides testing through different programmes, also known as pillars.
-      The programmes shown are NHS/UKHSA testing (mainly Pillar 1) and mass community testing (Pillar 2).
-      Data for the last 5 days, highlighted in grey, are incomplete.
-
-    download:
-      - newCasesPillarOneBySpecimenDate
-      - cumCasesPillarOneBySpecimenDate
-      - newCasesPillarTwoBySpecimenDate
-      - cumCasesPillarTwoBySpecimenDate
-      - newCasesBySpecimenDate
-      - cumCasesBySpecimenDate
-
-    tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-
-          fields:
-            - label: Number of cases from NHS/UKHSA testing
-              value: newCasesPillarOneBySpecimenDate
-              tooltip: Daily number of new people tested positive via NHS/UKHSA testing by specimen date
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 7
-                label: "Most recent 5 days NHS/UKHSA testing (incomplete)"
-
-            - label: Number of cases from mass community testing
-              value: newCasesPillarTwoBySpecimenDate
-              tooltip: Daily number of new people tested positive via mass community testing by specimen date
-              type: bar
-              colour: 3
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days mass community testing (incomplete)"
-
-        - heading: Total
-          tabType: chart
-          barType: stack
-
-          fields:
-            - label: Number of cases from NHS/UKHSA testing
-              value: cumCasesPillarOneBySpecimenDate
-              tooltip: Total number of new people tested positive via NHS/UKHSA testing by specimen date
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 7
-                label: "Most recent 5 days NHS/UKHSA testing (incomplete)"
-
-            - label: Number of cases from mass community testing
-              value: cumCasesPillarTwoBySpecimenDate
-              tooltip: Total number of new people tested positive via mass community testing by specimen date
-              type: bar
-              colour: 3
-              rollingAverage: false
-              highlight:
-                from: -4
-                to: 0
-                colour: 6
-                label: "Most recent 5 days mass community testing (incomplete)"
-
-        - heading: Data table
-          tabType: table
-          fields:
-            - label: Specimen date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
-
-            - label: Daily cases from NHS/UKHSA testing
-              value: newCasesPillarOneBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive via NHS/UKHSA testing by specimen date
-
-            - label: Daily cases from mass community testing
-              value: newCasesPillarTwoBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive via mass community testing by specimen date
-
-            - label: Daily cases
-              value: newCasesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive by date the sample was taken from the person
-
-            - label: Total cases from NHS/UKHSA testing
-              value: cumCasesPillarOneBySpecimenDate
-              type: numeric
-              tooltip: Total number of new people tested positive via NHS/UKHSA testing by specimen date
-
-            - label: Total cases from mass community testing
-              value: cumCasesPillarTwoBySpecimenDate
-              type: numeric
-              tooltip: Total number of new people tested positive via mass community testing by specimen date
-
-            - label: Total cases
-              value: cumCasesBySpecimenDate
-              type: numeric
-              tooltip: Total number of new people tested positive by date the sample was taken from the person
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesTimeSeries.md
-
-##############################################################################################################################
-
-
-  # Shown for England & Scotland
-  - heading: Cases by test type and specimen date
-    cardType: chart
-    locationAware:
-      included:
-        areaName:
-          - England
-          - Scotland
-        areaType:
-          - region
-          - utla
-          - ltla
-
-
-
-    fullWidth: true
-    abstract: >
-      Number of cases. Cases are shown by type of test used in their first positive test and by specimen date.
-      Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
-      The test types shown are lab-based polymerase chain reaction (PCR), rapid lateral flow test (LFD) with positive PCR (this means the result has been verified with a
-      positive PCR result taken within 3 days) and LFD only (no PCR taken within 3 days). Data for the last 5 days are incomplete. Some LFD results
-      may change or be removed as more PCR results are reported.
-
-    download:
-      - newCasesPCROnlyBySpecimenDate
-      - cumCasesPCROnlyBySpecimenDate
-      - newCasesLFDOnlyBySpecimenDate
-      - cumCasesLFDOnlyBySpecimenDate
-      - newCasesLFDConfirmedPCRBySpecimenDate
-      - cumCasesLFDConfirmedPCRBySpecimenDate
-      - newCasesBySpecimenDate
-      - cumCasesBySpecimenDate
-
-    tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-
-          fields:
-            - label: Number of PCR cases
-              value: newCasesPCROnlyBySpecimenDate
-              tooltip: Daily number of new people tested positive using a PCR test by specimen date
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: Number of LFD with positive PCR cases
-              value: newCasesLFDConfirmedPCRBySpecimenDate
-              tooltip: Daily number of new people tested positive using a rapid lateral flow test with subsequent confirmatory PCR by specimen date
-              type: bar
-              colour: 9
-              rollingAverage: false
-
-            - label: Number of LFD only cases
-              value: newCasesLFDOnlyBySpecimenDate
-              tooltip: Daily number of new people tested positive using a rapid lateral flow test by specimen date
-              type: bar
-              colour: 3
-              rollingAverage: false
-
-        - heading: Total
-          tabType: chart
-          barType: stack
-
-          fields:
-            - label: Number of PCR cases
-              value: cumCasesPCROnlyBySpecimenDate
-              tooltip: Total number of new people tested positive using a PCR test by specimen date
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: Number of LFD with positive PCR cases
-              value: cumCasesLFDConfirmedPCRBySpecimenDate
-              tooltip: Total number of new people tested positive using a rapid lateral flow test with subsequent confirmatory PCR by specimen date
-              type: bar
-              colour: 9
-              rollingAverage: false
-
-            - label: Number of LFD only cases
-              value: cumCasesLFDOnlyBySpecimenDate
-              tooltip: Total number of new people tested positive using a rapid lateral flow test by specimen date
-              type: bar
-              colour: 3
-              rollingAverage: false
-
-        - heading: Data table
-          tabType: table
-
-          fields:
-            - label: Date
-              value: date
-              type: date
-              tooltip: Date the sample was taken from the person
-
-            - label: PCR daily
-              value: newCasesPCROnlyBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive using a PCR test by specimen date
-
-            - label: LFD with positive PCR daily
-              value: newCasesLFDConfirmedPCRBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive using a rapid lateral flow test with subsequent confirmatory PCR by specimen date
-
-            - label: LFD only daily
-              value: newCasesLFDOnlyBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive using a rapid lateral flow test by specimen date
-
-            - label: All cases daily
-              value: newCasesBySpecimenDate
-              type: numeric
-              tooltip: Daily number of new people tested positive by specimen date
-
-            - label: PCR total
-              value: cumCasesPCROnlyBySpecimenDate
-              type: numeric
-              tooltip: Total number of new people tested positive using a PCR test by specimen date
-
-            - label: LFD with positive PCR total
-              type: numeric
-              value: cumCasesLFDConfirmedPCRBySpecimenDate
-              tooltip: Total number of new people tested positive using a rapid lateral flow test with subsequent confirmatory PCR by specimen date
-
-            - label: LFD only total
-              type: numeric
-              value: cumCasesLFDOnlyBySpecimenDate
-              tooltip: Total number of new people tested positive using a rapid lateral flow test by specimen date
-
-            - label: All cases total
-              value: cumCasesBySpecimenDate
-              type: numeric
-              tooltip: Total number of new people tested positive by specimen date
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesByTestType.md
-
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-
-# Only shown for UK
-
-  - heading: Cases by date reported - [DEV ONLY]
-    cardType: multiAreaStatic
-    locationAware:
-      included:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      Number of cases by date reported.
-
-    download:
-      - newCasesByPublishDate
-      - cumCasesByPublishDate
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - UK total
-        - By nation
-
-    UK total:
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          # barType: stack
-          colours: [0] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: "Number of cases"
-              value: newCasesByPublishDate
-              tooltip: Daily number of new people tested positive, by date reported
-              type: bar
-              rollingAverage: false
-
-            - label: Cases (7-day average)
-              value: newCasesByPublishDate
-              tooltip: 7-day rolling average of the daily number of new people tested positive reported
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage: true
-
-        - heading: Total
-          tabType: chart
-          barType: stack
-          colours: [0] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: "Number of cases"
-              value: cumCasesByPublishDate
-              tooltip: Total number of people tested positive, by date reported
-              type: bar
-              rollingAverage: false
-
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
-
-            - label: daily
-              value: newCasesByPublishDate
-              type: numeric
-              tooltip: Daily number of new people tested positive, by date reported
-
-            - label: total
-              value: cumCasesByPublishDate
-              type: numeric
-              tooltip: Total number of people tested positive, by date reported
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesByReportDateTimeSeries.md
-
-    By nation:
-
-      tabs:
-        - heading: Daily
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-
-          fields:
-            - label: ""
-              value: newCasesByPublishDate
-              tooltip: Daily number of new people tested positive, resident in each nation, by date reported
-              type: bar
-              rollingAverage: false
-
-        - heading: Total
-          tabType: chart
-          barType: stack
-          colours: [0, 9, 3, 10] # areaNames in alphabetical order
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-
-          fields:
-            - label: ""
-              value: cumCasesByPublishDate
-              tooltip: Total number of people tested positive, resident in each nation, by date reported
-              type: bar
-              rollingAverage: false
-
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: nation
-
-          fields:
-            - label: Date reported
-              value: date
-              type: date
-              tooltip: Date reported on coronavirus.data.gov.uk
-
-            - label: daily
-              value: newCasesByPublishDate
-              type: numeric
-              tooltip: Daily number of new people tested positive, resident in each nation, by date reported
-
-            - label: total
-              value: cumCasesByPublishDate
-              type: numeric
-              tooltip: Total number of people tested positive, resident in each nation, by date reported
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardCasesByReportDateTimeSeries.md
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-  - heading: Daily change in reported cases by specimen date
-    cardType: chart
-    fullWidth: true
-    locationAware:
-      included:
-        areaName:
-          - England
-        areaType:
-          - region
-          - utla
-          - ltla
-
-    abstract: >
-      Daily number of new cases, broken down to show
-      the number of these cases that have been previously reported and the latest daily change, and the 7-day average.
-      The daily change includes newly reported cases, plus adjustments to previously reported cases, which may be negative.
-
-    download:
-      - newCasesBySpecimenDate
-      - changeInNewCasesBySpecimenDate
-      - previouslyReportedNewCasesBySpecimenDate
-
-    tabs:
-      - heading: Chart
-        tabType: chart
-        barType: stack
-        fields:
-          - label: Previously reported cases
-            value: previouslyReportedNewCasesBySpecimenDate
-            tooltip: Number of people tested positive as reported on {date-1} by the date the sample was taken from the person
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-          - label: Change in reported cases
-            value: changeInNewCasesBySpecimenDate
-            tooltip: Change in the number of people tested positive between {date} and {date-1} by the date the sample was taken from the person
-            type: bar
-            colour: 9
-            rollingAverage: false
-
-#          - label: Total cases (7-day average)
-#            value: newCasesBySpecimenDate
-#            tooltip: 7-day rolling average of the daily number of people tested positive by specimen date
-#            type: line
-#            colour: 3
-#            fill: false
-#            rollingAverage:
-#              window: 7
-#              clipEnd: 3 #no of days to exclude for incomplete data
-
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Specimen date
-            value: date
-            type: date
-            tooltip: Date the sample was taken from the person
-
-          - label: Previously reported cases
-            value: previouslyReportedNewCasesBySpecimenDate
-            type: numeric
-            tooltip: Number of people tested positive as reported on {date-1} by the date the sample was taken from the person
-
-          - label: Change in reported cases
-            value: changeInNewCasesBySpecimenDate
-            type: numeric
-            tooltip: Change in the number of people tested positive between {date} and {date-1} by the by the date the sample was taken from the person
-
-          - label: Total daily cases
-            value: newCasesBySpecimenDate
-            type: numeric
-            tooltip: Number of people tested positive as reported on {date} by the date the sample was taken from the person
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/cases/cardChangeInCasesTimeSeries.md
-
-##############################################################################################################################
-
-# Not shown for sub-national (no data)
-
-  # - heading: Cases by date reported
-  #   cardType: chart
-  #   locationAware:
-  #     included:
-  #       areaType:
-  #         - nation
-  #         - overview
-
-  #   fullWidth: true
-  #   abstract: >
-  #     Number of cases by date reported.
-
-  #   download:
-  #     - newCasesByPublishDate
-  #     - cumCasesByPublishDate
-
-  #   tabs:
-  #     - heading: Daily
-  #       tabType: chart
-  #       barType: overlay
-  #       fields:
-  #         - label: Number of cases
-  #           value: newCasesByPublishDate
-  #           tooltip: Daily number of new people tested positive by date reported
-  #           type: bar
-  #           colour: 0
-
-  #         - label: Cases (7-day average)
-  #           value: newCasesByPublishDate
-  #           tooltip: 7-day rolling average of the daily number of new people tested positive reported
-  #           type: line
-  #           colour: 3
-  #           fill: false
-  #           rollingAverage: true
-
-  #     - heading: Total
-  #       tabType: chart
-  #       fields:
-  #         - label: Number of cases
-  #           value: cumCasesByPublishDate
-  #           tooltip: Total number of people tested positive by date reported
-  #           type: bar
-  #           colour: 0
-  #           rollingAverage: false
-
-  #     - heading: Data table
-  #       tabType: table
-  #       fields:
-  #         - label: Date reported
-  #           value: date
-  #           type: date
-  #           tooltip: Date reported on coronavirus.data.gov.uk
-
-  #         - label: Daily cases
-  #           value: newCasesByPublishDate
-  #           type: numeric
-  #           tooltip: Daily number of new people tested positive by date reported
-
-  #         - label: Total cases
-  #           value: cumCasesByPublishDate
-  #           type: numeric
-  #           tooltip: Total number of people tested positive by date reported
-
-  #     - heading: About
-  #       tabType: metadata
-  #       filename: cardMetadata/cases/cardCasesByReportDateTimeSeries.md
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-# not live
-# People tested not currently being published
-
-  # - heading: People tested (Dev Only)
-  #   cardType: chart
-  #   fullWidth: true
-  #   # Why is this on the Cases page and repeated on the Tested page - just to show cases and tests side by side?  If so maybe card needs different title?
-
-  #   abstract: >
-  #     Number of people with at least one positive, negative or void COVID-19 test result, either lab-reported or lateral flow device (England only).
-  #     Initially only NHS and, in England, UKHSA tests were included but commercial tests have been included from
-  #     different dates between 15th June 2020 and 14th July 2020 for each nation.  National data are not directly comparable.
-
-  #   download:
-  #     - newCasesBySpecimenDate
-  #     - cumCasesBySpecimenDate
-  #     - newPeopleTestedBySpecimenDate
-  #     - cumPeopleTestedBySpecimenDate
-
-  #   options:
-  #     type: radio
-  #     heading: null
-  #     choices:
-  #       - Specimen date
-  #       - Reporting date
-
-  #   Specimen date:
-  #     tabs:
-  #       - heading: Daily
-  #         tabType: chart
-  #         barType: overlay
-  #         fields:
-  #           - label: Number of people tested
-  #             value: newPeopleTestedBySpecimenDate
-  #             tooltip: Daily number of people tested by date the sample was taken from the person
-  #             type: bar
-  #             colour: 0
-  #             rollingAverage: false
-
-  #           - label: People tested (7-day average)
-  #             value: newPeopleTestedBySpecimenDate
-  #             tooltip: 7-day rolling average of the daily number of people tested by specimen date
-  #             type: line
-  #             colour: 3
-  #             fill: false
-  #             rollingAverage:
-  #               window: 7
-  #               clipEnd: 3 #no of days to exclude for incomplete data
-
-  #       - heading: Cumulative
-  #         tabType: chart
-  #         fields:
-  #           - label: Number of people tested
-  #             value: cumPeopleTestedBySpecimenDate
-  #             tooltip: Cumulative total number of people tested by date the sample was taken from the person
-  #             type: bar
-  #             colour: 0
-  #             rollingAverage: false
-
-  #       - heading: Data
-  #         tabType: table
-  #         fields:
-  #           - label: Specimen date
-  #             value: date
-  #             type: date
-  #             tooltip: Date the sample was taken from the person
-
-  #           - label: Daily cases
-  #             value: newCasesBySpecimenDate
-  #             type: numeric
-  #             tooltip: Daily number of new people tested positive by date the sample was taken from the person
-
-  #           - label: Cumulative cases
-  #             value: cumCasesBySpecimenDate
-  #             type: numeric
-  #             tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
-
-  #           - label: Daily people tested
-  #             value: newPeopleTestedBySpecimenDate
-  #             type: numeric
-  #             tooltip: Daily number of people tested by date the sample was taken from the person
-
-  #           - label: Cumulative people tested
-  #             value: cumPeopleTestedBySpecimenDate
-  #             type: numeric
-  #             tooltip: Cumulative total number of people tested by date the sample was taken from the person
-
-  #       - heading: About
-  #         tabType: metadata
-  #         filename: cardMetadata/testing/cardPeopleTested.md
-
-  #   Reporting date:
-  #     tabs:
-  #       - heading: Daily
-  #         tabType: chart
-  #         barType: overlay
-  #         fields:
-  #           - label: Number of people tested
-  #             value: newPeopleTestedByPublishDate
-  #             tooltip: Daily number of new people tested by date reported
-  #             type: bar
-  #             colour: 0
-  #             rollingAverage: false
-
-  #           - label: People tested (7-day average)
-  #             value: newPeopleTestedByPublishDate
-  #             tooltip: 7-day rolling average of the number of new people tested by date reported
-  #             type: line
-  #             colour: 3
-  #             fill: false
-  #             rollingAverage: true
-
-  #       - heading: Cumulative
-  #         tabType: chart
-  #         fields:
-  #           - label: Number of people tested
-  #             value: cumPeopleTestedByPublishDate
-  #             tooltip: Cumulative total number of people tested by date reported
-  #             type: bar
-  #             colour: 0
-  #             rollingAverage: false
-
-  #       - heading: Data
-  #         tabType: table
-  #         fields:
-  #           - label: Date reported
-  #             value: date
-  #             type: date
-  #             tooltip: Date reported on coronavirus.data.gov.uk
-
-  #           - label: Daily cases
-  #             value: newCasesByPublishDate
-  #             type: numeric
-  #             tooltip: Daily number of new people tested positive by date reported
-
-  #           - label: Total cases
-  #             value: cumCasesByPublishDate
-  #             type: numeric
-  #             tooltip: Cumulative total number of people tested positive by date reported
-
-  #           - label: Daily people tested
-  #             value: newPeopleTestedByPublishDate
-  #             type: numeric
-  #             tooltip: Daily number of new people tested by date reported
-
-  #           - label: Total people tested
-  #             value: cumPeopleTestedByPublishDate
-  #             type: numeric
-  #             tooltip: Cumulative total number of people tested by date reported
-
-  #       - heading: About
-  #         tabType: metadata
-  #         filename: cardMetadata/testing/cardPeopleTested.md
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-  - heading: 7-day case rates by specimen date
-    cardType: recentData
-    fullWidth: false
-    abstract: >
-      Rate of cases per 100,000 people in the rolling 7-day period ending on the dates shown.
-
-    download:
-      - newCasesBySpecimenDateRollingSum
-      - newCasesBySpecimenDateRollingRate
-      - newCasesBySpecimenDateChange
-      - newCasesBySpecimenDateChangePercentage
-
-    tabs:
-        - heading: 7-day periods
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Rate of cases per 100,000 population in 7-day period
-              value: newCasesBySpecimenDateRollingRate
-              tooltip: Rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
-              colour: 0
-              type: line
-              rollingAverage: false
-
-        - heading: Data table
-          tabType: table
-          fields:
-            - label: 7-day period ending
-              value: date
-              type: date
-              tooltip: End date for the 7-day period when the sample was taken from the person
-
-            - label: Count of cases
-              value: newCasesBySpecimenDateRollingSum
-              type: numeric
-              tooltip: Number of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
-
-            - label: Rate per 100,000 population
-              value: newCasesBySpecimenDateRollingRate
-              type: numeric
-              tooltip: Rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
-
-            - label: Percentage change in 7-day case rate
-              value: newCasesBySpecimenDateChangePercentage
-              type: numeric
-              tooltip: Percentage change in rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
-
-##############################################################################################################################
-
-  - heading: Percentage change in 7-day case rates by specimen date
-    cardType: recentData
-    fullWidth: false
-    chartMode: percentage
-    abstract: >
-      Percentage change in rate of cases per 100,000 people in the rolling 7-day period ending on the dates shown.
-      Percentage changes are calculated by comparing to the previous non-overlapping 7-day period.
-
-    download:
-      - newCasesBySpecimenDateRollingSum
-      - newCasesBySpecimenDateRollingRate
-      - newCasesBySpecimenDateChange
-      - newCasesBySpecimenDateChangePercentage
-
-    tabs:
-        - heading: 7-day periods
-          tabType: chart
-          barType: overlay
-          fields:
-            - label: Percentage change in 7-day case rate
-              value: newCasesBySpecimenDateChangePercentage
-              tooltip: Percentage change in rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
-              type: line
-              colour: 0
-              rollingAverage: false
-
-        - heading: Data table
-          tabType: table
-          fields:
-            - label: 7-day period ending
-              value: date
-              type: date
-              tooltip: End date for the 7-day period when the sample was taken from the person
-
-            - label: Count of cases
-              value: newCasesBySpecimenDateRollingSum
-              type: numeric
-              tooltip: Number of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
-
-            - label: Rate per 100,000 population
-              value: newCasesBySpecimenDateRollingRate
-              type: numeric
-              tooltip: Rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
-
-            - label: Percentage change in 7-day case rate
-              value: newCasesBySpecimenDateChangePercentage
-              type: numeric
-              tooltip: Percentage change in rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
-
-##############################################################################################################################
-
-  - heading: Cases by age and sex
-    caption: Counts
-    cardType: ageSexBreakdown
-    locationAware:
-      included:
-        areaType:
-          - nation
-          - region
-
-    fullWidth: false
-    abstract: >
-      Total number of cases since the start of the pandemic, by age and sex.
-
-    download:
-      - femaleCases
-      - maleCases
-
-    tabs:
-      - heading: Chart
-        tabType: chart
-        barType: group
-        groupKey: age
-        groupValues:
-          - value
-          - rate
-
-        requiredMetrics:
-          - femaleCases
-          - maleCases
-
-        fields:
-          - label: Females
-            value: femaleCasesValue
-            tooltip: Total number of females tested positive
-            type: bar
-            colour: 3
-
-          - label: Males
-            value: maleCasesValue
-            tooltip: Total number of males tested positive
-            type: bar
-            colour: 0
-
-      - heading: Data table
-        tabType: table
-        groupKey: age
-        groupValues:
-          - value
-          - rate
-
-        requiredMetrics:
-          - femaleCases
-          - maleCases
-
-        fields:
-          - label: Age
-            value: age
-            type: string
-            tooltip: Age group
-
-          - label: Females
-            value: femaleCasesValue
-            type: numeric
-            tooltip: Total number of females tested positive
-
-          - label: Female rate
-            value: femaleCasesRate
-            type: numeric
-            tooltip: Total number of females tested positive per 100,000 resident population
-
-          - label: Males
-            value: maleCasesValue
-            type: numeric
-            tooltip: Total number of males tested positive
-
-          - label: Male rate
-            value: maleCasesRate
-            type: numeric
-            tooltip: Total number of males tested positive per 100,000 resident population
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesAndRatesByAgeAndSex.md
-
-##############################################################################################################################
-
-  - heading: Case rates by age and sex
-    caption: Rates per 100,000 resident population
-    cardType: ageSexBreakdown
-    locationAware:
-      included:
-        areaType:
-          - nation
-          - region
-
-    fullWidth: false
-    abstract: >
-      Rate per 100,000 people of the total number of cases since the start of the pandemic, by age and sex.
-
-    download:
-      - femaleCases
-      - maleCases
-
-    tabs:
-      - heading: Chart
-        tabType: chart
-        barType: group
-        groupKey: age
-        groupValues:
-          - value
-          - rate
-
-        requiredMetrics:
-          - femaleCases
-          - maleCases
-
-        fields:
-          - label: Females
-            value: femaleCasesRate
-            tooltip: Total number of females tested positive per 100,000 resident population
-            type: bar
-            colour: 3
-
-          - label: Males
-            value: maleCasesRate
-            tooltip: Total number of males tested positive per 100,000 resident population
-            type: bar
-            colour: 0
-
-      - heading: Data table
-        tabType: table
-        groupKey: age
-        groupValues:
-          - value
-          - rate
-
-        requiredMetrics:
-          - femaleCases
-          - maleCases
-
-        fields:
-          - label: Age
-            value: age
-            type: string
-            tooltip: Age group
-
-          - label: Female cases
-            value: femaleCasesValue
-            type: numeric
-            tooltip: Total number of females tested positive
-
-          - label: Female rate
-            value: femaleCasesRate
-            type: numeric
-            tooltip: Total number of females tested positive per 100,000 resident population
-
-          - label: Male cases
-            value: maleCasesValue
-            type: numeric
-            tooltip: Total number of males tested positive
-
-          - label: Male rate
-            value: maleCasesRate
-            type: numeric
-            tooltip: Total number of females tested positive per 100,000 resident population
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesAndRatesByAgeAndSex.md
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-# # Not currently publishing people tested
-# # not added abstracts as not yet publishing - shouldn't this sit on the testing page?
-
-#   - heading: People tested, by age and sex
+# headlineNumbers:
+#   # - caption: Cases
+#   #   valueItems:
+#   #     #- label: Last 7 days
+#   #     #  value: newCasesByPublishDateRollingSum
+#   #     #  tooltip: Number of new cases reported in the 7 days up to {date}
+
+#   #     - label: Total
+#   #       value: cumCasesBySpecimenDate
+#   #       tooltip: Total number of cases with specimen taken up to {date}
+
+#   #     - label: First Episodes
+#   #       value: cumFirstEpisodesBySpecimenDate
+#   #       tooltip: Total number of first episodes with specimen taken up to {date}
+
+#   #     - label: Reinfections
+#   #       value: cumReinfectionsBySpecimenDate
+#   #       tooltip: Total number of possible reinfections with specimen taken up to {date}
+
+#   - caption: Cases
+#     valueItems:
+
+#       - label: Total
+#         value: cumCasesBySpecimenDate
+#         tooltip: Total number of cases with specimen taken up to {date}
+
+#       - label: Latest 7 days
+#         value: newCasesBySpecimenDateRollingSum
+#         tooltip: Number of new cases with specimen taken in the 7 days up to {date}
+
+#   - caption: Change from previous 7 days
+#     valueItems:
+
+#       - label: Number
+#         value: newCasesBySpecimenDateChange
+#         tooltip: Change in number of new cases with specimen taken in the 7 days up to {date} compared with the previous 7 day period.
+
+#       - label: Percentage
+#         value: newCasesBySpecimenDateChangePercentage
+#         tooltip: Percentage change in number of new cases with specimen taken in the 7 days up to {date} compared with the previous 7 day period.
+
+#   - caption: First Episodes
+#     valueItems:
+#       - label: Total
+#         value: cumFirstEpisodesBySpecimenDate
+#         tooltip: Total number of first episodes with specimen taken up to {date}
+
+#   - caption: Reinfections
+#     valueItems:
+#       - label: Total
+#         value: cumReinfectionsBySpecimenDate
+#         tooltip: Total number of possible reinfections with specimen taken up to {date}
+
+# # People tested not currently being published
+
+#   # - caption: All people tested (Dev Only)
+#   #   valueItems:
+#   #     - label: Daily
+#   #       value: newPeopleTestedByPublishDate
+#   #       tooltip: Daily number of new people tested reported on {date}
+
+#   #     - label: Total
+#   #       value: cumPeopleTestedByPublishDate
+#   #       tooltip: Cumulative total number of people tested reported up to {date}
+
+
+# baseSpecimenDateDemogrphics: &baseSpecimenDateDemographics
+#   value: newCasesBySpecimenDateAgeDemographics
+#   isArray: true
+
+
+# specimenDateDemographics0_59: &specimenDateDemographics0_59
+#   << : *baseSpecimenDateDemographics
+#   filters:
+#     parameter: age
+#     value: 00_59
+
+
+# specimenDateDemographics60+: &specimenDateDemographics60Plus
+#   << : *baseSpecimenDateDemographics
+#   filters:
+#     parameter: age
+#     value: 60+
+
+# # variant data for line chart
+# baseVariants: &baseVariants
+#   value: variants
+#   isArray: true
+
+# variantAlpha: &variantAlpha
+#   << : *baseVariants
+#   filters:
+#     parameter: variant
+#     value: "V-20DEC-01 (Alpha)"
+
+# variantDeltaB: &variantDeltaB
+#   << : *baseVariants
+#   filters:
+#     parameter: variant
+#     value: "V-21APR-02 (Delta B.1.617.2)"
+
+# variantDeltaAY: &variantDeltaAY
+#   << : *baseVariants
+#   filters:
+#     parameter: variant
+#     value: "V-21OCT-01 (Delta AY 4.2)"
+
+# variantOmicronBA1: &variantOmicronBA1
+#   << : *baseVariants
+#   filters:
+#     parameter: variant
+#     value: "VOC-21NOV-01 (Omicron BA.1)"
+
+# variantOmicronBA2: &variantOmicronBA2
+#   << : *baseVariants
+#   filters:
+#     parameter: variant
+#     value: "VOC-22JAN-01 (Omicron BA.2)"
+
+# variantOmicronBA4: &variantOmicronBA4
+#   << : *baseVariants
+#   filters:
+#     parameter: variant
+#     value: "VOC-22APR-03 (Omicron BA.4)"
+
+# variantOmicronBA5: &variantOmicronBA5
+#   << : *baseVariants
+#   filters:
+#     parameter: variant
+#     value: "VOC-22APR-04 (Omicron BA.5)"
+
+# variantOther: &variantOther
+#   << : *baseVariants
+#   filters:
+#     parameter: variant
+#     value: "Other"
+
+
+# ##############################################################################################################################
+
+# cards:
+
+# ##############################################################################################################################
+
+# # {{ StartDevOnlyBlock }}
+
+# # Only shown for UK
+
+#   - heading: Cases by specimen date - [DEV ONLY]
+#     cardType: multiAreaStatic
+#     locationAware:
+#       included:
+#         areaType:
+#           - overview
+
+#     fullWidth: true
+#     abstract: >
+#       Number of cases, by specimen date.
+#       Data for the last 5 days, highlighted in grey, are incomplete.
+
+#     download:
+#       - newCasesBySpecimenDate
+#       - cumCasesBySpecimenDate
+
+#     options:
+#       type: radio
+#       heading: null
+#       choices:
+#         - UK total
+#         - By nation
+
+#     UK total:
+
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           # barType: stack
+#           colours: [0] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+
+#           fields:
+#             - label: "Number of cases"
+#               value: newCasesBySpecimenDate
+#               tooltip: Daily number of new people tested positive, by specimen date
+#               type: bar
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days (incomplete)"
+
+#             - label: Cases (7-day average)
+#               value: newCasesBySpecimenDate
+#               tooltip: 7-day rolling average of the daily number of cases by specimen date
+#               type: line
+#               colour: 3
+#               fill: false
+#               rollingAverage:
+#                 window: 7
+#                 clipEnd: 4 #no of days to exclude for incomplete data
+
+#         - heading: Total
+#           tabType: chart
+#           barType: stack
+#           colours: [0] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+
+#           fields:
+#             - label: "Number of cases"
+#               value: cumCasesBySpecimenDate
+#               tooltip: Total number of people tested positive, by specimen date
+#               type: bar
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days (incomplete)"
+
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+
+#           fields:
+#             - label: Specimen date
+#               value: date
+#               type: date
+#               tooltip: Date the sample was taken from the person
+
+#             - label: daily
+#               value: newCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive, by specimen date
+
+#             - label: total
+#               value: cumCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Total number of people tested positive, by specimen date
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+#     By nation:
+
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: stack
+#           colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+
+#           fields:
+#             - label: "Number of cases"
+#               value: newCasesBySpecimenDate
+#               tooltip: Daily number of new people tested positive, resident in each nation, by specimen date
+#               type: bar
+#               rollingAverage: false
+
+#         - heading: Total
+#           tabType: chart
+#           barType: stack
+#           colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+
+#           fields:
+#             - label: "Number of cases"
+#               value: cumCasesBySpecimenDate
+#               tooltip: Total number of people tested positive, resident in each nation, by specimen date
+#               type: bar
+#               rollingAverage: false
+
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+
+#           fields:
+#             - label: Specimen date
+#               value: date
+#               type: date
+#               tooltip: Date the sample was taken from the person
+
+#             - label: daily
+#               value: newCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive, resident in each nation, by specimen date
+
+#             - label: total
+#               value: cumCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Total number of people tested positive, resident in each nation, by specimen date
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+# # {{ EndDevOnlyBlock }}
+
+# ##############################################################################################################################
+
+# # nations and regions, LAs only
+# # scotland added 9 Mar 2022
+
+#   - heading: Cases by specimen date
+#     cardType: chart
+#     locationAware:
+#       included:
+#         areaType:
+#           - nation
+#           - region
+#           - utla
+#           - ltla
+#           - overview
+
+#     fullWidth: true
+#     abstract: >
+#       Number of cases, by specimen date.
+#       Data for the last 5 days, highlighted in grey, are incomplete.
+
+#     download:
+#       - newCasesBySpecimenDate
+#       - cumCasesBySpecimenDate
+#       - newFirstEpisodesBySpecimenDate
+#       - cumFirstEpisodesBySpecimenDate
+#       - newReinfectionsBySpecimenDate
+#       - cumReinfectionsBySpecimenDate
+
+#     options:
+#       type: radio
+#       heading: null
+#       choices:
+#         - All
+#         - First episodes
+#         - Reinfections
+
+#     All:
+
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: overlay
+#           fields:
+#             - label: Number of cases
+#               value: newCasesBySpecimenDate
+#               tooltip: Daily number of new people tested positive by date the sample was taken from the person
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days (incomplete)"
+
+#             - label: Cases (7-day average)
+#               value: newCasesBySpecimenDate
+#               tooltip: 7-day rolling average of the daily number of people tested positive by specimen date
+#               type: line
+#               colour: 3
+#               fill: false
+#               rollingAverage:
+#                 window: 7
+#                 clipEnd: 4 #no of days to exclude for incomplete data
+
+#         - heading: Total
+#           tabType: chart
+#           fields:
+#             - label: Number of cases
+#               value: cumCasesBySpecimenDate
+#               tooltip: Total number of new people tested positive by date the sample was taken from the person
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+#               highlight:
+#                from: -4
+#                to: 0
+#                colour: 6
+#                label: "Most recent 5 days (incomplete)"
+
+#         - heading: Data table
+#           tabType: table
+#           fields:
+#             - label: Specimen date
+#               value: date
+#               type: date
+#               tooltip: Date the sample was taken from the person
+
+#             - label: Daily cases
+#               value: newCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive by date the sample was taken from the person
+
+#             - label: Total cases
+#               value: cumCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Total number of new people tested positive by date the sample was taken from the person
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+#     First episodes:
+
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: overlay
+#           fields:
+#             - label: Number of first episodes
+#               value: newFirstEpisodesBySpecimenDate
+#               tooltip: Daily number of new people tested positive for their first episode by date the sample was taken from the person
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days (incomplete)"
+
+#             - label: First episodes (7-day average)
+#               value: newFirstEpisodesBySpecimenDate
+#               tooltip: 7-day rolling average of the daily number of people tested positive for their first episode by specimen date
+#               type: line
+#               colour: 3
+#               fill: false
+#               rollingAverage:
+#                 window: 7
+#                 clipEnd: 4 #no of days to exclude for incomplete data
+
+#         - heading: Total
+#           tabType: chart
+#           fields:
+#             - label: Number of first episodes
+#               value: cumFirstEpisodesBySpecimenDate
+#               tooltip: Total number of new people tested positive for their first episode by date the sample was taken from the person
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+#               highlight:
+#                from: -4
+#                to: 0
+#                colour: 6
+#                label: "Most recent 5 days (incomplete)"
+
+#         - heading: Data table
+#           tabType: table
+#           fields:
+#             - label: Specimen date
+#               value: date
+#               type: date
+#               tooltip: Date the sample was taken from the person
+
+#             - label: Daily first episodes
+#               value: newFirstEpisodesBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive for their first episode by date the sample was taken from the person
+
+#             - label: Total first episodes
+#               value: cumFirstEpisodesBySpecimenDate
+#               type: numeric
+#               tooltip: Total number of new people tested positive for their first episode by date the sample was taken from the person
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+#     Reinfections:
+
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: overlay
+#           fields:
+#             - label: Number of possible reinfections
+#               value: newReinfectionsBySpecimenDate
+#               tooltip: Daily number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days (incomplete)"
+
+#             - label: Possible reinfections (7-day average)
+#               value: newReinfectionsBySpecimenDate
+#               tooltip: 7-day rolling average of the daily number of people tested positive for their second or subsequent episode by specimen date
+#               type: line
+#               colour: 3
+#               fill: false
+#               rollingAverage:
+#                 window: 7
+#                 clipEnd: 4 #no of days to exclude for incomplete data
+
+#         - heading: Total
+#           tabType: chart
+#           fields:
+#             - label: Number of possible reinfections
+#               value: cumReinfectionsBySpecimenDate
+#               tooltip: Total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days (incomplete)"
+
+#         - heading: Data table
+#           tabType: table
+#           fields:
+#             - label: Specimen date
+#               value: date
+#               type: date
+#               tooltip: Date the sample was taken from the person
+
+#             - label: Daily possible reinfections
+#               value: newReinfectionsBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+
+#             - label: Total possible reinfections
+#               value: cumReinfectionsBySpecimenDate
+#               type: numeric
+#               tooltip: Total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+# ##############################################################################################################################
+
+# # Cases by episode number
+
+#   - heading: Cases by episode of infection and specimen date
+#     cardType: chart
+
+#     fullWidth: true
+#     abstract: >
+#       Number of cases, by episode of infection and specimen date.
+#       Data for the last 5 days, highlighted in grey, are incomplete.
+
+#     download:
+#       - newCasesBySpecimenDate
+#       - cumCasesBySpecimenDate
+#       - newFirstEpisodesBySpecimenDate
+#       - cumFirstEpisodesBySpecimenDate
+#       - newReinfectionsBySpecimenDate
+#       - cumReinfectionsBySpecimenDate
+
+#     tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: stack
+
+#           fields:
+#             - label: Number of first episodes
+#               value: newFirstEpisodesBySpecimenDate
+#               tooltip: Daily number of new people tested positive for their first episode by specimen date
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 7
+#                 label: "Most recent 5 days first episodes (incomplete)"
+
+#             - label: Number of possible reinfections
+#               value: newReinfectionsBySpecimenDate
+#               tooltip: Daily number of new people tested positive for their second or subsequent episode by specimen date
+#               type: bar
+#               colour: 3
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days possible reinfections (incomplete)"
+
+#         - heading: Total
+#           tabType: chart
+#           barType: stack
+
+#           fields:
+#             - label: Number of first episodes
+#               value: cumFirstEpisodesBySpecimenDate
+#               tooltip: Total number of new people tested positive for their first episode by specimen date
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 7
+#                 label: "Most recent 5 days first episodes (incomplete)"
+
+#             - label: Number of possible reinfections
+#               value: cumReinfectionsBySpecimenDate
+#               tooltip: Total number of new people tested positive for their second or subsequent episode by specimen date
+#               type: bar
+#               colour: 3
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days possible reinfections (incomplete)"
+
+#         - heading: Data table
+#           tabType: table
+#           fields:
+#             - label: Specimen date
+#               value: date
+#               type: date
+#               tooltip: Date the sample was taken from the person
+
+#             - label: Daily first episodes
+#               value: newFirstEpisodesBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive for their first episode by date the sample was taken from the person
+
+#             - label: Daily possible reinfections
+#               value: newReinfectionsBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+
+#             - label: Daily cases
+#               value: newCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive by date the sample was taken from the person
+
+#             - label: Total first episodes
+#               value: cumFirstEpisodesBySpecimenDate
+#               type: numeric
+#               tooltip: Total number of new people tested positive for their first episode by date the sample was taken from the person
+
+#             - label: Total possible reinfections
+#               value: cumReinfectionsBySpecimenDate
+#               type: numeric
+#               tooltip: Total number of new people tested positive for their second or subsequent episode by date the sample was taken from the person
+
+#             - label: Total cases
+#               value: cumCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Total number of new people tested positive by date the sample was taken from the person
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+# ##############################################################################################################################
+
+#   - heading: Cases by specimen date age demographics
+#     cardType: chart
+#     experimental: false
+#     locationAware:
+#       excluded:
+#         areaType:
+#           - overview
+
+#     fullWidth: true
+#     abstract: >
+#       Rate of cases per 100,000 people in the rolling 7-day period
+#       ending on the dates shown, by age.
+
+#     download:
+#       - newCasesBySpecimenDateAgeDemographics
+#       - newFirstEpisodesBySpecimenDateAgeDemographics
+#       - newReinfectionsBySpecimenDateAgeDemographics
+
+#     options:
+#       type: radio
+#       heading: null
+#       choices:
+#         - All
+#         - First episodes
+#         - Reinfections
+
+#     All:
+
+#       tabs:
+#         - heading: Heatmap
+#           tabType: heatmap
+#           fields:
+#             - label: Age demographics
+#               value: newCasesBySpecimenDateAgeDemographics
+#               amplitude: rollingRate
+#               amplitudeLabel: Rolling rate
+#               metricLabel: Age group
+#               parameter: age
+#               metrics:
+#               - label: 0 to 4
+#                 value: "00_04"
+
+#               - label: 5 to 9
+#                 value: "05_09"
+
+#               - label: 10 to 14
+#                 value: "10_14"
+
+#               - label: 15 to 19
+#                 value: "15_19"
+
+#               - label: 20 to 24
+#                 value: "20_24"
+
+#               - label: 25 to 29
+#                 value: "25_29"
+
+#               - label: 30 to 34
+#                 value: "30_34"
+
+#               - label: 35 to 39
+#                 value: "35_39"
+
+#               - label: 40 to 44
+#                 value: "40_44"
+
+#               - label: 45 to 49
+#                 value: "45_49"
+
+#               - label: 50 to 54
+#                 value: "50_54"
+
+#               - label: 55 to 59
+#                 value: "55_59"
+
+#               - label: 60 to 64
+#                 value: "60_64"
+
+#               - label: 65 to 69
+#                 value: "65_69"
+
+#               - label: 70 to 74
+#                 value: "70_74"
+
+#               - label: 75 to 79
+#                 value: "75_79"
+
+#               - label: 80 to 84
+#                 value: "80_84"
+
+#               - label: 85 to 89
+#                 value: "85_89"
+
+#               - label: 90+
+#                 value: "90+"
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardRatesByFiveYearAge.md
+
+#     First episodes:
+
+#       tabs:
+#         - heading: Heatmap
+#           tabType: heatmap
+#           fields:
+#             - label: Age demographics
+#               value: newFirstEpisodesBySpecimenDateAgeDemographics
+#               amplitude: rollingRate
+#               amplitudeLabel: Rolling rate
+#               metricLabel: Age group
+#               parameter: age
+#               metrics:
+#               - label: 0 to 4
+#                 value: "00_04"
+
+#               - label: 5 to 9
+#                 value: "05_09"
+
+#               - label: 10 to 14
+#                 value: "10_14"
+
+#               - label: 15 to 19
+#                 value: "15_19"
+
+#               - label: 20 to 24
+#                 value: "20_24"
+
+#               - label: 25 to 29
+#                 value: "25_29"
+
+#               - label: 30 to 34
+#                 value: "30_34"
+
+#               - label: 35 to 39
+#                 value: "35_39"
+
+#               - label: 40 to 44
+#                 value: "40_44"
+
+#               - label: 45 to 49
+#                 value: "45_49"
+
+#               - label: 50 to 54
+#                 value: "50_54"
+
+#               - label: 55 to 59
+#                 value: "55_59"
+
+#               - label: 60 to 64
+#                 value: "60_64"
+
+#               - label: 65 to 69
+#                 value: "65_69"
+
+#               - label: 70 to 74
+#                 value: "70_74"
+
+#               - label: 75 to 79
+#                 value: "75_79"
+
+#               - label: 80 to 84
+#                 value: "80_84"
+
+#               - label: 85 to 89
+#                 value: "85_89"
+
+#               - label: 90+
+#                 value: "90+"
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardRatesByFiveYearAge.md
+
+#     Reinfections:
+
+#       tabs:
+#         - heading: Heatmap
+#           tabType: heatmap
+#           fields:
+#             - label: Age demographics
+#               value: newReinfectionsBySpecimenDateAgeDemographics
+#               amplitude: rollingRate
+#               amplitudeLabel: Rolling rate
+#               metricLabel: Age group
+#               parameter: age
+#               metrics:
+#               - label: 0 to 4
+#                 value: "00_04"
+
+#               - label: 5 to 9
+#                 value: "05_09"
+
+#               - label: 10 to 14
+#                 value: "10_14"
+
+#               - label: 15 to 19
+#                 value: "15_19"
+
+#               - label: 20 to 24
+#                 value: "20_24"
+
+#               - label: 25 to 29
+#                 value: "25_29"
+
+#               - label: 30 to 34
+#                 value: "30_34"
+
+#               - label: 35 to 39
+#                 value: "35_39"
+
+#               - label: 40 to 44
+#                 value: "40_44"
+
+#               - label: 45 to 49
+#                 value: "45_49"
+
+#               - label: 50 to 54
+#                 value: "50_54"
+
+#               - label: 55 to 59
+#                 value: "55_59"
+
+#               - label: 60 to 64
+#                 value: "60_64"
+
+#               - label: 65 to 69
+#                 value: "65_69"
+
+#               - label: 70 to 74
+#                 value: "70_74"
+
+#               - label: 75 to 79
+#                 value: "75_79"
+
+#               - label: 80 to 84
+#                 value: "80_84"
+
+#               - label: 85 to 89
+#                 value: "85_89"
+
+#               - label: 90+
+#                 value: "90+"
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardRatesByFiveYearAge.md
+
+# ##############################################################################################################################
+
+# # Cases by testing programme
+
+#   - heading: Cases by testing programme and specimen date
+#     cardType: chart
+
+#     fullWidth: true
+#     abstract: >
+#       Number of cases. Cases are shown by testing programme and by specimen date.
+#       The government provides testing through different programmes, also known as pillars.
+#       The programmes shown are NHS/UKHSA testing (mainly Pillar 1) and mass community testing (Pillar 2).
+#       Data for the last 5 days, highlighted in grey, are incomplete.
+
+#     download:
+#       - newCasesPillarOneBySpecimenDate
+#       - cumCasesPillarOneBySpecimenDate
+#       - newCasesPillarTwoBySpecimenDate
+#       - cumCasesPillarTwoBySpecimenDate
+#       - newCasesBySpecimenDate
+#       - cumCasesBySpecimenDate
+
+#     tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: stack
+
+#           fields:
+#             - label: Number of cases from NHS/UKHSA testing
+#               value: newCasesPillarOneBySpecimenDate
+#               tooltip: Daily number of new people tested positive via NHS/UKHSA testing by specimen date
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 7
+#                 label: "Most recent 5 days NHS/UKHSA testing (incomplete)"
+
+#             - label: Number of cases from mass community testing
+#               value: newCasesPillarTwoBySpecimenDate
+#               tooltip: Daily number of new people tested positive via mass community testing by specimen date
+#               type: bar
+#               colour: 3
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days mass community testing (incomplete)"
+
+#         - heading: Total
+#           tabType: chart
+#           barType: stack
+
+#           fields:
+#             - label: Number of cases from NHS/UKHSA testing
+#               value: cumCasesPillarOneBySpecimenDate
+#               tooltip: Total number of new people tested positive via NHS/UKHSA testing by specimen date
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 7
+#                 label: "Most recent 5 days NHS/UKHSA testing (incomplete)"
+
+#             - label: Number of cases from mass community testing
+#               value: cumCasesPillarTwoBySpecimenDate
+#               tooltip: Total number of new people tested positive via mass community testing by specimen date
+#               type: bar
+#               colour: 3
+#               rollingAverage: false
+#               highlight:
+#                 from: -4
+#                 to: 0
+#                 colour: 6
+#                 label: "Most recent 5 days mass community testing (incomplete)"
+
+#         - heading: Data table
+#           tabType: table
+#           fields:
+#             - label: Specimen date
+#               value: date
+#               type: date
+#               tooltip: Date the sample was taken from the person
+
+#             - label: Daily cases from NHS/UKHSA testing
+#               value: newCasesPillarOneBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive via NHS/UKHSA testing by specimen date
+
+#             - label: Daily cases from mass community testing
+#               value: newCasesPillarTwoBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive via mass community testing by specimen date
+
+#             - label: Daily cases
+#               value: newCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive by date the sample was taken from the person
+
+#             - label: Total cases from NHS/UKHSA testing
+#               value: cumCasesPillarOneBySpecimenDate
+#               type: numeric
+#               tooltip: Total number of new people tested positive via NHS/UKHSA testing by specimen date
+
+#             - label: Total cases from mass community testing
+#               value: cumCasesPillarTwoBySpecimenDate
+#               type: numeric
+#               tooltip: Total number of new people tested positive via mass community testing by specimen date
+
+#             - label: Total cases
+#               value: cumCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Total number of new people tested positive by date the sample was taken from the person
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardCasesTimeSeries.md
+
+# ##############################################################################################################################
+
+
+#   # Shown for England & Scotland
+#   - heading: Cases by test type and specimen date
+#     cardType: chart
+#     locationAware:
+#       included:
+#         areaName:
+#           - England
+#           - Scotland
+#         areaType:
+#           - region
+#           - utla
+#           - ltla
+
+
+
+#     fullWidth: true
+#     abstract: >
+#       Number of cases. Cases are shown by type of test used in their first positive test and by specimen date.
+#       Positive rapid lateral flow test results can be confirmed with PCR tests taken within 72 hours. If the PCR test results are negative, these are not reported as cases.
+#       The test types shown are lab-based polymerase chain reaction (PCR), rapid lateral flow test (LFD) with positive PCR (this means the result has been verified with a
+#       positive PCR result taken within 3 days) and LFD only (no PCR taken within 3 days). Data for the last 5 days are incomplete. Some LFD results
+#       may change or be removed as more PCR results are reported.
+
+#     download:
+#       - newCasesPCROnlyBySpecimenDate
+#       - cumCasesPCROnlyBySpecimenDate
+#       - newCasesLFDOnlyBySpecimenDate
+#       - cumCasesLFDOnlyBySpecimenDate
+#       - newCasesLFDConfirmedPCRBySpecimenDate
+#       - cumCasesLFDConfirmedPCRBySpecimenDate
+#       - newCasesBySpecimenDate
+#       - cumCasesBySpecimenDate
+
+#     tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: stack
+
+#           fields:
+#             - label: Number of PCR cases
+#               value: newCasesPCROnlyBySpecimenDate
+#               tooltip: Daily number of new people tested positive using a PCR test by specimen date
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+
+#             - label: Number of LFD with positive PCR cases
+#               value: newCasesLFDConfirmedPCRBySpecimenDate
+#               tooltip: Daily number of new people tested positive using a rapid lateral flow test with subsequent confirmatory PCR by specimen date
+#               type: bar
+#               colour: 9
+#               rollingAverage: false
+
+#             - label: Number of LFD only cases
+#               value: newCasesLFDOnlyBySpecimenDate
+#               tooltip: Daily number of new people tested positive using a rapid lateral flow test by specimen date
+#               type: bar
+#               colour: 3
+#               rollingAverage: false
+
+#         - heading: Total
+#           tabType: chart
+#           barType: stack
+
+#           fields:
+#             - label: Number of PCR cases
+#               value: cumCasesPCROnlyBySpecimenDate
+#               tooltip: Total number of new people tested positive using a PCR test by specimen date
+#               type: bar
+#               colour: 0
+#               rollingAverage: false
+
+#             - label: Number of LFD with positive PCR cases
+#               value: cumCasesLFDConfirmedPCRBySpecimenDate
+#               tooltip: Total number of new people tested positive using a rapid lateral flow test with subsequent confirmatory PCR by specimen date
+#               type: bar
+#               colour: 9
+#               rollingAverage: false
+
+#             - label: Number of LFD only cases
+#               value: cumCasesLFDOnlyBySpecimenDate
+#               tooltip: Total number of new people tested positive using a rapid lateral flow test by specimen date
+#               type: bar
+#               colour: 3
+#               rollingAverage: false
+
+#         - heading: Data table
+#           tabType: table
+
+#           fields:
+#             - label: Date
+#               value: date
+#               type: date
+#               tooltip: Date the sample was taken from the person
+
+#             - label: PCR daily
+#               value: newCasesPCROnlyBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive using a PCR test by specimen date
+
+#             - label: LFD with positive PCR daily
+#               value: newCasesLFDConfirmedPCRBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive using a rapid lateral flow test with subsequent confirmatory PCR by specimen date
+
+#             - label: LFD only daily
+#               value: newCasesLFDOnlyBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive using a rapid lateral flow test by specimen date
+
+#             - label: All cases daily
+#               value: newCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive by specimen date
+
+#             - label: PCR total
+#               value: cumCasesPCROnlyBySpecimenDate
+#               type: numeric
+#               tooltip: Total number of new people tested positive using a PCR test by specimen date
+
+#             - label: LFD with positive PCR total
+#               type: numeric
+#               value: cumCasesLFDConfirmedPCRBySpecimenDate
+#               tooltip: Total number of new people tested positive using a rapid lateral flow test with subsequent confirmatory PCR by specimen date
+
+#             - label: LFD only total
+#               type: numeric
+#               value: cumCasesLFDOnlyBySpecimenDate
+#               tooltip: Total number of new people tested positive using a rapid lateral flow test by specimen date
+
+#             - label: All cases total
+#               value: cumCasesBySpecimenDate
+#               type: numeric
+#               tooltip: Total number of new people tested positive by specimen date
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardCasesByTestType.md
+
+
+# ##############################################################################################################################
+
+# # {{ StartDevOnlyBlock }}
+
+# # Only shown for UK
+
+#   - heading: Cases by date reported - [DEV ONLY]
+#     cardType: multiAreaStatic
+#     locationAware:
+#       included:
+#         areaType:
+#           - overview
+
+#     fullWidth: true
+#     abstract: >
+#       Number of cases by date reported.
+
+#     download:
+#       - newCasesByPublishDate
+#       - cumCasesByPublishDate
+
+#     options:
+#       type: radio
+#       heading: null
+#       choices:
+#         - UK total
+#         - By nation
+
+#     UK total:
+
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           # barType: stack
+#           colours: [0] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+
+#           fields:
+#             - label: "Number of cases"
+#               value: newCasesByPublishDate
+#               tooltip: Daily number of new people tested positive, by date reported
+#               type: bar
+#               rollingAverage: false
+
+#             - label: Cases (7-day average)
+#               value: newCasesByPublishDate
+#               tooltip: 7-day rolling average of the daily number of new people tested positive reported
+#               type: line
+#               colour: 3
+#               fill: false
+#               rollingAverage: true
+
+#         - heading: Total
+#           tabType: chart
+#           barType: stack
+#           colours: [0] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+
+#           fields:
+#             - label: "Number of cases"
+#               value: cumCasesByPublishDate
+#               tooltip: Total number of people tested positive, by date reported
+#               type: bar
+#               rollingAverage: false
+
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: overview
+
+#           fields:
+#             - label: Date reported
+#               value: date
+#               type: date
+#               tooltip: Date reported on coronavirus.data.gov.uk
+
+#             - label: daily
+#               value: newCasesByPublishDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive, by date reported
+
+#             - label: total
+#               value: cumCasesByPublishDate
+#               type: numeric
+#               tooltip: Total number of people tested positive, by date reported
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardCasesByReportDateTimeSeries.md
+
+#     By nation:
+
+#       tabs:
+#         - heading: Daily
+#           tabType: chart
+#           barType: stack
+#           colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+
+#           fields:
+#             - label: ""
+#               value: newCasesByPublishDate
+#               tooltip: Daily number of new people tested positive, resident in each nation, by date reported
+#               type: bar
+#               rollingAverage: false
+
+#         - heading: Total
+#           tabType: chart
+#           barType: stack
+#           colours: [0, 9, 3, 10] # areaNames in alphabetical order
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+
+#           fields:
+#             - label: ""
+#               value: cumCasesByPublishDate
+#               tooltip: Total number of people tested positive, resident in each nation, by date reported
+#               type: bar
+#               rollingAverage: false
+
+#         - heading: Data table
+#           tabType: table
+#           params:
+#             - key: areaType
+#               sign: "="
+#               value: nation
+
+#           fields:
+#             - label: Date reported
+#               value: date
+#               type: date
+#               tooltip: Date reported on coronavirus.data.gov.uk
+
+#             - label: daily
+#               value: newCasesByPublishDate
+#               type: numeric
+#               tooltip: Daily number of new people tested positive, resident in each nation, by date reported
+
+#             - label: total
+#               value: cumCasesByPublishDate
+#               type: numeric
+#               tooltip: Total number of people tested positive, resident in each nation, by date reported
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardCasesByReportDateTimeSeries.md
+
+# # {{ EndDevOnlyBlock }}
+
+# ##############################################################################################################################
+
+#   - heading: Daily change in reported cases by specimen date
+#     cardType: chart
+#     fullWidth: true
+#     locationAware:
+#       included:
+#         areaName:
+#           - England
+#         areaType:
+#           - region
+#           - utla
+#           - ltla
+
+#     abstract: >
+#       Daily number of new cases, broken down to show
+#       the number of these cases that have been previously reported and the latest daily change, and the 7-day average.
+#       The daily change includes newly reported cases, plus adjustments to previously reported cases, which may be negative.
+
+#     download:
+#       - newCasesBySpecimenDate
+#       - changeInNewCasesBySpecimenDate
+#       - previouslyReportedNewCasesBySpecimenDate
+
+#     tabs:
+#       - heading: Chart
+#         tabType: chart
+#         barType: stack
+#         fields:
+#           - label: Previously reported cases
+#             value: previouslyReportedNewCasesBySpecimenDate
+#             tooltip: Number of people tested positive as reported on {date-1} by the date the sample was taken from the person
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
+
+#           - label: Change in reported cases
+#             value: changeInNewCasesBySpecimenDate
+#             tooltip: Change in the number of people tested positive between {date} and {date-1} by the date the sample was taken from the person
+#             type: bar
+#             colour: 9
+#             rollingAverage: false
+
+# #          - label: Total cases (7-day average)
+# #            value: newCasesBySpecimenDate
+# #            tooltip: 7-day rolling average of the daily number of people tested positive by specimen date
+# #            type: line
+# #            colour: 3
+# #            fill: false
+# #            rollingAverage:
+# #              window: 7
+# #              clipEnd: 3 #no of days to exclude for incomplete data
+
+#       - heading: Data table
+#         tabType: table
+#         fields:
+#           - label: Specimen date
+#             value: date
+#             type: date
+#             tooltip: Date the sample was taken from the person
+
+#           - label: Previously reported cases
+#             value: previouslyReportedNewCasesBySpecimenDate
+#             type: numeric
+#             tooltip: Number of people tested positive as reported on {date-1} by the date the sample was taken from the person
+
+#           - label: Change in reported cases
+#             value: changeInNewCasesBySpecimenDate
+#             type: numeric
+#             tooltip: Change in the number of people tested positive between {date} and {date-1} by the by the date the sample was taken from the person
+
+#           - label: Total daily cases
+#             value: newCasesBySpecimenDate
+#             type: numeric
+#             tooltip: Number of people tested positive as reported on {date} by the date the sample was taken from the person
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/cases/cardChangeInCasesTimeSeries.md
+
+# ##############################################################################################################################
+
+# # Not shown for sub-national (no data)
+
+#   # - heading: Cases by date reported
+#   #   cardType: chart
+#   #   locationAware:
+#   #     included:
+#   #       areaType:
+#   #         - nation
+#   #         - overview
+
+#   #   fullWidth: true
+#   #   abstract: >
+#   #     Number of cases by date reported.
+
+#   #   download:
+#   #     - newCasesByPublishDate
+#   #     - cumCasesByPublishDate
+
+#   #   tabs:
+#   #     - heading: Daily
+#   #       tabType: chart
+#   #       barType: overlay
+#   #       fields:
+#   #         - label: Number of cases
+#   #           value: newCasesByPublishDate
+#   #           tooltip: Daily number of new people tested positive by date reported
+#   #           type: bar
+#   #           colour: 0
+
+#   #         - label: Cases (7-day average)
+#   #           value: newCasesByPublishDate
+#   #           tooltip: 7-day rolling average of the daily number of new people tested positive reported
+#   #           type: line
+#   #           colour: 3
+#   #           fill: false
+#   #           rollingAverage: true
+
+#   #     - heading: Total
+#   #       tabType: chart
+#   #       fields:
+#   #         - label: Number of cases
+#   #           value: cumCasesByPublishDate
+#   #           tooltip: Total number of people tested positive by date reported
+#   #           type: bar
+#   #           colour: 0
+#   #           rollingAverage: false
+
+#   #     - heading: Data table
+#   #       tabType: table
+#   #       fields:
+#   #         - label: Date reported
+#   #           value: date
+#   #           type: date
+#   #           tooltip: Date reported on coronavirus.data.gov.uk
+
+#   #         - label: Daily cases
+#   #           value: newCasesByPublishDate
+#   #           type: numeric
+#   #           tooltip: Daily number of new people tested positive by date reported
+
+#   #         - label: Total cases
+#   #           value: cumCasesByPublishDate
+#   #           type: numeric
+#   #           tooltip: Total number of people tested positive by date reported
+
+#   #     - heading: About
+#   #       tabType: metadata
+#   #       filename: cardMetadata/cases/cardCasesByReportDateTimeSeries.md
+
+# ##############################################################################################################################
+
+# # {{ StartDevOnlyBlock }}
+# # not live
+# # People tested not currently being published
+
+#   # - heading: People tested (Dev Only)
+#   #   cardType: chart
+#   #   fullWidth: true
+#   #   # Why is this on the Cases page and repeated on the Tested page - just to show cases and tests side by side?  If so maybe card needs different title?
+
+#   #   abstract: >
+#   #     Number of people with at least one positive, negative or void COVID-19 test result, either lab-reported or lateral flow device (England only).
+#   #     Initially only NHS and, in England, UKHSA tests were included but commercial tests have been included from
+#   #     different dates between 15th June 2020 and 14th July 2020 for each nation.  National data are not directly comparable.
+
+#   #   download:
+#   #     - newCasesBySpecimenDate
+#   #     - cumCasesBySpecimenDate
+#   #     - newPeopleTestedBySpecimenDate
+#   #     - cumPeopleTestedBySpecimenDate
+
+#   #   options:
+#   #     type: radio
+#   #     heading: null
+#   #     choices:
+#   #       - Specimen date
+#   #       - Reporting date
+
+#   #   Specimen date:
+#   #     tabs:
+#   #       - heading: Daily
+#   #         tabType: chart
+#   #         barType: overlay
+#   #         fields:
+#   #           - label: Number of people tested
+#   #             value: newPeopleTestedBySpecimenDate
+#   #             tooltip: Daily number of people tested by date the sample was taken from the person
+#   #             type: bar
+#   #             colour: 0
+#   #             rollingAverage: false
+
+#   #           - label: People tested (7-day average)
+#   #             value: newPeopleTestedBySpecimenDate
+#   #             tooltip: 7-day rolling average of the daily number of people tested by specimen date
+#   #             type: line
+#   #             colour: 3
+#   #             fill: false
+#   #             rollingAverage:
+#   #               window: 7
+#   #               clipEnd: 3 #no of days to exclude for incomplete data
+
+#   #       - heading: Cumulative
+#   #         tabType: chart
+#   #         fields:
+#   #           - label: Number of people tested
+#   #             value: cumPeopleTestedBySpecimenDate
+#   #             tooltip: Cumulative total number of people tested by date the sample was taken from the person
+#   #             type: bar
+#   #             colour: 0
+#   #             rollingAverage: false
+
+#   #       - heading: Data
+#   #         tabType: table
+#   #         fields:
+#   #           - label: Specimen date
+#   #             value: date
+#   #             type: date
+#   #             tooltip: Date the sample was taken from the person
+
+#   #           - label: Daily cases
+#   #             value: newCasesBySpecimenDate
+#   #             type: numeric
+#   #             tooltip: Daily number of new people tested positive by date the sample was taken from the person
+
+#   #           - label: Cumulative cases
+#   #             value: cumCasesBySpecimenDate
+#   #             type: numeric
+#   #             tooltip: Cumulative total number of new people tested positive by date the sample was taken from the person
+
+#   #           - label: Daily people tested
+#   #             value: newPeopleTestedBySpecimenDate
+#   #             type: numeric
+#   #             tooltip: Daily number of people tested by date the sample was taken from the person
+
+#   #           - label: Cumulative people tested
+#   #             value: cumPeopleTestedBySpecimenDate
+#   #             type: numeric
+#   #             tooltip: Cumulative total number of people tested by date the sample was taken from the person
+
+#   #       - heading: About
+#   #         tabType: metadata
+#   #         filename: cardMetadata/testing/cardPeopleTested.md
+
+#   #   Reporting date:
+#   #     tabs:
+#   #       - heading: Daily
+#   #         tabType: chart
+#   #         barType: overlay
+#   #         fields:
+#   #           - label: Number of people tested
+#   #             value: newPeopleTestedByPublishDate
+#   #             tooltip: Daily number of new people tested by date reported
+#   #             type: bar
+#   #             colour: 0
+#   #             rollingAverage: false
+
+#   #           - label: People tested (7-day average)
+#   #             value: newPeopleTestedByPublishDate
+#   #             tooltip: 7-day rolling average of the number of new people tested by date reported
+#   #             type: line
+#   #             colour: 3
+#   #             fill: false
+#   #             rollingAverage: true
+
+#   #       - heading: Cumulative
+#   #         tabType: chart
+#   #         fields:
+#   #           - label: Number of people tested
+#   #             value: cumPeopleTestedByPublishDate
+#   #             tooltip: Cumulative total number of people tested by date reported
+#   #             type: bar
+#   #             colour: 0
+#   #             rollingAverage: false
+
+#   #       - heading: Data
+#   #         tabType: table
+#   #         fields:
+#   #           - label: Date reported
+#   #             value: date
+#   #             type: date
+#   #             tooltip: Date reported on coronavirus.data.gov.uk
+
+#   #           - label: Daily cases
+#   #             value: newCasesByPublishDate
+#   #             type: numeric
+#   #             tooltip: Daily number of new people tested positive by date reported
+
+#   #           - label: Total cases
+#   #             value: cumCasesByPublishDate
+#   #             type: numeric
+#   #             tooltip: Cumulative total number of people tested positive by date reported
+
+#   #           - label: Daily people tested
+#   #             value: newPeopleTestedByPublishDate
+#   #             type: numeric
+#   #             tooltip: Daily number of new people tested by date reported
+
+#   #           - label: Total people tested
+#   #             value: cumPeopleTestedByPublishDate
+#   #             type: numeric
+#   #             tooltip: Cumulative total number of people tested by date reported
+
+#   #       - heading: About
+#   #         tabType: metadata
+#   #         filename: cardMetadata/testing/cardPeopleTested.md
+
+# # {{ EndDevOnlyBlock }}
+
+# ##############################################################################################################################
+
+#   - heading: 7-day case rates by specimen date
+#     cardType: recentData
+#     fullWidth: false
+#     abstract: >
+#       Rate of cases per 100,000 people in the rolling 7-day period ending on the dates shown.
+
+#     download:
+#       - newCasesBySpecimenDateRollingSum
+#       - newCasesBySpecimenDateRollingRate
+#       - newCasesBySpecimenDateChange
+#       - newCasesBySpecimenDateChangePercentage
+
+#     tabs:
+#         - heading: 7-day periods
+#           tabType: chart
+#           barType: overlay
+#           fields:
+#             - label: Rate of cases per 100,000 population in 7-day period
+#               value: newCasesBySpecimenDateRollingRate
+#               tooltip: Rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
+#               colour: 0
+#               type: line
+#               rollingAverage: false
+
+#         - heading: Data table
+#           tabType: table
+#           fields:
+#             - label: 7-day period ending
+#               value: date
+#               type: date
+#               tooltip: End date for the 7-day period when the sample was taken from the person
+
+#             - label: Count of cases
+#               value: newCasesBySpecimenDateRollingSum
+#               type: numeric
+#               tooltip: Number of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
+
+#             - label: Rate per 100,000 population
+#               value: newCasesBySpecimenDateRollingRate
+#               type: numeric
+#               tooltip: Rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
+
+#             - label: Percentage change in 7-day case rate
+#               value: newCasesBySpecimenDateChangePercentage
+#               type: numeric
+#               tooltip: Percentage change in rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
+
+# ##############################################################################################################################
+
+#   - heading: Percentage change in 7-day case rates by specimen date
+#     cardType: recentData
+#     fullWidth: false
+#     chartMode: percentage
+#     abstract: >
+#       Percentage change in rate of cases per 100,000 people in the rolling 7-day period ending on the dates shown.
+#       Percentage changes are calculated by comparing to the previous non-overlapping 7-day period.
+
+#     download:
+#       - newCasesBySpecimenDateRollingSum
+#       - newCasesBySpecimenDateRollingRate
+#       - newCasesBySpecimenDateChange
+#       - newCasesBySpecimenDateChangePercentage
+
+#     tabs:
+#         - heading: 7-day periods
+#           tabType: chart
+#           barType: overlay
+#           fields:
+#             - label: Percentage change in 7-day case rate
+#               value: newCasesBySpecimenDateChangePercentage
+#               tooltip: Percentage change in rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
+#               type: line
+#               colour: 0
+#               rollingAverage: false
+
+#         - heading: Data table
+#           tabType: table
+#           fields:
+#             - label: 7-day period ending
+#               value: date
+#               type: date
+#               tooltip: End date for the 7-day period when the sample was taken from the person
+
+#             - label: Count of cases
+#               value: newCasesBySpecimenDateRollingSum
+#               type: numeric
+#               tooltip: Number of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
+
+#             - label: Rate per 100,000 population
+#               value: newCasesBySpecimenDateRollingRate
+#               type: numeric
+#               tooltip: Rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
+
+#             - label: Percentage change in 7-day case rate
+#               value: newCasesBySpecimenDateChangePercentage
+#               type: numeric
+#               tooltip: Percentage change in rate of new people tested positive in the 7-day period ending on the date shown by date the sample was taken
+
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/cases/cardSevenDayCasesAndRates.md
+
+# ##############################################################################################################################
+
+#   - heading: Cases by age and sex
 #     caption: Counts
 #     cardType: ageSexBreakdown
 #     locationAware:
@@ -1955,11 +1779,12 @@ cards:
 #           - region
 
 #     fullWidth: false
+#     abstract: >
+#       Total number of cases since the start of the pandemic, by age and sex.
+
 #     download:
-#       - femalePeopleTestedValue
-#       - femalePeopleTestedRate
-#       - malePeopleTestedValue
-#       - malePeopleTestedRate
+#       - femaleCases
+#       - maleCases
 
 #     tabs:
 #       - heading: Chart
@@ -1971,23 +1796,23 @@ cards:
 #           - rate
 
 #         requiredMetrics:
-#           - femalePeopleTested
-#           - malePeopleTested
+#           - femaleCases
+#           - maleCases
 
 #         fields:
 #           - label: Females
-#             value: femalePeopleTestedValue
-#             tooltip: Total number of females tested
+#             value: femaleCasesValue
+#             tooltip: Total number of females tested positive
 #             type: bar
 #             colour: 3
 
 #           - label: Males
-#             value: malePeopleTestedValue
-#             tooltip: Total number of males tested
+#             value: maleCasesValue
+#             tooltip: Total number of males tested positive
 #             type: bar
 #             colour: 0
 
-#       - heading: Data
+#       - heading: Data table
 #         tabType: table
 #         groupKey: age
 #         groupValues:
@@ -1995,8 +1820,8 @@ cards:
 #           - rate
 
 #         requiredMetrics:
-#           - femalePeopleTested
-#           - malePeopleTested
+#           - femaleCases
+#           - maleCases
 
 #         fields:
 #           - label: Age
@@ -2005,32 +1830,32 @@ cards:
 #             tooltip: Age group
 
 #           - label: Females
-#             value: femalePeopleTestedValue
+#             value: femaleCasesValue
 #             type: numeric
-#             tooltip: Total number of females tested
+#             tooltip: Total number of females tested positive
 
 #           - label: Female rate
-#             value: femalePeopleTestedRate
+#             value: femaleCasesRate
 #             type: numeric
-#             tooltip: Total number of females tested per 100,000 resident population
+#             tooltip: Total number of females tested positive per 100,000 resident population
 
 #           - label: Males
-#             value: malePeopleTestedValue
+#             value: maleCasesValue
 #             type: numeric
-#             tooltip: Total number of males tested
+#             tooltip: Total number of males tested positive
 
 #           - label: Male rate
-#             value: malePeopleTestedRate
+#             value: maleCasesRate
 #             type: numeric
-#             tooltip: Total number of males tested per 100,000 resident population
+#             tooltip: Total number of males tested positive per 100,000 resident population
 
 #       - heading: About
 #         tabType: metadata
-#         filename: cardMetadata/testing/tabPeopleTestedByAgeAndSex.md
+#         filename: cardMetadata/cases/cardCasesAndRatesByAgeAndSex.md
 
-##############################################################################################################################
+# ##############################################################################################################################
 
-#   - heading: People tested rates by age and sex
+#   - heading: Case rates by age and sex
 #     caption: Rates per 100,000 resident population
 #     cardType: ageSexBreakdown
 #     locationAware:
@@ -2040,11 +1865,12 @@ cards:
 #           - region
 
 #     fullWidth: false
+#     abstract: >
+#       Rate per 100,000 people of the total number of cases since the start of the pandemic, by age and sex.
+
 #     download:
-#       - femalePeopleTestedValue
-#       - femalePeopleTestedRate
-#       - malePeopleTestedValue
-#       - malePeopleTestedRate
+#       - femaleCases
+#       - maleCases
 
 #     tabs:
 #       - heading: Chart
@@ -2056,23 +1882,23 @@ cards:
 #           - rate
 
 #         requiredMetrics:
-#           - femalePeopleTested
-#           - malePeopleTested
+#           - femaleCases
+#           - maleCases
 
 #         fields:
 #           - label: Females
-#             value: femalePeopleTestedRate
-#             tooltip: Total number of females tested per 100,000 resident population
+#             value: femaleCasesRate
+#             tooltip: Total number of females tested positive per 100,000 resident population
 #             type: bar
 #             colour: 3
 
 #           - label: Males
-#             value: malePeopleTestedRate
-#             tooltip: Total number of males tested per 100,000 resident population
+#             value: maleCasesRate
+#             tooltip: Total number of males tested positive per 100,000 resident population
 #             type: bar
 #             colour: 0
 
-#       - heading: Data
+#       - heading: Data table
 #         tabType: table
 #         groupKey: age
 #         groupValues:
@@ -2080,8 +1906,8 @@ cards:
 #           - rate
 
 #         requiredMetrics:
-#           - femalePeopleTested
-#           - malePeopleTested
+#           - femaleCases
+#           - maleCases
 
 #         fields:
 #           - label: Age
@@ -2090,895 +1916,1069 @@ cards:
 #             tooltip: Age group
 
 #           - label: Female cases
-#             value: femalePeopleTestedValue
+#             value: femaleCasesValue
 #             type: numeric
-#             tooltip: Total number of females tested
+#             tooltip: Total number of females tested positive
 
 #           - label: Female rate
-#             value: femalePeopleTestedRate
+#             value: femaleCasesRate
 #             type: numeric
-#             tooltip: Total number of females tested per 100,000 resident population
+#             tooltip: Total number of females tested positive per 100,000 resident population
 
 #           - label: Male cases
-#             value: malePeopleTestedValue
+#             value: maleCasesValue
 #             type: numeric
-#             tooltip: Total number of males tested
+#             tooltip: Total number of males tested positive
 
 #           - label: Male rate
-#             value: malePeopleTestedRate
+#             value: maleCasesRate
 #             type: numeric
-#             tooltip: Total number of females tested per 100,000 resident population
+#             tooltip: Total number of females tested positive per 100,000 resident population
 
 #       - heading: About
 #         tabType: metadata
-#         filename: cardMetadata/testing/tabPeopleTestedByAgeAndSex.md
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-# Scatterplot not a valid cardType yet - not built
-
-  # - heading: Cases and testing rates
-  #   cardType: scatterStatic
-  #   fullWidth: false
-  #   userOptions: areaType # linked to map and table below?
-  #   x-label: People tested per 100,000 population
-  #   x-value: CumPeopleTestedByPublishDateRate
-  #   x-tooltip: Cumulative total number of people tested per 100,000 resident population
-
-  #   y-label: Cases per 100,000 population
-  #   y-value: CumCasesByPublishDateRate
-  #   y-tooltip: Cumulative total number of new people with a confirmed positive test result, either lab-reported or lateral flow device (England only) per 100,000 resident population
-
-  # - heading: Cases rates by area
-  #   cardType: mapStatic
-  #   fullWidth: false
-  #   userOptions: areaType # linked to scatter chart above and table below?
-  #   value: cumCasesByPublishDateRate
-  #   tooltip: areaName
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-  - heading: Cases by specimen date age demographics - Above and below 60
-    cardType: chart
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      Daily numbers of new cases, by age (0-59 or 60+), and rate per 100,000 people of the number of new cases in the rolling 7-day period ending on the dates shown.
-      Data are shown by the date the sample was taken from the person being tested.
-
-    download:
-      - newCasesBySpecimenDateAgeDemographics
-
-    tabs:
-      - heading: Rolling rate
-        tabType: chart
-        fields:
-          - label: Rate of cases aged 0 to 59
-            << : *specimenDateDemographics0_59
-            tooltip: Rate of new people aged 0-59 tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
-            type: line
-            colour: 0
-            fill: false
-            rollingAverage: false
-            metric: rollingRate
-
-          - label: Rate of cases aged 60+
-            << : *specimenDateDemographics60Plus
-            tooltip: Rate of new people aged 60+ tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
-            type: line
-            colour: 3
-            fill: false
-            metric: rollingRate
-            rollingAverage: false
-
-      - heading: Daily cases
-        tabType: chart
-        barType: stack
-        fields:
-          - label: Number of cases aged 0 to 59
-            << : *specimenDateDemographics0_59
-            tooltip: Daily number of new people tested positive aged 0-59 by date the sample was taken from the person
-            type: bar
-            colour: 0
-            rollingAverage: false
-            metric: cases
-
-          - label: Number of cases aged 60+
-            << : *specimenDateDemographics60Plus
-            tooltip: Daily number of new people tested positive aged 60+ by date the sample was taken from the person
-            type: bar
-            colour: 3
-            metric: cases
-            rollingAverage: false
-
-      - heading: Data table
-        tabType: nestedTable
-        fields:
-          - label: Date
-            value: date
-            type: date
-
-          - label: "Cases: 0-59"
-            metric: cases
-            value: newCasesBySpecimenDateAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 00_59
-
-          - label: "Rolling sum: 0-59"
-            metric: rollingSum
-            value: newCasesBySpecimenDateAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 00_59
-
-          - label: "Rolling rate: 0-59"
-            metric: rollingRate
-            value: newCasesBySpecimenDateAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 00_59
-
-          - label: "Cases: 60+"
-            metric: cases
-            value: newCasesBySpecimenDateAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 60+
-
-          - label: "Rolling sum: 60+"
-            metric: rollingSum
-            value: newCasesBySpecimenDateAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 60+
-
-          - label: "Rolling rate: 60+"
-            metric: rollingRate
-            value: newCasesBySpecimenDateAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 60+
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesAndRatesByAgeUnderOver60.md
-
-##############################################################################################################################
-  - heading: Cases by area (last 7 days)
-    cardType: simpleTableStatic
-    fullWidth: false
-    abstract: >
-        Total number of cases in the most recent 7-day period and rate per 100,000 people.
-        Data are shown by specimen date (the date the sample was taken from the person being tested). Because data by specimen date are incomplete for the most recent dates,
-        the figures shown are for the 7 days ending 5 days before the date when the website was last updated. Definitions of cases vary by nation. For example, not all nations include lateral flow testing in their case counts.
-
-    download:
-      - newCasesBySpecimenDateRollingSum
-      - newCasesBySpecimenDateRollingRate
-
-    tabs:
-      # - heading: UK
-      #   tabType: table
-      #   params:
-      #     - key: areaType
-      #       sign: "="
-      #       value: overview
-
-      #   latestBy: newCasesBySpecimenDateRollingRate
-      #   sortBy: areaName
-
-      #   fields:
-      #     - label: Area
-      #       value: areaName
-      #       type: string
-      #       tooltip: ""
-
-      #     - label: Cases
-      #       value: newCasesBySpecimenDateRollingSum
-      #       type: numeric
-      #       tooltip: Total number of people tested positive in the 7-day period ending {date}
-
-      #     - label: Rate per 100,000 population
-      #       value: newCasesBySpecimenDateRollingRate
-      #       type: numeric
-      #       tooltip: Rate of total number of people tested positive in the 7-day period per 100,000 resident population
-
-      - heading: Nation
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-
-        latestBy: newCasesBySpecimenDateRollingRate
-        sortBy: areaName
-
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Cases
-            value: newCasesBySpecimenDateRollingSum
-            type: numeric
-            tooltip: Total number of people tested positive in the 7-day period ending {date}
-
-          - label: Rate per 100,000 population
-            value: newCasesBySpecimenDateRollingRate
-            type: numeric
-            tooltip: Rate of total number of people tested positive in the 7-day period per 100,000 resident population
-
-      - heading: Region
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: region
-
-        latestBy: newCasesBySpecimenDateRollingRate
-        sortBy: areaName
-
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Cases
-            value: newCasesBySpecimenDateRollingSum
-            type: numeric
-            tooltip: Total number of people tested positive in the 7-day period ending {date}
-
-          - label: Rate per 100,000 population
-            value: newCasesBySpecimenDateRollingRate
-            type: numeric
-            tooltip: Rate of total number of people tested positive in the 7-day period per 100,000 resident population
-
-      - heading: Upper tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: utla
-
-        latestBy: newCasesBySpecimenDateRollingRate
-        sortBy: areaName
-        searchBy: areaName
-
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Cases
-            value: newCasesBySpecimenDateRollingSum
-            type: numeric
-            tooltip: Total number of people tested positive in the week ending {date}
-
-          - label: Rate per 100,000 population
-            value: newCasesBySpecimenDateRollingRate
-            type: numeric
-            tooltip: Rate of total number of people tested positive in the 7-day period per 100,000 resident population
-
-      - heading: Lower tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: ltla
-
-        latestBy: newCasesBySpecimenDateRollingRate
-        sortBy: areaName
-        searchBy: areaName
-
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: Cases
-            value: newCasesBySpecimenDateRollingSum
-            type: numeric
-            tooltip: Total number of people tested positive in the 7-day period ending {date}
-
-          - label: Rate per 100,000 population
-            value: newCasesBySpecimenDateRollingRate
-            type: numeric
-            tooltip: Rate of total number of people tested positive in the 7-day period per 100,000 resident population
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/cases/cardSevenDayCasesAndRatesByArea.md
-
-##############################################################################################################################
-
-  - heading: People tested positive by area (whole pandemic)
-    cardType: simpleTableStatic
-    fullWidth: false
-    abstract: >
-       Total number of first episodes of infection since the start of the pandemic, and rate per 100,000 people. This represents the total number of people
-       who have ever tested positive during the pandemic. Definitions of cases vary by nation.
-       For example, not all nations include lateral flow testing in their case counts.
-
-    download:
-      - cumFirstEpisodesBySpecimenDate
-      - cumFirstEpisodesBySpecimenDateRate
-
-    tabs:
-      # - heading: UK
-      #   tabType: table
-      #   params:
-      #     - key: areaType
-      #       sign: "="
-      #       value: overview
-
-      #   latestBy: cumFirstEpisodesBySpecimenDate
-      #   sortBy: areaName
-
-      #   fields:
-      #     - label: Area
-      #       value: areaName
-      #       type: string
-      #       tooltip: ""
-
-      #     - label: First episodes
-      #       value: cumFirstEpisodesBySpecimenDate
-      #       type: numeric
-      #       tooltip: Total number of first episodes up to {date}
-
-      #     - label: Rate per 100,000 population
-      #       value: cumFirstEpisodesBySpecimenDateRate
-      #       type: numeric
-      #       tooltip: Rate of total confirmed first episodes per 100,000 resident population
-
-      - heading: Nation
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-
-        latestBy: cumFirstEpisodesBySpecimenDate
-        sortBy: areaName
-
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: First Episodes
-            value: cumFirstEpisodesBySpecimenDate
-            type: numeric
-            tooltip: Total number of first episodes up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumFirstEpisodesBySpecimenDateRate
-            type: numeric
-            tooltip: Rate of total confirmed first episodes per 100,000 resident population
-
-      - heading: Region
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: region
-
-        latestBy: cumFirstEpisodesBySpecimenDate
-        sortBy: areaName
-
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: First episodes
-            value: cumFirstEpisodesBySpecimenDate
-            type: numeric
-            tooltip: Total number of first episodes up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumFirstEpisodesBySpecimenDateRate
-            type: numeric
-            tooltip: Rate of total confirmed first episodes per 100,000 resident population
-
-      - heading: Upper tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: utla
-
-        latestBy: cumFirstEpisodesBySpecimenDate
-        sortBy: areaName
-        searchBy: areaName
-
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: First episodes
-            value: cumFirstEpisodesBySpecimenDate
-            type: numeric
-            tooltip: Total number of first episodes up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumFirstEpisodesBySpecimenDateRate
-            type: numeric
-            tooltip: Rate of total confirmed first episodes per 100,000 resident population
-
-      - heading: Lower tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: ltla
-
-        latestBy: cumFirstEpisodesBySpecimenDate
-        sortBy: areaName
-        searchBy: areaName
-
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: First episodes
-            value: cumFirstEpisodesBySpecimenDate
-            type: numeric
-            tooltip: Total number of first episodes up to {date}
-
-          - label: Rate per 100,000 population
-            value: cumFirstEpisodesBySpecimenDateRate
-            type: numeric
-            tooltip: Rate of total confirmed first episodes per 100,000 resident population
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/cases/cardCasesAndRatesByArea.md
-
-###############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-
-# variants cumulative bar chart
-
-  - heading: Cumulative sequenced episodes [DEV]
-    cardType: chart
-    locationAware:
-      included:
-        areaName:
-          - England
-
-        areaType:
-          - region
-
-
-    fullWidth: true
-    abstract: >
-      Cumulative episodes sequenced by week from 31 January 2021.
-      Episodes are assigned to weeks based on specimen date and include all confirmed sequencing results.
-
-    download:
-      - variants
-
-    tabs:
-      - heading: Cumulative total
-        tabType: chart
-        fields:
-          - label: Cumulative sequenced episodes
-            << : *variantOther
-            tooltip: Cumulative number of sequenced COVID-19 episodes
-            type: bar
-            colour: 0
-            rollingAverage: false
-            metric: cumWeeklySequenced
-            # highlight:
-            #   from: -2
-            #   to: 0
-            #   colour: 6
-            #   label: "Most recent 2 days (incomplete)"
-
-      - heading: Data table
-        tabType: nestedTable
-        fields:
-          - label: Week starting date
-            value: date
-            type: date
-
-          - label: "Cumulative sequenced episodes"
-            metric: cumWeeklySequenced
-            value: variants
-            type: numeric
-            filters:
-              parameter: variant
-              value: Other
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
-
-
-
-##############################################################################################################################
-
-# Variants heatmap
-  - heading: Variant percentage of available sequenced episodes, by week [DEV]
-    cardType: chart
-    experimental: true
-    locationAware:
-      excluded:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      The percentage of important UKHSA-designated variants from sequenced episodes by week from 1 February 2021.
-      Variant episodes are assigned to weeks based on specimen date. Variants are displayed using UKHSA name (e.g. VOC-22APR-04) with World
-      Health Organization (WHO) name (e.g. Omicron) and sub-lineage (e.g. BA.5).
-
-    download:
-      - variants
-
-    tabs:
-      - heading: Heatmap
-        tabType: GenericHeatmap
-        fields:
-          - label: Variant percentage
-            value: variants
-            amplitude: newWeeklyPercentage
-            amplitudeLabel: Weekly percentage
-            metricLabel: Variant name
-            parameter: variant
-            metrics:
-            - label: Other
-              value: "Other"
-
-            - label: VOC-22APR-04 (Omicron BA.5)
-              value: "VOC-22APR-04 (Omicron BA.5)"
-
-            - label: VOC-22APR-03 (Omicron BA.4)
-              value: "VOC-22APR-03 (Omicron BA.4)"
-
-            - label: VOC-22JAN-01 (Omicron BA.2)
-              value: "VOC-22JAN-01 (Omicron BA.2)"
-
-            - label: VOC-21NOV-01 (Omicron BA.1)
-              value: "VOC-21NOV-01 (Omicron BA.1)"
-
-            - label: V-21OCT-01 (Delta AY 4.2)
-              value: "V-21OCT-01 (Delta AY 4.2)"
-
-            - label: V-21APR-02 (Delta B.1.617.2)
-              value: "V-21APR-02 (Delta B.1.617.2)"
-
-            - label: V-20DEC-01 (Alpha)
-              value: "V-20DEC-01 (Alpha)"
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-# {{ EndDevOnlyBlock }}
-
-###############################################################################################################################
-
-
-# Variants heat map & line chart via radio
-
-  - heading: Variant percentage of available sequenced episodes, by week
-    cardType: chart
-    experimental: true
-    locationAware:
-      included:
-        areaName:
-          - England
-
-        areaType:
-          - region
-
-    fullWidth: true
-    abstract: >
-      The percentage of important UKHSA-designated variants from sequenced episodes by week from 1 February 2021.
-      Variant episodes are assigned to weeks based on specimen date. Variants are displayed using UKHSA name (e.g. VOC-22APR-04) with World
-      Health Organization (WHO) name (e.g. Omicron) and sub-lineage (e.g. BA.5).
-
-    download:
-      - variants
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - Heatmap
-        - Line chart
-
-    Heatmap:       
-
-      tabs:
-        - heading: Heatmap
-          tabType: GenericHeatmap
-          fields:
-            - label: Variant percentage
-              value: variants
-              amplitude: newWeeklyPercentage
-              amplitudeLabel: Weekly percentage
-              metricLabel: Variant name
-              parameter: variant
-              metrics:
-              - label: Other
-                value: "Other"
-
-              - label: VOC-22APR-04 (Omicron BA.5)
-                value: "VOC-22APR-04 (Omicron BA.5)"
-
-              - label: VOC-22APR-03 (Omicron BA.4)
-                value: "VOC-22APR-03 (Omicron BA.4)"
-
-              - label: VOC-22JAN-01 (Omicron BA.2)
-                value: "VOC-22JAN-01 (Omicron BA.2)"
-
-              - label: VOC-21NOV-01 (Omicron BA.1)
-                value: "VOC-21NOV-01 (Omicron BA.1)"
-
-              - label: V-21OCT-01 (Delta AY 4.2)
-                value: "V-21OCT-01 (Delta AY 4.2)"
-
-              - label: V-21APR-02 (Delta B.1.617.2)
-                value: "V-21APR-02 (Delta B.1.617.2)"
-
-              - label: V-20DEC-01 (Alpha)
-                value: "V-20DEC-01 (Alpha)"
+#         filename: cardMetadata/cases/cardCasesAndRatesByAgeAndSex.md
+
+# ##############################################################################################################################
+
+# # {{ StartDevOnlyBlock }}
+# # # Not currently publishing people tested
+# # # not added abstracts as not yet publishing - shouldn't this sit on the testing page?
+
+# #   - heading: People tested, by age and sex
+# #     caption: Counts
+# #     cardType: ageSexBreakdown
+# #     locationAware:
+# #       included:
+# #         areaType:
+# #           - nation
+# #           - region
+
+# #     fullWidth: false
+# #     download:
+# #       - femalePeopleTestedValue
+# #       - femalePeopleTestedRate
+# #       - malePeopleTestedValue
+# #       - malePeopleTestedRate
+
+# #     tabs:
+# #       - heading: Chart
+# #         tabType: chart
+# #         barType: group
+# #         groupKey: age
+# #         groupValues:
+# #           - value
+# #           - rate
+
+# #         requiredMetrics:
+# #           - femalePeopleTested
+# #           - malePeopleTested
+
+# #         fields:
+# #           - label: Females
+# #             value: femalePeopleTestedValue
+# #             tooltip: Total number of females tested
+# #             type: bar
+# #             colour: 3
+
+# #           - label: Males
+# #             value: malePeopleTestedValue
+# #             tooltip: Total number of males tested
+# #             type: bar
+# #             colour: 0
+
+# #       - heading: Data
+# #         tabType: table
+# #         groupKey: age
+# #         groupValues:
+# #           - value
+# #           - rate
+
+# #         requiredMetrics:
+# #           - femalePeopleTested
+# #           - malePeopleTested
+
+# #         fields:
+# #           - label: Age
+# #             value: age
+# #             type: string
+# #             tooltip: Age group
+
+# #           - label: Females
+# #             value: femalePeopleTestedValue
+# #             type: numeric
+# #             tooltip: Total number of females tested
+
+# #           - label: Female rate
+# #             value: femalePeopleTestedRate
+# #             type: numeric
+# #             tooltip: Total number of females tested per 100,000 resident population
+
+# #           - label: Males
+# #             value: malePeopleTestedValue
+# #             type: numeric
+# #             tooltip: Total number of males tested
+
+# #           - label: Male rate
+# #             value: malePeopleTestedRate
+# #             type: numeric
+# #             tooltip: Total number of males tested per 100,000 resident population
+
+# #       - heading: About
+# #         tabType: metadata
+# #         filename: cardMetadata/testing/tabPeopleTestedByAgeAndSex.md
+
+# ##############################################################################################################################
+
+# #   - heading: People tested rates by age and sex
+# #     caption: Rates per 100,000 resident population
+# #     cardType: ageSexBreakdown
+# #     locationAware:
+# #       included:
+# #         areaType:
+# #           - nation
+# #           - region
+
+# #     fullWidth: false
+# #     download:
+# #       - femalePeopleTestedValue
+# #       - femalePeopleTestedRate
+# #       - malePeopleTestedValue
+# #       - malePeopleTestedRate
+
+# #     tabs:
+# #       - heading: Chart
+# #         tabType: chart
+# #         barType: group
+# #         groupKey: age
+# #         groupValues:
+# #           - value
+# #           - rate
+
+# #         requiredMetrics:
+# #           - femalePeopleTested
+# #           - malePeopleTested
+
+# #         fields:
+# #           - label: Females
+# #             value: femalePeopleTestedRate
+# #             tooltip: Total number of females tested per 100,000 resident population
+# #             type: bar
+# #             colour: 3
+
+# #           - label: Males
+# #             value: malePeopleTestedRate
+# #             tooltip: Total number of males tested per 100,000 resident population
+# #             type: bar
+# #             colour: 0
+
+# #       - heading: Data
+# #         tabType: table
+# #         groupKey: age
+# #         groupValues:
+# #           - value
+# #           - rate
+
+# #         requiredMetrics:
+# #           - femalePeopleTested
+# #           - malePeopleTested
+
+# #         fields:
+# #           - label: Age
+# #             value: age
+# #             type: string
+# #             tooltip: Age group
+
+# #           - label: Female cases
+# #             value: femalePeopleTestedValue
+# #             type: numeric
+# #             tooltip: Total number of females tested
+
+# #           - label: Female rate
+# #             value: femalePeopleTestedRate
+# #             type: numeric
+# #             tooltip: Total number of females tested per 100,000 resident population
+
+# #           - label: Male cases
+# #             value: malePeopleTestedValue
+# #             type: numeric
+# #             tooltip: Total number of males tested
+
+# #           - label: Male rate
+# #             value: malePeopleTestedRate
+# #             type: numeric
+# #             tooltip: Total number of females tested per 100,000 resident population
+
+# #       - heading: About
+# #         tabType: metadata
+# #         filename: cardMetadata/testing/tabPeopleTestedByAgeAndSex.md
+
+# # {{ EndDevOnlyBlock }}
+
+# ##############################################################################################################################
+
+# # {{ StartDevOnlyBlock }}
+# # Scatterplot not a valid cardType yet - not built
+
+#   # - heading: Cases and testing rates
+#   #   cardType: scatterStatic
+#   #   fullWidth: false
+#   #   userOptions: areaType # linked to map and table below?
+#   #   x-label: People tested per 100,000 population
+#   #   x-value: CumPeopleTestedByPublishDateRate
+#   #   x-tooltip: Cumulative total number of people tested per 100,000 resident population
+
+#   #   y-label: Cases per 100,000 population
+#   #   y-value: CumCasesByPublishDateRate
+#   #   y-tooltip: Cumulative total number of new people with a confirmed positive test result, either lab-reported or lateral flow device (England only) per 100,000 resident population
+
+#   # - heading: Cases rates by area
+#   #   cardType: mapStatic
+#   #   fullWidth: false
+#   #   userOptions: areaType # linked to scatter chart above and table below?
+#   #   value: cumCasesByPublishDateRate
+#   #   tooltip: areaName
+
+# # {{ EndDevOnlyBlock }}
+
+# ##############################################################################################################################
+
+#   - heading: Cases by specimen date age demographics - Above and below 60
+#     cardType: chart
+#     locationAware:
+#       excluded:
+#         areaType:
+#           - overview
+
+#     fullWidth: true
+#     abstract: >
+#       Daily numbers of new cases, by age (0-59 or 60+), and rate per 100,000 people of the number of new cases in the rolling 7-day period ending on the dates shown.
+#       Data are shown by the date the sample was taken from the person being tested.
+
+#     download:
+#       - newCasesBySpecimenDateAgeDemographics
+
+#     tabs:
+#       - heading: Rolling rate
+#         tabType: chart
+#         fields:
+#           - label: Rate of cases aged 0 to 59
+#             << : *specimenDateDemographics0_59
+#             tooltip: Rate of new people aged 0-59 tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
+#             type: line
+#             colour: 0
+#             fill: false
+#             rollingAverage: false
+#             metric: rollingRate
+
+#           - label: Rate of cases aged 60+
+#             << : *specimenDateDemographics60Plus
+#             tooltip: Rate of new people aged 60+ tested positive in the 7-day period ending on the date shown by date the sample was taken per 100,000 population
+#             type: line
+#             colour: 3
+#             fill: false
+#             metric: rollingRate
+#             rollingAverage: false
+
+#       - heading: Daily cases
+#         tabType: chart
+#         barType: stack
+#         fields:
+#           - label: Number of cases aged 0 to 59
+#             << : *specimenDateDemographics0_59
+#             tooltip: Daily number of new people tested positive aged 0-59 by date the sample was taken from the person
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
+#             metric: cases
+
+#           - label: Number of cases aged 60+
+#             << : *specimenDateDemographics60Plus
+#             tooltip: Daily number of new people tested positive aged 60+ by date the sample was taken from the person
+#             type: bar
+#             colour: 3
+#             metric: cases
+#             rollingAverage: false
+
+#       - heading: Data table
+#         tabType: nestedTable
+#         fields:
+#           - label: Date
+#             value: date
+#             type: date
+
+#           - label: "Cases: 0-59"
+#             metric: cases
+#             value: newCasesBySpecimenDateAgeDemographics
+#             type: numeric
+#             filters:
+#               parameter: age
+#               value: 00_59
+
+#           - label: "Rolling sum: 0-59"
+#             metric: rollingSum
+#             value: newCasesBySpecimenDateAgeDemographics
+#             type: numeric
+#             filters:
+#               parameter: age
+#               value: 00_59
+
+#           - label: "Rolling rate: 0-59"
+#             metric: rollingRate
+#             value: newCasesBySpecimenDateAgeDemographics
+#             type: numeric
+#             filters:
+#               parameter: age
+#               value: 00_59
+
+#           - label: "Cases: 60+"
+#             metric: cases
+#             value: newCasesBySpecimenDateAgeDemographics
+#             type: numeric
+#             filters:
+#               parameter: age
+#               value: 60+
+
+#           - label: "Rolling sum: 60+"
+#             metric: rollingSum
+#             value: newCasesBySpecimenDateAgeDemographics
+#             type: numeric
+#             filters:
+#               parameter: age
+#               value: 60+
+
+#           - label: "Rolling rate: 60+"
+#             metric: rollingRate
+#             value: newCasesBySpecimenDateAgeDemographics
+#             type: numeric
+#             filters:
+#               parameter: age
+#               value: 60+
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/cases/cardCasesAndRatesByAgeUnderOver60.md
+
+# ##############################################################################################################################
+#   - heading: Cases by area (last 7 days)
+#     cardType: simpleTableStatic
+#     fullWidth: false
+#     abstract: >
+#         Total number of cases in the most recent 7-day period and rate per 100,000 people.
+#         Data are shown by specimen date (the date the sample was taken from the person being tested). Because data by specimen date are incomplete for the most recent dates,
+#         the figures shown are for the 7 days ending 5 days before the date when the website was last updated. Definitions of cases vary by nation. For example, not all nations include lateral flow testing in their case counts.
+
+#     download:
+#       - newCasesBySpecimenDateRollingSum
+#       - newCasesBySpecimenDateRollingRate
+
+#     tabs:
+#       # - heading: UK
+#       #   tabType: table
+#       #   params:
+#       #     - key: areaType
+#       #       sign: "="
+#       #       value: overview
+
+#       #   latestBy: newCasesBySpecimenDateRollingRate
+#       #   sortBy: areaName
+
+#       #   fields:
+#       #     - label: Area
+#       #       value: areaName
+#       #       type: string
+#       #       tooltip: ""
+
+#       #     - label: Cases
+#       #       value: newCasesBySpecimenDateRollingSum
+#       #       type: numeric
+#       #       tooltip: Total number of people tested positive in the 7-day period ending {date}
+
+#       #     - label: Rate per 100,000 population
+#       #       value: newCasesBySpecimenDateRollingRate
+#       #       type: numeric
+#       #       tooltip: Rate of total number of people tested positive in the 7-day period per 100,000 resident population
+
+#       - heading: Nation
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: nation
+
+#         latestBy: newCasesBySpecimenDateRollingRate
+#         sortBy: areaName
+
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Cases
+#             value: newCasesBySpecimenDateRollingSum
+#             type: numeric
+#             tooltip: Total number of people tested positive in the 7-day period ending {date}
+
+#           - label: Rate per 100,000 population
+#             value: newCasesBySpecimenDateRollingRate
+#             type: numeric
+#             tooltip: Rate of total number of people tested positive in the 7-day period per 100,000 resident population
+
+#       - heading: Region
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: region
+
+#         latestBy: newCasesBySpecimenDateRollingRate
+#         sortBy: areaName
+
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Cases
+#             value: newCasesBySpecimenDateRollingSum
+#             type: numeric
+#             tooltip: Total number of people tested positive in the 7-day period ending {date}
+
+#           - label: Rate per 100,000 population
+#             value: newCasesBySpecimenDateRollingRate
+#             type: numeric
+#             tooltip: Rate of total number of people tested positive in the 7-day period per 100,000 resident population
+
+#       - heading: Upper tier LA
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: utla
+
+#         latestBy: newCasesBySpecimenDateRollingRate
+#         sortBy: areaName
+#         searchBy: areaName
+
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Cases
+#             value: newCasesBySpecimenDateRollingSum
+#             type: numeric
+#             tooltip: Total number of people tested positive in the week ending {date}
+
+#           - label: Rate per 100,000 population
+#             value: newCasesBySpecimenDateRollingRate
+#             type: numeric
+#             tooltip: Rate of total number of people tested positive in the 7-day period per 100,000 resident population
+
+#       - heading: Lower tier LA
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: ltla
+
+#         latestBy: newCasesBySpecimenDateRollingRate
+#         sortBy: areaName
+#         searchBy: areaName
+
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: Cases
+#             value: newCasesBySpecimenDateRollingSum
+#             type: numeric
+#             tooltip: Total number of people tested positive in the 7-day period ending {date}
+
+#           - label: Rate per 100,000 population
+#             value: newCasesBySpecimenDateRollingRate
+#             type: numeric
+#             tooltip: Rate of total number of people tested positive in the 7-day period per 100,000 resident population
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/cases/cardSevenDayCasesAndRatesByArea.md
+
+# ##############################################################################################################################
+
+#   - heading: People tested positive by area (whole pandemic)
+#     cardType: simpleTableStatic
+#     fullWidth: false
+#     abstract: >
+#        Total number of first episodes of infection since the start of the pandemic, and rate per 100,000 people. This represents the total number of people
+#        who have ever tested positive during the pandemic. Definitions of cases vary by nation.
+#        For example, not all nations include lateral flow testing in their case counts.
+
+#     download:
+#       - cumFirstEpisodesBySpecimenDate
+#       - cumFirstEpisodesBySpecimenDateRate
+
+#     tabs:
+#       # - heading: UK
+#       #   tabType: table
+#       #   params:
+#       #     - key: areaType
+#       #       sign: "="
+#       #       value: overview
+
+#       #   latestBy: cumFirstEpisodesBySpecimenDate
+#       #   sortBy: areaName
+
+#       #   fields:
+#       #     - label: Area
+#       #       value: areaName
+#       #       type: string
+#       #       tooltip: ""
+
+#       #     - label: First episodes
+#       #       value: cumFirstEpisodesBySpecimenDate
+#       #       type: numeric
+#       #       tooltip: Total number of first episodes up to {date}
+
+#       #     - label: Rate per 100,000 population
+#       #       value: cumFirstEpisodesBySpecimenDateRate
+#       #       type: numeric
+#       #       tooltip: Rate of total confirmed first episodes per 100,000 resident population
+
+#       - heading: Nation
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: nation
+
+#         latestBy: cumFirstEpisodesBySpecimenDate
+#         sortBy: areaName
+
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: First Episodes
+#             value: cumFirstEpisodesBySpecimenDate
+#             type: numeric
+#             tooltip: Total number of first episodes up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumFirstEpisodesBySpecimenDateRate
+#             type: numeric
+#             tooltip: Rate of total confirmed first episodes per 100,000 resident population
+
+#       - heading: Region
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: region
+
+#         latestBy: cumFirstEpisodesBySpecimenDate
+#         sortBy: areaName
+
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: First episodes
+#             value: cumFirstEpisodesBySpecimenDate
+#             type: numeric
+#             tooltip: Total number of first episodes up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumFirstEpisodesBySpecimenDateRate
+#             type: numeric
+#             tooltip: Rate of total confirmed first episodes per 100,000 resident population
+
+#       - heading: Upper tier LA
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: utla
+
+#         latestBy: cumFirstEpisodesBySpecimenDate
+#         sortBy: areaName
+#         searchBy: areaName
+
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: First episodes
+#             value: cumFirstEpisodesBySpecimenDate
+#             type: numeric
+#             tooltip: Total number of first episodes up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumFirstEpisodesBySpecimenDateRate
+#             type: numeric
+#             tooltip: Rate of total confirmed first episodes per 100,000 resident population
+
+#       - heading: Lower tier LA
+#         tabType: table
+#         params:
+#           - key: areaType
+#             sign: "="
+#             value: ltla
+
+#         latestBy: cumFirstEpisodesBySpecimenDate
+#         sortBy: areaName
+#         searchBy: areaName
+
+#         fields:
+#           - label: Area
+#             value: areaName
+#             type: string
+#             tooltip: ""
+
+#           - label: First episodes
+#             value: cumFirstEpisodesBySpecimenDate
+#             type: numeric
+#             tooltip: Total number of first episodes up to {date}
+
+#           - label: Rate per 100,000 population
+#             value: cumFirstEpisodesBySpecimenDateRate
+#             type: numeric
+#             tooltip: Rate of total confirmed first episodes per 100,000 resident population
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/cases/cardCasesAndRatesByArea.md
+
+# ###############################################################################################################################
+
+# # {{ StartDevOnlyBlock }}
+
+# # variants cumulative bar chart
+
+#   - heading: Cumulative sequenced episodes [DEV]
+#     cardType: chart
+#     locationAware:
+#       included:
+#         areaName:
+#           - England
+
+#         areaType:
+#           - region
+
+
+#     fullWidth: true
+#     abstract: >
+#       Cumulative episodes sequenced by week from 31 January 2021.
+#       Episodes are assigned to weeks based on specimen date and include all confirmed sequencing results.
+
+#     download:
+#       - variants
+
+#     tabs:
+#       - heading: Cumulative total
+#         tabType: chart
+#         fields:
+#           - label: Cumulative sequenced episodes
+#             << : *variantOther
+#             tooltip: Cumulative number of sequenced COVID-19 episodes
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
+#             metric: cumWeeklySequenced
+#             # highlight:
+#             #   from: -2
+#             #   to: 0
+#             #   colour: 6
+#             #   label: "Most recent 2 days (incomplete)"
+
+#       - heading: Data table
+#         tabType: nestedTable
+#         fields:
+#           - label: Week starting date
+#             value: date
+#             type: date
+
+#           - label: "Cumulative sequenced episodes"
+#             metric: cumWeeklySequenced
+#             value: variants
+#             type: numeric
+#             filters:
+#               parameter: variant
+#               value: Other
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
+
+
+
+# ##############################################################################################################################
+
+# # Variants heatmap
+#   - heading: Variant percentage of available sequenced episodes, by week [DEV]
+#     cardType: chart
+#     experimental: true
+#     locationAware:
+#       excluded:
+#         areaType:
+#           - overview
+
+#     fullWidth: true
+#     abstract: >
+#       The percentage of important UKHSA-designated variants from sequenced episodes by week from 1 February 2021.
+#       Variant episodes are assigned to weeks based on specimen date. Variants are displayed using UKHSA name (e.g. VOC-22APR-04) with World
+#       Health Organization (WHO) name (e.g. Omicron) and sub-lineage (e.g. BA.5).
+
+#     download:
+#       - variants
+
+#     tabs:
+#       - heading: Heatmap
+#         tabType: GenericHeatmap
+#         fields:
+#           - label: Variant percentage
+#             value: variants
+#             amplitude: newWeeklyPercentage
+#             amplitudeLabel: Weekly percentage
+#             metricLabel: Variant name
+#             parameter: variant
+#             metrics:
+#             - label: Other
+#               value: "Other"
+
+#             - label: VOC-22APR-04 (Omicron BA.5)
+#               value: "VOC-22APR-04 (Omicron BA.5)"
+
+#             - label: VOC-22APR-03 (Omicron BA.4)
+#               value: "VOC-22APR-03 (Omicron BA.4)"
+
+#             - label: VOC-22JAN-01 (Omicron BA.2)
+#               value: "VOC-22JAN-01 (Omicron BA.2)"
+
+#             - label: VOC-21NOV-01 (Omicron BA.1)
+#               value: "VOC-21NOV-01 (Omicron BA.1)"
+
+#             - label: V-21OCT-01 (Delta AY 4.2)
+#               value: "V-21OCT-01 (Delta AY 4.2)"
+
+#             - label: V-21APR-02 (Delta B.1.617.2)
+#               value: "V-21APR-02 (Delta B.1.617.2)"
+
+#             - label: V-20DEC-01 (Alpha)
+#               value: "V-20DEC-01 (Alpha)"
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+# # {{ EndDevOnlyBlock }}
+
+# ###############################################################################################################################
+
+
+# # Variants heat map & line chart via radio
+
+#   - heading: Variant percentage of available sequenced episodes, by week
+#     cardType: chart
+#     experimental: true
+#     locationAware:
+#       included:
+#         areaName:
+#           - England
+
+#         areaType:
+#           - region
+
+#     fullWidth: true
+#     abstract: >
+#       The percentage of important UKHSA-designated variants from sequenced episodes by week from 1 February 2021.
+#       Variant episodes are assigned to weeks based on specimen date. Variants are displayed using UKHSA name (e.g. VOC-22APR-04) with World
+#       Health Organization (WHO) name (e.g. Omicron) and sub-lineage (e.g. BA.5).
+
+#     download:
+#       - variants
+
+#     options:
+#       type: radio
+#       heading: null
+#       choices:
+#         - Heatmap
+#         - Line chart
+
+#     Heatmap:       
+
+#       tabs:
+#         - heading: Heatmap
+#           tabType: GenericHeatmap
+#           fields:
+#             - label: Variant percentage
+#               value: variants
+#               amplitude: newWeeklyPercentage
+#               amplitudeLabel: Weekly percentage
+#               metricLabel: Variant name
+#               parameter: variant
+#               metrics:
+#               - label: Other
+#                 value: "Other"
+
+#               - label: VOC-22APR-04 (Omicron BA.5)
+#                 value: "VOC-22APR-04 (Omicron BA.5)"
+
+#               - label: VOC-22APR-03 (Omicron BA.4)
+#                 value: "VOC-22APR-03 (Omicron BA.4)"
+
+#               - label: VOC-22JAN-01 (Omicron BA.2)
+#                 value: "VOC-22JAN-01 (Omicron BA.2)"
+
+#               - label: VOC-21NOV-01 (Omicron BA.1)
+#                 value: "VOC-21NOV-01 (Omicron BA.1)"
+
+#               - label: V-21OCT-01 (Delta AY 4.2)
+#                 value: "V-21OCT-01 (Delta AY 4.2)"
+
+#               - label: V-21APR-02 (Delta B.1.617.2)
+#                 value: "V-21APR-02 (Delta B.1.617.2)"
+
+#               - label: V-20DEC-01 (Alpha)
+#                 value: "V-20DEC-01 (Alpha)"
         
-        - heading: Data table
-          tabType: nestedTable
-          fields:
-            - label: "Week starting date"
-              value: date
-              type: date
+#         - heading: Data table
+#           tabType: nestedTable
+#           fields:
+#             - label: "Week starting date"
+#               value: date
+#               type: date
 
-            - label: "V-20DEC-01 (Alpha) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "V-20DEC-01 (Alpha)"
+#             - label: "V-20DEC-01 (Alpha) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "V-20DEC-01 (Alpha)"
 
-            - label: "V-21APR-02 (Delta B.1.617.2) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "V-21APR-02 (Delta B.1.617.2)"
+#             - label: "V-21APR-02 (Delta B.1.617.2) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "V-21APR-02 (Delta B.1.617.2)"
 
-            - label: "V-21OCT-01 (Delta AY 4.2) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "V-21OCT-01 (Delta AY 4.2)"
+#             - label: "V-21OCT-01 (Delta AY 4.2) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "V-21OCT-01 (Delta AY 4.2)"
 
-            - label: "VOC-21NOV-01 (Omicron BA.1) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "VOC-21NOV-01 (Omicron BA.1)"
+#             - label: "VOC-21NOV-01 (Omicron BA.1) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "VOC-21NOV-01 (Omicron BA.1)"
 
-            - label: "VOC-22JAN-01 (Omicron BA.2) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "VOC-22JAN-01 (Omicron BA.2)"
+#             - label: "VOC-22JAN-01 (Omicron BA.2) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "VOC-22JAN-01 (Omicron BA.2)"
 
-            - label: "VOC-22APR-03 (Omicron BA.4) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "VOC-22APR-03 (Omicron BA.4)"
+#             - label: "VOC-22APR-03 (Omicron BA.4) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "VOC-22APR-03 (Omicron BA.4)"
 
-            - label: "VOC-22APR-04 (Omicron BA.5) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "VOC-22APR-04 (Omicron BA.5)"
+#             - label: "VOC-22APR-04 (Omicron BA.5) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "VOC-22APR-04 (Omicron BA.5)"
 
-            - label: "Other %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "Other"
+#             - label: "Other %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "Other"
         
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md 
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md 
 
-    Line chart:       
+#     Line chart:       
 
-      tabs:
-        - heading: Chart
-          tabType: chart
+#       tabs:
+#         - heading: Chart
+#           tabType: chart
 
-          fields:
-            - label: V-20DEC-01 (Alpha)
-              << : *variantAlpha
-              tooltip: Percentage of people aged 75 to 79 who received a spring booster dose of COVID-19 vaccine
-              type: line
-              colour: 11
-              rollingAverage: false
-              metric: newWeeklyPercentage
-              fill: false
+#           fields:
+#             - label: V-20DEC-01 (Alpha)
+#               << : *variantAlpha
+#               tooltip: Percentage of people aged 75 to 79 who received a spring booster dose of COVID-19 vaccine
+#               type: line
+#               colour: 11
+#               rollingAverage: false
+#               metric: newWeeklyPercentage
+#               fill: false
 
-            - label: V-21APR-02 (Delta B.1.617.2)
-              << : *variantDeltaB
-              tooltip: Percentage of people aged 80 to 84 who received a spring booster dose of COVID-19 vaccine
-              type: line
-              colour: 6
-              rollingAverage: false
-              metric: newWeeklyPercentage
-              fill: false
+#             - label: V-21APR-02 (Delta B.1.617.2)
+#               << : *variantDeltaB
+#               tooltip: Percentage of people aged 80 to 84 who received a spring booster dose of COVID-19 vaccine
+#               type: line
+#               colour: 6
+#               rollingAverage: false
+#               metric: newWeeklyPercentage
+#               fill: false
 
-            - label: V-21OCT-01 (Delta AY 4.2)
-              << : *variantDeltaAY
-              tooltip: Percentage of people aged 85 to 89 who received a spring booster dose of COVID-19 vaccine
-              type: line
-              colour: 7
-              rollingAverage: false
-              metric: newWeeklyPercentage
-              fill: false
+#             - label: V-21OCT-01 (Delta AY 4.2)
+#               << : *variantDeltaAY
+#               tooltip: Percentage of people aged 85 to 89 who received a spring booster dose of COVID-19 vaccine
+#               type: line
+#               colour: 7
+#               rollingAverage: false
+#               metric: newWeeklyPercentage
+#               fill: false
 
-            - label: VOC-21NOV-01 (Omicron BA.1)
-              << : *variantOmicronBA1
-              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
-              type: line
-              colour: 0
-              rollingAverage: false
-              metric: newWeeklyPercentage
-              fill: false
+#             - label: VOC-21NOV-01 (Omicron BA.1)
+#               << : *variantOmicronBA1
+#               tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
+#               type: line
+#               colour: 0
+#               rollingAverage: false
+#               metric: newWeeklyPercentage
+#               fill: false
 
-            - label: VOC-22JAN-01 (Omicron BA.2)
-              << : *variantOmicronBA2
-              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
-              type: line
-              colour: 1
-              rollingAverage: false
-              metric: newWeeklyPercentage
-              fill: false
+#             - label: VOC-22JAN-01 (Omicron BA.2)
+#               << : *variantOmicronBA2
+#               tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
+#               type: line
+#               colour: 1
+#               rollingAverage: false
+#               metric: newWeeklyPercentage
+#               fill: false
 
-            - label: VOC-22APR-03 (Omicron BA.4)
-              << : *variantOmicronBA4
-              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
-              type: line
-              colour: 2
-              rollingAverage: false
-              metric: newWeeklyPercentage
-              fill: false
+#             - label: VOC-22APR-03 (Omicron BA.4)
+#               << : *variantOmicronBA4
+#               tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
+#               type: line
+#               colour: 2
+#               rollingAverage: false
+#               metric: newWeeklyPercentage
+#               fill: false
 
-            - label: VOC-22APR-04 (Omicron BA.5)
-              << : *variantOmicronBA5
-              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              rollingAverage: false
-              metric: newWeeklyPercentage
-              fill: false
+#             - label: VOC-22APR-04 (Omicron BA.5)
+#               << : *variantOmicronBA5
+#               tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
+#               type: line
+#               colour: 3
+#               rollingAverage: false
+#               metric: newWeeklyPercentage
+#               fill: false
 
-            - label: Other
-              << : *variantOther
-              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
-              type: line
-              colour: 9
-              rollingAverage: false
-              metric: newWeeklyPercentage
-              fill: false
+#             - label: Other
+#               << : *variantOther
+#               tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
+#               type: line
+#               colour: 9
+#               rollingAverage: false
+#               metric: newWeeklyPercentage
+#               fill: false
 
-        - heading: Data table
-          tabType: nestedTable
-          fields:
-            - label: "Week starting date"
-              value: date
-              type: date
+#         - heading: Data table
+#           tabType: nestedTable
+#           fields:
+#             - label: "Week starting date"
+#               value: date
+#               type: date
 
-            - label: "V-20DEC-01 (Alpha) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "V-20DEC-01 (Alpha)"
+#             - label: "V-20DEC-01 (Alpha) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "V-20DEC-01 (Alpha)"
 
-            - label: "V-21APR-02 (Delta B.1.617.2) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "V-21APR-02 (Delta B.1.617.2)"
+#             - label: "V-21APR-02 (Delta B.1.617.2) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "V-21APR-02 (Delta B.1.617.2)"
 
-            - label: "V-21OCT-01 (Delta AY 4.2) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "V-21OCT-01 (Delta AY 4.2)"
+#             - label: "V-21OCT-01 (Delta AY 4.2) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "V-21OCT-01 (Delta AY 4.2)"
 
-            - label: "VOC-21NOV-01 (Omicron BA.1) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "VOC-21NOV-01 (Omicron BA.1)"
+#             - label: "VOC-21NOV-01 (Omicron BA.1) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "VOC-21NOV-01 (Omicron BA.1)"
 
-            - label: "VOC-22JAN-01 (Omicron BA.2) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "VOC-22JAN-01 (Omicron BA.2)"
+#             - label: "VOC-22JAN-01 (Omicron BA.2) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "VOC-22JAN-01 (Omicron BA.2)"
 
-            - label: "VOC-22APR-03 (Omicron BA.4) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "VOC-22APR-03 (Omicron BA.4)"
+#             - label: "VOC-22APR-03 (Omicron BA.4) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "VOC-22APR-03 (Omicron BA.4)"
 
-            - label: "VOC-22APR-04 (Omicron BA.5) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "VOC-22APR-04 (Omicron BA.5)"
+#             - label: "VOC-22APR-04 (Omicron BA.5) %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "VOC-22APR-04 (Omicron BA.5)"
 
-            - label: "Other %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "Other"
+#             - label: "Other %"
+#               metric: newWeeklyPercentage
+#               value: variants
+#               type: numeric
+#               filters:
+#                 parameter: variant
+#                 value: "Other"
 
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+#         - heading: About
+#           tabType: metadata
+#           filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
