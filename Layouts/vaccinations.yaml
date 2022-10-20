@@ -914,7 +914,7 @@ cards:
 
 # Autumn booster demographics line chart
 
-  - heading: Autumn booster vaccination uptake, by vaccination date age demographics (65 and over)
+  - heading: Autumn booster vaccination uptake, by vaccination date age demographics (50 and over)
     cardType: chart
     locationAware:
       included:
