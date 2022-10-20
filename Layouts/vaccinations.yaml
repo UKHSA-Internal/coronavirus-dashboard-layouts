@@ -35,6 +35,25 @@ vaccinationAgeDemographics75+: &vaccinationAgeDemographics75Plus
     parameter: age
     value: 75+
 
+vaccinationAgeDemographics5054: &vaccinationAgeDemographics50_54
+  << : *baseVaccinationAgeDemographics
+  filters:
+    parameter: age
+    value: "50_54"
+
+vaccinationAgeDemographics5559: &vaccinationAgeDemographics55_59
+  << : *baseVaccinationAgeDemographics
+  filters:
+    parameter: age
+    value: "55_59"
+
+vaccinationAgeDemographics6064: &vaccinationAgeDemographics60_64
+  << : *baseVaccinationAgeDemographics
+  filters:
+    parameter: age
+    value: "60_64"
+
+
 vaccinationAgeDemographics6569: &vaccinationAgeDemographics65_69
   << : *baseVaccinationAgeDemographics
   filters:
@@ -1257,11 +1276,38 @@ cards:
         tabType: chart
 
         fields:
+          - label: 50 to 54 (%)
+            << : *vaccinationAgeDemographics50_54
+            tooltip: Percentage of people aged 50 to 54 who received an autumn booster dose of COVID-19 vaccine
+            type: line
+            colour: 0
+            rollingAverage: false
+            metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
+            fill: false
+          
+          - label: 55 to 59 (%)
+            << : *vaccinationAgeDemographics55_59
+            tooltip: Percentage of people aged 55 to 59 who received an autumn booster dose of COVID-19 vaccine
+            type: line
+            colour: 2
+            rollingAverage: false
+            metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
+            fill: false
+          
+          - label: 60 to 64 (%)
+            << : *vaccinationAgeDemographics60_64
+            tooltip: Percentage of people aged 60 to 64 who received an autumn booster dose of COVID-19 vaccine
+            type: line
+            colour: 3
+            rollingAverage: false
+            metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
+            fill: false
+          
           - label: 65 to 69 (%)
             << : *vaccinationAgeDemographics65_69
             tooltip: Percentage of people aged 65 to 69 who received an autumn booster dose of COVID-19 vaccine
             type: line
-            colour: 11
+            colour: 5
             rollingAverage: false
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             fill: false
@@ -1270,7 +1316,7 @@ cards:
             << : *vaccinationAgeDemographics70_74
             tooltip: Percentage of people aged 70 to 74 who received an autumn booster dose of COVID-19 vaccine
             type: line
-            colour: 7
+            colour: 6
             rollingAverage: false
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             fill: false
@@ -1279,7 +1325,7 @@ cards:
             << : *vaccinationAgeDemographics75_79
             tooltip: Percentage of people aged 75 to 79 who received an autumn booster dose of COVID-19 vaccine
             type: line
-            colour: 0
+            colour: 8
             rollingAverage: false
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             fill: false
@@ -1297,7 +1343,7 @@ cards:
             << : *vaccinationAgeDemographics85_89
             tooltip: Percentage of people aged 85 to 89 who received an autumn booster dose of COVID-19 vaccine
             type: line
-            colour: 3
+            colour: 11
             rollingAverage: false
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             fill: false

@@ -1,19 +1,22 @@
 ###################################################################################################################################
 
+# colours for e.g. line charts
 # For reference: colour palettes
-# '#5694CA',  // Base blue
-# '#ABCBE5',  // Base blue tint 1
-# '#DEEAF4',  // Base blue tint 2
-# '#003078',  // Dark blue
-# '#8098BC',  // Dark blue tint 1
-# '#CCD6E4',  // Dark blue tint 2
-# '#B1B4B6',  // Grey
-# '#D8DADB',  // Grey tint 1
-# '#EFF0F0',  // Grey tint 2
-# '#FFDD00',  // Yellow
-# '#d4351c',  // Red
-# '#009f56',  // green
+#0 '#5694CA',  // Base blue
+#1 '#ABCBE5',  // Base blue tint 1
+#2 '#DEEAF4',  // Base blue tint 2
+#3 '#003078',  // Dark blue
+#4 '#8098BC',  // Dark blue tint 1
+#5 '#CCD6E4',  // Dark blue tint 2
+#6 '#B1B4B6',  // Grey
+#7 '#D8DADB',  // Grey tint 1
+#8 '#EFF0F0',  // Grey tint 2
+#9 '#FFDD00',  // Yellow
+#10 '#d4351c',  // Red
+#11 '#009f56',  // green
 
+
+# demographic (heatmap) chart - deaths & cases
 # "#e0e543",  // Pear
 # "#74bb68",  // Mantis (light green)
 # "#399384",  // Paradiso (green)
