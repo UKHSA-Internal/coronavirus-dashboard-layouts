@@ -1364,6 +1364,30 @@ cards:
             value: date
             type: date
 
+          - label: "Uptake 50 to 54 (%)"
+            metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: "50_54"
+
+          - label: "Uptake 55 to 59 (%)"
+            metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: "55_59"
+
+          - label: "Uptake 60 to 64 (%)"
+            metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: "60_64"
+
           - label: "Uptake 65 to 69 (%)"
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
