@@ -35,18 +35,11 @@ downloads:
       - text: Latest ONS estimates
         url: "/downloads/supplements/ONS-population_2021-08-05.csv"
 
-  - label: Weekly cases by specimen date at MSOA level - Select MSOA from "Area type"
-    links: []
+  # - label: Weekly cases by specimen date at MSOA level - Select MSOA from "Area type"
+  #   links: []
 
-  - label: Age demographic of cases by specimen date [Unavailable]
-    links: []
-#      - text: CSV (unstacked)
-#        url: /downloads/demographic/cases/specimenDate_ageDemographic-unstacked.csv
-
-#     - text: CSV (stacked)
-#        url: /downloads/demographic/cases/specimenDate_ageDemographic-stacked.csv
-
-  - label: Equivalent downloads for age demographic of cases by specimen date file(s)
+  
+  - label: Downloads for age demographic of cases by specimen date file(s)
     links:
       - text: LTLA
         url: https://api.coronavirus.data.gov.uk/v2/data?areaType=ltla&metric=newCasesBySpecimenDateAgeDemographics&format=csv
@@ -60,19 +53,7 @@ downloads:
       - text: England
         url: https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&areaCode=E92000001&metric=newCasesBySpecimenDateAgeDemographics&format=csv
 
-  - label: Age demographic of cases by reporting date [Deprecated - files not updated after 23 December 2020]
-    links:
-      - text: CSV (unstacked)
-        url: /downloads/demographic/cases/publishDate_ageDemographic-unstacked.csv
-
-      - text: CSV (stacked)
-        url: /downloads/demographic/cases/publishDate_ageDemographic-stacked.csv
-
-  - label: Legacy download of cases from the previous version of the dashboard [Unavailable]
-    links: []
-#     - text: CSV (stacked)
-#       url: /downloads/csv/coronavirus-cases_latest.csv
-
+  
   - label: Equivalent downloads for legacy cases file
     links:
       - text: LTLA

@@ -22,22 +22,7 @@ headlineNumbers:
         tooltip: Percentage change in the number of COVID-19 patients admitted to hospital, in the 7 days up to {date} compared with the previous 7 day period.
 
 
-# {{ StartDevOnlyBlock }}
-# # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
-# # We don't currently pull in the data from the DAs on this - they did agree to provide it when
-# # asked by the No 10 Press data team, but we have never finalised it
 
-#   - caption: Patients discharged
-#     valueItems:
-#       - label: Daily
-#         value: newDischarges
-#         tooltip: Daily number of COVID-19 patients discharged home from hospital, reported on {date}
-
-#       - label: Total
-#         value: cumDischarges
-#         tooltip: Cumulative total number of COVID-19 discharged home from to hospital, reported on {date}
-
-# {{ EndDevOnlyBlock }}
 
   - caption: Patients in hospital
     valueItems:
@@ -601,64 +586,7 @@ cards:
 
 ##############################################################################################################################
 
-# Only shown for England
-# removed as exceeds 1000 row API call limit so Southest incomplete and South West missing (unless reduce time period...)
 
-  # - heading: Patients in hospital, by NHS region
-  #   cardType: multiAreaStatic
-  #   locationAware:
-  #     included: 
-  #       areaName:
-  #         - England
-
-  #   fullWidth: true
-  #   abstract: >
-  #     Daily count of confirmed COVID-19 patients in hospital at midnight the preceding
-  #     night in each NHS region. Data are not updated every day.
-
-  #   download:
-  #     - hospitalCases
-    
-  #   tabs:
-  #     - heading: Daily
-  #       tabType: chart
-  #       barType: stack
-  #       colours: [0, 9, 3, 10, 6, 1, 4] # areaNames in alphabetical order
-  #       params:
-  #         - key: areaType
-  #           sign: "="
-  #           value: nhsRegion
-
-  #       fields:
-  #         - label: ""
-  #           value: hospitalCases
-  #           tooltip: Number of COVID-19 patients currently in hospital
-  #           type: bar
-  #           rollingAverage: false
-
-  #     - heading: Data
-  #       tabType: table
-  #       params:
-  #         - key: areaType
-  #           sign: "="
-  #           value: nhsRegion
-
-  #       fields:
-  #         - label: Date reported
-  #           value: date
-  #           type: date
-  #           tooltip: Date reported by healthcare providers
-
-  #         - label: daily
-  #           value: hospitalCases
-  #           type: numeric
-  #           tooltip: Number of COVID-19 patients currently in hospital
-
-  #     - heading: About 
-  #       tabType: metadata
-  #       filename: cardMetadata/healthcare/cardPatientsInHospital.md
-
-##############################################################################################################################
 
 # Not shown for UK
 
@@ -676,9 +604,7 @@ cards:
 
     download:
       - covidOccupiedMVBeds
-      # - suspectedCovidOccupiedMVBeds # {{ DevOnly }}
-      # - nonCovidOccupiedMVBeds # {{ DevOnly }}
-      # - unoccupiedMVBeds # {{ DevOnly }}
+      
 
     tabs: 
       - heading: Daily
@@ -702,30 +628,7 @@ cards:
               window: 7
               clipEnd: 0 #no of days to exclude for incomplete data
 
-          # {{ StartDevOnlyBlock }}
-
-          # - label: Suspected COVID-19 patients
-          #   value: suspectedCovidOccupiedMVBeds
-          #   tooltip: Daily number of patients suspected to be COVID-19 (but not tested positive) currently in mechanical ventilation beds (England only)
-          #   type: bar
-          #   colour: 3
-          #   rollingAverage: false
-
-          # - label: Other patients
-          #   value: nonCovidOccupiedMVBeds
-          #   tooltip: Daily number of non-COVID-19 patients currently in mechanical ventilation beds
-          #   type: bar
-          #   colour: 6
-          #   rollingAverage: false
-
-          # - label: Unoccupied beds
-          #   value: unoccupiedMVBeds
-          #   tooltip: Daily number of currently unoccupied mechanical ventilation beds
-          #   type: bar
-          #   colour: 7
-          #   rollingAverage: false
-
-          # {{ EndDevOnlyBlock }}
+          
 
       - heading: Data table
         tabType: table
@@ -740,29 +643,7 @@ cards:
             type: numeric
             tooltip: Daily number of COVID-19 patients in mechanical ventilation beds
 
-          # {{ StartDevOnlyBlock }}
-
-          # - label: Suspected COVID-19 patients
-          #   value: suspectedCovidOccupiedMVBeds
-          #   type: numeric
-          #   tooltip: Daily number of patients suspected to be COVID-19 (but not tested positive) in mechanical ventilation beds (England only)
-            
-          # - label: Other patients
-          #   value: nonCovidOccupiedMVBeds
-          #   type: numeric
-          #   tooltip: Daily number of non-COVID-19 patients in mechanical ventilation beds
-            
-          # - label: Unoccupied beds
-          #   value: unoccupiedMVBeds
-          #   type: numeric
-          #   tooltip: Daily number of unoccupied mechanical ventilation beds
-
-          # - label: Total beds
-          #   value: totalMVBeds
-          #   type: numeric
-          #   tooltip: Total number of mechanical ventilation beds
-
-          # {{ EndDevOnlyBlock }}
+          
 
       - heading: About 
         tabType: metadata
@@ -994,208 +875,4 @@ cards:
 ##############################################################################################################################
 
 
-# {{ StartDevOnlyBlock }}
-# # Not currently publishing patients discharged: needs discussion with NHS to agree definitions.
-# # We don't currently pull in the data from the DAs on this - they did agree to provide it when
-# # asked by the No 10 Press data team, but we have never finalised it
 
-#   - heading: Patients discharged from hospital
-#     cardType: chart
-#     fullWidth: true
-
-    # {{ StartDevOnlyBlock }}
-#     abstract: > 
-#       COVID-19 patients discharged home from hospital.
-    # {{ EndDevOnlyBlock }}
-
-#     download:
-#       - newDischarges
-#       - cumDischarges
-
-#     tabs:
-#       - heading: Daily
-#         tabType: chart
-#         barType: normal
-#         fields:
-#           - label: Discharges
-#             value: newDischarges
-#             tooltip: Daily number of COVID-19 patients discharged from hospital
-#             type: bar
-#             colour: 0
-#             fill: false
-#             rollingAverage: false
-
-#           - label: Discharges (7-day average)
-#             value: newDischarges
-#             tooltip: 7 day rolling average of the daily number of discharges
-#             type: line
-#             colour: 3
-#             fill: false
-#             rollingAverage: true
-
-#       - heading: Cumulative
-#         tabType: chart
-#         fields:
-#           - label: Discharges
-#             value: cumDischarges
-#             tooltip: Cumulative total number of COVID-19 patients discharged from hospital
-#             type: line
-#             colour: 0
-#             fill: true
-#             rollingAverage: false
-
-#       - heading: Data
-#         tabType: table
-#         fields:
-#           - label: Date reported
-#             value: date
-#             type: date
-#             tooltip: Date reported by healthcare providers
-
-#           - label: Daily discharges
-#             value: newDischarges
-#             type: numeric
-#             tooltip: Daily number of COVID-19 patients discharged from hospital
-
-#           - label: Total discharges
-#             value: cumDischarges
-#             type: numeric
-#             tooltip: Cumulative total number of COVID-19 patients discharged from hospital
-
-##############################################################################################################################
-
-#   - heading: Discharges by age
-#     caption: Counts
-#     cardType: ageSexBreakdown
-#     fullWidth: false
-
-    # {{ StartDevOnlyBlock }}
-#     # GA added 20200715 
-#     abstract: >
-#       COVID-19 patients discharged home from hospital since the start of the pandemic, by age.  
-    # {{ EndDevOnlyBlock }}
-
-#     download:
-#       - cumAdmissionsByAge
-
-#     tabs: 
-#       - heading: Chart
-#         tabType: chart
-#         barType: group
-#         groupKey: age
-#         groupValues: 
-#           - value
-#           - rate
-
-#         requiredMetrics:
-#           - cumDischargesByAge
-
-#         fields:
-#           - label: Discharges
-#             value: cumDischargesByAgeValue
-#             tooltip: Total number of COVID-19 patients discharged from hospital
-#             type: bar
-#             colour: 0
-      
-#       - heading: Data
-#         tabType: table
-#         groupKey: age
-#         groupValues: 
-#           - value
-#           - rate
-
-#         requiredMetrics:
-#           - cumDischargesByAge
-
-#         fields:
-#           - label: Age
-#             value: age
-#             type: string
-#             tooltip: Age group
-
-#           - label: Discharges
-#             value: cumDischargesByAgeValue
-#             type: numeric
-#             tooltip: Total number of COVID-19 patients discharged from hospital
-
-#           - label: Discharge rate
-#             value: cumDischargesByAgeRate
-#             type: numeric
-#             tooltip: COVID-19 discharges per 100,000 resident population
-
-##############################################################################################################################
-
-#   - heading: Discharge rates by age
-#     caption: Rates per 100,000 resident population
-#     cardType: ageSexBreakdown
-#     fullWidth: false
-
-    # {{ StartDevOnlyBlock }}
-#     abstract: >
-#       COVID-19 patients discharged home from hospital per 100,000 resident population since the start of the pandemic, by age.  
-    # {{ EndDevOnlyBlock }}
-
-#     download:
-#       - cumDischargesByAge
-
-#     tabs: 
-#       - heading: Chart
-#         tabType: chart
-#         barType: group
-#         groupKey: age
-#         groupValues: 
-#           - value
-#           - rate
-
-#         requiredMetrics:
-#           - cumDischargesByAge
-
-#         fields:
-#           - label: Discharge rate
-#             value: cumDischargesByAgeRate
-#             tooltip: COVID-19 discharges per 100,000 resident population
-#             type: bar
-#             colour: 0
-      
-#       - heading: Data
-#         tabType: table
-#         groupKey: age
-#         groupValues: 
-#           - value
-#           - rate
-
-#         requiredMetrics:
-#           - cumDischargesByAge
-
-#         fields:
-#           - label: Age
-#             value: age
-#             type: string
-#             tooltip: Age group
-
-#           - label: Discharges
-#             value: cumDischargesByAgeValue
-#             type: numeric
-#             tooltip: Total number of COVID-19 patients discharged from hospital
-
-#           - label: Discharge rate
-#             value: cumDischargesByAgeRate
-#             type: numeric
-#             tooltip: COVID-19 discharges per 100,000 resident population
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
-
-# {{ StartDevOnlyBlock }}
-# not live - probably worth adding
-
-  # - heading: Healthcare data by area
-  #   cardType: table
-  #   fullWidth: true
-  #   download:
-  #     - TBC
-
-# {{ EndDevOnlyBlock }}
-
-##############################################################################################################################
