@@ -2034,7 +2034,11 @@ cards:
               filters:
                 parameter: variant
                 value: "Other"
-
+        
+        - heading: About
+          tabType: metadata
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md 
+          
     Heatmap:       
 
       tabs:
@@ -2146,8 +2150,4 @@ cards:
         - heading: About
           tabType: metadata
           filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md 
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
