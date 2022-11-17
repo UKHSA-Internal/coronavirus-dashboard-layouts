@@ -117,6 +117,12 @@ variantOmicronBA5: &variantOmicronBA5
     parameter: variant
     value: "VOC-22APR-04 (Omicron BA.5)"
 
+variantOmicronBQ1: &variantOmicronBQ1
+  << : *baseVariants
+  filters:
+    parameter: variant
+    value: "V-22OCT-01 (Omicron BQ.1)"
+
 variantOther: &variantOther
   << : *baseVariants
   filters:
@@ -1948,6 +1954,14 @@ cards:
               metric: newWeeklyPercentage
               fill: false
 
+            - label: V-22OCT-01 (Omicron BQ.1)
+              << : *variantOmicronBQ1
+              type: line
+              colour: 10
+              rollingAverage: false
+              metric: newWeeklyPercentage
+              fill: false
+
             - label: Other
               << : *variantOther
               type: line
@@ -2019,6 +2033,14 @@ cards:
                 parameter: variant
                 value: "VOC-22APR-04 (Omicron BA.5)"
 
+             - label: "V-22OCT-01 (Omicron BQ.1) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "V-22OCT-01 (Omicron BQ.1)"
+
             - label: "Other %"
               metric: newWeeklyPercentage
               value: variants
@@ -2046,6 +2068,9 @@ cards:
               metrics:
               - label: Other
                 value: "Other"
+
+              - label: V-22OCT-01 (Omicron BQ.1)
+                value: "V-22OCT-01 (Omicron BQ.1)"
 
               - label: VOC-22APR-04 (Omicron BA.5)
                 value: "VOC-22APR-04 (Omicron BA.5)"
@@ -2130,6 +2155,14 @@ cards:
               filters:
                 parameter: variant
                 value: "VOC-22APR-04 (Omicron BA.5)"
+
+            - label: "V-22OCT-01 (Omicron BQ.1) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "V-22OCT-01 (Omicron BQ.1)"
 
             - label: "Other %"
               metric: newWeeklyPercentage
