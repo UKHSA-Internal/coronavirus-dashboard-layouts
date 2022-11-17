@@ -2033,13 +2033,13 @@ cards:
                 parameter: variant
                 value: "VOC-22APR-04 (Omicron BA.5)"
 
-             - label: "V-22OCT-01 (Omicron BQ.1) %"
-              metric: newWeeklyPercentage
-              value: variants
-              type: numeric
-              filters:
-                parameter: variant
-                value: "V-22OCT-01 (Omicron BQ.1)"
+            - label: "V-22OCT-01 (Omicron BQ.1) %"
+            metric: newWeeklyPercentage
+            value: variants
+            type: numeric
+            filters:
+              parameter: variant
+              value: "V-22OCT-01 (Omicron BQ.1)"
 
             - label: "Other %"
               metric: newWeeklyPercentage
