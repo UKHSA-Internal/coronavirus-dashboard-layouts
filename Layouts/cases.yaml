@@ -1894,7 +1894,6 @@ cards:
           fields:
             - label: V-20DEC-01 (Alpha)
               << : *variantAlpha
-              tooltip: Percentage of people aged 75 to 79 who received a spring booster dose of COVID-19 vaccine
               type: line
               colour: 11
               rollingAverage: false
@@ -1903,7 +1902,6 @@ cards:
 
             - label: V-21APR-02 (Delta B.1.617.2)
               << : *variantDeltaB
-              tooltip: Percentage of people aged 80 to 84 who received a spring booster dose of COVID-19 vaccine
               type: line
               colour: 6
               rollingAverage: false
@@ -1912,7 +1910,6 @@ cards:
 
             - label: V-21OCT-01 (Delta AY 4.2)
               << : *variantDeltaAY
-              tooltip: Percentage of people aged 85 to 89 who received a spring booster dose of COVID-19 vaccine
               type: line
               colour: 7
               rollingAverage: false
@@ -1921,7 +1918,6 @@ cards:
 
             - label: VOC-21NOV-01 (Omicron BA.1)
               << : *variantOmicronBA1
-              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
               type: line
               colour: 0
               rollingAverage: false
@@ -1930,7 +1926,6 @@ cards:
 
             - label: VOC-22JAN-01 (Omicron BA.2)
               << : *variantOmicronBA2
-              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
               type: line
               colour: 1
               rollingAverage: false
@@ -1939,7 +1934,6 @@ cards:
 
             - label: VOC-22APR-03 (Omicron BA.4)
               << : *variantOmicronBA4
-              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
               type: line
               colour: 2
               rollingAverage: false
@@ -1948,7 +1942,6 @@ cards:
 
             - label: VOC-22APR-04 (Omicron BA.5)
               << : *variantOmicronBA5
-              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
               type: line
               colour: 3
               rollingAverage: false
@@ -1957,7 +1950,6 @@ cards:
 
             - label: Other
               << : *variantOther
-              tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
               type: line
               colour: 9
               rollingAverage: false
