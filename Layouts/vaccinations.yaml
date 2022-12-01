@@ -3273,6 +3273,7 @@ cards:
 
 ##############################################################################################################################
 
+
 # UK only
 
   - heading: Vaccination uptake, by report date
@@ -4740,7 +4741,7 @@ cards:
          areaType:
           - region
 
-    fullWidth: false
+    fullWidth: true
     abstract: >
       Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose. For English areas,
       the denominator is the number of people aged 12 and over on the National Immunisation Management Service (NIMS) database.
