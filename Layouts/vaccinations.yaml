@@ -5231,10 +5231,6 @@ cards:
     tabs:
       - heading: Chart
         tabType: percentageWaffle
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
 
         fields:
           - label: 1st dose (%)
@@ -5254,10 +5250,6 @@ cards:
 
       - heading: Data table
         tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
 
         fields:
           - label: Report date
