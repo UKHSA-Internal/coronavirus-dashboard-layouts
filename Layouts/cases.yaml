@@ -117,6 +117,12 @@ variantOmicronBA5: &variantOmicronBA5
     parameter: variant
     value: "VOC-22APR-04 (Omicron BA.5)"
 
+variantOmicronBA275: &variantOmicronBA275
+  << : *baseVariants
+  filters:
+    parameter: variant
+    value: "VOC-22JUL-01 (Omicron BA.2.75)"
+
 variantOmicronBQ1: &variantOmicronBQ1
   << : *baseVariants
   filters:
@@ -1901,7 +1907,7 @@ cards:
             - label: V-20DEC-01 (Alpha)
               << : *variantAlpha
               type: line
-              colour: 11
+              colour: 4
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -1950,6 +1956,14 @@ cards:
               << : *variantOmicronBA5
               type: line
               colour: 3
+              rollingAverage: false
+              metric: newWeeklyPercentage
+              fill: false
+
+            - label: VOC-22JUL-01 (Omicron BA.2.75)
+              << : *variantOmicronBA275
+              type: line
+              colour: 11
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -2032,6 +2046,14 @@ cards:
               filters:
                 parameter: variant
                 value: "VOC-22APR-04 (Omicron BA.5)"
+            
+            - label: "VOC-22JUL-01 (Omicron BA.2.75) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "VOC-22JUL-01 (Omicron BA.2.75)"
 
             - label: "V-22OCT-01 (Omicron BQ.1) %"
               metric: newWeeklyPercentage
@@ -2071,6 +2093,9 @@ cards:
 
               - label: V-22OCT-01 (Omicron BQ.1)
                 value: "V-22OCT-01 (Omicron BQ.1)"
+
+              - label: V-22JUL-01 (Omicron BA.2.75)
+                value: "V-22JUL-01 (Omicron BA.2.75)"
 
               - label: VOC-22APR-04 (Omicron BA.5)
                 value: "VOC-22APR-04 (Omicron BA.5)"
@@ -2155,6 +2180,14 @@ cards:
               filters:
                 parameter: variant
                 value: "VOC-22APR-04 (Omicron BA.5)"
+            
+            - label: "VOC-22JUL-01 (Omicron BA.2.75) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "VOC-22JUL-01 (Omicron BA.2.75)"
 
             - label: "V-22OCT-01 (Omicron BQ.1) %"
               metric: newWeeklyPercentage
