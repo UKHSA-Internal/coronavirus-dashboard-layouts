@@ -129,6 +129,12 @@ variantOmicronBQ1: &variantOmicronBQ1
     parameter: variant
     value: "V-22OCT-01 (Omicron BQ.1)"
 
+variantOmicronCH1: &variantOmicronCH1
+  << : *baseVariants
+  filters:
+    parameter: variant
+    value: "V-22DEC-01 (Omicron CH.1.1)"
+
 variantOther: &variantOther
   << : *baseVariants
   filters:
@@ -1963,7 +1969,7 @@ cards:
             - label: V-22JUL-01 (Omicron BA.2.75)
               << : *variantOmicronBA275
               type: line
-              colour: 11
+              colour: 8
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -1972,6 +1978,14 @@ cards:
               << : *variantOmicronBQ1
               type: line
               colour: 10
+              rollingAverage: false
+              metric: newWeeklyPercentage
+              fill: false
+
+            - label: V-22DEC-01 (Omicron CH.1.1)
+              << : *variantOmicronCH1
+              type: line
+              colour: 11
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -2062,6 +2076,14 @@ cards:
               filters:
                 parameter: variant
                 value: "V-22OCT-01 (Omicron BQ.1)"
+            
+            - label: "V-22DEC-01 (Omicron CH.1.1) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "V-22DEC-01 (Omicron CH.1.1)"
 
             - label: "Other %"
               metric: newWeeklyPercentage
@@ -2090,6 +2112,9 @@ cards:
               metrics:
               - label: Other
                 value: "Other"
+
+              - label: V-22DEC-01 (Omicron CH.1.1)
+                value: "V-22DEC-01 (Omicron CH.1.1)"
 
               - label: V-22OCT-01 (Omicron BQ.1)
                 value: "V-22OCT-01 (Omicron BQ.1)"
@@ -2196,6 +2221,14 @@ cards:
               filters:
                 parameter: variant
                 value: "V-22OCT-01 (Omicron BQ.1)"
+           
+            - label: "V-22DEC-01 (Omicron CH.1.1) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "V-22DEC-01 (Omicron CH.1.1)"
 
             - label: "Other %"
               metric: newWeeklyPercentage
