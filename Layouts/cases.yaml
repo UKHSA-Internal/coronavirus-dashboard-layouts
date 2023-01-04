@@ -1929,7 +1929,7 @@ cards:
             - label: V-21OCT-01 (Delta AY 4.2)
               << : *variantDeltaAY
               type: line
-              colour: 7
+              colour: 8
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -1969,7 +1969,7 @@ cards:
             - label: V-22JUL-01 (Omicron BA.2.75)
               << : *variantOmicronBA275
               type: line
-              colour: 8
+              colour: 7
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
