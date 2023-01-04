@@ -1921,7 +1921,7 @@ cards:
             - label: V-21APR-02 (Delta B.1.617.2)
               << : *variantDeltaB
               type: line
-              colour: 10
+              colour: 6
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -1977,7 +1977,7 @@ cards:
             - label: V-22OCT-01 (Omicron BQ.1)
               << : *variantOmicronBQ1
               type: line
-              colour: 6
+              colour: 10
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
