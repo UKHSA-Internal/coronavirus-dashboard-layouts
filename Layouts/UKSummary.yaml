@@ -14,7 +14,17 @@
 #9 '#FFDD00',  // Yellow
 #10 '#d4351c',  // Red
 #11 '#009f56',  // green
-
+#12 '#003B5C',  // Midnight Pantone 302
+#13 '#582C83',  // Plum Pantone 268
+#14 '#1D57A5',  // Moonlight Pantone 2133
+#15 '#8A1B61',  // Wine Pantone 7649
+#16 '#E40046',  // Cherry Pantone 192
+#17 '#00AB8E',  // DHSC Green Panntone 3268
+#18 '#00A5DF',  // Ocean Pantone 2202
+#19 '#84BD00',  // Grass Pantone 376
+#20 '#FF7F32',  // Tangerine Pantone 1575
+#21 '#FFB81C',  // Sunny Pantone 1235
+#22 '#D5CB9F'  // Sand Pantone 4545
 
 # demographic (heatmap) chart - deaths & cases
 # "#e0e543",  // Pear

@@ -1913,7 +1913,7 @@ cards:
             - label: V-20DEC-01 (Alpha)
               << : *variantAlpha
               type: line
-              colour: 4
+              colour: 22
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -1921,7 +1921,7 @@ cards:
             - label: V-21APR-02 (Delta B.1.617.2)
               << : *variantDeltaB
               type: line
-              colour: 6
+              colour: 7
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -1929,7 +1929,7 @@ cards:
             - label: V-21OCT-01 (Delta AY 4.2)
               << : *variantDeltaAY
               type: line
-              colour: 8
+              colour: 6
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -1953,7 +1953,7 @@ cards:
             - label: VOC-22APR-03 (Omicron BA.4)
               << : *variantOmicronBA4
               type: line
-              colour: 2
+              colour: 3
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -1961,7 +1961,7 @@ cards:
             - label: VOC-22APR-04 (Omicron BA.5)
               << : *variantOmicronBA5
               type: line
-              colour: 3
+              colour: 4
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -1969,7 +1969,7 @@ cards:
             - label: V-22JUL-01 (Omicron BA.2.75)
               << : *variantOmicronBA275
               type: line
-              colour: 7
+              colour: 14
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -1977,7 +1977,7 @@ cards:
             - label: V-22OCT-01 (Omicron BQ.1)
               << : *variantOmicronBQ1
               type: line
-              colour: 10
+              colour: 6
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -1993,7 +1993,7 @@ cards:
             - label: Other
               << : *variantOther
               type: line
-              colour: 9
+              colour: 13
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
