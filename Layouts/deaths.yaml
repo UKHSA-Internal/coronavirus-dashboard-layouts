@@ -3,11 +3,11 @@ headlineNumbers:
   - caption: Deaths with COVID-19 on the death certificate
     valueItems:
       - label: Weekly
-        value: newWeeklyNsoDeathsByRegDate
+        value: newDailyNsoDeathsByDeathDateRollingSum
         tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered during the week ending {date}
 
       - label: Total
-        value: cumWeeklyNsoDeathsByRegDate
+        value: cumDailyNsoDeathsByDeathDate
         tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
 
   - caption: Change from previous 7 days
