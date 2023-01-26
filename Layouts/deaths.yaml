@@ -1,28 +1,5 @@
 headlineNumbers:
 
-  - caption: Deaths within 28 days of positive test
-    valueItems:
-
-
-      - label: Total
-        value: cumDeaths28DaysByPublishDate
-        tooltip: Total number of deaths within 28 days of being identified as a COVID-19 case by a positive test, reported up to {date}
-
-      - label: Latest 7 days
-        value: newDeaths28DaysByDeathDateRollingSum
-        tooltip: Number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date}
-
-  - caption: Change from previous 7 days
-    valueItems:
-
-      - label: Number
-        value: newDeaths28DaysByDeathDateChange
-        tooltip: Change in number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date} compared with the previous 7 day period.
-
-      - label: Percentage
-        value: newDeaths28DaysByDeathDateChangePercentage
-        tooltip: Percentage change in number of deaths within 28 days of being identified as a COVID-19 case by a positive test, that occurred in the 7 days up to {date} compared with the previous 7 day period.
-
   - caption: Deaths with COVID-19 on the death certificate
     valueItems:
       - label: Weekly
@@ -32,6 +9,18 @@ headlineNumbers:
       - label: Total
         value: cumWeeklyNsoDeathsByRegDate
         tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
+
+  - caption: Change from previous 7 days
+    valueItems:
+
+      - label: Number
+        value: newDailyNsoDeathsByDeathDateChange
+        tooltip: Change in number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered in the 7 days up to {date} compared with the previous 7 day period.
+
+      - label: Percentage
+        value: newDailyNsoDeathsByDeathDateChangePercentage
+        tooltip: Percentage change in number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered in the 7 days up to {date} compared with the previous 7 day period.
+
 
 baseDeaths28DaysByDeathDateDemographics: &baseDeaths28DaysByDeathDateDemographics
   value: newDeaths28DaysByDeathDateAgeDemographics
@@ -56,6 +45,58 @@ Deaths28DaysByDeathDateDemographics60+: &newDeaths28DaysByDeathDateAgeDemographi
 cards:
 
 ##############################################################################################################################
+  - heading: Daily deaths with COVID-19 on the death certificate by date of death
+    cardType: chart
+    # locationAware:
+    #   excluded:
+    #     areaType:
+    #       - overview
+
+    fullWidth: true
+    abstract: >
+      Daily numbers of deaths of people whose death certificate mentioned COVID-19 as one of the causes, and 7-day rolling average. 
+      There is a lag in reporting of at least 11 days because the data are based on death registrations. Data are shown by date of death.  
+
+    download:
+      - newDailyNsoDeathsByDeathDate
+      - cumDailyNsoDeathsByDeathDate
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Number of deaths
+            value: newDailyNsoDeathsByDeathDate
+            tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+            type: bar
+            colour: 0
+            rollingAverage: false
+            highlight:
+                from: -11
+                to: 0
+                colour: 6
+                label: "Most recent 11 days (incomplete)"
+
+          - label: (7-day average)
+            value: newDailyNsoDeathsByDeathDate
+            tooltip: 7 day rolling average of the daily number of deaths where COVID-19 is mentioned as a cause on the death certificate
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage:
+              window: 7
+              clipEnd: 11 #no of days to exclude for incomplete data
+
+      # - heading: Cumulative
+      #   tabType: chart
+      #   fields:
+      #     - label: Number of deaths
+      #       value: cumDailyNsoDeathsByDeathDate
+      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+      #       type: bar
+      #       colour: 0
+      #       rollingAverage: false
 
 
 
@@ -426,59 +467,7 @@ cards:
 
 # not shown for UK
 
-  - heading: Daily deaths with COVID-19 on the death certificate by date of death
-    cardType: chart
-    # locationAware:
-    #   excluded:
-    #     areaType:
-    #       - overview
-
-    fullWidth: true
-    abstract: >
-      Daily numbers of deaths of people whose death certificate mentioned COVID-19 as one of the causes, and 7-day rolling average. 
-      There is a lag in reporting of at least 11 days because the data are based on death registrations. Data are shown by date of death.  
-
-    download:
-      - newDailyNsoDeathsByDeathDate
-      - cumDailyNsoDeathsByDeathDate
-
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Number of deaths
-            value: newDailyNsoDeathsByDeathDate
-            tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-            type: bar
-            colour: 0
-            rollingAverage: false
-            highlight:
-                from: -11
-                to: 0
-                colour: 6
-                label: "Most recent 11 days (incomplete)"
-
-          - label: (7-day average)
-            value: newDailyNsoDeathsByDeathDate
-            tooltip: 7 day rolling average of the daily number of deaths where COVID-19 is mentioned as a cause on the death certificate
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 11 #no of days to exclude for incomplete data
-
-      # - heading: Cumulative
-      #   tabType: chart
-      #   fields:
-      #     - label: Number of deaths
-      #       value: cumDailyNsoDeathsByDeathDate
-      #       tooltip: Cumulative total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-      #       type: bar
-      #       colour: 0
-      #       rollingAverage: false
-
+  
       - heading: Data table
         tabType: table
         fields:
