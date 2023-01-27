@@ -88,6 +88,31 @@ cards:
               window: 7
               clipEnd: 11 #no of days to exclude for incomplete data
 
+        # not shown for UK
+
+  
+      - heading: Data table
+        tabType: table
+        fields:
+          - label: Date
+            value: date
+            type: date
+            tooltip: Date
+
+          - label: Daily deaths
+            value: newDailyNsoDeathsByDeathDate
+            type: numeric
+            tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+          - label: Total deaths
+            value: cumDailyNsoDeathsByDeathDate
+            type: numeric
+            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
+
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/deaths/cardNsoDailyDeathsTimeSeries.md
+        
       # - heading: Cumulative
       #   tabType: chart
       #   fields:
@@ -465,30 +490,7 @@ cards:
 
 
 
-# not shown for UK
 
-  
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Date
-            value: date
-            type: date
-            tooltip: Date
-
-          - label: Daily deaths
-            value: newDailyNsoDeathsByDeathDate
-            type: numeric
-            tooltip: Daily number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-
-          - label: Total deaths
-            value: cumDailyNsoDeathsByDeathDate
-            type: numeric
-            tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate by date of death
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardNsoDailyDeathsTimeSeries.md
 
 ##############################################################################################################################
 
