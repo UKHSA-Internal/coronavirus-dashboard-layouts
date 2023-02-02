@@ -8,7 +8,7 @@ headlineNumbers:
 
       - label: Total
         value: cumDailyNsoDeathsByDeathDate
-        tooltip: Total number of deaths with COVID-19 is on the death certificate,  up to {date}
+        tooltip: Total number of deaths with COVID-19 on the death certificate,  up to {date}
 
   - caption: Change from previous 7 days
     valueItems:
