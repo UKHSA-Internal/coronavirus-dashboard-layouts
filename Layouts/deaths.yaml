@@ -55,7 +55,9 @@ cards:
     fullWidth: true
     abstract: >
       Daily numbers of deaths of people whose death certificate mentioned COVID-19 as one of the causes, and 7-day rolling average. 
-      There is a lag in reporting of at least 11 days because the data are based on death registrations. Data are shown by date of death.  
+      Because of the time it takes for deaths to be registered, there is a lag in reporting of at least 11 days, 
+      and data are not shown for the 14 days before the most recent reported date as they are considered incomplete. 
+      Data are shown by date of death.
 
     download:
       - newDailyNsoDeathsByDeathDate
