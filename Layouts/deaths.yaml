@@ -72,11 +72,11 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
-            highlight:
-                from: -11
-                to: 0
-                colour: 6
-                label: "Most recent 11 days (incomplete)"
+            # highlight:
+            #     from: -11
+            #     to: 0
+            #     colour: 6
+            #     label: "Most recent 11 days (incomplete)"
 
           - label: (7-day average)
             value: newDailyNsoDeathsByDeathDate
