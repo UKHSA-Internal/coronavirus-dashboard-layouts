@@ -4,22 +4,22 @@ headlineNumbers:
     valueItems:
       - label: Weekly
         value: newDailyNsoDeathsByDeathDateRollingSum
-        tooltip: Weekly number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered during the week ending {date}
+        tooltip: Weekly number of deaths with COVID-19 on the death certificate, during the week ending {date}
 
       - label: Total
         value: cumDailyNsoDeathsByDeathDate
-        tooltip: Total number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered up to {date}
+        tooltip: Total number of deaths with COVID-19 is on the death certificate,  up to {date}
 
   - caption: Change from previous 7 days
     valueItems:
 
       - label: Number
         value: newDailyNsoDeathsByDeathDateChange
-        tooltip: Change in number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered in the 7 days up to {date} compared with the previous 7 day period.
+        tooltip: Change in number of deaths with COVID-19 on the death certificate, in the 7 days up to {date} compared with the previous 7 day period.
 
       - label: Percentage
         value: newDailyNsoDeathsByDeathDateChangePercentage
-        tooltip: Percentage change in number of deaths where COVID-19 is mentioned as a cause on the death certificate, registered in the 7 days up to {date} compared with the previous 7 day period.
+        tooltip: Percentage change in number of deaths with COVID-19 on the death certificate, in the 7 days up to {date} compared with the previous 7 day period.
 
 
 baseDeaths28DaysByDeathDateDemographics: &baseDeaths28DaysByDeathDateDemographics
