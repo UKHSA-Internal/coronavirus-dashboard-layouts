@@ -49,9 +49,6 @@ cards:
     # Not shown for UK
 
     locationAware:
-      excluded: 
-        areaType:
-          - overview
       included:
         areaName:
           - England
