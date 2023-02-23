@@ -139,7 +139,7 @@ cards:
       Scotland and Northern Ireland, and Wales includes suspected COVID-19 patients while the other nations only include confirmed cases.
       
     download:
-      - newAdmissionsRollingSum
+      - newAdmissions
       - cumAdmissions
 
     tabs: 
@@ -148,7 +148,7 @@ cards:
         barType: normal
         fields:
           - label: Admissions
-            value: newAdmissionsRollingSum
+            value: newAdmissions
             tooltip: Weekly  number of COVID-19 patients admitted to hospital
             type: bar
             colour: 0
@@ -173,7 +173,7 @@ cards:
             tooltip: Date reported by healthcare providers
 
           - label: Weekly admissions
-            value: newAdmissionsRollingSum
+            value: newAdmissions
             type: numeric
             tooltip: Weekly number of COVID-19 patients admitted to hospital
 
