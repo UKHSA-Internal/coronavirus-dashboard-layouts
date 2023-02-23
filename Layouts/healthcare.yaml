@@ -122,7 +122,7 @@ cards:
 ##############################################################################################################################
   - heading: Patients admitted to hospital (weekly)
     cardType: chart
-
+    experimental: true
     # example of locationAware for including or excluding specific area types or area names
     # syntax set out in full below, but don't need to include empty lists
 
