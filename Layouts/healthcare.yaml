@@ -52,6 +52,9 @@ cards:
       excluded: 
         areaType:
           - overview
+          - nation
+        areaName:
+          - Wales
       
     fullWidth: true
     abstract: >
