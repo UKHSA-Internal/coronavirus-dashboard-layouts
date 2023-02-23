@@ -52,9 +52,13 @@ cards:
       excluded: 
         areaType:
           - overview
+      included:
+        areaType:
           - nation
         areaName:
-          - Wales
+          - England
+          - Scotland
+          - Northern Ireland
       
     fullWidth: true
     abstract: >
