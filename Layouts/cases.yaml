@@ -135,6 +135,12 @@ variantOmicronCH1: &variantOmicronCH1
     parameter: variant
     value: "V-22DEC-01 (Omicron CH.1.1)"
 
+variantOmicronXBB15: &variantOmicronXBB15
+  << : *baseVariants
+  filters:
+    parameter: variant
+    value: "V-23JAN-01 (Omicron XBB.1.5)"
+
 variantOther: &variantOther
   << : *baseVariants
   filters:
@@ -1990,6 +1996,14 @@ cards:
               metric: newWeeklyPercentage
               fill: false
 
+            - label: V-23JAN-01 (Omicron XBB.1.5)
+              << : *variantOmicronXBB15
+              type: line
+              colour: 20
+              rollingAverage: false
+              metric: newWeeklyPercentage
+              fill: false
+
             - label: Other
               << : *variantOther
               type: line
@@ -2085,6 +2099,14 @@ cards:
                 parameter: variant
                 value: "V-22DEC-01 (Omicron CH.1.1)"
 
+            - label: "V-23JAN-01 (Omicron XBB.1.5) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "V-23JAN-01 (Omicron XBB.1.5)"
+
             - label: "Other %"
               metric: newWeeklyPercentage
               value: variants
@@ -2115,6 +2137,9 @@ cards:
 
               - label: V-22DEC-01 (Omicron CH.1.1)
                 value: "V-22DEC-01 (Omicron CH.1.1)"
+
+              - label: V-23JAN-01 (Omicron XBB.1.5)
+                value: "V-23JAN-01 (Omicron XBB.1.5)"
 
               - label: V-22OCT-01 (Omicron BQ.1)
                 value: "V-22OCT-01 (Omicron BQ.1)"
@@ -2229,6 +2254,14 @@ cards:
               filters:
                 parameter: variant
                 value: "V-22DEC-01 (Omicron CH.1.1)"
+
+            - label: "V-23JAN-01 (Omicron XBB.1.5) %"
+              metric: newWeeklyPercentage
+              value: variants
+              type: numeric
+              filters:
+                parameter: variant
+                value: "V-23JAN-01 (Omicron XBB.1.5)"
 
             - label: "Other %"
               metric: newWeeklyPercentage
