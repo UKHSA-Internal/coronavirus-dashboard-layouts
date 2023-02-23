@@ -57,9 +57,9 @@ cards:
       
     fullWidth: true
     abstract: >
-      Daily and total numbers of COVID-19 patients admitted to hospital. 
-      Data are not updated every day by all 4 nations (England, Northern Ireland, Wales and Scotland). 
-      Figures are not comparable as Wales includes suspected COVID-19 patients while the other nations include only confirmed cases.
+      Patients admitted to hospital.  Daily and total numbers of COVID-19 patients admitted to hospital.  Daily numbers are presented for England, Northern Ireland and Scotland
+       but may not be updated every day for all 3 nations, and numbers for Wales are updated weekly.  
+       Figures are not comparable as Wales includes suspected COVID-19 patients while the other nations include only confirmed cases.
       
     download:
       - newAdmissions
@@ -120,7 +120,73 @@ cards:
         filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalWithRollingAverages.md
 
 ##############################################################################################################################
+- heading: Patients admitted to hospital (weekly)
+    cardType: chart
 
+    # example of locationAware for including or excluding specific area types or area names
+    # syntax set out in full below, but don't need to include empty lists
+
+    # Not shown for UK
+
+    locationAware:
+      included:
+        areaName:
+          - Wales
+      
+    fullWidth: true
+    abstract: >
+      patients admitted to hospital.   Figures are not comparable as data is provided weekly for Wales and daily for England,
+      Scotland and Northern Ireland, and Wales includes suspected COVID-19 patients while the other nations only include confirmed cases.
+      
+    download:
+      - newAdmissionsRollingSum
+      - cumAdmissions
+
+    tabs: 
+      - heading: Weekly
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Admissions
+            value: newAdmissionsRollingSum
+            tooltip: Weekly  number of COVID-19 patients admitted to hospital
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+      - heading: Total
+        tabType: chart
+        fields:
+          - label: Admissions
+            value: cumAdmissions
+            tooltip: Total number of COVID-19 patients admitted to hospital
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+      - heading: Data table
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by healthcare providers
+
+          - label: Weekly admissions
+            value: newAdmissionsRollingSum
+            type: numeric
+            tooltip: Weekly number of COVID-19 patients admitted to hospital
+
+          - label: Total admissions
+            value: cumAdmissions
+            type: numeric
+            tooltip: Total number of COVID-19 patients admitted to hospital
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/healthcare/cardPatientsAdmittedToHospitalWithRollingAverages.md
+
+##############################################################################################################################
 # Only shown for UK
 
   - heading: Patients admitted to hospital
