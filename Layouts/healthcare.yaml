@@ -53,12 +53,13 @@ cards:
         areaType:
           - overview
       included:
-        areaType:
-          - nation
         areaName:
           - England
           - Scotland
           - Northern Ireland
+        areaType:
+          - nation
+        
       
     fullWidth: true
     abstract: >
