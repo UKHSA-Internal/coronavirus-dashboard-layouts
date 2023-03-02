@@ -477,7 +477,7 @@ cards:
 
 ##############################################################################################################################
 
-# Not shown for UK
+# Not shown for UK or wales
 
   - heading: Patients in hospital
     cardType: chart
@@ -544,7 +544,9 @@ cards:
 # Not shown for UK
 
   - heading: Patients in hospital (Weekly)
+    experimental: true
     cardType: chart
+    
     locationAware:
       included:
         areaName:
@@ -783,6 +785,7 @@ cards:
   - heading: Patients in mechanical ventilation beds (Weekly)
     cardType: chart
     fullWidth: true
+    
     locationAware:
       included:
         areaName:
@@ -822,8 +825,7 @@ cards:
             type: numeric
             tooltip: Weekly number of COVID-19 patients in mechanical ventilation beds
 
-          
-
+  
       - heading: About 
         tabType: metadata
         filename: cardMetadata/healthcare/cardPatientsInMVBeds.md
