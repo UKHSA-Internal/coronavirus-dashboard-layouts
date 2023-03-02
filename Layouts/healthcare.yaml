@@ -50,6 +50,9 @@ cards:
 
     locationAware:
       included:
+        areaType:
+          - nhsRegion
+          - nhsTrust
         areaName:
           - England
           - Scotland
