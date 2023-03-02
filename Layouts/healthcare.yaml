@@ -784,6 +784,7 @@ cards:
 
   - heading: Patients in mechanical ventilation beds (Weekly)
     cardType: chart
+    experimental: true
     fullWidth: true
     
     locationAware:
