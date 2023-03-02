@@ -129,7 +129,6 @@ cards:
     # example of locationAware for including or excluding specific area types or area names
     # syntax set out in full below, but don't need to include empty lists
 
-    # Not shown for UK
 
     locationAware:
       included:
@@ -483,9 +482,14 @@ cards:
   - heading: Patients in hospital
     cardType: chart
     locationAware:
-      excluded:
+      included:
         areaType:
-          - overview
+          - nhsRegion
+          - nhsTrust
+        areaName:
+          - England
+          - Scotland
+          - Northern Ireland
       
     fullWidth: true
     abstract: >
@@ -536,6 +540,56 @@ cards:
         filename: cardMetadata/healthcare/cardPatientsInHospital.md
 
 ##############################################################################################################################
+
+# Not shown for UK
+
+  - heading: Patients in hospital (Weekly)
+    cardType: chart
+    locationAware:
+      included:
+        areaName:
+          - Wales
+      
+    fullWidth: true
+    abstract: >
+      Weekly count of confirmed COVID-19 patients in hospital at 8am.
+     
+    download:
+      - hospitalCases
+
+    tabs: 
+
+      - heading: Weekly
+        tabType: chart
+        barType: normal
+        fields:
+          - label: COVID-19 patients
+            value: hospitalCases
+            tooltip: Number of COVID-19 patients currently in hospital
+            type: bar
+            colour: 0
+            rollingAverage: false
+
+
+      - heading: Data table
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by healthcare providers
+
+          - label: COVID-19 patients
+            value: hospitalCases
+            type: numeric
+            tooltip: Number of COVID-19 patients currently in hospital
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/healthcare/cardPatientsInHospital.md
+
+##############################################################################################################################
+
 
 # Only shown for UK
 
@@ -665,10 +719,14 @@ cards:
     cardType: chart
     fullWidth: true
     locationAware:
-      excluded:
+      included:
         areaType:
-          - overview
-      
+          - nhsRegion
+          - nhsTrust
+        areaName:
+          - England
+          - Scotland
+          - Northern Ireland
     abstract: >
       Daily count of COVID-19 patients in mechanical ventilation beds, and 7-day rolling average. 
       Data are not updated every day.
@@ -713,6 +771,56 @@ cards:
             value: covidOccupiedMVBeds
             type: numeric
             tooltip: Daily number of COVID-19 patients in mechanical ventilation beds
+
+          
+
+      - heading: About 
+        tabType: metadata
+        filename: cardMetadata/healthcare/cardPatientsInMVBeds.md
+
+##############################################################################################################################
+
+  - heading: Patients in mechanical ventilation beds (Weekly)
+    cardType: chart
+    fullWidth: true
+    locationAware:
+      included:
+        areaName:
+          - Wales
+      
+    abstract: >
+      Weekly count of COVID-19 patients in mechanical ventilation beds. 
+      Data are not updated every day.
+
+    download:
+      - covidOccupiedMVBeds
+      
+
+    tabs: 
+      - heading: Weekly
+        tabType: chart
+        barType: normal
+        fields:
+          - label: COVID-19 patients
+            value: covidOccupiedMVBeds
+            tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
+            type: bar
+            colour: 0
+            rollingAverage: false
+          
+
+      - heading: Data table
+        tabType: table
+        fields:
+          - label: Date reported
+            value: date
+            type: date
+            tooltip: Date reported by healthcare providers
+
+          - label: COVID-19 patients
+            value: covidOccupiedMVBeds
+            type: numeric
+            tooltip: Weekly number of COVID-19 patients in mechanical ventilation beds
 
           
 
