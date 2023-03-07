@@ -86,6 +86,8 @@ cards:
             type: line
             colour: 3
             fill: false
+            rollingAverage:
+              window: 7
 
         # not shown for UK
 
