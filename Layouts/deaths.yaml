@@ -86,9 +86,6 @@ cards:
             type: line
             colour: 3
             fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 11 #no of days to exclude for incomplete data
 
         # not shown for UK
 
