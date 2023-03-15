@@ -125,7 +125,6 @@ cards:
 ##############################################################################################################################
   - heading: Patients admitted to hospital (weekly)
     cardType: chart
-    experimental: true
     # example of locationAware for including or excluding specific area types or area names
     # syntax set out in full below, but don't need to include empty lists
 
@@ -141,7 +140,7 @@ cards:
       Scotland and Northern Ireland, and Wales includes suspected COVID-19 patients while the other nations only include confirmed cases.
       
     download:
-      - newAdmissions
+      - newAdmissionsWeekly
       - cumAdmissions
 
     tabs: 
@@ -150,7 +149,7 @@ cards:
         barType: normal
         fields:
           - label: Admissions
-            value: newAdmissions
+            value: newAdmissionsWeekly
             tooltip: Weekly  number of COVID-19 patients admitted to hospital
             type: bar
             colour: 0
@@ -175,7 +174,7 @@ cards:
             tooltip: Date reported by healthcare providers
 
           - label: Weekly admissions
-            value: newAdmissions
+            value: newAdmissionsWeekly
             type: numeric
             tooltip: Weekly number of COVID-19 patients admitted to hospital
 
@@ -544,7 +543,6 @@ cards:
 # Not shown for UK
 
   - heading: Patients in hospital (Weekly)
-    experimental: true
     cardType: chart
     
     locationAware:
@@ -557,7 +555,7 @@ cards:
       Weekly count of confirmed COVID-19 patients in hospital at 8am.
      
     download:
-      - hospitalCases
+      - hospitalCasesWeekly
 
     tabs: 
 
@@ -566,7 +564,7 @@ cards:
         barType: normal
         fields:
           - label: COVID-19 patients
-            value: hospitalCases
+            value: hospitalCasesWeekly
             tooltip: Number of COVID-19 patients currently in hospital
             type: bar
             colour: 0
@@ -582,7 +580,7 @@ cards:
             tooltip: Date reported by healthcare providers
 
           - label: COVID-19 patients
-            value: hospitalCases
+            value: hospitalCasesWeekly
             type: numeric
             tooltip: Number of COVID-19 patients currently in hospital
 
@@ -784,7 +782,6 @@ cards:
 
   - heading: Patients in mechanical ventilation beds (Weekly)
     cardType: chart
-    experimental: true
     fullWidth: true
     
     locationAware:
@@ -797,7 +794,7 @@ cards:
       Data are not updated every day.
 
     download:
-      - covidOccupiedMVBeds
+      - covidOccupiedMVBedsWeekly
       
 
     tabs: 
@@ -806,7 +803,7 @@ cards:
         barType: normal
         fields:
           - label: COVID-19 patients
-            value: covidOccupiedMVBeds
+            value: covidOccupiedMVBedsWeekly
             tooltip: Number of COVID-19 patients currently in mechanical ventilation beds
             type: bar
             colour: 0
@@ -822,7 +819,7 @@ cards:
             tooltip: Date reported by healthcare providers
 
           - label: COVID-19 patients
-            value: covidOccupiedMVBeds
+            value: covidOccupiedMVBedsWeekly
             type: numeric
             tooltip: Weekly number of COVID-19 patients in mechanical ventilation beds
 
