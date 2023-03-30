@@ -55,8 +55,6 @@ cards:
           - nhsTrust
         areaName:
           - England
-          - Scotland
-          - Northern Ireland
       
     fullWidth: true
     abstract: >
@@ -133,6 +131,8 @@ cards:
       included:
         areaName:
           - Wales
+          - Scotland
+          - Northern Ireland
       
     fullWidth: true
     abstract: >
@@ -487,8 +487,6 @@ cards:
           - nhsTrust
         areaName:
           - England
-          - Scotland
-          - Northern Ireland
       
     fullWidth: true
     abstract: >
@@ -549,6 +547,8 @@ cards:
       included:
         areaName:
           - Wales
+          - Scotland
+          - Northern Ireland
       
     fullWidth: true
     abstract: >
@@ -725,8 +725,6 @@ cards:
           - nhsTrust
         areaName:
           - England
-          - Scotland
-          - Northern Ireland
     abstract: >
       Daily count of COVID-19 patients in mechanical ventilation beds, and 7-day rolling average. 
       Data are not updated every day.
@@ -788,6 +786,8 @@ cards:
       included:
         areaName:
           - Wales
+          - Scotland
+          - Northern Ireland
       
     abstract: >
       Weekly count of COVID-19 patients in mechanical ventilation beds. 
