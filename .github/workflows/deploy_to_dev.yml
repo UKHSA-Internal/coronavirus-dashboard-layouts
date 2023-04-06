@@ -10,8 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: muinmomin/webhook-action@v1.0.0
-        with:
-          url: ${{ secrets.DEVPUBLISHPROFILE }}
-          data: >
-            {"command": "publish"}
+      - uses: distributhor/workflow-webhook@v2
+        env:
+          webhook_url: ${{ secrets.DEVPUBLISHPROFILE }}
+          data: '{"command": "publish"}'
