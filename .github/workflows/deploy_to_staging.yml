@@ -13,8 +13,8 @@ jobs:
     - name: "Example output creation"
       id: "my_step"
       run: |
-        echo "${{ secrets.STAGINGPUBLISHPROFILE }}"
-
+        profile= "${{ secrets.STAGINGPUBLISHPROFILE }}"
+        echo "Output [$profile]"
     - name: "Deploy"
       uses: UKHSA-Internal/webhook-action@v1.0.0
       with:
