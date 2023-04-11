@@ -10,8 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: muinmomin/webhook-action@v1.0.0
-        with:
-          url: ${{ secrets.STAGINGPUBLISHPROFILE }}
-          data: >
-            {"command": "publish"}
+    - name: "Example output creation"
+      id: "my_step"
+      run: |
+        echo "${{ secrets.STAGINGPUBLISHPROFILE }}"
+
+    - name: "Deploy"
+      uses: UKHSA-Internal/webhook-action@v1.0.0
+      with:
+        url: ${{ secrets.STAGINGPUBLISHPROFILE }}
+        data: >
+          {"command": "publish"}
