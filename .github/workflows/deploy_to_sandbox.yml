@@ -1,0 +1,19 @@
+name: Deploy to dev
+
+on:
+  push:
+    branches: 
+      - sandbox
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: UKHSA-Internal/webhook-action@v1.0.0
+        with:
+          url: ${{ secrets.SANDBOXPUBLISHPROFILE }}
+          data: >
+            {"command": "publish"}
+
+
