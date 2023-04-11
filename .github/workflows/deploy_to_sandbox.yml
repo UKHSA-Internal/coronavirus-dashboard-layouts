@@ -3,7 +3,7 @@ name: Deploy to Sandbox....
 on:
   push:
     branches: 
-      - development
+      - sandbox
 
 jobs:
   build:
