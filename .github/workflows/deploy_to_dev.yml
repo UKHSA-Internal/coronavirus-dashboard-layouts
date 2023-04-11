@@ -10,7 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: distributhor/workflow-webhook@v2
-        env:
-          webhook_url: ${{ secrets.DEVPUBLISHPROFILE }}
-          data: '{"command": "publish"}'
+      - uses: UKHSA-Internal/webhook-action-private@v1.0
+        with:
+          url: ${{ secrets.DEVPUBLISHPROFILE }}
+          data: >
+            {"command": "publish"}
+
+
