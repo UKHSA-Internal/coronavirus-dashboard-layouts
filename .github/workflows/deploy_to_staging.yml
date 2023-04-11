@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: muinmomin/webhook-action@v1.0.0
+      - uses: UKHSA-Internal/webhook-action@v1.0.0
         with:
           url: ${{ secrets.STAGINGPUBLISHPROFILE }}
           data: >
