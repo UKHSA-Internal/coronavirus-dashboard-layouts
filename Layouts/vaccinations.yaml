@@ -4990,11 +4990,6 @@ cards:
 
   - heading: Vaccination uptake, by vaccination date age demographics
     cardType: chart
-    locationAware:
-      excluded:
-        areaName:
-          - Wales
-
     experimental: false
 
     fullWidth: true
