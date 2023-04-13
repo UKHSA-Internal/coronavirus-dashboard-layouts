@@ -15,3 +15,5 @@ jobs:
           url: ${{ secrets.DEVPUBLISHPROFILE }}
           data: >
             {"command": "publish"}
+
+
