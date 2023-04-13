@@ -4991,9 +4991,10 @@ cards:
   - heading: Vaccination uptake, by vaccination date age demographics
     cardType: chart
     locationAware:
-      excluded:
+      included:
         areaName:
-          - Wales
+          - England
+          - Scotland
 
     experimental: false
 
