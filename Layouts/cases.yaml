@@ -18,7 +18,7 @@ headlineNumbers:
   #       tooltip: Total number of possible reinfections with specimen taken up to {date}
 
   ################################################################################################
-  #      TESTING TESTING TESTING
+  #      TESTING TESTING TESTING testing
 
   - caption: Cases
     valueItems:
