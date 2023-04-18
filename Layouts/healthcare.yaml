@@ -7,7 +7,7 @@ headlineNumbers:
         tooltip: Total number of COVID-19 patients admitted to hospital, reported up to {date}
 
       - label: Latest 7 days
-        value: newAdmissionsRollingSum
+        value: newAdmissionsWeekly
         tooltip: Number of COVID-19 patients admitted to hospital, in the 7 days up to {date}
     
   - caption: Change from previous 7 days
@@ -27,13 +27,13 @@ headlineNumbers:
   - caption: Patients in hospital
     valueItems:
       - label: Latest available
-        value: hospitalCases
+        value: hospitalCasesWeekly
         tooltip: Number of COVID-19 patients currently in hospital, reported on {date}
 
   - caption: Patients in ventilation beds
     valueItems:
       - label: Latest available
-        value: covidOccupiedMVBeds
+        value: covidOccupiedMVBedsWeekly
         tooltip: Number of COVID-19 patients currently in mechanical ventilation beds, reported on {date}
 
     
