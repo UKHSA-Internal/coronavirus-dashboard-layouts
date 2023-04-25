@@ -4248,11 +4248,9 @@ cards:
     abstract: >
       Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose.
       For English areas, the denominator is the number of people aged 12 and over on the National Immunisation Management
-      Service (NIMS) database. For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12
-      and over. This means comparisons between local areas in different nations should be made with caution. England local
-      area uptake is also not comparable to England national uptake by report date as that uses a different denominator – see
-      the About tab for more information. England and Scotland totals by vaccination date are shown for comparison purposes
-      calculated on the same basis as their constituent regions and local authorities.
+      Service (NIMS) database. England local area uptake is not comparable to England national uptake by report date as that uses a different denominator – see
+      the About tab for more information. The England total by vaccination date is shown for comparison purposes
+      calculated on the same basis as constituent regions and local authorities.
 
     download:
       - cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
