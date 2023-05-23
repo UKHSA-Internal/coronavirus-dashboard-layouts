@@ -50,7 +50,8 @@ cards:
     locationAware:
       included:
         areaType:
-          - overview
+          - nhsRegion
+          - nhsTrust
       
     fullWidth: true
     abstract: >
@@ -475,7 +476,8 @@ cards:
     locationAware:
       included:
         areaType:
-          - overview
+          - nhsRegion
+          - nhsTrust
       
     fullWidth: true
     abstract: >
@@ -708,7 +710,8 @@ cards:
     locationAware:
       included:
         areaType:
-          - overview
+          - nhsRegion
+          - nhsTrust
     abstract: >
       Daily count of COVID-19 patients in mechanical ventilation beds, and 7-day rolling average. 
       Data are not updated every day.
