@@ -46,20 +46,16 @@ cards:
     # example of locationAware for including or excluding specific area types or area names
     # syntax set out in full below, but don't need to include empty lists
 
-    # Not shown for UK
-
+    
     locationAware:
       included:
         areaType:
           - nhsRegion
           - nhsTrust
-        areaName:
-          - England
       
     fullWidth: true
     abstract: >
-      Patients admitted to hospital.  Daily and total numbers of COVID-19 patients admitted to hospital.  Daily numbers are presented for England, Northern Ireland and Scotland
-      but may not be updated every day for all 3 nations, and numbers for Wales are updated weekly.  
+      Patients admitted to hospital.  Daily and total numbers of COVID-19 patients admitted to hospital.
       Figures are not comparable as Wales includes suspected COVID-19 patients while the other nations include only confirmed cases.
       
     download:
@@ -129,15 +125,12 @@ cards:
 
     locationAware:
       included:
-        areaName:
-          - Wales
-          - Scotland
-          - Northern Ireland
+        areaType:
+          - nation
       
     fullWidth: true
     abstract: >
-      Patients admitted to hospital.   Figures are not comparable as data is provided weekly for Wales and daily for England,
-      Scotland and Northern Ireland, and Wales includes suspected COVID-19 patients while the other nations only include confirmed cases.
+      Patients admitted to hospital. Figures are not comparable as Wales data includes suspected COVID-19 patients while the other nations only include confirmed cases.
       
     download:
       - newAdmissionsWeekly
@@ -485,8 +478,6 @@ cards:
         areaType:
           - nhsRegion
           - nhsTrust
-        areaName:
-          - England
       
     fullWidth: true
     abstract: >
@@ -545,10 +536,8 @@ cards:
     
     locationAware:
       included:
-        areaName:
-          - Wales
-          - Scotland
-          - Northern Ireland
+        areaType:
+          - nation
       
     fullWidth: true
     abstract: >
@@ -723,8 +712,6 @@ cards:
         areaType:
           - nhsRegion
           - nhsTrust
-        areaName:
-          - England
     abstract: >
       Daily count of COVID-19 patients in mechanical ventilation beds, and 7-day rolling average. 
       Data are not updated every day.
@@ -784,10 +771,8 @@ cards:
     
     locationAware:
       included:
-        areaName:
-          - Wales
-          - Scotland
-          - Northern Ireland
+        areaType:
+          - nation
       
     abstract: >
       Weekly count of COVID-19 patients in mechanical ventilation beds. 
