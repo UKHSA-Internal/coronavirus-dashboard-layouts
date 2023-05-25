@@ -1,16 +1,12 @@
 headlineNumbers:
   - caption: People vaccinated
     valueItems:
-      - label: First dose total
-        value: cumPeopleVaccinatedFirstDoseByPublishDate
-        tooltip: Total number of people who have received the first dose of COVID-19 vaccine, reported up to {date}
-
-      - label: Second dose total
-        value: cumPeopleVaccinatedSecondDoseByPublishDate
+      - label: Spring 2023 booster total
+        value: cumPeopleVaccinatedSpring23ByVaccinationDate75plus
         tooltip: Total number of people who have received the second dose of COVID-19 vaccine, reported up to {date}
 
-      - label: Booster or third dose total
-        value: cumPeopleVaccinatedThirdInjectionByPublishDate
+      - label: Spring 2023 booster uptake (%)
+        value: cumVaccinationSpring23UptakeByVaccinationDatePercentage75plus
         tooltip: Total number of people who have received a booster or third dose of COVID-19 vaccine, reported up to {date}
 
   - caption: Vaccinations given
@@ -93,11 +89,1271 @@ vaccinationAgeDemographics90+: &vaccinationAgeDemographics90Plus
 ##############################################################################################################################
 
 cards:
+# daily and total spring booster vaccinations
 
+  - heading: People aged 75 and over who have received a 2023 spring booster vaccinations, by vaccination date
+    cardType: chart
+    locationAware:
+      included:
+        areaName:
+          - England
+          - Adur
+          - Allerdale
+          - Amber Valley
+          - Arun
+          - Ashfield
+          - Ashford
+          - Aylesbury Vale
+          - Babergh
+          - Barking and Dagenham
+          - Barnet
+          - Barnsley
+          - Barrow-in-Furness
+          - Basildon
+          - Basingstoke and Deane
+          - Bassetlaw
+          - Bath and North East Somerset
+          - Bedford
+          - Bexley
+          - Birmingham
+          - Blaby
+          - Blackburn with Darwen
+          - Blackpool
+          - Bolsover
+          - Bolton
+          - Boston
+          - Bournemouth, Christchurch and Poole
+          - Bracknell Forest
+          - Bradford
+          - Braintree
+          - Breckland
+          - Brent
+          - Brentwood
+          - Brighton and Hove
+          - Bristol, City of
+          - Broadland
+          - Bromley
+          - Bromsgrove
+          - Broxbourne
+          - Broxtowe
+          - Burnley
+          - Bury
+          - Calderdale
+          - Cambridge
+          - Camden
+          - Cannock Chase
+          - Canterbury
+          - Carlisle
+          - Castle Point
+          - Central Bedfordshire
+          - Charnwood
+          - Chelmsford
+          - Cheltenham
+          - Cherwell
+          - Cheshire East
+          - Cheshire West and Chester
+          - Chesterfield
+          - Chichester
+          - Chiltern
+          - Chorley
+          - Colchester
+          - Copeland
+          - Corby
+          - Cornwall and Isles of Scilly
+          - Cotswold
+          - County Durham
+          - Coventry
+          - Craven
+          - Crawley
+          - Croydon
+          - Dacorum
+          - Darlington
+          - Dartford
+          - Daventry
+          - Derby
+          - Derbyshire Dales
+          - Doncaster
+          - Dorset
+          - Dover
+          - Dudley
+          - Ealing
+          - East Cambridgeshire
+          - East Devon
+          - East Hampshire
+          - East Hertfordshire
+          - East Lindsey
+          - East Northamptonshire
+          - East Riding of Yorkshire
+          - East Staffordshire
+          - East Suffolk
+          - Eastbourne
+          - Eastleigh
+          - Eden
+          - Elmbridge
+          - Enfield
+          - Epping Forest
+          - Epsom and Ewell
+          - Erewash
+          - Exeter
+          - Fareham
+          - Fenland
+          - Folkestone and Hythe
+          - Forest of Dean
+          - Fylde
+          - Gateshead
+          - Gedling
+          - Gloucester
+          - Gosport
+          - Gravesham
+          - Great Yarmouth
+          - Greenwich
+          - Guildford
+          - Hackney and City of London
+          - Halton
+          - Hambleton
+          - Hammersmith and Fulham
+          - Harborough
+          - Haringey
+          - Harlow
+          - Harrogate
+          - Harrow
+          - Hart
+          - Hartlepool
+          - Hastings
+          - Havant
+          - Havering
+          - Herefordshire, County of
+          - Hertsmere
+          - High Peak
+          - Hillingdon
+          - Hinckley and Bosworth
+          - Horsham
+          - Hounslow
+          - Huntingdonshire
+          - Hyndburn
+          - Ipswich
+          - Isle of Wight
+          - Islington
+          - Kensington and Chelsea
+          - Kettering
+          - King's Lynn and West Norfolk
+          - Kingston upon Hull, City of
+          - Kingston upon Thames
+          - Kirklees
+          - Knowsley
+          - Lambeth
+          - Lancaster
+          - Leeds
+          - Leicester
+          - Lewes
+          - Lewisham
+          - Lichfield
+          - Lincoln
+          - Liverpool
+          - Luton
+          - Maidstone
+          - Maldon
+          - Malvern Hills
+          - Manchester
+          - Mansfield
+          - Medway
+          - Melton
+          - Mendip
+          - Merton
+          - Mid Devon
+          - Mid Suffolk
+          - Mid Sussex
+          - Middlesbrough
+          - Milton Keynes
+          - Mole Valley
+          - New Forest
+          - Newark and Sherwood
+          - Newcastle upon Tyne
+          - Newcastle-under-Lyme
+          - Newham
+          - North Devon
+          - North East Derbyshire
+          - North East Lincolnshire
+          - North Hertfordshire
+          - North Kesteven
+          - North Lincolnshire
+          - North Norfolk
+          - North Somerset
+          - North Tyneside
+          - North Warwickshire
+          - North West Leicestershire
+          - Northampton
+          - Northumberland
+          - Norwich
+          - Nottingham
+          - Nuneaton and Bedworth
+          - Oadby and Wigston
+          - Oldham
+          - Oxford
+          - Pendle
+          - Peterborough
+          - Plymouth
+          - Portsmouth
+          - Preston
+          - Reading
+          - Redbridge
+          - Redcar and Cleveland
+          - Redditch
+          - Reigate and Banstead
+          - Ribble Valley
+          - Richmond upon Thames
+          - Richmondshire
+          - Rochdale
+          - Rochford
+          - Rossendale
+          - Rother
+          - Rotherham
+          - Rugby
+          - Runnymede
+          - Rushcliffe
+          - Rushmoor
+          - Rutland
+          - Ryedale
+          - Salford
+          - Sandwell
+          - Scarborough
+          - Sedgemoor
+          - Sefton
+          - Selby
+          - Sevenoaks
+          - Sheffield
+          - Shropshire
+          - Slough
+          - Solihull
+          - Somerset West and Taunton
+          - South Bucks
+          - South Cambridgeshire
+          - South Derbyshire
+          - South Gloucestershire
+          - South Hams
+          - South Holland
+          - South Kesteven
+          - South Lakeland
+          - South Norfolk
+          - South Northamptonshire
+          - South Oxfordshire
+          - South Ribble
+          - South Somerset
+          - South Staffordshire
+          - South Tyneside
+          - Southampton
+          - Southend-on-Sea
+          - Southwark
+          - Spelthorne
+          - St Albans
+          - St. Helens
+          - Stafford
+          - Staffordshire Moorlands
+          - Stevenage
+          - Stockport
+          - Stockton-on-Tees
+          - Stoke-on-Trent
+          - Stratford-on-Avon
+          - Stroud
+          - Sunderland
+          - Surrey Heath
+          - Sutton
+          - Swale
+          - Swindon
+          - Tameside
+          - Tamworth
+          - Tandridge
+          - Teignbridge
+          - Telford and Wrekin
+          - Tendring
+          - Test Valley
+          - Tewkesbury
+          - Thanet
+          - Three Rivers
+          - Thurrock
+          - Tonbridge and Malling
+          - Torbay
+          - Torridge
+          - Tower Hamlets
+          - Trafford
+          - Tunbridge Wells
+          - Uttlesford
+          - Vale of White Horse
+          - Wakefield
+          - Walsall
+          - Waltham Forest
+          - Wandsworth
+          - Warrington
+          - Warwick
+          - Watford
+          - Waverley
+          - Wealden
+          - Wellingborough
+          - Welwyn Hatfield
+          - West Berkshire
+          - West Devon
+          - West Lancashire
+          - West Lindsey
+          - West Oxfordshire
+          - West Suffolk
+          - Westminster
+          - Wigan
+          - Wiltshire
+          - Winchester
+          - Windsor and Maidenhead
+          - Wirral
+          - Woking
+          - Wokingham
+          - Wolverhampton
+          - Worcester
+          - Worthing
+          - Wychavon
+          - Wycombe
+          - Wyre
+          - Wyre Forest
+          - York
+          - Cumbria
+          - Derbyshire
+          - Devon
+          - East Sussex
+          - Essex
+          - Gloucestershire
+          - Hampshire
+          - Hertfordshire
+          - Kent
+          - Lancashire
+          - Leicestershire
+          - Lincolnshire
+          - Norfolk
+          - North Yorkshire
+          - Northamptonshire
+          - Nottinghamshire
+          - Oxfordshire
+          - Somerset
+          - Staffordshire
+          - Suffolk
+          - Surrey
+          - Warwickshire
+          - West Sussex
+          - Worcestershire
+        areaType:
+          - region
+
+
+    fullWidth: true
+    abstract: >
+      The number of people aged 75 and over who have received a 2023 spring booster COVID-19 vaccination. Data for the latest 2 days, marked in grey, are incomplete.
+      Data are shown by date of vaccination.
+
+    download:
+      - vaccinationsAgeDemographics
+
+    tabs:
+      - heading: Daily
+        tabType: chart
+        fields:
+          - label: Number of vaccinations
+            << : *vaccinationAgeDemographics75Plus
+            tooltip: Daily number of people who received a spring booster of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false
+            metric: newPeopleVaccinatedSpring23ByVaccinationDate
+            highlight:
+              from: -2
+              to: 0
+              colour: 6
+              label: "Most recent 2 days (incomplete)"
+
+      - heading: Total
+        tabType: chart
+        fields:
+          - label: Number of vaccinations
+            << : *vaccinationAgeDemographics75Plus
+            tooltip: Total number of people who received a spring booster of COVID-19 vaccine
+            type: bar
+            colour: 0
+            rollingAverage: false
+            metric: cumPeopleVaccinatedSpring23ByVaccinationDate
+            highlight:
+              from: -2
+              to: 0
+              colour: 6
+              label: "Most recent 2 days (incomplete)"
+
+      - heading: Data table
+        tabType: nestedTable
+        fields:
+          - label: Date
+            value: date
+            type: date
+
+          - label: "Daily vaccinations: 75+"
+            metric: newPeopleVaccinatedSpring23ByVaccinationDate
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 75+
+
+          - label: "Total vaccinations: 75+"
+            metric: cumPeopleVaccinatedSpring23ByVaccinationDate
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 75+
+
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
+
+##############################################################################################################################
+
+# Spring booster uptake line chart
+
+  - heading: Spring 2023 booster vaccination uptake (75+), by vaccination date
+    cardType: chart
+    locationAware:
+      included:
+        areaName:
+          - England
+          - Adur
+          - Allerdale
+          - Amber Valley
+          - Arun
+          - Ashfield
+          - Ashford
+          - Aylesbury Vale
+          - Babergh
+          - Barking and Dagenham
+          - Barnet
+          - Barnsley
+          - Barrow-in-Furness
+          - Basildon
+          - Basingstoke and Deane
+          - Bassetlaw
+          - Bath and North East Somerset
+          - Bedford
+          - Bexley
+          - Birmingham
+          - Blaby
+          - Blackburn with Darwen
+          - Blackpool
+          - Bolsover
+          - Bolton
+          - Boston
+          - Bournemouth, Christchurch and Poole
+          - Bracknell Forest
+          - Bradford
+          - Braintree
+          - Breckland
+          - Brent
+          - Brentwood
+          - Brighton and Hove
+          - Bristol, City of
+          - Broadland
+          - Bromley
+          - Bromsgrove
+          - Broxbourne
+          - Broxtowe
+          - Burnley
+          - Bury
+          - Calderdale
+          - Cambridge
+          - Camden
+          - Cannock Chase
+          - Canterbury
+          - Carlisle
+          - Castle Point
+          - Central Bedfordshire
+          - Charnwood
+          - Chelmsford
+          - Cheltenham
+          - Cherwell
+          - Cheshire East
+          - Cheshire West and Chester
+          - Chesterfield
+          - Chichester
+          - Chiltern
+          - Chorley
+          - Colchester
+          - Copeland
+          - Corby
+          - Cornwall and Isles of Scilly
+          - Cotswold
+          - County Durham
+          - Coventry
+          - Craven
+          - Crawley
+          - Croydon
+          - Dacorum
+          - Darlington
+          - Dartford
+          - Daventry
+          - Derby
+          - Derbyshire Dales
+          - Doncaster
+          - Dorset
+          - Dover
+          - Dudley
+          - Ealing
+          - East Cambridgeshire
+          - East Devon
+          - East Hampshire
+          - East Hertfordshire
+          - East Lindsey
+          - East Northamptonshire
+          - East Riding of Yorkshire
+          - East Staffordshire
+          - East Suffolk
+          - Eastbourne
+          - Eastleigh
+          - Eden
+          - Elmbridge
+          - Enfield
+          - Epping Forest
+          - Epsom and Ewell
+          - Erewash
+          - Exeter
+          - Fareham
+          - Fenland
+          - Folkestone and Hythe
+          - Forest of Dean
+          - Fylde
+          - Gateshead
+          - Gedling
+          - Gloucester
+          - Gosport
+          - Gravesham
+          - Great Yarmouth
+          - Greenwich
+          - Guildford
+          - Hackney and City of London
+          - Halton
+          - Hambleton
+          - Hammersmith and Fulham
+          - Harborough
+          - Haringey
+          - Harlow
+          - Harrogate
+          - Harrow
+          - Hart
+          - Hartlepool
+          - Hastings
+          - Havant
+          - Havering
+          - Herefordshire, County of
+          - Hertsmere
+          - High Peak
+          - Hillingdon
+          - Hinckley and Bosworth
+          - Horsham
+          - Hounslow
+          - Huntingdonshire
+          - Hyndburn
+          - Ipswich
+          - Isle of Wight
+          - Islington
+          - Kensington and Chelsea
+          - Kettering
+          - King's Lynn and West Norfolk
+          - Kingston upon Hull, City of
+          - Kingston upon Thames
+          - Kirklees
+          - Knowsley
+          - Lambeth
+          - Lancaster
+          - Leeds
+          - Leicester
+          - Lewes
+          - Lewisham
+          - Lichfield
+          - Lincoln
+          - Liverpool
+          - Luton
+          - Maidstone
+          - Maldon
+          - Malvern Hills
+          - Manchester
+          - Mansfield
+          - Medway
+          - Melton
+          - Mendip
+          - Merton
+          - Mid Devon
+          - Mid Suffolk
+          - Mid Sussex
+          - Middlesbrough
+          - Milton Keynes
+          - Mole Valley
+          - New Forest
+          - Newark and Sherwood
+          - Newcastle upon Tyne
+          - Newcastle-under-Lyme
+          - Newham
+          - North Devon
+          - North East Derbyshire
+          - North East Lincolnshire
+          - North Hertfordshire
+          - North Kesteven
+          - North Lincolnshire
+          - North Norfolk
+          - North Somerset
+          - North Tyneside
+          - North Warwickshire
+          - North West Leicestershire
+          - Northampton
+          - Northumberland
+          - Norwich
+          - Nottingham
+          - Nuneaton and Bedworth
+          - Oadby and Wigston
+          - Oldham
+          - Oxford
+          - Pendle
+          - Peterborough
+          - Plymouth
+          - Portsmouth
+          - Preston
+          - Reading
+          - Redbridge
+          - Redcar and Cleveland
+          - Redditch
+          - Reigate and Banstead
+          - Ribble Valley
+          - Richmond upon Thames
+          - Richmondshire
+          - Rochdale
+          - Rochford
+          - Rossendale
+          - Rother
+          - Rotherham
+          - Rugby
+          - Runnymede
+          - Rushcliffe
+          - Rushmoor
+          - Rutland
+          - Ryedale
+          - Salford
+          - Sandwell
+          - Scarborough
+          - Sedgemoor
+          - Sefton
+          - Selby
+          - Sevenoaks
+          - Sheffield
+          - Shropshire
+          - Slough
+          - Solihull
+          - Somerset West and Taunton
+          - South Bucks
+          - South Cambridgeshire
+          - South Derbyshire
+          - South Gloucestershire
+          - South Hams
+          - South Holland
+          - South Kesteven
+          - South Lakeland
+          - South Norfolk
+          - South Northamptonshire
+          - South Oxfordshire
+          - South Ribble
+          - South Somerset
+          - South Staffordshire
+          - South Tyneside
+          - Southampton
+          - Southend-on-Sea
+          - Southwark
+          - Spelthorne
+          - St Albans
+          - St. Helens
+          - Stafford
+          - Staffordshire Moorlands
+          - Stevenage
+          - Stockport
+          - Stockton-on-Tees
+          - Stoke-on-Trent
+          - Stratford-on-Avon
+          - Stroud
+          - Sunderland
+          - Surrey Heath
+          - Sutton
+          - Swale
+          - Swindon
+          - Tameside
+          - Tamworth
+          - Tandridge
+          - Teignbridge
+          - Telford and Wrekin
+          - Tendring
+          - Test Valley
+          - Tewkesbury
+          - Thanet
+          - Three Rivers
+          - Thurrock
+          - Tonbridge and Malling
+          - Torbay
+          - Torridge
+          - Tower Hamlets
+          - Trafford
+          - Tunbridge Wells
+          - Uttlesford
+          - Vale of White Horse
+          - Wakefield
+          - Walsall
+          - Waltham Forest
+          - Wandsworth
+          - Warrington
+          - Warwick
+          - Watford
+          - Waverley
+          - Wealden
+          - Wellingborough
+          - Welwyn Hatfield
+          - West Berkshire
+          - West Devon
+          - West Lancashire
+          - West Lindsey
+          - West Oxfordshire
+          - West Suffolk
+          - Westminster
+          - Wigan
+          - Wiltshire
+          - Winchester
+          - Windsor and Maidenhead
+          - Wirral
+          - Woking
+          - Wokingham
+          - Wolverhampton
+          - Worcester
+          - Worthing
+          - Wychavon
+          - Wycombe
+          - Wyre
+          - Wyre Forest
+          - York
+          - Cumbria
+          - Derbyshire
+          - Devon
+          - East Sussex
+          - Essex
+          - Gloucestershire
+          - Hampshire
+          - Hertfordshire
+          - Kent
+          - Lancashire
+          - Leicestershire
+          - Lincolnshire
+          - Norfolk
+          - North Yorkshire
+          - Northamptonshire
+          - Nottinghamshire
+          - Oxfordshire
+          - Somerset
+          - Staffordshire
+          - Suffolk
+          - Surrey
+          - Warwickshire
+          - West Sussex
+          - Worcestershire
+        areaType:
+          - region
+
+    fullWidth: false
+    abstract: >
+      The percentage of people aged 75 and over who have received a spring booster COVID-19 vaccination.
+      The denominator is the number of people aged 75 and over on the National Immunisation Management
+      Service (NIMS) database.
+    
+    download:
+      - vaccinationsAgeDemographics
+    
+    tabs:
+      - heading: Chart
+        tabType: chart
+
+        fields:
+          - label: Spring booster dose (%)
+            << : *vaccinationAgeDemographics75Plus
+            tooltip: Percentage of people who received a spring booster dose of COVID-19 vaccine
+            type: line
+            colour: 0
+            rollingAverage: false
+            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+      
+      - heading: Data table
+        tabType: nestedTable
+        fields:
+          - label: "Vaccination date"
+            value: date
+            type: date
+          
+          - label: "Spring booster dose 75+ (%)"
+            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 75+
+      
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+##############################################################################################################################
+
+
+
+
+# Spring booster demographics line chart
+
+  - heading: Spring booster 2023 vaccination uptake, by vaccination date age demographics
+    cardType: chart
+    locationAware:
+      included:
+        areaName:
+          - England
+          - Adur
+          - Allerdale
+          - Amber Valley
+          - Arun
+          - Ashfield
+          - Ashford
+          - Aylesbury Vale
+          - Babergh
+          - Barking and Dagenham
+          - Barnet
+          - Barnsley
+          - Barrow-in-Furness
+          - Basildon
+          - Basingstoke and Deane
+          - Bassetlaw
+          - Bath and North East Somerset
+          - Bedford
+          - Bexley
+          - Birmingham
+          - Blaby
+          - Blackburn with Darwen
+          - Blackpool
+          - Bolsover
+          - Bolton
+          - Boston
+          - Bournemouth, Christchurch and Poole
+          - Bracknell Forest
+          - Bradford
+          - Braintree
+          - Breckland
+          - Brent
+          - Brentwood
+          - Brighton and Hove
+          - Bristol, City of
+          - Broadland
+          - Bromley
+          - Bromsgrove
+          - Broxbourne
+          - Broxtowe
+          - Burnley
+          - Bury
+          - Calderdale
+          - Cambridge
+          - Camden
+          - Cannock Chase
+          - Canterbury
+          - Carlisle
+          - Castle Point
+          - Central Bedfordshire
+          - Charnwood
+          - Chelmsford
+          - Cheltenham
+          - Cherwell
+          - Cheshire East
+          - Cheshire West and Chester
+          - Chesterfield
+          - Chichester
+          - Chiltern
+          - Chorley
+          - Colchester
+          - Copeland
+          - Corby
+          - Cornwall and Isles of Scilly
+          - Cotswold
+          - County Durham
+          - Coventry
+          - Craven
+          - Crawley
+          - Croydon
+          - Dacorum
+          - Darlington
+          - Dartford
+          - Daventry
+          - Derby
+          - Derbyshire Dales
+          - Doncaster
+          - Dorset
+          - Dover
+          - Dudley
+          - Ealing
+          - East Cambridgeshire
+          - East Devon
+          - East Hampshire
+          - East Hertfordshire
+          - East Lindsey
+          - East Northamptonshire
+          - East Riding of Yorkshire
+          - East Staffordshire
+          - East Suffolk
+          - Eastbourne
+          - Eastleigh
+          - Eden
+          - Elmbridge
+          - Enfield
+          - Epping Forest
+          - Epsom and Ewell
+          - Erewash
+          - Exeter
+          - Fareham
+          - Fenland
+          - Folkestone and Hythe
+          - Forest of Dean
+          - Fylde
+          - Gateshead
+          - Gedling
+          - Gloucester
+          - Gosport
+          - Gravesham
+          - Great Yarmouth
+          - Greenwich
+          - Guildford
+          - Hackney and City of London
+          - Halton
+          - Hambleton
+          - Hammersmith and Fulham
+          - Harborough
+          - Haringey
+          - Harlow
+          - Harrogate
+          - Harrow
+          - Hart
+          - Hartlepool
+          - Hastings
+          - Havant
+          - Havering
+          - Herefordshire, County of
+          - Hertsmere
+          - High Peak
+          - Hillingdon
+          - Hinckley and Bosworth
+          - Horsham
+          - Hounslow
+          - Huntingdonshire
+          - Hyndburn
+          - Ipswich
+          - Isle of Wight
+          - Islington
+          - Kensington and Chelsea
+          - Kettering
+          - King's Lynn and West Norfolk
+          - Kingston upon Hull, City of
+          - Kingston upon Thames
+          - Kirklees
+          - Knowsley
+          - Lambeth
+          - Lancaster
+          - Leeds
+          - Leicester
+          - Lewes
+          - Lewisham
+          - Lichfield
+          - Lincoln
+          - Liverpool
+          - Luton
+          - Maidstone
+          - Maldon
+          - Malvern Hills
+          - Manchester
+          - Mansfield
+          - Medway
+          - Melton
+          - Mendip
+          - Merton
+          - Mid Devon
+          - Mid Suffolk
+          - Mid Sussex
+          - Middlesbrough
+          - Milton Keynes
+          - Mole Valley
+          - New Forest
+          - Newark and Sherwood
+          - Newcastle upon Tyne
+          - Newcastle-under-Lyme
+          - Newham
+          - North Devon
+          - North East Derbyshire
+          - North East Lincolnshire
+          - North Hertfordshire
+          - North Kesteven
+          - North Lincolnshire
+          - North Norfolk
+          - North Somerset
+          - North Tyneside
+          - North Warwickshire
+          - North West Leicestershire
+          - Northampton
+          - Northumberland
+          - Norwich
+          - Nottingham
+          - Nuneaton and Bedworth
+          - Oadby and Wigston
+          - Oldham
+          - Oxford
+          - Pendle
+          - Peterborough
+          - Plymouth
+          - Portsmouth
+          - Preston
+          - Reading
+          - Redbridge
+          - Redcar and Cleveland
+          - Redditch
+          - Reigate and Banstead
+          - Ribble Valley
+          - Richmond upon Thames
+          - Richmondshire
+          - Rochdale
+          - Rochford
+          - Rossendale
+          - Rother
+          - Rotherham
+          - Rugby
+          - Runnymede
+          - Rushcliffe
+          - Rushmoor
+          - Rutland
+          - Ryedale
+          - Salford
+          - Sandwell
+          - Scarborough
+          - Sedgemoor
+          - Sefton
+          - Selby
+          - Sevenoaks
+          - Sheffield
+          - Shropshire
+          - Slough
+          - Solihull
+          - Somerset West and Taunton
+          - South Bucks
+          - South Cambridgeshire
+          - South Derbyshire
+          - South Gloucestershire
+          - South Hams
+          - South Holland
+          - South Kesteven
+          - South Lakeland
+          - South Norfolk
+          - South Northamptonshire
+          - South Oxfordshire
+          - South Ribble
+          - South Somerset
+          - South Staffordshire
+          - South Tyneside
+          - Southampton
+          - Southend-on-Sea
+          - Southwark
+          - Spelthorne
+          - St Albans
+          - St. Helens
+          - Stafford
+          - Staffordshire Moorlands
+          - Stevenage
+          - Stockport
+          - Stockton-on-Tees
+          - Stoke-on-Trent
+          - Stratford-on-Avon
+          - Stroud
+          - Sunderland
+          - Surrey Heath
+          - Sutton
+          - Swale
+          - Swindon
+          - Tameside
+          - Tamworth
+          - Tandridge
+          - Teignbridge
+          - Telford and Wrekin
+          - Tendring
+          - Test Valley
+          - Tewkesbury
+          - Thanet
+          - Three Rivers
+          - Thurrock
+          - Tonbridge and Malling
+          - Torbay
+          - Torridge
+          - Tower Hamlets
+          - Trafford
+          - Tunbridge Wells
+          - Uttlesford
+          - Vale of White Horse
+          - Wakefield
+          - Walsall
+          - Waltham Forest
+          - Wandsworth
+          - Warrington
+          - Warwick
+          - Watford
+          - Waverley
+          - Wealden
+          - Wellingborough
+          - Welwyn Hatfield
+          - West Berkshire
+          - West Devon
+          - West Lancashire
+          - West Lindsey
+          - West Oxfordshire
+          - West Suffolk
+          - Westminster
+          - Wigan
+          - Wiltshire
+          - Winchester
+          - Windsor and Maidenhead
+          - Wirral
+          - Woking
+          - Wokingham
+          - Wolverhampton
+          - Worcester
+          - Worthing
+          - Wychavon
+          - Wycombe
+          - Wyre
+          - Wyre Forest
+          - York
+          - Cumbria
+          - Derbyshire
+          - Devon
+          - East Sussex
+          - Essex
+          - Gloucestershire
+          - Hampshire
+          - Hertfordshire
+          - Kent
+          - Lancashire
+          - Leicestershire
+          - Lincolnshire
+          - Norfolk
+          - North Yorkshire
+          - Northamptonshire
+          - Nottinghamshire
+          - Oxfordshire
+          - Somerset
+          - Staffordshire
+          - Suffolk
+          - Surrey
+          - Warwickshire
+          - West Sussex
+          - Worcestershire         
+        areaType:
+          - region
+
+    fullWidth: false
+    abstract: >
+      Percentage of people who have received a spring booster COVID-19 vaccination, by age group.
+      The denominator is the number of people on the National Immunisation Management
+      Service (NIMS) database, within the relevant age group.
+    
+    download:
+      - vaccinationsAgeDemographics
+    
+    tabs:
+      - heading: Chart
+        tabType: chart
+
+        fields:
+          - label: 75 to 79 (%)
+            << : *vaccinationAgeDemographics75_79
+            tooltip: Percentage of people aged 75 to 79 who received a spring booster dose of COVID-19 vaccine
+            type: line
+            colour: 0
+            rollingAverage: false
+            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            fill: false
+
+          - label: 80 to 84 (%)
+            << : *vaccinationAgeDemographics80_84
+            tooltip: Percentage of people aged 80 to 84 who received a spring booster dose of COVID-19 vaccine
+            type: line
+            colour: 9
+            rollingAverage: false
+            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            fill: false
+
+          - label: 85 to 89 (%)
+            << : *vaccinationAgeDemographics85_89
+            tooltip: Percentage of people aged 85 to 89 who received a spring booster dose of COVID-19 vaccine
+            type: line
+            colour: 3
+            rollingAverage: false
+            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            fill: false
+
+          - label: 90+ (%)
+            << : *vaccinationAgeDemographics90Plus
+            tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
+            type: line
+            colour: 10
+            rollingAverage: false
+            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            fill: false
+      
+      - heading: Data table
+        tabType: nestedTable
+        fields:
+          - label: "Vaccination date"
+            value: date
+            type: date
+          
+          - label: "Uptake 75 to 79 (%)"
+            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: "75_79"
+          
+          - label: "Uptake 80 to 84 (%)"
+            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: "80_84"
+          
+          - label: "Uptake 85 to 89 (%)"
+            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: "85_89"
+          
+          - label: "Uptake 90+ (%)"
+            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: 90+
+      
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+#######################################################################################
 
 # daily and total autumn booster vaccinations
 
-  - heading: People aged 50 and over who have received autumn booster vaccinations, by vaccination date
+  - heading: People aged 50 and over who have received autumn 2022 booster vaccinations, by vaccination date
     cardType: chart
     locationAware:
       included:
@@ -518,7 +1774,7 @@ cards:
 
 # Autumn booster uptake line chart
 
-  - heading: Autumn booster vaccination uptake (50+), by vaccination date
+  - heading: Autumn booster 2022 vaccination uptake (50+), by vaccination date
     cardType: chart
     locationAware:
       included:
@@ -914,7 +2170,7 @@ cards:
 
 # Autumn booster demographics line chart
 
-  - heading: Autumn booster vaccination uptake, by vaccination date age demographics (50 and over)
+  - heading: Autumn booster 2022 vaccination uptake, by vaccination date age demographics (50 and over)
     cardType: chart
     locationAware:
       included:
@@ -1444,4266 +2700,6 @@ cards:
 
 #############################################################################################################################
 
-# daily and total spring booster vaccinations
-
-  - heading: People aged 75 and over who have received spring booster vaccinations, by vaccination date
-    cardType: chart
-    locationAware:
-      included:
-        areaName:
-          - England
-          - Adur
-          - Allerdale
-          - Amber Valley
-          - Arun
-          - Ashfield
-          - Ashford
-          - Aylesbury Vale
-          - Babergh
-          - Barking and Dagenham
-          - Barnet
-          - Barnsley
-          - Barrow-in-Furness
-          - Basildon
-          - Basingstoke and Deane
-          - Bassetlaw
-          - Bath and North East Somerset
-          - Bedford
-          - Bexley
-          - Birmingham
-          - Blaby
-          - Blackburn with Darwen
-          - Blackpool
-          - Bolsover
-          - Bolton
-          - Boston
-          - Bournemouth, Christchurch and Poole
-          - Bracknell Forest
-          - Bradford
-          - Braintree
-          - Breckland
-          - Brent
-          - Brentwood
-          - Brighton and Hove
-          - Bristol, City of
-          - Broadland
-          - Bromley
-          - Bromsgrove
-          - Broxbourne
-          - Broxtowe
-          - Burnley
-          - Bury
-          - Calderdale
-          - Cambridge
-          - Camden
-          - Cannock Chase
-          - Canterbury
-          - Carlisle
-          - Castle Point
-          - Central Bedfordshire
-          - Charnwood
-          - Chelmsford
-          - Cheltenham
-          - Cherwell
-          - Cheshire East
-          - Cheshire West and Chester
-          - Chesterfield
-          - Chichester
-          - Chiltern
-          - Chorley
-          - Colchester
-          - Copeland
-          - Corby
-          - Cornwall and Isles of Scilly
-          - Cotswold
-          - County Durham
-          - Coventry
-          - Craven
-          - Crawley
-          - Croydon
-          - Dacorum
-          - Darlington
-          - Dartford
-          - Daventry
-          - Derby
-          - Derbyshire Dales
-          - Doncaster
-          - Dorset
-          - Dover
-          - Dudley
-          - Ealing
-          - East Cambridgeshire
-          - East Devon
-          - East Hampshire
-          - East Hertfordshire
-          - East Lindsey
-          - East Northamptonshire
-          - East Riding of Yorkshire
-          - East Staffordshire
-          - East Suffolk
-          - Eastbourne
-          - Eastleigh
-          - Eden
-          - Elmbridge
-          - Enfield
-          - Epping Forest
-          - Epsom and Ewell
-          - Erewash
-          - Exeter
-          - Fareham
-          - Fenland
-          - Folkestone and Hythe
-          - Forest of Dean
-          - Fylde
-          - Gateshead
-          - Gedling
-          - Gloucester
-          - Gosport
-          - Gravesham
-          - Great Yarmouth
-          - Greenwich
-          - Guildford
-          - Hackney and City of London
-          - Halton
-          - Hambleton
-          - Hammersmith and Fulham
-          - Harborough
-          - Haringey
-          - Harlow
-          - Harrogate
-          - Harrow
-          - Hart
-          - Hartlepool
-          - Hastings
-          - Havant
-          - Havering
-          - Herefordshire, County of
-          - Hertsmere
-          - High Peak
-          - Hillingdon
-          - Hinckley and Bosworth
-          - Horsham
-          - Hounslow
-          - Huntingdonshire
-          - Hyndburn
-          - Ipswich
-          - Isle of Wight
-          - Islington
-          - Kensington and Chelsea
-          - Kettering
-          - King's Lynn and West Norfolk
-          - Kingston upon Hull, City of
-          - Kingston upon Thames
-          - Kirklees
-          - Knowsley
-          - Lambeth
-          - Lancaster
-          - Leeds
-          - Leicester
-          - Lewes
-          - Lewisham
-          - Lichfield
-          - Lincoln
-          - Liverpool
-          - Luton
-          - Maidstone
-          - Maldon
-          - Malvern Hills
-          - Manchester
-          - Mansfield
-          - Medway
-          - Melton
-          - Mendip
-          - Merton
-          - Mid Devon
-          - Mid Suffolk
-          - Mid Sussex
-          - Middlesbrough
-          - Milton Keynes
-          - Mole Valley
-          - New Forest
-          - Newark and Sherwood
-          - Newcastle upon Tyne
-          - Newcastle-under-Lyme
-          - Newham
-          - North Devon
-          - North East Derbyshire
-          - North East Lincolnshire
-          - North Hertfordshire
-          - North Kesteven
-          - North Lincolnshire
-          - North Norfolk
-          - North Somerset
-          - North Tyneside
-          - North Warwickshire
-          - North West Leicestershire
-          - Northampton
-          - Northumberland
-          - Norwich
-          - Nottingham
-          - Nuneaton and Bedworth
-          - Oadby and Wigston
-          - Oldham
-          - Oxford
-          - Pendle
-          - Peterborough
-          - Plymouth
-          - Portsmouth
-          - Preston
-          - Reading
-          - Redbridge
-          - Redcar and Cleveland
-          - Redditch
-          - Reigate and Banstead
-          - Ribble Valley
-          - Richmond upon Thames
-          - Richmondshire
-          - Rochdale
-          - Rochford
-          - Rossendale
-          - Rother
-          - Rotherham
-          - Rugby
-          - Runnymede
-          - Rushcliffe
-          - Rushmoor
-          - Rutland
-          - Ryedale
-          - Salford
-          - Sandwell
-          - Scarborough
-          - Sedgemoor
-          - Sefton
-          - Selby
-          - Sevenoaks
-          - Sheffield
-          - Shropshire
-          - Slough
-          - Solihull
-          - Somerset West and Taunton
-          - South Bucks
-          - South Cambridgeshire
-          - South Derbyshire
-          - South Gloucestershire
-          - South Hams
-          - South Holland
-          - South Kesteven
-          - South Lakeland
-          - South Norfolk
-          - South Northamptonshire
-          - South Oxfordshire
-          - South Ribble
-          - South Somerset
-          - South Staffordshire
-          - South Tyneside
-          - Southampton
-          - Southend-on-Sea
-          - Southwark
-          - Spelthorne
-          - St Albans
-          - St. Helens
-          - Stafford
-          - Staffordshire Moorlands
-          - Stevenage
-          - Stockport
-          - Stockton-on-Tees
-          - Stoke-on-Trent
-          - Stratford-on-Avon
-          - Stroud
-          - Sunderland
-          - Surrey Heath
-          - Sutton
-          - Swale
-          - Swindon
-          - Tameside
-          - Tamworth
-          - Tandridge
-          - Teignbridge
-          - Telford and Wrekin
-          - Tendring
-          - Test Valley
-          - Tewkesbury
-          - Thanet
-          - Three Rivers
-          - Thurrock
-          - Tonbridge and Malling
-          - Torbay
-          - Torridge
-          - Tower Hamlets
-          - Trafford
-          - Tunbridge Wells
-          - Uttlesford
-          - Vale of White Horse
-          - Wakefield
-          - Walsall
-          - Waltham Forest
-          - Wandsworth
-          - Warrington
-          - Warwick
-          - Watford
-          - Waverley
-          - Wealden
-          - Wellingborough
-          - Welwyn Hatfield
-          - West Berkshire
-          - West Devon
-          - West Lancashire
-          - West Lindsey
-          - West Oxfordshire
-          - West Suffolk
-          - Westminster
-          - Wigan
-          - Wiltshire
-          - Winchester
-          - Windsor and Maidenhead
-          - Wirral
-          - Woking
-          - Wokingham
-          - Wolverhampton
-          - Worcester
-          - Worthing
-          - Wychavon
-          - Wycombe
-          - Wyre
-          - Wyre Forest
-          - York
-          - Cumbria
-          - Derbyshire
-          - Devon
-          - East Sussex
-          - Essex
-          - Gloucestershire
-          - Hampshire
-          - Hertfordshire
-          - Kent
-          - Lancashire
-          - Leicestershire
-          - Lincolnshire
-          - Norfolk
-          - North Yorkshire
-          - Northamptonshire
-          - Nottinghamshire
-          - Oxfordshire
-          - Somerset
-          - Staffordshire
-          - Suffolk
-          - Surrey
-          - Warwickshire
-          - West Sussex
-          - Worcestershire
-        areaType:
-          - region
-
-
-    fullWidth: true
-    abstract: >
-      The number of people aged 75 and over who have received a spring booster COVID-19 vaccination. Data for the latest 2 days, marked in grey, are incomplete.
-      Data are shown by date of vaccination.
-
-    download:
-      - vaccinationsAgeDemographics
-
-    tabs:
-      - heading: Daily
-        tabType: chart
-        fields:
-          - label: Number of vaccinations
-            << : *vaccinationAgeDemographics75Plus
-            tooltip: Daily number of people who received a spring booster of COVID-19 vaccine
-            type: bar
-            colour: 0
-            rollingAverage: false
-            metric: newPeopleVaccinatedSpring22ByVaccinationDate
-            highlight:
-              from: -2
-              to: 0
-              colour: 6
-              label: "Most recent 2 days (incomplete)"
-
-      - heading: Total
-        tabType: chart
-        fields:
-          - label: Number of vaccinations
-            << : *vaccinationAgeDemographics75Plus
-            tooltip: Total number of people who received a spring booster of COVID-19 vaccine
-            type: bar
-            colour: 0
-            rollingAverage: false
-            metric: cumPeopleVaccinatedSpring22ByVaccinationDate
-            highlight:
-              from: -2
-              to: 0
-              colour: 6
-              label: "Most recent 2 days (incomplete)"
-
-      - heading: Data table
-        tabType: nestedTable
-        fields:
-          - label: Date
-            value: date
-            type: date
-
-          - label: "Daily vaccinations: 75+"
-            metric: newPeopleVaccinatedSpring22ByVaccinationDate
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 75+
-
-          - label: "Total vaccinations: 75+"
-            metric: cumPeopleVaccinatedSpring22ByVaccinationDate
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 75+
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
-
-##############################################################################################################################
-
-# Spring booster uptake line chart
-
-  - heading: Spring booster vaccination uptake (75+), by vaccination date
-    cardType: chart
-    locationAware:
-      included:
-        areaName:
-          - England
-          - Adur
-          - Allerdale
-          - Amber Valley
-          - Arun
-          - Ashfield
-          - Ashford
-          - Aylesbury Vale
-          - Babergh
-          - Barking and Dagenham
-          - Barnet
-          - Barnsley
-          - Barrow-in-Furness
-          - Basildon
-          - Basingstoke and Deane
-          - Bassetlaw
-          - Bath and North East Somerset
-          - Bedford
-          - Bexley
-          - Birmingham
-          - Blaby
-          - Blackburn with Darwen
-          - Blackpool
-          - Bolsover
-          - Bolton
-          - Boston
-          - Bournemouth, Christchurch and Poole
-          - Bracknell Forest
-          - Bradford
-          - Braintree
-          - Breckland
-          - Brent
-          - Brentwood
-          - Brighton and Hove
-          - Bristol, City of
-          - Broadland
-          - Bromley
-          - Bromsgrove
-          - Broxbourne
-          - Broxtowe
-          - Burnley
-          - Bury
-          - Calderdale
-          - Cambridge
-          - Camden
-          - Cannock Chase
-          - Canterbury
-          - Carlisle
-          - Castle Point
-          - Central Bedfordshire
-          - Charnwood
-          - Chelmsford
-          - Cheltenham
-          - Cherwell
-          - Cheshire East
-          - Cheshire West and Chester
-          - Chesterfield
-          - Chichester
-          - Chiltern
-          - Chorley
-          - Colchester
-          - Copeland
-          - Corby
-          - Cornwall and Isles of Scilly
-          - Cotswold
-          - County Durham
-          - Coventry
-          - Craven
-          - Crawley
-          - Croydon
-          - Dacorum
-          - Darlington
-          - Dartford
-          - Daventry
-          - Derby
-          - Derbyshire Dales
-          - Doncaster
-          - Dorset
-          - Dover
-          - Dudley
-          - Ealing
-          - East Cambridgeshire
-          - East Devon
-          - East Hampshire
-          - East Hertfordshire
-          - East Lindsey
-          - East Northamptonshire
-          - East Riding of Yorkshire
-          - East Staffordshire
-          - East Suffolk
-          - Eastbourne
-          - Eastleigh
-          - Eden
-          - Elmbridge
-          - Enfield
-          - Epping Forest
-          - Epsom and Ewell
-          - Erewash
-          - Exeter
-          - Fareham
-          - Fenland
-          - Folkestone and Hythe
-          - Forest of Dean
-          - Fylde
-          - Gateshead
-          - Gedling
-          - Gloucester
-          - Gosport
-          - Gravesham
-          - Great Yarmouth
-          - Greenwich
-          - Guildford
-          - Hackney and City of London
-          - Halton
-          - Hambleton
-          - Hammersmith and Fulham
-          - Harborough
-          - Haringey
-          - Harlow
-          - Harrogate
-          - Harrow
-          - Hart
-          - Hartlepool
-          - Hastings
-          - Havant
-          - Havering
-          - Herefordshire, County of
-          - Hertsmere
-          - High Peak
-          - Hillingdon
-          - Hinckley and Bosworth
-          - Horsham
-          - Hounslow
-          - Huntingdonshire
-          - Hyndburn
-          - Ipswich
-          - Isle of Wight
-          - Islington
-          - Kensington and Chelsea
-          - Kettering
-          - King's Lynn and West Norfolk
-          - Kingston upon Hull, City of
-          - Kingston upon Thames
-          - Kirklees
-          - Knowsley
-          - Lambeth
-          - Lancaster
-          - Leeds
-          - Leicester
-          - Lewes
-          - Lewisham
-          - Lichfield
-          - Lincoln
-          - Liverpool
-          - Luton
-          - Maidstone
-          - Maldon
-          - Malvern Hills
-          - Manchester
-          - Mansfield
-          - Medway
-          - Melton
-          - Mendip
-          - Merton
-          - Mid Devon
-          - Mid Suffolk
-          - Mid Sussex
-          - Middlesbrough
-          - Milton Keynes
-          - Mole Valley
-          - New Forest
-          - Newark and Sherwood
-          - Newcastle upon Tyne
-          - Newcastle-under-Lyme
-          - Newham
-          - North Devon
-          - North East Derbyshire
-          - North East Lincolnshire
-          - North Hertfordshire
-          - North Kesteven
-          - North Lincolnshire
-          - North Norfolk
-          - North Somerset
-          - North Tyneside
-          - North Warwickshire
-          - North West Leicestershire
-          - Northampton
-          - Northumberland
-          - Norwich
-          - Nottingham
-          - Nuneaton and Bedworth
-          - Oadby and Wigston
-          - Oldham
-          - Oxford
-          - Pendle
-          - Peterborough
-          - Plymouth
-          - Portsmouth
-          - Preston
-          - Reading
-          - Redbridge
-          - Redcar and Cleveland
-          - Redditch
-          - Reigate and Banstead
-          - Ribble Valley
-          - Richmond upon Thames
-          - Richmondshire
-          - Rochdale
-          - Rochford
-          - Rossendale
-          - Rother
-          - Rotherham
-          - Rugby
-          - Runnymede
-          - Rushcliffe
-          - Rushmoor
-          - Rutland
-          - Ryedale
-          - Salford
-          - Sandwell
-          - Scarborough
-          - Sedgemoor
-          - Sefton
-          - Selby
-          - Sevenoaks
-          - Sheffield
-          - Shropshire
-          - Slough
-          - Solihull
-          - Somerset West and Taunton
-          - South Bucks
-          - South Cambridgeshire
-          - South Derbyshire
-          - South Gloucestershire
-          - South Hams
-          - South Holland
-          - South Kesteven
-          - South Lakeland
-          - South Norfolk
-          - South Northamptonshire
-          - South Oxfordshire
-          - South Ribble
-          - South Somerset
-          - South Staffordshire
-          - South Tyneside
-          - Southampton
-          - Southend-on-Sea
-          - Southwark
-          - Spelthorne
-          - St Albans
-          - St. Helens
-          - Stafford
-          - Staffordshire Moorlands
-          - Stevenage
-          - Stockport
-          - Stockton-on-Tees
-          - Stoke-on-Trent
-          - Stratford-on-Avon
-          - Stroud
-          - Sunderland
-          - Surrey Heath
-          - Sutton
-          - Swale
-          - Swindon
-          - Tameside
-          - Tamworth
-          - Tandridge
-          - Teignbridge
-          - Telford and Wrekin
-          - Tendring
-          - Test Valley
-          - Tewkesbury
-          - Thanet
-          - Three Rivers
-          - Thurrock
-          - Tonbridge and Malling
-          - Torbay
-          - Torridge
-          - Tower Hamlets
-          - Trafford
-          - Tunbridge Wells
-          - Uttlesford
-          - Vale of White Horse
-          - Wakefield
-          - Walsall
-          - Waltham Forest
-          - Wandsworth
-          - Warrington
-          - Warwick
-          - Watford
-          - Waverley
-          - Wealden
-          - Wellingborough
-          - Welwyn Hatfield
-          - West Berkshire
-          - West Devon
-          - West Lancashire
-          - West Lindsey
-          - West Oxfordshire
-          - West Suffolk
-          - Westminster
-          - Wigan
-          - Wiltshire
-          - Winchester
-          - Windsor and Maidenhead
-          - Wirral
-          - Woking
-          - Wokingham
-          - Wolverhampton
-          - Worcester
-          - Worthing
-          - Wychavon
-          - Wycombe
-          - Wyre
-          - Wyre Forest
-          - York
-          - Cumbria
-          - Derbyshire
-          - Devon
-          - East Sussex
-          - Essex
-          - Gloucestershire
-          - Hampshire
-          - Hertfordshire
-          - Kent
-          - Lancashire
-          - Leicestershire
-          - Lincolnshire
-          - Norfolk
-          - North Yorkshire
-          - Northamptonshire
-          - Nottinghamshire
-          - Oxfordshire
-          - Somerset
-          - Staffordshire
-          - Suffolk
-          - Surrey
-          - Warwickshire
-          - West Sussex
-          - Worcestershire
-        areaType:
-          - region
-
-    fullWidth: false
-    abstract: >
-      The percentage of people aged 75 and over who have received a spring booster COVID-19 vaccination.
-      The denominator is the number of people aged 75 and over on the National Immunisation Management
-      Service (NIMS) database.
-    
-    download:
-      - vaccinationsAgeDemographics
-    
-    tabs:
-      - heading: Chart
-        tabType: chart
-
-        fields:
-          - label: Spring booster dose (%)
-            << : *vaccinationAgeDemographics75Plus
-            tooltip: Percentage of people who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 0
-            rollingAverage: false
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-      
-      - heading: Data table
-        tabType: nestedTable
-        fields:
-          - label: "Vaccination date"
-            value: date
-            type: date
-          
-          - label: "Spring booster dose 75+ (%)"
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 75+
-      
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-##############################################################################################################################
-
-
-
-
-# Spring booster demographics line chart
-
-  - heading: Spring booster vaccination uptake, by vaccination date age demographics
-    cardType: chart
-    locationAware:
-      included:
-        areaName:
-          - England
-          - Adur
-          - Allerdale
-          - Amber Valley
-          - Arun
-          - Ashfield
-          - Ashford
-          - Aylesbury Vale
-          - Babergh
-          - Barking and Dagenham
-          - Barnet
-          - Barnsley
-          - Barrow-in-Furness
-          - Basildon
-          - Basingstoke and Deane
-          - Bassetlaw
-          - Bath and North East Somerset
-          - Bedford
-          - Bexley
-          - Birmingham
-          - Blaby
-          - Blackburn with Darwen
-          - Blackpool
-          - Bolsover
-          - Bolton
-          - Boston
-          - Bournemouth, Christchurch and Poole
-          - Bracknell Forest
-          - Bradford
-          - Braintree
-          - Breckland
-          - Brent
-          - Brentwood
-          - Brighton and Hove
-          - Bristol, City of
-          - Broadland
-          - Bromley
-          - Bromsgrove
-          - Broxbourne
-          - Broxtowe
-          - Burnley
-          - Bury
-          - Calderdale
-          - Cambridge
-          - Camden
-          - Cannock Chase
-          - Canterbury
-          - Carlisle
-          - Castle Point
-          - Central Bedfordshire
-          - Charnwood
-          - Chelmsford
-          - Cheltenham
-          - Cherwell
-          - Cheshire East
-          - Cheshire West and Chester
-          - Chesterfield
-          - Chichester
-          - Chiltern
-          - Chorley
-          - Colchester
-          - Copeland
-          - Corby
-          - Cornwall and Isles of Scilly
-          - Cotswold
-          - County Durham
-          - Coventry
-          - Craven
-          - Crawley
-          - Croydon
-          - Dacorum
-          - Darlington
-          - Dartford
-          - Daventry
-          - Derby
-          - Derbyshire Dales
-          - Doncaster
-          - Dorset
-          - Dover
-          - Dudley
-          - Ealing
-          - East Cambridgeshire
-          - East Devon
-          - East Hampshire
-          - East Hertfordshire
-          - East Lindsey
-          - East Northamptonshire
-          - East Riding of Yorkshire
-          - East Staffordshire
-          - East Suffolk
-          - Eastbourne
-          - Eastleigh
-          - Eden
-          - Elmbridge
-          - Enfield
-          - Epping Forest
-          - Epsom and Ewell
-          - Erewash
-          - Exeter
-          - Fareham
-          - Fenland
-          - Folkestone and Hythe
-          - Forest of Dean
-          - Fylde
-          - Gateshead
-          - Gedling
-          - Gloucester
-          - Gosport
-          - Gravesham
-          - Great Yarmouth
-          - Greenwich
-          - Guildford
-          - Hackney and City of London
-          - Halton
-          - Hambleton
-          - Hammersmith and Fulham
-          - Harborough
-          - Haringey
-          - Harlow
-          - Harrogate
-          - Harrow
-          - Hart
-          - Hartlepool
-          - Hastings
-          - Havant
-          - Havering
-          - Herefordshire, County of
-          - Hertsmere
-          - High Peak
-          - Hillingdon
-          - Hinckley and Bosworth
-          - Horsham
-          - Hounslow
-          - Huntingdonshire
-          - Hyndburn
-          - Ipswich
-          - Isle of Wight
-          - Islington
-          - Kensington and Chelsea
-          - Kettering
-          - King's Lynn and West Norfolk
-          - Kingston upon Hull, City of
-          - Kingston upon Thames
-          - Kirklees
-          - Knowsley
-          - Lambeth
-          - Lancaster
-          - Leeds
-          - Leicester
-          - Lewes
-          - Lewisham
-          - Lichfield
-          - Lincoln
-          - Liverpool
-          - Luton
-          - Maidstone
-          - Maldon
-          - Malvern Hills
-          - Manchester
-          - Mansfield
-          - Medway
-          - Melton
-          - Mendip
-          - Merton
-          - Mid Devon
-          - Mid Suffolk
-          - Mid Sussex
-          - Middlesbrough
-          - Milton Keynes
-          - Mole Valley
-          - New Forest
-          - Newark and Sherwood
-          - Newcastle upon Tyne
-          - Newcastle-under-Lyme
-          - Newham
-          - North Devon
-          - North East Derbyshire
-          - North East Lincolnshire
-          - North Hertfordshire
-          - North Kesteven
-          - North Lincolnshire
-          - North Norfolk
-          - North Somerset
-          - North Tyneside
-          - North Warwickshire
-          - North West Leicestershire
-          - Northampton
-          - Northumberland
-          - Norwich
-          - Nottingham
-          - Nuneaton and Bedworth
-          - Oadby and Wigston
-          - Oldham
-          - Oxford
-          - Pendle
-          - Peterborough
-          - Plymouth
-          - Portsmouth
-          - Preston
-          - Reading
-          - Redbridge
-          - Redcar and Cleveland
-          - Redditch
-          - Reigate and Banstead
-          - Ribble Valley
-          - Richmond upon Thames
-          - Richmondshire
-          - Rochdale
-          - Rochford
-          - Rossendale
-          - Rother
-          - Rotherham
-          - Rugby
-          - Runnymede
-          - Rushcliffe
-          - Rushmoor
-          - Rutland
-          - Ryedale
-          - Salford
-          - Sandwell
-          - Scarborough
-          - Sedgemoor
-          - Sefton
-          - Selby
-          - Sevenoaks
-          - Sheffield
-          - Shropshire
-          - Slough
-          - Solihull
-          - Somerset West and Taunton
-          - South Bucks
-          - South Cambridgeshire
-          - South Derbyshire
-          - South Gloucestershire
-          - South Hams
-          - South Holland
-          - South Kesteven
-          - South Lakeland
-          - South Norfolk
-          - South Northamptonshire
-          - South Oxfordshire
-          - South Ribble
-          - South Somerset
-          - South Staffordshire
-          - South Tyneside
-          - Southampton
-          - Southend-on-Sea
-          - Southwark
-          - Spelthorne
-          - St Albans
-          - St. Helens
-          - Stafford
-          - Staffordshire Moorlands
-          - Stevenage
-          - Stockport
-          - Stockton-on-Tees
-          - Stoke-on-Trent
-          - Stratford-on-Avon
-          - Stroud
-          - Sunderland
-          - Surrey Heath
-          - Sutton
-          - Swale
-          - Swindon
-          - Tameside
-          - Tamworth
-          - Tandridge
-          - Teignbridge
-          - Telford and Wrekin
-          - Tendring
-          - Test Valley
-          - Tewkesbury
-          - Thanet
-          - Three Rivers
-          - Thurrock
-          - Tonbridge and Malling
-          - Torbay
-          - Torridge
-          - Tower Hamlets
-          - Trafford
-          - Tunbridge Wells
-          - Uttlesford
-          - Vale of White Horse
-          - Wakefield
-          - Walsall
-          - Waltham Forest
-          - Wandsworth
-          - Warrington
-          - Warwick
-          - Watford
-          - Waverley
-          - Wealden
-          - Wellingborough
-          - Welwyn Hatfield
-          - West Berkshire
-          - West Devon
-          - West Lancashire
-          - West Lindsey
-          - West Oxfordshire
-          - West Suffolk
-          - Westminster
-          - Wigan
-          - Wiltshire
-          - Winchester
-          - Windsor and Maidenhead
-          - Wirral
-          - Woking
-          - Wokingham
-          - Wolverhampton
-          - Worcester
-          - Worthing
-          - Wychavon
-          - Wycombe
-          - Wyre
-          - Wyre Forest
-          - York
-          - Cumbria
-          - Derbyshire
-          - Devon
-          - East Sussex
-          - Essex
-          - Gloucestershire
-          - Hampshire
-          - Hertfordshire
-          - Kent
-          - Lancashire
-          - Leicestershire
-          - Lincolnshire
-          - Norfolk
-          - North Yorkshire
-          - Northamptonshire
-          - Nottinghamshire
-          - Oxfordshire
-          - Somerset
-          - Staffordshire
-          - Suffolk
-          - Surrey
-          - Warwickshire
-          - West Sussex
-          - Worcestershire         
-        areaType:
-          - region
-
-    fullWidth: false
-    abstract: >
-      Percentage of people who have received a spring booster COVID-19 vaccination, by age group.
-      The denominator is the number of people on the National Immunisation Management
-      Service (NIMS) database, within the relevant age group.
-    
-    download:
-      - vaccinationsAgeDemographics
-    
-    tabs:
-      - heading: Chart
-        tabType: chart
-
-        fields:
-          - label: 75 to 79 (%)
-            << : *vaccinationAgeDemographics75_79
-            tooltip: Percentage of people aged 75 to 79 who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 0
-            rollingAverage: false
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            fill: false
-
-          - label: 80 to 84 (%)
-            << : *vaccinationAgeDemographics80_84
-            tooltip: Percentage of people aged 80 to 84 who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 9
-            rollingAverage: false
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            fill: false
-
-          - label: 85 to 89 (%)
-            << : *vaccinationAgeDemographics85_89
-            tooltip: Percentage of people aged 85 to 89 who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 3
-            rollingAverage: false
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            fill: false
-
-          - label: 90+ (%)
-            << : *vaccinationAgeDemographics90Plus
-            tooltip: Percentage of people aged 90+ who received a spring booster dose of COVID-19 vaccine
-            type: line
-            colour: 10
-            rollingAverage: false
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            fill: false
-      
-      - heading: Data table
-        tabType: nestedTable
-        fields:
-          - label: "Vaccination date"
-            value: date
-            type: date
-          
-          - label: "Uptake 75 to 79 (%)"
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: "75_79"
-          
-          - label: "Uptake 80 to 84 (%)"
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: "80_84"
-          
-          - label: "Uptake 85 to 89 (%)"
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: "85_89"
-          
-          - label: "Uptake 90+ (%)"
-            metric: cumVaccinationSpring22UptakeByVaccinationDatePercentage
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 90+
-      
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-#############################################################################################################################
-
-
-# UK only (nation version in separate card below)
-
-  - heading: People who have received 1st dose vaccinations, by report date
-    cardType: multiAreaStatic
-    locationAware:
-      included:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      The number of people of all ages who have received a first dose COVID-19 vaccination and 7-day rolling average.
-
-    download:
-      - newPeopleVaccinatedFirstDoseByPublishDate
-      - cumPeopleVaccinatedFirstDoseByPublishDate
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - UK total
-        - By nation
-
-    UK total:
-
-      tabs:
-
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: daily
-              value: newPeopleVaccinatedFirstDoseByPublishDate
-              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: (7-day average)
-              value: newPeopleVaccinatedFirstDoseByPublishDate
-              tooltip: 7-day rolling average of the daily reported number of people who received the first dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 0 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-          fields:
-            - label: total
-              value: cumPeopleVaccinatedFirstDoseByPublishDate
-              tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: Report date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: "daily"
-              value: newPeopleVaccinatedFirstDoseByPublishDate
-              type: numeric
-              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
-
-            - label: "total"
-              value: cumPeopleVaccinatedFirstDoseByPublishDate
-              type: numeric
-              tooltip: Total number of people who received the first dose of COVID-19 vaccine
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
-
-
-    By nation:
-
-      tabs:
-
-          - heading: Daily
-            tabType: chart
-            barType: stack
-            colours: [0, 9, 3, 10] # areaNames in alphabetical order
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-              - label: "daily"
-                value: newPeopleVaccinatedFirstDoseByPublishDate
-                tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine in each nation
-                type: bar
-                rollingAverage: false
-
-          - heading: Total
-            tabType: chart
-            barType: stack
-            colours: [0, 9, 3, 10] # areaNames in alphabetical order
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-              - label: "total"
-                value: cumPeopleVaccinatedFirstDoseByPublishDate
-                tooltip: Total reported number of people who received the first dose of COVID-19 vaccine in each nation
-                type: bar
-                rollingAverage: false
-
-          - heading: Data table
-            tabType: table
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-            - label: Report date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: "daily"
-              value: newPeopleVaccinatedFirstDoseByPublishDate
-              type: numeric
-              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
-
-            - label: "total"
-              value: cumPeopleVaccinatedFirstDoseByPublishDate
-              type: numeric
-              tooltip: Total number of people who received the first dose of COVID-19 vaccine
-
-          - heading: About
-            tabType: metadata
-            filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
-
-##############################################################################################################################
-
-# UK only (nation version in separate card below)
-
-  - heading: People who have received 2nd dose vaccinations, by report date
-    cardType: multiAreaStatic
-    locationAware:
-      included:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      The number of people of all ages who have received a second dose COVID-19 vaccination and 7-day rolling average.
-
-    download:
-      - newPeopleVaccinatedSecondDoseByPublishDate
-      - cumPeopleVaccinatedSecondDoseByPublishDate
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - UK total
-        - By nation
-
-    UK total:
-
-      tabs:
-
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: daily
-              value: newPeopleVaccinatedSecondDoseByPublishDate
-              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: (7-day average)
-              value: newPeopleVaccinatedSecondDoseByPublishDate
-              tooltip: 7-day rolling average of the daily reported number of people who received the second dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 0 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-          fields:
-            - label: total
-              value: cumPeopleVaccinatedSecondDoseByPublishDate
-              tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: Report date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: "daily"
-              value: newPeopleVaccinatedSecondDoseByPublishDate
-              type: numeric
-              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
-
-            - label: "total"
-              value: cumPeopleVaccinatedSecondDoseByPublishDate
-              type: numeric
-              tooltip: Total number of people who received the second dose of COVID-19 vaccine
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
-
-
-    By nation:
-
-      tabs:
-
-          - heading: Daily
-            tabType: chart
-            barType: stack
-            colours: [0, 9, 3, 10] # areaNames in alphabetical order
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-              - label: "daily"
-                value: newPeopleVaccinatedSecondDoseByPublishDate
-                tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine in each nation
-                type: bar
-                rollingAverage: false
-
-          - heading: Total
-            tabType: chart
-            barType: stack
-            colours: [0, 9, 3, 10] # areaNames in alphabetical order
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-              - label: "total"
-                value: cumPeopleVaccinatedSecondDoseByPublishDate
-                tooltip: Total reported number of people who received the second dose of COVID-19 vaccine in each nation
-                type: bar
-                rollingAverage: false
-
-          - heading: Data table
-            tabType: table
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-            - label: Report date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: "daily"
-              value: newPeopleVaccinatedSecondDoseByPublishDate
-              type: numeric
-              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
-
-            - label: "total"
-              value: cumPeopleVaccinatedSecondDoseByPublishDate
-              type: numeric
-              tooltip: Total number of people who received the second dose of COVID-19 vaccine
-
-          - heading: About
-            tabType: metadata
-            filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
-
-
-##############################################################################################################################
-
-
-# UK only (nation version in separate card below)
-
-  - heading: People who have received booster or 3rd dose vaccinations, by report date
-    cardType: multiAreaStatic
-    locationAware:
-      included:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      The number of people of all ages who have received a booster or third dose COVID-19 vaccination and 7-day rolling average.
-
-    download:
-      - newPeopleVaccinatedThirdInjectionByPublishDate
-      - cumPeopleVaccinatedThirdInjectionByPublishDate
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - UK total
-        - By nation
-
-    UK total:
-
-      tabs:
-
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: daily
-              value: newPeopleVaccinatedThirdInjectionByPublishDate
-              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: (7-day average)
-              value: newPeopleVaccinatedThirdInjectionByPublishDate
-              tooltip: 7-day rolling average of the daily reported number of people who received a booster or third dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 0 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-          fields:
-            - label: total
-              value: cumPeopleVaccinatedThirdInjectionByPublishDate
-              tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: Report date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: "daily"
-              value: newPeopleVaccinatedThirdInjectionByPublishDate
-              type: numeric
-              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
-
-            - label: "total"
-              value: cumPeopleVaccinatedThirdInjectionByPublishDate
-              type: numeric
-              tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
-
-
-    By nation:
-
-      tabs:
-
-          - heading: Daily
-            tabType: chart
-            barType: stack
-            colours: [0, 9, 3, 10] # areaNames in alphabetical order
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-              - label: "daily"
-                value: newPeopleVaccinatedThirdInjectionByPublishDate
-                tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine in each nation
-                type: bar
-                rollingAverage: false
-
-          - heading: Total
-            tabType: chart
-            barType: stack
-            colours: [0, 9, 3, 10] # areaNames in alphabetical order
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-              - label: "total"
-                value: cumPeopleVaccinatedThirdInjectionByPublishDate
-                tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine in each nation
-                type: bar
-                rollingAverage: false
-
-          - heading: Data table
-            tabType: table
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-            - label: Report date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: "daily"
-              value: newPeopleVaccinatedThirdInjectionByPublishDate
-              type: numeric
-              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
-
-            - label: "total"
-              value: cumPeopleVaccinatedThirdInjectionByPublishDate
-              type: numeric
-              tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
-
-          - heading: About
-            tabType: metadata
-            filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
-
-
-#############################################################################################################################
-
-# UK only
-
-  - heading: Latest reported vaccination uptake
-    cardType: tabContentRaw
-    locationAware:
-      included:
-        areaType:
-          - overview
-
-    fullWidth: false
-    abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population
-      aged 12 and over. First, second and booster or third doses are shown. The denominator is the 2020 mid-year population estimate for those
-      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so
-      these cannot be compared.
-
-    download:
-      - cumVaccinationFirstDoseUptakeByPublishDatePercentage
-      - cumVaccinationSecondDoseUptakeByPublishDatePercentage
-      - cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-
-    tabs:
-      - heading: Chart
-        tabType: percentageWaffle
-        params:
-          - key: areaType
-            sign: "="
-            value: overview
-
-        fields:
-          - label: 1st dose (%)
-            value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
-            colour: 1
-
-          - label: 2nd dose (%)
-            value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
-            colour: 0
-
-          - label: Booster or 3rd dose (%)
-            value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
-            colour: 3
-
-      - heading: Data table
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: overview
-
-        fields:
-          - label: Report date
-            value: date
-            type: date
-            tooltip: Date
-
-          - label: "1st dose (%)"
-            value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
-
-          - label: "2nd dose (%)"
-            value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
-
-          - label: "Booster or 3rd dose (%)"
-            value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-
-##############################################################################################################################
-
-
-# UK only
-
-  - heading: Vaccination uptake, by report date
-    cardType: multiAreaStatic
-    chartMode: percentage
-    locationAware:
-      included:
-        areaType:
-          - overview
-
-    fullWidth: false
-    abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population
-      aged 12 and over. First, second and booster or third doses are shown. The denominator is the 2020 mid-year population estimate for those
-      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so
-      these cannot be compared.
-      Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
-
-    download:
-      - cumVaccinationFirstDoseUptakeByPublishDatePercentage
-      - cumVaccinationSecondDoseUptakeByPublishDatePercentage
-      - cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - UK total
-        - By nation
-
-    UK total:
-
-      tabs:
-
-        - heading: Chart
-          tabType: chart
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-          fields:
-            - label: 1st dose (%)
-              value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-              tooltip: Total reported percentage of people who received the first dose of COVID-19 vaccine
-              type: line
-              colour: 1
-              rollingAverage: false
-            - label: 2nd dose (%)
-              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-              tooltip: Total reported percentage of people who received the second dose of COVID-19 vaccine
-              type: line
-              colour: 0
-              rollingAverage: false
-            - label: Booster or 3rd dose (%)
-              value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-              tooltip: Total reported percentage of people who received a booster or third dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              rollingAverage: false
-
-        # - heading: 1st dose
-        #   tabType: chart
-        #   params:
-        #     - key: areaType
-        #       sign: "="
-        #       value: overview
-        #   fields:
-        #     - label: percentage
-        #       value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-        #       tooltip: Cumulative reported percentage of people who received the first dose of COVID-19 vaccine
-        #       type: line
-        #       colour: 0
-        #       rollingAverage: false
-
-        # - heading: 2nd dose
-        #   tabType: chart
-        #   params:
-        #     - key: areaType
-        #       sign: "="
-        #       value: overview
-        #   fields:
-        #     - label: percentage
-        #       value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-        #       tooltip: Cumulative reported percentage of people who received the second dose of COVID-19 vaccine
-        #       type: line
-        #       colour: 0
-        #       rollingAverage: false
-
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: Report date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: "1st dose (%)"
-              value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-              type: numeric
-              tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
-
-            - label: "2nd dose (%)"
-              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-              type: numeric
-              tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
-
-            - label: "Booster or 3rd dose (%)"
-              value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-              type: numeric
-              tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-
-    By nation:
-
-      tabs:
-
-          - heading: 1st dose
-            tabType: chart
-            colours: [0, 9, 3, 10] # areaNames in alphabetical order
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-              - label: "percentage"
-                value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-                tooltip: Total reported percentage of people who received the first dose of COVID-19 vaccine in each nation
-                type: line
-                rollingAverage: false
-                fill: false
-
-          - heading: 2nd dose
-            tabType: chart
-            colours: [0, 9, 3, 10] # areaNames in alphabetical order
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-              - label: "percentage"
-                value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-                tooltip: Total reported percentage of people who received the second dose of COVID-19 vaccine in each nation
-                type: line
-                rollingAverage: false
-                fill: false
-
-          - heading: Booster or 3rd dose
-            tabType: chart
-            colours: [0, 9, 3, 10] # areaNames in alphabetical order
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-              - label: "percentage"
-                value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-                tooltip: Total reported percentage of people who received a booster or third dose of COVID-19 vaccine in each nation
-                type: line
-                rollingAverage: false
-                fill: false
-
-          - heading: Data table
-            tabType: table
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-            - label: Report date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: "1st dose (%)"
-              value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-              type: numeric
-              tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
-
-            - label: "2nd dose (%)"
-              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-              type: numeric
-              tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
-
-            - label: "Booster or 3rd dose (%)"
-              value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-              type: numeric
-              tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
-
-          - heading: About
-            tabType: metadata
-            filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-#############################################################################################################################
-
-# UK only (nation version in separate card below)
-
-  - heading: Number of vaccinations given, by report date
-    cardType: multiAreaStatic
-    locationAware:
-      included:
-        areaType:
-          - overview
-
-    fullWidth: true
-    abstract: >
-      The number of COVID-19 vaccinations (all doses) given to people of all ages.
-
-    download:
-      - newVaccinesGivenByPublishDate
-      - cumVaccinesGivenByPublishDate
-      - newPeopleVaccinatedFirstDoseByPublishDate
-      - cumPeopleVaccinatedFirstDoseByPublishDate
-      - newPeopleVaccinatedSecondDoseByPublishDate
-      - cumPeopleVaccinatedSecondDoseByPublishDate
-      - newPeopleVaccinatedThirdInjectionByPublishDate
-      - cumPeopleVaccinatedThirdInjectionByPublishDate
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - UK total
-        - By nation
-
-    UK total:
-
-      tabs:
-
-        - heading: Daily
-          tabType: chart
-          barType: normal
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: daily
-              value: newVaccinesGivenByPublishDate
-              tooltip: Daily reported number of COVID-19 vaccines given
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: (7-day average)
-              value: newVaccinesGivenByPublishDate
-              tooltip: 7-day rolling average of the daily reported number of COVID-19 vaccines given
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 0 #no of days to exclude for incomplete data
-
-        - heading: Daily by dose
-          tabType: chart
-          barType: stack
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: Booster or third dose daily
-              value: newPeopleVaccinatedThirdInjectionByPublishDate
-              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
-              type: bar
-              colour: 3
-              rollingAverage: false
-
-            - label: 2nd dose daily
-              value: newPeopleVaccinatedSecondDoseByPublishDate
-              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: 1st dose daily
-              value: newPeopleVaccinatedFirstDoseByPublishDate
-              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
-              type: bar
-              colour: 1
-              rollingAverage: false
-
-        - heading: Total
-          tabType: chart
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-          fields:
-            - label: total
-              value: cumVaccinesGivenByPublishDate
-              tooltip: Total reported number of COVID-19 vaccines given
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-        - heading: Total by dose
-          tabType: chart
-          barType: stack
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: Booster or third dose total
-              value: cumPeopleVaccinatedThirdInjectionByPublishDate
-              tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine
-              type: bar
-              colour: 3
-              rollingAverage: false
-
-            - label: 2nd dose total
-              value: cumPeopleVaccinatedSecondDoseByPublishDate
-              tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: 1st dose total
-              value: cumPeopleVaccinatedFirstDoseByPublishDate
-              tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
-              type: bar
-              colour: 1
-              rollingAverage: false
-
-        - heading: Data table
-          tabType: table
-          params:
-            - key: areaType
-              sign: "="
-              value: overview
-
-          fields:
-            - label: Report date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: "1st dose daily"
-              value: newPeopleVaccinatedFirstDoseByPublishDate
-              type: numeric
-              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
-
-            - label: "2nd dose daily"
-              value: newPeopleVaccinatedSecondDoseByPublishDate
-              type: numeric
-              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
-
-            - label: "Booster or 3rd dose daily"
-              value: newPeopleVaccinatedThirdInjectionByPublishDate
-              type: numeric
-              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
-
-            - label: "daily total"
-              value: newVaccinesGivenByPublishDate
-              type: numeric
-              tooltip: Daily reported number of COVID-19 vaccines given
-
-            - label: "1st dose total"
-              value: cumPeopleVaccinatedFirstDoseByPublishDate
-              type: numeric
-              tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
-
-            - label: "2nd dose total"
-              value: cumPeopleVaccinatedSecondDoseByPublishDate
-              type: numeric
-              tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
-
-            - label: "Booster or 3rd dose total"
-              value: cumPeopleVaccinatedThirdInjectionByPublishDate
-              type: numeric
-              tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine
-
-            - label: "Total"
-              value: cumVaccinesGivenByPublishDate
-              type: numeric
-              tooltip: Total number of COVID-19 vaccines given
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
-
-
-    By nation:
-
-      tabs:
-
-          - heading: Daily
-            tabType: chart
-            barType: stack
-            colours: [0, 9, 3, 10] # areaNames in alphabetical order
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-              - label: "daily"
-                value: newVaccinesGivenByPublishDate
-                tooltip: Daily reported number of COVID-19 vaccines given in each nation
-                type: bar
-                rollingAverage: false
-
-          - heading: Total
-            tabType: chart
-            barType: stack
-            colours: [0, 9, 3, 10] # areaNames in alphabetical order
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-              - label: "total"
-                value: cumVaccinesGivenByPublishDate
-                tooltip: Total reported number COVID-19 vaccines given in each nation
-                type: bar
-                rollingAverage: false
-
-          - heading: Data table
-            tabType: table
-            params:
-              - key: areaType
-                sign: "="
-                value: nation
-
-            fields:
-            - label: Report date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: "daily"
-              value: newVaccinesGivenByPublishDate
-              type: numeric
-              tooltip: Daily reported number of COVID-19 vaccines given
-
-            - label: "total"
-              value: cumVaccinesGivenByPublishDate
-              type: numeric
-              tooltip: Total number of COVID-19 vaccines given
-
-          - heading: About
-            tabType: metadata
-            filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
-
-
-
-##############################################################################################################################
-
-# nations only
-
-  - heading: People aged 12 and over who have received vaccinations, by vaccination date
-    cardType: chart
-    locationAware:
-      included:
-        areaName:
-          - England
-          - Scotland
-
-    fullWidth: true
-    abstract: >
-      The number of people aged 12 and over who have received a COVID-19 vaccination, broken down by dose.
-      Data for the latest 2 days, marked in grey, are incomplete.
-
-    download:
-      - newPeopleVaccinatedFirstDoseByVaccinationDate
-      - cumPeopleVaccinatedFirstDoseByVaccinationDate
-      - newPeopleVaccinatedSecondDoseByVaccinationDate
-      - cumPeopleVaccinatedSecondDoseByVaccinationDate
-      - newPeopleVaccinatedThirdInjectionByVaccinationDate
-      - cumPeopleVaccinatedThirdInjectionByVaccinationDate
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - First dose
-        - Second dose
-        - Booster or third dose
-
-    First dose:
-
-      tabs:
-
-        - heading: Daily
-          tabType: chart
-          barType: normal
-
-          fields:
-            - label: Number of vaccinations
-              value: newPeopleVaccinatedFirstDoseByVaccinationDate
-              tooltip: Daily number of people who received the first dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
-
-            - label: Vaccinations (7-day average)
-              value: newPeopleVaccinatedFirstDoseByVaccinationDate
-              tooltip: 7-day rolling average of the daily number of people who received the first dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 2 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-
-          fields:
-            - label: Number of vaccinations
-              value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-              tooltip: Total number of people who received the first dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
-
-
-        - heading: Data table
-          tabType: table
-
-          fields:
-              - label: Vaccination date
-                value: date
-                type: date
-                tooltip: Date
-
-              - label: "Daily"
-                value: newPeopleVaccinatedFirstDoseByVaccinationDate
-                type: numeric
-                tooltip: Daily number of people who received the first dose of COVID-19 vaccine
-
-              - label: "Total"
-                value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-                type: numeric
-                tooltip: Total number of people who received the first dose of COVID-19 vaccine
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyVaccinationDate.md
-
-    Second dose:
-
-      tabs:
-
-        - heading: Daily
-          tabType: chart
-          barType: normal
-
-          fields:
-            - label: Number of vaccinations
-              value: newPeopleVaccinatedSecondDoseByVaccinationDate
-              tooltip: Daily number of people who received the second dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
-
-            - label: Vaccinations (7-day average)
-              value: newPeopleVaccinatedSecondDoseByVaccinationDate
-              tooltip: 7-day rolling average of the daily number of people who received the second dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 2 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-
-          fields:
-            - label: Number of vaccinations
-              value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-              tooltip: Total number of people who received the second dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
-
-
-        - heading: Data table
-          tabType: table
-
-          fields:
-              - label: Vaccination date
-                value: date
-                type: date
-                tooltip: Date
-
-              - label: "Daily"
-                value: newPeopleVaccinatedSecondDoseByVaccinationDate
-                type: numeric
-                tooltip: Daily number of people who received the second dose of COVID-19 vaccine
-
-              - label: "Total"
-                value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-                type: numeric
-                tooltip: Total number of people who received the second dose of COVID-19 vaccine
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyVaccinationDate.md
-
-    Booster or third dose:
-
-      tabs:
-
-        - heading: Daily
-          tabType: chart
-          barType: normal
-
-          fields:
-            - label: Number of vaccinations
-              value: newPeopleVaccinatedThirdInjectionByVaccinationDate
-              tooltip: Daily number of people who received a booster or third dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
-
-            - label: Vaccinations (7-day average)
-              value: newPeopleVaccinatedThirdInjectionByVaccinationDate
-              tooltip: 7-day rolling average of the daily number of people who received a booster or third dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 2 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-
-          fields:
-            - label: Number of vaccinations
-              value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
-              tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
-
-
-        - heading: Data table
-          tabType: table
-
-          fields:
-              - label: Vaccination date
-                value: date
-                type: date
-                tooltip: Date
-
-              - label: "Daily"
-                value: newPeopleVaccinatedThirdInjectionByVaccinationDate
-                type: numeric
-                tooltip: Daily number of people who received a booster or third dose of COVID-19 vaccine
-
-              - label: "Total"
-                value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
-                type: numeric
-                tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyVaccinationDate.md
-
-##############################################################################################################################
-
-
-# local authorities / regions
-
-# La/regions only
-
-  - heading: People aged 12 and over who have received vaccinations, by vaccination date
-    cardType: chart
-    locationAware:
-      included:
-        areaType:
-          - region
-          - utla
-          - ltla
-
-    fullWidth: true
-    abstract: >
-      The number of people aged 12 and over who have received a COVID-19 vaccination, broken down by dose.
-      Data for the latest 2 days, marked in grey, are incomplete.
-
-    download:
-      - newPeopleVaccinatedFirstDoseByVaccinationDate
-      - cumPeopleVaccinatedFirstDoseByVaccinationDate
-      - newPeopleVaccinatedSecondDoseByVaccinationDate
-      - cumPeopleVaccinatedSecondDoseByVaccinationDate
-      - newPeopleVaccinatedThirdInjectionByVaccinationDate
-      - cumPeopleVaccinatedThirdInjectionByVaccinationDate
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - First dose
-        - Second dose
-        - Booster or third dose
-
-    First dose:
-
-      tabs:
-
-        - heading: Daily
-          tabType: chart
-          barType: normal
-
-          fields:
-            - label: Number of vaccinations
-              value: newPeopleVaccinatedFirstDoseByVaccinationDate
-              tooltip: Daily number of people who received the first dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
-
-            - label: Vaccinations (7-day average)
-              value: newPeopleVaccinatedFirstDoseByVaccinationDate
-              tooltip: 7-day rolling average of the daily number of people who received the first dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 2 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-
-          fields:
-            - label: Number of vaccinations
-              value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-              tooltip: Total number of people who received the first dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
-
-        - heading: Data table
-          tabType: table
-
-          fields:
-              - label: Vaccination date
-                value: date
-                type: date
-                tooltip: Date
-
-              - label: "Daily"
-                value: newPeopleVaccinatedFirstDoseByVaccinationDate
-                type: numeric
-                tooltip: Daily number of people who received the first dose of COVID-19 vaccine
-
-              - label: "Total"
-                value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-                type: numeric
-                tooltip: Total number of people who received the first dose of COVID-19 vaccine
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyVaccinationDate.md
-
-    Second dose:
-
-      tabs:
-
-        - heading: Daily
-          tabType: chart
-          barType: normal
-
-          fields:
-            - label: Number of vaccinations
-              value: newPeopleVaccinatedSecondDoseByVaccinationDate
-              tooltip: Daily number of people who received the second dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
-
-            - label: Vaccinations (7-day average)
-              value: newPeopleVaccinatedSecondDoseByVaccinationDate
-              tooltip: 7-day rolling average of the daily number of people who received the second dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 2 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-
-          fields:
-            - label: Number of vaccinations
-              value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-              tooltip: Total number of people who received the second dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
-
-        - heading: Data table
-          tabType: table
-
-          fields:
-              - label: Vaccination date
-                value: date
-                type: date
-                tooltip: Date
-
-              - label: "Daily"
-                value: newPeopleVaccinatedSecondDoseByVaccinationDate
-                type: numeric
-                tooltip: Daily number of people who received the second dose of COVID-19 vaccine
-
-              - label: "Total"
-                value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-                type: numeric
-                tooltip: Total number of people who received the second dose of COVID-19 vaccine
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyVaccinationDate.md
-
-    Booster or third dose:
-
-      tabs:
-
-        - heading: Daily
-          tabType: chart
-          barType: normal
-
-          fields:
-            - label: Number of vaccinations
-              value: newPeopleVaccinatedThirdInjectionByVaccinationDate
-              tooltip: Daily number of people who received a booster or third dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
-
-            - label: Vaccinations (7-day average)
-              value: newPeopleVaccinatedThirdInjectionByVaccinationDate
-              tooltip: 7-day rolling average of the daily number of people who received a booster or third dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 2 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-
-          fields:
-            - label: Number of vaccinations
-              value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
-              tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-              highlight:
-                from: -2
-                to: 0
-                colour: 6
-                label: "Most recent 2 days (incomplete)"
-
-        - heading: Data table
-          tabType: table
-
-          fields:
-              - label: Vaccination date
-                value: date
-                type: date
-                tooltip: Date
-
-              - label: "Daily"
-                value: newPeopleVaccinatedThirdInjectionByVaccinationDate
-                type: numeric
-                tooltip: Daily number of people who received a booster or third dose of COVID-19 vaccine
-
-              - label: "Total"
-                value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
-                type: numeric
-                tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyVaccinationDate.md
-
-##############################################################################################################################
-
-# region / La only
-
-  - heading: Latest vaccination uptake (12+), by vaccination date
-    cardType: tabContentRaw
-    locationAware:
-      included:
-        areaType:
-          - region
-          - utla
-          - ltla
-
-    fullWidth: false
-    abstract: >
-      Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose.
-      For English areas, the denominator is the number of people aged 12 and over on the National Immunisation Management
-      Service (NIMS) database. For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12
-      and over. This means comparisons between local areas in different nations should be made with caution. England local
-      area uptake is also not comparable to England national uptake by report date as that uses a different denominator – see
-      the About tab for more information. England and Scotland totals by vaccination date are shown for comparison purposes
-      calculated on the same basis as their constituent regions and local authorities.
-
-    download:
-      - cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-      - cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-      - cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-
-    tabs:
-      - heading: Chart
-        tabType: percentageWaffle
-
-        fields:
-          - label: 1st dose (%)
-            value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
-            colour: 1
-
-          - label: 2nd dose (%)
-            value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
-            colour: 0
-
-          - label: Booster or 3rd dose (%)
-            value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
-            colour: 3
-
-      - heading: Data table
-        tabType: table
-
-        fields:
-          - label: Vaccination date
-            value: date
-            type: date
-            tooltip: Date
-
-          - label: "1st dose (%)"
-            value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
-
-          - label: "2nd dose (%)"
-            value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
-
-          - label: "Booster or third dose (%)"
-            value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-#############################################################################################################################
-
-# region / la  only
-
-  - heading: Vaccination uptake (12+), by vaccination date
-    cardType: chart
-    chartMode: percentage
-    locationAware:
-      included:
-        areaType:
-          - region
-          - utla
-          - ltla
-
-    fullWidth: false
-    abstract: >
-      Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose.
-      For English areas, the denominator is the number of people aged 12 and over on the National Immunisation Management
-      Service (NIMS) database. For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12
-      and over. This means comparisons between local areas in different nations should be made with caution. England local
-      area uptake is also not comparable to England national uptake by report date as that uses a different denominator – see
-      the About tab for more information. England and Scotland totals by vaccination date are shown for comparison purposes
-      calculated on the same basis as their constituent regions and local authorities.
-      Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
-
-    download:
-      - cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-      - cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-      - cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-
-    tabs:
-
-      - heading: Chart
-        tabType: chart
-        fields:
-            - label: 1st dose (%)
-              value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-              tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
-              type: line
-              colour: 1
-              rollingAverage: false
-            - label: 2nd dose (%)
-              value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-              tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
-              type: line
-              colour: 0
-              rollingAverage: false
-            - label: Booster or 3rd dose (%)
-              value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-              tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              rollingAverage: false
-
-      - heading: Data table
-        tabType: table
-
-        fields:
-            - label: Vaccination date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: "1st dose (%)"
-              value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-              type: numeric
-              tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
-
-            - label: "2nd dose (%)"
-              value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-              type: numeric
-              tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
-
-            - label: "Booster or 3rd dose (%)"
-              value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-              type: numeric
-              tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-#############################################################################################################################
-
-# England, Scotland, regions, LAs only
-
-  - heading: Vaccination uptake (12+) by area
-    cardType: simpleTableStatic
-    locationAware:
-        included:
-         areaName:
-          - England
-          - Adur
-          - Allerdale
-          - Amber Valley
-          - Arun
-          - Ashfield
-          - Ashford
-          - Aylesbury Vale
-          - Babergh
-          - Barking and Dagenham
-          - Barnet
-          - Barnsley
-          - Barrow-in-Furness
-          - Basildon
-          - Basingstoke and Deane
-          - Bassetlaw
-          - Bath and North East Somerset
-          - Bedford
-          - Bexley
-          - Birmingham
-          - Blaby
-          - Blackburn with Darwen
-          - Blackpool
-          - Bolsover
-          - Bolton
-          - Boston
-          - Bournemouth, Christchurch and Poole
-          - Bracknell Forest
-          - Bradford
-          - Braintree
-          - Breckland
-          - Brent
-          - Brentwood
-          - Brighton and Hove
-          - Bristol, City of
-          - Broadland
-          - Bromley
-          - Bromsgrove
-          - Broxbourne
-          - Broxtowe
-          - Burnley
-          - Bury
-          - Calderdale
-          - Cambridge
-          - Camden
-          - Cannock Chase
-          - Canterbury
-          - Carlisle
-          - Castle Point
-          - Central Bedfordshire
-          - Charnwood
-          - Chelmsford
-          - Cheltenham
-          - Cherwell
-          - Cheshire East
-          - Cheshire West and Chester
-          - Chesterfield
-          - Chichester
-          - Chiltern
-          - Chorley
-          - Colchester
-          - Copeland
-          - Corby
-          - Cornwall and Isles of Scilly
-          - Cotswold
-          - County Durham
-          - Coventry
-          - Craven
-          - Crawley
-          - Croydon
-          - Dacorum
-          - Darlington
-          - Dartford
-          - Daventry
-          - Derby
-          - Derbyshire Dales
-          - Doncaster
-          - Dorset
-          - Dover
-          - Dudley
-          - Ealing
-          - East Cambridgeshire
-          - East Devon
-          - East Hampshire
-          - East Hertfordshire
-          - East Lindsey
-          - East Northamptonshire
-          - East Riding of Yorkshire
-          - East Staffordshire
-          - East Suffolk
-          - Eastbourne
-          - Eastleigh
-          - Eden
-          - Elmbridge
-          - Enfield
-          - Epping Forest
-          - Epsom and Ewell
-          - Erewash
-          - Exeter
-          - Fareham
-          - Fenland
-          - Folkestone and Hythe
-          - Forest of Dean
-          - Fylde
-          - Gateshead
-          - Gedling
-          - Gloucester
-          - Gosport
-          - Gravesham
-          - Great Yarmouth
-          - Greenwich
-          - Guildford
-          - Hackney and City of London
-          - Halton
-          - Hambleton
-          - Hammersmith and Fulham
-          - Harborough
-          - Haringey
-          - Harlow
-          - Harrogate
-          - Harrow
-          - Hart
-          - Hartlepool
-          - Hastings
-          - Havant
-          - Havering
-          - Herefordshire, County of
-          - Hertsmere
-          - High Peak
-          - Hillingdon
-          - Hinckley and Bosworth
-          - Horsham
-          - Hounslow
-          - Huntingdonshire
-          - Hyndburn
-          - Ipswich
-          - Isle of Wight
-          - Islington
-          - Kensington and Chelsea
-          - Kettering
-          - King's Lynn and West Norfolk
-          - Kingston upon Hull, City of
-          - Kingston upon Thames
-          - Kirklees
-          - Knowsley
-          - Lambeth
-          - Lancaster
-          - Leeds
-          - Leicester
-          - Lewes
-          - Lewisham
-          - Lichfield
-          - Lincoln
-          - Liverpool
-          - Luton
-          - Maidstone
-          - Maldon
-          - Malvern Hills
-          - Manchester
-          - Mansfield
-          - Medway
-          - Melton
-          - Mendip
-          - Merton
-          - Mid Devon
-          - Mid Suffolk
-          - Mid Sussex
-          - Middlesbrough
-          - Milton Keynes
-          - Mole Valley
-          - New Forest
-          - Newark and Sherwood
-          - Newcastle upon Tyne
-          - Newcastle-under-Lyme
-          - Newham
-          - North Devon
-          - North East Derbyshire
-          - North East Lincolnshire
-          - North Hertfordshire
-          - North Kesteven
-          - North Lincolnshire
-          - North Norfolk
-          - North Somerset
-          - North Tyneside
-          - North Warwickshire
-          - North West Leicestershire
-          - Northampton
-          - Northumberland
-          - Norwich
-          - Nottingham
-          - Nuneaton and Bedworth
-          - Oadby and Wigston
-          - Oldham
-          - Oxford
-          - Pendle
-          - Peterborough
-          - Plymouth
-          - Portsmouth
-          - Preston
-          - Reading
-          - Redbridge
-          - Redcar and Cleveland
-          - Redditch
-          - Reigate and Banstead
-          - Ribble Valley
-          - Richmond upon Thames
-          - Richmondshire
-          - Rochdale
-          - Rochford
-          - Rossendale
-          - Rother
-          - Rotherham
-          - Rugby
-          - Runnymede
-          - Rushcliffe
-          - Rushmoor
-          - Rutland
-          - Ryedale
-          - Salford
-          - Sandwell
-          - Scarborough
-          - Sedgemoor
-          - Sefton
-          - Selby
-          - Sevenoaks
-          - Sheffield
-          - Shropshire
-          - Slough
-          - Solihull
-          - Somerset West and Taunton
-          - South Bucks
-          - South Cambridgeshire
-          - South Derbyshire
-          - South Gloucestershire
-          - South Hams
-          - South Holland
-          - South Kesteven
-          - South Lakeland
-          - South Norfolk
-          - South Northamptonshire
-          - South Oxfordshire
-          - South Ribble
-          - South Somerset
-          - South Staffordshire
-          - South Tyneside
-          - Southampton
-          - Southend-on-Sea
-          - Southwark
-          - Spelthorne
-          - St Albans
-          - St. Helens
-          - Stafford
-          - Staffordshire Moorlands
-          - Stevenage
-          - Stockport
-          - Stockton-on-Tees
-          - Stoke-on-Trent
-          - Stratford-on-Avon
-          - Stroud
-          - Sunderland
-          - Surrey Heath
-          - Sutton
-          - Swale
-          - Swindon
-          - Tameside
-          - Tamworth
-          - Tandridge
-          - Teignbridge
-          - Telford and Wrekin
-          - Tendring
-          - Test Valley
-          - Tewkesbury
-          - Thanet
-          - Three Rivers
-          - Thurrock
-          - Tonbridge and Malling
-          - Torbay
-          - Torridge
-          - Tower Hamlets
-          - Trafford
-          - Tunbridge Wells
-          - Uttlesford
-          - Vale of White Horse
-          - Wakefield
-          - Walsall
-          - Waltham Forest
-          - Wandsworth
-          - Warrington
-          - Warwick
-          - Watford
-          - Waverley
-          - Wealden
-          - Wellingborough
-          - Welwyn Hatfield
-          - West Berkshire
-          - West Devon
-          - West Lancashire
-          - West Lindsey
-          - West Oxfordshire
-          - West Suffolk
-          - Westminster
-          - Wigan
-          - Wiltshire
-          - Winchester
-          - Windsor and Maidenhead
-          - Wirral
-          - Woking
-          - Wokingham
-          - Wolverhampton
-          - Worcester
-          - Worthing
-          - Wychavon
-          - Wycombe
-          - Wyre
-          - Wyre Forest
-          - York
-          - Cumbria
-          - Derbyshire
-          - Devon
-          - East Sussex
-          - Essex
-          - Gloucestershire
-          - Hampshire
-          - Hertfordshire
-          - Kent
-          - Lancashire
-          - Leicestershire
-          - Lincolnshire
-          - Norfolk
-          - North Yorkshire
-          - Northamptonshire
-          - Nottinghamshire
-          - Oxfordshire
-          - Somerset
-          - Staffordshire
-          - Suffolk
-          - Surrey
-          - Warwickshire
-          - West Sussex
-          - Worcestershire         
-         areaType:
-          - region
-
-    fullWidth: true
-    abstract: >
-      Latest total percentage of people aged 12 and over who have received a COVID-19 vaccination, by dose. For English areas,
-      the denominator is the number of people aged 12 and over on the National Immunisation Management Service (NIMS) database.
-      For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12 and over. This means comparisons
-      between local areas in different nations should be made with caution. England local area uptake is also not comparable to
-      England national uptake by report date as that uses a different denominator - see the About tab for more information.
-      England and Scotland totals by vaccination date are shown for comparison purposes calculated on the same basis as their
-      constituent regions and local authorities.
-
-    download:
-      - cumPeopleVaccinatedFirstDoseByVaccinationDate
-      - cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-      - cumPeopleVaccinatedSecondDoseByVaccinationDate
-      - cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-      - cumPeopleVaccinatedThirdInjectionByVaccinationDate
-      - cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-
-    tabs:
-      # - heading: UK
-      #   tabType: table
-      #   params:
-      #     - key: areaType
-      #       sign: "="
-      #       value: overview
-
-      #   latestBy: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-      #   sortBy: areaName
-
-      #   fields:
-      #     - label: Area
-      #       value: areaName
-      #       type: string
-      #       tooltip: ""
-
-      #     - label: 1st dose
-      #       value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-      #       type: numeric
-      #       tooltip: Cumulative number of people who received the first dose of COVID-19 vaccine up to {date}
-
-      #     - label: 1st dose (%)
-      #       value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-      #       type: numeric
-      #       tooltip: Cumulative percentage of people who received the first dose of COVID-19 vaccine up to {date}
-
-      #     - label: 2nd dose
-      #       value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-      #       type: numeric
-      #       tooltip: Cumulative number of people who received the second dose of COVID-19 vaccine up to {date}
-
-      #     - label: 2nd dose (%)
-      #       value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-      #       type: numeric
-      #       tooltip: Cumulative percentage of people who received the second dose of COVID-19 vaccine up to {date}
-
-      - heading: Nation
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: nation
-
-        latestBy: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-        sortBy: areaName
-
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: 1st dose
-            value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-            type: numeric
-            tooltip: Total number of people who received the first dose of COVID-19 vaccine up to {date}
-
-          - label: 1st dose (%)
-            value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine up to {date}
-
-          - label: 2nd dose
-            value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-            type: numeric
-            tooltip: Total number of people who received the second dose of COVID-19 vaccine up to {date}
-
-          - label: 2nd dose (%)
-            value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine up to {date}
-
-          - label: Booster or 3rd dose
-            value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
-            type: numeric
-            tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine up to {date}
-
-          - label: Booster or 3rd dose (%)
-            value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}
-
-      - heading: Region
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: region
-
-        latestBy: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-        sortBy: areaName
-
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: 1st dose
-            value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-            type: numeric
-            tooltip: Total number of people who received the first dose of COVID-19 vaccine up to {date}
-
-          - label: 1st dose (%)
-            value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine up to {date}
-
-          - label: 2nd dose
-            value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-            type: numeric
-            tooltip: Total number of people who received the second dose of COVID-19 vaccine up to {date}
-
-          - label: 2nd dose (%)
-            value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine up to {date}
-
-          - label: Booster or 3rd dose
-            value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
-            type: numeric
-            tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine up to {date}
-
-          - label: Booster or 3rd dose (%)
-            value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}
-
-      - heading: Upper tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: utla
-
-        latestBy: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-        sortBy: areaName
-        searchBy: areaName
-
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: 1st dose
-            value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-            type: numeric
-            tooltip: Total number of people who received the first dose of COVID-19 vaccine up to {date}
-
-          - label: 1st dose (%)
-            value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine up to {date}
-
-          - label: 2nd dose
-            value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-            type: numeric
-            tooltip: Total number of people who received the second dose of COVID-19 vaccine up to {date}
-
-          - label: 2nd dose (%)
-            value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine up to {date}
-
-          - label: Booster or 3rd dose
-            value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
-            type: numeric
-            tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine up to {date}
-
-          - label: Booster or 3rd dose (%)
-            value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}
-
-      - heading: Lower tier LA
-        tabType: table
-        params:
-          - key: areaType
-            sign: "="
-            value: ltla
-
-        latestBy: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-        sortBy: areaName
-        searchBy: areaName
-
-        fields:
-          - label: Area
-            value: areaName
-            type: string
-            tooltip: ""
-
-          - label: 1st dose
-            value: cumPeopleVaccinatedFirstDoseByVaccinationDate
-            type: numeric
-            tooltip: Total number of people who received the first dose of COVID-19 vaccine up to {date}
-
-          - label: 1st dose (%)
-            value: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine up to {date}
-
-          - label: 2nd dose
-            value: cumPeopleVaccinatedSecondDoseByVaccinationDate
-            type: numeric
-            tooltip: Total number of people who received the second dose of COVID-19 vaccine up to {date}
-
-          - label: 2nd dose (%)
-            value: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine up to {date}
-
-          - label: Booster or 3rd dose
-            value: cumPeopleVaccinatedThirdInjectionByVaccinationDate
-            type: numeric
-            tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine up to {date}
-
-          - label: Booster or 3rd dose (%)
-            value: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine up to {date}
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-#############################################################################################################################
-
-  - heading: Vaccination uptake, by vaccination date age demographics
-    cardType: chart
-    locationAware:
-      included:
-        areaName:
-          - England
-          - Scotland
-
-    experimental: false
-
-    fullWidth: true
-    abstract: >
-      Total percentage of people who have received a COVID-19 vaccination, by age group.
-      For English areas, the denominator is the number of people aged 12 and over on the National Immunisation Management
-      Service (NIMS) database. For Scottish areas, the denominator is the mid-2020 population estimate for those aged 12
-      and over. This means comparisons between local areas in different nations should be made with caution. England local
-      area uptake is also not comparable to England national uptake by report date as that uses a different denominator – see
-      the About tab for more information.
-
-
-    download:
-      - vaccinationsAgeDemographics
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - First dose
-        - Second dose
-        - Booster or third dose
-
-    First dose:
-
-      tabs:
-        - heading: Heatmap
-          tabType: percentageHeatmap
-          fields:
-            - label: Age demographics
-              value: vaccinationsAgeDemographics
-              amplitude: cumVaccinationFirstDoseUptakeByVaccinationDatePercentage
-              amplitudeLabel: Percentage uptake
-              metricLabel: Age group
-              parameter: age
-              metrics:
-              #Both Eng and Scot
-              - label: 5 to 11
-                value: "05_11"
-
-              #Both Eng and Scot
-              - label: 12 to 15
-                value: "12_15"
-
-              #Both Eng and Scot
-              - label: 16 to 17
-                value: "16_17"
-
-              #Eng only
-              - label: 18 to 24
-                value: "18_24"
-
-              #Scot only
-              - label: 18 to 29
-                value: "18_29"
-
-              #Eng only
-              - label: 25 to 29
-                value: "25_29"
-
-              #Eng only
-              - label: 30 to 34
-                value: "30_34"
-
-              #Scot only
-              - label: 30 to 39
-                value: "30_39"
-
-              #Eng only
-              - label: 35 to 39
-                value: "35_39"
-
-              #Eng only
-              - label: 40 to 44
-                value: "40_44"
-
-              #Scot only
-              - label: 40 to 49
-                value: "40_49"
-
-              #Eng only
-              - label: 45 to 49
-                value: "45_49"
-
-              #Both Eng and Scot
-              - label: 50 to 54
-                value: "50_54"
-
-              #Both Eng and Scot
-              - label: 55 to 59
-                value: "55_59"
-
-              #Both Eng and Scot
-              - label: 60 to 64
-                value: "60_64"
-
-              #Both Eng and Scot
-              - label: 65 to 69
-                value: "65_69"
-
-              #Both Eng and Scot
-              - label: 70 to 74
-                value: "70_74"
-
-              #Both Eng and Scot
-              - label: 75 to 79
-                value: "75_79"
-
-              #Eng only
-              - label: 80 to 84
-                value: "80_84"
-
-              #Scot only
-              - label: 80+
-                value: "80+"
-
-              #Eng only
-              - label: 85 to 89
-                value: "85_89"
-
-              #Eng only
-              - label: 90+
-                value: "90+"
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-    Second dose:
-
-      tabs:
-        - heading: Heatmap
-          tabType: percentageHeatmap
-          fields:
-            - label: Age demographics
-              value: vaccinationsAgeDemographics
-              amplitude: cumVaccinationSecondDoseUptakeByVaccinationDatePercentage
-              amplitudeLabel: Percentage uptake
-              metricLabel: Age group
-              parameter: age
-              metrics:
-              #Both Eng and Scot
-              - label: 5 to 11
-                value: "05_11"
-
-              #Both Eng and Scot
-              - label: 12 to 15
-                value: "12_15"
-
-              #Both Eng and Scot
-              - label: 16 to 17
-                value: "16_17"
-
-              #Eng only
-              - label: 18 to 24
-                value: "18_24"
-
-              #Scot only
-              - label: 18 to 29
-                value: "18_29"
-
-              #Eng only
-              - label: 25 to 29
-                value: "25_29"
-
-              #Eng only
-              - label: 30 to 34
-                value: "30_34"
-
-              #Scot only
-              - label: 30 to 39
-                value: "30_39"
-
-              #Eng only
-              - label: 35 to 39
-                value: "35_39"
-
-              #Eng only
-              - label: 40 to 44
-                value: "40_44"
-
-              #Scot only
-              - label: 40 to 49
-                value: "40_49"
-
-              #Eng only
-              - label: 45 to 49
-                value: "45_49"
-
-              #Both Eng and Scot
-              - label: 50 to 54
-                value: "50_54"
-
-              #Both Eng and Scot
-              - label: 55 to 59
-                value: "55_59"
-
-              #Both Eng and Scot
-              - label: 60 to 64
-                value: "60_64"
-
-              #Both Eng and Scot
-              - label: 65 to 69
-                value: "65_69"
-
-              #Both Eng and Scot
-              - label: 70 to 74
-                value: "70_74"
-
-              #Both Eng and Scot
-              - label: 75 to 79
-                value: "75_79"
-
-              #Eng only
-              - label: 80 to 84
-                value: "80_84"
-
-              #Scot only
-              - label: 80+
-                value: "80+"
-
-              #Eng only
-              - label: 85 to 89
-                value: "85_89"
-
-              #Eng only
-              - label: 90+
-                value: "90+"
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-    Booster or third dose:
-
-      tabs:
-        - heading: Heatmap
-          tabType: percentageHeatmap
-          fields:
-            - label: Age demographics
-              value: vaccinationsAgeDemographics
-              amplitude: cumVaccinationThirdInjectionUptakeByVaccinationDatePercentage
-              amplitudeLabel: Percentage uptake
-              metricLabel: Age group
-              parameter: age
-              metrics:
-              #Both Eng and Scot
-              - label: 5 to 11
-                value: "05_11"
-
-              #Both Eng and Scot
-              - label: 12 to 15
-                value: "12_15"
-
-              #Both Eng and Scot
-              - label: 16 to 17
-                value: "16_17"
-
-              #Eng only
-              - label: 18 to 24
-                value: "18_24"
-
-              #Scot only
-              - label: 18 to 29
-                value: "18_29"
-
-              #Eng only
-              - label: 25 to 29
-                value: "25_29"
-
-              #Eng only
-              - label: 30 to 34
-                value: "30_34"
-
-              #Scot only
-              - label: 30 to 39
-                value: "30_39"
-
-              #Eng only
-              - label: 35 to 39
-                value: "35_39"
-
-              #Eng only
-              - label: 40 to 44
-                value: "40_44"
-
-              #Scot only
-              - label: 40 to 49
-                value: "40_49"
-
-              #Eng only
-              - label: 45 to 49
-                value: "45_49"
-
-              #Both Eng and Scot
-              - label: 50 to 54
-                value: "50_54"
-
-              #Both Eng and Scot
-              - label: 55 to 59
-                value: "55_59"
-
-              #Both Eng and Scot
-              - label: 60 to 64
-                value: "60_64"
-
-              #Both Eng and Scot
-              - label: 65 to 69
-                value: "65_69"
-
-              #Both Eng and Scot
-              - label: 70 to 74
-                value: "70_74"
-
-              #Both Eng and Scot
-              - label: 75 to 79
-                value: "75_79"
-
-              #Eng only
-              - label: 80 to 84
-                value: "80_84"
-
-              #Scot only
-              - label: 80+
-                value: "80+"
-
-              #Eng only
-              - label: 85 to 89
-                value: "85_89"
-
-              #Eng only
-              - label: 90+
-                value: "90+"
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-
-
-##############################################################################################################################
-
-# nations only
-
-  - heading: People who have received vaccinations, by report date
-    cardType: chart
-    locationAware:
-      included:
-        areaType:
-          - nation
-
-    fullWidth: true
-    abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, broken down by dose.
-
-    download:
-      - newPeopleVaccinatedFirstDoseByPublishDate
-      - cumPeopleVaccinatedFirstDoseByPublishDate
-      - newPeopleVaccinatedSecondDoseByPublishDate
-      - cumPeopleVaccinatedSecondDoseByPublishDate
-      - newPeopleVaccinatedThirdInjectionByPublishDate
-      - cumPeopleVaccinatedThirdInjectionByPublishDate
-
-    options:
-      type: radio
-      heading: null
-      choices:
-        - First dose
-        - Second dose
-        - Booster or third dose
-
-    First dose:
-
-      tabs:
-
-        - heading: Daily
-          tabType: chart
-          barType: normal
-
-          fields:
-            - label: daily
-              value: newPeopleVaccinatedFirstDoseByPublishDate
-              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: (7-day average)
-              value: newPeopleVaccinatedFirstDoseByPublishDate
-              tooltip: 7-day rolling average of the daily reported number of people who received the first dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 0 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-
-          fields:
-            - label: total
-              value: cumPeopleVaccinatedFirstDoseByPublishDate
-              tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-
-        - heading: Data table
-          tabType: table
-
-          fields:
-              - label: Report date
-                value: date
-                type: date
-                tooltip: Date
-
-              - label: "daily"
-                value: newPeopleVaccinatedFirstDoseByPublishDate
-                type: numeric
-                tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
-
-              - label: "total"
-                value: cumPeopleVaccinatedFirstDoseByPublishDate
-                type: numeric
-                tooltip: Total number of people who received the first dose of COVID-19 vaccine
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
-
-    Second dose:
-
-      tabs:
-
-        - heading: Daily
-          tabType: chart
-          barType: normal
-
-          fields:
-            - label: daily
-              value: newPeopleVaccinatedSecondDoseByPublishDate
-              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: (7-day average)
-              value: newPeopleVaccinatedSecondDoseByPublishDate
-              tooltip: 7-day rolling average of the daily reported number of people who received the second dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 0 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-
-          fields:
-            - label: total
-              value: cumPeopleVaccinatedSecondDoseByPublishDate
-              tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-
-        - heading: Data table
-          tabType: table
-
-          fields:
-              - label: Report date
-                value: date
-                type: date
-                tooltip: Date
-
-              - label: "daily"
-                value: newPeopleVaccinatedSecondDoseByPublishDate
-                type: numeric
-                tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
-
-              - label: "total"
-                value: cumPeopleVaccinatedSecondDoseByPublishDate
-                type: numeric
-                tooltip: Total number of people who received the second dose of COVID-19 vaccine
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
-
-    Booster or third dose:
-
-      tabs:
-
-        - heading: Daily
-          tabType: chart
-          barType: normal
-
-          fields:
-            - label: daily
-              value: newPeopleVaccinatedThirdInjectionByPublishDate
-              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-            - label: (7-day average)
-              value: newPeopleVaccinatedThirdInjectionByPublishDate
-              tooltip: 7-day rolling average of the daily reported number of people who received a booster or third dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              fill: false
-              rollingAverage:
-                window: 7
-                clipEnd: 0 #no of days to exclude for incomplete data
-
-        - heading: Total
-          tabType: chart
-
-          fields:
-            - label: total
-              value: cumPeopleVaccinatedThirdInjectionByPublishDate
-              tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine
-              type: bar
-              colour: 0
-              rollingAverage: false
-
-
-        - heading: Data table
-          tabType: table
-
-          fields:
-              - label: Report date
-                value: date
-                type: date
-                tooltip: Date
-
-              - label: "daily"
-                value: newPeopleVaccinatedThirdInjectionByPublishDate
-                type: numeric
-                tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
-
-              - label: "total"
-                value: cumPeopleVaccinatedThirdInjectionByPublishDate
-                type: numeric
-                tooltip: Total number of people who received a booster or third dose of COVID-19 vaccine
-
-        - heading: About
-          tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyReportDate.md
-
-
-#############################################################################################################################
-
-# nations only
-
-  - heading: Latest reported vaccination uptake
-    cardType: tabContentRaw
-    locationAware:
-      included:
-        areaType:
-          - nation
-
-    fullWidth: false
-    abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population
-      aged 12 and over. First, second and booster or third doses are shown. The denominator is the 2020 mid-year population estimate for those
-      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so
-      these cannot be compared.
-
-    download:
-      - cumVaccinationFirstDoseUptakeByPublishDatePercentage
-      - cumVaccinationSecondDoseUptakeByPublishDatePercentage
-      - cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-
-    tabs:
-      - heading: Chart
-        tabType: percentageWaffle
-
-        fields:
-          - label: 1st dose (%)
-            value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
-            colour: 1
-
-          - label: 2nd dose (%)
-            value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
-            colour: 0
-
-          - label: Booster or 3rd dose (%)
-            value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
-            colour: 3
-
-      - heading: Data table
-        tabType: table
-
-        fields:
-          - label: Report date
-            value: date
-            type: date
-            tooltip: Date
-
-          - label: "1st dose (%)"
-            value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
-
-          - label: "2nd dose (%)"
-            value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
-
-          - label: "Booster or 3rd dose (%)"
-            value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-            type: numeric
-            tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-
-#############################################################################################################################
-
-
-# nation only
-
-  - heading: Vaccination uptake, by report date
-    cardType: chart
-    locationAware:
-      included:
-        areaType:
-          - nation
-
-    fullWidth: false
-    abstract: >
-      The number of people of all ages who have received a COVID-19 vaccination, shown as a percentage of the population
-      aged 12 and over. First, second and booster or third doses are shown. The denominator is the 2020 mid-year population estimate for those
-      aged 12 and over. A different denominator is used for England local areas and age demographics by vaccination date so
-      these cannot be compared.
-      Percentages lower than 0.1 will not appear on the chart and show as N/A in data tables.
-
-    download:
-      - cumVaccinationFirstDoseUptakeByPublishDatePercentage
-      - cumVaccinationSecondDoseUptakeByPublishDatePercentage
-      - cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-
-    tabs:
-
-      - heading: Chart
-        tabType: chart
-
-        fields:
-            - label: 1st dose (%)
-              value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-              tooltip: Total reported percentage of people who received the first dose of COVID-19 vaccine
-              type: line
-              colour: 1
-              rollingAverage: false
-            - label: 2nd dose (%)
-              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-              tooltip: Total reported percentage of people who received the second dose of COVID-19 vaccine
-              type: line
-              colour: 0
-              rollingAverage: false
-            - label: Booster or 3rd dose (%)
-              value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-              tooltip: Total reported percentage of people who received a booster or third dose of COVID-19 vaccine
-              type: line
-              colour: 3
-              rollingAverage: false
-
-      - heading: Data table
-        tabType: table
-
-        fields:
-            - label: Report date
-              value: date
-              type: date
-              tooltip: Date
-
-            - label: "1st dose (%)"
-              value: cumVaccinationFirstDoseUptakeByPublishDatePercentage
-              type: numeric
-              tooltip: Total percentage of people who received the first dose of COVID-19 vaccine
-
-            - label: "2nd dose (%)"
-              value: cumVaccinationSecondDoseUptakeByPublishDatePercentage
-              type: numeric
-              tooltip: Total percentage of people who received the second dose of COVID-19 vaccine
-
-            - label: "Booster or 3rd dose (%)"
-              value: cumVaccinationThirdInjectionUptakeByPublishDatePercentage
-              type: numeric
-              tooltip: Total percentage of people who received a booster or third dose of COVID-19 vaccine
-
-
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
-
-#############################################################################################################################
-
 # nations only
 
   - heading: Number of vaccines given, by report date
@@ -5728,55 +2724,6 @@ cards:
       - cumPeopleVaccinatedThirdInjectionByPublishDate
 
     tabs:
-
-      - heading: Daily
-        tabType: chart
-        barType: normal
-
-        fields:
-          - label: daily
-            value: newVaccinesGivenByPublishDate
-            tooltip: Daily reported number of COVID-19 vaccines given
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-          - label: (7-day average)
-            value: newVaccinesGivenByPublishDate
-            tooltip: 7-day rolling average of the daily reported number of COVID-19 vaccines given
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 0 #no of days to exclude for incomplete data
-
-      - heading: Daily by dose
-        tabType: chart
-        barType: stack
-
-        fields:
-          - label: Booster or third dose daily
-            value: newPeopleVaccinatedThirdInjectionByPublishDate
-            tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
-            type: bar
-            colour: 3
-            rollingAverage: false
-
-          - label: 2nd dose daily
-            value: newPeopleVaccinatedSecondDoseByPublishDate
-            tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-          - label: 1st dose daily
-            value: newPeopleVaccinatedFirstDoseByPublishDate
-            tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
-            type: bar
-            colour: 1
-            rollingAverage: false
-
       - heading: Total
         tabType: chart
 
@@ -5788,32 +2735,6 @@ cards:
             colour: 0
             rollingAverage: false
 
-      - heading: Total by dose
-        tabType: chart
-        barType: stack
-
-        fields:
-          - label: Booster or third dose total
-            value: cumPeopleVaccinatedThirdInjectionByPublishDate
-            tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine
-            type: bar
-            colour: 3
-            rollingAverage: false
-
-          - label: 2nd dose total
-            value: cumPeopleVaccinatedSecondDoseByPublishDate
-            tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
-            type: bar
-            colour: 0
-            rollingAverage: false
-
-          - label: 1st dose total
-            value: cumPeopleVaccinatedFirstDoseByPublishDate
-            tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
-            type: bar
-            colour: 1
-            rollingAverage: false
-
       - heading: Data table
         tabType: table
 
@@ -5822,41 +2743,6 @@ cards:
               value: date
               type: date
               tooltip: Date
-
-            - label: "1st dose daily"
-              value: newPeopleVaccinatedFirstDoseByPublishDate
-              type: numeric
-              tooltip: Daily reported number of people who received the first dose of COVID-19 vaccine
-
-            - label: "2nd dose daily"
-              value: newPeopleVaccinatedSecondDoseByPublishDate
-              type: numeric
-              tooltip: Daily reported number of people who received the second dose of COVID-19 vaccine
-
-            - label: "Booster or third dose daily"
-              value: newPeopleVaccinatedThirdInjectionByPublishDate
-              type: numeric
-              tooltip: Daily reported number of people who received a booster or third dose of COVID-19 vaccine
-
-            - label: "daily total"
-              value: newVaccinesGivenByPublishDate
-              type: numeric
-              tooltip: Daily reported number of COVID-19 vaccines given
-
-            - label: "1st dose total"
-              value: cumPeopleVaccinatedFirstDoseByPublishDate
-              type: numeric
-              tooltip: Total reported number of people who received the first dose of COVID-19 vaccine
-
-            - label: "2nd dose total"
-              value: cumPeopleVaccinatedSecondDoseByPublishDate
-              type: numeric
-              tooltip: Total reported number of people who received the second dose of COVID-19 vaccine
-
-            - label: "Booster or third dose total"
-              value: cumPeopleVaccinatedThirdInjectionByPublishDate
-              type: numeric
-              tooltip: Total reported number of people who received a booster or third dose of COVID-19 vaccine
 
             - label: "total"
               value: cumVaccinesGivenByPublishDate
