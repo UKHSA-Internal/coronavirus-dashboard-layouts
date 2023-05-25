@@ -1353,7 +1353,7 @@ cards:
 
 # daily and total autumn booster vaccinations
 
-  - heading: People aged 50 and over who have received autumn booster vaccinations, by vaccination date
+  - heading: People aged 50 and over who have received autumn 2022 booster vaccinations, by vaccination date
     cardType: chart
     locationAware:
       included:
@@ -1774,7 +1774,7 @@ cards:
 
 # Autumn booster uptake line chart
 
-  - heading: Autumn booster vaccination uptake (50+), by vaccination date
+  - heading: Autumn booster 2022 vaccination uptake (50+), by vaccination date
     cardType: chart
     locationAware:
       included:
@@ -2170,7 +2170,7 @@ cards:
 
 # Autumn booster demographics line chart
 
-  - heading: Autumn booster vaccination uptake, by vaccination date age demographics (50 and over)
+  - heading: Autumn booster 2022 vaccination uptake, by vaccination date age demographics (50 and over)
     cardType: chart
     locationAware:
       included:
