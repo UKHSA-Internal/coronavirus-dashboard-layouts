@@ -5,7 +5,7 @@ headlineNumbers:
         value: cumPeopleVaccinatedSpring23ByVaccinationDate75plus
         tooltip: Total number of people who have received the second dose of COVID-19 vaccine, reported up to {date}
 
-      - label: Spring 2023 booster uptake(%)
+      - label: Spring 2023 booster uptake (%)
         value: cumVaccinationSpring23UptakeByVaccinationDatePercentage75plus
         tooltip: Total number of people who have received a booster or third dose of COVID-19 vaccine, reported up to {date}
 
