@@ -2013,7 +2013,7 @@ cards:
             - label: V-23APR-01 (Omicron XBB.1.16)
               << : *variantOmicronXBB116
               type: line
-              colour: 16
+              colour: 10
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
