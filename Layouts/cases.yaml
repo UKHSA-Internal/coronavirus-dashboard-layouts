@@ -2288,7 +2288,7 @@ cards:
                 parameter: variant
                 value: "V-23JAN-01 (Omicron XBB.1.5)"
 
-             - label: "V-23APR-01 (Omicron XBB.1.16) %"
+            - label: "V-23APR-01 (Omicron XBB.1.16) %"
               metric: newWeeklyPercentage
               value: variants
               type: numeric
