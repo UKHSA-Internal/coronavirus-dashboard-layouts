@@ -60,7 +60,7 @@ vaccinationAgeDemographics7074: &vaccinationAgeDemographics70_74
   << : *baseVaccinationAgeDemographics
   filters:
     parameter: age
-    value: "70_74"  
+    value: "70_74"
 
 vaccinationAgeDemographics7579: &vaccinationAgeDemographics75_79
   << : *baseVaccinationAgeDemographics
@@ -72,7 +72,7 @@ vaccinationAgeDemographics8084: &vaccinationAgeDemographics80_84
   << : *baseVaccinationAgeDemographics
   filters:
     parameter: age
-    value: "80_84"    
+    value: "80_84"
 
 vaccinationAgeDemographics8589: &vaccinationAgeDemographics85_89
   << : *baseVaccinationAgeDemographics
@@ -84,7 +84,7 @@ vaccinationAgeDemographics90+: &vaccinationAgeDemographics90Plus
   << : *baseVaccinationAgeDemographics
   filters:
     parameter: age
-    value: 90+  
+    value: 90+
 
 ##############################################################################################################################
 
@@ -865,10 +865,10 @@ cards:
       The percentage of people aged 75 and over who have received a spring booster COVID-19 vaccination.
       The denominator is the number of people aged 75 and over on the National Immunisation Management
       Service (NIMS) database.
-    
+
     download:
       - vaccinationsAgeDemographics
-    
+
     tabs:
       - heading: Chart
         tabType: chart
@@ -881,14 +881,14 @@ cards:
             colour: 0
             rollingAverage: false
             metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
-      
+
       - heading: Data table
         tabType: nestedTable
         fields:
           - label: "Vaccination date"
             value: date
             type: date
-          
+
           - label: "Spring booster dose 75+ (%)"
             metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
@@ -896,7 +896,7 @@ cards:
             filters:
               parameter: age
               value: 75+
-      
+
       - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
@@ -1252,7 +1252,7 @@ cards:
           - Surrey
           - Warwickshire
           - West Sussex
-          - Worcestershire         
+          - Worcestershire
         areaType:
           - region
 
@@ -1261,10 +1261,10 @@ cards:
       Percentage of people who have received a spring booster COVID-19 vaccination, by age group.
       The denominator is the number of people on the National Immunisation Management
       Service (NIMS) database, within the relevant age group.
-    
+
     download:
       - vaccinationsAgeDemographics
-    
+
     tabs:
       - heading: Chart
         tabType: chart
@@ -1305,14 +1305,14 @@ cards:
             rollingAverage: false
             metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
             fill: false
-      
+
       - heading: Data table
         tabType: nestedTable
         fields:
           - label: "Vaccination date"
             value: date
             type: date
-          
+
           - label: "Uptake 75 to 79 (%)"
             metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
@@ -1320,7 +1320,7 @@ cards:
             filters:
               parameter: age
               value: "75_79"
-          
+
           - label: "Uptake 80 to 84 (%)"
             metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
@@ -1328,7 +1328,7 @@ cards:
             filters:
               parameter: age
               value: "80_84"
-          
+
           - label: "Uptake 85 to 89 (%)"
             metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
@@ -1336,7 +1336,7 @@ cards:
             filters:
               parameter: age
               value: "85_89"
-          
+
           - label: "Uptake 90+ (%)"
             metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
@@ -1344,7 +1344,7 @@ cards:
             filters:
               parameter: age
               value: 90+
-      
+
       - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
@@ -1353,815 +1353,815 @@ cards:
 
 # daily and total autumn booster vaccinations
 
-  - heading: People aged 50 and over who have received autumn 2022 booster vaccinations, by vaccination date
-    cardType: chart
-    locationAware:
-      included:
-        areaName:
-          - England
-          - Adur
-          - Allerdale
-          - Amber Valley
-          - Arun
-          - Ashfield
-          - Ashford
-          - Aylesbury Vale
-          - Babergh
-          - Barking and Dagenham
-          - Barnet
-          - Barnsley
-          - Barrow-in-Furness
-          - Basildon
-          - Basingstoke and Deane
-          - Bassetlaw
-          - Bath and North East Somerset
-          - Bedford
-          - Bexley
-          - Birmingham
-          - Blaby
-          - Blackburn with Darwen
-          - Blackpool
-          - Bolsover
-          - Bolton
-          - Boston
-          - Bournemouth, Christchurch and Poole
-          - Bracknell Forest
-          - Bradford
-          - Braintree
-          - Breckland
-          - Brent
-          - Brentwood
-          - Brighton and Hove
-          - Bristol, City of
-          - Broadland
-          - Bromley
-          - Bromsgrove
-          - Broxbourne
-          - Broxtowe
-          - Burnley
-          - Bury
-          - Calderdale
-          - Cambridge
-          - Camden
-          - Cannock Chase
-          - Canterbury
-          - Carlisle
-          - Castle Point
-          - Central Bedfordshire
-          - Charnwood
-          - Chelmsford
-          - Cheltenham
-          - Cherwell
-          - Cheshire East
-          - Cheshire West and Chester
-          - Chesterfield
-          - Chichester
-          - Chiltern
-          - Chorley
-          - Colchester
-          - Copeland
-          - Corby
-          - Cornwall and Isles of Scilly
-          - Cotswold
-          - County Durham
-          - Coventry
-          - Craven
-          - Crawley
-          - Croydon
-          - Dacorum
-          - Darlington
-          - Dartford
-          - Daventry
-          - Derby
-          - Derbyshire Dales
-          - Doncaster
-          - Dorset
-          - Dover
-          - Dudley
-          - Ealing
-          - East Cambridgeshire
-          - East Devon
-          - East Hampshire
-          - East Hertfordshire
-          - East Lindsey
-          - East Northamptonshire
-          - East Riding of Yorkshire
-          - East Staffordshire
-          - East Suffolk
-          - Eastbourne
-          - Eastleigh
-          - Eden
-          - Elmbridge
-          - Enfield
-          - Epping Forest
-          - Epsom and Ewell
-          - Erewash
-          - Exeter
-          - Fareham
-          - Fenland
-          - Folkestone and Hythe
-          - Forest of Dean
-          - Fylde
-          - Gateshead
-          - Gedling
-          - Gloucester
-          - Gosport
-          - Gravesham
-          - Great Yarmouth
-          - Greenwich
-          - Guildford
-          - Hackney and City of London
-          - Halton
-          - Hambleton
-          - Hammersmith and Fulham
-          - Harborough
-          - Haringey
-          - Harlow
-          - Harrogate
-          - Harrow
-          - Hart
-          - Hartlepool
-          - Hastings
-          - Havant
-          - Havering
-          - Herefordshire, County of
-          - Hertsmere
-          - High Peak
-          - Hillingdon
-          - Hinckley and Bosworth
-          - Horsham
-          - Hounslow
-          - Huntingdonshire
-          - Hyndburn
-          - Ipswich
-          - Isle of Wight
-          - Islington
-          - Kensington and Chelsea
-          - Kettering
-          - King's Lynn and West Norfolk
-          - Kingston upon Hull, City of
-          - Kingston upon Thames
-          - Kirklees
-          - Knowsley
-          - Lambeth
-          - Lancaster
-          - Leeds
-          - Leicester
-          - Lewes
-          - Lewisham
-          - Lichfield
-          - Lincoln
-          - Liverpool
-          - Luton
-          - Maidstone
-          - Maldon
-          - Malvern Hills
-          - Manchester
-          - Mansfield
-          - Medway
-          - Melton
-          - Mendip
-          - Merton
-          - Mid Devon
-          - Mid Suffolk
-          - Mid Sussex
-          - Middlesbrough
-          - Milton Keynes
-          - Mole Valley
-          - New Forest
-          - Newark and Sherwood
-          - Newcastle upon Tyne
-          - Newcastle-under-Lyme
-          - Newham
-          - North Devon
-          - North East Derbyshire
-          - North East Lincolnshire
-          - North Hertfordshire
-          - North Kesteven
-          - North Lincolnshire
-          - North Norfolk
-          - North Somerset
-          - North Tyneside
-          - North Warwickshire
-          - North West Leicestershire
-          - Northampton
-          - Northumberland
-          - Norwich
-          - Nottingham
-          - Nuneaton and Bedworth
-          - Oadby and Wigston
-          - Oldham
-          - Oxford
-          - Pendle
-          - Peterborough
-          - Plymouth
-          - Portsmouth
-          - Preston
-          - Reading
-          - Redbridge
-          - Redcar and Cleveland
-          - Redditch
-          - Reigate and Banstead
-          - Ribble Valley
-          - Richmond upon Thames
-          - Richmondshire
-          - Rochdale
-          - Rochford
-          - Rossendale
-          - Rother
-          - Rotherham
-          - Rugby
-          - Runnymede
-          - Rushcliffe
-          - Rushmoor
-          - Rutland
-          - Ryedale
-          - Salford
-          - Sandwell
-          - Scarborough
-          - Sedgemoor
-          - Sefton
-          - Selby
-          - Sevenoaks
-          - Sheffield
-          - Shropshire
-          - Slough
-          - Solihull
-          - Somerset West and Taunton
-          - South Bucks
-          - South Cambridgeshire
-          - South Derbyshire
-          - South Gloucestershire
-          - South Hams
-          - South Holland
-          - South Kesteven
-          - South Lakeland
-          - South Norfolk
-          - South Northamptonshire
-          - South Oxfordshire
-          - South Ribble
-          - South Somerset
-          - South Staffordshire
-          - South Tyneside
-          - Southampton
-          - Southend-on-Sea
-          - Southwark
-          - Spelthorne
-          - St Albans
-          - St. Helens
-          - Stafford
-          - Staffordshire Moorlands
-          - Stevenage
-          - Stockport
-          - Stockton-on-Tees
-          - Stoke-on-Trent
-          - Stratford-on-Avon
-          - Stroud
-          - Sunderland
-          - Surrey Heath
-          - Sutton
-          - Swale
-          - Swindon
-          - Tameside
-          - Tamworth
-          - Tandridge
-          - Teignbridge
-          - Telford and Wrekin
-          - Tendring
-          - Test Valley
-          - Tewkesbury
-          - Thanet
-          - Three Rivers
-          - Thurrock
-          - Tonbridge and Malling
-          - Torbay
-          - Torridge
-          - Tower Hamlets
-          - Trafford
-          - Tunbridge Wells
-          - Uttlesford
-          - Vale of White Horse
-          - Wakefield
-          - Walsall
-          - Waltham Forest
-          - Wandsworth
-          - Warrington
-          - Warwick
-          - Watford
-          - Waverley
-          - Wealden
-          - Wellingborough
-          - Welwyn Hatfield
-          - West Berkshire
-          - West Devon
-          - West Lancashire
-          - West Lindsey
-          - West Oxfordshire
-          - West Suffolk
-          - Westminster
-          - Wigan
-          - Wiltshire
-          - Winchester
-          - Windsor and Maidenhead
-          - Wirral
-          - Woking
-          - Wokingham
-          - Wolverhampton
-          - Worcester
-          - Worthing
-          - Wychavon
-          - Wycombe
-          - Wyre
-          - Wyre Forest
-          - York
-          - Cumbria
-          - Derbyshire
-          - Devon
-          - East Sussex
-          - Essex
-          - Gloucestershire
-          - Hampshire
-          - Hertfordshire
-          - Kent
-          - Lancashire
-          - Leicestershire
-          - Lincolnshire
-          - Norfolk
-          - North Yorkshire
-          - Northamptonshire
-          - Nottinghamshire
-          - Oxfordshire
-          - Somerset
-          - Staffordshire
-          - Suffolk
-          - Surrey
-          - Warwickshire
-          - West Sussex
-          - Worcestershire
-        areaType:
-          - region
+  # - heading: People aged 50 and over who have received autumn 2022 booster vaccinations, by vaccination date
+  #   cardType: chart
+  #   locationAware:
+  #     included:
+  #       areaName:
+  #         - England
+  #         - Adur
+  #         - Allerdale
+  #         - Amber Valley
+  #         - Arun
+  #         - Ashfield
+  #         - Ashford
+  #         - Aylesbury Vale
+  #         - Babergh
+  #         - Barking and Dagenham
+  #         - Barnet
+  #         - Barnsley
+  #         - Barrow-in-Furness
+  #         - Basildon
+  #         - Basingstoke and Deane
+  #         - Bassetlaw
+  #         - Bath and North East Somerset
+  #         - Bedford
+  #         - Bexley
+  #         - Birmingham
+  #         - Blaby
+  #         - Blackburn with Darwen
+  #         - Blackpool
+  #         - Bolsover
+  #         - Bolton
+  #         - Boston
+  #         - Bournemouth, Christchurch and Poole
+  #         - Bracknell Forest
+  #         - Bradford
+  #         - Braintree
+  #         - Breckland
+  #         - Brent
+  #         - Brentwood
+  #         - Brighton and Hove
+  #         - Bristol, City of
+  #         - Broadland
+  #         - Bromley
+  #         - Bromsgrove
+  #         - Broxbourne
+  #         - Broxtowe
+  #         - Burnley
+  #         - Bury
+  #         - Calderdale
+  #         - Cambridge
+  #         - Camden
+  #         - Cannock Chase
+  #         - Canterbury
+  #         - Carlisle
+  #         - Castle Point
+  #         - Central Bedfordshire
+  #         - Charnwood
+  #         - Chelmsford
+  #         - Cheltenham
+  #         - Cherwell
+  #         - Cheshire East
+  #         - Cheshire West and Chester
+  #         - Chesterfield
+  #         - Chichester
+  #         - Chiltern
+  #         - Chorley
+  #         - Colchester
+  #         - Copeland
+  #         - Corby
+  #         - Cornwall and Isles of Scilly
+  #         - Cotswold
+  #         - County Durham
+  #         - Coventry
+  #         - Craven
+  #         - Crawley
+  #         - Croydon
+  #         - Dacorum
+  #         - Darlington
+  #         - Dartford
+  #         - Daventry
+  #         - Derby
+  #         - Derbyshire Dales
+  #         - Doncaster
+  #         - Dorset
+  #         - Dover
+  #         - Dudley
+  #         - Ealing
+  #         - East Cambridgeshire
+  #         - East Devon
+  #         - East Hampshire
+  #         - East Hertfordshire
+  #         - East Lindsey
+  #         - East Northamptonshire
+  #         - East Riding of Yorkshire
+  #         - East Staffordshire
+  #         - East Suffolk
+  #         - Eastbourne
+  #         - Eastleigh
+  #         - Eden
+  #         - Elmbridge
+  #         - Enfield
+  #         - Epping Forest
+  #         - Epsom and Ewell
+  #         - Erewash
+  #         - Exeter
+  #         - Fareham
+  #         - Fenland
+  #         - Folkestone and Hythe
+  #         - Forest of Dean
+  #         - Fylde
+  #         - Gateshead
+  #         - Gedling
+  #         - Gloucester
+  #         - Gosport
+  #         - Gravesham
+  #         - Great Yarmouth
+  #         - Greenwich
+  #         - Guildford
+  #         - Hackney and City of London
+  #         - Halton
+  #         - Hambleton
+  #         - Hammersmith and Fulham
+  #         - Harborough
+  #         - Haringey
+  #         - Harlow
+  #         - Harrogate
+  #         - Harrow
+  #         - Hart
+  #         - Hartlepool
+  #         - Hastings
+  #         - Havant
+  #         - Havering
+  #         - Herefordshire, County of
+  #         - Hertsmere
+  #         - High Peak
+  #         - Hillingdon
+  #         - Hinckley and Bosworth
+  #         - Horsham
+  #         - Hounslow
+  #         - Huntingdonshire
+  #         - Hyndburn
+  #         - Ipswich
+  #         - Isle of Wight
+  #         - Islington
+  #         - Kensington and Chelsea
+  #         - Kettering
+  #         - King's Lynn and West Norfolk
+  #         - Kingston upon Hull, City of
+  #         - Kingston upon Thames
+  #         - Kirklees
+  #         - Knowsley
+  #         - Lambeth
+  #         - Lancaster
+  #         - Leeds
+  #         - Leicester
+  #         - Lewes
+  #         - Lewisham
+  #         - Lichfield
+  #         - Lincoln
+  #         - Liverpool
+  #         - Luton
+  #         - Maidstone
+  #         - Maldon
+  #         - Malvern Hills
+  #         - Manchester
+  #         - Mansfield
+  #         - Medway
+  #         - Melton
+  #         - Mendip
+  #         - Merton
+  #         - Mid Devon
+  #         - Mid Suffolk
+  #         - Mid Sussex
+  #         - Middlesbrough
+  #         - Milton Keynes
+  #         - Mole Valley
+  #         - New Forest
+  #         - Newark and Sherwood
+  #         - Newcastle upon Tyne
+  #         - Newcastle-under-Lyme
+  #         - Newham
+  #         - North Devon
+  #         - North East Derbyshire
+  #         - North East Lincolnshire
+  #         - North Hertfordshire
+  #         - North Kesteven
+  #         - North Lincolnshire
+  #         - North Norfolk
+  #         - North Somerset
+  #         - North Tyneside
+  #         - North Warwickshire
+  #         - North West Leicestershire
+  #         - Northampton
+  #         - Northumberland
+  #         - Norwich
+  #         - Nottingham
+  #         - Nuneaton and Bedworth
+  #         - Oadby and Wigston
+  #         - Oldham
+  #         - Oxford
+  #         - Pendle
+  #         - Peterborough
+  #         - Plymouth
+  #         - Portsmouth
+  #         - Preston
+  #         - Reading
+  #         - Redbridge
+  #         - Redcar and Cleveland
+  #         - Redditch
+  #         - Reigate and Banstead
+  #         - Ribble Valley
+  #         - Richmond upon Thames
+  #         - Richmondshire
+  #         - Rochdale
+  #         - Rochford
+  #         - Rossendale
+  #         - Rother
+  #         - Rotherham
+  #         - Rugby
+  #         - Runnymede
+  #         - Rushcliffe
+  #         - Rushmoor
+  #         - Rutland
+  #         - Ryedale
+  #         - Salford
+  #         - Sandwell
+  #         - Scarborough
+  #         - Sedgemoor
+  #         - Sefton
+  #         - Selby
+  #         - Sevenoaks
+  #         - Sheffield
+  #         - Shropshire
+  #         - Slough
+  #         - Solihull
+  #         - Somerset West and Taunton
+  #         - South Bucks
+  #         - South Cambridgeshire
+  #         - South Derbyshire
+  #         - South Gloucestershire
+  #         - South Hams
+  #         - South Holland
+  #         - South Kesteven
+  #         - South Lakeland
+  #         - South Norfolk
+  #         - South Northamptonshire
+  #         - South Oxfordshire
+  #         - South Ribble
+  #         - South Somerset
+  #         - South Staffordshire
+  #         - South Tyneside
+  #         - Southampton
+  #         - Southend-on-Sea
+  #         - Southwark
+  #         - Spelthorne
+  #         - St Albans
+  #         - St. Helens
+  #         - Stafford
+  #         - Staffordshire Moorlands
+  #         - Stevenage
+  #         - Stockport
+  #         - Stockton-on-Tees
+  #         - Stoke-on-Trent
+  #         - Stratford-on-Avon
+  #         - Stroud
+  #         - Sunderland
+  #         - Surrey Heath
+  #         - Sutton
+  #         - Swale
+  #         - Swindon
+  #         - Tameside
+  #         - Tamworth
+  #         - Tandridge
+  #         - Teignbridge
+  #         - Telford and Wrekin
+  #         - Tendring
+  #         - Test Valley
+  #         - Tewkesbury
+  #         - Thanet
+  #         - Three Rivers
+  #         - Thurrock
+  #         - Tonbridge and Malling
+  #         - Torbay
+  #         - Torridge
+  #         - Tower Hamlets
+  #         - Trafford
+  #         - Tunbridge Wells
+  #         - Uttlesford
+  #         - Vale of White Horse
+  #         - Wakefield
+  #         - Walsall
+  #         - Waltham Forest
+  #         - Wandsworth
+  #         - Warrington
+  #         - Warwick
+  #         - Watford
+  #         - Waverley
+  #         - Wealden
+  #         - Wellingborough
+  #         - Welwyn Hatfield
+  #         - West Berkshire
+  #         - West Devon
+  #         - West Lancashire
+  #         - West Lindsey
+  #         - West Oxfordshire
+  #         - West Suffolk
+  #         - Westminster
+  #         - Wigan
+  #         - Wiltshire
+  #         - Winchester
+  #         - Windsor and Maidenhead
+  #         - Wirral
+  #         - Woking
+  #         - Wokingham
+  #         - Wolverhampton
+  #         - Worcester
+  #         - Worthing
+  #         - Wychavon
+  #         - Wycombe
+  #         - Wyre
+  #         - Wyre Forest
+  #         - York
+  #         - Cumbria
+  #         - Derbyshire
+  #         - Devon
+  #         - East Sussex
+  #         - Essex
+  #         - Gloucestershire
+  #         - Hampshire
+  #         - Hertfordshire
+  #         - Kent
+  #         - Lancashire
+  #         - Leicestershire
+  #         - Lincolnshire
+  #         - Norfolk
+  #         - North Yorkshire
+  #         - Northamptonshire
+  #         - Nottinghamshire
+  #         - Oxfordshire
+  #         - Somerset
+  #         - Staffordshire
+  #         - Suffolk
+  #         - Surrey
+  #         - Warwickshire
+  #         - West Sussex
+  #         - Worcestershire
+  #       areaType:
+  #         - region
 
 
-    fullWidth: true
-    abstract: >
-      The number of people aged 50 and over who have received an autumn booster COVID-19 vaccination. Data for the latest 2 days, marked in grey, are incomplete.
-      Data are shown by date of vaccination.
+  #   fullWidth: true
+  #   abstract: >
+  #     The number of people aged 50 and over who have received an autumn booster COVID-19 vaccination. Data for the latest 2 days, marked in grey, are incomplete.
+  #     Data are shown by date of vaccination.
 
-    download:
-      - vaccinationsAgeDemographics
+  #   download:
+  #     - vaccinationsAgeDemographics
 
-    tabs:
-      - heading: Daily
-        tabType: chart
-        fields:
-          - label: Number of vaccinations
-            << : *vaccinationAgeDemographics50Plus
-            tooltip: Daily number of people who received an autumn booster of COVID-19 vaccine
-            type: bar
-            colour: 0
-            rollingAverage: false
-            metric: newPeopleVaccinatedAutumn22ByVaccinationDate
-            highlight:
-              from: -2
-              to: 0
-              colour: 6
-              label: "Most recent 2 days (incomplete)"
+  #   tabs:
+  #     - heading: Daily
+  #       tabType: chart
+  #       fields:
+  #         - label: Number of vaccinations
+  #           << : *vaccinationAgeDemographics50Plus
+  #           tooltip: Daily number of people who received an autumn booster of COVID-19 vaccine
+  #           type: bar
+  #           colour: 0
+  #           rollingAverage: false
+  #           metric: newPeopleVaccinatedAutumn22ByVaccinationDate
+  #           highlight:
+  #             from: -2
+  #             to: 0
+  #             colour: 6
+  #             label: "Most recent 2 days (incomplete)"
 
-      - heading: Total
-        tabType: chart
-        fields:
-          - label: Number of vaccinations
-            << : *vaccinationAgeDemographics50Plus
-            tooltip: Total number of people who received an autumn booster of COVID-19 vaccine
-            type: bar
-            colour: 0
-            rollingAverage: false
-            metric: cumPeopleVaccinatedAutumn22ByVaccinationDate
-            highlight:
-              from: -2
-              to: 0
-              colour: 6
-              label: "Most recent 2 days (incomplete)"
+  #     - heading: Total
+  #       tabType: chart
+  #       fields:
+  #         - label: Number of vaccinations
+  #           << : *vaccinationAgeDemographics50Plus
+  #           tooltip: Total number of people who received an autumn booster of COVID-19 vaccine
+  #           type: bar
+  #           colour: 0
+  #           rollingAverage: false
+  #           metric: cumPeopleVaccinatedAutumn22ByVaccinationDate
+  #           highlight:
+  #             from: -2
+  #             to: 0
+  #             colour: 6
+  #             label: "Most recent 2 days (incomplete)"
 
-      - heading: Data table
-        tabType: nestedTable
-        fields:
-          - label: Date
-            value: date
-            type: date
+  #     - heading: Data table
+  #       tabType: nestedTable
+  #       fields:
+  #         - label: Date
+  #           value: date
+  #           type: date
 
-          - label: "Daily vaccinations: 50+"
-            metric: newPeopleVaccinatedAutumn22ByVaccinationDate
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 50+
+  #         - label: "Daily vaccinations: 50+"
+  #           metric: newPeopleVaccinatedAutumn22ByVaccinationDate
+  #           value: vaccinationsAgeDemographics
+  #           type: numeric
+  #           filters:
+  #             parameter: age
+  #             value: 50+
 
-          - label: "Total vaccinations: 50+"
-            metric: cumPeopleVaccinatedAutumn22ByVaccinationDate
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 50+
+  #         - label: "Total vaccinations: 50+"
+  #           metric: cumPeopleVaccinatedAutumn22ByVaccinationDate
+  #           value: vaccinationsAgeDemographics
+  #           type: numeric
+  #           filters:
+  #             parameter: age
+  #             value: 50+
 
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
+  #     - heading: About
+  #       tabType: metadata
+  #       filename: cardMetadata/deaths/cardDeathsAndRatesByAgeUnderOver60.md
 
 ##############################################################################################################################
 
 # Autumn booster uptake line chart
 
-  - heading: Autumn booster 2022 vaccination uptake (50+), by vaccination date
-    cardType: chart
-    locationAware:
-      included:
-        areaName:
-          - England
-          - Adur
-          - Allerdale
-          - Amber Valley
-          - Arun
-          - Ashfield
-          - Ashford
-          - Aylesbury Vale
-          - Babergh
-          - Barking and Dagenham
-          - Barnet
-          - Barnsley
-          - Barrow-in-Furness
-          - Basildon
-          - Basingstoke and Deane
-          - Bassetlaw
-          - Bath and North East Somerset
-          - Bedford
-          - Bexley
-          - Birmingham
-          - Blaby
-          - Blackburn with Darwen
-          - Blackpool
-          - Bolsover
-          - Bolton
-          - Boston
-          - Bournemouth, Christchurch and Poole
-          - Bracknell Forest
-          - Bradford
-          - Braintree
-          - Breckland
-          - Brent
-          - Brentwood
-          - Brighton and Hove
-          - Bristol, City of
-          - Broadland
-          - Bromley
-          - Bromsgrove
-          - Broxbourne
-          - Broxtowe
-          - Burnley
-          - Bury
-          - Calderdale
-          - Cambridge
-          - Camden
-          - Cannock Chase
-          - Canterbury
-          - Carlisle
-          - Castle Point
-          - Central Bedfordshire
-          - Charnwood
-          - Chelmsford
-          - Cheltenham
-          - Cherwell
-          - Cheshire East
-          - Cheshire West and Chester
-          - Chesterfield
-          - Chichester
-          - Chiltern
-          - Chorley
-          - Colchester
-          - Copeland
-          - Corby
-          - Cornwall and Isles of Scilly
-          - Cotswold
-          - County Durham
-          - Coventry
-          - Craven
-          - Crawley
-          - Croydon
-          - Dacorum
-          - Darlington
-          - Dartford
-          - Daventry
-          - Derby
-          - Derbyshire Dales
-          - Doncaster
-          - Dorset
-          - Dover
-          - Dudley
-          - Ealing
-          - East Cambridgeshire
-          - East Devon
-          - East Hampshire
-          - East Hertfordshire
-          - East Lindsey
-          - East Northamptonshire
-          - East Riding of Yorkshire
-          - East Staffordshire
-          - East Suffolk
-          - Eastbourne
-          - Eastleigh
-          - Eden
-          - Elmbridge
-          - Enfield
-          - Epping Forest
-          - Epsom and Ewell
-          - Erewash
-          - Exeter
-          - Fareham
-          - Fenland
-          - Folkestone and Hythe
-          - Forest of Dean
-          - Fylde
-          - Gateshead
-          - Gedling
-          - Gloucester
-          - Gosport
-          - Gravesham
-          - Great Yarmouth
-          - Greenwich
-          - Guildford
-          - Hackney and City of London
-          - Halton
-          - Hambleton
-          - Hammersmith and Fulham
-          - Harborough
-          - Haringey
-          - Harlow
-          - Harrogate
-          - Harrow
-          - Hart
-          - Hartlepool
-          - Hastings
-          - Havant
-          - Havering
-          - Herefordshire, County of
-          - Hertsmere
-          - High Peak
-          - Hillingdon
-          - Hinckley and Bosworth
-          - Horsham
-          - Hounslow
-          - Huntingdonshire
-          - Hyndburn
-          - Ipswich
-          - Isle of Wight
-          - Islington
-          - Kensington and Chelsea
-          - Kettering
-          - King's Lynn and West Norfolk
-          - Kingston upon Hull, City of
-          - Kingston upon Thames
-          - Kirklees
-          - Knowsley
-          - Lambeth
-          - Lancaster
-          - Leeds
-          - Leicester
-          - Lewes
-          - Lewisham
-          - Lichfield
-          - Lincoln
-          - Liverpool
-          - Luton
-          - Maidstone
-          - Maldon
-          - Malvern Hills
-          - Manchester
-          - Mansfield
-          - Medway
-          - Melton
-          - Mendip
-          - Merton
-          - Mid Devon
-          - Mid Suffolk
-          - Mid Sussex
-          - Middlesbrough
-          - Milton Keynes
-          - Mole Valley
-          - New Forest
-          - Newark and Sherwood
-          - Newcastle upon Tyne
-          - Newcastle-under-Lyme
-          - Newham
-          - North Devon
-          - North East Derbyshire
-          - North East Lincolnshire
-          - North Hertfordshire
-          - North Kesteven
-          - North Lincolnshire
-          - North Norfolk
-          - North Somerset
-          - North Tyneside
-          - North Warwickshire
-          - North West Leicestershire
-          - Northampton
-          - Northumberland
-          - Norwich
-          - Nottingham
-          - Nuneaton and Bedworth
-          - Oadby and Wigston
-          - Oldham
-          - Oxford
-          - Pendle
-          - Peterborough
-          - Plymouth
-          - Portsmouth
-          - Preston
-          - Reading
-          - Redbridge
-          - Redcar and Cleveland
-          - Redditch
-          - Reigate and Banstead
-          - Ribble Valley
-          - Richmond upon Thames
-          - Richmondshire
-          - Rochdale
-          - Rochford
-          - Rossendale
-          - Rother
-          - Rotherham
-          - Rugby
-          - Runnymede
-          - Rushcliffe
-          - Rushmoor
-          - Rutland
-          - Ryedale
-          - Salford
-          - Sandwell
-          - Scarborough
-          - Sedgemoor
-          - Sefton
-          - Selby
-          - Sevenoaks
-          - Sheffield
-          - Shropshire
-          - Slough
-          - Solihull
-          - Somerset West and Taunton
-          - South Bucks
-          - South Cambridgeshire
-          - South Derbyshire
-          - South Gloucestershire
-          - South Hams
-          - South Holland
-          - South Kesteven
-          - South Lakeland
-          - South Norfolk
-          - South Northamptonshire
-          - South Oxfordshire
-          - South Ribble
-          - South Somerset
-          - South Staffordshire
-          - South Tyneside
-          - Southampton
-          - Southend-on-Sea
-          - Southwark
-          - Spelthorne
-          - St Albans
-          - St. Helens
-          - Stafford
-          - Staffordshire Moorlands
-          - Stevenage
-          - Stockport
-          - Stockton-on-Tees
-          - Stoke-on-Trent
-          - Stratford-on-Avon
-          - Stroud
-          - Sunderland
-          - Surrey Heath
-          - Sutton
-          - Swale
-          - Swindon
-          - Tameside
-          - Tamworth
-          - Tandridge
-          - Teignbridge
-          - Telford and Wrekin
-          - Tendring
-          - Test Valley
-          - Tewkesbury
-          - Thanet
-          - Three Rivers
-          - Thurrock
-          - Tonbridge and Malling
-          - Torbay
-          - Torridge
-          - Tower Hamlets
-          - Trafford
-          - Tunbridge Wells
-          - Uttlesford
-          - Vale of White Horse
-          - Wakefield
-          - Walsall
-          - Waltham Forest
-          - Wandsworth
-          - Warrington
-          - Warwick
-          - Watford
-          - Waverley
-          - Wealden
-          - Wellingborough
-          - Welwyn Hatfield
-          - West Berkshire
-          - West Devon
-          - West Lancashire
-          - West Lindsey
-          - West Oxfordshire
-          - West Suffolk
-          - Westminster
-          - Wigan
-          - Wiltshire
-          - Winchester
-          - Windsor and Maidenhead
-          - Wirral
-          - Woking
-          - Wokingham
-          - Wolverhampton
-          - Worcester
-          - Worthing
-          - Wychavon
-          - Wycombe
-          - Wyre
-          - Wyre Forest
-          - York
-          - Cumbria
-          - Derbyshire
-          - Devon
-          - East Sussex
-          - Essex
-          - Gloucestershire
-          - Hampshire
-          - Hertfordshire
-          - Kent
-          - Lancashire
-          - Leicestershire
-          - Lincolnshire
-          - Norfolk
-          - North Yorkshire
-          - Northamptonshire
-          - Nottinghamshire
-          - Oxfordshire
-          - Somerset
-          - Staffordshire
-          - Suffolk
-          - Surrey
-          - Warwickshire
-          - West Sussex
-          - Worcestershire
-        areaType:
-          - region
+  # - heading: Autumn booster 2022 vaccination uptake (50+), by vaccination date
+  #   cardType: chart
+  #   locationAware:
+  #     included:
+  #       areaName:
+  #         - England
+  #         - Adur
+  #         - Allerdale
+  #         - Amber Valley
+  #         - Arun
+  #         - Ashfield
+  #         - Ashford
+  #         - Aylesbury Vale
+  #         - Babergh
+  #         - Barking and Dagenham
+  #         - Barnet
+  #         - Barnsley
+  #         - Barrow-in-Furness
+  #         - Basildon
+  #         - Basingstoke and Deane
+  #         - Bassetlaw
+  #         - Bath and North East Somerset
+  #         - Bedford
+  #         - Bexley
+  #         - Birmingham
+  #         - Blaby
+  #         - Blackburn with Darwen
+  #         - Blackpool
+  #         - Bolsover
+  #         - Bolton
+  #         - Boston
+  #         - Bournemouth, Christchurch and Poole
+  #         - Bracknell Forest
+  #         - Bradford
+  #         - Braintree
+  #         - Breckland
+  #         - Brent
+  #         - Brentwood
+  #         - Brighton and Hove
+  #         - Bristol, City of
+  #         - Broadland
+  #         - Bromley
+  #         - Bromsgrove
+  #         - Broxbourne
+  #         - Broxtowe
+  #         - Burnley
+  #         - Bury
+  #         - Calderdale
+  #         - Cambridge
+  #         - Camden
+  #         - Cannock Chase
+  #         - Canterbury
+  #         - Carlisle
+  #         - Castle Point
+  #         - Central Bedfordshire
+  #         - Charnwood
+  #         - Chelmsford
+  #         - Cheltenham
+  #         - Cherwell
+  #         - Cheshire East
+  #         - Cheshire West and Chester
+  #         - Chesterfield
+  #         - Chichester
+  #         - Chiltern
+  #         - Chorley
+  #         - Colchester
+  #         - Copeland
+  #         - Corby
+  #         - Cornwall and Isles of Scilly
+  #         - Cotswold
+  #         - County Durham
+  #         - Coventry
+  #         - Craven
+  #         - Crawley
+  #         - Croydon
+  #         - Dacorum
+  #         - Darlington
+  #         - Dartford
+  #         - Daventry
+  #         - Derby
+  #         - Derbyshire Dales
+  #         - Doncaster
+  #         - Dorset
+  #         - Dover
+  #         - Dudley
+  #         - Ealing
+  #         - East Cambridgeshire
+  #         - East Devon
+  #         - East Hampshire
+  #         - East Hertfordshire
+  #         - East Lindsey
+  #         - East Northamptonshire
+  #         - East Riding of Yorkshire
+  #         - East Staffordshire
+  #         - East Suffolk
+  #         - Eastbourne
+  #         - Eastleigh
+  #         - Eden
+  #         - Elmbridge
+  #         - Enfield
+  #         - Epping Forest
+  #         - Epsom and Ewell
+  #         - Erewash
+  #         - Exeter
+  #         - Fareham
+  #         - Fenland
+  #         - Folkestone and Hythe
+  #         - Forest of Dean
+  #         - Fylde
+  #         - Gateshead
+  #         - Gedling
+  #         - Gloucester
+  #         - Gosport
+  #         - Gravesham
+  #         - Great Yarmouth
+  #         - Greenwich
+  #         - Guildford
+  #         - Hackney and City of London
+  #         - Halton
+  #         - Hambleton
+  #         - Hammersmith and Fulham
+  #         - Harborough
+  #         - Haringey
+  #         - Harlow
+  #         - Harrogate
+  #         - Harrow
+  #         - Hart
+  #         - Hartlepool
+  #         - Hastings
+  #         - Havant
+  #         - Havering
+  #         - Herefordshire, County of
+  #         - Hertsmere
+  #         - High Peak
+  #         - Hillingdon
+  #         - Hinckley and Bosworth
+  #         - Horsham
+  #         - Hounslow
+  #         - Huntingdonshire
+  #         - Hyndburn
+  #         - Ipswich
+  #         - Isle of Wight
+  #         - Islington
+  #         - Kensington and Chelsea
+  #         - Kettering
+  #         - King's Lynn and West Norfolk
+  #         - Kingston upon Hull, City of
+  #         - Kingston upon Thames
+  #         - Kirklees
+  #         - Knowsley
+  #         - Lambeth
+  #         - Lancaster
+  #         - Leeds
+  #         - Leicester
+  #         - Lewes
+  #         - Lewisham
+  #         - Lichfield
+  #         - Lincoln
+  #         - Liverpool
+  #         - Luton
+  #         - Maidstone
+  #         - Maldon
+  #         - Malvern Hills
+  #         - Manchester
+  #         - Mansfield
+  #         - Medway
+  #         - Melton
+  #         - Mendip
+  #         - Merton
+  #         - Mid Devon
+  #         - Mid Suffolk
+  #         - Mid Sussex
+  #         - Middlesbrough
+  #         - Milton Keynes
+  #         - Mole Valley
+  #         - New Forest
+  #         - Newark and Sherwood
+  #         - Newcastle upon Tyne
+  #         - Newcastle-under-Lyme
+  #         - Newham
+  #         - North Devon
+  #         - North East Derbyshire
+  #         - North East Lincolnshire
+  #         - North Hertfordshire
+  #         - North Kesteven
+  #         - North Lincolnshire
+  #         - North Norfolk
+  #         - North Somerset
+  #         - North Tyneside
+  #         - North Warwickshire
+  #         - North West Leicestershire
+  #         - Northampton
+  #         - Northumberland
+  #         - Norwich
+  #         - Nottingham
+  #         - Nuneaton and Bedworth
+  #         - Oadby and Wigston
+  #         - Oldham
+  #         - Oxford
+  #         - Pendle
+  #         - Peterborough
+  #         - Plymouth
+  #         - Portsmouth
+  #         - Preston
+  #         - Reading
+  #         - Redbridge
+  #         - Redcar and Cleveland
+  #         - Redditch
+  #         - Reigate and Banstead
+  #         - Ribble Valley
+  #         - Richmond upon Thames
+  #         - Richmondshire
+  #         - Rochdale
+  #         - Rochford
+  #         - Rossendale
+  #         - Rother
+  #         - Rotherham
+  #         - Rugby
+  #         - Runnymede
+  #         - Rushcliffe
+  #         - Rushmoor
+  #         - Rutland
+  #         - Ryedale
+  #         - Salford
+  #         - Sandwell
+  #         - Scarborough
+  #         - Sedgemoor
+  #         - Sefton
+  #         - Selby
+  #         - Sevenoaks
+  #         - Sheffield
+  #         - Shropshire
+  #         - Slough
+  #         - Solihull
+  #         - Somerset West and Taunton
+  #         - South Bucks
+  #         - South Cambridgeshire
+  #         - South Derbyshire
+  #         - South Gloucestershire
+  #         - South Hams
+  #         - South Holland
+  #         - South Kesteven
+  #         - South Lakeland
+  #         - South Norfolk
+  #         - South Northamptonshire
+  #         - South Oxfordshire
+  #         - South Ribble
+  #         - South Somerset
+  #         - South Staffordshire
+  #         - South Tyneside
+  #         - Southampton
+  #         - Southend-on-Sea
+  #         - Southwark
+  #         - Spelthorne
+  #         - St Albans
+  #         - St. Helens
+  #         - Stafford
+  #         - Staffordshire Moorlands
+  #         - Stevenage
+  #         - Stockport
+  #         - Stockton-on-Tees
+  #         - Stoke-on-Trent
+  #         - Stratford-on-Avon
+  #         - Stroud
+  #         - Sunderland
+  #         - Surrey Heath
+  #         - Sutton
+  #         - Swale
+  #         - Swindon
+  #         - Tameside
+  #         - Tamworth
+  #         - Tandridge
+  #         - Teignbridge
+  #         - Telford and Wrekin
+  #         - Tendring
+  #         - Test Valley
+  #         - Tewkesbury
+  #         - Thanet
+  #         - Three Rivers
+  #         - Thurrock
+  #         - Tonbridge and Malling
+  #         - Torbay
+  #         - Torridge
+  #         - Tower Hamlets
+  #         - Trafford
+  #         - Tunbridge Wells
+  #         - Uttlesford
+  #         - Vale of White Horse
+  #         - Wakefield
+  #         - Walsall
+  #         - Waltham Forest
+  #         - Wandsworth
+  #         - Warrington
+  #         - Warwick
+  #         - Watford
+  #         - Waverley
+  #         - Wealden
+  #         - Wellingborough
+  #         - Welwyn Hatfield
+  #         - West Berkshire
+  #         - West Devon
+  #         - West Lancashire
+  #         - West Lindsey
+  #         - West Oxfordshire
+  #         - West Suffolk
+  #         - Westminster
+  #         - Wigan
+  #         - Wiltshire
+  #         - Winchester
+  #         - Windsor and Maidenhead
+  #         - Wirral
+  #         - Woking
+  #         - Wokingham
+  #         - Wolverhampton
+  #         - Worcester
+  #         - Worthing
+  #         - Wychavon
+  #         - Wycombe
+  #         - Wyre
+  #         - Wyre Forest
+  #         - York
+  #         - Cumbria
+  #         - Derbyshire
+  #         - Devon
+  #         - East Sussex
+  #         - Essex
+  #         - Gloucestershire
+  #         - Hampshire
+  #         - Hertfordshire
+  #         - Kent
+  #         - Lancashire
+  #         - Leicestershire
+  #         - Lincolnshire
+  #         - Norfolk
+  #         - North Yorkshire
+  #         - Northamptonshire
+  #         - Nottinghamshire
+  #         - Oxfordshire
+  #         - Somerset
+  #         - Staffordshire
+  #         - Suffolk
+  #         - Surrey
+  #         - Warwickshire
+  #         - West Sussex
+  #         - Worcestershire
+  #       areaType:
+  #         - region
 
-    fullWidth: false
-    abstract: >
-      The percentage of people aged 50 and over who have received an autumn booster COVID-19 vaccination.
-      The denominator is the number of people aged 50 and over on the National Immunisation Management
-      Service (NIMS) database.
-    
-    download:
-      - vaccinationsAgeDemographics
-    
-    tabs:
-      - heading: Chart
-        tabType: chart
+  #   fullWidth: false
+  #   abstract: >
+  #     The percentage of people aged 50 and over who have received an autumn booster COVID-19 vaccination.
+  #     The denominator is the number of people aged 50 and over on the National Immunisation Management
+  #     Service (NIMS) database.
 
-        fields:
-          - label: Autumn booster dose (%)
-            << : *vaccinationAgeDemographics50Plus
-            tooltip: Percentage of people who received an autumn booster dose of COVID-19 vaccine
-            type: line
-            colour: 0
-            rollingAverage: false
-            metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
-      
-      - heading: Data table
-        tabType: nestedTable
-        fields:
-          - label: "Vaccination date"
-            value: date
-            type: date
-          
-          - label: "Autumn booster dose 50+ (%)"
-            metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
-            value: vaccinationsAgeDemographics
-            type: numeric
-            filters:
-              parameter: age
-              value: 50+
-      
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+  #   download:
+  #     - vaccinationsAgeDemographics
+
+  #   tabs:
+  #     - heading: Chart
+  #       tabType: chart
+
+  #       fields:
+  #         - label: Autumn booster dose (%)
+  #           << : *vaccinationAgeDemographics50Plus
+  #           tooltip: Percentage of people who received an autumn booster dose of COVID-19 vaccine
+  #           type: line
+  #           colour: 0
+  #           rollingAverage: false
+  #           metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
+
+  #     - heading: Data table
+  #       tabType: nestedTable
+  #       fields:
+  #         - label: "Vaccination date"
+  #           value: date
+  #           type: date
+
+  #         - label: "Autumn booster dose 50+ (%)"
+  #           metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
+  #           value: vaccinationsAgeDemographics
+  #           type: numeric
+  #           filters:
+  #             parameter: age
+  #             value: 50+
+
+  #     - heading: About
+  #       tabType: metadata
+  #       filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
 ##############################################################################################################################
 
@@ -2514,7 +2514,7 @@ cards:
           - Surrey
           - Warwickshire
           - West Sussex
-          - Worcestershire         
+          - Worcestershire
         areaType:
           - region
 
@@ -2523,10 +2523,10 @@ cards:
       Percentage of people who have received an autumn booster COVID-19 vaccination, by age group.
       The denominator is the number of people on the National Immunisation Management
       Service (NIMS) database, within the relevant age group.
-    
+
     download:
       - vaccinationsAgeDemographics
-    
+
     tabs:
       - heading: Chart
         tabType: chart
@@ -2540,7 +2540,7 @@ cards:
             rollingAverage: false
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             fill: false
-          
+
           - label: 55 to 59 (%)
             << : *vaccinationAgeDemographics55_59
             tooltip: Percentage of people aged 55 to 59 who received an autumn booster dose of COVID-19 vaccine
@@ -2549,7 +2549,7 @@ cards:
             rollingAverage: false
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             fill: false
-          
+
           - label: 60 to 64 (%)
             << : *vaccinationAgeDemographics60_64
             tooltip: Percentage of people aged 60 to 64 who received an autumn booster dose of COVID-19 vaccine
@@ -2558,7 +2558,7 @@ cards:
             rollingAverage: false
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             fill: false
-          
+
           - label: 65 to 69 (%)
             << : *vaccinationAgeDemographics65_69
             tooltip: Percentage of people aged 65 to 69 who received an autumn booster dose of COVID-19 vaccine
@@ -2612,7 +2612,7 @@ cards:
             rollingAverage: false
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             fill: false
-      
+
       - heading: Data table
         tabType: nestedTable
         fields:
@@ -2651,7 +2651,7 @@ cards:
             filters:
               parameter: age
               value: "65_69"
-          
+
           - label: "Uptake 70 to 74 (%)"
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
@@ -2667,7 +2667,7 @@ cards:
             filters:
               parameter: age
               value: "75_79"
-          
+
           - label: "Uptake 80 to 84 (%)"
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
@@ -2675,7 +2675,7 @@ cards:
             filters:
               parameter: age
               value: "80_84"
-          
+
           - label: "Uptake 85 to 89 (%)"
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
@@ -2683,7 +2683,7 @@ cards:
             filters:
               parameter: age
               value: "85_89"
-          
+
           - label: "Uptake 90+ (%)"
             metric: cumVaccinationAutumn22UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
@@ -2691,7 +2691,7 @@ cards:
             filters:
               parameter: age
               value: 90+
-      
+
       - heading: About
         tabType: metadata
         filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
