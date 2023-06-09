@@ -15,3 +15,4 @@ jobs:
           url: ${{ secrets.STAGINGPUBLISHPROFILE }}
           data: >
             {"command": "publish"}
+
