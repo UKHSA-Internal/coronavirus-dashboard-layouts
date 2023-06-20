@@ -545,11 +545,11 @@ cards:
       type: radio
       heading: null
       choices:
-        - Cases
+        - All cases
         - First episodes
         - Reinfections
 
-    Cases:
+    All cases:
 
       tabs:
         - heading: Heatmap
