@@ -545,11 +545,11 @@ cards:
       type: radio
       heading: null
       choices:
-        - All
+        - All cases
         - First episodes
         - Reinfections
 
-    All:
+    All cases:
 
       tabs:
         - heading: Heatmap
@@ -1915,9 +1915,9 @@ cards:
       heading: null
       choices:
         - Line chart
-        - Heatmap  
+        - Heatmap
 
-    Line chart:       
+    Line chart:
 
       tabs:
         - heading: Chart
@@ -2090,7 +2090,7 @@ cards:
               filters:
                 parameter: variant
                 value: "VOC-22APR-04 (Omicron BA.5)"
-            
+
             - label: "V-22JUL-01 (Omicron BA.2.75) %"
               metric: newWeeklyPercentage
               value: variants
@@ -2106,7 +2106,7 @@ cards:
               filters:
                 parameter: variant
                 value: "V-22OCT-01 (Omicron BQ.1)"
-            
+
             - label: "V-22DEC-01 (Omicron CH.1.1) %"
               metric: newWeeklyPercentage
               value: variants
@@ -2122,7 +2122,7 @@ cards:
               filters:
                 parameter: variant
                 value: "V-23JAN-01 (Omicron XBB.1.5)"
-           
+
             - label: "V-23APR-01 (Omicron XBB.1.16) %"
               metric: newWeeklyPercentage
               value: variants
@@ -2138,12 +2138,12 @@ cards:
               filters:
                 parameter: variant
                 value: "Other"
-        
+
         - heading: About
           tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md 
-          
-    Heatmap:       
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
+
+    Heatmap:
 
       tabs:
         - heading: Heatmap
@@ -2194,7 +2194,7 @@ cards:
 
               - label: V-20DEC-01 (Alpha)
                 value: "V-20DEC-01 (Alpha)"
-        
+
         - heading: Data table
           tabType: nestedTable
           fields:
@@ -2257,7 +2257,7 @@ cards:
               filters:
                 parameter: variant
                 value: "VOC-22APR-04 (Omicron BA.5)"
-            
+
             - label: "V-22JUL-01 (Omicron BA.2.75) %"
               metric: newWeeklyPercentage
               value: variants
@@ -2273,7 +2273,7 @@ cards:
               filters:
                 parameter: variant
                 value: "V-22OCT-01 (Omicron BQ.1)"
-           
+
             - label: "V-22DEC-01 (Omicron CH.1.1) %"
               metric: newWeeklyPercentage
               value: variants
@@ -2305,8 +2305,8 @@ cards:
               filters:
                 parameter: variant
                 value: "Other"
-        
+
         - heading: About
           tabType: metadata
-          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md 
+          filename: cardMetadata/vaccinations/cardVaccinationsDailyUptake.md
 
