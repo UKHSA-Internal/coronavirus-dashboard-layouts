@@ -54,9 +54,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      Daily numbers of deaths of people whose death certificate mentioned COVID-19 as one of the causes, and 7-day rolling average.
-      Because of the time it takes for deaths to be registered, there is a lag in reporting of at least 11 days,
-      and data are not shown for the 14 days before the most recent reported date as they are considered incomplete.
+      Daily numbers of deaths of people whose death certificate mentioned COVID-19 as one of the causes, and 7-day rolling average. 
+      Because of the time it takes for deaths to be registered, there is a lag in reporting of at least 11 days, 
+      and data are not shown for the 14 days before the most recent reported date as they are considered incomplete. 
       Data are shown by date of death.
 
     download:
@@ -131,7 +131,7 @@ cards:
 
     fullWidth: true
     abstract: >
-      Weekly number of deaths of people whose death certificate mentioned COVID-19 as one of the causes. The data are published weekly.
+      Weekly number of deaths of people whose death certificate mentioned COVID-19 as one of the causes. The data are published weekly. 
       Data are shown by the date the death was registered.
 
     download:
@@ -726,7 +726,7 @@ cards:
     cardType: simpleTableStatic
     fullWidth: false
     abstract: >
-      Total number of people whose death certificate mentioned COVID-19 as one of the causes since the start of the pandemic.
+      Total number of people whose death certificate mentioned COVID-19 as one of the causes since the start of the pandemic. 
       The data are published weekly. There is a lag in reporting of at least 11 days because the data are based on death registrations.
 
     download:
