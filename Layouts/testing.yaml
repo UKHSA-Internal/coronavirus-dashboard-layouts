@@ -4,22 +4,22 @@ headlineNumbers:
     valueItems:
 
       - label: Total
-        value: cumVirusTestsByPublishDate
+        value: cumVirusTestsBySpecimenDate
         tooltip: Total number of virus tests reported up to {date}
 
       - label: Last 7 days
-        value: newVirusTestsByPublishDateRollingSum
+        value: newVirusTestsBySpecimenDateRollingSum
         tooltip: Number of new virus tests reported in the 7 days up to {date}
 
   - caption: Change from previous 7 days
     valueItems:
 
       - label: Number
-        value: newVirusTestsByPublishDateChange
+        value: newVirusTestsBySpecimenDateChange
         tooltip: Change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
 
       - label: Percentage
-        value: newVirusTestsByPublishDateChangePercentage
+        value: newVirusTestsBySpecimenDateChangePercentage
         tooltip: Percentage change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
 
   - caption: PCR testing capacity
@@ -39,35 +39,35 @@ cards:
   - heading: Virus tests reported
     cardType: chart
     locationAware:
-      included: 
+      included:
         areaType:
           - overview
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void COVID-19 virus test results. 
+      Number of confirmed positive, negative or void COVID-19 virus test results.
       This is a count of test results and may include more than one test per person.
       Data are shown by the date the figures appeared in the published totals.
 
     download:
-      - newVirusTestsByPublishDate
-      - cumVirusTestsByPublishDate
+      - newVirusTestsBySpecimenDate
+      - cumVirusTestsBySpecimenDate
 
-      
+
     tabs:
       - heading: Daily
         tabType: chart
         barType: normal
         fields:
           - label: Virus tests reported
-            value: newVirusTestsByPublishDate
+            value: newVirusTestsBySpecimenDate
             tooltip: Daily number of virus tests reported on {date}
             type: bar
             colour: 0
             rollingAverage: false
 
           - label: Virus tests reported (7-day average)
-            value: newVirusTestsByPublishDate
+            value: newVirusTestsBySpecimenDate
             tooltip: 7 day rolling average of the daily number of virus tests reported on {date}
             type: line
             colour: 3
@@ -81,7 +81,7 @@ cards:
         barType: normal
         fields:
           - label: Virus tests reported
-            value: cumVirusTestsByPublishDate
+            value: cumVirusTestsBySpecimenDate
             tooltip: Total number of virus tests reported up to {date}
             type: bar
             colour: 0
@@ -96,20 +96,20 @@ cards:
             tooltip: Date
 
           - label: Daily virus tests reported
-            value: newVirusTestsByPublishDate
+            value: newVirusTestsBySpecimenDate
             type: numeric
             tooltip: Daily number of virus tests reported on {date}
 
           - label: Total virus tests reported
-            value: cumVirusTestsByPublishDate
+            value: cumVirusTestsBySpecimenDate
             type: numeric
             tooltip: Total number of virus tests reported up to {date}
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/testing/cardVirusTestsConducted.md
 
-  
+
 
 ##############################################################################################################################
 
@@ -118,19 +118,19 @@ cards:
   - heading: Lab-based testing and capacity, by test type
     cardType: chart
     locationAware:
-      included: 
+      included:
         areaType:
           - overview
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void COVID-19 lab-based test results and projected testing capacity. 
+      Number of confirmed positive, negative or void COVID-19 lab-based test results and projected testing capacity.
       This is a count of test results and may include more than one test per person.
 
-      The government provides testing through 4 routes known as pillars. More information about the pillars can be found in the About tab. 
-      
-      Separate charts are shown for polymerase chain reaction (PCR) tests (this chart includes all lab-based virus tests) and antibody tests. 
-      Lab-based virus tests test for the SARS-CoV-2 virus and include all lab-based pillar 1 and 2 PCR, loop-mediated isothermal amplification (LAMP) and Lampore tests and any PCR tests undertaken in pillar 4. 
+      The government provides testing through 4 routes known as pillars. More information about the pillars can be found in the About tab.
+
+      Separate charts are shown for polymerase chain reaction (PCR) tests (this chart includes all lab-based virus tests) and antibody tests.
+      Lab-based virus tests test for the SARS-CoV-2 virus and include all lab-based pillar 1 and 2 PCR, loop-mediated isothermal amplification (LAMP) and Lampore tests and any PCR tests undertaken in pillar 4.
       Antibody serology tests test for COVID-19 antibodies and include pillar 3 tests and any antibody serology tests undertaken in pillar 4.
 
     download:
@@ -149,7 +149,7 @@ cards:
         - Antibody tests
 
     PCR tests:
-      
+
       tabs:
         - heading: Daily
           tabType: chart
@@ -214,12 +214,12 @@ cards:
               type: numeric
               tooltip: Estimated daily capacity for PCR testing reported by laboratories for {date}
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/testing/cardTestingAndCapacity.md
 
     Antibody tests:
-      
+
       tabs:
         - heading: Daily
           tabType: chart
@@ -284,7 +284,7 @@ cards:
               type: numeric
               tooltip: Estimated daily capacity for antibody testing reported by laboratories for {date}
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/testing/cardTestingAndCapacity.md
 
@@ -301,16 +301,16 @@ cards:
 
     fullWidth: true
     abstract: >
-      Projection reported by labs of how many lab-based tests they have capacity to carry out each day based on availability of staff and resources. 
-      The government provides testing through 4 routes known as pillars. Capacity for each pillar is shown. 
-      More information about the pillars can be found in the About tab. 
+      Projection reported by labs of how many lab-based tests they have capacity to carry out each day based on availability of staff and resources.
+      The government provides testing through 4 routes known as pillars. Capacity for each pillar is shown.
+      More information about the pillars can be found in the About tab.
 
     download:
       - plannedCapacityByPublishDate
       - capacityPillarOne
       - capacityPillarTwo
       - capacityPillarThree
-      - capacityPillarFour 
+      - capacityPillarFour
 
     tabs:
       - heading: Data table
@@ -347,7 +347,7 @@ cards:
             type: numeric
             tooltip: Estimated daily capacity for testing, across all pillars, reported by laboratories up to {date}
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/testing/cardCapacityByPillar.md
 
@@ -364,9 +364,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      The number of people who received a polymerase chain reaction (PCR) test in the previous 7 days, and the percentage 
-      of those who had at least one positive COVID-19 PCR test result in the same 7 days. Data is shown by specimen date 
-      (the date the sample was collected from the person). People tested more than once in the period are only counted once 
+      The number of people who received a polymerase chain reaction (PCR) test in the previous 7 days, and the percentage
+      of those who had at least one positive COVID-19 PCR test result in the same 7 days. Data is shown by specimen date
+      (the date the sample was collected from the person). People tested more than once in the period are only counted once
       in the denominator. People with more than one positive test result in the period are only included once in the numerator.
 
     download:
@@ -383,14 +383,14 @@ cards:
             type: bar
             colour: 7
             solidFill: true
-            rollingAverage: false 
+            rollingAverage: false
 
           - label: 7-day PCR positivity (%)
             value: uniqueCasePositivityBySpecimenDateRollingSum
             tooltip: 7-day positivity by specimen date
             type: line
             colour: 0
-            fill: false           
+            fill: false
             overlaying: "y"  # Which axis to overlay
             side: right  # Which side to show the overlayed axis
 
@@ -402,7 +402,7 @@ cards:
             type: date
             tooltip: End date for the 7-day period when the sample was taken from the person
 
-          - label: Number of people tested in the previous 7 days (PCR)  
+          - label: Number of people tested in the previous 7 days (PCR)
             value: uniquePeopleTestedBySpecimenDateRollingSum
             type: numeric
             tooltip: Number of people who received a PCR test in the period
@@ -412,7 +412,7 @@ cards:
             type: numeric
             tooltip: 7-day positivity by specimen date
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/testing/cardPCRPositivity.md
 
@@ -423,7 +423,7 @@ cards:
   - heading: Virus tests reported
     cardType: chart
     locationAware:
-      included: 
+      included:
 
         areaType:
           - utla
@@ -435,8 +435,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void COVID-19 virus test results (PCR and LFD tests), 
-      and rolling 7-day average. This is a count of test results and may include more than one test per person. 
+      Number of confirmed positive, negative or void COVID-19 virus test results (PCR and LFD tests),
+      and rolling 7-day average. This is a count of test results and may include more than one test per person.
       Data are shown by the date the sample was taken from the person being tested. Data for the most recent days, highlighted in grey, are incomplete.
 
     download:
@@ -455,7 +455,7 @@ cards:
         - By test type
 
     Total:
-      
+
       tabs:
         - heading: Daily
           tabType: chart
@@ -467,7 +467,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -11
                 to: 0
                 colour: 6
@@ -479,10 +479,10 @@ cards:
               type: line
               colour: 3
               fill: false
-              rollingAverage: 
+              rollingAverage:
                 window: 7
                 clipEnd: 11 #no of days to exclude for incomplete data
-          
+
         - heading: Total
           tabType: chart
           barType: normal
@@ -493,7 +493,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -11
                 to: 0
                 colour: 6
@@ -516,13 +516,13 @@ cards:
               value: cumVirusTestsBySpecimenDate
               type: numeric
               tooltip: Total number of virus tests reported up to {date}
-           
-        - heading: About 
+
+        - heading: About
           tabType: metadata
           filename: cardMetadata/testing/cardVirusTestsBySpecimenDate.md
 
     By test type:
-      
+
       tabs:
         - heading: Daily
           tabType: chart
@@ -534,7 +534,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -11
                 to: 0
                 colour: 6
@@ -546,9 +546,9 @@ cards:
               type: bar
               colour: 3
               rollingAverage: false
-              
 
-            
+
+
         - heading: Total
           tabType: chart
           barType: stack
@@ -559,7 +559,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -11
                 to: 0
                 colour: 6
@@ -571,9 +571,9 @@ cards:
               type: bar
               colour: 3
               rollingAverage: false
-              
 
-            
+
+
         - heading: Daily data table
           tabType: table
           fields:
@@ -609,8 +609,8 @@ cards:
               value: cumLFDTestsBySpecimenDate
               type: numeric
               tooltip: Total number of lateral flow tests reported up to {date}
-            
-        - heading: About 
+
+        - heading: About
           tabType: metadata
           filename: cardMetadata/testing/cardPCRTestsBySpecimenDate.md
 
@@ -622,7 +622,7 @@ cards:
   - heading: Lab-based virus tests conducted
     cardType: chart
     locationAware:
-      included: 
+      included:
 
         areaType:
           - utla
@@ -634,10 +634,10 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void COVID-19 lab-based virus test results (excludes LFD and antibody tests), 
-      and rolling 7-day average. This is a count of test results and may include more than one test per person.  
+      Number of confirmed positive, negative or void COVID-19 lab-based virus test results (excludes LFD and antibody tests),
+      and rolling 7-day average. This is a count of test results and may include more than one test per person.
       Data are shown by the date the sample was taken from the person being tested. Data for the most recent days, highlighted in grey, are incomplete.
-     
+
     download:
       - newPCRTestsBySpecimenDate
       - cumPCRTestsBySpecimenDate
@@ -653,7 +653,7 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
-            highlight: 
+            highlight:
                 from: -11
                 to: 0
                 colour: 6
@@ -665,7 +665,7 @@ cards:
             type: line
             colour: 3
             fill: false
-            rollingAverage: 
+            rollingAverage:
               window: 7
               clipEnd: 11 #no of days to exclude for incomplete data
 
@@ -679,7 +679,7 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
-            highlight: 
+            highlight:
                 from: -11
                 to: 0
                 colour: 6
@@ -703,7 +703,7 @@ cards:
             type: numeric
             tooltip: Total number of lab-based virus tests conducted up to {date}
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/testing/cardPCRTestsBySpecimenDate.md
 
@@ -715,7 +715,7 @@ cards:
   - heading: Rapid lateral flow tests reported
     cardType: chart
     locationAware:
-      included: 
+      included:
 
         areaType:
           - utla
@@ -727,10 +727,10 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void rapid lateral flow (LFD) test results, 
-      and rolling 7-day average. This is a count of test results and may include more than one test per person.  
+      Number of confirmed positive, negative or void rapid lateral flow (LFD) test results,
+      and rolling 7-day average. This is a count of test results and may include more than one test per person.
       Data are shown by the date the sample was taken from the person being tested.
-     
+
     download:
       - newLFDTestsBySpecimenDate
       - cumLFDTestsBySpecimenDate
@@ -784,7 +784,7 @@ cards:
             type: numeric
             tooltip: Total number of lateral flow tests reported up to {date}
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/testing/cardLFDTesting.md
 
@@ -794,11 +794,11 @@ cards:
     cardType: chart
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void COVID-19 test results, by testing pillar. 
-      This is a count of test results and may include more than one test per person. Data for 
+      Number of confirmed positive, negative or void COVID-19 test results, by testing pillar.
+      This is a count of test results and may include more than one test per person. Data for
       surveillance testing (pillar 4) are only available for the UK as a whole. Data are shown by the date the figures appeared in the published totals.
-      
-      The government provides testing through 4 routes known as pillars. 
+
+      The government provides testing through 4 routes known as pillars.
       Capacity for each pillar is shown. More information about the pillars can be found in the About tab.
 
     download:
@@ -944,6 +944,6 @@ cards:
             type: numeric
             tooltip: Total number of lab-based COVID-19 tests conducted by laboratories up to {date}
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/testing/cardTestingByPillar.md
