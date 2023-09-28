@@ -4,29 +4,23 @@ headlineNumbers:
     valueItems:
 
       - label: Total
-        value: cumVirusTestsByPublishDate
+        value: cumVirusTestsBySpecimenDate
         tooltip: Total number of virus tests reported up to {date}
 
       - label: Last 7 days
-        value: newVirusTestsByPublishDateRollingSum
+        value: newVirusTestsBySpecimenDateRollingSum
         tooltip: Number of new virus tests reported in the 7 days up to {date}
 
   - caption: Change from previous 7 days
     valueItems:
 
       - label: Number
-        value: newVirusTestsByPublishDateChange
+        value: newVirusTestsBySpecimenDateChange
         tooltip: Change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
 
       - label: Percentage
-        value: newVirusTestsByPublishDateChangePercentage
+        value: newVirusTestsBySpecimenDateChangePercentage
         tooltip: Percentage change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
-
-  - caption: PCR testing capacity
-    valueItems:
-
-      - value: plannedPCRCapacityByPublishDate
-        tooltip: Estimated PCR testing capacity reported by laboratories for {date}
 
 ##############################################################################################################################
 
@@ -34,82 +28,82 @@ cards:
 
 ##############################################################################################################################
 
-# Only shown for UK
+# # Only shown for UK
 
-  - heading: Virus tests reported
-    cardType: chart
-    locationAware:
-      included: 
-        areaType:
-          - overview
+#   - heading: Virus tests reported
+#     cardType: chart
+#     locationAware:
+#       included:
+#         areaType:
+#           - overview
 
-    fullWidth: true
-    abstract: >
-      Number of confirmed positive, negative or void COVID-19 virus test results. 
-      This is a count of test results and may include more than one test per person.
-      Data are shown by the date the figures appeared in the published totals.
+#     fullWidth: true
+#     abstract: >
+#       Number of confirmed positive, negative or void COVID-19 virus test results.
+#       This is a count of test results and may include more than one test per person.
+#       Data are shown by the date the figures appeared in the published totals.
 
-    download:
-      - newVirusTestsByPublishDate
-      - cumVirusTestsByPublishDate
+#     download:
+#       - newVirusTestsBySpecimenDate
+#       - cumVirusTestsBySpecimenDate
 
-      
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Virus tests reported
-            value: newVirusTestsByPublishDate
-            tooltip: Daily number of virus tests reported on {date}
-            type: bar
-            colour: 0
-            rollingAverage: false
 
-          - label: Virus tests reported (7-day average)
-            value: newVirusTestsByPublishDate
-            tooltip: 7 day rolling average of the daily number of virus tests reported on {date}
-            type: line
-            colour: 3
-            fill: false
-            rollingAverage:
-              window: 7
-              clipEnd: 3
+#     tabs:
+#       - heading: Daily
+#         tabType: chart
+#         barType: normal
+#         fields:
+#           - label: Virus tests reported
+#             value: newVirusTestsBySpecimenDate
+#             tooltip: Daily number of virus tests reported on {date}
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
 
-      - heading: Total
-        tabType: chart
-        barType: normal
-        fields:
-          - label: Virus tests reported
-            value: cumVirusTestsByPublishDate
-            tooltip: Total number of virus tests reported up to {date}
-            type: bar
-            colour: 0
-            rollingAverage: false
+#           - label: Virus tests reported (7-day average)
+#             value: newVirusTestsBySpecimenDate
+#             tooltip: 7 day rolling average of the daily number of virus tests reported on {date}
+#             type: line
+#             colour: 3
+#             fill: false
+#             rollingAverage:
+#               window: 7
+#               clipEnd: 3
 
-      - heading: Data table
-        tabType: table
-        fields:
-          - label: Date
-            value: date
-            type: date
-            tooltip: Date
+#       - heading: Total
+#         tabType: chart
+#         barType: normal
+#         fields:
+#           - label: Virus tests reported
+#             value: cumVirusTestsBySpecimenDate
+#             tooltip: Total number of virus tests reported up to {date}
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
 
-          - label: Daily virus tests reported
-            value: newVirusTestsByPublishDate
-            type: numeric
-            tooltip: Daily number of virus tests reported on {date}
+#       - heading: Data table
+#         tabType: table
+#         fields:
+#           - label: Date
+#             value: date
+#             type: date
+#             tooltip: Date
 
-          - label: Total virus tests reported
-            value: cumVirusTestsByPublishDate
-            type: numeric
-            tooltip: Total number of virus tests reported up to {date}
+#           - label: Daily virus tests reported
+#             value: newVirusTestsBySpecimenDate
+#             type: numeric
+#             tooltip: Daily number of virus tests reported on {date}
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/testing/cardVirusTestsConducted.md
+#           - label: Total virus tests reported
+#             value: cumVirusTestsBySpecimenDate
+#             type: numeric
+#             tooltip: Total number of virus tests reported up to {date}
 
-  
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/testing/cardVirusTestsConducted.md
+
+
 
 ##############################################################################################################################
 
@@ -118,19 +112,19 @@ cards:
   - heading: Lab-based testing and capacity, by test type
     cardType: chart
     locationAware:
-      included: 
+      included:
         areaType:
           - overview
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void COVID-19 lab-based test results and projected testing capacity. 
+      Number of confirmed positive, negative or void COVID-19 lab-based test results and projected testing capacity.
       This is a count of test results and may include more than one test per person.
 
-      The government provides testing through 4 routes known as pillars. More information about the pillars can be found in the About tab. 
-      
-      Separate charts are shown for polymerase chain reaction (PCR) tests (this chart includes all lab-based virus tests) and antibody tests. 
-      Lab-based virus tests test for the SARS-CoV-2 virus and include all lab-based pillar 1 and 2 PCR, loop-mediated isothermal amplification (LAMP) and Lampore tests and any PCR tests undertaken in pillar 4. 
+      The government provides testing through 4 routes known as pillars. More information about the pillars can be found in the About tab.
+
+      Separate charts are shown for polymerase chain reaction (PCR) tests (this chart includes all lab-based virus tests) and antibody tests.
+      Lab-based virus tests test for the SARS-CoV-2 virus and include all lab-based pillar 1 and 2 PCR, loop-mediated isothermal amplification (LAMP) and Lampore tests and any PCR tests undertaken in pillar 4.
       Antibody serology tests test for COVID-19 antibodies and include pillar 3 tests and any antibody serology tests undertaken in pillar 4.
 
     download:
@@ -149,7 +143,7 @@ cards:
         - Antibody tests
 
     PCR tests:
-      
+
       tabs:
         - heading: Daily
           tabType: chart
@@ -214,12 +208,12 @@ cards:
               type: numeric
               tooltip: Estimated daily capacity for PCR testing reported by laboratories for {date}
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/testing/cardTestingAndCapacity.md
 
     Antibody tests:
-      
+
       tabs:
         - heading: Daily
           tabType: chart
@@ -284,72 +278,72 @@ cards:
               type: numeric
               tooltip: Estimated daily capacity for antibody testing reported by laboratories for {date}
 
-        - heading: About 
+        - heading: About
           tabType: metadata
           filename: cardMetadata/testing/cardTestingAndCapacity.md
 
 ##############################################################################################################################
 
-# only shown for UK
+# # only shown for UK
 
-  - heading: Testing capacity by Pillar
-    cardType: chart
-    locationAware:
-      included:
-        areaType:
-          - overview
+#   - heading: Testing capacity by Pillar
+#     cardType: chart
+#     locationAware:
+#       included:
+#         areaType:
+#           - overview
 
-    fullWidth: true
-    abstract: >
-      Projection reported by labs of how many lab-based tests they have capacity to carry out each day based on availability of staff and resources. 
-      The government provides testing through 4 routes known as pillars. Capacity for each pillar is shown. 
-      More information about the pillars can be found in the About tab. 
+#     fullWidth: true
+#     abstract: >
+#       Projection reported by labs of how many lab-based tests they have capacity to carry out each day based on availability of staff and resources.
+#       The government provides testing through 4 routes known as pillars. Capacity for each pillar is shown.
+#       More information about the pillars can be found in the About tab.
 
-    download:
-      - plannedCapacityByPublishDate
-      - capacityPillarOne
-      - capacityPillarTwo
-      - capacityPillarThree
-      - capacityPillarFour 
+#     download:
+#       - plannedCapacityByPublishDate
+#       - capacityPillarOne
+#       - capacityPillarTwo
+#       - capacityPillarThree
+#       - capacityPillarFour
 
-    tabs:
-      - heading: Data table
-        tabType: table
+#     tabs:
+#       - heading: Data table
+#         tabType: table
 
-        fields:
-          - label: Date
-            value: date
-            type: date
-            tooltip: ""
+#         fields:
+#           - label: Date
+#             value: date
+#             type: date
+#             tooltip: ""
 
-          - label: Pillar 1
-            value: capacityPillarOne
-            type: numeric
-            tooltip: Estimated daily capacity for pillar 1 testing reported by laboratories up to {date}
+#           - label: Pillar 1
+#             value: capacityPillarOne
+#             type: numeric
+#             tooltip: Estimated daily capacity for pillar 1 testing reported by laboratories up to {date}
 
-          - label: Pillar 2 lab
-            value: capacityPillarTwo
-            type: numeric
-            tooltip: Estimated daily capacity for pillar 2 testing reported by laboratories up to {date}
+#           - label: Pillar 2 lab
+#             value: capacityPillarTwo
+#             type: numeric
+#             tooltip: Estimated daily capacity for pillar 2 testing reported by laboratories up to {date}
 
-          - label: Pillar 3
-            value: capacityPillarThree
-            type: numeric
-            tooltip: Estimated daily capacity for pillar 3 testing reported by laboratories up to {date}
+#           - label: Pillar 3
+#             value: capacityPillarThree
+#             type: numeric
+#             tooltip: Estimated daily capacity for pillar 3 testing reported by laboratories up to {date}
 
-          - label: Pillar 4
-            value: capacityPillarFour
-            type: numeric
-            tooltip: Estimated daily capacity for pillar 4 testing reported by laboratories up to {date}
+#           - label: Pillar 4
+#             value: capacityPillarFour
+#             type: numeric
+#             tooltip: Estimated daily capacity for pillar 4 testing reported by laboratories up to {date}
 
-          - label: Total
-            value: plannedCapacityByPublishDate
-            type: numeric
-            tooltip: Estimated daily capacity for testing, across all pillars, reported by laboratories up to {date}
+#           - label: Total
+#             value: plannedCapacityByPublishDate
+#             type: numeric
+#             tooltip: Estimated daily capacity for testing, across all pillars, reported by laboratories up to {date}
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/testing/cardCapacityByPillar.md
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/testing/cardCapacityByPillar.md
 
 
 ##############################################################################################################################
@@ -364,9 +358,9 @@ cards:
 
     fullWidth: true
     abstract: >
-      The number of people who received a polymerase chain reaction (PCR) test in the previous 7 days, and the percentage 
-      of those who had at least one positive COVID-19 PCR test result in the same 7 days. Data is shown by specimen date 
-      (the date the sample was collected from the person). People tested more than once in the period are only counted once 
+      The number of people who received a polymerase chain reaction (PCR) test in the previous 7 days, and the percentage
+      of those who had at least one positive COVID-19 PCR test result in the same 7 days. Data is shown by specimen date
+      (the date the sample was collected from the person). People tested more than once in the period are only counted once
       in the denominator. People with more than one positive test result in the period are only included once in the numerator.
 
     download:
@@ -383,14 +377,14 @@ cards:
             type: bar
             colour: 7
             solidFill: true
-            rollingAverage: false 
+            rollingAverage: false
 
           - label: 7-day PCR positivity (%)
             value: uniqueCasePositivityBySpecimenDateRollingSum
             tooltip: 7-day positivity by specimen date
             type: line
             colour: 0
-            fill: false           
+            fill: false
             overlaying: "y"  # Which axis to overlay
             side: right  # Which side to show the overlayed axis
 
@@ -402,7 +396,7 @@ cards:
             type: date
             tooltip: End date for the 7-day period when the sample was taken from the person
 
-          - label: Number of people tested in the previous 7 days (PCR)  
+          - label: Number of people tested in the previous 7 days (PCR)
             value: uniquePeopleTestedBySpecimenDateRollingSum
             type: numeric
             tooltip: Number of people who received a PCR test in the period
@@ -412,7 +406,7 @@ cards:
             type: numeric
             tooltip: 7-day positivity by specimen date
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/testing/cardPCRPositivity.md
 
@@ -423,7 +417,7 @@ cards:
   - heading: Virus tests reported
     cardType: chart
     locationAware:
-      included: 
+      included:
 
         areaType:
           - utla
@@ -435,8 +429,8 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void COVID-19 virus test results (PCR and LFD tests), 
-      and rolling 7-day average. This is a count of test results and may include more than one test per person. 
+      Number of confirmed positive, negative or void COVID-19 virus test results (PCR and LFD tests),
+      and rolling 7-day average. This is a count of test results and may include more than one test per person.
       Data are shown by the date the sample was taken from the person being tested. Data for the most recent days, highlighted in grey, are incomplete.
 
     download:
@@ -455,7 +449,7 @@ cards:
         - By test type
 
     Total:
-      
+
       tabs:
         - heading: Daily
           tabType: chart
@@ -467,7 +461,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -11
                 to: 0
                 colour: 6
@@ -479,10 +473,10 @@ cards:
               type: line
               colour: 3
               fill: false
-              rollingAverage: 
+              rollingAverage:
                 window: 7
                 clipEnd: 11 #no of days to exclude for incomplete data
-          
+
         - heading: Total
           tabType: chart
           barType: normal
@@ -493,7 +487,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -11
                 to: 0
                 colour: 6
@@ -516,13 +510,13 @@ cards:
               value: cumVirusTestsBySpecimenDate
               type: numeric
               tooltip: Total number of virus tests reported up to {date}
-           
-        - heading: About 
+
+        - heading: About
           tabType: metadata
           filename: cardMetadata/testing/cardVirusTestsBySpecimenDate.md
 
     By test type:
-      
+
       tabs:
         - heading: Daily
           tabType: chart
@@ -534,7 +528,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -11
                 to: 0
                 colour: 6
@@ -546,9 +540,9 @@ cards:
               type: bar
               colour: 3
               rollingAverage: false
-              
 
-            
+
+
         - heading: Total
           tabType: chart
           barType: stack
@@ -559,7 +553,7 @@ cards:
               type: bar
               colour: 0
               rollingAverage: false
-              highlight: 
+              highlight:
                 from: -11
                 to: 0
                 colour: 6
@@ -571,9 +565,9 @@ cards:
               type: bar
               colour: 3
               rollingAverage: false
-              
 
-            
+
+
         - heading: Daily data table
           tabType: table
           fields:
@@ -609,8 +603,8 @@ cards:
               value: cumLFDTestsBySpecimenDate
               type: numeric
               tooltip: Total number of lateral flow tests reported up to {date}
-            
-        - heading: About 
+
+        - heading: About
           tabType: metadata
           filename: cardMetadata/testing/cardPCRTestsBySpecimenDate.md
 
@@ -622,7 +616,7 @@ cards:
   - heading: Lab-based virus tests conducted
     cardType: chart
     locationAware:
-      included: 
+      included:
 
         areaType:
           - utla
@@ -634,10 +628,10 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void COVID-19 lab-based virus test results (excludes LFD and antibody tests), 
-      and rolling 7-day average. This is a count of test results and may include more than one test per person.  
+      Number of confirmed positive, negative or void COVID-19 lab-based virus test results (excludes LFD and antibody tests),
+      and rolling 7-day average. This is a count of test results and may include more than one test per person.
       Data are shown by the date the sample was taken from the person being tested. Data for the most recent days, highlighted in grey, are incomplete.
-     
+
     download:
       - newPCRTestsBySpecimenDate
       - cumPCRTestsBySpecimenDate
@@ -653,7 +647,7 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
-            highlight: 
+            highlight:
                 from: -11
                 to: 0
                 colour: 6
@@ -665,7 +659,7 @@ cards:
             type: line
             colour: 3
             fill: false
-            rollingAverage: 
+            rollingAverage:
               window: 7
               clipEnd: 11 #no of days to exclude for incomplete data
 
@@ -679,7 +673,7 @@ cards:
             type: bar
             colour: 0
             rollingAverage: false
-            highlight: 
+            highlight:
                 from: -11
                 to: 0
                 colour: 6
@@ -703,7 +697,7 @@ cards:
             type: numeric
             tooltip: Total number of lab-based virus tests conducted up to {date}
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/testing/cardPCRTestsBySpecimenDate.md
 
@@ -715,7 +709,7 @@ cards:
   - heading: Rapid lateral flow tests reported
     cardType: chart
     locationAware:
-      included: 
+      included:
 
         areaType:
           - utla
@@ -727,10 +721,10 @@ cards:
 
     fullWidth: true
     abstract: >
-      Number of confirmed positive, negative or void rapid lateral flow (LFD) test results, 
-      and rolling 7-day average. This is a count of test results and may include more than one test per person.  
+      Number of confirmed positive, negative or void rapid lateral flow (LFD) test results,
+      and rolling 7-day average. This is a count of test results and may include more than one test per person.
       Data are shown by the date the sample was taken from the person being tested.
-     
+
     download:
       - newLFDTestsBySpecimenDate
       - cumLFDTestsBySpecimenDate
@@ -784,166 +778,168 @@ cards:
             type: numeric
             tooltip: Total number of lateral flow tests reported up to {date}
 
-      - heading: About 
+      - heading: About
         tabType: metadata
         filename: cardMetadata/testing/cardLFDTesting.md
 
 ##############################################################################################################################
 
-  - heading: Tests reported by Pillar
-    cardType: chart
-    fullWidth: true
-    abstract: >
-      Number of confirmed positive, negative or void COVID-19 test results, by testing pillar. 
-      This is a count of test results and may include more than one test per person. Data for 
-      surveillance testing (pillar 4) are only available for the UK as a whole. Data are shown by the date the figures appeared in the published totals.
-      
-      The government provides testing through 4 routes known as pillars. 
-      Capacity for each pillar is shown. More information about the pillars can be found in the About tab.
+# # The data is not updated any more
 
-    download:
-      - newPillarOneTestsByPublishDate
-      - newPillarTwoTestsByPublishDate
-      - newPillarThreeTestsByPublishDate
-      - newPillarFourTestsByPublishDate
-      - newTestsByPublishDate
-      - cumPillarOneTestsByPublishDate
-      - cumPillarTwoTestsByPublishDate
-      - cumPillarThreeTestsByPublishDate
-      - cumPillarFourTestsByPublishDate
-      - cumTestsByPublishDate
+#   - heading: Tests reported by Pillar
+#     cardType: chart
+#     fullWidth: true
+#     abstract: >
+#       Number of confirmed positive, negative or void COVID-19 test results, by testing pillar.
+#       This is a count of test results and may include more than one test per person. Data for
+#       surveillance testing (pillar 4) are only available for the UK as a whole. Data are shown by the date the figures appeared in the published totals.
 
-    tabs:
-      - heading: Daily
-        tabType: chart
-        barType: stack
-        fields:
-          - label: Pillar 1 (NHS and, in England, UKHSA)
-            value: newPillarOneTestsByPublishDate
-            tooltip: Daily number of lab-based COVID-19 tests conducted by NHS (and, in England, UKHSA) labs on {date}
-            type: bar
-            colour: 0
-            rollingAverage: false
+#       The government provides testing through 4 routes known as pillars.
+#       Capacity for each pillar is shown. More information about the pillars can be found in the About tab.
 
-          - label: Pillar 2 (UK Government testing programme)
-            value: newPillarTwoTestsByPublishDate
-            tooltip: Daily number of COVID-19 tests reported by the UK Government testing programme on {date}
-            type: bar
-            colour: 3
-            rollingAverage: false
+#     download:
+#       - newPillarOneTestsByPublishDate
+#       - newPillarTwoTestsByPublishDate
+#       - newPillarThreeTestsByPublishDate
+#       - newPillarFourTestsByPublishDate
+#       - newTestsByPublishDate
+#       - cumPillarOneTestsByPublishDate
+#       - cumPillarTwoTestsByPublishDate
+#       - cumPillarThreeTestsByPublishDate
+#       - cumPillarFourTestsByPublishDate
+#       - cumTestsByPublishDate
 
-          - label: Pillar 3 (Antibody)
-            value: newPillarThreeTestsByPublishDate
-            tooltip: Daily number of lab-based COVID-19 antibody tests conducted by laboratories on {date}
-            type: bar
-            colour: 4
-            rollingAverage: false
+#     tabs:
+#       - heading: Daily
+#         tabType: chart
+#         barType: stack
+#         fields:
+#           - label: Pillar 1 (NHS and, in England, UKHSA)
+#             value: newPillarOneTestsByPublishDate
+#             tooltip: Daily number of lab-based COVID-19 tests conducted by NHS (and, in England, UKHSA) labs on {date}
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
 
-          - label: Pillar 4 (Surveillance)
-            value: newPillarFourTestsByPublishDate
-            tooltip: Daily number of lab-based COVID-19 surveillance tests conducted by laboratories on {date}
-            type: bar
-            colour: 1
-            rollingAverage: false
+#           - label: Pillar 2 (UK Government testing programme)
+#             value: newPillarTwoTestsByPublishDate
+#             tooltip: Daily number of COVID-19 tests reported by the UK Government testing programme on {date}
+#             type: bar
+#             colour: 3
+#             rollingAverage: false
 
-      - heading: Total
-        tabType: chart
-        barType: stack
-        fields:
-          - label: Pillar 1 (NHS and, in England, UKHSA)
-            value: cumPillarOneTestsByPublishDate
-            tooltip: Total number of lab-based COVID-19 tests conducted by NHS (and, in England, UKHSA) laboratories up to {date}
-            type: bar
-            colour: 0
-            rollingAverage: false
+#           - label: Pillar 3 (Antibody)
+#             value: newPillarThreeTestsByPublishDate
+#             tooltip: Daily number of lab-based COVID-19 antibody tests conducted by laboratories on {date}
+#             type: bar
+#             colour: 4
+#             rollingAverage: false
 
-          - label: Pillar 2 (UK Government testing programme)
-            value: cumPillarTwoTestsByPublishDate
-            tooltip: Total number of COVID-19 tests reported by the UK Government testing programme up to {date}
-            type: bar
-            colour: 3
-            rollingAverage: false
+#           - label: Pillar 4 (Surveillance)
+#             value: newPillarFourTestsByPublishDate
+#             tooltip: Daily number of lab-based COVID-19 surveillance tests conducted by laboratories on {date}
+#             type: bar
+#             colour: 1
+#             rollingAverage: false
 
-          - label: Pillar 3 (Antibody)
-            value: cumPillarThreeTestsByPublishDate
-            tooltip: Total number of lab-based COVID-19 antibody tests conducted by laboratories up to {date}
-            type: bar
-            colour: 4
-            rollingAverage: false
+#       - heading: Total
+#         tabType: chart
+#         barType: stack
+#         fields:
+#           - label: Pillar 1 (NHS and, in England, UKHSA)
+#             value: cumPillarOneTestsByPublishDate
+#             tooltip: Total number of lab-based COVID-19 tests conducted by NHS (and, in England, UKHSA) laboratories up to {date}
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
 
-          - label: Pillar 4 (Surveillance)
-            value: cumPillarFourTestsByPublishDate
-            tooltip: Total number of lab-based COVID-19 surveillance tests conducted by laboratories up to {date}
-            type: bar
-            colour: 1
-            rollingAverage: false
+#           - label: Pillar 2 (UK Government testing programme)
+#             value: cumPillarTwoTestsByPublishDate
+#             tooltip: Total number of COVID-19 tests reported by the UK Government testing programme up to {date}
+#             type: bar
+#             colour: 3
+#             rollingAverage: false
 
-      - heading: Daily data table
-        tabType: table
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported on coronavirus.data.gov.uk
+#           - label: Pillar 3 (Antibody)
+#             value: cumPillarThreeTestsByPublishDate
+#             tooltip: Total number of lab-based COVID-19 antibody tests conducted by laboratories up to {date}
+#             type: bar
+#             colour: 4
+#             rollingAverage: false
 
-          - label: Pillar 1
-            value: newPillarOneTestsByPublishDate
-            type: numeric
-            tooltip: Daily number of lab-based COVID-19 tests conducted by NHS (and, in England, UKHSA) laboratories on {date}
+#           - label: Pillar 4 (Surveillance)
+#             value: cumPillarFourTestsByPublishDate
+#             tooltip: Total number of lab-based COVID-19 surveillance tests conducted by laboratories up to {date}
+#             type: bar
+#             colour: 1
+#             rollingAverage: false
 
-          - label: Pillar 2
-            value: newPillarTwoTestsByPublishDate
-            type: numeric
-            tooltip: Daily number of COVID-19 tests reported by the UK Government testing programme on {date}
+#       - heading: Daily data table
+#         tabType: table
+#         fields:
+#           - label: Date reported
+#             value: date
+#             type: date
+#             tooltip: Date reported on coronavirus.data.gov.uk
 
-          - label: Pillar 3
-            value: newPillarThreeTestsByPublishDate
-            type: numeric
-            tooltip: Daily number of lab-based COVID-19 antibody tests conducted by laboratories on {date}
+#           - label: Pillar 1
+#             value: newPillarOneTestsByPublishDate
+#             type: numeric
+#             tooltip: Daily number of lab-based COVID-19 tests conducted by NHS (and, in England, UKHSA) laboratories on {date}
 
-          - label: Pillar 4
-            value: newPillarFourTestsByPublishDate
-            type: numeric
-            tooltip: Daily number of lab-based COVID-19 surveillance tests conducted by laboratories on {date}
+#           - label: Pillar 2
+#             value: newPillarTwoTestsByPublishDate
+#             type: numeric
+#             tooltip: Daily number of COVID-19 tests reported by the UK Government testing programme on {date}
 
-          - label: All pillars
-            value: newTestsByPublishDate
-            type: numeric
-            tooltip: Daily number of lab-based COVID-19 tests conducted by laboratories on {date}
+#           - label: Pillar 3
+#             value: newPillarThreeTestsByPublishDate
+#             type: numeric
+#             tooltip: Daily number of lab-based COVID-19 antibody tests conducted by laboratories on {date}
 
-      - heading: Total data table
-        tabType: table
-        fields:
-          - label: Date reported
-            value: date
-            type: date
-            tooltip: Date reported on coronavirus.data.gov.uk
+#           - label: Pillar 4
+#             value: newPillarFourTestsByPublishDate
+#             type: numeric
+#             tooltip: Daily number of lab-based COVID-19 surveillance tests conducted by laboratories on {date}
 
-          - label: Pillar 1
-            value: cumPillarOneTestsByPublishDate
-            type: numeric
-            tooltip: Total number of lab-based COVID-19 tests conducted by NHS (and, in England, UKHSA) laboratories up to {date}
+#           - label: All pillars
+#             value: newTestsByPublishDate
+#             type: numeric
+#             tooltip: Daily number of lab-based COVID-19 tests conducted by laboratories on {date}
 
-          - label: Pillar 2
-            value: cumPillarTwoTestsByPublishDate
-            type: numeric
-            tooltip: Total number of COVID-19 tests reported by the UK Government testing programme up to {date}
+#       - heading: Total data table
+#         tabType: table
+#         fields:
+#           - label: Date reported
+#             value: date
+#             type: date
+#             tooltip: Date reported on coronavirus.data.gov.uk
 
-          - label: Pillar 3
-            value: cumPillarThreeTestsByPublishDate
-            type: numeric
-            tooltip: Total number of lab-based COVID-19 antibody tests conducted by laboratories up to {date}
+#           - label: Pillar 1
+#             value: cumPillarOneTestsByPublishDate
+#             type: numeric
+#             tooltip: Total number of lab-based COVID-19 tests conducted by NHS (and, in England, UKHSA) laboratories up to {date}
 
-          - label: Pillar 4
-            value: cumPillarFourTestsByPublishDate
-            type: numeric
-            tooltip: Total number of lab-based COVID-19 surveillance tests conducted by laboratories up to {date}
+#           - label: Pillar 2
+#             value: cumPillarTwoTestsByPublishDate
+#             type: numeric
+#             tooltip: Total number of COVID-19 tests reported by the UK Government testing programme up to {date}
 
-          - label: All pillars
-            value: cumTestsByPublishDate
-            type: numeric
-            tooltip: Total number of lab-based COVID-19 tests conducted by laboratories up to {date}
+#           - label: Pillar 3
+#             value: cumPillarThreeTestsByPublishDate
+#             type: numeric
+#             tooltip: Total number of lab-based COVID-19 antibody tests conducted by laboratories up to {date}
 
-      - heading: About 
-        tabType: metadata
-        filename: cardMetadata/testing/cardTestingByPillar.md
+#           - label: Pillar 4
+#             value: cumPillarFourTestsByPublishDate
+#             type: numeric
+#             tooltip: Total number of lab-based COVID-19 surveillance tests conducted by laboratories up to {date}
+
+#           - label: All pillars
+#             value: cumTestsByPublishDate
+#             type: numeric
+#             tooltip: Total number of lab-based COVID-19 tests conducted by laboratories up to {date}
+
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/testing/cardTestingByPillar.md
