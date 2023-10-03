@@ -1,5 +1,6 @@
 headlineNumbers:
 
+  # Virus tests reported - England
   - caption: Virus tests reported
     valueItems:
 
@@ -11,6 +12,80 @@ headlineNumbers:
         value: newVirusTestsBySpecimenDateRollingSum
         tooltip: Number of new virus tests reported in the 7 days up to {date}
 
+    locationAware:
+      included:
+        areaName:
+          - England
+
+  # Virus tests reported - Northern Ireland
+  - caption: Virus tests reported
+    valueItems:
+
+      - label: Total
+        value: cumVirusTestsByPublishDate
+        tooltip: Total number of virus tests reported up to {date}
+
+      - label: Last 7 days
+        value: newVirusTestsByPublishDateRollingSum
+        tooltip: Number of new virus tests reported in the 7 days up to {date}
+
+    locationAware:
+      included:
+        areaName:
+          - Northern Ireland
+
+  # Virus tests reported - Scotland
+  - caption: Virus tests reported
+    valueItems:
+
+      - label: Total
+        value: cumVirusTestsByPublishDate
+        tooltip: Total number of virus tests reported up to {date}
+
+      - label: Last 7 days
+        value: newVirusTestsByPublishDateRollingSum
+        tooltip: Number of new virus tests reported in the 7 days up to {date}
+
+    locationAware:
+      included:
+        areaName:
+          - Scotland
+
+  # Virus tests reported - Wales
+  - caption: Virus tests reported
+    valueItems:
+
+      - label: Total
+        value: cumVirusTestsByPublishDate
+        tooltip: Total number of virus tests reported up to {date}
+
+      - label: Last 7 days
+        value: newVirusTestsByPublishDateRollingSum
+        tooltip: Number of new virus tests reported in the 7 days up to {date}
+
+    locationAware:
+      included:
+        areaName:
+          - Wales
+
+  # Virus tests reported - for other than 'nation' area types
+  - caption: Virus tests reported
+    valueItems:
+
+      - label: Total
+        value: cumVirusTestsBySpecimenDate
+        tooltip: Total number of virus tests reported up to {date}
+
+      - label: Last 7 days
+        value: newVirusTestsBySpecimenDateRollingSum
+        tooltip: Number of new virus tests reported in the 7 days up to {date}
+
+    locationAware:
+      excluded:
+        areaType:
+          - nation
+
+  # Change from previous 7 days - England
   - caption: Change from previous 7 days
     valueItems:
 
@@ -22,86 +97,160 @@ headlineNumbers:
         value: newVirusTestsBySpecimenDateChangePercentage
         tooltip: Percentage change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
 
+    locationAware:
+      included:
+        areaname:
+          - England
+
+  # Change from previous 7 days  - for Northern Ireland
+  - caption: Change from previous 7 days
+    valueItems:
+
+      - label: Number
+        value: newVirusTestsByPublishDateChange
+        tooltip: Change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
+
+      - label: Percentage
+        value: newVirusTestsByPublishDateChangePercentage
+        tooltip: Percentage change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
+
+    locationAware:
+      included:
+        areaname:
+          - England
+
+  # Change from previous 7 days  - for Scotland
+  - caption: Change from previous 7 days
+    valueItems:
+
+      - label: Number
+        value: newVirusTestsByPublishDateChange
+        tooltip: Change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
+
+      - label: Percentage
+        value: newVirusTestsByPublishDateChangePercentage
+        tooltip: Percentage change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
+
+    locationAware:
+      included:
+        areaname:
+          - Scotland
+
+  # Change from previous 7 days  - for Wales
+  - caption: Change from previous 7 days
+    valueItems:
+
+      - label: Number
+        value: newVirusTestsByPublishDateChange
+        tooltip: Change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
+
+      - label: Percentage
+        value: newVirusTestsByPublishDateChangePercentage
+        tooltip: Percentage change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
+
+    locationAware:
+      included:
+        areaname:
+          - Wales
+
+  # Change from previous 7 days  - for other than 'nation' area types
+  - caption: Change from previous 7 days
+    valueItems:
+
+      - label: Number
+        value: newVirusTestsByPublishDateChange
+        tooltip: Change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
+
+      - label: Percentage
+        value: newVirusTestsByPublishDateChangePercentage
+        tooltip: Percentage change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
+
+    locationAware:
+      excluded:
+        areaType:
+          - nation
+
+
 ##############################################################################################################################
 
 cards:
 
 ##############################################################################################################################
 
-# # Only shown for UK
+# Only shown for areas other than UK
 
-#   - heading: Virus tests reported
-#     cardType: chart
-#     locationAware:
-#       included:
-#         areaType:
-#           - overview
+  - heading: Virus tests reported
+    cardType: chart
+    locationAware:
+      excluded:
+        areaType:
+          - overview
 
-#     fullWidth: true
-#     abstract: >
-#       Number of confirmed positive, negative or void COVID-19 virus test results.
-#       This is a count of test results and may include more than one test per person.
-#       Data are shown by the date the figures appeared in the published totals.
+    fullWidth: true
+    abstract: >
+      Number of confirmed positive, negative or void COVID-19 virus test results.
+      This is a count of test results and may include more than one test per person.
+      Data are shown by the date the figures appeared in the published totals.
 
-#     download:
-#       - newVirusTestsBySpecimenDate
-#       - cumVirusTestsBySpecimenDate
+    download:
+      - newVirusTestsByPublishDate
+      - cumVirusTestsByPublishDate
 
 
-#     tabs:
-#       - heading: Daily
-#         tabType: chart
-#         barType: normal
-#         fields:
-#           - label: Virus tests reported
-#             value: newVirusTestsBySpecimenDate
-#             tooltip: Daily number of virus tests reported on {date}
-#             type: bar
-#             colour: 0
-#             rollingAverage: false
+    tabs:
+      - heading: Daily
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Virus tests reported
+            value: newVirusTestsByPublishDate
+            tooltip: Daily number of virus tests reported on {date}
+            type: bar
+            colour: 0
+            rollingAverage: false
 
-#           - label: Virus tests reported (7-day average)
-#             value: newVirusTestsBySpecimenDate
-#             tooltip: 7 day rolling average of the daily number of virus tests reported on {date}
-#             type: line
-#             colour: 3
-#             fill: false
-#             rollingAverage:
-#               window: 7
-#               clipEnd: 3
+          - label: Virus tests reported (7-day average)
+            value: newVirusTestsByPublishDate
+            tooltip: 7 day rolling average of the daily number of virus tests reported on {date}
+            type: line
+            colour: 3
+            fill: false
+            rollingAverage:
+              window: 7
+              clipEnd: 3
 
-#       - heading: Total
-#         tabType: chart
-#         barType: normal
-#         fields:
-#           - label: Virus tests reported
-#             value: cumVirusTestsBySpecimenDate
-#             tooltip: Total number of virus tests reported up to {date}
-#             type: bar
-#             colour: 0
-#             rollingAverage: false
+      - heading: Total
+        tabType: chart
+        barType: normal
+        fields:
+          - label: Virus tests reported
+            value: cumVirusTestsByPublishDate
+            tooltip: Total number of virus tests reported up to {date}
+            type: bar
+            colour: 0
+            rollingAverage: false
 
-#       - heading: Data table
-#         tabType: table
-#         fields:
-#           - label: Date
-#             value: date
-#             type: date
-#             tooltip: Date
+      - heading: Data table
+        tabType: table
+        fields:
+          - label: Date
+            value: date
+            type: date
+            tooltip: Date
 
-#           - label: Daily virus tests reported
-#             value: newVirusTestsBySpecimenDate
-#             type: numeric
-#             tooltip: Daily number of virus tests reported on {date}
+          - label: Daily virus tests reported
+            value: newVirusTestsByPublishDate
+            type: numeric
+            tooltip: Daily number of virus tests reported on {date}
 
-#           - label: Total virus tests reported
-#             value: cumVirusTestsBySpecimenDate
-#             type: numeric
-#             tooltip: Total number of virus tests reported up to {date}
+          - label: Total virus tests reported
+            value: cumVirusTestsByPublishDate
+            type: numeric
+            tooltip: Total number of virus tests reported up to {date}
 
-#       - heading: About
-#         tabType: metadata
-#         filename: cardMetadata/testing/cardVirusTestsConducted.md
+      - heading: About
+        tabType: metadata
+        filename: cardMetadata/testing/cardVirusTestsConducted.md
 
 
 
