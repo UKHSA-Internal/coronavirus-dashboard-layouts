@@ -17,7 +17,7 @@ headlineNumbers:
         areaName:
           - England
 
-  # Virus tests reported - Northern Ireland
+  # Virus tests reported - Northern Ireland, Scotland and Wales
   - caption: Virus tests reported
     valueItems:
 
@@ -33,39 +33,7 @@ headlineNumbers:
       included:
         areaName:
           - Northern Ireland
-
-  # Virus tests reported - Scotland
-  - caption: Virus tests reported
-    valueItems:
-
-      - label: Total
-        value: cumVirusTestsByPublishDate
-        tooltip: Total number of virus tests reported up to {date}
-
-      - label: Last 7 days
-        value: newVirusTestsByPublishDateRollingSum
-        tooltip: Number of new virus tests reported in the 7 days up to {date}
-
-    locationAware:
-      included:
-        areaName:
           - Scotland
-
-  # Virus tests reported - Wales
-  - caption: Virus tests reported
-    valueItems:
-
-      - label: Total
-        value: cumVirusTestsByPublishDate
-        tooltip: Total number of virus tests reported up to {date}
-
-      - label: Last 7 days
-        value: newVirusTestsByPublishDateRollingSum
-        tooltip: Number of new virus tests reported in the 7 days up to {date}
-
-    locationAware:
-      included:
-        areaName:
           - Wales
 
   # Virus tests reported - for other than 'nation' area types
@@ -102,7 +70,7 @@ headlineNumbers:
         areaname:
           - England
 
-  # Change from previous 7 days  - for Northern Ireland
+  # Change from previous 7 days  - for Northern Ireland, Scotland and Wales
   - caption: Change from previous 7 days
     valueItems:
 
@@ -117,40 +85,8 @@ headlineNumbers:
     locationAware:
       included:
         areaname:
-          - England
-
-  # Change from previous 7 days  - for Scotland
-  - caption: Change from previous 7 days
-    valueItems:
-
-      - label: Number
-        value: newVirusTestsByPublishDateChange
-        tooltip: Change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
-
-      - label: Percentage
-        value: newVirusTestsByPublishDateChangePercentage
-        tooltip: Percentage change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
-
-    locationAware:
-      included:
-        areaname:
+          - Northern Ireland
           - Scotland
-
-  # Change from previous 7 days  - for Wales
-  - caption: Change from previous 7 days
-    valueItems:
-
-      - label: Number
-        value: newVirusTestsByPublishDateChange
-        tooltip: Change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
-
-      - label: Percentage
-        value: newVirusTestsByPublishDateChangePercentage
-        tooltip: Percentage change in number of virus tests reported in the 7 days up to {date} compared with the previous 7 day period.
-
-    locationAware:
-      included:
-        areaname:
           - Wales
 
   # Change from previous 7 days  - for other than 'nation' area types
@@ -182,9 +118,11 @@ cards:
   - heading: Virus tests reported
     cardType: chart
     locationAware:
-      excluded:
-        areaType:
-          - overview
+      included:
+        areaName:
+          - Northern Ireland
+          - Scotland
+          - Wales
 
     fullWidth: true
     abstract: >
