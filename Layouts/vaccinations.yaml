@@ -6,7 +6,7 @@ headlineNumbers:
         tooltip: Total number of people who have received the second dose of COVID-19 vaccine, reported up to {date}
 
       - label: Atumn 2023 vaccinations uptake (%)
-        value: cumPeopleVaccinatedAutumn23UptakeByVaccinationDatePercentage65plus
+        value: cumVaccinationAutumn23UptakeByVaccinationDatePercentage65plus
         tooltip: Total number of people who have received a booster or third dose of COVID-19 vaccine, reported up to {date}
 
   - caption: Vaccinations given
@@ -886,7 +886,7 @@ cards:
             type: line
             colour: 0
             rollingAverage: false
-            metric: cumPeopleVaccinatedAutumn23UptakeByVaccinationDatePercentage
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
 
       - heading: Data table
         tabType: nestedTable
@@ -896,7 +896,7 @@ cards:
             type: date
 
           - label: "Autumn vaccination dose 65+ (%)"
-            metric: cumPeopleVaccinatedAutumn23UptakeByVaccinationDatePercentage
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
             type: numeric
             filters:
