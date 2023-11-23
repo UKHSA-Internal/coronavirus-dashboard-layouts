@@ -5,15 +5,15 @@ headlineNumbers:
         value: cumPeopleVaccinatedAutumn23ByVaccinationDate65plus
         tooltip: Total number of people who have received the second dose of COVID-19 vaccine, reported up to {date}
 
-      - label: Atumn 2023 vaccinations uptake (%)
+      - label: Autumn 2023 vaccinations uptake (%)
         value: cumVaccinationAutumn23UptakeByVaccinationDatePercentage65plus
         tooltip: Total number of people who have received a booster or third dose of COVID-19 vaccine, reported up to {date}
 
-  - caption: Vaccinations given
-    valueItems:
-      - label: Total
-        value: cumVaccinesGivenByPublishDate
-        tooltip: Total number of COVID-19 vaccines given, reported up to {date}
+  # - caption: Vaccinations given
+  #   valueItems:
+  #     - label: Total
+  #       value: cumVaccinesGivenByPublishDate
+  #       tooltip: Total number of COVID-19 vaccines given, reported up to {date}
 
 baseVaccinationAgeDemographics: &baseVaccinationAgeDemographics
   value: vaccinationsAgeDemographics
@@ -1276,13 +1276,31 @@ cards:
         tabType: chart
 
         fields:
+          - label: 65 to 69 (%)
+            << : *vaccinationAgeDemographics65_69
+            tooltip: Percentage of people aged 65 to 69 who received a spring booster dose of COVID-19 vaccine
+            type: line
+            colour: 3
+            rollingAverage: false
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
+            fill: false
+
+          - label: 70 to 74 (%)
+            << : *vaccinationAgeDemographics70_74
+            tooltip: Percentage of people aged 75 to 79 who received a spring booster dose of COVID-19 vaccine
+            type: line
+            colour: 5
+            rollingAverage: false
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
+            fill: false
+
           - label: 75 to 79 (%)
             << : *vaccinationAgeDemographics75_79
             tooltip: Percentage of people aged 75 to 79 who received a spring booster dose of COVID-19 vaccine
             type: line
             colour: 0
             rollingAverage: false
-            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
             fill: false
 
           - label: 80 to 84 (%)
@@ -1291,7 +1309,7 @@ cards:
             type: line
             colour: 9
             rollingAverage: false
-            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
             fill: false
 
           - label: 85 to 89 (%)
@@ -1300,7 +1318,7 @@ cards:
             type: line
             colour: 3
             rollingAverage: false
-            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
             fill: false
 
           - label: 90+ (%)
@@ -1309,7 +1327,7 @@ cards:
             type: line
             colour: 10
             rollingAverage: false
-            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
             fill: false
 
       - heading: Data table
@@ -1319,8 +1337,24 @@ cards:
             value: date
             type: date
 
+          - label: "Uptake 65 to 69 (%)"
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: "65_69"
+
+          - label: "Uptake 70 to 74 (%)"
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
+            value: vaccinationsAgeDemographics
+            type: numeric
+            filters:
+              parameter: age
+              value: "70_74"
+
           - label: "Uptake 75 to 79 (%)"
-            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
             type: numeric
             filters:
@@ -1328,7 +1362,7 @@ cards:
               value: "75_79"
 
           - label: "Uptake 80 to 84 (%)"
-            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
             type: numeric
             filters:
@@ -1336,7 +1370,7 @@ cards:
               value: "80_84"
 
           - label: "Uptake 85 to 89 (%)"
-            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
             type: numeric
             filters:
@@ -1344,7 +1378,7 @@ cards:
               value: "85_89"
 
           - label: "Uptake 90+ (%)"
-            metric: cumVaccinationSpring23UptakeByVaccinationDatePercentage
+            metric: cumVaccinationAutumn23UptakeByVaccinationDatePercentage
             value: vaccinationsAgeDemographics
             type: numeric
             filters:
@@ -2706,57 +2740,57 @@ cards:
 
 #############################################################################################################################
 
-# nations only
+# # nations only
 
-  - heading: Number of vaccines given, by report date
-    cardType: chart
-    locationAware:
-      included:
-        areaType:
-          - nation
+#   - heading: Number of vaccines given, by report date
+#     cardType: chart
+#     locationAware:
+#       included:
+#         areaType:
+#           - nation
 
-    fullWidth: true
-    abstract: >
-      The number of COVID-19 vaccinations (all doses) given to people of all ages.
+#     fullWidth: true
+#     abstract: >
+#       The number of COVID-19 vaccinations (all doses) given to people of all ages.
 
-    download:
-      - newVaccinesGivenByPublishDate
-      - cumVaccinesGivenByPublishDate
-      - newPeopleVaccinatedFirstDoseByPublishDate
-      - cumPeopleVaccinatedFirstDoseByPublishDate
-      - newPeopleVaccinatedSecondDoseByPublishDate
-      - cumPeopleVaccinatedSecondDoseByPublishDate
-      - newPeopleVaccinatedThirdInjectionByPublishDate
-      - cumPeopleVaccinatedThirdInjectionByPublishDate
+#     download:
+#       - newVaccinesGivenByPublishDate
+#       - cumVaccinesGivenByPublishDate
+#       - newPeopleVaccinatedFirstDoseByPublishDate
+#       - cumPeopleVaccinatedFirstDoseByPublishDate
+#       - newPeopleVaccinatedSecondDoseByPublishDate
+#       - cumPeopleVaccinatedSecondDoseByPublishDate
+#       - newPeopleVaccinatedThirdInjectionByPublishDate
+#       - cumPeopleVaccinatedThirdInjectionByPublishDate
 
-    tabs:
-      - heading: Total
-        tabType: chart
+#     tabs:
+#       - heading: Total
+#         tabType: chart
 
-        fields:
-          - label: total
-            value: cumVaccinesGivenByPublishDate
-            tooltip: Total reported number of COVID-19 vaccines given
-            type: bar
-            colour: 0
-            rollingAverage: false
+#         fields:
+#           - label: total
+#             value: cumVaccinesGivenByPublishDate
+#             tooltip: Total reported number of COVID-19 vaccines given
+#             type: bar
+#             colour: 0
+#             rollingAverage: false
 
-      - heading: Data table
-        tabType: table
+#       - heading: Data table
+#         tabType: table
 
-        fields:
-            - label: Report date
-              value: date
-              type: date
-              tooltip: Date
+#         fields:
+#             - label: Report date
+#               value: date
+#               type: date
+#               tooltip: Date
 
-            - label: "total"
-              value: cumVaccinesGivenByPublishDate
-              type: numeric
-              tooltip: Total number of COVID-19 vaccines given
+#             - label: "total"
+#               value: cumVaccinesGivenByPublishDate
+#               type: numeric
+#               tooltip: Total number of COVID-19 vaccines given
 
-      - heading: About
-        tabType: metadata
-        filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
+#       - heading: About
+#         tabType: metadata
+#         filename: cardMetadata/vaccinations/cardVaccinationsGivenDaily.md
 
-#############################################################################################################################
+# #############################################################################################################################

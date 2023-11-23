@@ -166,7 +166,7 @@ variantOmicronEG51: &variantOmicronBA286
   << : *baseVariants
   filters:
     parameter: variant
-    value: "V-23AUG-01(Omicron BA.2.86)"
+    value: "V-23AUG-01 (Omicron BA.2.86)"
 
 variantOther: &variantOther
   << : *baseVariants
@@ -1982,10 +1982,10 @@ cards:
               metric: newWeeklyPercentage
               fill: false
 
-            - label: V-23AUG-01(Omicron BA.2.86)
+            - label: V-23AUG-01 (Omicron BA.2.86)
               << : *variantOmicronBA286
               type: line
-              colour: 21
+              colour: 2
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -1993,7 +1993,7 @@ cards:
             - label: V-22OCT-02 (Omicron XBB)
               << : *variantOmicronXBB
               type: line
-              colour: 21
+              colour: 5
               rollingAverage: false
               metric: newWeeklyPercentage
               fill: false
@@ -2117,13 +2117,13 @@ cards:
                 parameter: variant
                 value: "V-23JUL-01 (Omicron EG.5.1)"
 
-            - label: "V-23AUG-01(Omicron BA.2.86) %"
+            - label: "V-23AUG-01 (Omicron BA.2.86) %"
               metric: newWeeklyPercentage
               value: variants
               type: numeric
               filters:
                 parameter: variant
-                value: "V-23AUG-01(Omicron BA.2.86)"
+                value: "V-23AUG-01 (Omicron BA.2.86)"
 
             - label: "V-22OCT-02 (Omicron XBB) %"
               metric: newWeeklyPercentage
@@ -2164,8 +2164,8 @@ cards:
               - label: V-22OCT-02 (Omicron XBB)
                 value: "V-22OCT-02 (Omicron XBB)"
 
-              - label: V-23AUG-01(Omicron BA.2.86)
-                value: "V-23AUG-01(Omicron BA.2.86)"
+              - label: V-23AUG-01 (Omicron BA.2.86)
+                value: "V-23AUG-01 (Omicron BA.2.86)"
 
               - label: V-23JUL-01 (Omicron EG.5.1)
                 value: "V-23JUL-01 (Omicron EG.5.1)"
@@ -2317,13 +2317,13 @@ cards:
                 parameter: variant
                 value: "V-23JUL-01 (Omicron EG.5.1)"
 
-            - label: "V-23AUG-01(Omicron BA.2.86) %"
+            - label: "V-23AUG-01 (Omicron BA.2.86) %"
               metric: newWeeklyPercentage
               value: variants
               type: numeric
               filters:
                 parameter: variant
-                value: "V-23AUG-01(Omicron BA.2.86)"
+                value: "V-23AUG-01 (Omicron BA.2.86)"
 
             - label: "V-22OCT-02 (Omicron XBB) %"
               metric: newWeeklyPercentage
